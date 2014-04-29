@@ -1,0 +1,1302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DE7176A0-DBF8-46D6-807F-DC5B254385A7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RYSOO_samples</RootNamespace>
+    <AssemblyName>RYSOO samples</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="baseOp.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sample1.cs" />
+    <Compile Include="Service References\abxws\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Service References\abxws\abxWsGest.xsd" />
+    <None Include="Service References\abxws\abxWsGest1.xsd" />
+    <None Include="Service References\abxws\abxWsGest2.xsd" />
+    <None Include="Service References\abxws\abxWsGest3.xsd" />
+    <None Include="Service References\abxws\abxWsGestService.wsdl" />
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxArchiBoxDomainResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxArchSostResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxCan.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxCheckinResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxClasseDocumentaleResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxComboResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxContainerResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxDataResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxDomainResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxDynamicRuleResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxDynorgTypeResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxExpressionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxFieldResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxFileResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxFileTpResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.AbxFilterResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxFKResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxGiiResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxGipResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxGmResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxGoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxGroupResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxLanguageResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxLinkResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxLoginResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxLogResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxPermissionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.AbxPingResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxProtocolResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxProtocolUseResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxRaccoglitoreResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxReplicationResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxRetOption4QueryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxRetQueryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxSchedulerResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxSDKResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxTemplateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxTranslationResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxTreeResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxUserListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.abxWorkflowResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.AddDefaultProcessResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.AddExpressionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.AddFileToSyncByArcCueResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.AddLogSDKResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.AddMarkerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.AddSignResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.AddUserResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.AddUserSettingsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanAddDigitalSignatureResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanAddNewDateResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanAddNewYearResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.canCreateContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.canCreateDynorgResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.canCreateFieldResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.canCreateRaccoglitoreResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.canCreateTemplateResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.canDeleteContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanDeleteDataResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.canDeleteDynorgResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.canDeleteFieldResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanDeleteFileContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanDeleteFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanDeleteLinkFromContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanDeleteProtocolResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.canDeleteRaccoglitoreResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.canDeleteTemplateResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanEditProtocolResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanInsertDataResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanInsertFileContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanInsertFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanInsertLinkContainerToContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanInsertLinkContainerToDocumentResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanInsertLinkDocumentToDocumentResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanInsertProtocolResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.canModifyContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanModifyDataResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.canModifyDynorgResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.canModifyFieldResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanModifyFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanModifyLinkContainerToContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanModifyLinkContainerToDocumentResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.canModifyRaccoglitoreResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.canModifyTemplateResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanShowFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CanUseProtocolResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ChangeSchedulerTaskScheduleStatusResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ChangeSDKTaskStatusResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CheckIn_attachContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CheckIn_attachResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CheckIn_documentResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CheckOut_attachContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CheckOut_attachResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CheckOut_documentResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Combo_getAllResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Combo_insertResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Combo_isComboResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Combo_modifyResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Combo_removeAllResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Combo_removeItemResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CopyDataResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CopyFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CreateContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CreateDynorgResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CreateFieldResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CreateRaccoglitoreResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CreateSDKTaskFieldMappingResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CreateSDKTaskResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CreateSDKTaskWatchFolderResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.CreateTemplateResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DelDefaultProcessResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteArchSostRuleResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteClasseDocumentaleResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteDataResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteDataWAResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteDynorgResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteFieldResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteFileContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteFileContainerVersionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteFileVersionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteFileWAResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteFilterResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteGroupResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteLinkResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteProtocolResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteRaccoglitoreResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteSchedulerTaskResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteSchedulerTaskScheduleResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteSDKLogResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteSDKTaskFieldMappingResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteSDKTaskResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteTemplateResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteTPFileByCodeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteTPFileByIdResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteTranslationByCodeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteTranslationResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteUserByUsernameResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteUSFileByCodeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteUSFileByIdResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteWFFileByCodeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DeleteWFFileByIdResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DelExpressionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DelMarkerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DelSignResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DelUserSettingsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DestroyContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DestroyRaccoglitoreResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DigitalSignResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DownloadEndFileWAResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DownloadFileByFileUniqueCodeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DownloadFileContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DownloadFileContainerUncResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DownloadFilePreviewResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DownloadFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DownloadFileUncResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DownloadFileWAByFileUniqueCodeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DownloadFileWAResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DownloadGetChunkResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DownloadGetChunkWAResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DownloadGetNextResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DownloadGetNextWAResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DownloadTPEndFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DownloadTPFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DownloadUSFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DownloadUSGetChunkResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DownloadUSGetNextResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DownloadWFEndFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.DownloadWFFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.EditProtocolResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.EndPermissionSettingsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ExistUserByUsernameResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ExtractSDKPDFTemplateTextByAreaResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Fk_createResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Fk_DB_deleteResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Fk_DB_modifyResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Fk_DB_testConnectionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Fk_getAllRecordByDescResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Fk_getAllRecordByIndexDescResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Fk_getAllRecordByIndexResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Fk_getAllRecordResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Fk_getColumnsNameResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Fk_getCountAllRecordByDescResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Fk_getCountAllRecordByIndexDescResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Fk_getCountAllRecordResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Fk_getLocalFieldListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Fk_getParsAllFkResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Fk_getParsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Fk_getRemoteDatabaseListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Fk_getRemoteFieldListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Fk_getRemoteTableListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Fk_getRemoteViewListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.Fk_WS_insertResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.FullTreePathNameResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetAdjacentArchiBoxResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetAllContainerExpressionsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetAllFilterResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetAllObjectWithSystemResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetArchiBoxInDomainByMatricolaResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetArchiBoxInDomainResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetArchiBoxInfoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetArchSostRulesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetClasseDocumentaleResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetContainerLinksResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetContSignByUserResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetContSignResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetCountDocumentLinksResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetCountFileListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetCountLinksToDocumentResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataByIdForSecurityResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataByIdResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataCountWithoutPermissionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataCountWithPermissionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataFileContainerDetailResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataFileDetailResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataFileListContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataFileListForSecurityResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataFileListOnlyLastVersionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataFileListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataFileListWAResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataLimitResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataTPFileDetailResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataTPFileListByContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataTPFileListByDocumentResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataTPFileListByNameResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataTPFileListByUsernameResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataTPFileListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataUSFileDetailResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataUSFileListByUsernameResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataUSFileListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataWAByIdResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataWFFileDetailResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDataWFFileListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDefaultObjActListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDefaultProcessResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDocumentLinksResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDomainListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDownloadDetailByContIdResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDownloadDetailByContResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDownloadDetailByDataIdResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDownloadDetailByDataResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDownloadDetailByFilecodeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDynorgListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetDynorgTypeListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetExpressionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetExpressionValueResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetFieldListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetFieldPropertiesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetFieldsPropertiesFromTemplateResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetFileAvailableResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetFileListByCodeForSecurityResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetFileListByCodeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetGroupListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetGroupsListByUserResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetInstanceIdResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetInstanceNameFromLinksResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetInstancePathnameResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetInstanceReplicationResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetInstanceReplicationStatusResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetLanguagesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetLinksToDocumentFilteredResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetLinksToDocumentResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetListDataWAResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetListMarkerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetMethodResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetNewProtocolNumberResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetObjectResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetProtocolByDescResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetProtocolByIdResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetProtocolByNameDescResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetProtocolByNameResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetProtocolListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetQueryParamResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetRootIdResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetSchedulerTaskByTaskTypeIdResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetSchedulerTasksResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetSchedulerTasksToRunResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetSDKImagesFromPDFTemplateResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetSDKLogListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetSDKRulesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetSDKTaskExcelPreviewResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetSDKTaskFieldMappingResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetSDKTasksResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetSDKTaskWatchFolderResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetSDKTextFromTemplateResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetSDKVariablesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetSDKWatchFolderDirectoriesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetSignResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetTemplateListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetTemplatePropertiesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetTranslationByLabelCodeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetTranslationByMessageIdResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetTranslationByRangeLabelCodeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetTranslationBySourceSuffixResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetTreeForSecurityResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetTreeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetUploadDetailByContIdResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetUploadDetailByContResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetUploadDetailByDataIdResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetUploadDetailByDataResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetUploadDetailByFilecodeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetUserDetailByUserIdResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetUserDetailByUsernameResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetUserListActiveDirectoryResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetUserListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetUserSettingsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetUsersListByGroupResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetWorkflowVariablesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.IfFileExistResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertArchSostRuleResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertClasseDocumentaleResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertDataResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertDataWAResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertFileContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertFileWAResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertFilterResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertGroupResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertLinkContainerToContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertLinkContainerToDocumentResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertLinkDocumentToDocumentResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertProtocolResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertSchedulerTaskResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertTPFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertTranslationCodeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertTranslationDecimalCodeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertTranslationResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertUserConfigResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertUserInGroupResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertUserResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertUSFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertUSFileWithUserResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.InsertWFFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.LoginResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.LogoutResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModDefaultProcessResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModExpressionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModifyArchSostRuleResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModifyContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModifyDataResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModifyDataWAResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModifyDynorgResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModifyFieldResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModifyFileDescriptionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModifyFilterResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModifyGroupResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModifyLinkContainerToContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModifyLinkContainerToDocumentResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModifyRaccoglitoreResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModifySchedulerTaskScheduleResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModifySDKTaskResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModifySDKTaskWatchFolderResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModifyTemplateResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModifyTranslationResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModifyUserConfigResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModifyUserPasswordResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModifyUserResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModSignResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModUserResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ModUserSettingsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.MoveDataResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.PingResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.QueryHeaderResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.QueryResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.QueryTotAttachResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.RegenerateDynOrgResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.RemoveUserByAllGroupsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.RemoveUserByGroupResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ResetUserSessionsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.SaveCharsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.SchedulerTaskScheduleProcessedResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.SetFileAvailableResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.SetInstanceReplicationResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.SetTmpDownloadPathResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.SetTmpTPDownloadPathResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.SetTmpTPUploadPathResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.SetTmpUploadPathResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.SetTmpUSDownloadPathResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.SetTmpUSUploadPathResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.SetTmpWFDownloadPathResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.SetTmpWFUploadPathResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ShowProtocolResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.StoreSDKVariableResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.TestLetturaResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.TestScritturaLetturaResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.UploadEndFileContainerResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.UploadEndFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.UploadEndFileWAResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.UploadPreviewFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.UploadSendChunkResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.UploadSendChunkWAResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.UploadTPEndFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.UploadTPSendChunkResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.UploadUSEndFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.UploadUSEndFileWithUserResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.UploadUSSendChunkResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.UploadWFEndFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.UploadWFSendChunkResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ValidateSDKTaskResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.ValidateSessionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.VerifyExpressionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.VerifySDKTaskNameExistsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\abxws\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\abxws\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\abxws\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\abxws\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://xml.netbeans.org/schema/abxDynaminorg" xmlns:ns1="http://ws.abx/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://xml.netbeans.org/schema/abxDynaminorg">
+
+<xs:import namespace="http://ws.abx/" schemaLocation="http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest?xsd=4"/>
+
+<xs:complexType name="abxDynamicorgRuleList">
+<xs:sequence>
+<xs:element name="list" type="tns:abxDynamicorgRule" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="abxDynamicorgRule">
+<xs:sequence>
+<xs:element name="ruleName" type="xs:string"/>
+<xs:element name="user" type="xs:string"/>
+<xs:element name="templateName" type="xs:string"/>
+<xs:element name="rootInstanceName" type="xs:string"/>
+<xs:element name="elements" type="tns:abxDynamicorgRuleElement" maxOccurs="unbounded"/>
+<xs:element name="permission" type="ns1:abxPermission"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="abxDynamicorgRuleElement">
+<xs:sequence>
+<xs:element name="ruleTypeName" type="xs:string"/>
+<xs:element name="Description" type="xs:string"/>
+<xs:element name="orderId" type="xs:int"/>
+<xs:element name="option" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="abxDynamicRuleResult">
+<xs:sequence>
+<xs:element name="result" type="xs:unsignedInt"/>
+<xs:element name="rules" type="tns:abxDynamicorgRuleList"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="abxDynorgTypeResult">
+<xs:sequence>
+<xs:element name="result" type="xs:unsignedInt"/>
+<xs:element name="types" type="tns:abxDynamicorgTypeList"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="abxDynamicorgTypeList">
+<xs:sequence>
+<xs:element name="type" type="tns:abxDynorgRuleType" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="abxDynorgRuleType">
+<xs:sequence>
+<xs:element name="name" type="xs:string"/>
+<xs:element name="description" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

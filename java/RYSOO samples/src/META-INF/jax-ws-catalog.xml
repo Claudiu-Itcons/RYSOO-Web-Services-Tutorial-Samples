@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://iabx000002.iabx.net/abxWsGestService/abxWsGest?wsdl" uri="xml-resources/web-service-references/abxWsGest_1/wsdl/iabx000002.iabx.net/abxWsGestService/abxWsGest.wsdl"/>
+    <system systemId="http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest?xsd=1" uri="xml-resources/web-service-references/abxWsGest_1/wsdl/iabx000002.iabx.net_80/abxWsGestService/abxWsGest.xsd_1.xsd"/>
+    <system systemId="http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest?xsd=2" uri="xml-resources/web-service-references/abxWsGest_1/wsdl/iabx000002.iabx.net_80/abxWsGestService/abxWsGest.xsd_2.xsd"/>
+    <system systemId="http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest?xsd=3" uri="xml-resources/web-service-references/abxWsGest_1/wsdl/iabx000002.iabx.net_80/abxWsGestService/abxWsGest.xsd_3.xsd"/>
+    <system systemId="http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest?xsd=4" uri="xml-resources/web-service-references/abxWsGest_1/wsdl/iabx000002.iabx.net_80/abxWsGestService/abxWsGest.xsd_4.xsd"/>
+</catalog>

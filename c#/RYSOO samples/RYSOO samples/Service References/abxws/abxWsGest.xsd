@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://xml.netbeans.org/schema/abxProtocol" elementFormDefault="qualified" targetNamespace="http://xml.netbeans.org/schema/abxProtocol" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="abxProtocolResult">
+    <xs:sequence>
+      <xs:element name="result" type="xs:unsignedInt" />
+      <xs:element name="list" type="tns:abxProtocolList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="abxProtocolList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="protocolList" type="tns:abxProtocol" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="abxProtocol">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="allDescription">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="language" type="xs:string" />
+            <xs:element form="unqualified" name="description" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="defaultLanguage" type="xs:string" />
+      <xs:element name="messageId" type="xs:string" />
+      <xs:element name="protocolName" type="xs:string" />
+      <xs:element name="checkDate" type="xs:boolean" />
+      <xs:element name="checkSequenceDate" type="xs:boolean" />
+      <xs:element name="annualReset" type="xs:boolean" />
+      <xs:element name="format" type="xs:string" />
+      <xs:element name="note" type="xs:string" />
+      <xs:element name="idProtocol" type="xs:string" />
+      <xs:element name="protocolDesc" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

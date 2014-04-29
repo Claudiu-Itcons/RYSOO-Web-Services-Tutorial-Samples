@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://xml.netbeans.org/schema/abxDynaminorg" xmlns:ns1="http://ws.abx/" elementFormDefault="qualified" targetNamespace="http://xml.netbeans.org/schema/abxDynaminorg" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest?xsd=4" namespace="http://ws.abx/" />
+  <xs:complexType name="abxDynamicorgRuleList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="list" type="tns:abxDynamicorgRule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="abxDynamicorgRule">
+    <xs:sequence>
+      <xs:element name="ruleName" type="xs:string" />
+      <xs:element name="user" type="xs:string" />
+      <xs:element name="templateName" type="xs:string" />
+      <xs:element name="rootInstanceName" type="xs:string" />
+      <xs:element maxOccurs="unbounded" name="elements" type="tns:abxDynamicorgRuleElement" />
+      <xs:element name="permission" type="ns1:abxPermission" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="abxDynamicorgRuleElement">
+    <xs:sequence>
+      <xs:element name="ruleTypeName" type="xs:string" />
+      <xs:element name="Description" type="xs:string" />
+      <xs:element name="orderId" type="xs:int" />
+      <xs:element name="option" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="abxDynamicRuleResult">
+    <xs:sequence>
+      <xs:element name="result" type="xs:unsignedInt" />
+      <xs:element name="rules" type="tns:abxDynamicorgRuleList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="abxDynorgTypeResult">
+    <xs:sequence>
+      <xs:element name="result" type="xs:unsignedInt" />
+      <xs:element name="types" type="tns:abxDynamicorgTypeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="abxDynamicorgTypeList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="type" type="tns:abxDynorgRuleType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="abxDynorgRuleType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

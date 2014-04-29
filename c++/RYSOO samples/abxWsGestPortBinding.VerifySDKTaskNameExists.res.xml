@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:ns3="http://xml.netbeans.org/schema/abxDynaminorg"
+  xmlns:ns4="http://xml.netbeans.org/schema/abxCan"
+  xmlns:ns2="http://xml.netbeans.org/schema/abxProtocol"
+  xmlns:ns1="http://ws.abx/">
+ <SOAP-ENV:Body>
+  <ns1:VerifySDKTaskNameExistsResponse>
+   <return>
+    <result>0</result>
+    <listTask>
+     <tasks>
+      <id></id>
+      <name></name>
+      <description></description>
+      <instanceName></instanceName>
+      <fileType></fileType>
+      <status></status>
+      <templateFile></templateFile>
+      <watchFolder>
+       <watchFolderId></watchFolderId>
+       <taskId></taskId>
+       <serverType></serverType>
+       <configXML></configXML>
+       <!-- extensibility element(s) -->
+
+      </watchFolder>
+      <watchFolder>
+       <watchFolderId></watchFolderId>
+       <taskId></taskId>
+       <serverType></serverType>
+       <configXML></configXML>
+       <!-- extensibility element(s) -->
+
+      </watchFolder>
+      <fieldMappings>
+       <fieldMappingId></fieldMappingId>
+       <fieldName></fieldName>
+       <previewXML></previewXML>
+       <fieldMappingRules>
+        <fieldMappingRuleId></fieldMappingRuleId>
+        <ruleId></ruleId>
+        <ruleName></ruleName>
+        <parametersXML></parametersXML>
+        <!-- extensibility element(s) -->
+
+       </fieldMappingRules>
+       <fieldMappingRules>
+        <fieldMappingRuleId></fieldMappingRuleId>
+        <ruleId></ruleId>
+        <ruleName></ruleName>
+        <parametersXML></parametersXML>
+        <!-- extensibility element(s) -->
+
+       </fieldMappingRules>
+       <!-- extensibility element(s) -->
+
+      </fieldMappings>
+      <fieldMappings>
+       <fieldMappingId></fieldMappingId>
+       <fieldName></fieldName>
+       <previewXML></previewXML>
+       <fieldMappingRules>
+        <fieldMappingRuleId></fieldMappingRuleId>
+        <ruleId></ruleId>
+        <ruleName></ruleName>
+        <parametersXML></parametersXML>
+        <!-- extensibility element(s) -->
+
+       </fieldMappingRules>
+       <fieldMappingRules>
+        <fieldMappingRuleId></fieldMappingRuleId>
+        <ruleId></ruleId>
+        <ruleName></ruleName>
+        <parametersXML></parametersXML>
+        <!-- extensibility element(s) -->
+
+       </fieldMappingRules>
+       <!-- extensibility element(s) -->
+
+      </fieldMappings>
+      <excelPreviewSheets>
+       <columnCount>0</columnCount>
+       <rowCount>0</rowCount>
+       <columns>
+        <columnId>0</columnId>
+        <columnWidth>0</columnWidth>
+        <!-- extensibility element(s) -->
+
+       </columns>
+       <columns>
+        <columnId>0</columnId>
+        <columnWidth>0</columnWidth>
+        <!-- extensibility element(s) -->
+
+       </columns>
+       <rows>
+        <columnId>0</columnId>
+        <rowId>0</rowId>
+        <value></value>
+        <!-- extensibility element(s) -->
+
+       </rows>
+       <rows>
+        <columnId>0</columnId>
+        <rowId>0</rowId>
+        <value></value>
+        <!-- extensibility element(s) -->
+
+       </rows>
+       <!-- extensibility element(s) -->
+
+      </excelPreviewSheets>
+      <excelPreviewSheets>
+       <columnCount>0</columnCount>
+       <rowCount>0</rowCount>
+       <columns>
+        <columnId>0</columnId>
+        <columnWidth>0</columnWidth>
+        <!-- extensibility element(s) -->
+
+       </columns>
+       <columns>
+        <columnId>0</columnId>
+        <columnWidth>0</columnWidth>
+        <!-- extensibility element(s) -->
+
+       </columns>
+       <rows>
+        <columnId>0</columnId>
+        <rowId>0</rowId>
+        <value></value>
+        <!-- extensibility element(s) -->
+
+       </rows>
+       <rows>
+        <columnId>0</columnId>
+        <rowId>0</rowId>
+        <value></value>
+        <!-- extensibility element(s) -->
+
+       </rows>
+       <!-- extensibility element(s) -->
+
+      </excelPreviewSheets>
+      <PDFPreview>
+       <width>0</width>
+       <height>0</height>
+       <text></text>
+       <images>
+        <bitArray></bitArray>
+        <!-- extensibility element(s) -->
+
+       </images>
+       <images>
+        <bitArray></bitArray>
+        <!-- extensibility element(s) -->
+
+       </images>
+       <!-- extensibility element(s) -->
+
+      </PDFPreview>
+      <PDFPreview>
+       <width>0</width>
+       <height>0</height>
+       <text></text>
+       <images>
+        <bitArray></bitArray>
+        <!-- extensibility element(s) -->
+
+       </images>
+       <images>
+        <bitArray></bitArray>
+        <!-- extensibility element(s) -->
+
+       </images>
+       <!-- extensibility element(s) -->
+
+      </PDFPreview>
+      <TXTPreview></TXTPreview>
+      <TXTPreview></TXTPreview>
+      <validateData>
+       <detailedMessage></detailedMessage>
+       <fields>
+        <field></field>
+        <value></value>
+        <!-- extensibility element(s) -->
+
+       </fields>
+       <fields>
+        <field></field>
+        <value></value>
+        <!-- extensibility element(s) -->
+
+       </fields>
+       <filesAttach></filesAttach>
+       <filesAttach></filesAttach>
+       <!-- extensibility element(s) -->
+
+      </validateData>
+      <validateData>
+       <detailedMessage></detailedMessage>
+       <fields>
+        <field></field>
+        <value></value>
+        <!-- extensibility element(s) -->
+
+       </fields>
+       <fields>
+        <field></field>
+        <value></value>
+        <!-- extensibility element(s) -->
+
+       </fields>
+       <filesAttach></filesAttach>
+       <filesAttach></filesAttach>
+       <!-- extensibility element(s) -->
+
+      </validateData>
+      <!-- extensibility element(s) -->
+
+     </tasks>
+     <tasks>
+      <id></id>
+      <name></name>
+      <description></description>
+      <instanceName></instanceName>
+      <fileType></fileType>
+      <status></status>
+      <templateFile></templateFile>
+      <watchFolder>
+       <watchFolderId></watchFolderId>
+       <taskId></taskId>
+       <serverType></serverType>
+       <configXML></configXML>
+       <!-- extensibility element(s) -->
+
+      </watchFolder>
+      <watchFolder>
+       <watchFolderId></watchFolderId>
+       <taskId></taskId>
+       <serverType></serverType>
+       <configXML></configXML>
+       <!-- extensibility element(s) -->
+
+      </watchFolder>
+      <fieldMappings>
+       <fieldMappingId></fieldMappingId>
+       <fieldName></fieldName>
+       <previewXML></previewXML>
+       <fieldMappingRules>
+        <fieldMappingRuleId></fieldMappingRuleId>
+        <ruleId></ruleId>
+        <ruleName></ruleName>
+        <parametersXML></parametersXML>
+        <!-- extensibility element(s) -->
+
+       </fieldMappingRules>
+       <fieldMappingRules>
+        <fieldMappingRuleId></fieldMappingRuleId>
+        <ruleId></ruleId>
+        <ruleName></ruleName>
+        <parametersXML></parametersXML>
+        <!-- extensibility element(s) -->
+
+       </fieldMappingRules>
+       <!-- extensibility element(s) -->
+
+      </fieldMappings>
+      <fieldMappings>
+       <fieldMappingId></fieldMappingId>
+       <fieldName></fieldName>
+       <previewXML></previewXML>
+       <fieldMappingRules>
+        <fieldMappingRuleId></fieldMappingRuleId>
+        <ruleId></ruleId>
+        <ruleName></ruleName>
+        <parametersXML></parametersXML>
+        <!-- extensibility element(s) -->
+
+       </fieldMappingRules>
+       <fieldMappingRules>
+        <fieldMappingRuleId></fieldMappingRuleId>
+        <ruleId></ruleId>
+        <ruleName></ruleName>
+        <parametersXML></parametersXML>
+        <!-- extensibility element(s) -->
+
+       </fieldMappingRules>
+       <!-- extensibility element(s) -->
+
+      </fieldMappings>
+      <excelPreviewSheets>
+       <columnCount>0</columnCount>
+       <rowCount>0</rowCount>
+       <columns>
+        <columnId>0</columnId>
+        <columnWidth>0</columnWidth>
+        <!-- extensibility element(s) -->
+
+       </columns>
+       <columns>
+        <columnId>0</columnId>
+        <columnWidth>0</columnWidth>
+        <!-- extensibility element(s) -->
+
+       </columns>
+       <rows>
+        <columnId>0</columnId>
+        <rowId>0</rowId>
+        <value></value>
+        <!-- extensibility element(s) -->
+
+       </rows>
+       <rows>
+        <columnId>0</columnId>
+        <rowId>0</rowId>
+        <value></value>
+        <!-- extensibility element(s) -->
+
+       </rows>
+       <!-- extensibility element(s) -->
+
+      </excelPreviewSheets>
+      <excelPreviewSheets>
+       <columnCount>0</columnCount>
+       <rowCount>0</rowCount>
+       <columns>
+        <columnId>0</columnId>
+        <columnWidth>0</columnWidth>
+        <!-- extensibility element(s) -->
+
+       </columns>
+       <columns>
+        <columnId>0</columnId>
+        <columnWidth>0</columnWidth>
+        <!-- extensibility element(s) -->
+
+       </columns>
+       <rows>
+        <columnId>0</columnId>
+        <rowId>0</rowId>
+        <value></value>
+        <!-- extensibility element(s) -->
+
+       </rows>
+       <rows>
+        <columnId>0</columnId>
+        <rowId>0</rowId>
+        <value></value>
+        <!-- extensibility element(s) -->
+
+       </rows>
+       <!-- extensibility element(s) -->
+
+      </excelPreviewSheets>
+      <PDFPreview>
+       <width>0</width>
+       <height>0</height>
+       <text></text>
+       <images>
+        <bitArray></bitArray>
+        <!-- extensibility element(s) -->
+
+       </images>
+       <images>
+        <bitArray></bitArray>
+        <!-- extensibility element(s) -->
+
+       </images>
+       <!-- extensibility element(s) -->
+
+      </PDFPreview>
+      <PDFPreview>
+       <width>0</width>
+       <height>0</height>
+       <text></text>
+       <images>
+        <bitArray></bitArray>
+        <!-- extensibility element(s) -->
+
+       </images>
+       <images>
+        <bitArray></bitArray>
+        <!-- extensibility element(s) -->
+
+       </images>
+       <!-- extensibility element(s) -->
+
+      </PDFPreview>
+      <TXTPreview></TXTPreview>
+      <TXTPreview></TXTPreview>
+      <validateData>
+       <detailedMessage></detailedMessage>
+       <fields>
+        <field></field>
+        <value></value>
+        <!-- extensibility element(s) -->
+
+       </fields>
+       <fields>
+        <field></field>
+        <value></value>
+        <!-- extensibility element(s) -->
+
+       </fields>
+       <filesAttach></filesAttach>
+       <filesAttach></filesAttach>
+       <!-- extensibility element(s) -->
+
+      </validateData>
+      <validateData>
+       <detailedMessage></detailedMessage>
+       <fields>
+        <field></field>
+        <value></value>
+        <!-- extensibility element(s) -->
+
+       </fields>
+       <fields>
+        <field></field>
+        <value></value>
+        <!-- extensibility element(s) -->
+
+       </fields>
+       <filesAttach></filesAttach>
+       <filesAttach></filesAttach>
+       <!-- extensibility element(s) -->
+
+      </validateData>
+      <!-- extensibility element(s) -->
+
+     </tasks>
+     <!-- extensibility element(s) -->
+
+    </listTask>
+    <listRule>
+     <rules>
+      <id></id>
+      <name></name>
+      <name_description></name_description>
+      <description></description>
+      <parametersXML></parametersXML>
+      <!-- extensibility element(s) -->
+
+     </rules>
+     <rules>
+      <id></id>
+      <name></name>
+      <name_description></name_description>
+      <description></description>
+      <parametersXML></parametersXML>
+      <!-- extensibility element(s) -->
+
+     </rules>
+     <!-- extensibility element(s) -->
+
+    </listRule>
+    <listVariable>
+     <variables>
+      <key></key>
+      <value></value>
+      <!-- extensibility element(s) -->
+
+     </variables>
+     <variables>
+      <key></key>
+      <value></value>
+      <!-- extensibility element(s) -->
+
+     </variables>
+     <!-- extensibility element(s) -->
+
+    </listVariable>
+    <listWatchFolderDirectory>
+     <directories>
+      <directoryName></directoryName>
+      <!-- extensibility element(s) -->
+
+     </directories>
+     <directories>
+      <directoryName></directoryName>
+      <!-- extensibility element(s) -->
+
+     </directories>
+     <!-- extensibility element(s) -->
+
+    </listWatchFolderDirectory>
+    <!-- extensibility element(s) -->
+
+   </return>
+  </ns1:VerifySDKTaskNameExistsResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

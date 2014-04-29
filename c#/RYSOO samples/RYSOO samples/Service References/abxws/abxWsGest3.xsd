@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://xml.netbeans.org/schema/abxCan" elementFormDefault="qualified" targetNamespace="http://xml.netbeans.org/schema/abxCan" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AbxCan" type="tns:abxCan" />
+  <xs:complexType name="abxCan">
+    <xs:sequence>
+      <xs:element name="result" type="xs:unsignedInt" />
+      <xs:element name="can" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
