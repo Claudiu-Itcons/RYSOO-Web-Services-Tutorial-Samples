@@ -19,7 +19,6 @@
  * MA 02110-1301  USA
  */
 
-// release v0.1
 
 include './sample1.php';
 
