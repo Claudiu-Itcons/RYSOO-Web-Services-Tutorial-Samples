@@ -58,6 +58,7 @@ public class ObjectFactory {
     private final static QName _GetContSignResponse_QNAME = new QName("http://ws.abx/", "GetContSignResponse");
     private final static QName _FkGetCountAllRecord_QNAME = new QName("http://ws.abx/", "Fk_getCountAllRecord");
     private final static QName _GetCountFileListResponse_QNAME = new QName("http://ws.abx/", "GetCountFileListResponse");
+    private final static QName _GetUserListActiveDirectory_QNAME = new QName("http://ws.abx/", "GetUserListActiveDirectory");
     private final static QName _GetArchiBoxInDomainResponse_QNAME = new QName("http://ws.abx/", "GetArchiBoxInDomainResponse");
     private final static QName _GetProtocolByNameDesc_QNAME = new QName("http://ws.abx/", "GetProtocolByNameDesc");
     private final static QName _GetUserDetailByUserIdResponse_QNAME = new QName("http://ws.abx/", "GetUserDetailByUserIdResponse");
@@ -93,15 +94,18 @@ public class ObjectFactory {
     private final static QName _FkGetRemoteFieldListResponse_QNAME = new QName("http://ws.abx/", "Fk_getRemoteFieldListResponse");
     private final static QName _GetListMarker_QNAME = new QName("http://ws.abx/", "GetListMarker");
     private final static QName _QueryResponse_QNAME = new QName("http://ws.abx/", "QueryResponse");
+    private final static QName _GetSDKImagesFromPDFTemplate_QNAME = new QName("http://ws.abx/", "GetSDKImagesFromPDFTemplate");
     private final static QName _UploadEndFileContainerResponse_QNAME = new QName("http://ws.abx/", "UploadEndFileContainerResponse");
     private final static QName _GetDataTPFileListByUsernameResponse_QNAME = new QName("http://ws.abx/", "GetDataTPFileListByUsernameResponse");
     private final static QName _GetInstancePathname_QNAME = new QName("http://ws.abx/", "GetInstancePathname");
     private final static QName _GetInstancePathnameResponse_QNAME = new QName("http://ws.abx/", "GetInstancePathnameResponse");
+    private final static QName _ValidateSDKTask_QNAME = new QName("http://ws.abx/", "ValidateSDKTask");
     private final static QName _GetLanguagesResponse_QNAME = new QName("http://ws.abx/", "GetLanguagesResponse");
     private final static QName _RegenerateDynOrg_QNAME = new QName("http://ws.abx/", "RegenerateDynOrg");
     private final static QName _Login_QNAME = new QName("http://ws.abx/", "Login");
     private final static QName _GetFieldList_QNAME = new QName("http://ws.abx/", "GetFieldList");
     private final static QName _ComboGetAllResponse_QNAME = new QName("http://ws.abx/", "Combo_getAllResponse");
+    private final static QName _DeleteSDKTaskFieldMapping_QNAME = new QName("http://ws.abx/", "DeleteSDKTaskFieldMapping");
     private final static QName _PingResponse_QNAME = new QName("http://ws.abx/", "PingResponse");
     private final static QName _InsertProtocolResponse_QNAME = new QName("http://ws.abx/", "InsertProtocolResponse");
     private final static QName _LoginResponse_QNAME = new QName("http://ws.abx/", "LoginResponse");
@@ -125,6 +129,7 @@ public class ObjectFactory {
     private final static QName _DeleteClasseDocumentale_QNAME = new QName("http://ws.abx/", "DeleteClasseDocumentale");
     private final static QName _GetSDKRulesResponse_QNAME = new QName("http://ws.abx/", "GetSDKRulesResponse");
     private final static QName _GetDownloadDetailByDataResponse_QNAME = new QName("http://ws.abx/", "GetDownloadDetailByDataResponse");
+    private final static QName _GetSDKVariables_QNAME = new QName("http://ws.abx/", "GetSDKVariables");
     private final static QName _GetDownloadDetailByFilecode_QNAME = new QName("http://ws.abx/", "GetDownloadDetailByFilecode");
     private final static QName _CanCreateContainer_QNAME = new QName("http://ws.abx/", "canCreateContainer");
     private final static QName _GetAllFilter_QNAME = new QName("http://ws.abx/", "GetAllFilter");
@@ -148,12 +153,13 @@ public class ObjectFactory {
     private final static QName _CheckOutAttachContainerResponse_QNAME = new QName("http://ws.abx/", "CheckOut_attachContainerResponse");
     private final static QName _CanDeleteLinkFromContainerResponse_QNAME = new QName("http://ws.abx/", "CanDeleteLinkFromContainerResponse");
     private final static QName _GetListMarkerResponse_QNAME = new QName("http://ws.abx/", "GetListMarkerResponse");
+    private final static QName _GetSDKTaskExcelPreview_QNAME = new QName("http://ws.abx/", "GetSDKTaskExcelPreview");
     private final static QName _CanDeleteRaccoglitoreResponse_QNAME = new QName("http://ws.abx/", "canDeleteRaccoglitoreResponse");
     private final static QName _GetDownloadDetailByCont_QNAME = new QName("http://ws.abx/", "GetDownloadDetailByCont");
     private final static QName _ModifyData_QNAME = new QName("http://ws.abx/", "ModifyData");
     private final static QName _SetTmpWFUploadPath_QNAME = new QName("http://ws.abx/", "SetTmpWFUploadPath");
-    private final static QName _GetFieldListResponse_QNAME = new QName("http://ws.abx/", "GetFieldListResponse");
     private final static QName _FkGetParsAllFk_QNAME = new QName("http://ws.abx/", "Fk_getParsAllFk");
+    private final static QName _GetFieldListResponse_QNAME = new QName("http://ws.abx/", "GetFieldListResponse");
     private final static QName _GetLinksToDocument_QNAME = new QName("http://ws.abx/", "GetLinksToDocument");
     private final static QName _CanDeleteDynorgResponse_QNAME = new QName("http://ws.abx/", "canDeleteDynorgResponse");
     private final static QName _GetTreeResponse_QNAME = new QName("http://ws.abx/", "GetTreeResponse");
@@ -175,9 +181,11 @@ public class ObjectFactory {
     private final static QName _GetDataWFFileDetailResponse_QNAME = new QName("http://ws.abx/", "GetDataWFFileDetailResponse");
     private final static QName _CopyFile_QNAME = new QName("http://ws.abx/", "CopyFile");
     private final static QName _CopyDataResponse_QNAME = new QName("http://ws.abx/", "CopyDataResponse");
+    private final static QName _ChangeSDKTaskStatusResponse_QNAME = new QName("http://ws.abx/", "ChangeSDKTaskStatusResponse");
     private final static QName _FkGetCountAllRecordByDescResponse_QNAME = new QName("http://ws.abx/", "Fk_getCountAllRecordByDescResponse");
     private final static QName _SetTmpWFUploadPathResponse_QNAME = new QName("http://ws.abx/", "SetTmpWFUploadPathResponse");
     private final static QName _CheckInAttachContainerResponse_QNAME = new QName("http://ws.abx/", "CheckIn_attachContainerResponse");
+    private final static QName _VerifySDKTaskNameExistsResponse_QNAME = new QName("http://ws.abx/", "VerifySDKTaskNameExistsResponse");
     private final static QName _DelDefaultProcess_QNAME = new QName("http://ws.abx/", "DelDefaultProcess");
     private final static QName _DeleteTranslationResponse_QNAME = new QName("http://ws.abx/", "DeleteTranslationResponse");
     private final static QName _ComboModifyResponse_QNAME = new QName("http://ws.abx/", "Combo_modifyResponse");
@@ -208,8 +216,9 @@ public class ObjectFactory {
     private final static QName _GetDataUSFileListByUsername_QNAME = new QName("http://ws.abx/", "GetDataUSFileListByUsername");
     private final static QName _CanModifyField_QNAME = new QName("http://ws.abx/", "canModifyField");
     private final static QName _DownloadFilePreviewResponse_QNAME = new QName("http://ws.abx/", "DownloadFilePreviewResponse");
-    private final static QName _GetFieldPropertiesResponse_QNAME = new QName("http://ws.abx/", "GetFieldPropertiesResponse");
     private final static QName _GetDataCountWithPermissionResponse_QNAME = new QName("http://ws.abx/", "GetDataCountWithPermissionResponse");
+    private final static QName _GetFieldPropertiesResponse_QNAME = new QName("http://ws.abx/", "GetFieldPropertiesResponse");
+    private final static QName _ModifyUserPasswordResponse_QNAME = new QName("http://ws.abx/", "ModifyUserPasswordResponse");
     private final static QName _DownloadFileWAByFileUniqueCode_QNAME = new QName("http://ws.abx/", "DownloadFileWAByFileUniqueCode");
     private final static QName _InsertGroup_QNAME = new QName("http://ws.abx/", "InsertGroup");
     private final static QName _CanDeleteField_QNAME = new QName("http://ws.abx/", "canDeleteField");
@@ -250,6 +259,7 @@ public class ObjectFactory {
     private final static QName _SetTmpUSUploadPath_QNAME = new QName("http://ws.abx/", "SetTmpUSUploadPath");
     private final static QName _GetUserList_QNAME = new QName("http://ws.abx/", "GetUserList");
     private final static QName _DeleteUSFileByCode_QNAME = new QName("http://ws.abx/", "DeleteUSFileByCode");
+    private final static QName _GetWsdlVersionResponse_QNAME = new QName("http://ws.abx/", "GetWsdlVersionResponse");
     private final static QName _GetDataTPFileListByContainerResponse_QNAME = new QName("http://ws.abx/", "GetDataTPFileListByContainerResponse");
     private final static QName _ModifyFilterResponse_QNAME = new QName("http://ws.abx/", "ModifyFilterResponse");
     private final static QName _ComboRemoveAllResponse_QNAME = new QName("http://ws.abx/", "Combo_removeAllResponse");
@@ -258,6 +268,7 @@ public class ObjectFactory {
     private final static QName _DeleteTranslationByCode_QNAME = new QName("http://ws.abx/", "DeleteTranslationByCode");
     private final static QName _GetTranslationBySourceSuffixResponse_QNAME = new QName("http://ws.abx/", "GetTranslationBySourceSuffixResponse");
     private final static QName _GetProtocolByNameResponse_QNAME = new QName("http://ws.abx/", "GetProtocolByNameResponse");
+    private final static QName _ModifySDKTaskWatchFolderResponse_QNAME = new QName("http://ws.abx/", "ModifySDKTaskWatchFolderResponse");
     private final static QName _DeleteFileContainerVersionResponse_QNAME = new QName("http://ws.abx/", "DeleteFileContainerVersionResponse");
     private final static QName _InsertProtocol_QNAME = new QName("http://ws.abx/", "InsertProtocol");
     private final static QName _DownloadFilePreview_QNAME = new QName("http://ws.abx/", "DownloadFilePreview");
@@ -284,6 +295,7 @@ public class ObjectFactory {
     private final static QName _GetSDKTaskWatchFolderResponse_QNAME = new QName("http://ws.abx/", "GetSDKTaskWatchFolderResponse");
     private final static QName _GetDefaultObjActList_QNAME = new QName("http://ws.abx/", "GetDefaultObjActList");
     private final static QName _GetAdjacentArchiBox_QNAME = new QName("http://ws.abx/", "GetAdjacentArchiBox");
+    private final static QName _ExtractSDKPDFTemplateTextByArea_QNAME = new QName("http://ws.abx/", "ExtractSDKPDFTemplateTextByArea");
     private final static QName _ComboInsert_QNAME = new QName("http://ws.abx/", "Combo_insert");
     private final static QName _CanCreateTemplate_QNAME = new QName("http://ws.abx/", "canCreateTemplate");
     private final static QName _DownloadGetNext_QNAME = new QName("http://ws.abx/", "DownloadGetNext");
@@ -299,6 +311,7 @@ public class ObjectFactory {
     private final static QName _GetObject_QNAME = new QName("http://ws.abx/", "GetObject");
     private final static QName _CanEditProtocolResponse_QNAME = new QName("http://ws.abx/", "CanEditProtocolResponse");
     private final static QName _DeleteData_QNAME = new QName("http://ws.abx/", "DeleteData");
+    private final static QName _CreateSDKTaskWatchFolderResponse_QNAME = new QName("http://ws.abx/", "CreateSDKTaskWatchFolderResponse");
     private final static QName _AddUser_QNAME = new QName("http://ws.abx/", "AddUser");
     private final static QName _CheckInAttachContainer_QNAME = new QName("http://ws.abx/", "CheckIn_attachContainer");
     private final static QName _CheckInAttachResponse_QNAME = new QName("http://ws.abx/", "CheckIn_attachResponse");
@@ -310,21 +323,24 @@ public class ObjectFactory {
     private final static QName _GetGroupListResponse_QNAME = new QName("http://ws.abx/", "GetGroupListResponse");
     private final static QName _GetUserSettings_QNAME = new QName("http://ws.abx/", "GetUserSettings");
     private final static QName _InsertFileWAResponse_QNAME = new QName("http://ws.abx/", "InsertFileWAResponse");
-    private final static QName _DeleteFileVersion_QNAME = new QName("http://ws.abx/", "DeleteFileVersion");
+    private final static QName _StartSDKTask_QNAME = new QName("http://ws.abx/", "StartSDKTask");
     private final static QName _DeleteContainer_QNAME = new QName("http://ws.abx/", "DeleteContainer");
+    private final static QName _DeleteFileVersion_QNAME = new QName("http://ws.abx/", "DeleteFileVersion");
     private final static QName _CanDeleteDataResponse_QNAME = new QName("http://ws.abx/", "CanDeleteDataResponse");
-    private final static QName _ModifyTemplateResponse_QNAME = new QName("http://ws.abx/", "ModifyTemplateResponse");
     private final static QName _GetDataWFFileListResponse_QNAME = new QName("http://ws.abx/", "GetDataWFFileListResponse");
+    private final static QName _ModifyTemplateResponse_QNAME = new QName("http://ws.abx/", "ModifyTemplateResponse");
     private final static QName _DelUserSettings_QNAME = new QName("http://ws.abx/", "DelUserSettings");
     private final static QName _DownloadUSGetNextResponse_QNAME = new QName("http://ws.abx/", "DownloadUSGetNextResponse");
     private final static QName _CreateTemplate_QNAME = new QName("http://ws.abx/", "CreateTemplate");
     private final static QName _InsertUserResponse_QNAME = new QName("http://ws.abx/", "InsertUserResponse");
     private final static QName _CreateField_QNAME = new QName("http://ws.abx/", "CreateField");
-    private final static QName _DownloadFileContainerUnc_QNAME = new QName("http://ws.abx/", "DownloadFileContainerUnc");
     private final static QName _DownloadFile_QNAME = new QName("http://ws.abx/", "DownloadFile");
+    private final static QName _DownloadFileContainerUnc_QNAME = new QName("http://ws.abx/", "DownloadFileContainerUnc");
     private final static QName _GetDataTPFileListByDocument_QNAME = new QName("http://ws.abx/", "GetDataTPFileListByDocument");
     private final static QName _DownloadFileUnc_QNAME = new QName("http://ws.abx/", "DownloadFileUnc");
     private final static QName _GetDataTPFileListByUsername_QNAME = new QName("http://ws.abx/", "GetDataTPFileListByUsername");
+    private final static QName _VerifySDKTaskNameExists_QNAME = new QName("http://ws.abx/", "VerifySDKTaskNameExists");
+    private final static QName _GetSchedulerTaskByTaskTypeIdResponse_QNAME = new QName("http://ws.abx/", "GetSchedulerTaskByTaskTypeIdResponse");
     private final static QName _GetDefaultProcessResponse_QNAME = new QName("http://ws.abx/", "GetDefaultProcessResponse");
     private final static QName _ModifyArchSostRule_QNAME = new QName("http://ws.abx/", "ModifyArchSostRule");
     private final static QName _UploadUSEndFileWithUser_QNAME = new QName("http://ws.abx/", "UploadUSEndFileWithUser");
@@ -333,6 +349,7 @@ public class ObjectFactory {
     private final static QName _RemoveUserByGroupResponse_QNAME = new QName("http://ws.abx/", "RemoveUserByGroupResponse");
     private final static QName _CanInsertProtocol_QNAME = new QName("http://ws.abx/", "CanInsertProtocol");
     private final static QName _UploadEndFileWAResponse_QNAME = new QName("http://ws.abx/", "UploadEndFileWAResponse");
+    private final static QName _ModifySDKTaskWatchFolder_QNAME = new QName("http://ws.abx/", "ModifySDKTaskWatchFolder");
     private final static QName _GetProtocolByDesc_QNAME = new QName("http://ws.abx/", "GetProtocolByDesc");
     private final static QName _DeleteLink_QNAME = new QName("http://ws.abx/", "DeleteLink");
     private final static QName _UploadUSEndFileResponse_QNAME = new QName("http://ws.abx/", "UploadUSEndFileResponse");
@@ -365,13 +382,14 @@ public class ObjectFactory {
     private final static QName _CopyFileResponse_QNAME = new QName("http://ws.abx/", "CopyFileResponse");
     private final static QName _GetDataUSFileList_QNAME = new QName("http://ws.abx/", "GetDataUSFileList");
     private final static QName _ComboIsCombo_QNAME = new QName("http://ws.abx/", "Combo_isCombo");
-    private final static QName _ModifyRaccoglitoreResponse_QNAME = new QName("http://ws.abx/", "ModifyRaccoglitoreResponse");
     private final static QName _CanShowFile_QNAME = new QName("http://ws.abx/", "CanShowFile");
+    private final static QName _GetSDKImagesFromPDFTemplateResponse_QNAME = new QName("http://ws.abx/", "GetSDKImagesFromPDFTemplateResponse");
+    private final static QName _ModifyRaccoglitoreResponse_QNAME = new QName("http://ws.abx/", "ModifyRaccoglitoreResponse");
     private final static QName _DeleteSchedulerTask_QNAME = new QName("http://ws.abx/", "DeleteSchedulerTask");
     private final static QName _GetFileAvailable_QNAME = new QName("http://ws.abx/", "GetFileAvailable");
     private final static QName _ValidateSessionResponse_QNAME = new QName("http://ws.abx/", "ValidateSessionResponse");
-    private final static QName _DeleteUserByUsername_QNAME = new QName("http://ws.abx/", "DeleteUserByUsername");
     private final static QName _CreateContainerResponse_QNAME = new QName("http://ws.abx/", "CreateContainerResponse");
+    private final static QName _DeleteUserByUsername_QNAME = new QName("http://ws.abx/", "DeleteUserByUsername");
     private final static QName _GetSchedulerTasksToRunResponse_QNAME = new QName("http://ws.abx/", "GetSchedulerTasksToRunResponse");
     private final static QName _DeleteDynorg_QNAME = new QName("http://ws.abx/", "DeleteDynorg");
     private final static QName _GetNewProtocolNumber_QNAME = new QName("http://ws.abx/", "GetNewProtocolNumber");
@@ -385,6 +403,7 @@ public class ObjectFactory {
     private final static QName _FkGetLocalFieldList_QNAME = new QName("http://ws.abx/", "Fk_getLocalFieldList");
     private final static QName _FkGetRemoteViewListResponse_QNAME = new QName("http://ws.abx/", "Fk_getRemoteViewListResponse");
     private final static QName _CanModifyDynorg_QNAME = new QName("http://ws.abx/", "canModifyDynorg");
+    private final static QName _ModifyUserPassword_QNAME = new QName("http://ws.abx/", "ModifyUserPassword");
     private final static QName _DeleteTranslation_QNAME = new QName("http://ws.abx/", "DeleteTranslation");
     private final static QName _ComboRemoveAll_QNAME = new QName("http://ws.abx/", "Combo_removeAll");
     private final static QName _ComboInsertResponse_QNAME = new QName("http://ws.abx/", "Combo_insertResponse");
@@ -403,6 +422,7 @@ public class ObjectFactory {
     private final static QName _InsertLinkDocumentToDocumentResponse_QNAME = new QName("http://ws.abx/", "InsertLinkDocumentToDocumentResponse");
     private final static QName _FkCreate_QNAME = new QName("http://ws.abx/", "Fk_create");
     private final static QName _FkGetColumnsName_QNAME = new QName("http://ws.abx/", "Fk_getColumnsName");
+    private final static QName _ValidateSDKTaskResponse_QNAME = new QName("http://ws.abx/", "ValidateSDKTaskResponse");
     private final static QName _DeleteField_QNAME = new QName("http://ws.abx/", "DeleteField");
     private final static QName _GetExpressionValueResponse_QNAME = new QName("http://ws.abx/", "GetExpressionValueResponse");
     private final static QName _GetInstanceIdResponse_QNAME = new QName("http://ws.abx/", "GetInstanceIdResponse");
@@ -416,6 +436,7 @@ public class ObjectFactory {
     private final static QName _InsertTPFileResponse_QNAME = new QName("http://ws.abx/", "InsertTPFileResponse");
     private final static QName _GetExpression_QNAME = new QName("http://ws.abx/", "GetExpression");
     private final static QName _GetDownloadDetailByContIdResponse_QNAME = new QName("http://ws.abx/", "GetDownloadDetailByContIdResponse");
+    private final static QName _CreateSDKTaskFieldMapping_QNAME = new QName("http://ws.abx/", "CreateSDKTaskFieldMapping");
     private final static QName _UploadEndFileResponse_QNAME = new QName("http://ws.abx/", "UploadEndFileResponse");
     private final static QName _GetAllFilterResponse_QNAME = new QName("http://ws.abx/", "GetAllFilterResponse");
     private final static QName _CanDeleteRaccoglitore_QNAME = new QName("http://ws.abx/", "canDeleteRaccoglitore");
@@ -426,6 +447,7 @@ public class ObjectFactory {
     private final static QName _DeleteTemplateResponse_QNAME = new QName("http://ws.abx/", "DeleteTemplateResponse");
     private final static QName _GetArchiBoxInfo_QNAME = new QName("http://ws.abx/", "GetArchiBoxInfo");
     private final static QName _FkGetCountAllRecordByIndexDesc_QNAME = new QName("http://ws.abx/", "Fk_getCountAllRecordByIndexDesc");
+    private final static QName _CreateSDKTaskWatchFolder_QNAME = new QName("http://ws.abx/", "CreateSDKTaskWatchFolder");
     private final static QName _DeleteTPFileByCode_QNAME = new QName("http://ws.abx/", "DeleteTPFileByCode");
     private final static QName _ModifyField_QNAME = new QName("http://ws.abx/", "ModifyField");
     private final static QName _ModifyUser_QNAME = new QName("http://ws.abx/", "ModifyUser");
@@ -453,6 +475,7 @@ public class ObjectFactory {
     private final static QName _FkDBTestConnection_QNAME = new QName("http://ws.abx/", "Fk_DB_testConnection");
     private final static QName _ModifyTemplate_QNAME = new QName("http://ws.abx/", "ModifyTemplate");
     private final static QName _CanInsertFileContainer_QNAME = new QName("http://ws.abx/", "CanInsertFileContainer");
+    private final static QName _GetSDKTextFromTemplate_QNAME = new QName("http://ws.abx/", "GetSDKTextFromTemplate");
     private final static QName _DestroyContainerResponse_QNAME = new QName("http://ws.abx/", "DestroyContainerResponse");
     private final static QName _CreateDynorg_QNAME = new QName("http://ws.abx/", "CreateDynorg");
     private final static QName _SetFileAvailableResponse_QNAME = new QName("http://ws.abx/", "SetFileAvailableResponse");
@@ -476,16 +499,19 @@ public class ObjectFactory {
     private final static QName _CanAddNewYearResponse_QNAME = new QName("http://ws.abx/", "CanAddNewYearResponse");
     private final static QName _CanCreateRaccoglitore_QNAME = new QName("http://ws.abx/", "canCreateRaccoglitore");
     private final static QName _CanInsertLinkContainerToContainer_QNAME = new QName("http://ws.abx/", "CanInsertLinkContainerToContainer");
-    private final static QName _DownloadUSGetChunkResponse_QNAME = new QName("http://ws.abx/", "DownloadUSGetChunkResponse");
+    private final static QName _DeleteSDKTaskResponse_QNAME = new QName("http://ws.abx/", "DeleteSDKTaskResponse");
     private final static QName _CreateRaccoglitore_QNAME = new QName("http://ws.abx/", "CreateRaccoglitore");
-    private final static QName _ExistUserByUsernameResponse_QNAME = new QName("http://ws.abx/", "ExistUserByUsernameResponse");
+    private final static QName _DownloadUSGetChunkResponse_QNAME = new QName("http://ws.abx/", "DownloadUSGetChunkResponse");
     private final static QName _CanCreateTemplateResponse_QNAME = new QName("http://ws.abx/", "canCreateTemplateResponse");
+    private final static QName _ExistUserByUsernameResponse_QNAME = new QName("http://ws.abx/", "ExistUserByUsernameResponse");
+    private final static QName _StoreSDKVariableResponse_QNAME = new QName("http://ws.abx/", "StoreSDKVariableResponse");
     private final static QName _CanModifyLinkContainerToContainer_QNAME = new QName("http://ws.abx/", "CanModifyLinkContainerToContainer");
+    private final static QName _GetSDKWatchFolderDirectories_QNAME = new QName("http://ws.abx/", "GetSDKWatchFolderDirectories");
     private final static QName _GetQueryParam_QNAME = new QName("http://ws.abx/", "GetQueryParam");
     private final static QName _GetArchSostRules_QNAME = new QName("http://ws.abx/", "GetArchSostRules");
     private final static QName _FkGetAllRecordByIndex_QNAME = new QName("http://ws.abx/", "Fk_getAllRecordByIndex");
-    private final static QName _DelSignResponse_QNAME = new QName("http://ws.abx/", "DelSignResponse");
     private final static QName _InsertUserInGroup_QNAME = new QName("http://ws.abx/", "InsertUserInGroup");
+    private final static QName _DelSignResponse_QNAME = new QName("http://ws.abx/", "DelSignResponse");
     private final static QName _InsertLinkContainerToContainerResponse_QNAME = new QName("http://ws.abx/", "InsertLinkContainerToContainerResponse");
     private final static QName _UploadEndFileContainer_QNAME = new QName("http://ws.abx/", "UploadEndFileContainer");
     private final static QName _GetArchiBoxInDomain_QNAME = new QName("http://ws.abx/", "GetArchiBoxInDomain");
@@ -496,6 +522,7 @@ public class ObjectFactory {
     private final static QName _DeleteFileContainerResponse_QNAME = new QName("http://ws.abx/", "DeleteFileContainerResponse");
     private final static QName _DelSign_QNAME = new QName("http://ws.abx/", "DelSign");
     private final static QName _GetDataByIdForSecurity_QNAME = new QName("http://ws.abx/", "GetDataByIdForSecurity");
+    private final static QName _GetSchedulerTaskByTaskTypeId_QNAME = new QName("http://ws.abx/", "GetSchedulerTaskByTaskTypeId");
     private final static QName _DeleteDynorgResponse_QNAME = new QName("http://ws.abx/", "DeleteDynorgResponse");
     private final static QName _GetCountLinksToDocumentResponse_QNAME = new QName("http://ws.abx/", "GetCountLinksToDocumentResponse");
     private final static QName _GetTranslationByMessageId_QNAME = new QName("http://ws.abx/", "GetTranslationByMessageId");
@@ -517,9 +544,11 @@ public class ObjectFactory {
     private final static QName _DestroyRaccoglitoreResponse_QNAME = new QName("http://ws.abx/", "DestroyRaccoglitoreResponse");
     private final static QName _CanInsertProtocolResponse_QNAME = new QName("http://ws.abx/", "CanInsertProtocolResponse");
     private final static QName _GetDataCountWithPermission_QNAME = new QName("http://ws.abx/", "GetDataCountWithPermission");
+    private final static QName _GetSDKTaskExcelPreviewResponse_QNAME = new QName("http://ws.abx/", "GetSDKTaskExcelPreviewResponse");
     private final static QName _GetDefaultObjActListResponse_QNAME = new QName("http://ws.abx/", "GetDefaultObjActListResponse");
     private final static QName _TestScritturaLettura_QNAME = new QName("http://ws.abx/", "TestScritturaLettura");
     private final static QName _DownloadFileResponse_QNAME = new QName("http://ws.abx/", "DownloadFileResponse");
+    private final static QName _UploadPreviewFileResponse_QNAME = new QName("http://ws.abx/", "UploadPreviewFileResponse");
     private final static QName _InsertLinkContainerToDocumentResponse_QNAME = new QName("http://ws.abx/", "InsertLinkContainerToDocumentResponse");
     private final static QName _CanDeleteLinkFromContainer_QNAME = new QName("http://ws.abx/", "CanDeleteLinkFromContainer");
     private final static QName _DeleteFile_QNAME = new QName("http://ws.abx/", "DeleteFile");
@@ -548,10 +577,10 @@ public class ObjectFactory {
     private final static QName _CanModifyFileResponse_QNAME = new QName("http://ws.abx/", "CanModifyFileResponse");
     private final static QName _GetData_QNAME = new QName("http://ws.abx/", "GetData");
     private final static QName _FkDBDelete_QNAME = new QName("http://ws.abx/", "Fk_DB_delete");
-    private final static QName _GetFileListByCodeResponse_QNAME = new QName("http://ws.abx/", "GetFileListByCodeResponse");
     private final static QName _GetArchSostRulesResponse_QNAME = new QName("http://ws.abx/", "GetArchSostRulesResponse");
     private final static QName _DownloadFileWAByFileUniqueCodeResponse_QNAME = new QName("http://ws.abx/", "DownloadFileWAByFileUniqueCodeResponse");
     private final static QName _DeleteRaccoglitoreResponse_QNAME = new QName("http://ws.abx/", "DeleteRaccoglitoreResponse");
+    private final static QName _GetFileListByCodeResponse_QNAME = new QName("http://ws.abx/", "GetFileListByCodeResponse");
     private final static QName _GetUploadDetailByDataId_QNAME = new QName("http://ws.abx/", "GetUploadDetailByDataId");
     private final static QName _GetDataTPFileDetailResponse_QNAME = new QName("http://ws.abx/", "GetDataTPFileDetailResponse");
     private final static QName _DeleteDataWA_QNAME = new QName("http://ws.abx/", "DeleteDataWA");
@@ -559,6 +588,7 @@ public class ObjectFactory {
     private final static QName _GetUserDetailByUsernameResponse_QNAME = new QName("http://ws.abx/", "GetUserDetailByUsernameResponse");
     private final static QName _GetDataById_QNAME = new QName("http://ws.abx/", "GetDataById");
     private final static QName _ComboGetAll_QNAME = new QName("http://ws.abx/", "Combo_getAll");
+    private final static QName _DeleteSDKTaskFieldMappingResponse_QNAME = new QName("http://ws.abx/", "DeleteSDKTaskFieldMappingResponse");
     private final static QName _GetLinksToDocumentFilteredResponse_QNAME = new QName("http://ws.abx/", "GetLinksToDocumentFilteredResponse");
     private final static QName _DownloadGetChunk_QNAME = new QName("http://ws.abx/", "DownloadGetChunk");
     private final static QName _CheckInDocumentResponse_QNAME = new QName("http://ws.abx/", "CheckIn_documentResponse");
@@ -573,12 +603,12 @@ public class ObjectFactory {
     private final static QName _ShowProtocolResponse_QNAME = new QName("http://ws.abx/", "ShowProtocolResponse");
     private final static QName _GetDataFileList_QNAME = new QName("http://ws.abx/", "GetDataFileList");
     private final static QName _DownloadFileByFileUniqueCode_QNAME = new QName("http://ws.abx/", "DownloadFileByFileUniqueCode");
-    private final static QName _GetUsersListByGroupResponse_QNAME = new QName("http://ws.abx/", "GetUsersListByGroupResponse");
-    private final static QName _GetRootId_QNAME = new QName("http://ws.abx/", "GetRootId");
     private final static QName _CanInsertFileContainerResponse_QNAME = new QName("http://ws.abx/", "CanInsertFileContainerResponse");
+    private final static QName _GetRootId_QNAME = new QName("http://ws.abx/", "GetRootId");
+    private final static QName _GetUsersListByGroupResponse_QNAME = new QName("http://ws.abx/", "GetUsersListByGroupResponse");
     private final static QName _InsertGroupResponse_QNAME = new QName("http://ws.abx/", "InsertGroupResponse");
-    private final static QName _GetProtocolByDescResponse_QNAME = new QName("http://ws.abx/", "GetProtocolByDescResponse");
     private final static QName _DeleteFieldResponse_QNAME = new QName("http://ws.abx/", "DeleteFieldResponse");
+    private final static QName _GetProtocolByDescResponse_QNAME = new QName("http://ws.abx/", "GetProtocolByDescResponse");
     private final static QName _GetDownloadDetailByFilecodeResponse_QNAME = new QName("http://ws.abx/", "GetDownloadDetailByFilecodeResponse");
     private final static QName _UploadUSEndFileWithUserResponse_QNAME = new QName("http://ws.abx/", "UploadUSEndFileWithUserResponse");
     private final static QName _CanEditProtocol_QNAME = new QName("http://ws.abx/", "CanEditProtocol");
@@ -591,6 +621,7 @@ public class ObjectFactory {
     private final static QName _SetTmpTPDownloadPath_QNAME = new QName("http://ws.abx/", "SetTmpTPDownloadPath");
     private final static QName _AddUserSettingsResponse_QNAME = new QName("http://ws.abx/", "AddUserSettingsResponse");
     private final static QName _DeleteUSFileById_QNAME = new QName("http://ws.abx/", "DeleteUSFileById");
+    private final static QName _GetWsdlVersion_QNAME = new QName("http://ws.abx/", "GetWsdlVersion");
     private final static QName _DownloadGetChunkWA_QNAME = new QName("http://ws.abx/", "DownloadGetChunkWA");
     private final static QName _AddFileToSyncByArcCue_QNAME = new QName("http://ws.abx/", "AddFileToSyncByArcCue");
     private final static QName _CanModifyRaccoglitoreResponse_QNAME = new QName("http://ws.abx/", "canModifyRaccoglitoreResponse");
@@ -601,6 +632,7 @@ public class ObjectFactory {
     private final static QName _DelExpressionResponse_QNAME = new QName("http://ws.abx/", "DelExpressionResponse");
     private final static QName _FkDBModifyResponse_QNAME = new QName("http://ws.abx/", "Fk_DB_modifyResponse");
     private final static QName _FkGetRemoteDatabaseList_QNAME = new QName("http://ws.abx/", "Fk_getRemoteDatabaseList");
+    private final static QName _ExtractSDKPDFTemplateTextByAreaResponse_QNAME = new QName("http://ws.abx/", "ExtractSDKPDFTemplateTextByAreaResponse");
     private final static QName _UploadTPEndFileResponse_QNAME = new QName("http://ws.abx/", "UploadTPEndFileResponse");
     private final static QName _GetGroupList_QNAME = new QName("http://ws.abx/", "GetGroupList");
     private final static QName _GetListDataWAResponse_QNAME = new QName("http://ws.abx/", "GetListDataWAResponse");
@@ -612,6 +644,7 @@ public class ObjectFactory {
     private final static QName _InsertArchSostRuleResponse_QNAME = new QName("http://ws.abx/", "InsertArchSostRuleResponse");
     private final static QName _CanModifyData_QNAME = new QName("http://ws.abx/", "CanModifyData");
     private final static QName _GetDataFileListResponse_QNAME = new QName("http://ws.abx/", "GetDataFileListResponse");
+    private final static QName _DeleteSDKTask_QNAME = new QName("http://ws.abx/", "DeleteSDKTask");
     private final static QName _InsertArchSostRule_QNAME = new QName("http://ws.abx/", "InsertArchSostRule");
     private final static QName _CanDeleteFileContainer_QNAME = new QName("http://ws.abx/", "CanDeleteFileContainer");
     private final static QName _GetListDataWA_QNAME = new QName("http://ws.abx/", "GetListDataWA");
@@ -619,8 +652,8 @@ public class ObjectFactory {
     private final static QName _QueryHeader_QNAME = new QName("http://ws.abx/", "QueryHeader");
     private final static QName _GetDataLimitResponse_QNAME = new QName("http://ws.abx/", "GetDataLimitResponse");
     private final static QName _InsertClasseDocumentale_QNAME = new QName("http://ws.abx/", "InsertClasseDocumentale");
-    private final static QName _GetFieldsPropertiesFromTemplate_QNAME = new QName("http://ws.abx/", "GetFieldsPropertiesFromTemplate");
     private final static QName _CheckOutAttach_QNAME = new QName("http://ws.abx/", "CheckOut_attach");
+    private final static QName _GetFieldsPropertiesFromTemplate_QNAME = new QName("http://ws.abx/", "GetFieldsPropertiesFromTemplate");
     private final static QName _DeleteArchSostRule_QNAME = new QName("http://ws.abx/", "DeleteArchSostRule");
     private final static QName _InsertDataResponse_QNAME = new QName("http://ws.abx/", "InsertDataResponse");
     private final static QName _InsertTranslationCode_QNAME = new QName("http://ws.abx/", "InsertTranslationCode");
@@ -628,9 +661,12 @@ public class ObjectFactory {
     private final static QName _GetArchiBoxInDomainByMatricola_QNAME = new QName("http://ws.abx/", "GetArchiBoxInDomainByMatricola");
     private final static QName _ModifySDKTask_QNAME = new QName("http://ws.abx/", "ModifySDKTask");
     private final static QName _CreateDynorgResponse_QNAME = new QName("http://ws.abx/", "CreateDynorgResponse");
+    private final static QName _GetSDKVariablesResponse_QNAME = new QName("http://ws.abx/", "GetSDKVariablesResponse");
     private final static QName _SetTmpWFDownloadPath_QNAME = new QName("http://ws.abx/", "SetTmpWFDownloadPath");
     private final static QName _ShowProtocol_QNAME = new QName("http://ws.abx/", "ShowProtocol");
     private final static QName _ModifyUserResponse_QNAME = new QName("http://ws.abx/", "ModifyUserResponse");
+    private final static QName _StoreSDKVariable_QNAME = new QName("http://ws.abx/", "StoreSDKVariable");
+    private final static QName _GetSDKWatchFolderDirectoriesResponse_QNAME = new QName("http://ws.abx/", "GetSDKWatchFolderDirectoriesResponse");
     private final static QName _CheckOutAttachResponse_QNAME = new QName("http://ws.abx/", "CheckOut_attachResponse");
     private final static QName _CanModifyTemplateResponse_QNAME = new QName("http://ws.abx/", "canModifyTemplateResponse");
     private final static QName _InsertFile_QNAME = new QName("http://ws.abx/", "InsertFile");
@@ -641,10 +677,11 @@ public class ObjectFactory {
     private final static QName _FkGetAllRecord_QNAME = new QName("http://ws.abx/", "Fk_getAllRecord");
     private final static QName _CanModifyFile_QNAME = new QName("http://ws.abx/", "CanModifyFile");
     private final static QName _FkGetAllRecordByDescResponse_QNAME = new QName("http://ws.abx/", "Fk_getAllRecordByDescResponse");
-    private final static QName _GetTemplatePropertiesResponse_QNAME = new QName("http://ws.abx/", "GetTemplatePropertiesResponse");
     private final static QName _InsertTranslationDecimalCodeResponse_QNAME = new QName("http://ws.abx/", "InsertTranslationDecimalCodeResponse");
+    private final static QName _GetTemplatePropertiesResponse_QNAME = new QName("http://ws.abx/", "GetTemplatePropertiesResponse");
     private final static QName _CheckInDocument_QNAME = new QName("http://ws.abx/", "CheckIn_document");
     private final static QName _AddMarkerResponse_QNAME = new QName("http://ws.abx/", "AddMarkerResponse");
+    private final static QName _GetSDKTextFromTemplateResponse_QNAME = new QName("http://ws.abx/", "GetSDKTextFromTemplateResponse");
     private final static QName _DeleteFileResponse_QNAME = new QName("http://ws.abx/", "DeleteFileResponse");
     private final static QName _FkGetAllRecordResponse_QNAME = new QName("http://ws.abx/", "Fk_getAllRecordResponse");
     private final static QName _GetCountFileList_QNAME = new QName("http://ws.abx/", "GetCountFileList");
@@ -666,8 +703,8 @@ public class ObjectFactory {
     private final static QName _CanInsertLinkContainerToDocument_QNAME = new QName("http://ws.abx/", "CanInsertLinkContainerToDocument");
     private final static QName _InsertWFFile_QNAME = new QName("http://ws.abx/", "InsertWFFile");
     private final static QName _ModExpression_QNAME = new QName("http://ws.abx/", "ModExpression");
-    private final static QName _ResetUserSessions_QNAME = new QName("http://ws.abx/", "ResetUserSessions");
     private final static QName _ModUserSettingsResponse_QNAME = new QName("http://ws.abx/", "ModUserSettingsResponse");
+    private final static QName _ResetUserSessions_QNAME = new QName("http://ws.abx/", "ResetUserSessions");
     private final static QName _FkDBDeleteResponse_QNAME = new QName("http://ws.abx/", "Fk_DB_deleteResponse");
     private final static QName _GetObjectResponse_QNAME = new QName("http://ws.abx/", "GetObjectResponse");
     private final static QName _SetTmpTPUploadPathResponse_QNAME = new QName("http://ws.abx/", "SetTmpTPUploadPathResponse");
@@ -679,9 +716,11 @@ public class ObjectFactory {
     private final static QName _GetSDKTaskFieldMappingResponse_QNAME = new QName("http://ws.abx/", "GetSDKTaskFieldMappingResponse");
     private final static QName _DeleteUSFileByCodeResponse_QNAME = new QName("http://ws.abx/", "DeleteUSFileByCodeResponse");
     private final static QName _DeleteTPFileByCodeResponse_QNAME = new QName("http://ws.abx/", "DeleteTPFileByCodeResponse");
+    private final static QName _ChangeSDKTaskStatus_QNAME = new QName("http://ws.abx/", "ChangeSDKTaskStatus");
     private final static QName _UploadWFEndFileResponse_QNAME = new QName("http://ws.abx/", "UploadWFEndFileResponse");
     private final static QName _GetClasseDocumentale_QNAME = new QName("http://ws.abx/", "GetClasseDocumentale");
     private final static QName _GetDefaultProcess_QNAME = new QName("http://ws.abx/", "GetDefaultProcess");
+    private final static QName _UploadPreviewFile_QNAME = new QName("http://ws.abx/", "UploadPreviewFile");
     private final static QName _DeleteWFFileByCodeResponse_QNAME = new QName("http://ws.abx/", "DeleteWFFileByCodeResponse");
     private final static QName _CreateRaccoglitoreResponse_QNAME = new QName("http://ws.abx/", "CreateRaccoglitoreResponse");
     private final static QName _DownloadTPEndFileResponse_QNAME = new QName("http://ws.abx/", "DownloadTPEndFileResponse");
@@ -697,6 +736,7 @@ public class ObjectFactory {
     private final static QName _InsertUserConfigResponse_QNAME = new QName("http://ws.abx/", "InsertUserConfigResponse");
     private final static QName _GetDataWFFileList_QNAME = new QName("http://ws.abx/", "GetDataWFFileList");
     private final static QName _GetUserDetailByUserId_QNAME = new QName("http://ws.abx/", "GetUserDetailByUserId");
+    private final static QName _GetUserListActiveDirectoryResponse_QNAME = new QName("http://ws.abx/", "GetUserListActiveDirectoryResponse");
     private final static QName _DeleteUserByUsernameResponse_QNAME = new QName("http://ws.abx/", "DeleteUserByUsernameResponse");
     private final static QName _TestLetturaResponse_QNAME = new QName("http://ws.abx/", "TestLetturaResponse");
     private final static QName _DownloadFileUncResponse_QNAME = new QName("http://ws.abx/", "DownloadFileUncResponse");
@@ -707,13 +747,15 @@ public class ObjectFactory {
     private final static QName _CanDeleteFileResponse_QNAME = new QName("http://ws.abx/", "CanDeleteFileResponse");
     private final static QName _CanInsertLinkContainerToDocumentResponse_QNAME = new QName("http://ws.abx/", "CanInsertLinkContainerToDocumentResponse");
     private final static QName _GetContSign_QNAME = new QName("http://ws.abx/", "GetContSign");
+    private final static QName _CreateSDKTaskFieldMappingResponse_QNAME = new QName("http://ws.abx/", "CreateSDKTaskFieldMappingResponse");
     private final static QName _GetDownloadDetailByDataIdResponse_QNAME = new QName("http://ws.abx/", "GetDownloadDetailByDataIdResponse");
     private final static QName _GetDataFileListWAResponse_QNAME = new QName("http://ws.abx/", "GetDataFileListWAResponse");
     private final static QName _CreateContainer_QNAME = new QName("http://ws.abx/", "CreateContainer");
     private final static QName _ChangeSchedulerTaskScheduleStatus_QNAME = new QName("http://ws.abx/", "ChangeSchedulerTaskScheduleStatus");
     private final static QName _UploadSendChunkWAResponse_QNAME = new QName("http://ws.abx/", "UploadSendChunkWAResponse");
-    private final static QName _UploadSendChunkChunk_QNAME = new QName("", "chunk");
     private final static QName _UploadUSSendChunkObjName_QNAME = new QName("", "objName");
+    private final static QName _UploadTPSendChunkChunk_QNAME = new QName("", "chunk");
+    private final static QName _UploadPreviewFileFile_QNAME = new QName("", "file");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: abx.ws
@@ -1019,6 +1061,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetSDKTextFromTemplateResponse }
+     * 
+     */
+    public GetSDKTextFromTemplateResponse createGetSDKTextFromTemplateResponse() {
+        return new GetSDKTextFromTemplateResponse();
+    }
+
+    /**
      * Create an instance of {@link UploadSendChunk }
      * 
      */
@@ -1203,11 +1253,35 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetSDKWatchFolderDirectoriesResponse }
+     * 
+     */
+    public GetSDKWatchFolderDirectoriesResponse createGetSDKWatchFolderDirectoriesResponse() {
+        return new GetSDKWatchFolderDirectoriesResponse();
+    }
+
+    /**
+     * Create an instance of {@link StoreSDKVariable }
+     * 
+     */
+    public StoreSDKVariable createStoreSDKVariable() {
+        return new StoreSDKVariable();
+    }
+
+    /**
      * Create an instance of {@link ModifyUserResponse }
      * 
      */
     public ModifyUserResponse createModifyUserResponse() {
         return new ModifyUserResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetSDKVariablesResponse }
+     * 
+     */
+    public GetSDKVariablesResponse createGetSDKVariablesResponse() {
+        return new GetSDKVariablesResponse();
     }
 
     /**
@@ -1403,6 +1477,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CreateSDKTaskFieldMappingResponse }
+     * 
+     */
+    public CreateSDKTaskFieldMappingResponse createCreateSDKTaskFieldMappingResponse() {
+        return new CreateSDKTaskFieldMappingResponse();
+    }
+
+    /**
      * Create an instance of {@link GetDownloadDetailByDataIdResponse }
      * 
      */
@@ -1507,6 +1589,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link UploadPreviewFile }
+     * 
+     */
+    public UploadPreviewFile createUploadPreviewFile() {
+        return new UploadPreviewFile();
+    }
+
+    /**
      * Create an instance of {@link DeleteWFFileByCodeResponse }
      * 
      */
@@ -1523,6 +1613,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ChangeSDKTaskStatus }
+     * 
+     */
+    public ChangeSDKTaskStatus createChangeSDKTaskStatus() {
+        return new ChangeSDKTaskStatus();
+    }
+
+    /**
      * Create an instance of {@link GetSDKTaskFieldMappingResponse }
      * 
      */
@@ -1536,6 +1634,14 @@ public class ObjectFactory {
      */
     public DeleteUSFileByCodeResponse createDeleteUSFileByCodeResponse() {
         return new DeleteUSFileByCodeResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetUserListActiveDirectoryResponse }
+     * 
+     */
+    public GetUserListActiveDirectoryResponse createGetUserListActiveDirectoryResponse() {
+        return new GetUserListActiveDirectoryResponse();
     }
 
     /**
@@ -1819,6 +1925,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetFileListByCodeResponse }
+     * 
+     */
+    public GetFileListByCodeResponse createGetFileListByCodeResponse() {
+        return new GetFileListByCodeResponse();
+    }
+
+    /**
      * Create an instance of {@link DeleteRaccoglitoreResponse }
      * 
      */
@@ -1840,14 +1954,6 @@ public class ObjectFactory {
      */
     public GetArchSostRulesResponse createGetArchSostRulesResponse() {
         return new GetArchSostRulesResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetFileListByCodeResponse }
-     * 
-     */
-    public GetFileListByCodeResponse createGetFileListByCodeResponse() {
-        return new GetFileListByCodeResponse();
     }
 
     /**
@@ -1939,6 +2045,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link DeleteSDKTaskFieldMappingResponse }
+     * 
+     */
+    public DeleteSDKTaskFieldMappingResponse createDeleteSDKTaskFieldMappingResponse() {
+        return new DeleteSDKTaskFieldMappingResponse();
+    }
+
+    /**
      * Create an instance of {@link ComboGetAll }
      * 
      */
@@ -1952,6 +2066,14 @@ public class ObjectFactory {
      */
     public InsertArchSostRule createInsertArchSostRule() {
         return new InsertArchSostRule();
+    }
+
+    /**
+     * Create an instance of {@link DeleteSDKTask }
+     * 
+     */
+    public DeleteSDKTask createDeleteSDKTask() {
+        return new DeleteSDKTask();
     }
 
     /**
@@ -2083,19 +2205,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CheckOutAttach }
-     * 
-     */
-    public CheckOutAttach createCheckOutAttach() {
-        return new CheckOutAttach();
-    }
-
-    /**
      * Create an instance of {@link GetFieldsPropertiesFromTemplate }
      * 
      */
     public GetFieldsPropertiesFromTemplate createGetFieldsPropertiesFromTemplate() {
         return new GetFieldsPropertiesFromTemplate();
+    }
+
+    /**
+     * Create an instance of {@link CheckOutAttach }
+     * 
+     */
+    public CheckOutAttach createCheckOutAttach() {
+        return new CheckOutAttach();
     }
 
     /**
@@ -2195,11 +2317,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetWsdlVersion }
+     * 
+     */
+    public GetWsdlVersion createGetWsdlVersion() {
+        return new GetWsdlVersion();
+    }
+
+    /**
      * Create an instance of {@link UploadTPEndFileResponse }
      * 
      */
     public UploadTPEndFileResponse createUploadTPEndFileResponse() {
         return new UploadTPEndFileResponse();
+    }
+
+    /**
+     * Create an instance of {@link ExtractSDKPDFTemplateTextByAreaResponse }
+     * 
+     */
+    public ExtractSDKPDFTemplateTextByAreaResponse createExtractSDKPDFTemplateTextByAreaResponse() {
+        return new ExtractSDKPDFTemplateTextByAreaResponse();
     }
 
     /**
@@ -2395,11 +2533,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link StoreSDKVariableResponse }
+     * 
+     */
+    public StoreSDKVariableResponse createStoreSDKVariableResponse() {
+        return new StoreSDKVariableResponse();
+    }
+
+    /**
      * Create an instance of {@link CanModifyLinkContainerToContainer }
      * 
      */
     public CanModifyLinkContainerToContainer createCanModifyLinkContainerToContainer() {
         return new CanModifyLinkContainerToContainer();
+    }
+
+    /**
+     * Create an instance of {@link GetSDKWatchFolderDirectories }
+     * 
+     */
+    public GetSDKWatchFolderDirectories createGetSDKWatchFolderDirectories() {
+        return new GetSDKWatchFolderDirectories();
     }
 
     /**
@@ -2424,6 +2578,14 @@ public class ObjectFactory {
      */
     public ExistUserByUsernameResponse createExistUserByUsernameResponse() {
         return new ExistUserByUsernameResponse();
+    }
+
+    /**
+     * Create an instance of {@link DeleteSDKTaskResponse }
+     * 
+     */
+    public DeleteSDKTaskResponse createDeleteSDKTaskResponse() {
+        return new DeleteSDKTaskResponse();
     }
 
     /**
@@ -2464,6 +2626,14 @@ public class ObjectFactory {
      */
     public GetDataByIdForSecurity createGetDataByIdForSecurity() {
         return new GetDataByIdForSecurity();
+    }
+
+    /**
+     * Create an instance of {@link GetSchedulerTaskByTaskTypeId }
+     * 
+     */
+    public GetSchedulerTaskByTaskTypeId createGetSchedulerTaskByTaskTypeId() {
+        return new GetSchedulerTaskByTaskTypeId();
     }
 
     /**
@@ -2755,6 +2925,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link UploadPreviewFileResponse }
+     * 
+     */
+    public UploadPreviewFileResponse createUploadPreviewFileResponse() {
+        return new UploadPreviewFileResponse();
+    }
+
+    /**
      * Create an instance of {@link InsertLinkContainerToDocumentResponse }
      * 
      */
@@ -2784,6 +2962,14 @@ public class ObjectFactory {
      */
     public DownloadFileResponse createDownloadFileResponse() {
         return new DownloadFileResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetSDKTaskExcelPreviewResponse }
+     * 
+     */
+    public GetSDKTaskExcelPreviewResponse createGetSDKTaskExcelPreviewResponse() {
+        return new GetSDKTaskExcelPreviewResponse();
     }
 
     /**
@@ -2931,6 +3117,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CreateSDKTaskFieldMapping }
+     * 
+     */
+    public CreateSDKTaskFieldMapping createCreateSDKTaskFieldMapping() {
+        return new CreateSDKTaskFieldMapping();
+    }
+
+    /**
      * Create an instance of {@link GetTranslationByRangeLabelCode }
      * 
      */
@@ -3067,6 +3261,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ValidateSDKTaskResponse }
+     * 
+     */
+    public ValidateSDKTaskResponse createValidateSDKTaskResponse() {
+        return new ValidateSDKTaskResponse();
+    }
+
+    /**
      * Create an instance of {@link DeleteField }
      * 
      */
@@ -3152,6 +3354,14 @@ public class ObjectFactory {
      */
     public CreateDynorg createCreateDynorg() {
         return new CreateDynorg();
+    }
+
+    /**
+     * Create an instance of {@link GetSDKTextFromTemplate }
+     * 
+     */
+    public GetSDKTextFromTemplate createGetSDKTextFromTemplate() {
+        return new GetSDKTextFromTemplate();
     }
 
     /**
@@ -3371,6 +3581,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CreateSDKTaskWatchFolder }
+     * 
+     */
+    public CreateSDKTaskWatchFolder createCreateSDKTaskWatchFolder() {
+        return new CreateSDKTaskWatchFolder();
+    }
+
+    /**
      * Create an instance of {@link GetArchiBoxInfo }
      * 
      */
@@ -3507,19 +3725,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DownloadFileContainerUnc }
-     * 
-     */
-    public DownloadFileContainerUnc createDownloadFileContainerUnc() {
-        return new DownloadFileContainerUnc();
-    }
-
-    /**
      * Create an instance of {@link DownloadFile }
      * 
      */
     public DownloadFile createDownloadFile() {
         return new DownloadFile();
+    }
+
+    /**
+     * Create an instance of {@link DownloadFileContainerUnc }
+     * 
+     */
+    public DownloadFileContainerUnc createDownloadFileContainerUnc() {
+        return new DownloadFileContainerUnc();
     }
 
     /**
@@ -3611,6 +3829,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ModifySDKTaskWatchFolder }
+     * 
+     */
+    public ModifySDKTaskWatchFolder createModifySDKTaskWatchFolder() {
+        return new ModifySDKTaskWatchFolder();
+    }
+
+    /**
      * Create an instance of {@link GetProtocolByDesc }
      * 
      */
@@ -3664,6 +3890,22 @@ public class ObjectFactory {
      */
     public SetTmpDownloadPath createSetTmpDownloadPath() {
         return new SetTmpDownloadPath();
+    }
+
+    /**
+     * Create an instance of {@link VerifySDKTaskNameExists }
+     * 
+     */
+    public VerifySDKTaskNameExists createVerifySDKTaskNameExists() {
+        return new VerifySDKTaskNameExists();
+    }
+
+    /**
+     * Create an instance of {@link GetSchedulerTaskByTaskTypeIdResponse }
+     * 
+     */
+    public GetSchedulerTaskByTaskTypeIdResponse createGetSchedulerTaskByTaskTypeIdResponse() {
+        return new GetSchedulerTaskByTaskTypeIdResponse();
     }
 
     /**
@@ -3739,6 +3981,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CreateSDKTaskWatchFolderResponse }
+     * 
+     */
+    public CreateSDKTaskWatchFolderResponse createCreateSDKTaskWatchFolderResponse() {
+        return new CreateSDKTaskWatchFolderResponse();
+    }
+
+    /**
      * Create an instance of {@link DeleteData }
      * 
      */
@@ -3800,6 +4050,14 @@ public class ObjectFactory {
      */
     public CanDeleteDataResponse createCanDeleteDataResponse() {
         return new CanDeleteDataResponse();
+    }
+
+    /**
+     * Create an instance of {@link StartSDKTask }
+     * 
+     */
+    public StartSDKTask createStartSDKTask() {
+        return new StartSDKTask();
     }
 
     /**
@@ -3891,14 +4149,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DeleteSchedulerTask }
-     * 
-     */
-    public DeleteSchedulerTask createDeleteSchedulerTask() {
-        return new DeleteSchedulerTask();
-    }
-
-    /**
      * Create an instance of {@link GetFileAvailable }
      * 
      */
@@ -3907,11 +4157,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link DeleteSchedulerTask }
+     * 
+     */
+    public DeleteSchedulerTask createDeleteSchedulerTask() {
+        return new DeleteSchedulerTask();
+    }
+
+    /**
      * Create an instance of {@link ModifyRaccoglitoreResponse }
      * 
      */
     public ModifyRaccoglitoreResponse createModifyRaccoglitoreResponse() {
         return new ModifyRaccoglitoreResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetSDKImagesFromPDFTemplateResponse }
+     * 
+     */
+    public GetSDKImagesFromPDFTemplateResponse createGetSDKImagesFromPDFTemplateResponse() {
+        return new GetSDKImagesFromPDFTemplateResponse();
     }
 
     /**
@@ -3984,6 +4250,14 @@ public class ObjectFactory {
      */
     public FkGetRemoteViewListResponse createFkGetRemoteViewListResponse() {
         return new FkGetRemoteViewListResponse();
+    }
+
+    /**
+     * Create an instance of {@link ModifyUserPassword }
+     * 
+     */
+    public ModifyUserPassword createModifyUserPassword() {
+        return new ModifyUserPassword();
     }
 
     /**
@@ -4419,6 +4693,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetWsdlVersionResponse }
+     * 
+     */
+    public GetWsdlVersionResponse createGetWsdlVersionResponse() {
+        return new GetWsdlVersionResponse();
+    }
+
+    /**
      * Create an instance of {@link DeleteUSFileByCode }
      * 
      */
@@ -4592,6 +4874,14 @@ public class ObjectFactory {
      */
     public ComboInsert createComboInsert() {
         return new ComboInsert();
+    }
+
+    /**
+     * Create an instance of {@link ExtractSDKPDFTemplateTextByArea }
+     * 
+     */
+    public ExtractSDKPDFTemplateTextByArea createExtractSDKPDFTemplateTextByArea() {
+        return new ExtractSDKPDFTemplateTextByArea();
     }
 
     /**
@@ -4851,6 +5141,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ModifySDKTaskWatchFolderResponse }
+     * 
+     */
+    public ModifySDKTaskWatchFolderResponse createModifySDKTaskWatchFolderResponse() {
+        return new ModifySDKTaskWatchFolderResponse();
+    }
+
+    /**
      * Create an instance of {@link GetUploadDetailByData }
      * 
      */
@@ -4931,6 +5229,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetFieldListResponse }
+     * 
+     */
+    public GetFieldListResponse createGetFieldListResponse() {
+        return new GetFieldListResponse();
+    }
+
+    /**
      * Create an instance of {@link FkGetParsAllFk }
      * 
      */
@@ -4939,11 +5245,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetFieldListResponse }
+     * Create an instance of {@link GetSDKTaskExcelPreview }
      * 
      */
-    public GetFieldListResponse createGetFieldListResponse() {
-        return new GetFieldListResponse();
+    public GetSDKTaskExcelPreview createGetSDKTaskExcelPreview() {
+        return new GetSDKTaskExcelPreview();
     }
 
     /**
@@ -5144,6 +5450,14 @@ public class ObjectFactory {
      */
     public GetAllFilter createGetAllFilter() {
         return new GetAllFilter();
+    }
+
+    /**
+     * Create an instance of {@link GetSDKVariables }
+     * 
+     */
+    public GetSDKVariables createGetSDKVariables() {
+        return new GetSDKVariables();
     }
 
     /**
@@ -5395,11 +5709,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetDataCountWithPermissionResponse }
+     * Create an instance of {@link ModifyUserPasswordResponse }
      * 
      */
-    public GetDataCountWithPermissionResponse createGetDataCountWithPermissionResponse() {
-        return new GetDataCountWithPermissionResponse();
+    public ModifyUserPasswordResponse createModifyUserPasswordResponse() {
+        return new ModifyUserPasswordResponse();
     }
 
     /**
@@ -5408,6 +5722,14 @@ public class ObjectFactory {
      */
     public GetFieldPropertiesResponse createGetFieldPropertiesResponse() {
         return new GetFieldPropertiesResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetDataCountWithPermissionResponse }
+     * 
+     */
+    public GetDataCountWithPermissionResponse createGetDataCountWithPermissionResponse() {
+        return new GetDataCountWithPermissionResponse();
     }
 
     /**
@@ -5504,6 +5826,14 @@ public class ObjectFactory {
      */
     public SetTmpWFUploadPathResponse createSetTmpWFUploadPathResponse() {
         return new SetTmpWFUploadPathResponse();
+    }
+
+    /**
+     * Create an instance of {@link ChangeSDKTaskStatusResponse }
+     * 
+     */
+    public ChangeSDKTaskStatusResponse createChangeSDKTaskStatusResponse() {
+        return new ChangeSDKTaskStatusResponse();
     }
 
     /**
@@ -5640,6 +5970,14 @@ public class ObjectFactory {
      */
     public DelDefaultProcess createDelDefaultProcess() {
         return new DelDefaultProcess();
+    }
+
+    /**
+     * Create an instance of {@link VerifySDKTaskNameExistsResponse }
+     * 
+     */
+    public VerifySDKTaskNameExistsResponse createVerifySDKTaskNameExistsResponse() {
+        return new VerifySDKTaskNameExistsResponse();
     }
 
     /**
@@ -5792,6 +6130,14 @@ public class ObjectFactory {
      */
     public GetCountFileListResponse createGetCountFileListResponse() {
         return new GetCountFileListResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetUserListActiveDirectory }
+     * 
+     */
+    public GetUserListActiveDirectory createGetUserListActiveDirectory() {
+        return new GetUserListActiveDirectory();
     }
 
     /**
@@ -6027,6 +6373,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ValidateSDKTask }
+     * 
+     */
+    public ValidateSDKTask createValidateSDKTask() {
+        return new ValidateSDKTask();
+    }
+
+    /**
      * Create an instance of {@link GetDataTPFileListByUsernameResponse }
      * 
      */
@@ -6048,6 +6402,14 @@ public class ObjectFactory {
      */
     public QueryResponse createQueryResponse() {
         return new QueryResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetSDKImagesFromPDFTemplate }
+     * 
+     */
+    public GetSDKImagesFromPDFTemplate createGetSDKImagesFromPDFTemplate() {
+        return new GetSDKImagesFromPDFTemplate();
     }
 
     /**
@@ -6208,6 +6570,14 @@ public class ObjectFactory {
      */
     public PingResponse createPingResponse() {
         return new PingResponse();
+    }
+
+    /**
+     * Create an instance of {@link DeleteSDKTaskFieldMapping }
+     * 
+     */
+    public DeleteSDKTaskFieldMapping createDeleteSDKTaskFieldMapping() {
+        return new DeleteSDKTaskFieldMapping();
     }
 
     /**
@@ -6419,6 +6789,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AbxSDKWatchFolderDirectoryList }
+     * 
+     */
+    public AbxSDKWatchFolderDirectoryList createAbxSDKWatchFolderDirectoryList() {
+        return new AbxSDKWatchFolderDirectoryList();
+    }
+
+    /**
      * Create an instance of {@link AbxGroupList }
      * 
      */
@@ -6547,6 +6925,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AbxSDKTaskPDFPreview }
+     * 
+     */
+    public AbxSDKTaskPDFPreview createAbxSDKTaskPDFPreview() {
+        return new AbxSDKTaskPDFPreview();
+    }
+
+    /**
+     * Create an instance of {@link AbxSDKTaskExcelPreviewSheet }
+     * 
+     */
+    public AbxSDKTaskExcelPreviewSheet createAbxSDKTaskExcelPreviewSheet() {
+        return new AbxSDKTaskExcelPreviewSheet();
+    }
+
+    /**
      * Create an instance of {@link AbxRmDatabaseList }
      * 
      */
@@ -6592,6 +6986,22 @@ public class ObjectFactory {
      */
     public AbxDomain createAbxDomain() {
         return new AbxDomain();
+    }
+
+    /**
+     * Create an instance of {@link AbxSDKTaskValidateField }
+     * 
+     */
+    public AbxSDKTaskValidateField createAbxSDKTaskValidateField() {
+        return new AbxSDKTaskValidateField();
+    }
+
+    /**
+     * Create an instance of {@link AbxSDKVariable }
+     * 
+     */
+    public AbxSDKVariable createAbxSDKVariable() {
+        return new AbxSDKVariable();
     }
 
     /**
@@ -6712,6 +7122,14 @@ public class ObjectFactory {
      */
     public AbxQrowList createAbxQrowList() {
         return new AbxQrowList();
+    }
+
+    /**
+     * Create an instance of {@link AbxSDKTaskExcelPreviewColumn }
+     * 
+     */
+    public AbxSDKTaskExcelPreviewColumn createAbxSDKTaskExcelPreviewColumn() {
+        return new AbxSDKTaskExcelPreviewColumn();
     }
 
     /**
@@ -6848,6 +7266,14 @@ public class ObjectFactory {
      */
     public AbxRetQueryResult createAbxRetQueryResult() {
         return new AbxRetQueryResult();
+    }
+
+    /**
+     * Create an instance of {@link AbxSDKVariableList }
+     * 
+     */
+    public AbxSDKVariableList createAbxSDKVariableList() {
+        return new AbxSDKVariableList();
     }
 
     /**
@@ -7083,6 +7509,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AbxSDKWatchFolderDirectory }
+     * 
+     */
+    public AbxSDKWatchFolderDirectory createAbxSDKWatchFolderDirectory() {
+        return new AbxSDKWatchFolderDirectory();
+    }
+
+    /**
      * Create an instance of {@link AbxLanguageResult }
      * 
      */
@@ -7104,6 +7538,14 @@ public class ObjectFactory {
      */
     public AbxFKDbRecord createAbxFKDbRecord() {
         return new AbxFKDbRecord();
+    }
+
+    /**
+     * Create an instance of {@link AbxSDKTaskValidateData }
+     * 
+     */
+    public AbxSDKTaskValidateData createAbxSDKTaskValidateData() {
+        return new AbxSDKTaskValidateData();
     }
 
     /**
@@ -7331,6 +7773,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AbxWsdlResult }
+     * 
+     */
+    public AbxWsdlResult createAbxWsdlResult() {
+        return new AbxWsdlResult();
+    }
+
+    /**
      * Create an instance of {@link AbxFKUtentiRecord }
      * 
      */
@@ -7411,11 +7861,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AbxSDKTaskExcelPreviewRow }
+     * 
+     */
+    public AbxSDKTaskExcelPreviewRow createAbxSDKTaskExcelPreviewRow() {
+        return new AbxSDKTaskExcelPreviewRow();
+    }
+
+    /**
      * Create an instance of {@link AbxResultsList }
      * 
      */
     public AbxResultsList createAbxResultsList() {
         return new AbxResultsList();
+    }
+
+    /**
+     * Create an instance of {@link AbxSDKTaskPDFImage }
+     * 
+     */
+    public AbxSDKTaskPDFImage createAbxSDKTaskPDFImage() {
+        return new AbxSDKTaskPDFImage();
     }
 
     /**
@@ -7632,14 +8098,6 @@ public class ObjectFactory {
      */
     public AbxTemplate.AllDescription createAbxTemplateAllDescription() {
         return new AbxTemplate.AllDescription();
-    }
-
-    /**
-     * Create an instance of {@link AbxTemplate.Fields }
-     * 
-     */
-    public AbxTemplate.Fields createAbxTemplateFields() {
-        return new AbxTemplate.Fields();
     }
 
     /**
@@ -8029,6 +8487,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetUserListActiveDirectory }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetUserListActiveDirectory")
+    public JAXBElement<GetUserListActiveDirectory> createGetUserListActiveDirectory(GetUserListActiveDirectory value) {
+        return new JAXBElement<GetUserListActiveDirectory>(_GetUserListActiveDirectory_QNAME, GetUserListActiveDirectory.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetArchiBoxInDomainResponse }{@code >}}
      * 
      */
@@ -8344,6 +8811,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetSDKImagesFromPDFTemplate }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetSDKImagesFromPDFTemplate")
+    public JAXBElement<GetSDKImagesFromPDFTemplate> createGetSDKImagesFromPDFTemplate(GetSDKImagesFromPDFTemplate value) {
+        return new JAXBElement<GetSDKImagesFromPDFTemplate>(_GetSDKImagesFromPDFTemplate_QNAME, GetSDKImagesFromPDFTemplate.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link UploadEndFileContainerResponse }{@code >}}
      * 
      */
@@ -8377,6 +8853,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.abx/", name = "GetInstancePathnameResponse")
     public JAXBElement<GetInstancePathnameResponse> createGetInstancePathnameResponse(GetInstancePathnameResponse value) {
         return new JAXBElement<GetInstancePathnameResponse>(_GetInstancePathnameResponse_QNAME, GetInstancePathnameResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ValidateSDKTask }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "ValidateSDKTask")
+    public JAXBElement<ValidateSDKTask> createValidateSDKTask(ValidateSDKTask value) {
+        return new JAXBElement<ValidateSDKTask>(_ValidateSDKTask_QNAME, ValidateSDKTask.class, null, value);
     }
 
     /**
@@ -8422,6 +8907,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.abx/", name = "Combo_getAllResponse")
     public JAXBElement<ComboGetAllResponse> createComboGetAllResponse(ComboGetAllResponse value) {
         return new JAXBElement<ComboGetAllResponse>(_ComboGetAllResponse_QNAME, ComboGetAllResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteSDKTaskFieldMapping }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "DeleteSDKTaskFieldMapping")
+    public JAXBElement<DeleteSDKTaskFieldMapping> createDeleteSDKTaskFieldMapping(DeleteSDKTaskFieldMapping value) {
+        return new JAXBElement<DeleteSDKTaskFieldMapping>(_DeleteSDKTaskFieldMapping_QNAME, DeleteSDKTaskFieldMapping.class, null, value);
     }
 
     /**
@@ -8632,6 +9126,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetSDKVariables }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetSDKVariables")
+    public JAXBElement<GetSDKVariables> createGetSDKVariables(GetSDKVariables value) {
+        return new JAXBElement<GetSDKVariables>(_GetSDKVariables_QNAME, GetSDKVariables.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetDownloadDetailByFilecode }{@code >}}
      * 
      */
@@ -8839,6 +9342,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetSDKTaskExcelPreview }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetSDKTaskExcelPreview")
+    public JAXBElement<GetSDKTaskExcelPreview> createGetSDKTaskExcelPreview(GetSDKTaskExcelPreview value) {
+        return new JAXBElement<GetSDKTaskExcelPreview>(_GetSDKTaskExcelPreview_QNAME, GetSDKTaskExcelPreview.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CanDeleteRaccoglitoreResponse }{@code >}}
      * 
      */
@@ -8875,21 +9387,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetFieldListResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetFieldListResponse")
-    public JAXBElement<GetFieldListResponse> createGetFieldListResponse(GetFieldListResponse value) {
-        return new JAXBElement<GetFieldListResponse>(_GetFieldListResponse_QNAME, GetFieldListResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link FkGetParsAllFk }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.abx/", name = "Fk_getParsAllFk")
     public JAXBElement<FkGetParsAllFk> createFkGetParsAllFk(FkGetParsAllFk value) {
         return new JAXBElement<FkGetParsAllFk>(_FkGetParsAllFk_QNAME, FkGetParsAllFk.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetFieldListResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetFieldListResponse")
+    public JAXBElement<GetFieldListResponse> createGetFieldListResponse(GetFieldListResponse value) {
+        return new JAXBElement<GetFieldListResponse>(_GetFieldListResponse_QNAME, GetFieldListResponse.class, null, value);
     }
 
     /**
@@ -9082,6 +9594,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ChangeSDKTaskStatusResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "ChangeSDKTaskStatusResponse")
+    public JAXBElement<ChangeSDKTaskStatusResponse> createChangeSDKTaskStatusResponse(ChangeSDKTaskStatusResponse value) {
+        return new JAXBElement<ChangeSDKTaskStatusResponse>(_ChangeSDKTaskStatusResponse_QNAME, ChangeSDKTaskStatusResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link FkGetCountAllRecordByDescResponse }{@code >}}
      * 
      */
@@ -9106,6 +9627,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.abx/", name = "CheckIn_attachContainerResponse")
     public JAXBElement<CheckInAttachContainerResponse> createCheckInAttachContainerResponse(CheckInAttachContainerResponse value) {
         return new JAXBElement<CheckInAttachContainerResponse>(_CheckInAttachContainerResponse_QNAME, CheckInAttachContainerResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link VerifySDKTaskNameExistsResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "VerifySDKTaskNameExistsResponse")
+    public JAXBElement<VerifySDKTaskNameExistsResponse> createVerifySDKTaskNameExistsResponse(VerifySDKTaskNameExistsResponse value) {
+        return new JAXBElement<VerifySDKTaskNameExistsResponse>(_VerifySDKTaskNameExistsResponse_QNAME, VerifySDKTaskNameExistsResponse.class, null, value);
     }
 
     /**
@@ -9379,6 +9909,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetDataCountWithPermissionResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetDataCountWithPermissionResponse")
+    public JAXBElement<GetDataCountWithPermissionResponse> createGetDataCountWithPermissionResponse(GetDataCountWithPermissionResponse value) {
+        return new JAXBElement<GetDataCountWithPermissionResponse>(_GetDataCountWithPermissionResponse_QNAME, GetDataCountWithPermissionResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetFieldPropertiesResponse }{@code >}}
      * 
      */
@@ -9388,12 +9927,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetDataCountWithPermissionResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ModifyUserPasswordResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetDataCountWithPermissionResponse")
-    public JAXBElement<GetDataCountWithPermissionResponse> createGetDataCountWithPermissionResponse(GetDataCountWithPermissionResponse value) {
-        return new JAXBElement<GetDataCountWithPermissionResponse>(_GetDataCountWithPermissionResponse_QNAME, GetDataCountWithPermissionResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "ModifyUserPasswordResponse")
+    public JAXBElement<ModifyUserPasswordResponse> createModifyUserPasswordResponse(ModifyUserPasswordResponse value) {
+        return new JAXBElement<ModifyUserPasswordResponse>(_ModifyUserPasswordResponse_QNAME, ModifyUserPasswordResponse.class, null, value);
     }
 
     /**
@@ -9757,6 +10296,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetWsdlVersionResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetWsdlVersionResponse")
+    public JAXBElement<GetWsdlVersionResponse> createGetWsdlVersionResponse(GetWsdlVersionResponse value) {
+        return new JAXBElement<GetWsdlVersionResponse>(_GetWsdlVersionResponse_QNAME, GetWsdlVersionResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetDataTPFileListByContainerResponse }{@code >}}
      * 
      */
@@ -9826,6 +10374,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.abx/", name = "GetProtocolByNameResponse")
     public JAXBElement<GetProtocolByNameResponse> createGetProtocolByNameResponse(GetProtocolByNameResponse value) {
         return new JAXBElement<GetProtocolByNameResponse>(_GetProtocolByNameResponse_QNAME, GetProtocolByNameResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ModifySDKTaskWatchFolderResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "ModifySDKTaskWatchFolderResponse")
+    public JAXBElement<ModifySDKTaskWatchFolderResponse> createModifySDKTaskWatchFolderResponse(ModifySDKTaskWatchFolderResponse value) {
+        return new JAXBElement<ModifySDKTaskWatchFolderResponse>(_ModifySDKTaskWatchFolderResponse_QNAME, ModifySDKTaskWatchFolderResponse.class, null, value);
     }
 
     /**
@@ -10063,6 +10620,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ExtractSDKPDFTemplateTextByArea }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "ExtractSDKPDFTemplateTextByArea")
+    public JAXBElement<ExtractSDKPDFTemplateTextByArea> createExtractSDKPDFTemplateTextByArea(ExtractSDKPDFTemplateTextByArea value) {
+        return new JAXBElement<ExtractSDKPDFTemplateTextByArea>(_ExtractSDKPDFTemplateTextByArea_QNAME, ExtractSDKPDFTemplateTextByArea.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ComboInsert }{@code >}}
      * 
      */
@@ -10198,6 +10764,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CreateSDKTaskWatchFolderResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "CreateSDKTaskWatchFolderResponse")
+    public JAXBElement<CreateSDKTaskWatchFolderResponse> createCreateSDKTaskWatchFolderResponse(CreateSDKTaskWatchFolderResponse value) {
+        return new JAXBElement<CreateSDKTaskWatchFolderResponse>(_CreateSDKTaskWatchFolderResponse_QNAME, CreateSDKTaskWatchFolderResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link AddUser }{@code >}}
      * 
      */
@@ -10297,12 +10872,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteFileVersion }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link StartSDKTask }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.abx/", name = "DeleteFileVersion")
-    public JAXBElement<DeleteFileVersion> createDeleteFileVersion(DeleteFileVersion value) {
-        return new JAXBElement<DeleteFileVersion>(_DeleteFileVersion_QNAME, DeleteFileVersion.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "StartSDKTask")
+    public JAXBElement<StartSDKTask> createStartSDKTask(StartSDKTask value) {
+        return new JAXBElement<StartSDKTask>(_StartSDKTask_QNAME, StartSDKTask.class, null, value);
     }
 
     /**
@@ -10315,6 +10890,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteFileVersion }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "DeleteFileVersion")
+    public JAXBElement<DeleteFileVersion> createDeleteFileVersion(DeleteFileVersion value) {
+        return new JAXBElement<DeleteFileVersion>(_DeleteFileVersion_QNAME, DeleteFileVersion.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CanDeleteDataResponse }{@code >}}
      * 
      */
@@ -10324,21 +10908,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ModifyTemplateResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.abx/", name = "ModifyTemplateResponse")
-    public JAXBElement<ModifyTemplateResponse> createModifyTemplateResponse(ModifyTemplateResponse value) {
-        return new JAXBElement<ModifyTemplateResponse>(_ModifyTemplateResponse_QNAME, ModifyTemplateResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetDataWFFileListResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.abx/", name = "GetDataWFFileListResponse")
     public JAXBElement<GetDataWFFileListResponse> createGetDataWFFileListResponse(GetDataWFFileListResponse value) {
         return new JAXBElement<GetDataWFFileListResponse>(_GetDataWFFileListResponse_QNAME, GetDataWFFileListResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ModifyTemplateResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "ModifyTemplateResponse")
+    public JAXBElement<ModifyTemplateResponse> createModifyTemplateResponse(ModifyTemplateResponse value) {
+        return new JAXBElement<ModifyTemplateResponse>(_ModifyTemplateResponse_QNAME, ModifyTemplateResponse.class, null, value);
     }
 
     /**
@@ -10387,21 +10971,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DownloadFileContainerUnc }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.abx/", name = "DownloadFileContainerUnc")
-    public JAXBElement<DownloadFileContainerUnc> createDownloadFileContainerUnc(DownloadFileContainerUnc value) {
-        return new JAXBElement<DownloadFileContainerUnc>(_DownloadFileContainerUnc_QNAME, DownloadFileContainerUnc.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DownloadFile }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.abx/", name = "DownloadFile")
     public JAXBElement<DownloadFile> createDownloadFile(DownloadFile value) {
         return new JAXBElement<DownloadFile>(_DownloadFile_QNAME, DownloadFile.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DownloadFileContainerUnc }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "DownloadFileContainerUnc")
+    public JAXBElement<DownloadFileContainerUnc> createDownloadFileContainerUnc(DownloadFileContainerUnc value) {
+        return new JAXBElement<DownloadFileContainerUnc>(_DownloadFileContainerUnc_QNAME, DownloadFileContainerUnc.class, null, value);
     }
 
     /**
@@ -10429,6 +11013,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.abx/", name = "GetDataTPFileListByUsername")
     public JAXBElement<GetDataTPFileListByUsername> createGetDataTPFileListByUsername(GetDataTPFileListByUsername value) {
         return new JAXBElement<GetDataTPFileListByUsername>(_GetDataTPFileListByUsername_QNAME, GetDataTPFileListByUsername.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link VerifySDKTaskNameExists }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "VerifySDKTaskNameExists")
+    public JAXBElement<VerifySDKTaskNameExists> createVerifySDKTaskNameExists(VerifySDKTaskNameExists value) {
+        return new JAXBElement<VerifySDKTaskNameExists>(_VerifySDKTaskNameExists_QNAME, VerifySDKTaskNameExists.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetSchedulerTaskByTaskTypeIdResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetSchedulerTaskByTaskTypeIdResponse")
+    public JAXBElement<GetSchedulerTaskByTaskTypeIdResponse> createGetSchedulerTaskByTaskTypeIdResponse(GetSchedulerTaskByTaskTypeIdResponse value) {
+        return new JAXBElement<GetSchedulerTaskByTaskTypeIdResponse>(_GetSchedulerTaskByTaskTypeIdResponse_QNAME, GetSchedulerTaskByTaskTypeIdResponse.class, null, value);
     }
 
     /**
@@ -10501,6 +11103,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.abx/", name = "UploadEndFileWAResponse")
     public JAXBElement<UploadEndFileWAResponse> createUploadEndFileWAResponse(UploadEndFileWAResponse value) {
         return new JAXBElement<UploadEndFileWAResponse>(_UploadEndFileWAResponse_QNAME, UploadEndFileWAResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ModifySDKTaskWatchFolder }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "ModifySDKTaskWatchFolder")
+    public JAXBElement<ModifySDKTaskWatchFolder> createModifySDKTaskWatchFolder(ModifySDKTaskWatchFolder value) {
+        return new JAXBElement<ModifySDKTaskWatchFolder>(_ModifySDKTaskWatchFolder_QNAME, ModifySDKTaskWatchFolder.class, null, value);
     }
 
     /**
@@ -10792,21 +11403,30 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ModifyRaccoglitoreResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.abx/", name = "ModifyRaccoglitoreResponse")
-    public JAXBElement<ModifyRaccoglitoreResponse> createModifyRaccoglitoreResponse(ModifyRaccoglitoreResponse value) {
-        return new JAXBElement<ModifyRaccoglitoreResponse>(_ModifyRaccoglitoreResponse_QNAME, ModifyRaccoglitoreResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CanShowFile }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.abx/", name = "CanShowFile")
     public JAXBElement<CanShowFile> createCanShowFile(CanShowFile value) {
         return new JAXBElement<CanShowFile>(_CanShowFile_QNAME, CanShowFile.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetSDKImagesFromPDFTemplateResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetSDKImagesFromPDFTemplateResponse")
+    public JAXBElement<GetSDKImagesFromPDFTemplateResponse> createGetSDKImagesFromPDFTemplateResponse(GetSDKImagesFromPDFTemplateResponse value) {
+        return new JAXBElement<GetSDKImagesFromPDFTemplateResponse>(_GetSDKImagesFromPDFTemplateResponse_QNAME, GetSDKImagesFromPDFTemplateResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ModifyRaccoglitoreResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "ModifyRaccoglitoreResponse")
+    public JAXBElement<ModifyRaccoglitoreResponse> createModifyRaccoglitoreResponse(ModifyRaccoglitoreResponse value) {
+        return new JAXBElement<ModifyRaccoglitoreResponse>(_ModifyRaccoglitoreResponse_QNAME, ModifyRaccoglitoreResponse.class, null, value);
     }
 
     /**
@@ -10837,21 +11457,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteUserByUsername }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.abx/", name = "DeleteUserByUsername")
-    public JAXBElement<DeleteUserByUsername> createDeleteUserByUsername(DeleteUserByUsername value) {
-        return new JAXBElement<DeleteUserByUsername>(_DeleteUserByUsername_QNAME, DeleteUserByUsername.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CreateContainerResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.abx/", name = "CreateContainerResponse")
     public JAXBElement<CreateContainerResponse> createCreateContainerResponse(CreateContainerResponse value) {
         return new JAXBElement<CreateContainerResponse>(_CreateContainerResponse_QNAME, CreateContainerResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteUserByUsername }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "DeleteUserByUsername")
+    public JAXBElement<DeleteUserByUsername> createDeleteUserByUsername(DeleteUserByUsername value) {
+        return new JAXBElement<DeleteUserByUsername>(_DeleteUserByUsername_QNAME, DeleteUserByUsername.class, null, value);
     }
 
     /**
@@ -10969,6 +11589,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.abx/", name = "canModifyDynorg")
     public JAXBElement<CanModifyDynorg> createCanModifyDynorg(CanModifyDynorg value) {
         return new JAXBElement<CanModifyDynorg>(_CanModifyDynorg_QNAME, CanModifyDynorg.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ModifyUserPassword }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "ModifyUserPassword")
+    public JAXBElement<ModifyUserPassword> createModifyUserPassword(ModifyUserPassword value) {
+        return new JAXBElement<ModifyUserPassword>(_ModifyUserPassword_QNAME, ModifyUserPassword.class, null, value);
     }
 
     /**
@@ -11134,6 +11763,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ValidateSDKTaskResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "ValidateSDKTaskResponse")
+    public JAXBElement<ValidateSDKTaskResponse> createValidateSDKTaskResponse(ValidateSDKTaskResponse value) {
+        return new JAXBElement<ValidateSDKTaskResponse>(_ValidateSDKTaskResponse_QNAME, ValidateSDKTaskResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DeleteField }{@code >}}
      * 
      */
@@ -11251,6 +11889,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CreateSDKTaskFieldMapping }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "CreateSDKTaskFieldMapping")
+    public JAXBElement<CreateSDKTaskFieldMapping> createCreateSDKTaskFieldMapping(CreateSDKTaskFieldMapping value) {
+        return new JAXBElement<CreateSDKTaskFieldMapping>(_CreateSDKTaskFieldMapping_QNAME, CreateSDKTaskFieldMapping.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link UploadEndFileResponse }{@code >}}
      * 
      */
@@ -11338,6 +11985,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.abx/", name = "Fk_getCountAllRecordByIndexDesc")
     public JAXBElement<FkGetCountAllRecordByIndexDesc> createFkGetCountAllRecordByIndexDesc(FkGetCountAllRecordByIndexDesc value) {
         return new JAXBElement<FkGetCountAllRecordByIndexDesc>(_FkGetCountAllRecordByIndexDesc_QNAME, FkGetCountAllRecordByIndexDesc.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CreateSDKTaskWatchFolder }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "CreateSDKTaskWatchFolder")
+    public JAXBElement<CreateSDKTaskWatchFolder> createCreateSDKTaskWatchFolder(CreateSDKTaskWatchFolder value) {
+        return new JAXBElement<CreateSDKTaskWatchFolder>(_CreateSDKTaskWatchFolder_QNAME, CreateSDKTaskWatchFolder.class, null, value);
     }
 
     /**
@@ -11584,6 +12240,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetSDKTextFromTemplate }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetSDKTextFromTemplate")
+    public JAXBElement<GetSDKTextFromTemplate> createGetSDKTextFromTemplate(GetSDKTextFromTemplate value) {
+        return new JAXBElement<GetSDKTextFromTemplate>(_GetSDKTextFromTemplate_QNAME, GetSDKTextFromTemplate.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DestroyContainerResponse }{@code >}}
      * 
      */
@@ -11791,12 +12456,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DownloadUSGetChunkResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteSDKTaskResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.abx/", name = "DownloadUSGetChunkResponse")
-    public JAXBElement<DownloadUSGetChunkResponse> createDownloadUSGetChunkResponse(DownloadUSGetChunkResponse value) {
-        return new JAXBElement<DownloadUSGetChunkResponse>(_DownloadUSGetChunkResponse_QNAME, DownloadUSGetChunkResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "DeleteSDKTaskResponse")
+    public JAXBElement<DeleteSDKTaskResponse> createDeleteSDKTaskResponse(DeleteSDKTaskResponse value) {
+        return new JAXBElement<DeleteSDKTaskResponse>(_DeleteSDKTaskResponse_QNAME, DeleteSDKTaskResponse.class, null, value);
     }
 
     /**
@@ -11809,12 +12474,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ExistUserByUsernameResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DownloadUSGetChunkResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.abx/", name = "ExistUserByUsernameResponse")
-    public JAXBElement<ExistUserByUsernameResponse> createExistUserByUsernameResponse(ExistUserByUsernameResponse value) {
-        return new JAXBElement<ExistUserByUsernameResponse>(_ExistUserByUsernameResponse_QNAME, ExistUserByUsernameResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "DownloadUSGetChunkResponse")
+    public JAXBElement<DownloadUSGetChunkResponse> createDownloadUSGetChunkResponse(DownloadUSGetChunkResponse value) {
+        return new JAXBElement<DownloadUSGetChunkResponse>(_DownloadUSGetChunkResponse_QNAME, DownloadUSGetChunkResponse.class, null, value);
     }
 
     /**
@@ -11827,12 +12492,39 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ExistUserByUsernameResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "ExistUserByUsernameResponse")
+    public JAXBElement<ExistUserByUsernameResponse> createExistUserByUsernameResponse(ExistUserByUsernameResponse value) {
+        return new JAXBElement<ExistUserByUsernameResponse>(_ExistUserByUsernameResponse_QNAME, ExistUserByUsernameResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link StoreSDKVariableResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "StoreSDKVariableResponse")
+    public JAXBElement<StoreSDKVariableResponse> createStoreSDKVariableResponse(StoreSDKVariableResponse value) {
+        return new JAXBElement<StoreSDKVariableResponse>(_StoreSDKVariableResponse_QNAME, StoreSDKVariableResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CanModifyLinkContainerToContainer }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.abx/", name = "CanModifyLinkContainerToContainer")
     public JAXBElement<CanModifyLinkContainerToContainer> createCanModifyLinkContainerToContainer(CanModifyLinkContainerToContainer value) {
         return new JAXBElement<CanModifyLinkContainerToContainer>(_CanModifyLinkContainerToContainer_QNAME, CanModifyLinkContainerToContainer.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetSDKWatchFolderDirectories }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetSDKWatchFolderDirectories")
+    public JAXBElement<GetSDKWatchFolderDirectories> createGetSDKWatchFolderDirectories(GetSDKWatchFolderDirectories value) {
+        return new JAXBElement<GetSDKWatchFolderDirectories>(_GetSDKWatchFolderDirectories_QNAME, GetSDKWatchFolderDirectories.class, null, value);
     }
 
     /**
@@ -11863,21 +12555,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DelSignResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.abx/", name = "DelSignResponse")
-    public JAXBElement<DelSignResponse> createDelSignResponse(DelSignResponse value) {
-        return new JAXBElement<DelSignResponse>(_DelSignResponse_QNAME, DelSignResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link InsertUserInGroup }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.abx/", name = "InsertUserInGroup")
     public JAXBElement<InsertUserInGroup> createInsertUserInGroup(InsertUserInGroup value) {
         return new JAXBElement<InsertUserInGroup>(_InsertUserInGroup_QNAME, InsertUserInGroup.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DelSignResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "DelSignResponse")
+    public JAXBElement<DelSignResponse> createDelSignResponse(DelSignResponse value) {
+        return new JAXBElement<DelSignResponse>(_DelSignResponse_QNAME, DelSignResponse.class, null, value);
     }
 
     /**
@@ -11968,6 +12660,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.abx/", name = "GetDataByIdForSecurity")
     public JAXBElement<GetDataByIdForSecurity> createGetDataByIdForSecurity(GetDataByIdForSecurity value) {
         return new JAXBElement<GetDataByIdForSecurity>(_GetDataByIdForSecurity_QNAME, GetDataByIdForSecurity.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetSchedulerTaskByTaskTypeId }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetSchedulerTaskByTaskTypeId")
+    public JAXBElement<GetSchedulerTaskByTaskTypeId> createGetSchedulerTaskByTaskTypeId(GetSchedulerTaskByTaskTypeId value) {
+        return new JAXBElement<GetSchedulerTaskByTaskTypeId>(_GetSchedulerTaskByTaskTypeId_QNAME, GetSchedulerTaskByTaskTypeId.class, null, value);
     }
 
     /**
@@ -12160,6 +12861,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetSDKTaskExcelPreviewResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetSDKTaskExcelPreviewResponse")
+    public JAXBElement<GetSDKTaskExcelPreviewResponse> createGetSDKTaskExcelPreviewResponse(GetSDKTaskExcelPreviewResponse value) {
+        return new JAXBElement<GetSDKTaskExcelPreviewResponse>(_GetSDKTaskExcelPreviewResponse_QNAME, GetSDKTaskExcelPreviewResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetDefaultObjActListResponse }{@code >}}
      * 
      */
@@ -12184,6 +12894,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.abx/", name = "DownloadFileResponse")
     public JAXBElement<DownloadFileResponse> createDownloadFileResponse(DownloadFileResponse value) {
         return new JAXBElement<DownloadFileResponse>(_DownloadFileResponse_QNAME, DownloadFileResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link UploadPreviewFileResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "UploadPreviewFileResponse")
+    public JAXBElement<UploadPreviewFileResponse> createUploadPreviewFileResponse(UploadPreviewFileResponse value) {
+        return new JAXBElement<UploadPreviewFileResponse>(_UploadPreviewFileResponse_QNAME, UploadPreviewFileResponse.class, null, value);
     }
 
     /**
@@ -12439,15 +13158,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetFileListByCodeResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetFileListByCodeResponse")
-    public JAXBElement<GetFileListByCodeResponse> createGetFileListByCodeResponse(GetFileListByCodeResponse value) {
-        return new JAXBElement<GetFileListByCodeResponse>(_GetFileListByCodeResponse_QNAME, GetFileListByCodeResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetArchSostRulesResponse }{@code >}}
      * 
      */
@@ -12472,6 +13182,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.abx/", name = "DeleteRaccoglitoreResponse")
     public JAXBElement<DeleteRaccoglitoreResponse> createDeleteRaccoglitoreResponse(DeleteRaccoglitoreResponse value) {
         return new JAXBElement<DeleteRaccoglitoreResponse>(_DeleteRaccoglitoreResponse_QNAME, DeleteRaccoglitoreResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetFileListByCodeResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetFileListByCodeResponse")
+    public JAXBElement<GetFileListByCodeResponse> createGetFileListByCodeResponse(GetFileListByCodeResponse value) {
+        return new JAXBElement<GetFileListByCodeResponse>(_GetFileListByCodeResponse_QNAME, GetFileListByCodeResponse.class, null, value);
     }
 
     /**
@@ -12535,6 +13254,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.abx/", name = "Combo_getAll")
     public JAXBElement<ComboGetAll> createComboGetAll(ComboGetAll value) {
         return new JAXBElement<ComboGetAll>(_ComboGetAll_QNAME, ComboGetAll.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteSDKTaskFieldMappingResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "DeleteSDKTaskFieldMappingResponse")
+    public JAXBElement<DeleteSDKTaskFieldMappingResponse> createDeleteSDKTaskFieldMappingResponse(DeleteSDKTaskFieldMappingResponse value) {
+        return new JAXBElement<DeleteSDKTaskFieldMappingResponse>(_DeleteSDKTaskFieldMappingResponse_QNAME, DeleteSDKTaskFieldMappingResponse.class, null, value);
     }
 
     /**
@@ -12664,12 +13392,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetUsersListByGroupResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link CanInsertFileContainerResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetUsersListByGroupResponse")
-    public JAXBElement<GetUsersListByGroupResponse> createGetUsersListByGroupResponse(GetUsersListByGroupResponse value) {
-        return new JAXBElement<GetUsersListByGroupResponse>(_GetUsersListByGroupResponse_QNAME, GetUsersListByGroupResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "CanInsertFileContainerResponse")
+    public JAXBElement<CanInsertFileContainerResponse> createCanInsertFileContainerResponse(CanInsertFileContainerResponse value) {
+        return new JAXBElement<CanInsertFileContainerResponse>(_CanInsertFileContainerResponse_QNAME, CanInsertFileContainerResponse.class, null, value);
     }
 
     /**
@@ -12682,12 +13410,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CanInsertFileContainerResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetUsersListByGroupResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.abx/", name = "CanInsertFileContainerResponse")
-    public JAXBElement<CanInsertFileContainerResponse> createCanInsertFileContainerResponse(CanInsertFileContainerResponse value) {
-        return new JAXBElement<CanInsertFileContainerResponse>(_CanInsertFileContainerResponse_QNAME, CanInsertFileContainerResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetUsersListByGroupResponse")
+    public JAXBElement<GetUsersListByGroupResponse> createGetUsersListByGroupResponse(GetUsersListByGroupResponse value) {
+        return new JAXBElement<GetUsersListByGroupResponse>(_GetUsersListByGroupResponse_QNAME, GetUsersListByGroupResponse.class, null, value);
     }
 
     /**
@@ -12700,21 +13428,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetProtocolByDescResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetProtocolByDescResponse")
-    public JAXBElement<GetProtocolByDescResponse> createGetProtocolByDescResponse(GetProtocolByDescResponse value) {
-        return new JAXBElement<GetProtocolByDescResponse>(_GetProtocolByDescResponse_QNAME, GetProtocolByDescResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DeleteFieldResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.abx/", name = "DeleteFieldResponse")
     public JAXBElement<DeleteFieldResponse> createDeleteFieldResponse(DeleteFieldResponse value) {
         return new JAXBElement<DeleteFieldResponse>(_DeleteFieldResponse_QNAME, DeleteFieldResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetProtocolByDescResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetProtocolByDescResponse")
+    public JAXBElement<GetProtocolByDescResponse> createGetProtocolByDescResponse(GetProtocolByDescResponse value) {
+        return new JAXBElement<GetProtocolByDescResponse>(_GetProtocolByDescResponse_QNAME, GetProtocolByDescResponse.class, null, value);
     }
 
     /**
@@ -12826,6 +13554,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetWsdlVersion }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetWsdlVersion")
+    public JAXBElement<GetWsdlVersion> createGetWsdlVersion(GetWsdlVersion value) {
+        return new JAXBElement<GetWsdlVersion>(_GetWsdlVersion_QNAME, GetWsdlVersion.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DownloadGetChunkWA }{@code >}}
      * 
      */
@@ -12913,6 +13650,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.abx/", name = "Fk_getRemoteDatabaseList")
     public JAXBElement<FkGetRemoteDatabaseList> createFkGetRemoteDatabaseList(FkGetRemoteDatabaseList value) {
         return new JAXBElement<FkGetRemoteDatabaseList>(_FkGetRemoteDatabaseList_QNAME, FkGetRemoteDatabaseList.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ExtractSDKPDFTemplateTextByAreaResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "ExtractSDKPDFTemplateTextByAreaResponse")
+    public JAXBElement<ExtractSDKPDFTemplateTextByAreaResponse> createExtractSDKPDFTemplateTextByAreaResponse(ExtractSDKPDFTemplateTextByAreaResponse value) {
+        return new JAXBElement<ExtractSDKPDFTemplateTextByAreaResponse>(_ExtractSDKPDFTemplateTextByAreaResponse_QNAME, ExtractSDKPDFTemplateTextByAreaResponse.class, null, value);
     }
 
     /**
@@ -13015,6 +13761,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteSDKTask }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "DeleteSDKTask")
+    public JAXBElement<DeleteSDKTask> createDeleteSDKTask(DeleteSDKTask value) {
+        return new JAXBElement<DeleteSDKTask>(_DeleteSDKTask_QNAME, DeleteSDKTask.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link InsertArchSostRule }{@code >}}
      * 
      */
@@ -13078,21 +13833,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetFieldsPropertiesFromTemplate }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetFieldsPropertiesFromTemplate")
-    public JAXBElement<GetFieldsPropertiesFromTemplate> createGetFieldsPropertiesFromTemplate(GetFieldsPropertiesFromTemplate value) {
-        return new JAXBElement<GetFieldsPropertiesFromTemplate>(_GetFieldsPropertiesFromTemplate_QNAME, GetFieldsPropertiesFromTemplate.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CheckOutAttach }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.abx/", name = "CheckOut_attach")
     public JAXBElement<CheckOutAttach> createCheckOutAttach(CheckOutAttach value) {
         return new JAXBElement<CheckOutAttach>(_CheckOutAttach_QNAME, CheckOutAttach.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetFieldsPropertiesFromTemplate }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetFieldsPropertiesFromTemplate")
+    public JAXBElement<GetFieldsPropertiesFromTemplate> createGetFieldsPropertiesFromTemplate(GetFieldsPropertiesFromTemplate value) {
+        return new JAXBElement<GetFieldsPropertiesFromTemplate>(_GetFieldsPropertiesFromTemplate_QNAME, GetFieldsPropertiesFromTemplate.class, null, value);
     }
 
     /**
@@ -13159,6 +13914,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetSDKVariablesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetSDKVariablesResponse")
+    public JAXBElement<GetSDKVariablesResponse> createGetSDKVariablesResponse(GetSDKVariablesResponse value) {
+        return new JAXBElement<GetSDKVariablesResponse>(_GetSDKVariablesResponse_QNAME, GetSDKVariablesResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SetTmpWFDownloadPath }{@code >}}
      * 
      */
@@ -13183,6 +13947,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.abx/", name = "ModifyUserResponse")
     public JAXBElement<ModifyUserResponse> createModifyUserResponse(ModifyUserResponse value) {
         return new JAXBElement<ModifyUserResponse>(_ModifyUserResponse_QNAME, ModifyUserResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link StoreSDKVariable }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "StoreSDKVariable")
+    public JAXBElement<StoreSDKVariable> createStoreSDKVariable(StoreSDKVariable value) {
+        return new JAXBElement<StoreSDKVariable>(_StoreSDKVariable_QNAME, StoreSDKVariable.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetSDKWatchFolderDirectoriesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetSDKWatchFolderDirectoriesResponse")
+    public JAXBElement<GetSDKWatchFolderDirectoriesResponse> createGetSDKWatchFolderDirectoriesResponse(GetSDKWatchFolderDirectoriesResponse value) {
+        return new JAXBElement<GetSDKWatchFolderDirectoriesResponse>(_GetSDKWatchFolderDirectoriesResponse_QNAME, GetSDKWatchFolderDirectoriesResponse.class, null, value);
     }
 
     /**
@@ -13276,21 +14058,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetTemplatePropertiesResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetTemplatePropertiesResponse")
-    public JAXBElement<GetTemplatePropertiesResponse> createGetTemplatePropertiesResponse(GetTemplatePropertiesResponse value) {
-        return new JAXBElement<GetTemplatePropertiesResponse>(_GetTemplatePropertiesResponse_QNAME, GetTemplatePropertiesResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link InsertTranslationDecimalCodeResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.abx/", name = "InsertTranslationDecimalCodeResponse")
     public JAXBElement<InsertTranslationDecimalCodeResponse> createInsertTranslationDecimalCodeResponse(InsertTranslationDecimalCodeResponse value) {
         return new JAXBElement<InsertTranslationDecimalCodeResponse>(_InsertTranslationDecimalCodeResponse_QNAME, InsertTranslationDecimalCodeResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetTemplatePropertiesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetTemplatePropertiesResponse")
+    public JAXBElement<GetTemplatePropertiesResponse> createGetTemplatePropertiesResponse(GetTemplatePropertiesResponse value) {
+        return new JAXBElement<GetTemplatePropertiesResponse>(_GetTemplatePropertiesResponse_QNAME, GetTemplatePropertiesResponse.class, null, value);
     }
 
     /**
@@ -13309,6 +14091,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.abx/", name = "AddMarkerResponse")
     public JAXBElement<AddMarkerResponse> createAddMarkerResponse(AddMarkerResponse value) {
         return new JAXBElement<AddMarkerResponse>(_AddMarkerResponse_QNAME, AddMarkerResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetSDKTextFromTemplateResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetSDKTextFromTemplateResponse")
+    public JAXBElement<GetSDKTextFromTemplateResponse> createGetSDKTextFromTemplateResponse(GetSDKTextFromTemplateResponse value) {
+        return new JAXBElement<GetSDKTextFromTemplateResponse>(_GetSDKTextFromTemplateResponse_QNAME, GetSDKTextFromTemplateResponse.class, null, value);
     }
 
     /**
@@ -13501,21 +14292,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ResetUserSessions }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.abx/", name = "ResetUserSessions")
-    public JAXBElement<ResetUserSessions> createResetUserSessions(ResetUserSessions value) {
-        return new JAXBElement<ResetUserSessions>(_ResetUserSessions_QNAME, ResetUserSessions.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ModUserSettingsResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.abx/", name = "ModUserSettingsResponse")
     public JAXBElement<ModUserSettingsResponse> createModUserSettingsResponse(ModUserSettingsResponse value) {
         return new JAXBElement<ModUserSettingsResponse>(_ModUserSettingsResponse_QNAME, ModUserSettingsResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ResetUserSessions }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "ResetUserSessions")
+    public JAXBElement<ResetUserSessions> createResetUserSessions(ResetUserSessions value) {
+        return new JAXBElement<ResetUserSessions>(_ResetUserSessions_QNAME, ResetUserSessions.class, null, value);
     }
 
     /**
@@ -13618,6 +14409,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ChangeSDKTaskStatus }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "ChangeSDKTaskStatus")
+    public JAXBElement<ChangeSDKTaskStatus> createChangeSDKTaskStatus(ChangeSDKTaskStatus value) {
+        return new JAXBElement<ChangeSDKTaskStatus>(_ChangeSDKTaskStatus_QNAME, ChangeSDKTaskStatus.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link UploadWFEndFileResponse }{@code >}}
      * 
      */
@@ -13642,6 +14442,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.abx/", name = "GetDefaultProcess")
     public JAXBElement<GetDefaultProcess> createGetDefaultProcess(GetDefaultProcess value) {
         return new JAXBElement<GetDefaultProcess>(_GetDefaultProcess_QNAME, GetDefaultProcess.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link UploadPreviewFile }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "UploadPreviewFile")
+    public JAXBElement<UploadPreviewFile> createUploadPreviewFile(UploadPreviewFile value) {
+        return new JAXBElement<UploadPreviewFile>(_UploadPreviewFile_QNAME, UploadPreviewFile.class, null, value);
     }
 
     /**
@@ -13780,6 +14589,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetUserListActiveDirectoryResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetUserListActiveDirectoryResponse")
+    public JAXBElement<GetUserListActiveDirectoryResponse> createGetUserListActiveDirectoryResponse(GetUserListActiveDirectoryResponse value) {
+        return new JAXBElement<GetUserListActiveDirectoryResponse>(_GetUserListActiveDirectoryResponse_QNAME, GetUserListActiveDirectoryResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DeleteUserByUsernameResponse }{@code >}}
      * 
      */
@@ -13870,6 +14688,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CreateSDKTaskFieldMappingResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "CreateSDKTaskFieldMappingResponse")
+    public JAXBElement<CreateSDKTaskFieldMappingResponse> createCreateSDKTaskFieldMappingResponse(CreateSDKTaskFieldMappingResponse value) {
+        return new JAXBElement<CreateSDKTaskFieldMappingResponse>(_CreateSDKTaskFieldMappingResponse_QNAME, CreateSDKTaskFieldMappingResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetDownloadDetailByDataIdResponse }{@code >}}
      * 
      */
@@ -13918,24 +14745,6 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "chunk", scope = UploadSendChunk.class)
-    public JAXBElement<byte[]> createUploadSendChunkChunk(byte[] value) {
-        return new JAXBElement<byte[]>(_UploadSendChunkChunk_QNAME, byte[].class, UploadSendChunk.class, ((byte[]) value));
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "chunk", scope = UploadSendChunkWA.class)
-    public JAXBElement<byte[]> createUploadSendChunkWAChunk(byte[] value) {
-        return new JAXBElement<byte[]>(_UploadSendChunkChunk_QNAME, byte[].class, UploadSendChunkWA.class, ((byte[]) value));
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
-     * 
-     */
     @XmlElementDecl(namespace = "", name = "objName", scope = UploadUSSendChunk.class)
     public JAXBElement<byte[]> createUploadUSSendChunkObjName(byte[] value) {
         return new JAXBElement<byte[]>(_UploadUSSendChunkObjName_QNAME, byte[].class, UploadUSSendChunk.class, ((byte[]) value));
@@ -13947,7 +14756,34 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "chunk", scope = UploadTPSendChunk.class)
     public JAXBElement<byte[]> createUploadTPSendChunkChunk(byte[] value) {
-        return new JAXBElement<byte[]>(_UploadSendChunkChunk_QNAME, byte[].class, UploadTPSendChunk.class, ((byte[]) value));
+        return new JAXBElement<byte[]>(_UploadTPSendChunkChunk_QNAME, byte[].class, UploadTPSendChunk.class, ((byte[]) value));
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "file", scope = UploadPreviewFile.class)
+    public JAXBElement<byte[]> createUploadPreviewFileFile(byte[] value) {
+        return new JAXBElement<byte[]>(_UploadPreviewFileFile_QNAME, byte[].class, UploadPreviewFile.class, ((byte[]) value));
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "chunk", scope = UploadSendChunk.class)
+    public JAXBElement<byte[]> createUploadSendChunkChunk(byte[] value) {
+        return new JAXBElement<byte[]>(_UploadTPSendChunkChunk_QNAME, byte[].class, UploadSendChunk.class, ((byte[]) value));
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "chunk", scope = UploadSendChunkWA.class)
+    public JAXBElement<byte[]> createUploadSendChunkWAChunk(byte[] value) {
+        return new JAXBElement<byte[]>(_UploadTPSendChunkChunk_QNAME, byte[].class, UploadSendChunkWA.class, ((byte[]) value));
     }
 
     /**

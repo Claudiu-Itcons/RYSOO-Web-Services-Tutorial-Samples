@@ -20,6 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="result" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/>
  *         &lt;element name="list" type="{http://ws.abx/}abxFieldList"/>
+ *         &lt;element name="optionalMessage" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -31,7 +32,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "abxFieldResult", propOrder = {
     "result",
-    "list"
+    "list",
+    "optionalMessage"
 })
 public class AbxFieldResult {
 
@@ -39,6 +41,8 @@ public class AbxFieldResult {
     protected long result;
     @XmlElement(required = true)
     protected AbxFieldList list;
+    @XmlElement(required = true)
+    protected String optionalMessage;
 
     /**
      * Recupera il valore della proprietà result.
@@ -78,6 +82,30 @@ public class AbxFieldResult {
      */
     public void setList(AbxFieldList value) {
         this.list = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà optionalMessage.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getOptionalMessage() {
+        return optionalMessage;
+    }
+
+    /**
+     * Imposta il valore della proprietà optionalMessage.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setOptionalMessage(String value) {
+        this.optionalMessage = value;
     }
 
 }

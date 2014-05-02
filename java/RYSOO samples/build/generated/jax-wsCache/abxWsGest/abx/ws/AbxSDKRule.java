@@ -19,6 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="name_description" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="parametersXML" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
@@ -33,6 +34,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "abxSDKRule", propOrder = {
     "id",
     "name",
+    "nameDescription",
     "description",
     "parametersXML"
 })
@@ -42,6 +44,8 @@ public class AbxSDKRule {
     protected String id;
     @XmlElement(required = true)
     protected String name;
+    @XmlElement(name = "name_description", required = true)
+    protected String nameDescription;
     @XmlElement(required = true)
     protected String description;
     @XmlElement(required = true)
@@ -93,6 +97,30 @@ public class AbxSDKRule {
      */
     public void setName(String value) {
         this.name = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà nameDescription.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getNameDescription() {
+        return nameDescription;
+    }
+
+    /**
+     * Imposta il valore della proprietà nameDescription.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setNameDescription(String value) {
+        this.nameDescription = value;
     }
 
     /**

@@ -33,22 +33,5 @@
         <delete dir="${build.generated.dir}/jax-wsCache/abxWsGest"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/abx/ws"/>
     </target>
-    <target name="wsimport-client-abxWsGest_1" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/abxWsGest_1"/>
-        <property name="wsdl-abxWsGest_1" location="xml-resources/web-service-references/abxWsGest_1/wsdl/iabx000002.iabx.net/abxWsGestService/abxWsGest.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/abxWsGest_1" destdir="${build.generated.dir}/jax-wsCache/abxWsGest_1" wsdl="${wsdl-abxWsGest_1}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://iabx000002.iabx.net/abxWsGestService/abxWsGest?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${wsdl-abxWsGest_1}"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/abxWsGest_1"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/abxWsGest_1">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-abxWsGest_1" depends="-init-project">
-        <delete dir="${build.generated.dir}/jax-wsCache/abxWsGest_1"/>
-        <delete dir="${build.generated.sources.dir}/jax-ws/abx/ws"/>
-    </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-abxWsGest, wsimport-client-abxWsGest_1"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-abxWsGest"/>
 </project>

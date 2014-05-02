@@ -27,8 +27,8 @@ import org.netbeans.xml.schema.abxprotocol.AbxProtocolResult;
  */
 @WebService(name = "abxWsGest", targetNamespace = "http://ws.abx/")
 @XmlSeeAlso({
-    abx.ws.ObjectFactory.class,
     org.netbeans.xml.schema.abxprotocol.ObjectFactory.class,
+    abx.ws.ObjectFactory.class,
     org.netbeans.xml.schema.abxcan.ObjectFactory.class,
     org.netbeans.xml.schema.abxdynaminorg.ObjectFactory.class
 })
@@ -37,186 +37,936 @@ public interface AbxWsGest {
 
     /**
      * 
-     * @param sessionId
-     * @param name
      * @return
-     *     returns abx.ws.AbxGroupResult
+     *     returns abx.ws.AbxWsdlResult
      */
-    @WebMethod(operationName = "DeleteGroup")
+    @WebMethod(operationName = "GetWsdlVersion")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DeleteGroup", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteGroup")
-    @ResponseWrapper(localName = "DeleteGroupResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteGroupResponse")
-    @Action(input = "http://ws.abx/abxWsGest/DeleteGroupRequest", output = "http://ws.abx/abxWsGest/DeleteGroupResponse")
-    public AbxGroupResult deleteGroup(
+    @RequestWrapper(localName = "GetWsdlVersion", targetNamespace = "http://ws.abx/", className = "abx.ws.GetWsdlVersion")
+    @ResponseWrapper(localName = "GetWsdlVersionResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetWsdlVersionResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetWsdlVersionRequest", output = "http://ws.abx/abxWsGest/GetWsdlVersionResponse")
+    public AbxWsdlResult getWsdlVersion();
+
+    /**
+     * 
+     * @param fk
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxFKResult
+     */
+    @WebMethod(operationName = "Fk_getColumnsName")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Fk_getColumnsName", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetColumnsName")
+    @ResponseWrapper(localName = "Fk_getColumnsNameResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetColumnsNameResponse")
+    @Action(input = "http://ws.abx/abxWsGest/Fk_getColumnsNameRequest", output = "http://ws.abx/abxWsGest/Fk_getColumnsNameResponse")
+    public AbxFKResult fkGetColumnsName(
         @WebParam(name = "SessionId", targetNamespace = "")
         IDtype sessionId,
-        @WebParam(name = "name", targetNamespace = "")
-        String name);
+        @WebParam(name = "fk", targetNamespace = "")
+        AbxFK fk);
 
     /**
      * 
-     * @param in
+     * @param pwd
+     * @param host
+     * @param sessionId
+     * @param dbType
+     * @param user
      * @return
-     *     returns abx.ws.AbxPingResult
+     *     returns abx.ws.AbxFKResult
      */
-    @WebMethod(operationName = "Ping")
+    @WebMethod(operationName = "Fk_getRemoteDatabaseList")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Ping", targetNamespace = "http://ws.abx/", className = "abx.ws.Ping")
-    @ResponseWrapper(localName = "PingResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.PingResponse")
-    @Action(input = "http://ws.abx/abxWsGest/PingRequest", output = "http://ws.abx/abxWsGest/PingResponse")
-    public AbxPingResult ping(
-        @WebParam(name = "In", targetNamespace = "")
-        String in);
+    @RequestWrapper(localName = "Fk_getRemoteDatabaseList", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetRemoteDatabaseList")
+    @ResponseWrapper(localName = "Fk_getRemoteDatabaseListResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetRemoteDatabaseListResponse")
+    @Action(input = "http://ws.abx/abxWsGest/Fk_getRemoteDatabaseListRequest", output = "http://ws.abx/abxWsGest/Fk_getRemoteDatabaseListResponse")
+    public AbxFKResult fkGetRemoteDatabaseList(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "host", targetNamespace = "")
+        String host,
+        @WebParam(name = "user", targetNamespace = "")
+        String user,
+        @WebParam(name = "pwd", targetNamespace = "")
+        String pwd,
+        @WebParam(name = "dbType", targetNamespace = "")
+        String dbType);
+
+    /**
+     * 
+     * @param databaseName
+     * @param pwd
+     * @param host
+     * @param sessionId
+     * @param dbType
+     * @param user
+     * @return
+     *     returns abx.ws.AbxFKResult
+     */
+    @WebMethod(operationName = "Fk_getRemoteTableList")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Fk_getRemoteTableList", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetRemoteTableList")
+    @ResponseWrapper(localName = "Fk_getRemoteTableListResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetRemoteTableListResponse")
+    @Action(input = "http://ws.abx/abxWsGest/Fk_getRemoteTableListRequest", output = "http://ws.abx/abxWsGest/Fk_getRemoteTableListResponse")
+    public AbxFKResult fkGetRemoteTableList(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "host", targetNamespace = "")
+        String host,
+        @WebParam(name = "user", targetNamespace = "")
+        String user,
+        @WebParam(name = "pwd", targetNamespace = "")
+        String pwd,
+        @WebParam(name = "dbType", targetNamespace = "")
+        String dbType,
+        @WebParam(name = "databaseName", targetNamespace = "")
+        String databaseName);
+
+    /**
+     * 
+     * @param databaseName
+     * @param pwd
+     * @param host
+     * @param sessionId
+     * @param dbType
+     * @param user
+     * @return
+     *     returns abx.ws.AbxFKResult
+     */
+    @WebMethod(operationName = "Fk_getRemoteViewList")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Fk_getRemoteViewList", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetRemoteViewList")
+    @ResponseWrapper(localName = "Fk_getRemoteViewListResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetRemoteViewListResponse")
+    @Action(input = "http://ws.abx/abxWsGest/Fk_getRemoteViewListRequest", output = "http://ws.abx/abxWsGest/Fk_getRemoteViewListResponse")
+    public AbxFKResult fkGetRemoteViewList(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "host", targetNamespace = "")
+        String host,
+        @WebParam(name = "user", targetNamespace = "")
+        String user,
+        @WebParam(name = "pwd", targetNamespace = "")
+        String pwd,
+        @WebParam(name = "dbType", targetNamespace = "")
+        String dbType,
+        @WebParam(name = "databaseName", targetNamespace = "")
+        String databaseName);
+
+    /**
+     * 
+     * @param databaseName
+     * @param pwd
+     * @param host
+     * @param sessionId
+     * @param tableName
+     * @param dbType
+     * @param user
+     * @return
+     *     returns abx.ws.AbxFKResult
+     */
+    @WebMethod(operationName = "Fk_getRemoteFieldList")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Fk_getRemoteFieldList", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetRemoteFieldList")
+    @ResponseWrapper(localName = "Fk_getRemoteFieldListResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetRemoteFieldListResponse")
+    @Action(input = "http://ws.abx/abxWsGest/Fk_getRemoteFieldListRequest", output = "http://ws.abx/abxWsGest/Fk_getRemoteFieldListResponse")
+    public AbxFKResult fkGetRemoteFieldList(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "host", targetNamespace = "")
+        String host,
+        @WebParam(name = "user", targetNamespace = "")
+        String user,
+        @WebParam(name = "pwd", targetNamespace = "")
+        String pwd,
+        @WebParam(name = "dbType", targetNamespace = "")
+        String dbType,
+        @WebParam(name = "databaseName", targetNamespace = "")
+        String databaseName,
+        @WebParam(name = "tableName", targetNamespace = "")
+        String tableName);
+
+    /**
+     * 
+     * @param users
+     * @param sessionId
+     * @param groups
+     * @return
+     *     returns abx.ws.AbxFKResult
+     */
+    @WebMethod(operationName = "Fk_getLocalFieldList")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Fk_getLocalFieldList", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetLocalFieldList")
+    @ResponseWrapper(localName = "Fk_getLocalFieldListResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetLocalFieldListResponse")
+    @Action(input = "http://ws.abx/abxWsGest/Fk_getLocalFieldListRequest", output = "http://ws.abx/abxWsGest/Fk_getLocalFieldListResponse")
+    public AbxFKResult fkGetLocalFieldList(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "users", targetNamespace = "")
+        boolean users,
+        @WebParam(name = "groups", targetNamespace = "")
+        boolean groups);
+
+    /**
+     * 
+     * @param sessionId
+     * @param option4Query
+     * @return
+     *     returns abx.ws.AbxRetQueryResult
+     */
+    @WebMethod(operationName = "Query")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Query", targetNamespace = "http://ws.abx/", className = "abx.ws.Query")
+    @ResponseWrapper(localName = "QueryResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.QueryResponse")
+    @Action(input = "http://ws.abx/abxWsGest/QueryRequest", output = "http://ws.abx/abxWsGest/QueryResponse")
+    public AbxRetQueryResult query(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "option4query", targetNamespace = "")
+        AbxQexpression option4Query);
+
+    /**
+     * 
+     * @param directionDesc
+     * @param fk
+     * @param orderBy
+     * @param instanceName
+     * @param sessionId
+     * @param numTotRecord
+     * @return
+     *     returns abx.ws.AbxFKResult
+     */
+    @WebMethod(operationName = "Fk_getAllRecord")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Fk_getAllRecord", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetAllRecord")
+    @ResponseWrapper(localName = "Fk_getAllRecordResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetAllRecordResponse")
+    @Action(input = "http://ws.abx/abxWsGest/Fk_getAllRecordRequest", output = "http://ws.abx/abxWsGest/Fk_getAllRecordResponse")
+    public AbxFKResult fkGetAllRecord(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "fk", targetNamespace = "")
+        AbxFK fk,
+        @WebParam(name = "numTotRecord", targetNamespace = "")
+        int numTotRecord,
+        @WebParam(name = "orderBy", targetNamespace = "")
+        String orderBy,
+        @WebParam(name = "directionDesc", targetNamespace = "")
+        boolean directionDesc,
+        @WebParam(name = "InstanceName", targetNamespace = "")
+        String instanceName);
+
+    /**
+     * 
+     * @param fk
+     * @param instanceName
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxFKResult
+     */
+    @WebMethod(operationName = "Fk_getCountAllRecord")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Fk_getCountAllRecord", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetCountAllRecord")
+    @ResponseWrapper(localName = "Fk_getCountAllRecordResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetCountAllRecordResponse")
+    @Action(input = "http://ws.abx/abxWsGest/Fk_getCountAllRecordRequest", output = "http://ws.abx/abxWsGest/Fk_getCountAllRecordResponse")
+    public AbxFKResult fkGetCountAllRecord(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "fk", targetNamespace = "")
+        AbxFK fk,
+        @WebParam(name = "InstanceName", targetNamespace = "")
+        String instanceName);
+
+    /**
+     * 
+     * @param directionDesc
+     * @param fk
+     * @param instanceName
+     * @param sessionId
+     * @param numTotRecord
+     * @return
+     *     returns abx.ws.AbxFKResult
+     */
+    @WebMethod(operationName = "Fk_getAllRecordByIndex")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Fk_getAllRecordByIndex", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetAllRecordByIndex")
+    @ResponseWrapper(localName = "Fk_getAllRecordByIndexResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetAllRecordByIndexResponse")
+    @Action(input = "http://ws.abx/abxWsGest/Fk_getAllRecordByIndexRequest", output = "http://ws.abx/abxWsGest/Fk_getAllRecordByIndexResponse")
+    public AbxFKResult fkGetAllRecordByIndex(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "fk", targetNamespace = "")
+        AbxFK fk,
+        @WebParam(name = "numTotRecord", targetNamespace = "")
+        int numTotRecord,
+        @WebParam(name = "directionDesc", targetNamespace = "")
+        boolean directionDesc,
+        @WebParam(name = "InstanceName", targetNamespace = "")
+        String instanceName);
+
+    /**
+     * 
+     * @param directionDesc
+     * @param fk
+     * @param orderBy
+     * @param instanceName
+     * @param sessionId
+     * @param numTotRecord
+     * @return
+     *     returns abx.ws.AbxFKResult
+     */
+    @WebMethod(operationName = "Fk_getAllRecordByDesc")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Fk_getAllRecordByDesc", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetAllRecordByDesc")
+    @ResponseWrapper(localName = "Fk_getAllRecordByDescResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetAllRecordByDescResponse")
+    @Action(input = "http://ws.abx/abxWsGest/Fk_getAllRecordByDescRequest", output = "http://ws.abx/abxWsGest/Fk_getAllRecordByDescResponse")
+    public AbxFKResult fkGetAllRecordByDesc(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "fk", targetNamespace = "")
+        AbxFK fk,
+        @WebParam(name = "numTotRecord", targetNamespace = "")
+        int numTotRecord,
+        @WebParam(name = "orderBy", targetNamespace = "")
+        String orderBy,
+        @WebParam(name = "directionDesc", targetNamespace = "")
+        boolean directionDesc,
+        @WebParam(name = "InstanceName", targetNamespace = "")
+        String instanceName);
+
+    /**
+     * 
+     * @param fk
+     * @param instanceName
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxFKResult
+     */
+    @WebMethod(operationName = "Fk_getCountAllRecordByDesc")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Fk_getCountAllRecordByDesc", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetCountAllRecordByDesc")
+    @ResponseWrapper(localName = "Fk_getCountAllRecordByDescResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetCountAllRecordByDescResponse")
+    @Action(input = "http://ws.abx/abxWsGest/Fk_getCountAllRecordByDescRequest", output = "http://ws.abx/abxWsGest/Fk_getCountAllRecordByDescResponse")
+    public AbxFKResult fkGetCountAllRecordByDesc(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "fk", targetNamespace = "")
+        AbxFK fk,
+        @WebParam(name = "InstanceName", targetNamespace = "")
+        String instanceName);
+
+    /**
+     * 
+     * @param instanceName
+     * @param sessionId
+     * @param fkp
+     * @return
+     *     returns abx.ws.AbxFKResult
+     */
+    @WebMethod(operationName = "Fk_getCountAllRecordByIndexDesc")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Fk_getCountAllRecordByIndexDesc", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetCountAllRecordByIndexDesc")
+    @ResponseWrapper(localName = "Fk_getCountAllRecordByIndexDescResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetCountAllRecordByIndexDescResponse")
+    @Action(input = "http://ws.abx/abxWsGest/Fk_getCountAllRecordByIndexDescRequest", output = "http://ws.abx/abxWsGest/Fk_getCountAllRecordByIndexDescResponse")
+    public AbxFKResult fkGetCountAllRecordByIndexDesc(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "fkp", targetNamespace = "")
+        AbxFK fkp,
+        @WebParam(name = "InstanceName", targetNamespace = "")
+        String instanceName);
+
+    /**
+     * 
+     * @param directionDesc
+     * @param orderBy
+     * @param instanceName
+     * @param sessionId
+     * @param numTotRecord
+     * @param fkp
+     * @return
+     *     returns abx.ws.AbxFKResult
+     */
+    @WebMethod(operationName = "Fk_getAllRecordByIndexDesc")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Fk_getAllRecordByIndexDesc", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetAllRecordByIndexDesc")
+    @ResponseWrapper(localName = "Fk_getAllRecordByIndexDescResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetAllRecordByIndexDescResponse")
+    @Action(input = "http://ws.abx/abxWsGest/Fk_getAllRecordByIndexDescRequest", output = "http://ws.abx/abxWsGest/Fk_getAllRecordByIndexDescResponse")
+    public AbxFKResult fkGetAllRecordByIndexDesc(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "fkp", targetNamespace = "")
+        AbxFK fkp,
+        @WebParam(name = "numTotRecord", targetNamespace = "")
+        int numTotRecord,
+        @WebParam(name = "orderBy", targetNamespace = "")
+        String orderBy,
+        @WebParam(name = "directionDesc", targetNamespace = "")
+        boolean directionDesc,
+        @WebParam(name = "InstanceName", targetNamespace = "")
+        String instanceName);
+
+    /**
+     * 
+     * @param annotazione
+     * @param instanceName
+     * @param sessionId
+     * @param dataId
+     * @return
+     *     returns abx.ws.AbxDataResult
+     */
+    @WebMethod(operationName = "InsertDataWA")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "InsertDataWA", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertDataWA")
+    @ResponseWrapper(localName = "InsertDataWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertDataWAResponse")
+    @Action(input = "http://ws.abx/abxWsGest/InsertDataWARequest", output = "http://ws.abx/abxWsGest/InsertDataWAResponse")
+    public AbxDataResult insertDataWA(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "instanceName", targetNamespace = "")
+        String instanceName,
+        @WebParam(name = "dataId", targetNamespace = "")
+        String dataId,
+        @WebParam(name = "annotazione", targetNamespace = "")
+        String annotazione);
+
+    /**
+     * 
+     * @param instanceName
+     * @param sessionId
+     * @param dataId
+     * @return
+     *     returns abx.ws.AbxDataResult
+     */
+    @WebMethod(operationName = "GetListDataWA")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetListDataWA", targetNamespace = "http://ws.abx/", className = "abx.ws.GetListDataWA")
+    @ResponseWrapper(localName = "GetListDataWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetListDataWAResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetListDataWARequest", output = "http://ws.abx/abxWsGest/GetListDataWAResponse")
+    public AbxDataResult getListDataWA(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "instanceName", targetNamespace = "")
+        String instanceName,
+        @WebParam(name = "dataId", targetNamespace = "")
+        String dataId);
+
+    /**
+     * 
+     * @param annotazione
+     * @param annotazioneId
+     * @param instanceName
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxDataResult
+     */
+    @WebMethod(operationName = "ModifyDataWA")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "ModifyDataWA", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyDataWA")
+    @ResponseWrapper(localName = "ModifyDataWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyDataWAResponse")
+    @Action(input = "http://ws.abx/abxWsGest/ModifyDataWARequest", output = "http://ws.abx/abxWsGest/ModifyDataWAResponse")
+    public AbxDataResult modifyDataWA(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "instanceName", targetNamespace = "")
+        String instanceName,
+        @WebParam(name = "annotazioneId", targetNamespace = "")
+        String annotazioneId,
+        @WebParam(name = "annotazione", targetNamespace = "")
+        String annotazione);
+
+    /**
+     * 
+     * @param annotazioneId
+     * @param instanceName
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxDataResult
+     */
+    @WebMethod(operationName = "DeleteDataWA")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DeleteDataWA", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteDataWA")
+    @ResponseWrapper(localName = "DeleteDataWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteDataWAResponse")
+    @Action(input = "http://ws.abx/abxWsGest/DeleteDataWARequest", output = "http://ws.abx/abxWsGest/DeleteDataWAResponse")
+    public AbxDataResult deleteDataWA(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "instanceName", targetNamespace = "")
+        String instanceName,
+        @WebParam(name = "annotazioneId", targetNamespace = "")
+        String annotazioneId);
+
+    /**
+     * 
+     * @param annotazioneId
+     * @param instanceName
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxDataResult
+     */
+    @WebMethod(operationName = "GetDataWAById")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetDataWAById", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDataWAById")
+    @ResponseWrapper(localName = "GetDataWAByIdResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDataWAByIdResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetDataWAByIdRequest", output = "http://ws.abx/abxWsGest/GetDataWAByIdResponse")
+    public AbxDataResult getDataWAById(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "instanceName", targetNamespace = "")
+        String instanceName,
+        @WebParam(name = "annotazioneId", targetNamespace = "")
+        String annotazioneId);
+
+    /**
+     * 
+     * @param annotazioneId
+     * @param objName
+     * @param instanceName
+     * @param sessionId
+     * @param dataListInput
+     * @return
+     *     returns abx.ws.AbxFileResult
+     */
+    @WebMethod(operationName = "InsertFileWA")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "InsertFileWA", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertFileWA")
+    @ResponseWrapper(localName = "InsertFileWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertFileWAResponse")
+    @Action(input = "http://ws.abx/abxWsGest/InsertFileWARequest", output = "http://ws.abx/abxWsGest/InsertFileWAResponse")
+    public AbxFileResult insertFileWA(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "instanceName", targetNamespace = "")
+        String instanceName,
+        @WebParam(name = "annotazioneId", targetNamespace = "")
+        String annotazioneId,
+        @WebParam(name = "objName", targetNamespace = "")
+        String objName,
+        @WebParam(name = "dataListInput", targetNamespace = "")
+        AbxFileList dataListInput);
+
+    /**
+     * 
+     * @param chunk
+     * @param fileCode
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxFileResult
+     */
+    @WebMethod(operationName = "UploadSendChunkWA")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "UploadSendChunkWA", targetNamespace = "http://ws.abx/", className = "abx.ws.UploadSendChunkWA")
+    @ResponseWrapper(localName = "UploadSendChunkWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.UploadSendChunkWAResponse")
+    @Action(input = "http://ws.abx/abxWsGest/UploadSendChunkWARequest", output = "http://ws.abx/abxWsGest/UploadSendChunkWAResponse")
+    public AbxFileResult uploadSendChunkWA(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "fileCode", targetNamespace = "")
+        String fileCode,
+        @WebParam(name = "chunk", targetNamespace = "")
+        byte[] chunk);
+
+    /**
+     * 
+     * @param annotazioneId
+     * @param docTemplateName
+     * @param objName
+     * @param codePreviousVersion
+     * @param instanceName
+     * @param sessionId
+     * @param dataListInput
+     * @return
+     *     returns abx.ws.AbxFileResult
+     */
+    @WebMethod(operationName = "UploadEndFileWA")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "UploadEndFileWA", targetNamespace = "http://ws.abx/", className = "abx.ws.UploadEndFileWA")
+    @ResponseWrapper(localName = "UploadEndFileWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.UploadEndFileWAResponse")
+    @Action(input = "http://ws.abx/abxWsGest/UploadEndFileWARequest", output = "http://ws.abx/abxWsGest/UploadEndFileWAResponse")
+    public AbxFileResult uploadEndFileWA(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "instanceName", targetNamespace = "")
+        String instanceName,
+        @WebParam(name = "annotazioneId", targetNamespace = "")
+        String annotazioneId,
+        @WebParam(name = "objName", targetNamespace = "")
+        String objName,
+        @WebParam(name = "dataListInput", targetNamespace = "")
+        AbxFileList dataListInput,
+        @WebParam(name = "codePreviousVersion", targetNamespace = "")
+        String codePreviousVersion,
+        @WebParam(name = "docTemplateName", targetNamespace = "")
+        String docTemplateName);
+
+    /**
+     * 
+     * @param annotazioneId
+     * @param instanceName
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxFileResult
+     */
+    @WebMethod(operationName = "GetDataFileListWA")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetDataFileListWA", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDataFileListWA")
+    @ResponseWrapper(localName = "GetDataFileListWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDataFileListWAResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetDataFileListWARequest", output = "http://ws.abx/abxWsGest/GetDataFileListWAResponse")
+    public AbxFileResult getDataFileListWA(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "instanceName", targetNamespace = "")
+        String instanceName,
+        @WebParam(name = "annotazioneId", targetNamespace = "")
+        String annotazioneId);
+
+    /**
+     * 
+     * @param dChunk
+     * @param instanceName
+     * @param sessionId
+     * @param fileUniqueCode
+     * @return
+     *     returns abx.ws.AbxFileResult
+     */
+    @WebMethod(operationName = "DownloadFileWAByFileUniqueCode")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DownloadFileWAByFileUniqueCode", targetNamespace = "http://ws.abx/", className = "abx.ws.DownloadFileWAByFileUniqueCode")
+    @ResponseWrapper(localName = "DownloadFileWAByFileUniqueCodeResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DownloadFileWAByFileUniqueCodeResponse")
+    @Action(input = "http://ws.abx/abxWsGest/DownloadFileWAByFileUniqueCodeRequest", output = "http://ws.abx/abxWsGest/DownloadFileWAByFileUniqueCodeResponse")
+    public AbxFileResult downloadFileWAByFileUniqueCode(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "instanceName", targetNamespace = "")
+        String instanceName,
+        @WebParam(name = "fileUniqueCode", targetNamespace = "")
+        String fileUniqueCode,
+        @WebParam(name = "dChunk", targetNamespace = "")
+        String dChunk);
+
+    /**
+     * 
+     * @param dChunk
+     * @param instanceName
+     * @param sessionId
+     * @param dataAttachmentId
+     * @return
+     *     returns abx.ws.AbxFileResult
+     */
+    @WebMethod(operationName = "DownloadFileWA")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DownloadFileWA", targetNamespace = "http://ws.abx/", className = "abx.ws.DownloadFileWA")
+    @ResponseWrapper(localName = "DownloadFileWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DownloadFileWAResponse")
+    @Action(input = "http://ws.abx/abxWsGest/DownloadFileWARequest", output = "http://ws.abx/abxWsGest/DownloadFileWAResponse")
+    public AbxFileResult downloadFileWA(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "instanceName", targetNamespace = "")
+        String instanceName,
+        @WebParam(name = "dataAttachmentId", targetNamespace = "")
+        String dataAttachmentId,
+        @WebParam(name = "dChunk", targetNamespace = "")
+        String dChunk);
+
+    /**
+     * 
+     * @param fileCode
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxFileResult
+     */
+    @WebMethod(operationName = "DownloadGetNextWA")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DownloadGetNextWA", targetNamespace = "http://ws.abx/", className = "abx.ws.DownloadGetNextWA")
+    @ResponseWrapper(localName = "DownloadGetNextWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DownloadGetNextWAResponse")
+    @Action(input = "http://ws.abx/abxWsGest/DownloadGetNextWARequest", output = "http://ws.abx/abxWsGest/DownloadGetNextWAResponse")
+    public AbxFileResult downloadGetNextWA(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "fileCode", targetNamespace = "")
+        String fileCode);
+
+    /**
+     * 
+     * @param fileCode
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxFileResult
+     */
+    @WebMethod(operationName = "DownloadEndFileWA")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DownloadEndFileWA", targetNamespace = "http://ws.abx/", className = "abx.ws.DownloadEndFileWA")
+    @ResponseWrapper(localName = "DownloadEndFileWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DownloadEndFileWAResponse")
+    @Action(input = "http://ws.abx/abxWsGest/DownloadEndFileWARequest", output = "http://ws.abx/abxWsGest/DownloadEndFileWAResponse")
+    public AbxFileResult downloadEndFileWA(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "fileCode", targetNamespace = "")
+        String fileCode);
+
+    /**
+     * 
+     * @param fileCode
+     * @param instanceName
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxFileResult
+     */
+    @WebMethod(operationName = "DeleteFileWA")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DeleteFileWA", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteFileWA")
+    @ResponseWrapper(localName = "DeleteFileWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteFileWAResponse")
+    @Action(input = "http://ws.abx/abxWsGest/DeleteFileWARequest", output = "http://ws.abx/abxWsGest/DeleteFileWAResponse")
+    public AbxFileResult deleteFileWA(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "instanceName", targetNamespace = "")
+        String instanceName,
+        @WebParam(name = "fileCode", targetNamespace = "")
+        String fileCode);
+
+    /**
+     * 
+     * @param linkTypeName
+     * @param instanceName
+     * @param dataId
+     * @param iDtypeSessionId
+     * @return
+     *     returns abx.ws.AbxLinkResult
+     */
+    @WebMethod(operationName = "GetCountDocumentLinks")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetCountDocumentLinks", targetNamespace = "http://ws.abx/", className = "abx.ws.GetCountDocumentLinks")
+    @ResponseWrapper(localName = "GetCountDocumentLinksResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetCountDocumentLinksResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetCountDocumentLinksRequest", output = "http://ws.abx/abxWsGest/GetCountDocumentLinksResponse")
+    public AbxLinkResult getCountDocumentLinks(
+        @WebParam(name = "IDtype_SessionId", targetNamespace = "")
+        IDtype iDtypeSessionId,
+        @WebParam(name = "instanceName", targetNamespace = "")
+        String instanceName,
+        @WebParam(name = "dataId", targetNamespace = "")
+        String dataId,
+        @WebParam(name = "linkTypeName", targetNamespace = "")
+        String linkTypeName);
+
+    /**
+     * 
+     * @param instanceName
+     * @param sessionId
+     * @param replicationList
+     * @return
+     *     returns abx.ws.AbxReplicationResult
+     */
+    @WebMethod(operationName = "SetInstanceReplication")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "SetInstanceReplication", targetNamespace = "http://ws.abx/", className = "abx.ws.SetInstanceReplication")
+    @ResponseWrapper(localName = "SetInstanceReplicationResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.SetInstanceReplicationResponse")
+    @Action(input = "http://ws.abx/abxWsGest/SetInstanceReplicationRequest", output = "http://ws.abx/abxWsGest/SetInstanceReplicationResponse")
+    public AbxReplicationResult setInstanceReplication(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "instanceName", targetNamespace = "")
+        String instanceName,
+        @WebParam(name = "replicationList", targetNamespace = "")
+        AbxReplicationList replicationList);
+
+    /**
+     * 
+     * @param container2Update
+     * @param sessionId
+     * @param abxSecurityId
+     * @param avl
+     * @return
+     *     returns abx.ws.AbxContainerResult
+     */
+    @WebMethod(operationName = "ModifyContainer")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "ModifyContainer", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyContainer")
+    @ResponseWrapper(localName = "ModifyContainerResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyContainerResponse")
+    @Action(input = "http://ws.abx/abxWsGest/ModifyContainerRequest", output = "http://ws.abx/abxWsGest/ModifyContainerResponse")
+    public AbxContainerResult modifyContainer(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "Container2Update", targetNamespace = "")
+        AbxContainer container2Update,
+        @WebParam(name = "abxSecurityId", targetNamespace = "")
+        String abxSecurityId,
+        @WebParam(name = "avl", targetNamespace = "")
+        AbxVersioningList avl);
+
+    /**
+     * 
+     * @param sessionId
+     * @param template2Update
+     * @return
+     *     returns abx.ws.AbxTemplateResult
+     */
+    @WebMethod(operationName = "ModifyTemplate")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "ModifyTemplate", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyTemplate")
+    @ResponseWrapper(localName = "ModifyTemplateResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyTemplateResponse")
+    @Action(input = "http://ws.abx/abxWsGest/ModifyTemplateRequest", output = "http://ws.abx/abxWsGest/ModifyTemplateResponse")
+    public AbxTemplateResult modifyTemplate(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "Template2Update", targetNamespace = "")
+        AbxTemplate template2Update);
+
+    /**
+     * 
+     * @param sessionId
+     * @param templateName
+     * @return
+     *     returns abx.ws.AbxTemplateResult
+     */
+    @WebMethod(operationName = "DeleteTemplate")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DeleteTemplate", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteTemplate")
+    @ResponseWrapper(localName = "DeleteTemplateResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteTemplateResponse")
+    @Action(input = "http://ws.abx/abxWsGest/DeleteTemplateRequest", output = "http://ws.abx/abxWsGest/DeleteTemplateResponse")
+    public AbxTemplateResult deleteTemplate(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "TemplateName", targetNamespace = "")
+        String templateName);
+
+    /**
+     * 
+     * @param sessionId
+     * @param containerName
+     * @return
+     *     returns abx.ws.AbxContainerResult
+     */
+    @WebMethod(operationName = "DeleteContainer")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DeleteContainer", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteContainer")
+    @ResponseWrapper(localName = "DeleteContainerResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteContainerResponse")
+    @Action(input = "http://ws.abx/abxWsGest/DeleteContainerRequest", output = "http://ws.abx/abxWsGest/DeleteContainerResponse")
+    public AbxContainerResult deleteContainer(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "ContainerName", targetNamespace = "")
+        String containerName);
+
+    /**
+     * 
+     * @param sessionId
+     * @param containerName
+     * @return
+     *     returns org.netbeans.xml.schema.abxcan.AbxCan
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "canModifyContainer", targetNamespace = "http://ws.abx/", className = "abx.ws.CanModifyContainer")
+    @ResponseWrapper(localName = "canModifyContainerResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanModifyContainerResponse")
+    @Action(input = "http://ws.abx/abxWsGest/canModifyContainerRequest", output = "http://ws.abx/abxWsGest/canModifyContainerResponse")
+    public AbxCan canModifyContainer(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "ContainerName", targetNamespace = "")
+        String containerName);
+
+    /**
+     * 
+     * @param sessionId
+     * @param template2Update
+     * @return
+     *     returns org.netbeans.xml.schema.abxcan.AbxCan
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "canModifyTemplate", targetNamespace = "http://ws.abx/", className = "abx.ws.CanModifyTemplate")
+    @ResponseWrapper(localName = "canModifyTemplateResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanModifyTemplateResponse")
+    @Action(input = "http://ws.abx/abxWsGest/canModifyTemplateRequest", output = "http://ws.abx/abxWsGest/canModifyTemplateResponse")
+    public AbxCan canModifyTemplate(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "Template2Update", targetNamespace = "")
+        String template2Update);
+
+    /**
+     * 
+     * @param sessionId
+     * @param containerName
+     * @return
+     *     returns org.netbeans.xml.schema.abxcan.AbxCan
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "canDeleteContainer", targetNamespace = "http://ws.abx/", className = "abx.ws.CanDeleteContainer")
+    @ResponseWrapper(localName = "canDeleteContainerResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanDeleteContainerResponse")
+    @Action(input = "http://ws.abx/abxWsGest/canDeleteContainerRequest", output = "http://ws.abx/abxWsGest/canDeleteContainerResponse")
+    public AbxCan canDeleteContainer(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "ContainerName", targetNamespace = "")
+        String containerName);
+
+    /**
+     * 
+     * @param sessionId
+     * @param templateName
+     * @return
+     *     returns org.netbeans.xml.schema.abxcan.AbxCan
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "canDeleteTemplate", targetNamespace = "http://ws.abx/", className = "abx.ws.CanDeleteTemplate")
+    @ResponseWrapper(localName = "canDeleteTemplateResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanDeleteTemplateResponse")
+    @Action(input = "http://ws.abx/abxWsGest/canDeleteTemplateRequest", output = "http://ws.abx/abxWsGest/canDeleteTemplateResponse")
+    public AbxCan canDeleteTemplate(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "TemplateName", targetNamespace = "")
+        String templateName);
+
+    /**
+     * 
+     * @param parentDataID
+     * @param sessionId
+     * @param containerParentName
+     * @return
+     *     returns org.netbeans.xml.schema.abxcan.AbxCan
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "canCreateContainer", targetNamespace = "http://ws.abx/", className = "abx.ws.CanCreateContainer")
+    @ResponseWrapper(localName = "canCreateContainerResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanCreateContainerResponse")
+    @Action(input = "http://ws.abx/abxWsGest/canCreateContainerRequest", output = "http://ws.abx/abxWsGest/canCreateContainerResponse")
+    public AbxCan canCreateContainer(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "ContainerParentName", targetNamespace = "")
+        String containerParentName,
+        @WebParam(name = "parentDataID", targetNamespace = "")
+        abx.ws.CanCreateContainer.ParentDataID parentDataID);
 
     /**
      * 
      * @param sessionId
      * @return
-     *     returns abx.ws.AbxArchSostResult
+     *     returns org.netbeans.xml.schema.abxcan.AbxCan
      */
-    @WebMethod(operationName = "GetArchSostRules")
+    @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetArchSostRules", targetNamespace = "http://ws.abx/", className = "abx.ws.GetArchSostRules")
-    @ResponseWrapper(localName = "GetArchSostRulesResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetArchSostRulesResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetArchSostRulesRequest", output = "http://ws.abx/abxWsGest/GetArchSostRulesResponse")
-    public AbxArchSostResult getArchSostRules(
+    @RequestWrapper(localName = "canCreateTemplate", targetNamespace = "http://ws.abx/", className = "abx.ws.CanCreateTemplate")
+    @ResponseWrapper(localName = "canCreateTemplateResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanCreateTemplateResponse")
+    @Action(input = "http://ws.abx/abxWsGest/canCreateTemplateRequest", output = "http://ws.abx/abxWsGest/canCreateTemplateResponse")
+    public AbxCan canCreateTemplate(
         @WebParam(name = "SessionId", targetNamespace = "")
         IDtype sessionId);
 
     /**
      * 
      * @param sessionId
-     * @param archSostRule
      * @return
-     *     returns abx.ws.AbxArchSostResult
+     *     returns org.netbeans.xml.schema.abxdynaminorg.AbxDynamicRuleResult
      */
-    @WebMethod(operationName = "InsertArchSostRule")
+    @WebMethod(operationName = "GetDynorgList")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "InsertArchSostRule", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertArchSostRule")
-    @ResponseWrapper(localName = "InsertArchSostRuleResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertArchSostRuleResponse")
-    @Action(input = "http://ws.abx/abxWsGest/InsertArchSostRuleRequest", output = "http://ws.abx/abxWsGest/InsertArchSostRuleResponse")
-    public AbxArchSostResult insertArchSostRule(
+    @RequestWrapper(localName = "GetDynorgList", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDynorgList")
+    @ResponseWrapper(localName = "GetDynorgListResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDynorgListResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetDynorgListRequest", output = "http://ws.abx/abxWsGest/GetDynorgListResponse")
+    public AbxDynamicRuleResult getDynorgList(
         @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "archSostRule", targetNamespace = "")
-        AbxArchSostRule archSostRule);
-
-    /**
-     * 
-     * @param sessionId
-     * @param ruleId
-     * @return
-     *     returns abx.ws.AbxArchSostResult
-     */
-    @WebMethod(operationName = "DeleteArchSostRule")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DeleteArchSostRule", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteArchSostRule")
-    @ResponseWrapper(localName = "DeleteArchSostRuleResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteArchSostRuleResponse")
-    @Action(input = "http://ws.abx/abxWsGest/DeleteArchSostRuleRequest", output = "http://ws.abx/abxWsGest/DeleteArchSostRuleResponse")
-    public AbxArchSostResult deleteArchSostRule(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "ruleId", targetNamespace = "")
-        String ruleId);
-
-    /**
-     * 
-     * @param sessionId
-     * @param archSostRule
-     * @return
-     *     returns abx.ws.AbxArchSostResult
-     */
-    @WebMethod(operationName = "ModifyArchSostRule")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "ModifyArchSostRule", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyArchSostRule")
-    @ResponseWrapper(localName = "ModifyArchSostRuleResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyArchSostRuleResponse")
-    @Action(input = "http://ws.abx/abxWsGest/ModifyArchSostRuleRequest", output = "http://ws.abx/abxWsGest/ModifyArchSostRuleResponse")
-    public AbxArchSostResult modifyArchSostRule(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "archSostRule", targetNamespace = "")
-        AbxArchSostRule archSostRule);
-
-    /**
-     * 
-     * @param instanceName
-     * @param dataId
-     * @param iDtypeSessionId
-     * @return
-     *     returns abx.ws.AbxLinkResult
-     */
-    @WebMethod(operationName = "GetCountLinksToDocument")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetCountLinksToDocument", targetNamespace = "http://ws.abx/", className = "abx.ws.GetCountLinksToDocument")
-    @ResponseWrapper(localName = "GetCountLinksToDocumentResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetCountLinksToDocumentResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetCountLinksToDocumentRequest", output = "http://ws.abx/abxWsGest/GetCountLinksToDocumentResponse")
-    public AbxLinkResult getCountLinksToDocument(
-        @WebParam(name = "IDtype_SessionId", targetNamespace = "")
-        IDtype iDtypeSessionId,
-        @WebParam(name = "instanceName", targetNamespace = "")
-        String instanceName,
-        @WebParam(name = "dataId", targetNamespace = "")
-        String dataId);
-
-    /**
-     * 
-     * @param instanceName
-     * @param dataId
-     * @param iDtypeSessionId
-     * @return
-     *     returns abx.ws.AbxLinkResult
-     */
-    @WebMethod(operationName = "GetLinksToDocument")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetLinksToDocument", targetNamespace = "http://ws.abx/", className = "abx.ws.GetLinksToDocument")
-    @ResponseWrapper(localName = "GetLinksToDocumentResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetLinksToDocumentResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetLinksToDocumentRequest", output = "http://ws.abx/abxWsGest/GetLinksToDocumentResponse")
-    public AbxLinkResult getLinksToDocument(
-        @WebParam(name = "IDtype_SessionId", targetNamespace = "")
-        IDtype iDtypeSessionId,
-        @WebParam(name = "instanceName", targetNamespace = "")
-        String instanceName,
-        @WebParam(name = "dataId", targetNamespace = "")
-        String dataId);
-
-    /**
-     * 
-     * @param instanceNameFrom
-     * @param iDtypeSessionId
-     * @return
-     *     returns abx.ws.AbxLinkResult
-     */
-    @WebMethod(operationName = "GetInstanceNameFromLinks")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetInstanceNameFromLinks", targetNamespace = "http://ws.abx/", className = "abx.ws.GetInstanceNameFromLinks")
-    @ResponseWrapper(localName = "GetInstanceNameFromLinksResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetInstanceNameFromLinksResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetInstanceNameFromLinksRequest", output = "http://ws.abx/abxWsGest/GetInstanceNameFromLinksResponse")
-    public AbxLinkResult getInstanceNameFromLinks(
-        @WebParam(name = "IDtype_SessionId", targetNamespace = "")
-        IDtype iDtypeSessionId,
-        @WebParam(name = "instanceNameFrom", targetNamespace = "")
-        String instanceNameFrom);
-
-    /**
-     * 
-     * @param linkTypeName
-     * @param instanceName
-     * @param iDtypeSessionId
-     * @return
-     *     returns abx.ws.AbxLinkResult
-     */
-    @WebMethod(operationName = "GetContainerLinks")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetContainerLinks", targetNamespace = "http://ws.abx/", className = "abx.ws.GetContainerLinks")
-    @ResponseWrapper(localName = "GetContainerLinksResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetContainerLinksResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetContainerLinksRequest", output = "http://ws.abx/abxWsGest/GetContainerLinksResponse")
-    public AbxLinkResult getContainerLinks(
-        @WebParam(name = "IDtype_SessionId", targetNamespace = "")
-        IDtype iDtypeSessionId,
-        @WebParam(name = "instanceName", targetNamespace = "")
-        String instanceName,
-        @WebParam(name = "linkTypeName", targetNamespace = "")
-        String linkTypeName);
+        IDtype sessionId);
 
     /**
      * 
@@ -225,12 +975,192 @@ public interface AbxWsGest {
      * @return
      *     returns org.netbeans.xml.schema.abxdynaminorg.AbxDynamicRuleResult
      */
-    @WebMethod(operationName = "RegenerateDynOrg")
+    @WebMethod(operationName = "ModifyDynorg")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "RegenerateDynOrg", targetNamespace = "http://ws.abx/", className = "abx.ws.RegenerateDynOrg")
-    @ResponseWrapper(localName = "RegenerateDynOrgResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.RegenerateDynOrgResponse")
-    @Action(input = "http://ws.abx/abxWsGest/RegenerateDynOrgRequest", output = "http://ws.abx/abxWsGest/RegenerateDynOrgResponse")
-    public AbxDynamicRuleResult regenerateDynOrg(
+    @RequestWrapper(localName = "ModifyDynorg", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyDynorg")
+    @ResponseWrapper(localName = "ModifyDynorgResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyDynorgResponse")
+    @Action(input = "http://ws.abx/abxWsGest/ModifyDynorgRequest", output = "http://ws.abx/abxWsGest/ModifyDynorgResponse")
+    public AbxDynamicRuleResult modifyDynorg(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "DynorgParam", targetNamespace = "")
+        AbxDynamicorgRuleList dynorgParam);
+
+    /**
+     * 
+     * @param sessionId
+     * @param ruleName
+     * @param templateName
+     * @return
+     *     returns int
+     */
+    @WebMethod(operationName = "DeleteDynorg")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DeleteDynorg", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteDynorg")
+    @ResponseWrapper(localName = "DeleteDynorgResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteDynorgResponse")
+    @Action(input = "http://ws.abx/abxWsGest/DeleteDynorgRequest", output = "http://ws.abx/abxWsGest/DeleteDynorgResponse")
+    public int deleteDynorg(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "RuleName", targetNamespace = "")
+        String ruleName,
+        @WebParam(name = "TemplateName", targetNamespace = "")
+        String templateName);
+
+    /**
+     * 
+     * @param sessionId
+     * @param matricola
+     * @return
+     *     returns abx.ws.AbxArchiBoxDomainResult
+     */
+    @WebMethod(operationName = "GetArchiBoxInDomainByMatricola")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetArchiBoxInDomainByMatricola", targetNamespace = "http://ws.abx/", className = "abx.ws.GetArchiBoxInDomainByMatricola")
+    @ResponseWrapper(localName = "GetArchiBoxInDomainByMatricolaResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetArchiBoxInDomainByMatricolaResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetArchiBoxInDomainByMatricolaRequest", output = "http://ws.abx/abxWsGest/GetArchiBoxInDomainByMatricolaResponse")
+    public AbxArchiBoxDomainResult getArchiBoxInDomainByMatricola(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "matricola", targetNamespace = "")
+        String matricola);
+
+    /**
+     * 
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxArchiBoxDomainResult
+     */
+    @WebMethod(operationName = "GetArchiBoxInfo")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetArchiBoxInfo", targetNamespace = "http://ws.abx/", className = "abx.ws.GetArchiBoxInfo")
+    @ResponseWrapper(localName = "GetArchiBoxInfoResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetArchiBoxInfoResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetArchiBoxInfoRequest", output = "http://ws.abx/abxWsGest/GetArchiBoxInfoResponse")
+    public AbxArchiBoxDomainResult getArchiBoxInfo(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId);
+
+    /**
+     * 
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxArchiBoxDomainResult
+     */
+    @WebMethod(operationName = "GetArchiBoxInDomain")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetArchiBoxInDomain", targetNamespace = "http://ws.abx/", className = "abx.ws.GetArchiBoxInDomain")
+    @ResponseWrapper(localName = "GetArchiBoxInDomainResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetArchiBoxInDomainResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetArchiBoxInDomainRequest", output = "http://ws.abx/abxWsGest/GetArchiBoxInDomainResponse")
+    public AbxArchiBoxDomainResult getArchiBoxInDomain(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId);
+
+    /**
+     * 
+     * @param dataIds
+     * @param instanceName
+     * @param sessionId
+     * @param signType
+     * @param signPassword
+     * @param signUsername
+     * @param fileCodes
+     * @return
+     *     returns abx.ws.AbxFileResult
+     */
+    @WebMethod(operationName = "DigitalSign")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DigitalSign", targetNamespace = "http://ws.abx/", className = "abx.ws.DigitalSign")
+    @ResponseWrapper(localName = "DigitalSignResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DigitalSignResponse")
+    @Action(input = "http://ws.abx/abxWsGest/DigitalSignRequest", output = "http://ws.abx/abxWsGest/DigitalSignResponse")
+    public AbxFileResult digitalSign(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "instanceName", targetNamespace = "")
+        String instanceName,
+        @WebParam(name = "dataIds", targetNamespace = "")
+        List<String> dataIds,
+        @WebParam(name = "fileCodes", targetNamespace = "")
+        List<String> fileCodes,
+        @WebParam(name = "signUsername", targetNamespace = "")
+        String signUsername,
+        @WebParam(name = "signPassword", targetNamespace = "")
+        String signPassword,
+        @WebParam(name = "signType", targetNamespace = "")
+        Integer signType);
+
+    /**
+     * 
+     * @param instanceName
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxReplicationResult
+     */
+    @WebMethod(operationName = "GetInstanceReplicationStatus")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetInstanceReplicationStatus", targetNamespace = "http://ws.abx/", className = "abx.ws.GetInstanceReplicationStatus")
+    @ResponseWrapper(localName = "GetInstanceReplicationStatusResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetInstanceReplicationStatusResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetInstanceReplicationStatusRequest", output = "http://ws.abx/abxWsGest/GetInstanceReplicationStatusResponse")
+    public AbxReplicationResult getInstanceReplicationStatus(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "instanceName", targetNamespace = "")
+        String instanceName);
+
+    /**
+     * 
+     * @param container2Update
+     * @param sessionId
+     * @param abxSecurityId
+     * @param avl
+     * @return
+     *     returns abx.ws.AbxContainerResult
+     */
+    @WebMethod(operationName = "CreateContainer")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "CreateContainer", targetNamespace = "http://ws.abx/", className = "abx.ws.CreateContainer")
+    @ResponseWrapper(localName = "CreateContainerResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CreateContainerResponse")
+    @Action(input = "http://ws.abx/abxWsGest/CreateContainerRequest", output = "http://ws.abx/abxWsGest/CreateContainerResponse")
+    public AbxContainerResult createContainer(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "Container2Update", targetNamespace = "")
+        AbxContainer container2Update,
+        @WebParam(name = "abxSecurityId", targetNamespace = "")
+        String abxSecurityId,
+        @WebParam(name = "avl", targetNamespace = "")
+        AbxVersioningList avl);
+
+    /**
+     * 
+     * @param sessionId
+     * @param template2Update
+     * @return
+     *     returns abx.ws.AbxTemplateResult
+     */
+    @WebMethod(operationName = "CreateTemplate")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "CreateTemplate", targetNamespace = "http://ws.abx/", className = "abx.ws.CreateTemplate")
+    @ResponseWrapper(localName = "CreateTemplateResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CreateTemplateResponse")
+    @Action(input = "http://ws.abx/abxWsGest/CreateTemplateRequest", output = "http://ws.abx/abxWsGest/CreateTemplateResponse")
+    public AbxTemplateResult createTemplate(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "Template2Update", targetNamespace = "")
+        AbxTemplate template2Update);
+
+    /**
+     * 
+     * @param dynorgParam
+     * @param sessionId
+     * @return
+     *     returns org.netbeans.xml.schema.abxdynaminorg.AbxDynamicRuleResult
+     */
+    @WebMethod(operationName = "CreateDynorg")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "CreateDynorg", targetNamespace = "http://ws.abx/", className = "abx.ws.CreateDynorg")
+    @ResponseWrapper(localName = "CreateDynorgResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CreateDynorgResponse")
+    @Action(input = "http://ws.abx/abxWsGest/CreateDynorgRequest", output = "http://ws.abx/abxWsGest/CreateDynorgResponse")
+    public AbxDynamicRuleResult createDynorg(
         @WebParam(name = "SessionId", targetNamespace = "")
         IDtype sessionId,
         @WebParam(name = "DynorgParam", targetNamespace = "")
@@ -240,58 +1170,382 @@ public interface AbxWsGest {
      * 
      * @param sessionId
      * @return
-     *     returns org.netbeans.xml.schema.abxdynaminorg.AbxDynorgTypeResult
+     *     returns abx.ws.AbxFieldResult
      */
-    @WebMethod(operationName = "GetDynorgTypeList")
+    @WebMethod(operationName = "GetFieldList")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetDynorgTypeList", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDynorgTypeList")
-    @ResponseWrapper(localName = "GetDynorgTypeListResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDynorgTypeListResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetDynorgTypeListRequest", output = "http://ws.abx/abxWsGest/GetDynorgTypeListResponse")
-    public AbxDynorgTypeResult getDynorgTypeList(
+    @RequestWrapper(localName = "GetFieldList", targetNamespace = "http://ws.abx/", className = "abx.ws.GetFieldList")
+    @ResponseWrapper(localName = "GetFieldListResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetFieldListResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetFieldListRequest", output = "http://ws.abx/abxWsGest/GetFieldListResponse")
+    public AbxFieldResult getFieldList(
         @WebParam(name = "SessionId", targetNamespace = "")
         IDtype sessionId);
 
     /**
      * 
      * @param sessionId
-     * @param ruleName
-     * @param templateName
+     * @param fieldName
      * @return
-     *     returns org.netbeans.xml.schema.abxcan.AbxCan
+     *     returns abx.ws.AbxFieldResult
      */
-    @WebMethod
+    @WebMethod(operationName = "GetFieldProperties")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "canModifyDynorg", targetNamespace = "http://ws.abx/", className = "abx.ws.CanModifyDynorg")
-    @ResponseWrapper(localName = "canModifyDynorgResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanModifyDynorgResponse")
-    @Action(input = "http://ws.abx/abxWsGest/canModifyDynorgRequest", output = "http://ws.abx/abxWsGest/canModifyDynorgResponse")
-    public AbxCan canModifyDynorg(
+    @RequestWrapper(localName = "GetFieldProperties", targetNamespace = "http://ws.abx/", className = "abx.ws.GetFieldProperties")
+    @ResponseWrapper(localName = "GetFieldPropertiesResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetFieldPropertiesResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetFieldPropertiesRequest", output = "http://ws.abx/abxWsGest/GetFieldPropertiesResponse")
+    public AbxFieldResult getFieldProperties(
         @WebParam(name = "SessionId", targetNamespace = "")
         IDtype sessionId,
-        @WebParam(name = "RuleName", targetNamespace = "")
-        String ruleName,
+        @WebParam(name = "FieldName", targetNamespace = "")
+        String fieldName);
+
+    /**
+     * 
+     * @param sessionId
+     * @param templateName
+     * @return
+     *     returns abx.ws.AbxFieldResult
+     */
+    @WebMethod(operationName = "GetFieldsPropertiesFromTemplate")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetFieldsPropertiesFromTemplate", targetNamespace = "http://ws.abx/", className = "abx.ws.GetFieldsPropertiesFromTemplate")
+    @ResponseWrapper(localName = "GetFieldsPropertiesFromTemplateResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetFieldsPropertiesFromTemplateResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetFieldsPropertiesFromTemplateRequest", output = "http://ws.abx/abxWsGest/GetFieldsPropertiesFromTemplateResponse")
+    public AbxFieldResult getFieldsPropertiesFromTemplate(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
         @WebParam(name = "TemplateName", targetNamespace = "")
         String templateName);
 
     /**
      * 
      * @param sessionId
-     * @param ruleName
-     * @param templateName
+     * @return
+     *     returns abx.ws.AbxReplicationResult
+     */
+    @WebMethod(operationName = "GetAdjacentArchiBox")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetAdjacentArchiBox", targetNamespace = "http://ws.abx/", className = "abx.ws.GetAdjacentArchiBox")
+    @ResponseWrapper(localName = "GetAdjacentArchiBoxResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetAdjacentArchiBoxResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetAdjacentArchiBoxRequest", output = "http://ws.abx/abxWsGest/GetAdjacentArchiBoxResponse")
+    public AbxReplicationResult getAdjacentArchiBox(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId);
+
+    /**
+     * 
+     * @param instanceName
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxReplicationResult
+     */
+    @WebMethod(operationName = "GetInstanceReplication")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetInstanceReplication", targetNamespace = "http://ws.abx/", className = "abx.ws.GetInstanceReplication")
+    @ResponseWrapper(localName = "GetInstanceReplicationResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetInstanceReplicationResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetInstanceReplicationRequest", output = "http://ws.abx/abxWsGest/GetInstanceReplicationResponse")
+    public AbxReplicationResult getInstanceReplication(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "instanceName", targetNamespace = "")
+        String instanceName);
+
+    /**
+     * 
+     * @param loginParam
+     * @return
+     *     returns abx.ws.AbxLoginResult
+     */
+    @WebMethod(operationName = "Login")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Login", targetNamespace = "http://ws.abx/", className = "abx.ws.Login")
+    @ResponseWrapper(localName = "LoginResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.LoginResponse")
+    @Action(input = "http://ws.abx/abxWsGest/LoginRequest", output = "http://ws.abx/abxWsGest/LoginResponse")
+    public AbxLoginResult login(
+        @WebParam(name = "LoginParam", targetNamespace = "")
+        AbxLoginIdentity loginParam);
+
+    /**
+     * 
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxLoginResult
+     */
+    @WebMethod(operationName = "Logout")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Logout", targetNamespace = "http://ws.abx/", className = "abx.ws.Logout")
+    @ResponseWrapper(localName = "LogoutResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.LogoutResponse")
+    @Action(input = "http://ws.abx/abxWsGest/LogoutRequest", output = "http://ws.abx/abxWsGest/LogoutResponse")
+    public AbxLoginResult logout(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId);
+
+    /**
+     * 
+     * @param sessionId
+     * @param abxDocuments
+     * @param abxSchedulerTask
+     * @return
+     *     returns abx.ws.AbxSchedulerResult
+     */
+    @WebMethod(operationName = "InsertSchedulerTask")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "InsertSchedulerTask", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertSchedulerTask")
+    @ResponseWrapper(localName = "InsertSchedulerTaskResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertSchedulerTaskResponse")
+    @Action(input = "http://ws.abx/abxWsGest/InsertSchedulerTaskRequest", output = "http://ws.abx/abxWsGest/InsertSchedulerTaskResponse")
+    public AbxSchedulerResult insertSchedulerTask(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "abxSchedulerTask", targetNamespace = "")
+        AbxSchedulerTask abxSchedulerTask,
+        @WebParam(name = "abxDocuments", targetNamespace = "")
+        AbxArchSostDocumentList abxDocuments);
+
+    /**
+     * 
+     * @param sessionId
+     * @param taskType
+     * @return
+     *     returns abx.ws.AbxSchedulerResult
+     */
+    @WebMethod(operationName = "GetSchedulerTasks")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetSchedulerTasks", targetNamespace = "http://ws.abx/", className = "abx.ws.GetSchedulerTasks")
+    @ResponseWrapper(localName = "GetSchedulerTasksResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetSchedulerTasksResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetSchedulerTasksRequest", output = "http://ws.abx/abxWsGest/GetSchedulerTasksResponse")
+    public AbxSchedulerResult getSchedulerTasks(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "taskType", targetNamespace = "")
+        String taskType);
+
+    /**
+     * 
+     * @param taskId
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxSchedulerResult
+     */
+    @WebMethod(operationName = "DeleteSchedulerTask")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DeleteSchedulerTask", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteSchedulerTask")
+    @ResponseWrapper(localName = "DeleteSchedulerTaskResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteSchedulerTaskResponse")
+    @Action(input = "http://ws.abx/abxWsGest/DeleteSchedulerTaskRequest", output = "http://ws.abx/abxWsGest/DeleteSchedulerTaskResponse")
+    public AbxSchedulerResult deleteSchedulerTask(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "taskId", targetNamespace = "")
+        String taskId);
+
+    /**
+     * 
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxSchedulerResult
+     */
+    @WebMethod(operationName = "GetSchedulerTasksToRun")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetSchedulerTasksToRun", targetNamespace = "http://ws.abx/", className = "abx.ws.GetSchedulerTasksToRun")
+    @ResponseWrapper(localName = "GetSchedulerTasksToRunResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetSchedulerTasksToRunResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetSchedulerTasksToRunRequest", output = "http://ws.abx/abxWsGest/GetSchedulerTasksToRunResponse")
+    public AbxSchedulerResult getSchedulerTasksToRun(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId);
+
+    /**
+     * 
+     * @param schedule
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxSchedulerResult
+     */
+    @WebMethod(operationName = "SchedulerTaskScheduleProcessed")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "SchedulerTaskScheduleProcessed", targetNamespace = "http://ws.abx/", className = "abx.ws.SchedulerTaskScheduleProcessed")
+    @ResponseWrapper(localName = "SchedulerTaskScheduleProcessedResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.SchedulerTaskScheduleProcessedResponse")
+    @Action(input = "http://ws.abx/abxWsGest/SchedulerTaskScheduleProcessedRequest", output = "http://ws.abx/abxWsGest/SchedulerTaskScheduleProcessedResponse")
+    public AbxSchedulerResult schedulerTaskScheduleProcessed(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "schedule", targetNamespace = "")
+        abx.ws.SchedulerTaskScheduleProcessed.Schedule schedule);
+
+    /**
+     * 
+     * @param sessionId
+     * @param abxSchedulerTask
+     * @return
+     *     returns abx.ws.AbxSchedulerResult
+     */
+    @WebMethod(operationName = "ModifySchedulerTaskSchedule")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "ModifySchedulerTaskSchedule", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifySchedulerTaskSchedule")
+    @ResponseWrapper(localName = "ModifySchedulerTaskScheduleResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifySchedulerTaskScheduleResponse")
+    @Action(input = "http://ws.abx/abxWsGest/ModifySchedulerTaskScheduleRequest", output = "http://ws.abx/abxWsGest/ModifySchedulerTaskScheduleResponse")
+    public AbxSchedulerResult modifySchedulerTaskSchedule(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "abxSchedulerTask", targetNamespace = "")
+        AbxSchedulerTask abxSchedulerTask);
+
+    /**
+     * 
+     * @param scheduleType
+     * @param scheduleId
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxSchedulerResult
+     */
+    @WebMethod(operationName = "DeleteSchedulerTaskSchedule")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DeleteSchedulerTaskSchedule", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteSchedulerTaskSchedule")
+    @ResponseWrapper(localName = "DeleteSchedulerTaskScheduleResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteSchedulerTaskScheduleResponse")
+    @Action(input = "http://ws.abx/abxWsGest/DeleteSchedulerTaskScheduleRequest", output = "http://ws.abx/abxWsGest/DeleteSchedulerTaskScheduleResponse")
+    public AbxSchedulerResult deleteSchedulerTaskSchedule(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "scheduleId", targetNamespace = "")
+        String scheduleId,
+        @WebParam(name = "scheduleType", targetNamespace = "")
+        int scheduleType);
+
+    /**
+     * 
+     * @param scheduleType
+     * @param scheduleId
+     * @param sessionId
+     * @param scheduleStatus
+     * @return
+     *     returns abx.ws.AbxSchedulerResult
+     */
+    @WebMethod(operationName = "ChangeSchedulerTaskScheduleStatus")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "ChangeSchedulerTaskScheduleStatus", targetNamespace = "http://ws.abx/", className = "abx.ws.ChangeSchedulerTaskScheduleStatus")
+    @ResponseWrapper(localName = "ChangeSchedulerTaskScheduleStatusResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.ChangeSchedulerTaskScheduleStatusResponse")
+    @Action(input = "http://ws.abx/abxWsGest/ChangeSchedulerTaskScheduleStatusRequest", output = "http://ws.abx/abxWsGest/ChangeSchedulerTaskScheduleStatusResponse")
+    public AbxSchedulerResult changeSchedulerTaskScheduleStatus(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "scheduleId", targetNamespace = "")
+        String scheduleId,
+        @WebParam(name = "scheduleType", targetNamespace = "")
+        int scheduleType,
+        @WebParam(name = "scheduleStatus", targetNamespace = "")
+        int scheduleStatus);
+
+    /**
+     * 
+     * @param fk
+     * @param sessionId
+     * @param optionSetDesc
+     * @param field2Update
+     * @param optionGetCache
+     * @param recordsArray
+     * @return
+     *     returns abx.ws.AbxFieldResult
+     */
+    @WebMethod(operationName = "ModifyField")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "ModifyField", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyField")
+    @ResponseWrapper(localName = "ModifyFieldResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyFieldResponse")
+    @Action(input = "http://ws.abx/abxWsGest/ModifyFieldRequest", output = "http://ws.abx/abxWsGest/ModifyFieldResponse")
+    public AbxFieldResult modifyField(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "Field2Update", targetNamespace = "")
+        AbxField field2Update,
+        @WebParam(name = "recordsArray", targetNamespace = "")
+        AbxCombo recordsArray,
+        @WebParam(name = "fk", targetNamespace = "")
+        AbxFK fk,
+        @WebParam(name = "optionGetCache", targetNamespace = "")
+        boolean optionGetCache,
+        @WebParam(name = "optionSetDesc", targetNamespace = "")
+        boolean optionSetDesc);
+
+    /**
+     * 
+     * @param sessionId
+     * @param fieldName
+     * @return
+     *     returns int
+     */
+    @WebMethod(operationName = "DeleteField")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DeleteField", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteField")
+    @ResponseWrapper(localName = "DeleteFieldResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteFieldResponse")
+    @Action(input = "http://ws.abx/abxWsGest/DeleteFieldRequest", output = "http://ws.abx/abxWsGest/DeleteFieldResponse")
+    public int deleteField(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "FieldName", targetNamespace = "")
+        String fieldName);
+
+    /**
+     * 
+     * @param sessionId
+     * @param optionSetDesc
+     * @param field2Update
+     * @param optionGetCache
+     * @param fkp
+     * @param recordsArray
+     * @return
+     *     returns abx.ws.AbxFieldResult
+     */
+    @WebMethod(operationName = "CreateField")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "CreateField", targetNamespace = "http://ws.abx/", className = "abx.ws.CreateField")
+    @ResponseWrapper(localName = "CreateFieldResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CreateFieldResponse")
+    @Action(input = "http://ws.abx/abxWsGest/CreateFieldRequest", output = "http://ws.abx/abxWsGest/CreateFieldResponse")
+    public AbxFieldResult createField(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "Field2Update", targetNamespace = "")
+        AbxField field2Update,
+        @WebParam(name = "recordsArray", targetNamespace = "")
+        AbxCombo recordsArray,
+        @WebParam(name = "fkp", targetNamespace = "")
+        AbxFK fkp,
+        @WebParam(name = "optionGetCache", targetNamespace = "")
+        boolean optionGetCache,
+        @WebParam(name = "optionSetDesc", targetNamespace = "")
+        boolean optionSetDesc);
+
+    /**
+     * 
+     * @param sessionId
+     * @param fieldName
      * @return
      *     returns org.netbeans.xml.schema.abxcan.AbxCan
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "canDeleteDynorg", targetNamespace = "http://ws.abx/", className = "abx.ws.CanDeleteDynorg")
-    @ResponseWrapper(localName = "canDeleteDynorgResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanDeleteDynorgResponse")
-    @Action(input = "http://ws.abx/abxWsGest/canDeleteDynorgRequest", output = "http://ws.abx/abxWsGest/canDeleteDynorgResponse")
-    public AbxCan canDeleteDynorg(
+    @RequestWrapper(localName = "canModifyField", targetNamespace = "http://ws.abx/", className = "abx.ws.CanModifyField")
+    @ResponseWrapper(localName = "canModifyFieldResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanModifyFieldResponse")
+    @Action(input = "http://ws.abx/abxWsGest/canModifyFieldRequest", output = "http://ws.abx/abxWsGest/canModifyFieldResponse")
+    public AbxCan canModifyField(
         @WebParam(name = "SessionId", targetNamespace = "")
         IDtype sessionId,
-        @WebParam(name = "RuleName", targetNamespace = "")
-        String ruleName,
-        @WebParam(name = "TemplateName", targetNamespace = "")
-        String templateName);
+        @WebParam(name = "FieldName", targetNamespace = "")
+        String fieldName);
+
+    /**
+     * 
+     * @param sessionId
+     * @param fieldName
+     * @return
+     *     returns org.netbeans.xml.schema.abxcan.AbxCan
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "canDeleteField", targetNamespace = "http://ws.abx/", className = "abx.ws.CanDeleteField")
+    @ResponseWrapper(localName = "canDeleteFieldResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanDeleteFieldResponse")
+    @Action(input = "http://ws.abx/abxWsGest/canDeleteFieldRequest", output = "http://ws.abx/abxWsGest/canDeleteFieldResponse")
+    public AbxCan canDeleteField(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "FieldName", targetNamespace = "")
+        String fieldName);
 
     /**
      * 
@@ -301,10 +1555,46 @@ public interface AbxWsGest {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "canCreateDynorg", targetNamespace = "http://ws.abx/", className = "abx.ws.CanCreateDynorg")
-    @ResponseWrapper(localName = "canCreateDynorgResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanCreateDynorgResponse")
-    @Action(input = "http://ws.abx/abxWsGest/canCreateDynorgRequest", output = "http://ws.abx/abxWsGest/canCreateDynorgResponse")
-    public AbxCan canCreateDynorg(
+    @RequestWrapper(localName = "canCreateField", targetNamespace = "http://ws.abx/", className = "abx.ws.CanCreateField")
+    @ResponseWrapper(localName = "canCreateFieldResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanCreateFieldResponse")
+    @Action(input = "http://ws.abx/abxWsGest/canCreateFieldRequest", output = "http://ws.abx/abxWsGest/canCreateFieldResponse")
+    public AbxCan canCreateField(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId);
+
+    /**
+     * 
+     * @param linkId
+     * @param sessionId
+     * @param instanceNameFrom
+     * @return
+     *     returns org.netbeans.xml.schema.abxcan.AbxCan
+     */
+    @WebMethod(operationName = "CanDeleteLinkFromContainer")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "CanDeleteLinkFromContainer", targetNamespace = "http://ws.abx/", className = "abx.ws.CanDeleteLinkFromContainer")
+    @ResponseWrapper(localName = "CanDeleteLinkFromContainerResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanDeleteLinkFromContainerResponse")
+    @Action(input = "http://ws.abx/abxWsGest/CanDeleteLinkFromContainerRequest", output = "http://ws.abx/abxWsGest/CanDeleteLinkFromContainerResponse")
+    public AbxCan canDeleteLinkFromContainer(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "instanceNameFrom", targetNamespace = "")
+        String instanceNameFrom,
+        @WebParam(name = "linkId", targetNamespace = "")
+        String linkId);
+
+    /**
+     * 
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxDomainResult
+     */
+    @WebMethod(operationName = "GetDomainList")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetDomainList", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDomainList")
+    @ResponseWrapper(localName = "GetDomainListResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDomainListResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetDomainListRequest", output = "http://ws.abx/abxWsGest/GetDomainListResponse")
+    public AbxDomainResult getDomainList(
         @WebParam(name = "SessionId", targetNamespace = "")
         IDtype sessionId);
 
@@ -523,17 +1813,476 @@ public interface AbxWsGest {
 
     /**
      * 
+     * @param linkId
+     * @param linkTypeName
+     * @param sessionId
+     * @param dataId
+     * @param instanceNameTo
+     * @param instanceNameFrom
+     * @param note
+     * @return
+     *     returns abx.ws.AbxLinkResult
+     */
+    @WebMethod(operationName = "ModifyLinkContainerToDocument")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "ModifyLinkContainerToDocument", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyLinkContainerToDocument")
+    @ResponseWrapper(localName = "ModifyLinkContainerToDocumentResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyLinkContainerToDocumentResponse")
+    @Action(input = "http://ws.abx/abxWsGest/ModifyLinkContainerToDocumentRequest", output = "http://ws.abx/abxWsGest/ModifyLinkContainerToDocumentResponse")
+    public AbxLinkResult modifyLinkContainerToDocument(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "linkTypeName", targetNamespace = "")
+        String linkTypeName,
+        @WebParam(name = "linkId", targetNamespace = "")
+        String linkId,
+        @WebParam(name = "instanceNameFrom", targetNamespace = "")
+        String instanceNameFrom,
+        @WebParam(name = "instanceNameTo", targetNamespace = "")
+        String instanceNameTo,
+        @WebParam(name = "dataId", targetNamespace = "")
+        String dataId,
+        @WebParam(name = "note", targetNamespace = "")
+        String note);
+
+    /**
+     * 
+     * @param linkId
+     * @param linkTypeName
+     * @param sessionId
+     * @param dataId
+     * @param instanceNameTo
+     * @param instanceNameFrom
+     * @return
+     *     returns org.netbeans.xml.schema.abxcan.AbxCan
+     */
+    @WebMethod(operationName = "CanModifyLinkContainerToDocument")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "CanModifyLinkContainerToDocument", targetNamespace = "http://ws.abx/", className = "abx.ws.CanModifyLinkContainerToDocument")
+    @ResponseWrapper(localName = "CanModifyLinkContainerToDocumentResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanModifyLinkContainerToDocumentResponse")
+    @Action(input = "http://ws.abx/abxWsGest/CanModifyLinkContainerToDocumentRequest", output = "http://ws.abx/abxWsGest/CanModifyLinkContainerToDocumentResponse")
+    public AbxCan canModifyLinkContainerToDocument(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "linkTypeName", targetNamespace = "")
+        String linkTypeName,
+        @WebParam(name = "instanceNameFrom", targetNamespace = "")
+        String instanceNameFrom,
+        @WebParam(name = "linkId", targetNamespace = "")
+        String linkId,
+        @WebParam(name = "instanceNameTo", targetNamespace = "")
+        String instanceNameTo,
+        @WebParam(name = "dataId", targetNamespace = "")
+        String dataId);
+
+    /**
+     * 
+     * @param linkId
+     * @param sessionId
+     * @param instanceNameFrom
+     * @return
+     *     returns abx.ws.AbxLinkResult
+     */
+    @WebMethod(operationName = "DeleteLink")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DeleteLink", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteLink")
+    @ResponseWrapper(localName = "DeleteLinkResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteLinkResponse")
+    @Action(input = "http://ws.abx/abxWsGest/DeleteLinkRequest", output = "http://ws.abx/abxWsGest/DeleteLinkResponse")
+    public AbxLinkResult deleteLink(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "instanceNameFrom", targetNamespace = "")
+        String instanceNameFrom,
+        @WebParam(name = "linkId", targetNamespace = "")
+        String linkId);
+
+    /**
+     * 
+     * @param linkTypeName
+     * @param instanceName
+     * @param dataId
+     * @param iDtypeSessionId
+     * @return
+     *     returns abx.ws.AbxLinkResult
+     */
+    @WebMethod(operationName = "GetDocumentLinks")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetDocumentLinks", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDocumentLinks")
+    @ResponseWrapper(localName = "GetDocumentLinksResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDocumentLinksResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetDocumentLinksRequest", output = "http://ws.abx/abxWsGest/GetDocumentLinksResponse")
+    public AbxLinkResult getDocumentLinks(
+        @WebParam(name = "IDtype_SessionId", targetNamespace = "")
+        IDtype iDtypeSessionId,
+        @WebParam(name = "instanceName", targetNamespace = "")
+        String instanceName,
+        @WebParam(name = "dataId", targetNamespace = "")
+        String dataId,
+        @WebParam(name = "linkTypeName", targetNamespace = "")
+        String linkTypeName);
+
+    /**
+     * 
+     * @param instanceName
+     * @param dataId
+     * @param iDtypeSessionId
+     * @return
+     *     returns abx.ws.AbxLinkResult
+     */
+    @WebMethod(operationName = "GetCountLinksToDocument")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetCountLinksToDocument", targetNamespace = "http://ws.abx/", className = "abx.ws.GetCountLinksToDocument")
+    @ResponseWrapper(localName = "GetCountLinksToDocumentResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetCountLinksToDocumentResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetCountLinksToDocumentRequest", output = "http://ws.abx/abxWsGest/GetCountLinksToDocumentResponse")
+    public AbxLinkResult getCountLinksToDocument(
+        @WebParam(name = "IDtype_SessionId", targetNamespace = "")
+        IDtype iDtypeSessionId,
+        @WebParam(name = "instanceName", targetNamespace = "")
+        String instanceName,
+        @WebParam(name = "dataId", targetNamespace = "")
+        String dataId);
+
+    /**
+     * 
+     * @param instanceName
+     * @param dataId
+     * @param iDtypeSessionId
+     * @return
+     *     returns abx.ws.AbxLinkResult
+     */
+    @WebMethod(operationName = "GetLinksToDocument")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetLinksToDocument", targetNamespace = "http://ws.abx/", className = "abx.ws.GetLinksToDocument")
+    @ResponseWrapper(localName = "GetLinksToDocumentResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetLinksToDocumentResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetLinksToDocumentRequest", output = "http://ws.abx/abxWsGest/GetLinksToDocumentResponse")
+    public AbxLinkResult getLinksToDocument(
+        @WebParam(name = "IDtype_SessionId", targetNamespace = "")
+        IDtype iDtypeSessionId,
+        @WebParam(name = "instanceName", targetNamespace = "")
+        String instanceName,
+        @WebParam(name = "dataId", targetNamespace = "")
+        String dataId);
+
+    /**
+     * 
+     * @param instanceNameFrom
+     * @param iDtypeSessionId
+     * @return
+     *     returns abx.ws.AbxLinkResult
+     */
+    @WebMethod(operationName = "GetInstanceNameFromLinks")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetInstanceNameFromLinks", targetNamespace = "http://ws.abx/", className = "abx.ws.GetInstanceNameFromLinks")
+    @ResponseWrapper(localName = "GetInstanceNameFromLinksResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetInstanceNameFromLinksResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetInstanceNameFromLinksRequest", output = "http://ws.abx/abxWsGest/GetInstanceNameFromLinksResponse")
+    public AbxLinkResult getInstanceNameFromLinks(
+        @WebParam(name = "IDtype_SessionId", targetNamespace = "")
+        IDtype iDtypeSessionId,
+        @WebParam(name = "instanceNameFrom", targetNamespace = "")
+        String instanceNameFrom);
+
+    /**
+     * 
+     * @param linkTypeName
+     * @param instanceName
+     * @param iDtypeSessionId
+     * @return
+     *     returns abx.ws.AbxLinkResult
+     */
+    @WebMethod(operationName = "GetContainerLinks")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetContainerLinks", targetNamespace = "http://ws.abx/", className = "abx.ws.GetContainerLinks")
+    @ResponseWrapper(localName = "GetContainerLinksResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetContainerLinksResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetContainerLinksRequest", output = "http://ws.abx/abxWsGest/GetContainerLinksResponse")
+    public AbxLinkResult getContainerLinks(
+        @WebParam(name = "IDtype_SessionId", targetNamespace = "")
+        IDtype iDtypeSessionId,
+        @WebParam(name = "instanceName", targetNamespace = "")
+        String instanceName,
+        @WebParam(name = "linkTypeName", targetNamespace = "")
+        String linkTypeName);
+
+    /**
+     * 
+     * @param dynorgParam
+     * @param sessionId
+     * @return
+     *     returns org.netbeans.xml.schema.abxdynaminorg.AbxDynamicRuleResult
+     */
+    @WebMethod(operationName = "RegenerateDynOrg")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "RegenerateDynOrg", targetNamespace = "http://ws.abx/", className = "abx.ws.RegenerateDynOrg")
+    @ResponseWrapper(localName = "RegenerateDynOrgResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.RegenerateDynOrgResponse")
+    @Action(input = "http://ws.abx/abxWsGest/RegenerateDynOrgRequest", output = "http://ws.abx/abxWsGest/RegenerateDynOrgResponse")
+    public AbxDynamicRuleResult regenerateDynOrg(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "DynorgParam", targetNamespace = "")
+        AbxDynamicorgRuleList dynorgParam);
+
+    /**
+     * 
+     * @param sessionId
+     * @return
+     *     returns org.netbeans.xml.schema.abxdynaminorg.AbxDynorgTypeResult
+     */
+    @WebMethod(operationName = "GetDynorgTypeList")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetDynorgTypeList", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDynorgTypeList")
+    @ResponseWrapper(localName = "GetDynorgTypeListResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDynorgTypeListResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetDynorgTypeListRequest", output = "http://ws.abx/abxWsGest/GetDynorgTypeListResponse")
+    public AbxDynorgTypeResult getDynorgTypeList(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId);
+
+    /**
+     * 
+     * @param sessionId
+     * @param ruleName
+     * @param templateName
+     * @return
+     *     returns org.netbeans.xml.schema.abxcan.AbxCan
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "canModifyDynorg", targetNamespace = "http://ws.abx/", className = "abx.ws.CanModifyDynorg")
+    @ResponseWrapper(localName = "canModifyDynorgResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanModifyDynorgResponse")
+    @Action(input = "http://ws.abx/abxWsGest/canModifyDynorgRequest", output = "http://ws.abx/abxWsGest/canModifyDynorgResponse")
+    public AbxCan canModifyDynorg(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "RuleName", targetNamespace = "")
+        String ruleName,
+        @WebParam(name = "TemplateName", targetNamespace = "")
+        String templateName);
+
+    /**
+     * 
+     * @param sessionId
+     * @param ruleName
+     * @param templateName
+     * @return
+     *     returns org.netbeans.xml.schema.abxcan.AbxCan
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "canDeleteDynorg", targetNamespace = "http://ws.abx/", className = "abx.ws.CanDeleteDynorg")
+    @ResponseWrapper(localName = "canDeleteDynorgResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanDeleteDynorgResponse")
+    @Action(input = "http://ws.abx/abxWsGest/canDeleteDynorgRequest", output = "http://ws.abx/abxWsGest/canDeleteDynorgResponse")
+    public AbxCan canDeleteDynorg(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "RuleName", targetNamespace = "")
+        String ruleName,
+        @WebParam(name = "TemplateName", targetNamespace = "")
+        String templateName);
+
+    /**
+     * 
+     * @param sessionId
+     * @return
+     *     returns org.netbeans.xml.schema.abxcan.AbxCan
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "canCreateDynorg", targetNamespace = "http://ws.abx/", className = "abx.ws.CanCreateDynorg")
+    @ResponseWrapper(localName = "canCreateDynorgResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanCreateDynorgResponse")
+    @Action(input = "http://ws.abx/abxWsGest/canCreateDynorgRequest", output = "http://ws.abx/abxWsGest/canCreateDynorgResponse")
+    public AbxCan canCreateDynorg(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId);
+
+    /**
+     * 
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxClasseDocumentaleResult
+     */
+    @WebMethod(operationName = "GetClasseDocumentale")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetClasseDocumentale", targetNamespace = "http://ws.abx/", className = "abx.ws.GetClasseDocumentale")
+    @ResponseWrapper(localName = "GetClasseDocumentaleResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetClasseDocumentaleResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetClasseDocumentaleRequest", output = "http://ws.abx/abxWsGest/GetClasseDocumentaleResponse")
+    public AbxClasseDocumentaleResult getClasseDocumentale(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId);
+
+    /**
+     * 
+     * @param classeDocumentaleName
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxClasseDocumentaleResult
+     */
+    @WebMethod(operationName = "DeleteClasseDocumentale")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DeleteClasseDocumentale", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteClasseDocumentale")
+    @ResponseWrapper(localName = "DeleteClasseDocumentaleResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteClasseDocumentaleResponse")
+    @Action(input = "http://ws.abx/abxWsGest/DeleteClasseDocumentaleRequest", output = "http://ws.abx/abxWsGest/DeleteClasseDocumentaleResponse")
+    public AbxClasseDocumentaleResult deleteClasseDocumentale(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "ClasseDocumentaleName", targetNamespace = "")
+        String classeDocumentaleName);
+
+    /**
+     * 
+     * @param sessionId
+     * @param classeDocumentale
+     * @return
+     *     returns abx.ws.AbxClasseDocumentaleResult
+     */
+    @WebMethod(operationName = "InsertClasseDocumentale")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "InsertClasseDocumentale", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertClasseDocumentale")
+    @ResponseWrapper(localName = "InsertClasseDocumentaleResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertClasseDocumentaleResponse")
+    @Action(input = "http://ws.abx/abxWsGest/InsertClasseDocumentaleRequest", output = "http://ws.abx/abxWsGest/InsertClasseDocumentaleResponse")
+    public AbxClasseDocumentaleResult insertClasseDocumentale(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "classeDocumentale", targetNamespace = "")
+        AbxClasseDocumentale classeDocumentale);
+
+    /**
+     * 
+     * @param sessionId
+     * @param option4Query
+     * @return
+     *     returns abx.ws.AbxRetOption4QueryResult
+     */
+    @WebMethod(operationName = "GetQueryParam")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetQueryParam", targetNamespace = "http://ws.abx/", className = "abx.ws.GetQueryParam")
+    @ResponseWrapper(localName = "GetQueryParamResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetQueryParamResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetQueryParamRequest", output = "http://ws.abx/abxWsGest/GetQueryParamResponse")
+    public AbxRetOption4QueryResult getQueryParam(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "option4query", targetNamespace = "")
+        AbxOption4Query option4Query);
+
+    /**
+     * 
+     * @param sessionId
+     * @param option4Query
+     * @return
+     *     returns abx.ws.AbxRetQueryResult
+     */
+    @WebMethod(operationName = "QueryHeader")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "QueryHeader", targetNamespace = "http://ws.abx/", className = "abx.ws.QueryHeader")
+    @ResponseWrapper(localName = "QueryHeaderResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.QueryHeaderResponse")
+    @Action(input = "http://ws.abx/abxWsGest/QueryHeaderRequest", output = "http://ws.abx/abxWsGest/QueryHeaderResponse")
+    public AbxRetQueryResult queryHeader(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "option4query", targetNamespace = "")
+        AbxQexpression option4Query);
+
+    /**
+     * 
+     * @param sessionId
+     * @param option4Query
+     * @param protuse
+     * @return
+     *     returns abx.ws.AbxRetQueryResult
+     */
+    @WebMethod(operationName = "QueryTotAttach")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "QueryTotAttach", targetNamespace = "http://ws.abx/", className = "abx.ws.QueryTotAttach")
+    @ResponseWrapper(localName = "QueryTotAttachResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.QueryTotAttachResponse")
+    @Action(input = "http://ws.abx/abxWsGest/QueryTotAttachRequest", output = "http://ws.abx/abxWsGest/QueryTotAttachResponse")
+    public AbxRetQueryResult queryTotAttach(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "option4query", targetNamespace = "")
+        AbxQexpression option4Query,
+        @WebParam(name = "protuse", targetNamespace = "")
+        AbxProtocolUse protuse);
+
+    /**
+     * 
+     * @param sessionId
+     * @param filters
+     * @return
+     *     returns abx.ws.AbxFilterResult
+     */
+    @WebMethod(operationName = "DeleteFilter")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DeleteFilter", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteFilter")
+    @ResponseWrapper(localName = "DeleteFilterResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteFilterResponse")
+    @Action(input = "http://ws.abx/abxWsGest/DeleteFilterRequest", output = "http://ws.abx/abxWsGest/DeleteFilterResponse")
+    public AbxFilterResult deleteFilter(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "filters", targetNamespace = "")
+        AbxFilterList filters);
+
+    /**
+     * 
+     * @param sessionId
+     * @param filter
+     * @return
+     *     returns abx.ws.AbxFilterResult
+     */
+    @WebMethod(operationName = "ModifyFilter")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "ModifyFilter", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyFilter")
+    @ResponseWrapper(localName = "ModifyFilterResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyFilterResponse")
+    @Action(input = "http://ws.abx/abxWsGest/ModifyFilterRequest", output = "http://ws.abx/abxWsGest/ModifyFilterResponse")
+    public AbxFilterResult modifyFilter(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "filter", targetNamespace = "")
+        AbxFilter filter);
+
+    /**
+     * 
+     * @param sessionId
+     * @param filter
+     * @return
+     *     returns abx.ws.AbxFilterResult
+     */
+    @WebMethod(operationName = "InsertFilter")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "InsertFilter", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertFilter")
+    @ResponseWrapper(localName = "InsertFilterResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertFilterResponse")
+    @Action(input = "http://ws.abx/abxWsGest/InsertFilterRequest", output = "http://ws.abx/abxWsGest/InsertFilterResponse")
+    public AbxFilterResult insertFilter(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "filter", targetNamespace = "")
+        AbxFilter filter);
+
+    /**
+     * 
+     * @param instanceName
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxGiiResult
+     */
+    @WebMethod(operationName = "GetInstanceId")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GetInstanceId", targetNamespace = "http://ws.abx/", className = "abx.ws.GetInstanceId")
+    @ResponseWrapper(localName = "GetInstanceIdResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetInstanceIdResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetInstanceIdRequest", output = "http://ws.abx/abxWsGest/GetInstanceIdResponse")
+    public AbxGiiResult getInstanceId(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "InstanceName", targetNamespace = "")
+        String instanceName);
+
+    /**
+     * 
      * @param sessionId
      * @param templateName
      * @return
-     *     returns abx.ws.AbxFieldResult
+     *     returns abx.ws.AbxTemplateResult
      */
-    @WebMethod(operationName = "GetFieldsPropertiesFromTemplate")
+    @WebMethod(operationName = "GetTemplateProperties")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetFieldsPropertiesFromTemplate", targetNamespace = "http://ws.abx/", className = "abx.ws.GetFieldsPropertiesFromTemplate")
-    @ResponseWrapper(localName = "GetFieldsPropertiesFromTemplateResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetFieldsPropertiesFromTemplateResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetFieldsPropertiesFromTemplateRequest", output = "http://ws.abx/abxWsGest/GetFieldsPropertiesFromTemplateResponse")
-    public AbxFieldResult getFieldsPropertiesFromTemplate(
+    @RequestWrapper(localName = "GetTemplateProperties", targetNamespace = "http://ws.abx/", className = "abx.ws.GetTemplateProperties")
+    @ResponseWrapper(localName = "GetTemplatePropertiesResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetTemplatePropertiesResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetTemplatePropertiesRequest", output = "http://ws.abx/abxWsGest/GetTemplatePropertiesResponse")
+    public AbxTemplateResult getTemplateProperties(
         @WebParam(name = "SessionId", targetNamespace = "")
         IDtype sessionId,
         @WebParam(name = "TemplateName", targetNamespace = "")
@@ -542,164 +2291,71 @@ public interface AbxWsGest {
     /**
      * 
      * @param sessionId
-     * @param fieldName
      * @return
-     *     returns int
+     *     returns abx.ws.AbxArchSostResult
      */
-    @WebMethod(operationName = "DeleteField")
+    @WebMethod(operationName = "GetArchSostRules")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DeleteField", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteField")
-    @ResponseWrapper(localName = "DeleteFieldResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteFieldResponse")
-    @Action(input = "http://ws.abx/abxWsGest/DeleteFieldRequest", output = "http://ws.abx/abxWsGest/DeleteFieldResponse")
-    public int deleteField(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "FieldName", targetNamespace = "")
-        String fieldName);
-
-    /**
-     * 
-     * @param sessionId
-     * @param optionSetDesc
-     * @param field2Update
-     * @param optionGetCache
-     * @param fkp
-     * @param recordsArray
-     * @return
-     *     returns abx.ws.AbxFieldResult
-     */
-    @WebMethod(operationName = "CreateField")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "CreateField", targetNamespace = "http://ws.abx/", className = "abx.ws.CreateField")
-    @ResponseWrapper(localName = "CreateFieldResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CreateFieldResponse")
-    @Action(input = "http://ws.abx/abxWsGest/CreateFieldRequest", output = "http://ws.abx/abxWsGest/CreateFieldResponse")
-    public AbxFieldResult createField(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "Field2Update", targetNamespace = "")
-        AbxField field2Update,
-        @WebParam(name = "recordsArray", targetNamespace = "")
-        AbxCombo recordsArray,
-        @WebParam(name = "fkp", targetNamespace = "")
-        AbxFK fkp,
-        @WebParam(name = "optionGetCache", targetNamespace = "")
-        boolean optionGetCache,
-        @WebParam(name = "optionSetDesc", targetNamespace = "")
-        boolean optionSetDesc);
-
-    /**
-     * 
-     * @param sessionId
-     * @param fieldName
-     * @return
-     *     returns org.netbeans.xml.schema.abxcan.AbxCan
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "canModifyField", targetNamespace = "http://ws.abx/", className = "abx.ws.CanModifyField")
-    @ResponseWrapper(localName = "canModifyFieldResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanModifyFieldResponse")
-    @Action(input = "http://ws.abx/abxWsGest/canModifyFieldRequest", output = "http://ws.abx/abxWsGest/canModifyFieldResponse")
-    public AbxCan canModifyField(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "FieldName", targetNamespace = "")
-        String fieldName);
-
-    /**
-     * 
-     * @param sessionId
-     * @param fieldName
-     * @return
-     *     returns org.netbeans.xml.schema.abxcan.AbxCan
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "canDeleteField", targetNamespace = "http://ws.abx/", className = "abx.ws.CanDeleteField")
-    @ResponseWrapper(localName = "canDeleteFieldResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanDeleteFieldResponse")
-    @Action(input = "http://ws.abx/abxWsGest/canDeleteFieldRequest", output = "http://ws.abx/abxWsGest/canDeleteFieldResponse")
-    public AbxCan canDeleteField(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "FieldName", targetNamespace = "")
-        String fieldName);
-
-    /**
-     * 
-     * @param sessionId
-     * @return
-     *     returns org.netbeans.xml.schema.abxcan.AbxCan
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "canCreateField", targetNamespace = "http://ws.abx/", className = "abx.ws.CanCreateField")
-    @ResponseWrapper(localName = "canCreateFieldResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanCreateFieldResponse")
-    @Action(input = "http://ws.abx/abxWsGest/canCreateFieldRequest", output = "http://ws.abx/abxWsGest/canCreateFieldResponse")
-    public AbxCan canCreateField(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId);
-
-    /**
-     * 
-     * @param instanceName
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxReplicationResult
-     */
-    @WebMethod(operationName = "GetInstanceReplication")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetInstanceReplication", targetNamespace = "http://ws.abx/", className = "abx.ws.GetInstanceReplication")
-    @ResponseWrapper(localName = "GetInstanceReplicationResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetInstanceReplicationResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetInstanceReplicationRequest", output = "http://ws.abx/abxWsGest/GetInstanceReplicationResponse")
-    public AbxReplicationResult getInstanceReplication(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "instanceName", targetNamespace = "")
-        String instanceName);
-
-    /**
-     * 
-     * @param loginParam
-     * @return
-     *     returns abx.ws.AbxLoginResult
-     */
-    @WebMethod(operationName = "Login")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Login", targetNamespace = "http://ws.abx/", className = "abx.ws.Login")
-    @ResponseWrapper(localName = "LoginResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.LoginResponse")
-    @Action(input = "http://ws.abx/abxWsGest/LoginRequest", output = "http://ws.abx/abxWsGest/LoginResponse")
-    public AbxLoginResult login(
-        @WebParam(name = "LoginParam", targetNamespace = "")
-        AbxLoginIdentity loginParam);
-
-    /**
-     * 
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxLoginResult
-     */
-    @WebMethod(operationName = "Logout")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Logout", targetNamespace = "http://ws.abx/", className = "abx.ws.Logout")
-    @ResponseWrapper(localName = "LogoutResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.LogoutResponse")
-    @Action(input = "http://ws.abx/abxWsGest/LogoutRequest", output = "http://ws.abx/abxWsGest/LogoutResponse")
-    public AbxLoginResult logout(
+    @RequestWrapper(localName = "GetArchSostRules", targetNamespace = "http://ws.abx/", className = "abx.ws.GetArchSostRules")
+    @ResponseWrapper(localName = "GetArchSostRulesResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetArchSostRulesResponse")
+    @Action(input = "http://ws.abx/abxWsGest/GetArchSostRulesRequest", output = "http://ws.abx/abxWsGest/GetArchSostRulesResponse")
+    public AbxArchSostResult getArchSostRules(
         @WebParam(name = "SessionId", targetNamespace = "")
         IDtype sessionId);
 
     /**
      * 
      * @param sessionId
+     * @param archSostRule
      * @return
-     *     returns abx.ws.AbxReplicationResult
+     *     returns abx.ws.AbxArchSostResult
      */
-    @WebMethod(operationName = "GetAdjacentArchiBox")
+    @WebMethod(operationName = "InsertArchSostRule")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetAdjacentArchiBox", targetNamespace = "http://ws.abx/", className = "abx.ws.GetAdjacentArchiBox")
-    @ResponseWrapper(localName = "GetAdjacentArchiBoxResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetAdjacentArchiBoxResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetAdjacentArchiBoxRequest", output = "http://ws.abx/abxWsGest/GetAdjacentArchiBoxResponse")
-    public AbxReplicationResult getAdjacentArchiBox(
+    @RequestWrapper(localName = "InsertArchSostRule", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertArchSostRule")
+    @ResponseWrapper(localName = "InsertArchSostRuleResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertArchSostRuleResponse")
+    @Action(input = "http://ws.abx/abxWsGest/InsertArchSostRuleRequest", output = "http://ws.abx/abxWsGest/InsertArchSostRuleResponse")
+    public AbxArchSostResult insertArchSostRule(
         @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId);
+        IDtype sessionId,
+        @WebParam(name = "archSostRule", targetNamespace = "")
+        AbxArchSostRule archSostRule);
+
+    /**
+     * 
+     * @param sessionId
+     * @param ruleId
+     * @return
+     *     returns abx.ws.AbxArchSostResult
+     */
+    @WebMethod(operationName = "DeleteArchSostRule")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DeleteArchSostRule", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteArchSostRule")
+    @ResponseWrapper(localName = "DeleteArchSostRuleResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteArchSostRuleResponse")
+    @Action(input = "http://ws.abx/abxWsGest/DeleteArchSostRuleRequest", output = "http://ws.abx/abxWsGest/DeleteArchSostRuleResponse")
+    public AbxArchSostResult deleteArchSostRule(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "ruleId", targetNamespace = "")
+        String ruleId);
+
+    /**
+     * 
+     * @param sessionId
+     * @param archSostRule
+     * @return
+     *     returns abx.ws.AbxArchSostResult
+     */
+    @WebMethod(operationName = "ModifyArchSostRule")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "ModifyArchSostRule", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyArchSostRule")
+    @ResponseWrapper(localName = "ModifyArchSostRuleResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyArchSostRuleResponse")
+    @Action(input = "http://ws.abx/abxWsGest/ModifyArchSostRuleRequest", output = "http://ws.abx/abxWsGest/ModifyArchSostRuleResponse")
+    public AbxArchSostResult modifyArchSostRule(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "archSostRule", targetNamespace = "")
+        AbxArchSostRule archSostRule);
 
     /**
      * 
@@ -1696,705 +3352,6 @@ public interface AbxWsGest {
         String instanceName,
         @WebParam(name = "dataId", targetNamespace = "")
         String dataId);
-
-    /**
-     * 
-     * @param instanceName
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxReplicationResult
-     */
-    @WebMethod(operationName = "GetInstanceReplicationStatus")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetInstanceReplicationStatus", targetNamespace = "http://ws.abx/", className = "abx.ws.GetInstanceReplicationStatus")
-    @ResponseWrapper(localName = "GetInstanceReplicationStatusResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetInstanceReplicationStatusResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetInstanceReplicationStatusRequest", output = "http://ws.abx/abxWsGest/GetInstanceReplicationStatusResponse")
-    public AbxReplicationResult getInstanceReplicationStatus(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "instanceName", targetNamespace = "")
-        String instanceName);
-
-    /**
-     * 
-     * @param annotazione
-     * @param instanceName
-     * @param sessionId
-     * @param dataId
-     * @return
-     *     returns abx.ws.AbxDataResult
-     */
-    @WebMethod(operationName = "InsertDataWA")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "InsertDataWA", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertDataWA")
-    @ResponseWrapper(localName = "InsertDataWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertDataWAResponse")
-    @Action(input = "http://ws.abx/abxWsGest/InsertDataWARequest", output = "http://ws.abx/abxWsGest/InsertDataWAResponse")
-    public AbxDataResult insertDataWA(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "instanceName", targetNamespace = "")
-        String instanceName,
-        @WebParam(name = "dataId", targetNamespace = "")
-        String dataId,
-        @WebParam(name = "annotazione", targetNamespace = "")
-        String annotazione);
-
-    /**
-     * 
-     * @param annotazione
-     * @param annotazioneId
-     * @param instanceName
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxDataResult
-     */
-    @WebMethod(operationName = "ModifyDataWA")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "ModifyDataWA", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyDataWA")
-    @ResponseWrapper(localName = "ModifyDataWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyDataWAResponse")
-    @Action(input = "http://ws.abx/abxWsGest/ModifyDataWARequest", output = "http://ws.abx/abxWsGest/ModifyDataWAResponse")
-    public AbxDataResult modifyDataWA(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "instanceName", targetNamespace = "")
-        String instanceName,
-        @WebParam(name = "annotazioneId", targetNamespace = "")
-        String annotazioneId,
-        @WebParam(name = "annotazione", targetNamespace = "")
-        String annotazione);
-
-    /**
-     * 
-     * @param annotazioneId
-     * @param instanceName
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxDataResult
-     */
-    @WebMethod(operationName = "DeleteDataWA")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DeleteDataWA", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteDataWA")
-    @ResponseWrapper(localName = "DeleteDataWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteDataWAResponse")
-    @Action(input = "http://ws.abx/abxWsGest/DeleteDataWARequest", output = "http://ws.abx/abxWsGest/DeleteDataWAResponse")
-    public AbxDataResult deleteDataWA(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "instanceName", targetNamespace = "")
-        String instanceName,
-        @WebParam(name = "annotazioneId", targetNamespace = "")
-        String annotazioneId);
-
-    /**
-     * 
-     * @param instanceName
-     * @param sessionId
-     * @param dataId
-     * @return
-     *     returns abx.ws.AbxDataResult
-     */
-    @WebMethod(operationName = "GetListDataWA")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetListDataWA", targetNamespace = "http://ws.abx/", className = "abx.ws.GetListDataWA")
-    @ResponseWrapper(localName = "GetListDataWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetListDataWAResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetListDataWARequest", output = "http://ws.abx/abxWsGest/GetListDataWAResponse")
-    public AbxDataResult getListDataWA(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "instanceName", targetNamespace = "")
-        String instanceName,
-        @WebParam(name = "dataId", targetNamespace = "")
-        String dataId);
-
-    /**
-     * 
-     * @param annotazioneId
-     * @param instanceName
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxDataResult
-     */
-    @WebMethod(operationName = "GetDataWAById")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetDataWAById", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDataWAById")
-    @ResponseWrapper(localName = "GetDataWAByIdResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDataWAByIdResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetDataWAByIdRequest", output = "http://ws.abx/abxWsGest/GetDataWAByIdResponse")
-    public AbxDataResult getDataWAById(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "instanceName", targetNamespace = "")
-        String instanceName,
-        @WebParam(name = "annotazioneId", targetNamespace = "")
-        String annotazioneId);
-
-    /**
-     * 
-     * @param annotazioneId
-     * @param objName
-     * @param instanceName
-     * @param sessionId
-     * @param dataListInput
-     * @return
-     *     returns abx.ws.AbxFileResult
-     */
-    @WebMethod(operationName = "InsertFileWA")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "InsertFileWA", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertFileWA")
-    @ResponseWrapper(localName = "InsertFileWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertFileWAResponse")
-    @Action(input = "http://ws.abx/abxWsGest/InsertFileWARequest", output = "http://ws.abx/abxWsGest/InsertFileWAResponse")
-    public AbxFileResult insertFileWA(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "instanceName", targetNamespace = "")
-        String instanceName,
-        @WebParam(name = "annotazioneId", targetNamespace = "")
-        String annotazioneId,
-        @WebParam(name = "objName", targetNamespace = "")
-        String objName,
-        @WebParam(name = "dataListInput", targetNamespace = "")
-        AbxFileList dataListInput);
-
-    /**
-     * 
-     * @param chunk
-     * @param fileCode
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxFileResult
-     */
-    @WebMethod(operationName = "UploadSendChunkWA")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "UploadSendChunkWA", targetNamespace = "http://ws.abx/", className = "abx.ws.UploadSendChunkWA")
-    @ResponseWrapper(localName = "UploadSendChunkWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.UploadSendChunkWAResponse")
-    @Action(input = "http://ws.abx/abxWsGest/UploadSendChunkWARequest", output = "http://ws.abx/abxWsGest/UploadSendChunkWAResponse")
-    public AbxFileResult uploadSendChunkWA(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "fileCode", targetNamespace = "")
-        String fileCode,
-        @WebParam(name = "chunk", targetNamespace = "")
-        byte[] chunk);
-
-    /**
-     * 
-     * @param annotazioneId
-     * @param docTemplateName
-     * @param objName
-     * @param codePreviousVersion
-     * @param instanceName
-     * @param sessionId
-     * @param dataListInput
-     * @return
-     *     returns abx.ws.AbxFileResult
-     */
-    @WebMethod(operationName = "UploadEndFileWA")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "UploadEndFileWA", targetNamespace = "http://ws.abx/", className = "abx.ws.UploadEndFileWA")
-    @ResponseWrapper(localName = "UploadEndFileWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.UploadEndFileWAResponse")
-    @Action(input = "http://ws.abx/abxWsGest/UploadEndFileWARequest", output = "http://ws.abx/abxWsGest/UploadEndFileWAResponse")
-    public AbxFileResult uploadEndFileWA(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "instanceName", targetNamespace = "")
-        String instanceName,
-        @WebParam(name = "annotazioneId", targetNamespace = "")
-        String annotazioneId,
-        @WebParam(name = "objName", targetNamespace = "")
-        String objName,
-        @WebParam(name = "dataListInput", targetNamespace = "")
-        AbxFileList dataListInput,
-        @WebParam(name = "codePreviousVersion", targetNamespace = "")
-        String codePreviousVersion,
-        @WebParam(name = "docTemplateName", targetNamespace = "")
-        String docTemplateName);
-
-    /**
-     * 
-     * @param annotazioneId
-     * @param instanceName
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxFileResult
-     */
-    @WebMethod(operationName = "GetDataFileListWA")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetDataFileListWA", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDataFileListWA")
-    @ResponseWrapper(localName = "GetDataFileListWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDataFileListWAResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetDataFileListWARequest", output = "http://ws.abx/abxWsGest/GetDataFileListWAResponse")
-    public AbxFileResult getDataFileListWA(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "instanceName", targetNamespace = "")
-        String instanceName,
-        @WebParam(name = "annotazioneId", targetNamespace = "")
-        String annotazioneId);
-
-    /**
-     * 
-     * @param dChunk
-     * @param instanceName
-     * @param sessionId
-     * @param fileUniqueCode
-     * @return
-     *     returns abx.ws.AbxFileResult
-     */
-    @WebMethod(operationName = "DownloadFileWAByFileUniqueCode")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DownloadFileWAByFileUniqueCode", targetNamespace = "http://ws.abx/", className = "abx.ws.DownloadFileWAByFileUniqueCode")
-    @ResponseWrapper(localName = "DownloadFileWAByFileUniqueCodeResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DownloadFileWAByFileUniqueCodeResponse")
-    @Action(input = "http://ws.abx/abxWsGest/DownloadFileWAByFileUniqueCodeRequest", output = "http://ws.abx/abxWsGest/DownloadFileWAByFileUniqueCodeResponse")
-    public AbxFileResult downloadFileWAByFileUniqueCode(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "instanceName", targetNamespace = "")
-        String instanceName,
-        @WebParam(name = "fileUniqueCode", targetNamespace = "")
-        String fileUniqueCode,
-        @WebParam(name = "dChunk", targetNamespace = "")
-        String dChunk);
-
-    /**
-     * 
-     * @param dChunk
-     * @param instanceName
-     * @param sessionId
-     * @param dataAttachmentId
-     * @return
-     *     returns abx.ws.AbxFileResult
-     */
-    @WebMethod(operationName = "DownloadFileWA")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DownloadFileWA", targetNamespace = "http://ws.abx/", className = "abx.ws.DownloadFileWA")
-    @ResponseWrapper(localName = "DownloadFileWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DownloadFileWAResponse")
-    @Action(input = "http://ws.abx/abxWsGest/DownloadFileWARequest", output = "http://ws.abx/abxWsGest/DownloadFileWAResponse")
-    public AbxFileResult downloadFileWA(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "instanceName", targetNamespace = "")
-        String instanceName,
-        @WebParam(name = "dataAttachmentId", targetNamespace = "")
-        String dataAttachmentId,
-        @WebParam(name = "dChunk", targetNamespace = "")
-        String dChunk);
-
-    /**
-     * 
-     * @param fileCode
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxFileResult
-     */
-    @WebMethod(operationName = "DownloadGetNextWA")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DownloadGetNextWA", targetNamespace = "http://ws.abx/", className = "abx.ws.DownloadGetNextWA")
-    @ResponseWrapper(localName = "DownloadGetNextWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DownloadGetNextWAResponse")
-    @Action(input = "http://ws.abx/abxWsGest/DownloadGetNextWARequest", output = "http://ws.abx/abxWsGest/DownloadGetNextWAResponse")
-    public AbxFileResult downloadGetNextWA(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "fileCode", targetNamespace = "")
-        String fileCode);
-
-    /**
-     * 
-     * @param fileCode
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxFileResult
-     */
-    @WebMethod(operationName = "DownloadEndFileWA")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DownloadEndFileWA", targetNamespace = "http://ws.abx/", className = "abx.ws.DownloadEndFileWA")
-    @ResponseWrapper(localName = "DownloadEndFileWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DownloadEndFileWAResponse")
-    @Action(input = "http://ws.abx/abxWsGest/DownloadEndFileWARequest", output = "http://ws.abx/abxWsGest/DownloadEndFileWAResponse")
-    public AbxFileResult downloadEndFileWA(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "fileCode", targetNamespace = "")
-        String fileCode);
-
-    /**
-     * 
-     * @param fileCode
-     * @param instanceName
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxFileResult
-     */
-    @WebMethod(operationName = "DeleteFileWA")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DeleteFileWA", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteFileWA")
-    @ResponseWrapper(localName = "DeleteFileWAResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteFileWAResponse")
-    @Action(input = "http://ws.abx/abxWsGest/DeleteFileWARequest", output = "http://ws.abx/abxWsGest/DeleteFileWAResponse")
-    public AbxFileResult deleteFileWA(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "instanceName", targetNamespace = "")
-        String instanceName,
-        @WebParam(name = "fileCode", targetNamespace = "")
-        String fileCode);
-
-    /**
-     * 
-     * @param sessionId
-     * @param matricola
-     * @return
-     *     returns abx.ws.AbxArchiBoxDomainResult
-     */
-    @WebMethod(operationName = "GetArchiBoxInDomainByMatricola")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetArchiBoxInDomainByMatricola", targetNamespace = "http://ws.abx/", className = "abx.ws.GetArchiBoxInDomainByMatricola")
-    @ResponseWrapper(localName = "GetArchiBoxInDomainByMatricolaResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetArchiBoxInDomainByMatricolaResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetArchiBoxInDomainByMatricolaRequest", output = "http://ws.abx/abxWsGest/GetArchiBoxInDomainByMatricolaResponse")
-    public AbxArchiBoxDomainResult getArchiBoxInDomainByMatricola(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "matricola", targetNamespace = "")
-        String matricola);
-
-    /**
-     * 
-     * @param linkTypeName
-     * @param instanceName
-     * @param dataId
-     * @param iDtypeSessionId
-     * @return
-     *     returns abx.ws.AbxLinkResult
-     */
-    @WebMethod(operationName = "GetCountDocumentLinks")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetCountDocumentLinks", targetNamespace = "http://ws.abx/", className = "abx.ws.GetCountDocumentLinks")
-    @ResponseWrapper(localName = "GetCountDocumentLinksResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetCountDocumentLinksResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetCountDocumentLinksRequest", output = "http://ws.abx/abxWsGest/GetCountDocumentLinksResponse")
-    public AbxLinkResult getCountDocumentLinks(
-        @WebParam(name = "IDtype_SessionId", targetNamespace = "")
-        IDtype iDtypeSessionId,
-        @WebParam(name = "instanceName", targetNamespace = "")
-        String instanceName,
-        @WebParam(name = "dataId", targetNamespace = "")
-        String dataId,
-        @WebParam(name = "linkTypeName", targetNamespace = "")
-        String linkTypeName);
-
-    /**
-     * 
-     * @param dataIds
-     * @param instanceName
-     * @param sessionId
-     * @param signType
-     * @param signPassword
-     * @param signUsername
-     * @param fileCodes
-     * @return
-     *     returns abx.ws.AbxFileResult
-     */
-    @WebMethod(operationName = "DigitalSign")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DigitalSign", targetNamespace = "http://ws.abx/", className = "abx.ws.DigitalSign")
-    @ResponseWrapper(localName = "DigitalSignResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DigitalSignResponse")
-    @Action(input = "http://ws.abx/abxWsGest/DigitalSignRequest", output = "http://ws.abx/abxWsGest/DigitalSignResponse")
-    public AbxFileResult digitalSign(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "instanceName", targetNamespace = "")
-        String instanceName,
-        @WebParam(name = "dataIds", targetNamespace = "")
-        List<String> dataIds,
-        @WebParam(name = "fileCodes", targetNamespace = "")
-        List<String> fileCodes,
-        @WebParam(name = "signUsername", targetNamespace = "")
-        String signUsername,
-        @WebParam(name = "signPassword", targetNamespace = "")
-        String signPassword,
-        @WebParam(name = "signType", targetNamespace = "")
-        Integer signType);
-
-    /**
-     * 
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxFieldResult
-     */
-    @WebMethod(operationName = "GetFieldList")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetFieldList", targetNamespace = "http://ws.abx/", className = "abx.ws.GetFieldList")
-    @ResponseWrapper(localName = "GetFieldListResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetFieldListResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetFieldListRequest", output = "http://ws.abx/abxWsGest/GetFieldListResponse")
-    public AbxFieldResult getFieldList(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId);
-
-    /**
-     * 
-     * @param sessionId
-     * @param fieldName
-     * @return
-     *     returns abx.ws.AbxFieldResult
-     */
-    @WebMethod(operationName = "GetFieldProperties")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetFieldProperties", targetNamespace = "http://ws.abx/", className = "abx.ws.GetFieldProperties")
-    @ResponseWrapper(localName = "GetFieldPropertiesResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetFieldPropertiesResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetFieldPropertiesRequest", output = "http://ws.abx/abxWsGest/GetFieldPropertiesResponse")
-    public AbxFieldResult getFieldProperties(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "FieldName", targetNamespace = "")
-        String fieldName);
-
-    /**
-     * 
-     * @param fk
-     * @param sessionId
-     * @param optionSetDesc
-     * @param field2Update
-     * @param optionGetCache
-     * @param recordsArray
-     * @return
-     *     returns abx.ws.AbxFieldResult
-     */
-    @WebMethod(operationName = "ModifyField")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "ModifyField", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyField")
-    @ResponseWrapper(localName = "ModifyFieldResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyFieldResponse")
-    @Action(input = "http://ws.abx/abxWsGest/ModifyFieldRequest", output = "http://ws.abx/abxWsGest/ModifyFieldResponse")
-    public AbxFieldResult modifyField(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "Field2Update", targetNamespace = "")
-        AbxField field2Update,
-        @WebParam(name = "recordsArray", targetNamespace = "")
-        AbxCombo recordsArray,
-        @WebParam(name = "fk", targetNamespace = "")
-        AbxFK fk,
-        @WebParam(name = "optionGetCache", targetNamespace = "")
-        boolean optionGetCache,
-        @WebParam(name = "optionSetDesc", targetNamespace = "")
-        boolean optionSetDesc);
-
-    /**
-     * 
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxDomainResult
-     */
-    @WebMethod(operationName = "GetDomainList")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetDomainList", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDomainList")
-    @ResponseWrapper(localName = "GetDomainListResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDomainListResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetDomainListRequest", output = "http://ws.abx/abxWsGest/GetDomainListResponse")
-    public AbxDomainResult getDomainList(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId);
-
-    /**
-     * 
-     * @param linkId
-     * @param linkTypeName
-     * @param sessionId
-     * @param dataId
-     * @param instanceNameTo
-     * @param instanceNameFrom
-     * @param note
-     * @return
-     *     returns abx.ws.AbxLinkResult
-     */
-    @WebMethod(operationName = "ModifyLinkContainerToDocument")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "ModifyLinkContainerToDocument", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyLinkContainerToDocument")
-    @ResponseWrapper(localName = "ModifyLinkContainerToDocumentResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyLinkContainerToDocumentResponse")
-    @Action(input = "http://ws.abx/abxWsGest/ModifyLinkContainerToDocumentRequest", output = "http://ws.abx/abxWsGest/ModifyLinkContainerToDocumentResponse")
-    public AbxLinkResult modifyLinkContainerToDocument(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "linkTypeName", targetNamespace = "")
-        String linkTypeName,
-        @WebParam(name = "linkId", targetNamespace = "")
-        String linkId,
-        @WebParam(name = "instanceNameFrom", targetNamespace = "")
-        String instanceNameFrom,
-        @WebParam(name = "instanceNameTo", targetNamespace = "")
-        String instanceNameTo,
-        @WebParam(name = "dataId", targetNamespace = "")
-        String dataId,
-        @WebParam(name = "note", targetNamespace = "")
-        String note);
-
-    /**
-     * 
-     * @param linkId
-     * @param linkTypeName
-     * @param sessionId
-     * @param dataId
-     * @param instanceNameTo
-     * @param instanceNameFrom
-     * @return
-     *     returns org.netbeans.xml.schema.abxcan.AbxCan
-     */
-    @WebMethod(operationName = "CanModifyLinkContainerToDocument")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "CanModifyLinkContainerToDocument", targetNamespace = "http://ws.abx/", className = "abx.ws.CanModifyLinkContainerToDocument")
-    @ResponseWrapper(localName = "CanModifyLinkContainerToDocumentResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanModifyLinkContainerToDocumentResponse")
-    @Action(input = "http://ws.abx/abxWsGest/CanModifyLinkContainerToDocumentRequest", output = "http://ws.abx/abxWsGest/CanModifyLinkContainerToDocumentResponse")
-    public AbxCan canModifyLinkContainerToDocument(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "linkTypeName", targetNamespace = "")
-        String linkTypeName,
-        @WebParam(name = "instanceNameFrom", targetNamespace = "")
-        String instanceNameFrom,
-        @WebParam(name = "linkId", targetNamespace = "")
-        String linkId,
-        @WebParam(name = "instanceNameTo", targetNamespace = "")
-        String instanceNameTo,
-        @WebParam(name = "dataId", targetNamespace = "")
-        String dataId);
-
-    /**
-     * 
-     * @param linkId
-     * @param sessionId
-     * @param instanceNameFrom
-     * @return
-     *     returns abx.ws.AbxLinkResult
-     */
-    @WebMethod(operationName = "DeleteLink")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DeleteLink", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteLink")
-    @ResponseWrapper(localName = "DeleteLinkResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteLinkResponse")
-    @Action(input = "http://ws.abx/abxWsGest/DeleteLinkRequest", output = "http://ws.abx/abxWsGest/DeleteLinkResponse")
-    public AbxLinkResult deleteLink(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "instanceNameFrom", targetNamespace = "")
-        String instanceNameFrom,
-        @WebParam(name = "linkId", targetNamespace = "")
-        String linkId);
-
-    /**
-     * 
-     * @param linkId
-     * @param sessionId
-     * @param instanceNameFrom
-     * @return
-     *     returns org.netbeans.xml.schema.abxcan.AbxCan
-     */
-    @WebMethod(operationName = "CanDeleteLinkFromContainer")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "CanDeleteLinkFromContainer", targetNamespace = "http://ws.abx/", className = "abx.ws.CanDeleteLinkFromContainer")
-    @ResponseWrapper(localName = "CanDeleteLinkFromContainerResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanDeleteLinkFromContainerResponse")
-    @Action(input = "http://ws.abx/abxWsGest/CanDeleteLinkFromContainerRequest", output = "http://ws.abx/abxWsGest/CanDeleteLinkFromContainerResponse")
-    public AbxCan canDeleteLinkFromContainer(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "instanceNameFrom", targetNamespace = "")
-        String instanceNameFrom,
-        @WebParam(name = "linkId", targetNamespace = "")
-        String linkId);
-
-    /**
-     * 
-     * @param linkTypeName
-     * @param instanceName
-     * @param dataId
-     * @param iDtypeSessionId
-     * @return
-     *     returns abx.ws.AbxLinkResult
-     */
-    @WebMethod(operationName = "GetDocumentLinks")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetDocumentLinks", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDocumentLinks")
-    @ResponseWrapper(localName = "GetDocumentLinksResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDocumentLinksResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetDocumentLinksRequest", output = "http://ws.abx/abxWsGest/GetDocumentLinksResponse")
-    public AbxLinkResult getDocumentLinks(
-        @WebParam(name = "IDtype_SessionId", targetNamespace = "")
-        IDtype iDtypeSessionId,
-        @WebParam(name = "instanceName", targetNamespace = "")
-        String instanceName,
-        @WebParam(name = "dataId", targetNamespace = "")
-        String dataId,
-        @WebParam(name = "linkTypeName", targetNamespace = "")
-        String linkTypeName);
-
-    /**
-     * 
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxClasseDocumentaleResult
-     */
-    @WebMethod(operationName = "GetClasseDocumentale")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetClasseDocumentale", targetNamespace = "http://ws.abx/", className = "abx.ws.GetClasseDocumentale")
-    @ResponseWrapper(localName = "GetClasseDocumentaleResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetClasseDocumentaleResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetClasseDocumentaleRequest", output = "http://ws.abx/abxWsGest/GetClasseDocumentaleResponse")
-    public AbxClasseDocumentaleResult getClasseDocumentale(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId);
-
-    /**
-     * 
-     * @param classeDocumentaleName
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxClasseDocumentaleResult
-     */
-    @WebMethod(operationName = "DeleteClasseDocumentale")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DeleteClasseDocumentale", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteClasseDocumentale")
-    @ResponseWrapper(localName = "DeleteClasseDocumentaleResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteClasseDocumentaleResponse")
-    @Action(input = "http://ws.abx/abxWsGest/DeleteClasseDocumentaleRequest", output = "http://ws.abx/abxWsGest/DeleteClasseDocumentaleResponse")
-    public AbxClasseDocumentaleResult deleteClasseDocumentale(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "ClasseDocumentaleName", targetNamespace = "")
-        String classeDocumentaleName);
-
-    /**
-     * 
-     * @param sessionId
-     * @param classeDocumentale
-     * @return
-     *     returns abx.ws.AbxClasseDocumentaleResult
-     */
-    @WebMethod(operationName = "InsertClasseDocumentale")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "InsertClasseDocumentale", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertClasseDocumentale")
-    @ResponseWrapper(localName = "InsertClasseDocumentaleResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertClasseDocumentaleResponse")
-    @Action(input = "http://ws.abx/abxWsGest/InsertClasseDocumentaleRequest", output = "http://ws.abx/abxWsGest/InsertClasseDocumentaleResponse")
-    public AbxClasseDocumentaleResult insertClasseDocumentale(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "classeDocumentale", targetNamespace = "")
-        AbxClasseDocumentale classeDocumentale);
-
-    /**
-     * 
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxArchiBoxDomainResult
-     */
-    @WebMethod(operationName = "GetArchiBoxInfo")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetArchiBoxInfo", targetNamespace = "http://ws.abx/", className = "abx.ws.GetArchiBoxInfo")
-    @ResponseWrapper(localName = "GetArchiBoxInfoResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetArchiBoxInfoResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetArchiBoxInfoRequest", output = "http://ws.abx/abxWsGest/GetArchiBoxInfoResponse")
-    public AbxArchiBoxDomainResult getArchiBoxInfo(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId);
-
-    /**
-     * 
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxArchiBoxDomainResult
-     */
-    @WebMethod(operationName = "GetArchiBoxInDomain")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetArchiBoxInDomain", targetNamespace = "http://ws.abx/", className = "abx.ws.GetArchiBoxInDomain")
-    @ResponseWrapper(localName = "GetArchiBoxInDomainResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetArchiBoxInDomainResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetArchiBoxInDomainRequest", output = "http://ws.abx/abxWsGest/GetArchiBoxInDomainResponse")
-    public AbxArchiBoxDomainResult getArchiBoxInDomain(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId);
 
     /**
      * 
@@ -3544,24 +4501,6 @@ public interface AbxWsGest {
 
     /**
      * 
-     * @param username
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxUserListResult
-     */
-    @WebMethod(operationName = "DeleteUserByUsername")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DeleteUserByUsername", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteUserByUsername")
-    @ResponseWrapper(localName = "DeleteUserByUsernameResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteUserByUsernameResponse")
-    @Action(input = "http://ws.abx/abxWsGest/DeleteUserByUsernameRequest", output = "http://ws.abx/abxWsGest/DeleteUserByUsernameResponse")
-    public AbxUserListResult deleteUserByUsername(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "username", targetNamespace = "")
-        String username);
-
-    /**
-     * 
      * @param sessionId
      * @param group
      * @return
@@ -3577,6 +4516,57 @@ public interface AbxWsGest {
         IDtype sessionId,
         @WebParam(name = "group", targetNamespace = "")
         AbxGroup group);
+
+    /**
+     * 
+     * @param sessionId
+     * @param name
+     * @return
+     *     returns abx.ws.AbxGroupResult
+     */
+    @WebMethod(operationName = "DeleteGroup")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DeleteGroup", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteGroup")
+    @ResponseWrapper(localName = "DeleteGroupResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteGroupResponse")
+    @Action(input = "http://ws.abx/abxWsGest/DeleteGroupRequest", output = "http://ws.abx/abxWsGest/DeleteGroupResponse")
+    public AbxGroupResult deleteGroup(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "name", targetNamespace = "")
+        String name);
+
+    /**
+     * 
+     * @param in
+     * @return
+     *     returns abx.ws.AbxPingResult
+     */
+    @WebMethod(operationName = "Ping")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Ping", targetNamespace = "http://ws.abx/", className = "abx.ws.Ping")
+    @ResponseWrapper(localName = "PingResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.PingResponse")
+    @Action(input = "http://ws.abx/abxWsGest/PingRequest", output = "http://ws.abx/abxWsGest/PingResponse")
+    public AbxPingResult ping(
+        @WebParam(name = "In", targetNamespace = "")
+        String in);
+
+    /**
+     * 
+     * @param username
+     * @param sessionId
+     * @return
+     *     returns abx.ws.AbxUserListResult
+     */
+    @WebMethod(operationName = "DeleteUserByUsername")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DeleteUserByUsername", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteUserByUsername")
+    @ResponseWrapper(localName = "DeleteUserByUsernameResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteUserByUsernameResponse")
+    @Action(input = "http://ws.abx/abxWsGest/DeleteUserByUsernameRequest", output = "http://ws.abx/abxWsGest/DeleteUserByUsernameResponse")
+    public AbxUserListResult deleteUserByUsername(
+        @WebParam(name = "SessionId", targetNamespace = "")
+        IDtype sessionId,
+        @WebParam(name = "username", targetNamespace = "")
+        String username);
 
     /**
      * 
@@ -6418,983 +7408,5 @@ public interface AbxWsGest {
         String oldPassword,
         @WebParam(name = "newPassword", targetNamespace = "")
         String newPassword);
-
-    /**
-     * 
-     * @param container2Update
-     * @param sessionId
-     * @param abxSecurityId
-     * @param avl
-     * @return
-     *     returns abx.ws.AbxContainerResult
-     */
-    @WebMethod(operationName = "CreateContainer")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "CreateContainer", targetNamespace = "http://ws.abx/", className = "abx.ws.CreateContainer")
-    @ResponseWrapper(localName = "CreateContainerResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CreateContainerResponse")
-    @Action(input = "http://ws.abx/abxWsGest/CreateContainerRequest", output = "http://ws.abx/abxWsGest/CreateContainerResponse")
-    public AbxContainerResult createContainer(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "Container2Update", targetNamespace = "")
-        AbxContainer container2Update,
-        @WebParam(name = "abxSecurityId", targetNamespace = "")
-        String abxSecurityId,
-        @WebParam(name = "avl", targetNamespace = "")
-        AbxVersioningList avl);
-
-    /**
-     * 
-     * @param sessionId
-     * @param template2Update
-     * @return
-     *     returns abx.ws.AbxTemplateResult
-     */
-    @WebMethod(operationName = "CreateTemplate")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "CreateTemplate", targetNamespace = "http://ws.abx/", className = "abx.ws.CreateTemplate")
-    @ResponseWrapper(localName = "CreateTemplateResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CreateTemplateResponse")
-    @Action(input = "http://ws.abx/abxWsGest/CreateTemplateRequest", output = "http://ws.abx/abxWsGest/CreateTemplateResponse")
-    public AbxTemplateResult createTemplate(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "Template2Update", targetNamespace = "")
-        AbxTemplate template2Update);
-
-    /**
-     * 
-     * @param dynorgParam
-     * @param sessionId
-     * @return
-     *     returns org.netbeans.xml.schema.abxdynaminorg.AbxDynamicRuleResult
-     */
-    @WebMethod(operationName = "CreateDynorg")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "CreateDynorg", targetNamespace = "http://ws.abx/", className = "abx.ws.CreateDynorg")
-    @ResponseWrapper(localName = "CreateDynorgResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CreateDynorgResponse")
-    @Action(input = "http://ws.abx/abxWsGest/CreateDynorgRequest", output = "http://ws.abx/abxWsGest/CreateDynorgResponse")
-    public AbxDynamicRuleResult createDynorg(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "DynorgParam", targetNamespace = "")
-        AbxDynamicorgRuleList dynorgParam);
-
-    /**
-     * 
-     * @param instanceName
-     * @param sessionId
-     * @param replicationList
-     * @return
-     *     returns abx.ws.AbxReplicationResult
-     */
-    @WebMethod(operationName = "SetInstanceReplication")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "SetInstanceReplication", targetNamespace = "http://ws.abx/", className = "abx.ws.SetInstanceReplication")
-    @ResponseWrapper(localName = "SetInstanceReplicationResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.SetInstanceReplicationResponse")
-    @Action(input = "http://ws.abx/abxWsGest/SetInstanceReplicationRequest", output = "http://ws.abx/abxWsGest/SetInstanceReplicationResponse")
-    public AbxReplicationResult setInstanceReplication(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "instanceName", targetNamespace = "")
-        String instanceName,
-        @WebParam(name = "replicationList", targetNamespace = "")
-        AbxReplicationList replicationList);
-
-    /**
-     * 
-     * @param container2Update
-     * @param sessionId
-     * @param abxSecurityId
-     * @param avl
-     * @return
-     *     returns abx.ws.AbxContainerResult
-     */
-    @WebMethod(operationName = "ModifyContainer")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "ModifyContainer", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyContainer")
-    @ResponseWrapper(localName = "ModifyContainerResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyContainerResponse")
-    @Action(input = "http://ws.abx/abxWsGest/ModifyContainerRequest", output = "http://ws.abx/abxWsGest/ModifyContainerResponse")
-    public AbxContainerResult modifyContainer(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "Container2Update", targetNamespace = "")
-        AbxContainer container2Update,
-        @WebParam(name = "abxSecurityId", targetNamespace = "")
-        String abxSecurityId,
-        @WebParam(name = "avl", targetNamespace = "")
-        AbxVersioningList avl);
-
-    /**
-     * 
-     * @param sessionId
-     * @param template2Update
-     * @return
-     *     returns abx.ws.AbxTemplateResult
-     */
-    @WebMethod(operationName = "ModifyTemplate")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "ModifyTemplate", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyTemplate")
-    @ResponseWrapper(localName = "ModifyTemplateResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyTemplateResponse")
-    @Action(input = "http://ws.abx/abxWsGest/ModifyTemplateRequest", output = "http://ws.abx/abxWsGest/ModifyTemplateResponse")
-    public AbxTemplateResult modifyTemplate(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "Template2Update", targetNamespace = "")
-        AbxTemplate template2Update);
-
-    /**
-     * 
-     * @param sessionId
-     * @param templateName
-     * @return
-     *     returns abx.ws.AbxTemplateResult
-     */
-    @WebMethod(operationName = "DeleteTemplate")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DeleteTemplate", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteTemplate")
-    @ResponseWrapper(localName = "DeleteTemplateResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteTemplateResponse")
-    @Action(input = "http://ws.abx/abxWsGest/DeleteTemplateRequest", output = "http://ws.abx/abxWsGest/DeleteTemplateResponse")
-    public AbxTemplateResult deleteTemplate(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "TemplateName", targetNamespace = "")
-        String templateName);
-
-    /**
-     * 
-     * @param sessionId
-     * @param containerName
-     * @return
-     *     returns abx.ws.AbxContainerResult
-     */
-    @WebMethod(operationName = "DeleteContainer")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DeleteContainer", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteContainer")
-    @ResponseWrapper(localName = "DeleteContainerResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteContainerResponse")
-    @Action(input = "http://ws.abx/abxWsGest/DeleteContainerRequest", output = "http://ws.abx/abxWsGest/DeleteContainerResponse")
-    public AbxContainerResult deleteContainer(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "ContainerName", targetNamespace = "")
-        String containerName);
-
-    /**
-     * 
-     * @param sessionId
-     * @param containerName
-     * @return
-     *     returns org.netbeans.xml.schema.abxcan.AbxCan
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "canModifyContainer", targetNamespace = "http://ws.abx/", className = "abx.ws.CanModifyContainer")
-    @ResponseWrapper(localName = "canModifyContainerResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanModifyContainerResponse")
-    @Action(input = "http://ws.abx/abxWsGest/canModifyContainerRequest", output = "http://ws.abx/abxWsGest/canModifyContainerResponse")
-    public AbxCan canModifyContainer(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "ContainerName", targetNamespace = "")
-        String containerName);
-
-    /**
-     * 
-     * @param sessionId
-     * @param template2Update
-     * @return
-     *     returns org.netbeans.xml.schema.abxcan.AbxCan
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "canModifyTemplate", targetNamespace = "http://ws.abx/", className = "abx.ws.CanModifyTemplate")
-    @ResponseWrapper(localName = "canModifyTemplateResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanModifyTemplateResponse")
-    @Action(input = "http://ws.abx/abxWsGest/canModifyTemplateRequest", output = "http://ws.abx/abxWsGest/canModifyTemplateResponse")
-    public AbxCan canModifyTemplate(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "Template2Update", targetNamespace = "")
-        String template2Update);
-
-    /**
-     * 
-     * @param sessionId
-     * @param containerName
-     * @return
-     *     returns org.netbeans.xml.schema.abxcan.AbxCan
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "canDeleteContainer", targetNamespace = "http://ws.abx/", className = "abx.ws.CanDeleteContainer")
-    @ResponseWrapper(localName = "canDeleteContainerResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanDeleteContainerResponse")
-    @Action(input = "http://ws.abx/abxWsGest/canDeleteContainerRequest", output = "http://ws.abx/abxWsGest/canDeleteContainerResponse")
-    public AbxCan canDeleteContainer(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "ContainerName", targetNamespace = "")
-        String containerName);
-
-    /**
-     * 
-     * @param sessionId
-     * @param templateName
-     * @return
-     *     returns org.netbeans.xml.schema.abxcan.AbxCan
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "canDeleteTemplate", targetNamespace = "http://ws.abx/", className = "abx.ws.CanDeleteTemplate")
-    @ResponseWrapper(localName = "canDeleteTemplateResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanDeleteTemplateResponse")
-    @Action(input = "http://ws.abx/abxWsGest/canDeleteTemplateRequest", output = "http://ws.abx/abxWsGest/canDeleteTemplateResponse")
-    public AbxCan canDeleteTemplate(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "TemplateName", targetNamespace = "")
-        String templateName);
-
-    /**
-     * 
-     * @param parentDataID
-     * @param sessionId
-     * @param containerParentName
-     * @return
-     *     returns org.netbeans.xml.schema.abxcan.AbxCan
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "canCreateContainer", targetNamespace = "http://ws.abx/", className = "abx.ws.CanCreateContainer")
-    @ResponseWrapper(localName = "canCreateContainerResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanCreateContainerResponse")
-    @Action(input = "http://ws.abx/abxWsGest/canCreateContainerRequest", output = "http://ws.abx/abxWsGest/canCreateContainerResponse")
-    public AbxCan canCreateContainer(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "ContainerParentName", targetNamespace = "")
-        String containerParentName,
-        @WebParam(name = "parentDataID", targetNamespace = "")
-        abx.ws.CanCreateContainer.ParentDataID parentDataID);
-
-    /**
-     * 
-     * @param sessionId
-     * @return
-     *     returns org.netbeans.xml.schema.abxcan.AbxCan
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "canCreateTemplate", targetNamespace = "http://ws.abx/", className = "abx.ws.CanCreateTemplate")
-    @ResponseWrapper(localName = "canCreateTemplateResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.CanCreateTemplateResponse")
-    @Action(input = "http://ws.abx/abxWsGest/canCreateTemplateRequest", output = "http://ws.abx/abxWsGest/canCreateTemplateResponse")
-    public AbxCan canCreateTemplate(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId);
-
-    /**
-     * 
-     * @param sessionId
-     * @return
-     *     returns org.netbeans.xml.schema.abxdynaminorg.AbxDynamicRuleResult
-     */
-    @WebMethod(operationName = "GetDynorgList")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetDynorgList", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDynorgList")
-    @ResponseWrapper(localName = "GetDynorgListResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetDynorgListResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetDynorgListRequest", output = "http://ws.abx/abxWsGest/GetDynorgListResponse")
-    public AbxDynamicRuleResult getDynorgList(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId);
-
-    /**
-     * 
-     * @param dynorgParam
-     * @param sessionId
-     * @return
-     *     returns org.netbeans.xml.schema.abxdynaminorg.AbxDynamicRuleResult
-     */
-    @WebMethod(operationName = "ModifyDynorg")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "ModifyDynorg", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyDynorg")
-    @ResponseWrapper(localName = "ModifyDynorgResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyDynorgResponse")
-    @Action(input = "http://ws.abx/abxWsGest/ModifyDynorgRequest", output = "http://ws.abx/abxWsGest/ModifyDynorgResponse")
-    public AbxDynamicRuleResult modifyDynorg(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "DynorgParam", targetNamespace = "")
-        AbxDynamicorgRuleList dynorgParam);
-
-    /**
-     * 
-     * @param sessionId
-     * @param ruleName
-     * @param templateName
-     * @return
-     *     returns int
-     */
-    @WebMethod(operationName = "DeleteDynorg")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DeleteDynorg", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteDynorg")
-    @ResponseWrapper(localName = "DeleteDynorgResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteDynorgResponse")
-    @Action(input = "http://ws.abx/abxWsGest/DeleteDynorgRequest", output = "http://ws.abx/abxWsGest/DeleteDynorgResponse")
-    public int deleteDynorg(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "RuleName", targetNamespace = "")
-        String ruleName,
-        @WebParam(name = "TemplateName", targetNamespace = "")
-        String templateName);
-
-    /**
-     * 
-     * @param sessionId
-     * @param filters
-     * @return
-     *     returns abx.ws.AbxFilterResult
-     */
-    @WebMethod(operationName = "DeleteFilter")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DeleteFilter", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteFilter")
-    @ResponseWrapper(localName = "DeleteFilterResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteFilterResponse")
-    @Action(input = "http://ws.abx/abxWsGest/DeleteFilterRequest", output = "http://ws.abx/abxWsGest/DeleteFilterResponse")
-    public AbxFilterResult deleteFilter(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "filters", targetNamespace = "")
-        AbxFilterList filters);
-
-    /**
-     * 
-     * @param sessionId
-     * @param filter
-     * @return
-     *     returns abx.ws.AbxFilterResult
-     */
-    @WebMethod(operationName = "ModifyFilter")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "ModifyFilter", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyFilter")
-    @ResponseWrapper(localName = "ModifyFilterResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifyFilterResponse")
-    @Action(input = "http://ws.abx/abxWsGest/ModifyFilterRequest", output = "http://ws.abx/abxWsGest/ModifyFilterResponse")
-    public AbxFilterResult modifyFilter(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "filter", targetNamespace = "")
-        AbxFilter filter);
-
-    /**
-     * 
-     * @param sessionId
-     * @param filter
-     * @return
-     *     returns abx.ws.AbxFilterResult
-     */
-    @WebMethod(operationName = "InsertFilter")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "InsertFilter", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertFilter")
-    @ResponseWrapper(localName = "InsertFilterResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertFilterResponse")
-    @Action(input = "http://ws.abx/abxWsGest/InsertFilterRequest", output = "http://ws.abx/abxWsGest/InsertFilterResponse")
-    public AbxFilterResult insertFilter(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "filter", targetNamespace = "")
-        AbxFilter filter);
-
-    /**
-     * 
-     * @param instanceName
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxGiiResult
-     */
-    @WebMethod(operationName = "GetInstanceId")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetInstanceId", targetNamespace = "http://ws.abx/", className = "abx.ws.GetInstanceId")
-    @ResponseWrapper(localName = "GetInstanceIdResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetInstanceIdResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetInstanceIdRequest", output = "http://ws.abx/abxWsGest/GetInstanceIdResponse")
-    public AbxGiiResult getInstanceId(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "InstanceName", targetNamespace = "")
-        String instanceName);
-
-    /**
-     * 
-     * @param sessionId
-     * @param templateName
-     * @return
-     *     returns abx.ws.AbxTemplateResult
-     */
-    @WebMethod(operationName = "GetTemplateProperties")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetTemplateProperties", targetNamespace = "http://ws.abx/", className = "abx.ws.GetTemplateProperties")
-    @ResponseWrapper(localName = "GetTemplatePropertiesResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetTemplatePropertiesResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetTemplatePropertiesRequest", output = "http://ws.abx/abxWsGest/GetTemplatePropertiesResponse")
-    public AbxTemplateResult getTemplateProperties(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "TemplateName", targetNamespace = "")
-        String templateName);
-
-    /**
-     * 
-     * @param sessionId
-     * @param option4Query
-     * @return
-     *     returns abx.ws.AbxRetOption4QueryResult
-     */
-    @WebMethod(operationName = "GetQueryParam")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetQueryParam", targetNamespace = "http://ws.abx/", className = "abx.ws.GetQueryParam")
-    @ResponseWrapper(localName = "GetQueryParamResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetQueryParamResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetQueryParamRequest", output = "http://ws.abx/abxWsGest/GetQueryParamResponse")
-    public AbxRetOption4QueryResult getQueryParam(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "option4query", targetNamespace = "")
-        AbxOption4Query option4Query);
-
-    /**
-     * 
-     * @param sessionId
-     * @param option4Query
-     * @return
-     *     returns abx.ws.AbxRetQueryResult
-     */
-    @WebMethod(operationName = "QueryHeader")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "QueryHeader", targetNamespace = "http://ws.abx/", className = "abx.ws.QueryHeader")
-    @ResponseWrapper(localName = "QueryHeaderResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.QueryHeaderResponse")
-    @Action(input = "http://ws.abx/abxWsGest/QueryHeaderRequest", output = "http://ws.abx/abxWsGest/QueryHeaderResponse")
-    public AbxRetQueryResult queryHeader(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "option4query", targetNamespace = "")
-        AbxQexpression option4Query);
-
-    /**
-     * 
-     * @param sessionId
-     * @param option4Query
-     * @param protuse
-     * @return
-     *     returns abx.ws.AbxRetQueryResult
-     */
-    @WebMethod(operationName = "QueryTotAttach")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "QueryTotAttach", targetNamespace = "http://ws.abx/", className = "abx.ws.QueryTotAttach")
-    @ResponseWrapper(localName = "QueryTotAttachResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.QueryTotAttachResponse")
-    @Action(input = "http://ws.abx/abxWsGest/QueryTotAttachRequest", output = "http://ws.abx/abxWsGest/QueryTotAttachResponse")
-    public AbxRetQueryResult queryTotAttach(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "option4query", targetNamespace = "")
-        AbxQexpression option4Query,
-        @WebParam(name = "protuse", targetNamespace = "")
-        AbxProtocolUse protuse);
-
-    /**
-     * 
-     * @param sessionId
-     * @param abxDocuments
-     * @param abxSchedulerTask
-     * @return
-     *     returns abx.ws.AbxSchedulerResult
-     */
-    @WebMethod(operationName = "InsertSchedulerTask")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "InsertSchedulerTask", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertSchedulerTask")
-    @ResponseWrapper(localName = "InsertSchedulerTaskResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.InsertSchedulerTaskResponse")
-    @Action(input = "http://ws.abx/abxWsGest/InsertSchedulerTaskRequest", output = "http://ws.abx/abxWsGest/InsertSchedulerTaskResponse")
-    public AbxSchedulerResult insertSchedulerTask(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "abxSchedulerTask", targetNamespace = "")
-        AbxSchedulerTask abxSchedulerTask,
-        @WebParam(name = "abxDocuments", targetNamespace = "")
-        AbxArchSostDocumentList abxDocuments);
-
-    /**
-     * 
-     * @param sessionId
-     * @param taskType
-     * @return
-     *     returns abx.ws.AbxSchedulerResult
-     */
-    @WebMethod(operationName = "GetSchedulerTasks")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetSchedulerTasks", targetNamespace = "http://ws.abx/", className = "abx.ws.GetSchedulerTasks")
-    @ResponseWrapper(localName = "GetSchedulerTasksResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetSchedulerTasksResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetSchedulerTasksRequest", output = "http://ws.abx/abxWsGest/GetSchedulerTasksResponse")
-    public AbxSchedulerResult getSchedulerTasks(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "taskType", targetNamespace = "")
-        String taskType);
-
-    /**
-     * 
-     * @param taskId
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxSchedulerResult
-     */
-    @WebMethod(operationName = "DeleteSchedulerTask")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DeleteSchedulerTask", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteSchedulerTask")
-    @ResponseWrapper(localName = "DeleteSchedulerTaskResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteSchedulerTaskResponse")
-    @Action(input = "http://ws.abx/abxWsGest/DeleteSchedulerTaskRequest", output = "http://ws.abx/abxWsGest/DeleteSchedulerTaskResponse")
-    public AbxSchedulerResult deleteSchedulerTask(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "taskId", targetNamespace = "")
-        String taskId);
-
-    /**
-     * 
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxSchedulerResult
-     */
-    @WebMethod(operationName = "GetSchedulerTasksToRun")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetSchedulerTasksToRun", targetNamespace = "http://ws.abx/", className = "abx.ws.GetSchedulerTasksToRun")
-    @ResponseWrapper(localName = "GetSchedulerTasksToRunResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.GetSchedulerTasksToRunResponse")
-    @Action(input = "http://ws.abx/abxWsGest/GetSchedulerTasksToRunRequest", output = "http://ws.abx/abxWsGest/GetSchedulerTasksToRunResponse")
-    public AbxSchedulerResult getSchedulerTasksToRun(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId);
-
-    /**
-     * 
-     * @param schedule
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxSchedulerResult
-     */
-    @WebMethod(operationName = "SchedulerTaskScheduleProcessed")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "SchedulerTaskScheduleProcessed", targetNamespace = "http://ws.abx/", className = "abx.ws.SchedulerTaskScheduleProcessed")
-    @ResponseWrapper(localName = "SchedulerTaskScheduleProcessedResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.SchedulerTaskScheduleProcessedResponse")
-    @Action(input = "http://ws.abx/abxWsGest/SchedulerTaskScheduleProcessedRequest", output = "http://ws.abx/abxWsGest/SchedulerTaskScheduleProcessedResponse")
-    public AbxSchedulerResult schedulerTaskScheduleProcessed(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "schedule", targetNamespace = "")
-        abx.ws.SchedulerTaskScheduleProcessed.Schedule schedule);
-
-    /**
-     * 
-     * @param sessionId
-     * @param abxSchedulerTask
-     * @return
-     *     returns abx.ws.AbxSchedulerResult
-     */
-    @WebMethod(operationName = "ModifySchedulerTaskSchedule")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "ModifySchedulerTaskSchedule", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifySchedulerTaskSchedule")
-    @ResponseWrapper(localName = "ModifySchedulerTaskScheduleResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.ModifySchedulerTaskScheduleResponse")
-    @Action(input = "http://ws.abx/abxWsGest/ModifySchedulerTaskScheduleRequest", output = "http://ws.abx/abxWsGest/ModifySchedulerTaskScheduleResponse")
-    public AbxSchedulerResult modifySchedulerTaskSchedule(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "abxSchedulerTask", targetNamespace = "")
-        AbxSchedulerTask abxSchedulerTask);
-
-    /**
-     * 
-     * @param scheduleType
-     * @param scheduleId
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxSchedulerResult
-     */
-    @WebMethod(operationName = "DeleteSchedulerTaskSchedule")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DeleteSchedulerTaskSchedule", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteSchedulerTaskSchedule")
-    @ResponseWrapper(localName = "DeleteSchedulerTaskScheduleResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.DeleteSchedulerTaskScheduleResponse")
-    @Action(input = "http://ws.abx/abxWsGest/DeleteSchedulerTaskScheduleRequest", output = "http://ws.abx/abxWsGest/DeleteSchedulerTaskScheduleResponse")
-    public AbxSchedulerResult deleteSchedulerTaskSchedule(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "scheduleId", targetNamespace = "")
-        String scheduleId,
-        @WebParam(name = "scheduleType", targetNamespace = "")
-        int scheduleType);
-
-    /**
-     * 
-     * @param scheduleType
-     * @param scheduleId
-     * @param sessionId
-     * @param scheduleStatus
-     * @return
-     *     returns abx.ws.AbxSchedulerResult
-     */
-    @WebMethod(operationName = "ChangeSchedulerTaskScheduleStatus")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "ChangeSchedulerTaskScheduleStatus", targetNamespace = "http://ws.abx/", className = "abx.ws.ChangeSchedulerTaskScheduleStatus")
-    @ResponseWrapper(localName = "ChangeSchedulerTaskScheduleStatusResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.ChangeSchedulerTaskScheduleStatusResponse")
-    @Action(input = "http://ws.abx/abxWsGest/ChangeSchedulerTaskScheduleStatusRequest", output = "http://ws.abx/abxWsGest/ChangeSchedulerTaskScheduleStatusResponse")
-    public AbxSchedulerResult changeSchedulerTaskScheduleStatus(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "scheduleId", targetNamespace = "")
-        String scheduleId,
-        @WebParam(name = "scheduleType", targetNamespace = "")
-        int scheduleType,
-        @WebParam(name = "scheduleStatus", targetNamespace = "")
-        int scheduleStatus);
-
-    /**
-     * 
-     * @param sessionId
-     * @param option4Query
-     * @return
-     *     returns abx.ws.AbxRetQueryResult
-     */
-    @WebMethod(operationName = "Query")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Query", targetNamespace = "http://ws.abx/", className = "abx.ws.Query")
-    @ResponseWrapper(localName = "QueryResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.QueryResponse")
-    @Action(input = "http://ws.abx/abxWsGest/QueryRequest", output = "http://ws.abx/abxWsGest/QueryResponse")
-    public AbxRetQueryResult query(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "option4query", targetNamespace = "")
-        AbxQexpression option4Query);
-
-    /**
-     * 
-     * @param directionDesc
-     * @param fk
-     * @param orderBy
-     * @param instanceName
-     * @param sessionId
-     * @param numTotRecord
-     * @return
-     *     returns abx.ws.AbxFKResult
-     */
-    @WebMethod(operationName = "Fk_getAllRecord")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Fk_getAllRecord", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetAllRecord")
-    @ResponseWrapper(localName = "Fk_getAllRecordResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetAllRecordResponse")
-    @Action(input = "http://ws.abx/abxWsGest/Fk_getAllRecordRequest", output = "http://ws.abx/abxWsGest/Fk_getAllRecordResponse")
-    public AbxFKResult fkGetAllRecord(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "fk", targetNamespace = "")
-        AbxFK fk,
-        @WebParam(name = "numTotRecord", targetNamespace = "")
-        int numTotRecord,
-        @WebParam(name = "orderBy", targetNamespace = "")
-        String orderBy,
-        @WebParam(name = "directionDesc", targetNamespace = "")
-        boolean directionDesc,
-        @WebParam(name = "InstanceName", targetNamespace = "")
-        String instanceName);
-
-    /**
-     * 
-     * @param fk
-     * @param instanceName
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxFKResult
-     */
-    @WebMethod(operationName = "Fk_getCountAllRecord")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Fk_getCountAllRecord", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetCountAllRecord")
-    @ResponseWrapper(localName = "Fk_getCountAllRecordResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetCountAllRecordResponse")
-    @Action(input = "http://ws.abx/abxWsGest/Fk_getCountAllRecordRequest", output = "http://ws.abx/abxWsGest/Fk_getCountAllRecordResponse")
-    public AbxFKResult fkGetCountAllRecord(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "fk", targetNamespace = "")
-        AbxFK fk,
-        @WebParam(name = "InstanceName", targetNamespace = "")
-        String instanceName);
-
-    /**
-     * 
-     * @param directionDesc
-     * @param fk
-     * @param instanceName
-     * @param sessionId
-     * @param numTotRecord
-     * @return
-     *     returns abx.ws.AbxFKResult
-     */
-    @WebMethod(operationName = "Fk_getAllRecordByIndex")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Fk_getAllRecordByIndex", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetAllRecordByIndex")
-    @ResponseWrapper(localName = "Fk_getAllRecordByIndexResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetAllRecordByIndexResponse")
-    @Action(input = "http://ws.abx/abxWsGest/Fk_getAllRecordByIndexRequest", output = "http://ws.abx/abxWsGest/Fk_getAllRecordByIndexResponse")
-    public AbxFKResult fkGetAllRecordByIndex(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "fk", targetNamespace = "")
-        AbxFK fk,
-        @WebParam(name = "numTotRecord", targetNamespace = "")
-        int numTotRecord,
-        @WebParam(name = "directionDesc", targetNamespace = "")
-        boolean directionDesc,
-        @WebParam(name = "InstanceName", targetNamespace = "")
-        String instanceName);
-
-    /**
-     * 
-     * @param directionDesc
-     * @param fk
-     * @param orderBy
-     * @param instanceName
-     * @param sessionId
-     * @param numTotRecord
-     * @return
-     *     returns abx.ws.AbxFKResult
-     */
-    @WebMethod(operationName = "Fk_getAllRecordByDesc")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Fk_getAllRecordByDesc", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetAllRecordByDesc")
-    @ResponseWrapper(localName = "Fk_getAllRecordByDescResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetAllRecordByDescResponse")
-    @Action(input = "http://ws.abx/abxWsGest/Fk_getAllRecordByDescRequest", output = "http://ws.abx/abxWsGest/Fk_getAllRecordByDescResponse")
-    public AbxFKResult fkGetAllRecordByDesc(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "fk", targetNamespace = "")
-        AbxFK fk,
-        @WebParam(name = "numTotRecord", targetNamespace = "")
-        int numTotRecord,
-        @WebParam(name = "orderBy", targetNamespace = "")
-        String orderBy,
-        @WebParam(name = "directionDesc", targetNamespace = "")
-        boolean directionDesc,
-        @WebParam(name = "InstanceName", targetNamespace = "")
-        String instanceName);
-
-    /**
-     * 
-     * @param fk
-     * @param instanceName
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxFKResult
-     */
-    @WebMethod(operationName = "Fk_getCountAllRecordByDesc")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Fk_getCountAllRecordByDesc", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetCountAllRecordByDesc")
-    @ResponseWrapper(localName = "Fk_getCountAllRecordByDescResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetCountAllRecordByDescResponse")
-    @Action(input = "http://ws.abx/abxWsGest/Fk_getCountAllRecordByDescRequest", output = "http://ws.abx/abxWsGest/Fk_getCountAllRecordByDescResponse")
-    public AbxFKResult fkGetCountAllRecordByDesc(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "fk", targetNamespace = "")
-        AbxFK fk,
-        @WebParam(name = "InstanceName", targetNamespace = "")
-        String instanceName);
-
-    /**
-     * 
-     * @param instanceName
-     * @param sessionId
-     * @param fkp
-     * @return
-     *     returns abx.ws.AbxFKResult
-     */
-    @WebMethod(operationName = "Fk_getCountAllRecordByIndexDesc")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Fk_getCountAllRecordByIndexDesc", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetCountAllRecordByIndexDesc")
-    @ResponseWrapper(localName = "Fk_getCountAllRecordByIndexDescResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetCountAllRecordByIndexDescResponse")
-    @Action(input = "http://ws.abx/abxWsGest/Fk_getCountAllRecordByIndexDescRequest", output = "http://ws.abx/abxWsGest/Fk_getCountAllRecordByIndexDescResponse")
-    public AbxFKResult fkGetCountAllRecordByIndexDesc(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "fkp", targetNamespace = "")
-        AbxFK fkp,
-        @WebParam(name = "InstanceName", targetNamespace = "")
-        String instanceName);
-
-    /**
-     * 
-     * @param directionDesc
-     * @param orderBy
-     * @param instanceName
-     * @param sessionId
-     * @param numTotRecord
-     * @param fkp
-     * @return
-     *     returns abx.ws.AbxFKResult
-     */
-    @WebMethod(operationName = "Fk_getAllRecordByIndexDesc")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Fk_getAllRecordByIndexDesc", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetAllRecordByIndexDesc")
-    @ResponseWrapper(localName = "Fk_getAllRecordByIndexDescResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetAllRecordByIndexDescResponse")
-    @Action(input = "http://ws.abx/abxWsGest/Fk_getAllRecordByIndexDescRequest", output = "http://ws.abx/abxWsGest/Fk_getAllRecordByIndexDescResponse")
-    public AbxFKResult fkGetAllRecordByIndexDesc(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "fkp", targetNamespace = "")
-        AbxFK fkp,
-        @WebParam(name = "numTotRecord", targetNamespace = "")
-        int numTotRecord,
-        @WebParam(name = "orderBy", targetNamespace = "")
-        String orderBy,
-        @WebParam(name = "directionDesc", targetNamespace = "")
-        boolean directionDesc,
-        @WebParam(name = "InstanceName", targetNamespace = "")
-        String instanceName);
-
-    /**
-     * 
-     * @param fk
-     * @param sessionId
-     * @return
-     *     returns abx.ws.AbxFKResult
-     */
-    @WebMethod(operationName = "Fk_getColumnsName")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Fk_getColumnsName", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetColumnsName")
-    @ResponseWrapper(localName = "Fk_getColumnsNameResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetColumnsNameResponse")
-    @Action(input = "http://ws.abx/abxWsGest/Fk_getColumnsNameRequest", output = "http://ws.abx/abxWsGest/Fk_getColumnsNameResponse")
-    public AbxFKResult fkGetColumnsName(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "fk", targetNamespace = "")
-        AbxFK fk);
-
-    /**
-     * 
-     * @param pwd
-     * @param host
-     * @param sessionId
-     * @param dbType
-     * @param user
-     * @return
-     *     returns abx.ws.AbxFKResult
-     */
-    @WebMethod(operationName = "Fk_getRemoteDatabaseList")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Fk_getRemoteDatabaseList", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetRemoteDatabaseList")
-    @ResponseWrapper(localName = "Fk_getRemoteDatabaseListResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetRemoteDatabaseListResponse")
-    @Action(input = "http://ws.abx/abxWsGest/Fk_getRemoteDatabaseListRequest", output = "http://ws.abx/abxWsGest/Fk_getRemoteDatabaseListResponse")
-    public AbxFKResult fkGetRemoteDatabaseList(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "host", targetNamespace = "")
-        String host,
-        @WebParam(name = "user", targetNamespace = "")
-        String user,
-        @WebParam(name = "pwd", targetNamespace = "")
-        String pwd,
-        @WebParam(name = "dbType", targetNamespace = "")
-        String dbType);
-
-    /**
-     * 
-     * @param databaseName
-     * @param pwd
-     * @param host
-     * @param sessionId
-     * @param dbType
-     * @param user
-     * @return
-     *     returns abx.ws.AbxFKResult
-     */
-    @WebMethod(operationName = "Fk_getRemoteTableList")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Fk_getRemoteTableList", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetRemoteTableList")
-    @ResponseWrapper(localName = "Fk_getRemoteTableListResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetRemoteTableListResponse")
-    @Action(input = "http://ws.abx/abxWsGest/Fk_getRemoteTableListRequest", output = "http://ws.abx/abxWsGest/Fk_getRemoteTableListResponse")
-    public AbxFKResult fkGetRemoteTableList(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "host", targetNamespace = "")
-        String host,
-        @WebParam(name = "user", targetNamespace = "")
-        String user,
-        @WebParam(name = "pwd", targetNamespace = "")
-        String pwd,
-        @WebParam(name = "dbType", targetNamespace = "")
-        String dbType,
-        @WebParam(name = "databaseName", targetNamespace = "")
-        String databaseName);
-
-    /**
-     * 
-     * @param databaseName
-     * @param pwd
-     * @param host
-     * @param sessionId
-     * @param dbType
-     * @param user
-     * @return
-     *     returns abx.ws.AbxFKResult
-     */
-    @WebMethod(operationName = "Fk_getRemoteViewList")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Fk_getRemoteViewList", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetRemoteViewList")
-    @ResponseWrapper(localName = "Fk_getRemoteViewListResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetRemoteViewListResponse")
-    @Action(input = "http://ws.abx/abxWsGest/Fk_getRemoteViewListRequest", output = "http://ws.abx/abxWsGest/Fk_getRemoteViewListResponse")
-    public AbxFKResult fkGetRemoteViewList(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "host", targetNamespace = "")
-        String host,
-        @WebParam(name = "user", targetNamespace = "")
-        String user,
-        @WebParam(name = "pwd", targetNamespace = "")
-        String pwd,
-        @WebParam(name = "dbType", targetNamespace = "")
-        String dbType,
-        @WebParam(name = "databaseName", targetNamespace = "")
-        String databaseName);
-
-    /**
-     * 
-     * @param databaseName
-     * @param pwd
-     * @param host
-     * @param sessionId
-     * @param tableName
-     * @param dbType
-     * @param user
-     * @return
-     *     returns abx.ws.AbxFKResult
-     */
-    @WebMethod(operationName = "Fk_getRemoteFieldList")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Fk_getRemoteFieldList", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetRemoteFieldList")
-    @ResponseWrapper(localName = "Fk_getRemoteFieldListResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetRemoteFieldListResponse")
-    @Action(input = "http://ws.abx/abxWsGest/Fk_getRemoteFieldListRequest", output = "http://ws.abx/abxWsGest/Fk_getRemoteFieldListResponse")
-    public AbxFKResult fkGetRemoteFieldList(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "host", targetNamespace = "")
-        String host,
-        @WebParam(name = "user", targetNamespace = "")
-        String user,
-        @WebParam(name = "pwd", targetNamespace = "")
-        String pwd,
-        @WebParam(name = "dbType", targetNamespace = "")
-        String dbType,
-        @WebParam(name = "databaseName", targetNamespace = "")
-        String databaseName,
-        @WebParam(name = "tableName", targetNamespace = "")
-        String tableName);
-
-    /**
-     * 
-     * @param users
-     * @param sessionId
-     * @param groups
-     * @return
-     *     returns abx.ws.AbxFKResult
-     */
-    @WebMethod(operationName = "Fk_getLocalFieldList")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Fk_getLocalFieldList", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetLocalFieldList")
-    @ResponseWrapper(localName = "Fk_getLocalFieldListResponse", targetNamespace = "http://ws.abx/", className = "abx.ws.FkGetLocalFieldListResponse")
-    @Action(input = "http://ws.abx/abxWsGest/Fk_getLocalFieldListRequest", output = "http://ws.abx/abxWsGest/Fk_getLocalFieldListResponse")
-    public AbxFKResult fkGetLocalFieldList(
-        @WebParam(name = "SessionId", targetNamespace = "")
-        IDtype sessionId,
-        @WebParam(name = "users", targetNamespace = "")
-        boolean users,
-        @WebParam(name = "groups", targetNamespace = "")
-        boolean groups);
 
 }

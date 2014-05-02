@@ -20,6 +20,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="result" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/>
  *         &lt;element name="listTask" type="{http://ws.abx/}abxSDKTaskList" minOccurs="0"/>
  *         &lt;element name="listRule" type="{http://ws.abx/}abxSDKRuleList" minOccurs="0"/>
+ *         &lt;element name="listVariable" type="{http://ws.abx/}abxSDKVariableList" minOccurs="0"/>
+ *         &lt;element name="listWatchFolderDirectory" type="{http://ws.abx/}abxSDKWatchFolderDirectoryList" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -32,7 +34,9 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "abxSDKResult", propOrder = {
     "result",
     "listTask",
-    "listRule"
+    "listRule",
+    "listVariable",
+    "listWatchFolderDirectory"
 })
 public class AbxSDKResult {
 
@@ -40,6 +44,8 @@ public class AbxSDKResult {
     protected long result;
     protected AbxSDKTaskList listTask;
     protected AbxSDKRuleList listRule;
+    protected AbxSDKVariableList listVariable;
+    protected AbxSDKWatchFolderDirectoryList listWatchFolderDirectory;
 
     /**
      * Recupera il valore della proprietà result.
@@ -103,6 +109,54 @@ public class AbxSDKResult {
      */
     public void setListRule(AbxSDKRuleList value) {
         this.listRule = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà listVariable.
+     * 
+     * @return
+     *     possible object is
+     *     {@link AbxSDKVariableList }
+     *     
+     */
+    public AbxSDKVariableList getListVariable() {
+        return listVariable;
+    }
+
+    /**
+     * Imposta il valore della proprietà listVariable.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link AbxSDKVariableList }
+     *     
+     */
+    public void setListVariable(AbxSDKVariableList value) {
+        this.listVariable = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà listWatchFolderDirectory.
+     * 
+     * @return
+     *     possible object is
+     *     {@link AbxSDKWatchFolderDirectoryList }
+     *     
+     */
+    public AbxSDKWatchFolderDirectoryList getListWatchFolderDirectory() {
+        return listWatchFolderDirectory;
+    }
+
+    /**
+     * Imposta il valore della proprietà listWatchFolderDirectory.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link AbxSDKWatchFolderDirectoryList }
+     *     
+     */
+    public void setListWatchFolderDirectory(AbxSDKWatchFolderDirectoryList value) {
+        this.listWatchFolderDirectory = value;
     }
 
 }

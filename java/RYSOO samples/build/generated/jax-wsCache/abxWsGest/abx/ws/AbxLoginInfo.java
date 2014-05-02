@@ -23,6 +23,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="release" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="serverid" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="activeDirectoryEnabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -38,7 +40,9 @@ import javax.xml.bind.annotation.XmlType;
     "ipaddress",
     "location",
     "release",
-    "serverid"
+    "serverid",
+    "activeDirectoryEnabled",
+    "username"
 })
 public class AbxLoginInfo {
 
@@ -53,6 +57,9 @@ public class AbxLoginInfo {
     @XmlElement(required = true)
     protected String release;
     protected int serverid;
+    protected boolean activeDirectoryEnabled;
+    @XmlElement(required = true)
+    protected String username;
 
     /**
      * Recupera il valore della proprietà matricola.
@@ -188,6 +195,46 @@ public class AbxLoginInfo {
      */
     public void setServerid(int value) {
         this.serverid = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà activeDirectoryEnabled.
+     * 
+     */
+    public boolean isActiveDirectoryEnabled() {
+        return activeDirectoryEnabled;
+    }
+
+    /**
+     * Imposta il valore della proprietà activeDirectoryEnabled.
+     * 
+     */
+    public void setActiveDirectoryEnabled(boolean value) {
+        this.activeDirectoryEnabled = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà username.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * Imposta il valore della proprietà username.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setUsername(String value) {
+        this.username = value;
     }
 
 }

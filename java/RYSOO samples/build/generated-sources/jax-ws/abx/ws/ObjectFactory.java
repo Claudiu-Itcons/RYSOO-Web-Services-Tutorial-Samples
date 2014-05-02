@@ -24,7 +24,6 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _UploadSendChunkChunk_QNAME = new QName("", "chunk");
     private final static QName _GetDataTPFileListByDocumentResponse_QNAME = new QName("http://ws.abx/", "GetDataTPFileListByDocumentResponse");
     private final static QName _IfFileExist_QNAME = new QName("http://ws.abx/", "IfFileExist");
     private final static QName _MoveDataResponse_QNAME = new QName("http://ws.abx/", "MoveDataResponse");
@@ -260,6 +259,7 @@ public class ObjectFactory {
     private final static QName _SetTmpUSUploadPath_QNAME = new QName("http://ws.abx/", "SetTmpUSUploadPath");
     private final static QName _GetUserList_QNAME = new QName("http://ws.abx/", "GetUserList");
     private final static QName _DeleteUSFileByCode_QNAME = new QName("http://ws.abx/", "DeleteUSFileByCode");
+    private final static QName _GetWsdlVersionResponse_QNAME = new QName("http://ws.abx/", "GetWsdlVersionResponse");
     private final static QName _GetDataTPFileListByContainerResponse_QNAME = new QName("http://ws.abx/", "GetDataTPFileListByContainerResponse");
     private final static QName _ModifyFilterResponse_QNAME = new QName("http://ws.abx/", "ModifyFilterResponse");
     private final static QName _ComboRemoveAllResponse_QNAME = new QName("http://ws.abx/", "Combo_removeAllResponse");
@@ -607,8 +607,8 @@ public class ObjectFactory {
     private final static QName _GetRootId_QNAME = new QName("http://ws.abx/", "GetRootId");
     private final static QName _GetUsersListByGroupResponse_QNAME = new QName("http://ws.abx/", "GetUsersListByGroupResponse");
     private final static QName _InsertGroupResponse_QNAME = new QName("http://ws.abx/", "InsertGroupResponse");
-    private final static QName _GetProtocolByDescResponse_QNAME = new QName("http://ws.abx/", "GetProtocolByDescResponse");
     private final static QName _DeleteFieldResponse_QNAME = new QName("http://ws.abx/", "DeleteFieldResponse");
+    private final static QName _GetProtocolByDescResponse_QNAME = new QName("http://ws.abx/", "GetProtocolByDescResponse");
     private final static QName _GetDownloadDetailByFilecodeResponse_QNAME = new QName("http://ws.abx/", "GetDownloadDetailByFilecodeResponse");
     private final static QName _UploadUSEndFileWithUserResponse_QNAME = new QName("http://ws.abx/", "UploadUSEndFileWithUserResponse");
     private final static QName _CanEditProtocol_QNAME = new QName("http://ws.abx/", "CanEditProtocol");
@@ -621,6 +621,7 @@ public class ObjectFactory {
     private final static QName _SetTmpTPDownloadPath_QNAME = new QName("http://ws.abx/", "SetTmpTPDownloadPath");
     private final static QName _AddUserSettingsResponse_QNAME = new QName("http://ws.abx/", "AddUserSettingsResponse");
     private final static QName _DeleteUSFileById_QNAME = new QName("http://ws.abx/", "DeleteUSFileById");
+    private final static QName _GetWsdlVersion_QNAME = new QName("http://ws.abx/", "GetWsdlVersion");
     private final static QName _DownloadGetChunkWA_QNAME = new QName("http://ws.abx/", "DownloadGetChunkWA");
     private final static QName _AddFileToSyncByArcCue_QNAME = new QName("http://ws.abx/", "AddFileToSyncByArcCue");
     private final static QName _CanModifyRaccoglitoreResponse_QNAME = new QName("http://ws.abx/", "canModifyRaccoglitoreResponse");
@@ -702,8 +703,8 @@ public class ObjectFactory {
     private final static QName _CanInsertLinkContainerToDocument_QNAME = new QName("http://ws.abx/", "CanInsertLinkContainerToDocument");
     private final static QName _InsertWFFile_QNAME = new QName("http://ws.abx/", "InsertWFFile");
     private final static QName _ModExpression_QNAME = new QName("http://ws.abx/", "ModExpression");
-    private final static QName _ResetUserSessions_QNAME = new QName("http://ws.abx/", "ResetUserSessions");
     private final static QName _ModUserSettingsResponse_QNAME = new QName("http://ws.abx/", "ModUserSettingsResponse");
+    private final static QName _ResetUserSessions_QNAME = new QName("http://ws.abx/", "ResetUserSessions");
     private final static QName _FkDBDeleteResponse_QNAME = new QName("http://ws.abx/", "Fk_DB_deleteResponse");
     private final static QName _GetObjectResponse_QNAME = new QName("http://ws.abx/", "GetObjectResponse");
     private final static QName _SetTmpTPUploadPathResponse_QNAME = new QName("http://ws.abx/", "SetTmpTPUploadPathResponse");
@@ -752,8 +753,9 @@ public class ObjectFactory {
     private final static QName _CreateContainer_QNAME = new QName("http://ws.abx/", "CreateContainer");
     private final static QName _ChangeSchedulerTaskScheduleStatus_QNAME = new QName("http://ws.abx/", "ChangeSchedulerTaskScheduleStatus");
     private final static QName _UploadSendChunkWAResponse_QNAME = new QName("http://ws.abx/", "UploadSendChunkWAResponse");
+    private final static QName _UploadUSSendChunkObjName_QNAME = new QName("", "objName");
+    private final static QName _UploadTPSendChunkChunk_QNAME = new QName("", "chunk");
     private final static QName _UploadPreviewFileFile_QNAME = new QName("", "file");
-    private final static QName _UploadWFSendChunkObjName_QNAME = new QName("", "objName");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: abx.ws
@@ -2312,6 +2314,14 @@ public class ObjectFactory {
      */
     public DownloadGetChunkWA createDownloadGetChunkWA() {
         return new DownloadGetChunkWA();
+    }
+
+    /**
+     * Create an instance of {@link GetWsdlVersion }
+     * 
+     */
+    public GetWsdlVersion createGetWsdlVersion() {
+        return new GetWsdlVersion();
     }
 
     /**
@@ -4680,6 +4690,14 @@ public class ObjectFactory {
      */
     public GetDataTPFileListByContainerResponse createGetDataTPFileListByContainerResponse() {
         return new GetDataTPFileListByContainerResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetWsdlVersionResponse }
+     * 
+     */
+    public GetWsdlVersionResponse createGetWsdlVersionResponse() {
+        return new GetWsdlVersionResponse();
     }
 
     /**
@@ -7755,6 +7773,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AbxWsdlResult }
+     * 
+     */
+    public AbxWsdlResult createAbxWsdlResult() {
+        return new AbxWsdlResult();
+    }
+
+    /**
      * Create an instance of {@link AbxFKUtentiRecord }
      * 
      */
@@ -8152,15 +8178,6 @@ public class ObjectFactory {
      */
     public CanCreateRaccoglitore.ParentDataID createCanCreateRaccoglitoreParentDataID() {
         return new CanCreateRaccoglitore.ParentDataID();
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "chunk", scope = UploadSendChunk.class)
-    public JAXBElement<byte[]> createUploadSendChunkChunk(byte[] value) {
-        return new JAXBElement<byte[]>(_UploadSendChunkChunk_QNAME, byte[].class, UploadSendChunk.class, ((byte[]) value));
     }
 
     /**
@@ -10276,6 +10293,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.abx/", name = "DeleteUSFileByCode")
     public JAXBElement<DeleteUSFileByCode> createDeleteUSFileByCode(DeleteUSFileByCode value) {
         return new JAXBElement<DeleteUSFileByCode>(_DeleteUSFileByCode_QNAME, DeleteUSFileByCode.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetWsdlVersionResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetWsdlVersionResponse")
+    public JAXBElement<GetWsdlVersionResponse> createGetWsdlVersionResponse(GetWsdlVersionResponse value) {
+        return new JAXBElement<GetWsdlVersionResponse>(_GetWsdlVersionResponse_QNAME, GetWsdlVersionResponse.class, null, value);
     }
 
     /**
@@ -13402,21 +13428,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetProtocolByDescResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetProtocolByDescResponse")
-    public JAXBElement<GetProtocolByDescResponse> createGetProtocolByDescResponse(GetProtocolByDescResponse value) {
-        return new JAXBElement<GetProtocolByDescResponse>(_GetProtocolByDescResponse_QNAME, GetProtocolByDescResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DeleteFieldResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.abx/", name = "DeleteFieldResponse")
     public JAXBElement<DeleteFieldResponse> createDeleteFieldResponse(DeleteFieldResponse value) {
         return new JAXBElement<DeleteFieldResponse>(_DeleteFieldResponse_QNAME, DeleteFieldResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetProtocolByDescResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetProtocolByDescResponse")
+    public JAXBElement<GetProtocolByDescResponse> createGetProtocolByDescResponse(GetProtocolByDescResponse value) {
+        return new JAXBElement<GetProtocolByDescResponse>(_GetProtocolByDescResponse_QNAME, GetProtocolByDescResponse.class, null, value);
     }
 
     /**
@@ -13525,6 +13551,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.abx/", name = "DeleteUSFileById")
     public JAXBElement<DeleteUSFileById> createDeleteUSFileById(DeleteUSFileById value) {
         return new JAXBElement<DeleteUSFileById>(_DeleteUSFileById_QNAME, DeleteUSFileById.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetWsdlVersion }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "GetWsdlVersion")
+    public JAXBElement<GetWsdlVersion> createGetWsdlVersion(GetWsdlVersion value) {
+        return new JAXBElement<GetWsdlVersion>(_GetWsdlVersion_QNAME, GetWsdlVersion.class, null, value);
     }
 
     /**
@@ -14257,21 +14292,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ResetUserSessions }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.abx/", name = "ResetUserSessions")
-    public JAXBElement<ResetUserSessions> createResetUserSessions(ResetUserSessions value) {
-        return new JAXBElement<ResetUserSessions>(_ResetUserSessions_QNAME, ResetUserSessions.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ModUserSettingsResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.abx/", name = "ModUserSettingsResponse")
     public JAXBElement<ModUserSettingsResponse> createModUserSettingsResponse(ModUserSettingsResponse value) {
         return new JAXBElement<ModUserSettingsResponse>(_ModUserSettingsResponse_QNAME, ModUserSettingsResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ResetUserSessions }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.abx/", name = "ResetUserSessions")
+    public JAXBElement<ResetUserSessions> createResetUserSessions(ResetUserSessions value) {
+        return new JAXBElement<ResetUserSessions>(_ResetUserSessions_QNAME, ResetUserSessions.class, null, value);
     }
 
     /**
@@ -14710,6 +14745,24 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
      * 
      */
+    @XmlElementDecl(namespace = "", name = "objName", scope = UploadUSSendChunk.class)
+    public JAXBElement<byte[]> createUploadUSSendChunkObjName(byte[] value) {
+        return new JAXBElement<byte[]>(_UploadUSSendChunkObjName_QNAME, byte[].class, UploadUSSendChunk.class, ((byte[]) value));
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "chunk", scope = UploadTPSendChunk.class)
+    public JAXBElement<byte[]> createUploadTPSendChunkChunk(byte[] value) {
+        return new JAXBElement<byte[]>(_UploadTPSendChunkChunk_QNAME, byte[].class, UploadTPSendChunk.class, ((byte[]) value));
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
     @XmlElementDecl(namespace = "", name = "file", scope = UploadPreviewFile.class)
     public JAXBElement<byte[]> createUploadPreviewFileFile(byte[] value) {
         return new JAXBElement<byte[]>(_UploadPreviewFileFile_QNAME, byte[].class, UploadPreviewFile.class, ((byte[]) value));
@@ -14719,9 +14772,9 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "objName", scope = UploadWFSendChunk.class)
-    public JAXBElement<byte[]> createUploadWFSendChunkObjName(byte[] value) {
-        return new JAXBElement<byte[]>(_UploadWFSendChunkObjName_QNAME, byte[].class, UploadWFSendChunk.class, ((byte[]) value));
+    @XmlElementDecl(namespace = "", name = "chunk", scope = UploadSendChunk.class)
+    public JAXBElement<byte[]> createUploadSendChunkChunk(byte[] value) {
+        return new JAXBElement<byte[]>(_UploadTPSendChunkChunk_QNAME, byte[].class, UploadSendChunk.class, ((byte[]) value));
     }
 
     /**
@@ -14730,25 +14783,16 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "chunk", scope = UploadSendChunkWA.class)
     public JAXBElement<byte[]> createUploadSendChunkWAChunk(byte[] value) {
-        return new JAXBElement<byte[]>(_UploadSendChunkChunk_QNAME, byte[].class, UploadSendChunkWA.class, ((byte[]) value));
+        return new JAXBElement<byte[]>(_UploadTPSendChunkChunk_QNAME, byte[].class, UploadSendChunkWA.class, ((byte[]) value));
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "chunk", scope = UploadTPSendChunk.class)
-    public JAXBElement<byte[]> createUploadTPSendChunkChunk(byte[] value) {
-        return new JAXBElement<byte[]>(_UploadSendChunkChunk_QNAME, byte[].class, UploadTPSendChunk.class, ((byte[]) value));
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "objName", scope = UploadUSSendChunk.class)
-    public JAXBElement<byte[]> createUploadUSSendChunkObjName(byte[] value) {
-        return new JAXBElement<byte[]>(_UploadWFSendChunkObjName_QNAME, byte[].class, UploadUSSendChunk.class, ((byte[]) value));
+    @XmlElementDecl(namespace = "", name = "objName", scope = UploadWFSendChunk.class)
+    public JAXBElement<byte[]> createUploadWFSendChunkObjName(byte[] value) {
+        return new JAXBElement<byte[]>(_UploadUSSendChunkObjName_QNAME, byte[].class, UploadWFSendChunk.class, ((byte[]) value));
     }
 
 }

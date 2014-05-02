@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="fieldMappingId" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="fieldName" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="previewXML" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="fieldMappingRules" type="{http://ws.abx/}abxSDKTaskFieldMappingRule" maxOccurs="unbounded"/>
+ *         &lt;element name="fieldMappingRules" type="{http://ws.abx/}abxSDKTaskFieldMappingRule" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -46,7 +46,7 @@ public class AbxSDKTaskFieldMapping {
     protected String fieldName;
     @XmlElement(required = true)
     protected String previewXML;
-    @XmlElement(required = true)
+    @XmlElement(nillable = true)
     protected List<AbxSDKTaskFieldMappingRule> fieldMappingRules;
 
     /**

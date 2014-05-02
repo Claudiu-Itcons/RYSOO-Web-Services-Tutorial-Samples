@@ -25,6 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="archiboxIP" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="languageID" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="sourceID" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/>
+ *         &lt;element name="usernameLogin" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -41,7 +42,8 @@ import javax.xml.bind.annotation.XmlType;
     "domain",
     "archiboxIP",
     "languageID",
-    "sourceID"
+    "sourceID",
+    "usernameLogin"
 })
 public class AbxLoginIdentity {
 
@@ -59,6 +61,7 @@ public class AbxLoginIdentity {
     protected String languageID;
     @XmlSchemaType(name = "unsignedInt")
     protected long sourceID;
+    protected boolean usernameLogin;
 
     /**
      * Recupera il valore della proprietà username.
@@ -218,6 +221,22 @@ public class AbxLoginIdentity {
      */
     public void setSourceID(long value) {
         this.sourceID = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà usernameLogin.
+     * 
+     */
+    public boolean isUsernameLogin() {
+        return usernameLogin;
+    }
+
+    /**
+     * Imposta il valore della proprietà usernameLogin.
+     * 
+     */
+    public void setUsernameLogin(boolean value) {
+        this.usernameLogin = value;
     }
 
 }

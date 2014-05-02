@@ -13,41 +13,11 @@
 <xsd:import namespace="http://ws.abx/" schemaLocation="http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest?xsd=4"/>
 </xsd:schema>
 </types>
-<message name="Query">
-<part name="parameters" element="tns:Query"/>
+<message name="GetWsdlVersion">
+<part name="parameters" element="tns:GetWsdlVersion"/>
 </message>
-<message name="QueryResponse">
-<part name="parameters" element="tns:QueryResponse"/>
-</message>
-<message name="Fk_getAllRecordByIndex">
-<part name="parameters" element="tns:Fk_getAllRecordByIndex"/>
-</message>
-<message name="Fk_getAllRecordByIndexResponse">
-<part name="parameters" element="tns:Fk_getAllRecordByIndexResponse"/>
-</message>
-<message name="Fk_getAllRecordByDesc">
-<part name="parameters" element="tns:Fk_getAllRecordByDesc"/>
-</message>
-<message name="Fk_getAllRecordByDescResponse">
-<part name="parameters" element="tns:Fk_getAllRecordByDescResponse"/>
-</message>
-<message name="Fk_getCountAllRecordByDesc">
-<part name="parameters" element="tns:Fk_getCountAllRecordByDesc"/>
-</message>
-<message name="Fk_getCountAllRecordByDescResponse">
-<part name="parameters" element="tns:Fk_getCountAllRecordByDescResponse"/>
-</message>
-<message name="Fk_getCountAllRecordByIndexDesc">
-<part name="parameters" element="tns:Fk_getCountAllRecordByIndexDesc"/>
-</message>
-<message name="Fk_getCountAllRecordByIndexDescResponse">
-<part name="parameters" element="tns:Fk_getCountAllRecordByIndexDescResponse"/>
-</message>
-<message name="Fk_getAllRecordByIndexDesc">
-<part name="parameters" element="tns:Fk_getAllRecordByIndexDesc"/>
-</message>
-<message name="Fk_getAllRecordByIndexDescResponse">
-<part name="parameters" element="tns:Fk_getAllRecordByIndexDescResponse"/>
+<message name="GetWsdlVersionResponse">
+<part name="parameters" element="tns:GetWsdlVersionResponse"/>
 </message>
 <message name="Fk_getColumnsName">
 <part name="parameters" element="tns:Fk_getColumnsName"/>
@@ -85,6 +55,12 @@
 <message name="Fk_getLocalFieldListResponse">
 <part name="parameters" element="tns:Fk_getLocalFieldListResponse"/>
 </message>
+<message name="Query">
+<part name="parameters" element="tns:Query"/>
+</message>
+<message name="QueryResponse">
+<part name="parameters" element="tns:QueryResponse"/>
+</message>
 <message name="Fk_getAllRecord">
 <part name="parameters" element="tns:Fk_getAllRecord"/>
 </message>
@@ -97,29 +73,47 @@
 <message name="Fk_getCountAllRecordResponse">
 <part name="parameters" element="tns:Fk_getCountAllRecordResponse"/>
 </message>
-<message name="GetArchiBoxInDomainByMatricola">
-<part name="parameters" element="tns:GetArchiBoxInDomainByMatricola"/>
+<message name="Fk_getAllRecordByIndex">
+<part name="parameters" element="tns:Fk_getAllRecordByIndex"/>
 </message>
-<message name="GetArchiBoxInDomainByMatricolaResponse">
-<part name="parameters" element="tns:GetArchiBoxInDomainByMatricolaResponse"/>
+<message name="Fk_getAllRecordByIndexResponse">
+<part name="parameters" element="tns:Fk_getAllRecordByIndexResponse"/>
 </message>
-<message name="GetArchiBoxInfo">
-<part name="parameters" element="tns:GetArchiBoxInfo"/>
+<message name="Fk_getAllRecordByDesc">
+<part name="parameters" element="tns:Fk_getAllRecordByDesc"/>
 </message>
-<message name="GetArchiBoxInfoResponse">
-<part name="parameters" element="tns:GetArchiBoxInfoResponse"/>
+<message name="Fk_getAllRecordByDescResponse">
+<part name="parameters" element="tns:Fk_getAllRecordByDescResponse"/>
 </message>
-<message name="GetArchiBoxInDomain">
-<part name="parameters" element="tns:GetArchiBoxInDomain"/>
+<message name="Fk_getCountAllRecordByDesc">
+<part name="parameters" element="tns:Fk_getCountAllRecordByDesc"/>
 </message>
-<message name="GetArchiBoxInDomainResponse">
-<part name="parameters" element="tns:GetArchiBoxInDomainResponse"/>
+<message name="Fk_getCountAllRecordByDescResponse">
+<part name="parameters" element="tns:Fk_getCountAllRecordByDescResponse"/>
 </message>
-<message name="GetInstanceReplicationStatus">
-<part name="parameters" element="tns:GetInstanceReplicationStatus"/>
+<message name="Fk_getCountAllRecordByIndexDesc">
+<part name="parameters" element="tns:Fk_getCountAllRecordByIndexDesc"/>
 </message>
-<message name="GetInstanceReplicationStatusResponse">
-<part name="parameters" element="tns:GetInstanceReplicationStatusResponse"/>
+<message name="Fk_getCountAllRecordByIndexDescResponse">
+<part name="parameters" element="tns:Fk_getCountAllRecordByIndexDescResponse"/>
+</message>
+<message name="Fk_getAllRecordByIndexDesc">
+<part name="parameters" element="tns:Fk_getAllRecordByIndexDesc"/>
+</message>
+<message name="Fk_getAllRecordByIndexDescResponse">
+<part name="parameters" element="tns:Fk_getAllRecordByIndexDescResponse"/>
+</message>
+<message name="InsertDataWA">
+<part name="parameters" element="tns:InsertDataWA"/>
+</message>
+<message name="InsertDataWAResponse">
+<part name="parameters" element="tns:InsertDataWAResponse"/>
+</message>
+<message name="GetListDataWA">
+<part name="parameters" element="tns:GetListDataWA"/>
+</message>
+<message name="GetListDataWAResponse">
+<part name="parameters" element="tns:GetListDataWAResponse"/>
 </message>
 <message name="ModifyDataWA">
 <part name="parameters" element="tns:ModifyDataWA"/>
@@ -132,12 +126,6 @@
 </message>
 <message name="DeleteDataWAResponse">
 <part name="parameters" element="tns:DeleteDataWAResponse"/>
-</message>
-<message name="GetListDataWA">
-<part name="parameters" element="tns:GetListDataWA"/>
-</message>
-<message name="GetListDataWAResponse">
-<part name="parameters" element="tns:GetListDataWAResponse"/>
 </message>
 <message name="GetDataWAById">
 <part name="parameters" element="tns:GetDataWAById"/>
@@ -199,23 +187,11 @@
 <message name="DeleteFileWAResponse">
 <part name="parameters" element="tns:DeleteFileWAResponse"/>
 </message>
-<message name="InsertDataWA">
-<part name="parameters" element="tns:InsertDataWA"/>
-</message>
-<message name="InsertDataWAResponse">
-<part name="parameters" element="tns:InsertDataWAResponse"/>
-</message>
 <message name="GetCountDocumentLinks">
 <part name="parameters" element="tns:GetCountDocumentLinks"/>
 </message>
 <message name="GetCountDocumentLinksResponse">
 <part name="parameters" element="tns:GetCountDocumentLinksResponse"/>
-</message>
-<message name="CreateDynorg">
-<part name="parameters" element="tns:CreateDynorg"/>
-</message>
-<message name="CreateDynorgResponse">
-<part name="parameters" element="tns:CreateDynorgResponse"/>
 </message>
 <message name="SetInstanceReplication">
 <part name="parameters" element="tns:SetInstanceReplication"/>
@@ -301,6 +277,36 @@
 <message name="DeleteDynorgResponse">
 <part name="parameters" element="tns:DeleteDynorgResponse"/>
 </message>
+<message name="GetArchiBoxInDomainByMatricola">
+<part name="parameters" element="tns:GetArchiBoxInDomainByMatricola"/>
+</message>
+<message name="GetArchiBoxInDomainByMatricolaResponse">
+<part name="parameters" element="tns:GetArchiBoxInDomainByMatricolaResponse"/>
+</message>
+<message name="GetArchiBoxInfo">
+<part name="parameters" element="tns:GetArchiBoxInfo"/>
+</message>
+<message name="GetArchiBoxInfoResponse">
+<part name="parameters" element="tns:GetArchiBoxInfoResponse"/>
+</message>
+<message name="GetArchiBoxInDomain">
+<part name="parameters" element="tns:GetArchiBoxInDomain"/>
+</message>
+<message name="GetArchiBoxInDomainResponse">
+<part name="parameters" element="tns:GetArchiBoxInDomainResponse"/>
+</message>
+<message name="DigitalSign">
+<part name="parameters" element="tns:DigitalSign"/>
+</message>
+<message name="DigitalSignResponse">
+<part name="parameters" element="tns:DigitalSignResponse"/>
+</message>
+<message name="GetInstanceReplicationStatus">
+<part name="parameters" element="tns:GetInstanceReplicationStatus"/>
+</message>
+<message name="GetInstanceReplicationStatusResponse">
+<part name="parameters" element="tns:GetInstanceReplicationStatusResponse"/>
+</message>
 <message name="CreateContainer">
 <part name="parameters" element="tns:CreateContainer"/>
 </message>
@@ -313,11 +319,11 @@
 <message name="CreateTemplateResponse">
 <part name="parameters" element="tns:CreateTemplateResponse"/>
 </message>
-<message name="DigitalSign">
-<part name="parameters" element="tns:DigitalSign"/>
+<message name="CreateDynorg">
+<part name="parameters" element="tns:CreateDynorg"/>
 </message>
-<message name="DigitalSignResponse">
-<part name="parameters" element="tns:DigitalSignResponse"/>
+<message name="CreateDynorgResponse">
+<part name="parameters" element="tns:CreateDynorgResponse"/>
 </message>
 <message name="GetFieldList">
 <part name="parameters" element="tns:GetFieldList"/>
@@ -337,41 +343,29 @@
 <message name="GetFieldsPropertiesFromTemplateResponse">
 <part name="parameters" element="tns:GetFieldsPropertiesFromTemplateResponse"/>
 </message>
-<message name="ModifyField">
-<part name="parameters" element="tns:ModifyField"/>
+<message name="GetAdjacentArchiBox">
+<part name="parameters" element="tns:GetAdjacentArchiBox"/>
 </message>
-<message name="ModifyFieldResponse">
-<part name="parameters" element="tns:ModifyFieldResponse"/>
+<message name="GetAdjacentArchiBoxResponse">
+<part name="parameters" element="tns:GetAdjacentArchiBoxResponse"/>
 </message>
-<message name="DeleteField">
-<part name="parameters" element="tns:DeleteField"/>
+<message name="GetInstanceReplication">
+<part name="parameters" element="tns:GetInstanceReplication"/>
 </message>
-<message name="DeleteFieldResponse">
-<part name="parameters" element="tns:DeleteFieldResponse"/>
+<message name="GetInstanceReplicationResponse">
+<part name="parameters" element="tns:GetInstanceReplicationResponse"/>
 </message>
-<message name="CreateField">
-<part name="parameters" element="tns:CreateField"/>
+<message name="Login">
+<part name="parameters" element="tns:Login"/>
 </message>
-<message name="CreateFieldResponse">
-<part name="parameters" element="tns:CreateFieldResponse"/>
+<message name="LoginResponse">
+<part name="parameters" element="tns:LoginResponse"/>
 </message>
-<message name="canModifyField">
-<part name="parameters" element="tns:canModifyField"/>
+<message name="Logout">
+<part name="parameters" element="tns:Logout"/>
 </message>
-<message name="canModifyFieldResponse">
-<part name="parameters" element="tns:canModifyFieldResponse"/>
-</message>
-<message name="canDeleteField">
-<part name="parameters" element="tns:canDeleteField"/>
-</message>
-<message name="canDeleteFieldResponse">
-<part name="parameters" element="tns:canDeleteFieldResponse"/>
-</message>
-<message name="canCreateField">
-<part name="parameters" element="tns:canCreateField"/>
-</message>
-<message name="canCreateFieldResponse">
-<part name="parameters" element="tns:canCreateFieldResponse"/>
+<message name="LogoutResponse">
+<part name="parameters" element="tns:LogoutResponse"/>
 </message>
 <message name="InsertSchedulerTask">
 <part name="parameters" element="tns:InsertSchedulerTask"/>
@@ -421,17 +415,47 @@
 <message name="ChangeSchedulerTaskScheduleStatusResponse">
 <part name="parameters" element="tns:ChangeSchedulerTaskScheduleStatusResponse"/>
 </message>
-<message name="GetAdjacentArchiBox">
-<part name="parameters" element="tns:GetAdjacentArchiBox"/>
+<message name="ModifyField">
+<part name="parameters" element="tns:ModifyField"/>
 </message>
-<message name="GetAdjacentArchiBoxResponse">
-<part name="parameters" element="tns:GetAdjacentArchiBoxResponse"/>
+<message name="ModifyFieldResponse">
+<part name="parameters" element="tns:ModifyFieldResponse"/>
 </message>
-<message name="GetInstanceReplication">
-<part name="parameters" element="tns:GetInstanceReplication"/>
+<message name="DeleteField">
+<part name="parameters" element="tns:DeleteField"/>
 </message>
-<message name="GetInstanceReplicationResponse">
-<part name="parameters" element="tns:GetInstanceReplicationResponse"/>
+<message name="DeleteFieldResponse">
+<part name="parameters" element="tns:DeleteFieldResponse"/>
+</message>
+<message name="CreateField">
+<part name="parameters" element="tns:CreateField"/>
+</message>
+<message name="CreateFieldResponse">
+<part name="parameters" element="tns:CreateFieldResponse"/>
+</message>
+<message name="canModifyField">
+<part name="parameters" element="tns:canModifyField"/>
+</message>
+<message name="canModifyFieldResponse">
+<part name="parameters" element="tns:canModifyFieldResponse"/>
+</message>
+<message name="canDeleteField">
+<part name="parameters" element="tns:canDeleteField"/>
+</message>
+<message name="canDeleteFieldResponse">
+<part name="parameters" element="tns:canDeleteFieldResponse"/>
+</message>
+<message name="canCreateField">
+<part name="parameters" element="tns:canCreateField"/>
+</message>
+<message name="canCreateFieldResponse">
+<part name="parameters" element="tns:canCreateFieldResponse"/>
+</message>
+<message name="CanDeleteLinkFromContainer">
+<part name="parameters" element="tns:CanDeleteLinkFromContainer"/>
+</message>
+<message name="CanDeleteLinkFromContainerResponse">
+<part name="parameters" element="tns:CanDeleteLinkFromContainerResponse"/>
 </message>
 <message name="GetDomainList">
 <part name="parameters" element="tns:GetDomainList"/>
@@ -505,12 +529,6 @@
 <message name="DeleteLinkResponse">
 <part name="parameters" element="tns:DeleteLinkResponse"/>
 </message>
-<message name="CanDeleteLinkFromContainer">
-<part name="parameters" element="tns:CanDeleteLinkFromContainer"/>
-</message>
-<message name="CanDeleteLinkFromContainerResponse">
-<part name="parameters" element="tns:CanDeleteLinkFromContainerResponse"/>
-</message>
 <message name="GetDocumentLinks">
 <part name="parameters" element="tns:GetDocumentLinks"/>
 </message>
@@ -541,24 +559,6 @@
 <message name="GetContainerLinksResponse">
 <part name="parameters" element="tns:GetContainerLinksResponse"/>
 </message>
-<message name="GetClasseDocumentale">
-<part name="parameters" element="tns:GetClasseDocumentale"/>
-</message>
-<message name="GetClasseDocumentaleResponse">
-<part name="parameters" element="tns:GetClasseDocumentaleResponse"/>
-</message>
-<message name="DeleteClasseDocumentale">
-<part name="parameters" element="tns:DeleteClasseDocumentale"/>
-</message>
-<message name="DeleteClasseDocumentaleResponse">
-<part name="parameters" element="tns:DeleteClasseDocumentaleResponse"/>
-</message>
-<message name="InsertClasseDocumentale">
-<part name="parameters" element="tns:InsertClasseDocumentale"/>
-</message>
-<message name="InsertClasseDocumentaleResponse">
-<part name="parameters" element="tns:InsertClasseDocumentaleResponse"/>
-</message>
 <message name="RegenerateDynOrg">
 <part name="parameters" element="tns:RegenerateDynOrg"/>
 </message>
@@ -588,6 +588,24 @@
 </message>
 <message name="canCreateDynorgResponse">
 <part name="parameters" element="tns:canCreateDynorgResponse"/>
+</message>
+<message name="GetClasseDocumentale">
+<part name="parameters" element="tns:GetClasseDocumentale"/>
+</message>
+<message name="GetClasseDocumentaleResponse">
+<part name="parameters" element="tns:GetClasseDocumentaleResponse"/>
+</message>
+<message name="DeleteClasseDocumentale">
+<part name="parameters" element="tns:DeleteClasseDocumentale"/>
+</message>
+<message name="DeleteClasseDocumentaleResponse">
+<part name="parameters" element="tns:DeleteClasseDocumentaleResponse"/>
+</message>
+<message name="InsertClasseDocumentale">
+<part name="parameters" element="tns:InsertClasseDocumentale"/>
+</message>
+<message name="InsertClasseDocumentaleResponse">
+<part name="parameters" element="tns:InsertClasseDocumentaleResponse"/>
 </message>
 <message name="GetQueryParam">
 <part name="parameters" element="tns:GetQueryParam"/>
@@ -907,18 +925,6 @@
 <message name="CanModifyFileResponse">
 <part name="parameters" element="tns:CanModifyFileResponse"/>
 </message>
-<message name="DeleteGroup">
-<part name="parameters" element="tns:DeleteGroup"/>
-</message>
-<message name="DeleteGroupResponse">
-<part name="parameters" element="tns:DeleteGroupResponse"/>
-</message>
-<message name="Ping">
-<part name="parameters" element="tns:Ping"/>
-</message>
-<message name="PingResponse">
-<part name="parameters" element="tns:PingResponse"/>
-</message>
 <message name="CanShowFile">
 <part name="parameters" element="tns:CanShowFile"/>
 </message>
@@ -1219,18 +1225,6 @@
 <message name="DeleteSDKLogResponse">
 <part name="parameters" element="tns:DeleteSDKLogResponse"/>
 </message>
-<message name="Login">
-<part name="parameters" element="tns:Login"/>
-</message>
-<message name="LoginResponse">
-<part name="parameters" element="tns:LoginResponse"/>
-</message>
-<message name="Logout">
-<part name="parameters" element="tns:Logout"/>
-</message>
-<message name="LogoutResponse">
-<part name="parameters" element="tns:LogoutResponse"/>
-</message>
 <message name="ResetUserSessions">
 <part name="parameters" element="tns:ResetUserSessions"/>
 </message>
@@ -1248,6 +1242,12 @@
 </message>
 <message name="GetUserListResponse">
 <part name="parameters" element="tns:GetUserListResponse"/>
+</message>
+<message name="GetUserListActiveDirectory">
+<part name="parameters" element="tns:GetUserListActiveDirectory"/>
+</message>
+<message name="GetUserListActiveDirectoryResponse">
+<part name="parameters" element="tns:GetUserListActiveDirectoryResponse"/>
 </message>
 <message name="InsertUser">
 <part name="parameters" element="tns:InsertUser"/>
@@ -1291,17 +1291,29 @@
 <message name="ExistUserByUsernameResponse">
 <part name="parameters" element="tns:ExistUserByUsernameResponse"/>
 </message>
-<message name="DeleteUserByUsername">
-<part name="parameters" element="tns:DeleteUserByUsername"/>
-</message>
-<message name="DeleteUserByUsernameResponse">
-<part name="parameters" element="tns:DeleteUserByUsernameResponse"/>
-</message>
 <message name="InsertGroup">
 <part name="parameters" element="tns:InsertGroup"/>
 </message>
 <message name="InsertGroupResponse">
 <part name="parameters" element="tns:InsertGroupResponse"/>
+</message>
+<message name="DeleteGroup">
+<part name="parameters" element="tns:DeleteGroup"/>
+</message>
+<message name="DeleteGroupResponse">
+<part name="parameters" element="tns:DeleteGroupResponse"/>
+</message>
+<message name="Ping">
+<part name="parameters" element="tns:Ping"/>
+</message>
+<message name="PingResponse">
+<part name="parameters" element="tns:PingResponse"/>
+</message>
+<message name="DeleteUserByUsername">
+<part name="parameters" element="tns:DeleteUserByUsername"/>
+</message>
+<message name="DeleteUserByUsernameResponse">
+<part name="parameters" element="tns:DeleteUserByUsernameResponse"/>
 </message>
 <message name="ModifyGroup">
 <part name="parameters" element="tns:ModifyGroup"/>
@@ -2029,6 +2041,12 @@
 <message name="DownloadGetChunkWAResponse">
 <part name="parameters" element="tns:DownloadGetChunkWAResponse"/>
 </message>
+<message name="GetSchedulerTaskByTaskTypeId">
+<part name="parameters" element="tns:GetSchedulerTaskByTaskTypeId"/>
+</message>
+<message name="GetSchedulerTaskByTaskTypeIdResponse">
+<part name="parameters" element="tns:GetSchedulerTaskByTaskTypeIdResponse"/>
+</message>
 <message name="GetAllFilter">
 <part name="parameters" element="tns:GetAllFilter"/>
 </message>
@@ -2077,30 +2095,115 @@
 <message name="GetSDKTaskFieldMappingResponse">
 <part name="parameters" element="tns:GetSDKTaskFieldMappingResponse"/>
 </message>
+<message name="CreateSDKTaskFieldMapping">
+<part name="parameters" element="tns:CreateSDKTaskFieldMapping"/>
+</message>
+<message name="CreateSDKTaskFieldMappingResponse">
+<part name="parameters" element="tns:CreateSDKTaskFieldMappingResponse"/>
+</message>
+<message name="DeleteSDKTaskFieldMapping">
+<part name="parameters" element="tns:DeleteSDKTaskFieldMapping"/>
+</message>
+<message name="DeleteSDKTaskFieldMappingResponse">
+<part name="parameters" element="tns:DeleteSDKTaskFieldMappingResponse"/>
+</message>
+<message name="StoreSDKVariable">
+<part name="parameters" element="tns:StoreSDKVariable"/>
+</message>
+<message name="StoreSDKVariableResponse">
+<part name="parameters" element="tns:StoreSDKVariableResponse"/>
+</message>
+<message name="GetSDKVariables">
+<part name="parameters" element="tns:GetSDKVariables"/>
+</message>
+<message name="GetSDKVariablesResponse">
+<part name="parameters" element="tns:GetSDKVariablesResponse"/>
+</message>
+<message name="GetSDKTaskExcelPreview">
+<part name="parameters" element="tns:GetSDKTaskExcelPreview"/>
+</message>
+<message name="GetSDKTaskExcelPreviewResponse">
+<part name="parameters" element="tns:GetSDKTaskExcelPreviewResponse"/>
+</message>
+<message name="ValidateSDKTask">
+<part name="parameters" element="tns:ValidateSDKTask"/>
+</message>
+<message name="ValidateSDKTaskResponse">
+<part name="parameters" element="tns:ValidateSDKTaskResponse"/>
+</message>
+<message name="VerifySDKTaskNameExists">
+<part name="parameters" element="tns:VerifySDKTaskNameExists"/>
+</message>
+<message name="VerifySDKTaskNameExistsResponse">
+<part name="parameters" element="tns:VerifySDKTaskNameExistsResponse"/>
+</message>
+<message name="UploadPreviewFile">
+<part name="parameters" element="tns:UploadPreviewFile"/>
+</message>
+<message name="UploadPreviewFileResponse">
+<part name="parameters" element="tns:UploadPreviewFileResponse"/>
+</message>
+<message name="CreateSDKTaskWatchFolder">
+<part name="parameters" element="tns:CreateSDKTaskWatchFolder"/>
+</message>
+<message name="CreateSDKTaskWatchFolderResponse">
+<part name="parameters" element="tns:CreateSDKTaskWatchFolderResponse"/>
+</message>
+<message name="ModifySDKTaskWatchFolder">
+<part name="parameters" element="tns:ModifySDKTaskWatchFolder"/>
+</message>
+<message name="ModifySDKTaskWatchFolderResponse">
+<part name="parameters" element="tns:ModifySDKTaskWatchFolderResponse"/>
+</message>
+<message name="GetSDKWatchFolderDirectories">
+<part name="parameters" element="tns:GetSDKWatchFolderDirectories"/>
+</message>
+<message name="GetSDKWatchFolderDirectoriesResponse">
+<part name="parameters" element="tns:GetSDKWatchFolderDirectoriesResponse"/>
+</message>
+<message name="GetSDKImagesFromPDFTemplate">
+<part name="parameters" element="tns:GetSDKImagesFromPDFTemplate"/>
+</message>
+<message name="GetSDKImagesFromPDFTemplateResponse">
+<part name="parameters" element="tns:GetSDKImagesFromPDFTemplateResponse"/>
+</message>
+<message name="ExtractSDKPDFTemplateTextByArea">
+<part name="parameters" element="tns:ExtractSDKPDFTemplateTextByArea"/>
+</message>
+<message name="ExtractSDKPDFTemplateTextByAreaResponse">
+<part name="parameters" element="tns:ExtractSDKPDFTemplateTextByAreaResponse"/>
+</message>
+<message name="GetSDKTextFromTemplate">
+<part name="parameters" element="tns:GetSDKTextFromTemplate"/>
+</message>
+<message name="GetSDKTextFromTemplateResponse">
+<part name="parameters" element="tns:GetSDKTextFromTemplateResponse"/>
+</message>
+<message name="ChangeSDKTaskStatus">
+<part name="parameters" element="tns:ChangeSDKTaskStatus"/>
+</message>
+<message name="ChangeSDKTaskStatusResponse">
+<part name="parameters" element="tns:ChangeSDKTaskStatusResponse"/>
+</message>
+<message name="StartSDKTask">
+<part name="parameters" element="tns:StartSDKTask"/>
+</message>
+<message name="DeleteSDKTask">
+<part name="parameters" element="tns:DeleteSDKTask"/>
+</message>
+<message name="DeleteSDKTaskResponse">
+<part name="parameters" element="tns:DeleteSDKTaskResponse"/>
+</message>
+<message name="ModifyUserPassword">
+<part name="parameters" element="tns:ModifyUserPassword"/>
+</message>
+<message name="ModifyUserPasswordResponse">
+<part name="parameters" element="tns:ModifyUserPasswordResponse"/>
+</message>
 <portType name="abxWsGest">
-<operation name="Query">
-<input wsam:Action="http://ws.abx/abxWsGest/QueryRequest" message="tns:Query"/>
-<output wsam:Action="http://ws.abx/abxWsGest/QueryResponse" message="tns:QueryResponse"/>
-</operation>
-<operation name="Fk_getAllRecordByIndex">
-<input wsam:Action="http://ws.abx/abxWsGest/Fk_getAllRecordByIndexRequest" message="tns:Fk_getAllRecordByIndex"/>
-<output wsam:Action="http://ws.abx/abxWsGest/Fk_getAllRecordByIndexResponse" message="tns:Fk_getAllRecordByIndexResponse"/>
-</operation>
-<operation name="Fk_getAllRecordByDesc">
-<input wsam:Action="http://ws.abx/abxWsGest/Fk_getAllRecordByDescRequest" message="tns:Fk_getAllRecordByDesc"/>
-<output wsam:Action="http://ws.abx/abxWsGest/Fk_getAllRecordByDescResponse" message="tns:Fk_getAllRecordByDescResponse"/>
-</operation>
-<operation name="Fk_getCountAllRecordByDesc">
-<input wsam:Action="http://ws.abx/abxWsGest/Fk_getCountAllRecordByDescRequest" message="tns:Fk_getCountAllRecordByDesc"/>
-<output wsam:Action="http://ws.abx/abxWsGest/Fk_getCountAllRecordByDescResponse" message="tns:Fk_getCountAllRecordByDescResponse"/>
-</operation>
-<operation name="Fk_getCountAllRecordByIndexDesc">
-<input wsam:Action="http://ws.abx/abxWsGest/Fk_getCountAllRecordByIndexDescRequest" message="tns:Fk_getCountAllRecordByIndexDesc"/>
-<output wsam:Action="http://ws.abx/abxWsGest/Fk_getCountAllRecordByIndexDescResponse" message="tns:Fk_getCountAllRecordByIndexDescResponse"/>
-</operation>
-<operation name="Fk_getAllRecordByIndexDesc">
-<input wsam:Action="http://ws.abx/abxWsGest/Fk_getAllRecordByIndexDescRequest" message="tns:Fk_getAllRecordByIndexDesc"/>
-<output wsam:Action="http://ws.abx/abxWsGest/Fk_getAllRecordByIndexDescResponse" message="tns:Fk_getAllRecordByIndexDescResponse"/>
+<operation name="GetWsdlVersion">
+<input wsam:Action="http://ws.abx/abxWsGest/GetWsdlVersionRequest" message="tns:GetWsdlVersion"/>
+<output wsam:Action="http://ws.abx/abxWsGest/GetWsdlVersionResponse" message="tns:GetWsdlVersionResponse"/>
 </operation>
 <operation name="Fk_getColumnsName">
 <input wsam:Action="http://ws.abx/abxWsGest/Fk_getColumnsNameRequest" message="tns:Fk_getColumnsName"/>
@@ -2126,6 +2229,10 @@
 <input wsam:Action="http://ws.abx/abxWsGest/Fk_getLocalFieldListRequest" message="tns:Fk_getLocalFieldList"/>
 <output wsam:Action="http://ws.abx/abxWsGest/Fk_getLocalFieldListResponse" message="tns:Fk_getLocalFieldListResponse"/>
 </operation>
+<operation name="Query">
+<input wsam:Action="http://ws.abx/abxWsGest/QueryRequest" message="tns:Query"/>
+<output wsam:Action="http://ws.abx/abxWsGest/QueryResponse" message="tns:QueryResponse"/>
+</operation>
 <operation name="Fk_getAllRecord">
 <input wsam:Action="http://ws.abx/abxWsGest/Fk_getAllRecordRequest" message="tns:Fk_getAllRecord"/>
 <output wsam:Action="http://ws.abx/abxWsGest/Fk_getAllRecordResponse" message="tns:Fk_getAllRecordResponse"/>
@@ -2134,21 +2241,33 @@
 <input wsam:Action="http://ws.abx/abxWsGest/Fk_getCountAllRecordRequest" message="tns:Fk_getCountAllRecord"/>
 <output wsam:Action="http://ws.abx/abxWsGest/Fk_getCountAllRecordResponse" message="tns:Fk_getCountAllRecordResponse"/>
 </operation>
-<operation name="GetArchiBoxInDomainByMatricola">
-<input wsam:Action="http://ws.abx/abxWsGest/GetArchiBoxInDomainByMatricolaRequest" message="tns:GetArchiBoxInDomainByMatricola"/>
-<output wsam:Action="http://ws.abx/abxWsGest/GetArchiBoxInDomainByMatricolaResponse" message="tns:GetArchiBoxInDomainByMatricolaResponse"/>
+<operation name="Fk_getAllRecordByIndex">
+<input wsam:Action="http://ws.abx/abxWsGest/Fk_getAllRecordByIndexRequest" message="tns:Fk_getAllRecordByIndex"/>
+<output wsam:Action="http://ws.abx/abxWsGest/Fk_getAllRecordByIndexResponse" message="tns:Fk_getAllRecordByIndexResponse"/>
 </operation>
-<operation name="GetArchiBoxInfo">
-<input wsam:Action="http://ws.abx/abxWsGest/GetArchiBoxInfoRequest" message="tns:GetArchiBoxInfo"/>
-<output wsam:Action="http://ws.abx/abxWsGest/GetArchiBoxInfoResponse" message="tns:GetArchiBoxInfoResponse"/>
+<operation name="Fk_getAllRecordByDesc">
+<input wsam:Action="http://ws.abx/abxWsGest/Fk_getAllRecordByDescRequest" message="tns:Fk_getAllRecordByDesc"/>
+<output wsam:Action="http://ws.abx/abxWsGest/Fk_getAllRecordByDescResponse" message="tns:Fk_getAllRecordByDescResponse"/>
 </operation>
-<operation name="GetArchiBoxInDomain">
-<input wsam:Action="http://ws.abx/abxWsGest/GetArchiBoxInDomainRequest" message="tns:GetArchiBoxInDomain"/>
-<output wsam:Action="http://ws.abx/abxWsGest/GetArchiBoxInDomainResponse" message="tns:GetArchiBoxInDomainResponse"/>
+<operation name="Fk_getCountAllRecordByDesc">
+<input wsam:Action="http://ws.abx/abxWsGest/Fk_getCountAllRecordByDescRequest" message="tns:Fk_getCountAllRecordByDesc"/>
+<output wsam:Action="http://ws.abx/abxWsGest/Fk_getCountAllRecordByDescResponse" message="tns:Fk_getCountAllRecordByDescResponse"/>
 </operation>
-<operation name="GetInstanceReplicationStatus">
-<input wsam:Action="http://ws.abx/abxWsGest/GetInstanceReplicationStatusRequest" message="tns:GetInstanceReplicationStatus"/>
-<output wsam:Action="http://ws.abx/abxWsGest/GetInstanceReplicationStatusResponse" message="tns:GetInstanceReplicationStatusResponse"/>
+<operation name="Fk_getCountAllRecordByIndexDesc">
+<input wsam:Action="http://ws.abx/abxWsGest/Fk_getCountAllRecordByIndexDescRequest" message="tns:Fk_getCountAllRecordByIndexDesc"/>
+<output wsam:Action="http://ws.abx/abxWsGest/Fk_getCountAllRecordByIndexDescResponse" message="tns:Fk_getCountAllRecordByIndexDescResponse"/>
+</operation>
+<operation name="Fk_getAllRecordByIndexDesc">
+<input wsam:Action="http://ws.abx/abxWsGest/Fk_getAllRecordByIndexDescRequest" message="tns:Fk_getAllRecordByIndexDesc"/>
+<output wsam:Action="http://ws.abx/abxWsGest/Fk_getAllRecordByIndexDescResponse" message="tns:Fk_getAllRecordByIndexDescResponse"/>
+</operation>
+<operation name="InsertDataWA">
+<input wsam:Action="http://ws.abx/abxWsGest/InsertDataWARequest" message="tns:InsertDataWA"/>
+<output wsam:Action="http://ws.abx/abxWsGest/InsertDataWAResponse" message="tns:InsertDataWAResponse"/>
+</operation>
+<operation name="GetListDataWA">
+<input wsam:Action="http://ws.abx/abxWsGest/GetListDataWARequest" message="tns:GetListDataWA"/>
+<output wsam:Action="http://ws.abx/abxWsGest/GetListDataWAResponse" message="tns:GetListDataWAResponse"/>
 </operation>
 <operation name="ModifyDataWA">
 <input wsam:Action="http://ws.abx/abxWsGest/ModifyDataWARequest" message="tns:ModifyDataWA"/>
@@ -2157,10 +2276,6 @@
 <operation name="DeleteDataWA">
 <input wsam:Action="http://ws.abx/abxWsGest/DeleteDataWARequest" message="tns:DeleteDataWA"/>
 <output wsam:Action="http://ws.abx/abxWsGest/DeleteDataWAResponse" message="tns:DeleteDataWAResponse"/>
-</operation>
-<operation name="GetListDataWA">
-<input wsam:Action="http://ws.abx/abxWsGest/GetListDataWARequest" message="tns:GetListDataWA"/>
-<output wsam:Action="http://ws.abx/abxWsGest/GetListDataWAResponse" message="tns:GetListDataWAResponse"/>
 </operation>
 <operation name="GetDataWAById">
 <input wsam:Action="http://ws.abx/abxWsGest/GetDataWAByIdRequest" message="tns:GetDataWAById"/>
@@ -2202,17 +2317,9 @@
 <input wsam:Action="http://ws.abx/abxWsGest/DeleteFileWARequest" message="tns:DeleteFileWA"/>
 <output wsam:Action="http://ws.abx/abxWsGest/DeleteFileWAResponse" message="tns:DeleteFileWAResponse"/>
 </operation>
-<operation name="InsertDataWA">
-<input wsam:Action="http://ws.abx/abxWsGest/InsertDataWARequest" message="tns:InsertDataWA"/>
-<output wsam:Action="http://ws.abx/abxWsGest/InsertDataWAResponse" message="tns:InsertDataWAResponse"/>
-</operation>
 <operation name="GetCountDocumentLinks">
 <input wsam:Action="http://ws.abx/abxWsGest/GetCountDocumentLinksRequest" message="tns:GetCountDocumentLinks"/>
 <output wsam:Action="http://ws.abx/abxWsGest/GetCountDocumentLinksResponse" message="tns:GetCountDocumentLinksResponse"/>
-</operation>
-<operation name="CreateDynorg">
-<input wsam:Action="http://ws.abx/abxWsGest/CreateDynorgRequest" message="tns:CreateDynorg"/>
-<output wsam:Action="http://ws.abx/abxWsGest/CreateDynorgResponse" message="tns:CreateDynorgResponse"/>
 </operation>
 <operation name="SetInstanceReplication">
 <input wsam:Action="http://ws.abx/abxWsGest/SetInstanceReplicationRequest" message="tns:SetInstanceReplication"/>
@@ -2270,6 +2377,26 @@
 <input wsam:Action="http://ws.abx/abxWsGest/DeleteDynorgRequest" message="tns:DeleteDynorg"/>
 <output wsam:Action="http://ws.abx/abxWsGest/DeleteDynorgResponse" message="tns:DeleteDynorgResponse"/>
 </operation>
+<operation name="GetArchiBoxInDomainByMatricola">
+<input wsam:Action="http://ws.abx/abxWsGest/GetArchiBoxInDomainByMatricolaRequest" message="tns:GetArchiBoxInDomainByMatricola"/>
+<output wsam:Action="http://ws.abx/abxWsGest/GetArchiBoxInDomainByMatricolaResponse" message="tns:GetArchiBoxInDomainByMatricolaResponse"/>
+</operation>
+<operation name="GetArchiBoxInfo">
+<input wsam:Action="http://ws.abx/abxWsGest/GetArchiBoxInfoRequest" message="tns:GetArchiBoxInfo"/>
+<output wsam:Action="http://ws.abx/abxWsGest/GetArchiBoxInfoResponse" message="tns:GetArchiBoxInfoResponse"/>
+</operation>
+<operation name="GetArchiBoxInDomain">
+<input wsam:Action="http://ws.abx/abxWsGest/GetArchiBoxInDomainRequest" message="tns:GetArchiBoxInDomain"/>
+<output wsam:Action="http://ws.abx/abxWsGest/GetArchiBoxInDomainResponse" message="tns:GetArchiBoxInDomainResponse"/>
+</operation>
+<operation name="DigitalSign">
+<input wsam:Action="http://ws.abx/abxWsGest/DigitalSignRequest" message="tns:DigitalSign"/>
+<output wsam:Action="http://ws.abx/abxWsGest/DigitalSignResponse" message="tns:DigitalSignResponse"/>
+</operation>
+<operation name="GetInstanceReplicationStatus">
+<input wsam:Action="http://ws.abx/abxWsGest/GetInstanceReplicationStatusRequest" message="tns:GetInstanceReplicationStatus"/>
+<output wsam:Action="http://ws.abx/abxWsGest/GetInstanceReplicationStatusResponse" message="tns:GetInstanceReplicationStatusResponse"/>
+</operation>
 <operation name="CreateContainer">
 <input wsam:Action="http://ws.abx/abxWsGest/CreateContainerRequest" message="tns:CreateContainer"/>
 <output wsam:Action="http://ws.abx/abxWsGest/CreateContainerResponse" message="tns:CreateContainerResponse"/>
@@ -2278,9 +2405,9 @@
 <input wsam:Action="http://ws.abx/abxWsGest/CreateTemplateRequest" message="tns:CreateTemplate"/>
 <output wsam:Action="http://ws.abx/abxWsGest/CreateTemplateResponse" message="tns:CreateTemplateResponse"/>
 </operation>
-<operation name="DigitalSign">
-<input wsam:Action="http://ws.abx/abxWsGest/DigitalSignRequest" message="tns:DigitalSign"/>
-<output wsam:Action="http://ws.abx/abxWsGest/DigitalSignResponse" message="tns:DigitalSignResponse"/>
+<operation name="CreateDynorg">
+<input wsam:Action="http://ws.abx/abxWsGest/CreateDynorgRequest" message="tns:CreateDynorg"/>
+<output wsam:Action="http://ws.abx/abxWsGest/CreateDynorgResponse" message="tns:CreateDynorgResponse"/>
 </operation>
 <operation name="GetFieldList">
 <input wsam:Action="http://ws.abx/abxWsGest/GetFieldListRequest" message="tns:GetFieldList"/>
@@ -2294,29 +2421,21 @@
 <input wsam:Action="http://ws.abx/abxWsGest/GetFieldsPropertiesFromTemplateRequest" message="tns:GetFieldsPropertiesFromTemplate"/>
 <output wsam:Action="http://ws.abx/abxWsGest/GetFieldsPropertiesFromTemplateResponse" message="tns:GetFieldsPropertiesFromTemplateResponse"/>
 </operation>
-<operation name="ModifyField">
-<input wsam:Action="http://ws.abx/abxWsGest/ModifyFieldRequest" message="tns:ModifyField"/>
-<output wsam:Action="http://ws.abx/abxWsGest/ModifyFieldResponse" message="tns:ModifyFieldResponse"/>
+<operation name="GetAdjacentArchiBox">
+<input wsam:Action="http://ws.abx/abxWsGest/GetAdjacentArchiBoxRequest" message="tns:GetAdjacentArchiBox"/>
+<output wsam:Action="http://ws.abx/abxWsGest/GetAdjacentArchiBoxResponse" message="tns:GetAdjacentArchiBoxResponse"/>
 </operation>
-<operation name="DeleteField">
-<input wsam:Action="http://ws.abx/abxWsGest/DeleteFieldRequest" message="tns:DeleteField"/>
-<output wsam:Action="http://ws.abx/abxWsGest/DeleteFieldResponse" message="tns:DeleteFieldResponse"/>
+<operation name="GetInstanceReplication">
+<input wsam:Action="http://ws.abx/abxWsGest/GetInstanceReplicationRequest" message="tns:GetInstanceReplication"/>
+<output wsam:Action="http://ws.abx/abxWsGest/GetInstanceReplicationResponse" message="tns:GetInstanceReplicationResponse"/>
 </operation>
-<operation name="CreateField">
-<input wsam:Action="http://ws.abx/abxWsGest/CreateFieldRequest" message="tns:CreateField"/>
-<output wsam:Action="http://ws.abx/abxWsGest/CreateFieldResponse" message="tns:CreateFieldResponse"/>
+<operation name="Login">
+<input wsam:Action="http://ws.abx/abxWsGest/LoginRequest" message="tns:Login"/>
+<output wsam:Action="http://ws.abx/abxWsGest/LoginResponse" message="tns:LoginResponse"/>
 </operation>
-<operation name="canModifyField">
-<input wsam:Action="http://ws.abx/abxWsGest/canModifyFieldRequest" message="tns:canModifyField"/>
-<output wsam:Action="http://ws.abx/abxWsGest/canModifyFieldResponse" message="tns:canModifyFieldResponse"/>
-</operation>
-<operation name="canDeleteField">
-<input wsam:Action="http://ws.abx/abxWsGest/canDeleteFieldRequest" message="tns:canDeleteField"/>
-<output wsam:Action="http://ws.abx/abxWsGest/canDeleteFieldResponse" message="tns:canDeleteFieldResponse"/>
-</operation>
-<operation name="canCreateField">
-<input wsam:Action="http://ws.abx/abxWsGest/canCreateFieldRequest" message="tns:canCreateField"/>
-<output wsam:Action="http://ws.abx/abxWsGest/canCreateFieldResponse" message="tns:canCreateFieldResponse"/>
+<operation name="Logout">
+<input wsam:Action="http://ws.abx/abxWsGest/LogoutRequest" message="tns:Logout"/>
+<output wsam:Action="http://ws.abx/abxWsGest/LogoutResponse" message="tns:LogoutResponse"/>
 </operation>
 <operation name="InsertSchedulerTask">
 <input wsam:Action="http://ws.abx/abxWsGest/InsertSchedulerTaskRequest" message="tns:InsertSchedulerTask"/>
@@ -2350,13 +2469,33 @@
 <input wsam:Action="http://ws.abx/abxWsGest/ChangeSchedulerTaskScheduleStatusRequest" message="tns:ChangeSchedulerTaskScheduleStatus"/>
 <output wsam:Action="http://ws.abx/abxWsGest/ChangeSchedulerTaskScheduleStatusResponse" message="tns:ChangeSchedulerTaskScheduleStatusResponse"/>
 </operation>
-<operation name="GetAdjacentArchiBox">
-<input wsam:Action="http://ws.abx/abxWsGest/GetAdjacentArchiBoxRequest" message="tns:GetAdjacentArchiBox"/>
-<output wsam:Action="http://ws.abx/abxWsGest/GetAdjacentArchiBoxResponse" message="tns:GetAdjacentArchiBoxResponse"/>
+<operation name="ModifyField">
+<input wsam:Action="http://ws.abx/abxWsGest/ModifyFieldRequest" message="tns:ModifyField"/>
+<output wsam:Action="http://ws.abx/abxWsGest/ModifyFieldResponse" message="tns:ModifyFieldResponse"/>
 </operation>
-<operation name="GetInstanceReplication">
-<input wsam:Action="http://ws.abx/abxWsGest/GetInstanceReplicationRequest" message="tns:GetInstanceReplication"/>
-<output wsam:Action="http://ws.abx/abxWsGest/GetInstanceReplicationResponse" message="tns:GetInstanceReplicationResponse"/>
+<operation name="DeleteField">
+<input wsam:Action="http://ws.abx/abxWsGest/DeleteFieldRequest" message="tns:DeleteField"/>
+<output wsam:Action="http://ws.abx/abxWsGest/DeleteFieldResponse" message="tns:DeleteFieldResponse"/>
+</operation>
+<operation name="CreateField">
+<input wsam:Action="http://ws.abx/abxWsGest/CreateFieldRequest" message="tns:CreateField"/>
+<output wsam:Action="http://ws.abx/abxWsGest/CreateFieldResponse" message="tns:CreateFieldResponse"/>
+</operation>
+<operation name="canModifyField">
+<input wsam:Action="http://ws.abx/abxWsGest/canModifyFieldRequest" message="tns:canModifyField"/>
+<output wsam:Action="http://ws.abx/abxWsGest/canModifyFieldResponse" message="tns:canModifyFieldResponse"/>
+</operation>
+<operation name="canDeleteField">
+<input wsam:Action="http://ws.abx/abxWsGest/canDeleteFieldRequest" message="tns:canDeleteField"/>
+<output wsam:Action="http://ws.abx/abxWsGest/canDeleteFieldResponse" message="tns:canDeleteFieldResponse"/>
+</operation>
+<operation name="canCreateField">
+<input wsam:Action="http://ws.abx/abxWsGest/canCreateFieldRequest" message="tns:canCreateField"/>
+<output wsam:Action="http://ws.abx/abxWsGest/canCreateFieldResponse" message="tns:canCreateFieldResponse"/>
+</operation>
+<operation name="CanDeleteLinkFromContainer">
+<input wsam:Action="http://ws.abx/abxWsGest/CanDeleteLinkFromContainerRequest" message="tns:CanDeleteLinkFromContainer"/>
+<output wsam:Action="http://ws.abx/abxWsGest/CanDeleteLinkFromContainerResponse" message="tns:CanDeleteLinkFromContainerResponse"/>
 </operation>
 <operation name="GetDomainList">
 <input wsam:Action="http://ws.abx/abxWsGest/GetDomainListRequest" message="tns:GetDomainList"/>
@@ -2406,10 +2545,6 @@
 <input wsam:Action="http://ws.abx/abxWsGest/DeleteLinkRequest" message="tns:DeleteLink"/>
 <output wsam:Action="http://ws.abx/abxWsGest/DeleteLinkResponse" message="tns:DeleteLinkResponse"/>
 </operation>
-<operation name="CanDeleteLinkFromContainer">
-<input wsam:Action="http://ws.abx/abxWsGest/CanDeleteLinkFromContainerRequest" message="tns:CanDeleteLinkFromContainer"/>
-<output wsam:Action="http://ws.abx/abxWsGest/CanDeleteLinkFromContainerResponse" message="tns:CanDeleteLinkFromContainerResponse"/>
-</operation>
 <operation name="GetDocumentLinks">
 <input wsam:Action="http://ws.abx/abxWsGest/GetDocumentLinksRequest" message="tns:GetDocumentLinks"/>
 <output wsam:Action="http://ws.abx/abxWsGest/GetDocumentLinksResponse" message="tns:GetDocumentLinksResponse"/>
@@ -2430,18 +2565,6 @@
 <input wsam:Action="http://ws.abx/abxWsGest/GetContainerLinksRequest" message="tns:GetContainerLinks"/>
 <output wsam:Action="http://ws.abx/abxWsGest/GetContainerLinksResponse" message="tns:GetContainerLinksResponse"/>
 </operation>
-<operation name="GetClasseDocumentale">
-<input wsam:Action="http://ws.abx/abxWsGest/GetClasseDocumentaleRequest" message="tns:GetClasseDocumentale"/>
-<output wsam:Action="http://ws.abx/abxWsGest/GetClasseDocumentaleResponse" message="tns:GetClasseDocumentaleResponse"/>
-</operation>
-<operation name="DeleteClasseDocumentale">
-<input wsam:Action="http://ws.abx/abxWsGest/DeleteClasseDocumentaleRequest" message="tns:DeleteClasseDocumentale"/>
-<output wsam:Action="http://ws.abx/abxWsGest/DeleteClasseDocumentaleResponse" message="tns:DeleteClasseDocumentaleResponse"/>
-</operation>
-<operation name="InsertClasseDocumentale">
-<input wsam:Action="http://ws.abx/abxWsGest/InsertClasseDocumentaleRequest" message="tns:InsertClasseDocumentale"/>
-<output wsam:Action="http://ws.abx/abxWsGest/InsertClasseDocumentaleResponse" message="tns:InsertClasseDocumentaleResponse"/>
-</operation>
 <operation name="RegenerateDynOrg">
 <input wsam:Action="http://ws.abx/abxWsGest/RegenerateDynOrgRequest" message="tns:RegenerateDynOrg"/>
 <output wsam:Action="http://ws.abx/abxWsGest/RegenerateDynOrgResponse" message="tns:RegenerateDynOrgResponse"/>
@@ -2461,6 +2584,18 @@
 <operation name="canCreateDynorg">
 <input wsam:Action="http://ws.abx/abxWsGest/canCreateDynorgRequest" message="tns:canCreateDynorg"/>
 <output wsam:Action="http://ws.abx/abxWsGest/canCreateDynorgResponse" message="tns:canCreateDynorgResponse"/>
+</operation>
+<operation name="GetClasseDocumentale">
+<input wsam:Action="http://ws.abx/abxWsGest/GetClasseDocumentaleRequest" message="tns:GetClasseDocumentale"/>
+<output wsam:Action="http://ws.abx/abxWsGest/GetClasseDocumentaleResponse" message="tns:GetClasseDocumentaleResponse"/>
+</operation>
+<operation name="DeleteClasseDocumentale">
+<input wsam:Action="http://ws.abx/abxWsGest/DeleteClasseDocumentaleRequest" message="tns:DeleteClasseDocumentale"/>
+<output wsam:Action="http://ws.abx/abxWsGest/DeleteClasseDocumentaleResponse" message="tns:DeleteClasseDocumentaleResponse"/>
+</operation>
+<operation name="InsertClasseDocumentale">
+<input wsam:Action="http://ws.abx/abxWsGest/InsertClasseDocumentaleRequest" message="tns:InsertClasseDocumentale"/>
+<output wsam:Action="http://ws.abx/abxWsGest/InsertClasseDocumentaleResponse" message="tns:InsertClasseDocumentaleResponse"/>
 </operation>
 <operation name="GetQueryParam">
 <input wsam:Action="http://ws.abx/abxWsGest/GetQueryParamRequest" message="tns:GetQueryParam"/>
@@ -2674,14 +2809,6 @@
 <input wsam:Action="http://ws.abx/abxWsGest/CanModifyFileRequest" message="tns:CanModifyFile"/>
 <output wsam:Action="http://ws.abx/abxWsGest/CanModifyFileResponse" message="tns:CanModifyFileResponse"/>
 </operation>
-<operation name="DeleteGroup">
-<input wsam:Action="http://ws.abx/abxWsGest/DeleteGroupRequest" message="tns:DeleteGroup"/>
-<output wsam:Action="http://ws.abx/abxWsGest/DeleteGroupResponse" message="tns:DeleteGroupResponse"/>
-</operation>
-<operation name="Ping">
-<input wsam:Action="http://ws.abx/abxWsGest/PingRequest" message="tns:Ping"/>
-<output wsam:Action="http://ws.abx/abxWsGest/PingResponse" message="tns:PingResponse"/>
-</operation>
 <operation name="CanShowFile">
 <input wsam:Action="http://ws.abx/abxWsGest/CanShowFileRequest" message="tns:CanShowFile"/>
 <output wsam:Action="http://ws.abx/abxWsGest/CanShowFileResponse" message="tns:CanShowFileResponse"/>
@@ -2882,14 +3009,6 @@
 <input wsam:Action="http://ws.abx/abxWsGest/DeleteSDKLogRequest" message="tns:DeleteSDKLog"/>
 <output wsam:Action="http://ws.abx/abxWsGest/DeleteSDKLogResponse" message="tns:DeleteSDKLogResponse"/>
 </operation>
-<operation name="Login">
-<input wsam:Action="http://ws.abx/abxWsGest/LoginRequest" message="tns:Login"/>
-<output wsam:Action="http://ws.abx/abxWsGest/LoginResponse" message="tns:LoginResponse"/>
-</operation>
-<operation name="Logout">
-<input wsam:Action="http://ws.abx/abxWsGest/LogoutRequest" message="tns:Logout"/>
-<output wsam:Action="http://ws.abx/abxWsGest/LogoutResponse" message="tns:LogoutResponse"/>
-</operation>
 <operation name="ResetUserSessions">
 <input wsam:Action="http://ws.abx/abxWsGest/ResetUserSessionsRequest" message="tns:ResetUserSessions"/>
 <output wsam:Action="http://ws.abx/abxWsGest/ResetUserSessionsResponse" message="tns:ResetUserSessionsResponse"/>
@@ -2901,6 +3020,10 @@
 <operation name="GetUserList">
 <input wsam:Action="http://ws.abx/abxWsGest/GetUserListRequest" message="tns:GetUserList"/>
 <output wsam:Action="http://ws.abx/abxWsGest/GetUserListResponse" message="tns:GetUserListResponse"/>
+</operation>
+<operation name="GetUserListActiveDirectory">
+<input wsam:Action="http://ws.abx/abxWsGest/GetUserListActiveDirectoryRequest" message="tns:GetUserListActiveDirectory"/>
+<output wsam:Action="http://ws.abx/abxWsGest/GetUserListActiveDirectoryResponse" message="tns:GetUserListActiveDirectoryResponse"/>
 </operation>
 <operation name="InsertUser">
 <input wsam:Action="http://ws.abx/abxWsGest/InsertUserRequest" message="tns:InsertUser"/>
@@ -2930,13 +3053,21 @@
 <input wsam:Action="http://ws.abx/abxWsGest/ExistUserByUsernameRequest" message="tns:ExistUserByUsername"/>
 <output wsam:Action="http://ws.abx/abxWsGest/ExistUserByUsernameResponse" message="tns:ExistUserByUsernameResponse"/>
 </operation>
-<operation name="DeleteUserByUsername">
-<input wsam:Action="http://ws.abx/abxWsGest/DeleteUserByUsernameRequest" message="tns:DeleteUserByUsername"/>
-<output wsam:Action="http://ws.abx/abxWsGest/DeleteUserByUsernameResponse" message="tns:DeleteUserByUsernameResponse"/>
-</operation>
 <operation name="InsertGroup">
 <input wsam:Action="http://ws.abx/abxWsGest/InsertGroupRequest" message="tns:InsertGroup"/>
 <output wsam:Action="http://ws.abx/abxWsGest/InsertGroupResponse" message="tns:InsertGroupResponse"/>
+</operation>
+<operation name="DeleteGroup">
+<input wsam:Action="http://ws.abx/abxWsGest/DeleteGroupRequest" message="tns:DeleteGroup"/>
+<output wsam:Action="http://ws.abx/abxWsGest/DeleteGroupResponse" message="tns:DeleteGroupResponse"/>
+</operation>
+<operation name="Ping">
+<input wsam:Action="http://ws.abx/abxWsGest/PingRequest" message="tns:Ping"/>
+<output wsam:Action="http://ws.abx/abxWsGest/PingResponse" message="tns:PingResponse"/>
+</operation>
+<operation name="DeleteUserByUsername">
+<input wsam:Action="http://ws.abx/abxWsGest/DeleteUserByUsernameRequest" message="tns:DeleteUserByUsername"/>
+<output wsam:Action="http://ws.abx/abxWsGest/DeleteUserByUsernameResponse" message="tns:DeleteUserByUsernameResponse"/>
 </operation>
 <operation name="ModifyGroup">
 <input wsam:Action="http://ws.abx/abxWsGest/ModifyGroupRequest" message="tns:ModifyGroup"/>
@@ -3422,6 +3553,10 @@
 <input wsam:Action="http://ws.abx/abxWsGest/DownloadGetChunkWARequest" message="tns:DownloadGetChunkWA"/>
 <output wsam:Action="http://ws.abx/abxWsGest/DownloadGetChunkWAResponse" message="tns:DownloadGetChunkWAResponse"/>
 </operation>
+<operation name="GetSchedulerTaskByTaskTypeId">
+<input wsam:Action="http://ws.abx/abxWsGest/GetSchedulerTaskByTaskTypeIdRequest" message="tns:GetSchedulerTaskByTaskTypeId"/>
+<output wsam:Action="http://ws.abx/abxWsGest/GetSchedulerTaskByTaskTypeIdResponse" message="tns:GetSchedulerTaskByTaskTypeIdResponse"/>
+</operation>
 <operation name="GetAllFilter">
 <input wsam:Action="http://ws.abx/abxWsGest/GetAllFilterRequest" message="tns:GetAllFilter"/>
 <output wsam:Action="http://ws.abx/abxWsGest/GetAllFilterResponse" message="tns:GetAllFilterResponse"/>
@@ -3454,55 +3589,81 @@
 <input wsam:Action="http://ws.abx/abxWsGest/GetSDKTaskFieldMappingRequest" message="tns:GetSDKTaskFieldMapping"/>
 <output wsam:Action="http://ws.abx/abxWsGest/GetSDKTaskFieldMappingResponse" message="tns:GetSDKTaskFieldMappingResponse"/>
 </operation>
+<operation name="CreateSDKTaskFieldMapping">
+<input wsam:Action="http://ws.abx/abxWsGest/CreateSDKTaskFieldMappingRequest" message="tns:CreateSDKTaskFieldMapping"/>
+<output wsam:Action="http://ws.abx/abxWsGest/CreateSDKTaskFieldMappingResponse" message="tns:CreateSDKTaskFieldMappingResponse"/>
+</operation>
+<operation name="DeleteSDKTaskFieldMapping">
+<input wsam:Action="http://ws.abx/abxWsGest/DeleteSDKTaskFieldMappingRequest" message="tns:DeleteSDKTaskFieldMapping"/>
+<output wsam:Action="http://ws.abx/abxWsGest/DeleteSDKTaskFieldMappingResponse" message="tns:DeleteSDKTaskFieldMappingResponse"/>
+</operation>
+<operation name="StoreSDKVariable">
+<input wsam:Action="http://ws.abx/abxWsGest/StoreSDKVariableRequest" message="tns:StoreSDKVariable"/>
+<output wsam:Action="http://ws.abx/abxWsGest/StoreSDKVariableResponse" message="tns:StoreSDKVariableResponse"/>
+</operation>
+<operation name="GetSDKVariables">
+<input wsam:Action="http://ws.abx/abxWsGest/GetSDKVariablesRequest" message="tns:GetSDKVariables"/>
+<output wsam:Action="http://ws.abx/abxWsGest/GetSDKVariablesResponse" message="tns:GetSDKVariablesResponse"/>
+</operation>
+<operation name="GetSDKTaskExcelPreview">
+<input wsam:Action="http://ws.abx/abxWsGest/GetSDKTaskExcelPreviewRequest" message="tns:GetSDKTaskExcelPreview"/>
+<output wsam:Action="http://ws.abx/abxWsGest/GetSDKTaskExcelPreviewResponse" message="tns:GetSDKTaskExcelPreviewResponse"/>
+</operation>
+<operation name="ValidateSDKTask">
+<input wsam:Action="http://ws.abx/abxWsGest/ValidateSDKTaskRequest" message="tns:ValidateSDKTask"/>
+<output wsam:Action="http://ws.abx/abxWsGest/ValidateSDKTaskResponse" message="tns:ValidateSDKTaskResponse"/>
+</operation>
+<operation name="VerifySDKTaskNameExists">
+<input wsam:Action="http://ws.abx/abxWsGest/VerifySDKTaskNameExistsRequest" message="tns:VerifySDKTaskNameExists"/>
+<output wsam:Action="http://ws.abx/abxWsGest/VerifySDKTaskNameExistsResponse" message="tns:VerifySDKTaskNameExistsResponse"/>
+</operation>
+<operation name="UploadPreviewFile">
+<input wsam:Action="http://ws.abx/abxWsGest/UploadPreviewFileRequest" message="tns:UploadPreviewFile"/>
+<output wsam:Action="http://ws.abx/abxWsGest/UploadPreviewFileResponse" message="tns:UploadPreviewFileResponse"/>
+</operation>
+<operation name="CreateSDKTaskWatchFolder">
+<input wsam:Action="http://ws.abx/abxWsGest/CreateSDKTaskWatchFolderRequest" message="tns:CreateSDKTaskWatchFolder"/>
+<output wsam:Action="http://ws.abx/abxWsGest/CreateSDKTaskWatchFolderResponse" message="tns:CreateSDKTaskWatchFolderResponse"/>
+</operation>
+<operation name="ModifySDKTaskWatchFolder">
+<input wsam:Action="http://ws.abx/abxWsGest/ModifySDKTaskWatchFolderRequest" message="tns:ModifySDKTaskWatchFolder"/>
+<output wsam:Action="http://ws.abx/abxWsGest/ModifySDKTaskWatchFolderResponse" message="tns:ModifySDKTaskWatchFolderResponse"/>
+</operation>
+<operation name="GetSDKWatchFolderDirectories">
+<input wsam:Action="http://ws.abx/abxWsGest/GetSDKWatchFolderDirectoriesRequest" message="tns:GetSDKWatchFolderDirectories"/>
+<output wsam:Action="http://ws.abx/abxWsGest/GetSDKWatchFolderDirectoriesResponse" message="tns:GetSDKWatchFolderDirectoriesResponse"/>
+</operation>
+<operation name="GetSDKImagesFromPDFTemplate">
+<input wsam:Action="http://ws.abx/abxWsGest/GetSDKImagesFromPDFTemplateRequest" message="tns:GetSDKImagesFromPDFTemplate"/>
+<output wsam:Action="http://ws.abx/abxWsGest/GetSDKImagesFromPDFTemplateResponse" message="tns:GetSDKImagesFromPDFTemplateResponse"/>
+</operation>
+<operation name="ExtractSDKPDFTemplateTextByArea">
+<input wsam:Action="http://ws.abx/abxWsGest/ExtractSDKPDFTemplateTextByAreaRequest" message="tns:ExtractSDKPDFTemplateTextByArea"/>
+<output wsam:Action="http://ws.abx/abxWsGest/ExtractSDKPDFTemplateTextByAreaResponse" message="tns:ExtractSDKPDFTemplateTextByAreaResponse"/>
+</operation>
+<operation name="GetSDKTextFromTemplate">
+<input wsam:Action="http://ws.abx/abxWsGest/GetSDKTextFromTemplateRequest" message="tns:GetSDKTextFromTemplate"/>
+<output wsam:Action="http://ws.abx/abxWsGest/GetSDKTextFromTemplateResponse" message="tns:GetSDKTextFromTemplateResponse"/>
+</operation>
+<operation name="ChangeSDKTaskStatus">
+<input wsam:Action="http://ws.abx/abxWsGest/ChangeSDKTaskStatusRequest" message="tns:ChangeSDKTaskStatus"/>
+<output wsam:Action="http://ws.abx/abxWsGest/ChangeSDKTaskStatusResponse" message="tns:ChangeSDKTaskStatusResponse"/>
+</operation>
+<operation name="StartSDKTask">
+<input wsam:Action="http://ws.abx/abxWsGest/StartSDKTask" message="tns:StartSDKTask"/>
+</operation>
+<operation name="DeleteSDKTask">
+<input wsam:Action="http://ws.abx/abxWsGest/DeleteSDKTaskRequest" message="tns:DeleteSDKTask"/>
+<output wsam:Action="http://ws.abx/abxWsGest/DeleteSDKTaskResponse" message="tns:DeleteSDKTaskResponse"/>
+</operation>
+<operation name="ModifyUserPassword">
+<input wsam:Action="http://ws.abx/abxWsGest/ModifyUserPasswordRequest" message="tns:ModifyUserPassword"/>
+<output wsam:Action="http://ws.abx/abxWsGest/ModifyUserPasswordResponse" message="tns:ModifyUserPasswordResponse"/>
+</operation>
 </portType>
 <binding name="abxWsGestPortBinding" type="tns:abxWsGest">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="Query">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="Fk_getAllRecordByIndex">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="Fk_getAllRecordByDesc">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="Fk_getCountAllRecordByDesc">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="Fk_getCountAllRecordByIndexDesc">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="Fk_getAllRecordByIndexDesc">
+<operation name="GetWsdlVersion">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -3565,6 +3726,15 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="Query">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="Fk_getAllRecord">
 <soap:operation soapAction=""/>
 <input>
@@ -3583,7 +3753,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="GetArchiBoxInDomainByMatricola">
+<operation name="Fk_getAllRecordByIndex">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -3592,7 +3762,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="GetArchiBoxInfo">
+<operation name="Fk_getAllRecordByDesc">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -3601,7 +3771,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="GetArchiBoxInDomain">
+<operation name="Fk_getCountAllRecordByDesc">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -3610,7 +3780,34 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="GetInstanceReplicationStatus">
+<operation name="Fk_getCountAllRecordByIndexDesc">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="Fk_getAllRecordByIndexDesc">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="InsertDataWA">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GetListDataWA">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -3629,15 +3826,6 @@
 </output>
 </operation>
 <operation name="DeleteDataWA">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="GetListDataWA">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -3736,25 +3924,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="InsertDataWA">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="GetCountDocumentLinks">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="CreateDynorg">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -3889,6 +4059,51 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="GetArchiBoxInDomainByMatricola">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GetArchiBoxInfo">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GetArchiBoxInDomain">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="DigitalSign">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GetInstanceReplicationStatus">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="CreateContainer">
 <soap:operation soapAction=""/>
 <input>
@@ -3907,7 +4122,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="DigitalSign">
+<operation name="CreateDynorg">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -3943,7 +4158,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="ModifyField">
+<operation name="GetAdjacentArchiBox">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -3952,7 +4167,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="DeleteField">
+<operation name="GetInstanceReplication">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -3961,7 +4176,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="CreateField">
+<operation name="Login">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -3970,25 +4185,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="canModifyField">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="canDeleteField">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="canCreateField">
+<operation name="Logout">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -4069,7 +4266,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="GetAdjacentArchiBox">
+<operation name="ModifyField">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -4078,7 +4275,52 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="GetInstanceReplication">
+<operation name="DeleteField">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="CreateField">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="canModifyField">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="canDeleteField">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="canCreateField">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="CanDeleteLinkFromContainer">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -4195,15 +4437,6 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="CanDeleteLinkFromContainer">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="GetDocumentLinks">
 <soap:operation soapAction=""/>
 <input>
@@ -4249,33 +4482,6 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="GetClasseDocumentale">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="DeleteClasseDocumentale">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="InsertClasseDocumentale">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="RegenerateDynOrg">
 <soap:operation soapAction=""/>
 <input>
@@ -4313,6 +4519,33 @@
 </output>
 </operation>
 <operation name="canCreateDynorg">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GetClasseDocumentale">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="DeleteClasseDocumentale">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="InsertClasseDocumentale">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -4798,24 +5031,6 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="DeleteGroup">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="Ping">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="CanShowFile">
 <soap:operation soapAction=""/>
 <input>
@@ -5266,24 +5481,6 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="Login">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="Logout">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="ResetUserSessions">
 <soap:operation soapAction=""/>
 <input>
@@ -5303,6 +5500,15 @@
 </output>
 </operation>
 <operation name="GetUserList">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GetUserListActiveDirectory">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -5374,7 +5580,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="DeleteUserByUsername">
+<operation name="InsertGroup">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -5383,7 +5589,25 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="InsertGroup">
+<operation name="DeleteGroup">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="Ping">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="DeleteUserByUsername">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -6481,6 +6705,15 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="GetSchedulerTaskByTaskTypeId">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="GetAllFilter">
 <soap:operation soapAction=""/>
 <input>
@@ -6545,6 +6778,165 @@
 </output>
 </operation>
 <operation name="GetSDKTaskFieldMapping">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="CreateSDKTaskFieldMapping">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="DeleteSDKTaskFieldMapping">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="StoreSDKVariable">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GetSDKVariables">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GetSDKTaskExcelPreview">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="ValidateSDKTask">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="VerifySDKTaskNameExists">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="UploadPreviewFile">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="CreateSDKTaskWatchFolder">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="ModifySDKTaskWatchFolder">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GetSDKWatchFolderDirectories">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GetSDKImagesFromPDFTemplate">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="ExtractSDKPDFTemplateTextByArea">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GetSDKTextFromTemplate">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="ChangeSDKTaskStatus">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="StartSDKTask">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+</operation>
+<operation name="DeleteSDKTask">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="ModifyUserPassword">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

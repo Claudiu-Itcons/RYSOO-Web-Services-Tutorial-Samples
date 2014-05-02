@@ -44,6 +44,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="modifyDigitalSignPassword" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="isSystemUser" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="worklistAutoRefresh" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         &lt;element name="isActiveDirectoryUser" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -78,7 +79,8 @@ import javax.xml.bind.annotation.XmlType;
     "modifyUserPassword",
     "modifyDigitalSignPassword",
     "isSystemUser",
-    "worklistAutoRefresh"
+    "worklistAutoRefresh",
+    "isActiveDirectoryUser"
 })
 public class AbxUser {
 
@@ -120,6 +122,7 @@ public class AbxUser {
     protected boolean modifyDigitalSignPassword;
     protected boolean isSystemUser;
     protected boolean worklistAutoRefresh;
+    protected boolean isActiveDirectoryUser;
 
     /**
      * Recupera il valore della proprietà userName.
@@ -628,6 +631,22 @@ public class AbxUser {
      */
     public void setWorklistAutoRefresh(boolean value) {
         this.worklistAutoRefresh = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà isActiveDirectoryUser.
+     * 
+     */
+    public boolean isIsActiveDirectoryUser() {
+        return isActiveDirectoryUser;
+    }
+
+    /**
+     * Imposta il valore della proprietà isActiveDirectoryUser.
+     * 
+     */
+    public void setIsActiveDirectoryUser(boolean value) {
+        this.isActiveDirectoryUser = value;
     }
 
 }

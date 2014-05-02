@@ -35,17 +35,7 @@ import javax.xml.bind.annotation.XmlType;
  *           &lt;/complexType>
  *         &lt;/element>
  *         &lt;element name="joinWithType" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="fields" maxOccurs="unbounded">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="fieldName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
+ *         &lt;element name="fields" type="{http://ws.abx/}abxFieldList"/>
  *         &lt;element name="joinWithName" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="revisionEnabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="collation" type="{http://www.w3.org/2001/XMLSchema}string"/>
@@ -94,7 +84,7 @@ public class AbxTemplate {
     @XmlElement(required = true)
     protected String joinWithType;
     @XmlElement(required = true)
-    protected List<AbxTemplate.Fields> fields;
+    protected AbxFieldList fields;
     @XmlElement(required = true)
     protected String joinWithName;
     protected boolean revisionEnabled;
@@ -237,32 +227,27 @@ public class AbxTemplate {
     }
 
     /**
-     * Gets the value of the fields property.
+     * Recupera il valore della proprietà fields.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fields property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getFields().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link AbxTemplate.Fields }
-     * 
-     * 
+     * @return
+     *     possible object is
+     *     {@link AbxFieldList }
+     *     
      */
-    public List<AbxTemplate.Fields> getFields() {
-        if (fields == null) {
-            fields = new ArrayList<AbxTemplate.Fields>();
-        }
-        return this.fields;
+    public AbxFieldList getFields() {
+        return fields;
+    }
+
+    /**
+     * Imposta il valore della proprietà fields.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link AbxFieldList }
+     *     
+     */
+    public void setFields(AbxFieldList value) {
+        this.fields = value;
     }
 
     /**
@@ -536,61 +521,6 @@ public class AbxTemplate {
          */
         public void setDescription(String value) {
             this.description = value;
-        }
-
-    }
-
-
-    /**
-     * <p>Classe Java per anonymous complex type.
-     * 
-     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="fieldName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "fieldName"
-    })
-    public static class Fields {
-
-        @XmlElement(required = true)
-        protected String fieldName;
-
-        /**
-         * Recupera il valore della proprietà fieldName.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getFieldName() {
-            return fieldName;
-        }
-
-        /**
-         * Imposta il valore della proprietà fieldName.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setFieldName(String value) {
-            this.fieldName = value;
         }
 
     }

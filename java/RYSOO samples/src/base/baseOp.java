@@ -23,6 +23,8 @@ import abx.ws.AbxLoginResult;
 import abx.ws.AbxWsGest;
 import abx.ws.AbxWsGestService;
 import abx.ws.AbxPingResult;
+import abx.ws.AbxWsdlResult;
+import abx.ws.GetWsdlVersionResponse;
 import abx.ws.IDtype;
 import javax.xml.ws.BindingProvider;
 
@@ -35,6 +37,10 @@ public class baseOp {
     public static final int Login_OK_LOGIN = 0x00000001;
     public static final int Logout_OK = 0x00000010;
     public static final int Ping_OK = 0x00022000;
+    public static int WsdlVersion_OK = 0x00042020;
+
+    public static String wsdlversion_WARNING = "0000000002";    // this value must be equal to value returned from webservices when you compile program
+    public static String wsdlversion_ERROR = "0000000001";      // this value must be equal to value returned from webservices when you compile program
 
     // sessionIDF contain data to identify active user session
     private IDtype sessionIDF = null;
@@ -66,9 +72,27 @@ public class baseOp {
                     // ping is not ok
                     ret = false;
                 } else {
-                    if (result.getValue().compareTo(testString) != 0) {
+                    if (result.getValue().compareTo(testString) == 0) {
+                        // check if wsdl is changed
+                        AbxWsdlResult wsdlresponse = port.getWsdlVersion();
+                        if (wsdlresponse.getResult() != WsdlVersion_OK){
+                            // response ko
+                            ret = false;
+                        }else{
+                            if (wsdlresponse.getERRORvalue().compareTo(wsdlversion_ERROR) != 0){
+                                // wsdl is critical different 
+                                System.err.println("Wsdl is critical different: stop program");
+                                ret = false;
+                            }else{
+                                if (wsdlresponse.getWARNINGvalue().compareTo(wsdlversion_WARNING) != 0){
+                                    // wsdl is warning different
+                                    System.err.println("Wsdl is warning different: program can continue");
+                                }
+                            }
+                        }
+                    }else{
                         // strings are not equal
-                        ret = false;
+                        ret = false;                        
                     }
                 }
             }
