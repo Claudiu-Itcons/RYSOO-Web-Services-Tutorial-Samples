@@ -7,3 +7,6 @@ E:\RYSOO Web Services Tutorial Samples\c#\RYSOO samples\RYSOO samples\obj\Debug\
 E:\RYSOO-Web-Services-Tutorial-Samples\c#\RYSOO samples\RYSOO samples\bin\Debug\RYSOO samples.exe.config
 E:\RYSOO-Web-Services-Tutorial-Samples\c#\RYSOO samples\RYSOO samples\obj\Debug\RYSOO samples.exe
 E:\RYSOO-Web-Services-Tutorial-Samples\c#\RYSOO samples\RYSOO samples\obj\Debug\RYSOO samples.pdb
+E:\RYSOO-Web-Services-Tutorial-Samples\c#\RYSOO samples\RYSOO samples\obj\Debug\RYSOO samples.csprojResolveAssemblyReference.cache
+E:\RYSOO-Web-Services-Tutorial-Samples\c#\RYSOO samples\RYSOO samples\bin\Debug\RYSOO samples.exe
+E:\RYSOO-Web-Services-Tutorial-Samples\c#\RYSOO samples\RYSOO samples\bin\Debug\RYSOO samples.pdb

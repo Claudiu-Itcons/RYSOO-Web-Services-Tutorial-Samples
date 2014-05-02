@@ -35,7 +35,11 @@ namespace RYSOO_samples
         public static int Login_OK_LOGIN = 0x00000001;
         public static int Logout_OK = 0x00000010;
         public static int Ping_OK = 0x00022000;
+        public static int WsdlVersion_OK = 0x00042020;
 
+        public static String wsdlversion_WARNING = "0000000002";    // this value must be equal to value returned from webservices when you compile program
+        public static String wsdlversion_ERROR = "0000000001";      // this value must be equal to value returned from webservices when you compile program
+        
         // sessionIDF contain data to identify active user session
         private abxws.IDtype _sessionIDF = null;
 
@@ -105,7 +109,37 @@ namespace RYSOO_samples
                     }
                     else
                     {
-                        if (response.@return.value != testString)
+                        if (response.@return.value == testString)
+                        {
+                            // check if wsdl is changed
+                            abxws.GetWsdlVersionRequest wsdlreq = new abxws.GetWsdlVersionRequest();
+                            abxws.GetWsdlVersionResponse1 wsdlresponse = this.port.GetWsdlVersion(wsdlreq);
+                            if (wsdlresponse.@return.result != WsdlVersion_OK)
+                            {
+                                // response ko
+                                ret = false;
+                            }
+                            else
+                            {
+                                if (wsdlresponse.@return.ERRORvalue != wsdlversion_ERROR)
+                                {
+                                    // wsdl is critical different 
+                                    TextWriter stdErr = Console.Error;
+                                    stdErr.WriteLine("Wsdl is critical different: stop program");
+                                    ret = false;
+                                }
+                                else
+                                {
+                                    if (wsdlresponse.@return.WARNINGvalue != wsdlversion_WARNING)
+                                    {
+                                        // wsdl is warning different 
+                                        TextWriter stdErr = Console.Error;
+                                        stdErr.WriteLine("Wsdl is warning different: program can continue");
+                                    }
+                                }
+                            }
+                        }
+                        else
                         {
                             // strings are not equal
                             ret = false;
