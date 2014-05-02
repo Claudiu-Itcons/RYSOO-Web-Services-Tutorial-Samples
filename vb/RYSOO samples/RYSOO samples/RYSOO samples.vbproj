@@ -239,6 +239,9 @@
     <None Include="Service References\abxws\RYSOO_samples.abxws.abxWorkflowResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.AbxWsdlResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\abxws\RYSOO_samples.abxws.AddDefaultProcessResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -1044,6 +1047,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\abxws\RYSOO_samples.abxws.GetWorkflowVariablesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\abxws\RYSOO_samples.abxws.GetWsdlVersionResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\abxws\RYSOO_samples.abxws.IfFileExistResponse1.datasource">

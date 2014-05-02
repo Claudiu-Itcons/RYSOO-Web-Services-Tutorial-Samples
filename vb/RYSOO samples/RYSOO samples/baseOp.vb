@@ -25,6 +25,10 @@ Public Class baseOp
     Public Const Login_OK_LOGIN As Integer = &H1
     Public Const Logout_OK As Integer = &H10
     Public Const Ping_OK As Integer = &H22000
+    Public Const WsdlVersion_OK As Integer = &H42020
+
+    Public Const wsdlversion_WARNING As String = "0000000002" ' this value must be equal to value returned from webservices when you compile program
+    Public Const wsdlversion_ERROR As String = "0000000001" ' this value must be equal to value returned from webservices when you compile program
 
     ' sessionIDF contain data to identify active user session
     Private _sessionIDF As abxws.IDtype = Nothing
@@ -90,7 +94,26 @@ Public Class baseOp
                 If response.return.result <> Ping_OK Then
                     ' ping is not ok
                     ret = False
-                ElseIf response.return.value <> testString Then
+                ElseIf response.return.value = testString Then
+                    ' check if wsdl is changed
+                    Dim wsdlreq As abxws.GetWsdlVersionRequest = New abxws.GetWsdlVersionRequest()
+                    Dim wsdlresponse As abxws.GetWsdlVersionResponse1 = Me.port.GetWsdlVersion(wsdlreq)
+                    If (wsdlresponse.return.result <> WsdlVersion_OK) Then
+                        ' response ko
+                        ret = False
+                    Else
+                        If wsdlresponse.return.ERRORvalue <> wsdlversion_ERROR Then
+                            ' wsdl is critical different 
+                            Dim stdErr As TextWriter = Console.Error
+                            stdErr.WriteLine("Wsdl is critical different: stop program")
+                            ret = False
+                        ElseIf wsdlresponse.return.WARNINGvalue <> wsdlversion_WARNING Then
+                            ' wsdl is warning different 
+                            Dim stdErr As TextWriter = Console.Error
+                            stdErr.WriteLine("Wsdl is warning different: program can continue")
+                        End If
+                    End If
+                Else
                     ' strings are not equal
                     ret = False
                 End If

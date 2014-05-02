@@ -19,55 +19,17 @@ RYSOOsamples
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
-</member><member name="P:RYSOO_samples.abxws.IDtype.SessionID">
+</member><member name="P:RYSOO_samples.abxws.AbxWsdlResult.result">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.IDtype.CryptSessionHash">
+</member><member name="P:RYSOO_samples.abxws.AbxWsdlResult.WARNINGvalue">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.IDtype.privilegedUser">
+</member><member name="P:RYSOO_samples.abxws.AbxWsdlResult.ERRORvalue">
 	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.IDtype">
+</member><member name="T:RYSOO_samples.abxws.AbxWsdlResult">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetInstanceReplicationResponse.return">
+</member><member name="P:RYSOO_samples.abxws.InsertFileResponse.return">
 	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.GetInstanceReplicationResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.abxReplicationResult.result">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.abxReplicationResult.list">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.abxReplicationResult">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.abxArchiBoxInDomain.abxId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.abxArchiBoxInDomain.domainId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.abxArchiBoxInDomain.matricola">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.abxArchiBoxInDomain.description">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.abxArchiBoxInDomain.ipAddress">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.abxArchiBoxInDomain.location">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.abxArchiBoxInDomain.release">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.abxArchiBoxInDomain.serverId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.abxArchiBoxInDomain.status">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.abxArchiBoxInDomain.requestId">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.abxArchiBoxInDomain">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetInstanceReplication.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetInstanceReplication.instanceName">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.GetInstanceReplication">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DeleteFileContainerVersionResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.DeleteFileContainerVersionResponse">
+</member><member name="T:RYSOO_samples.abxws.InsertFileResponse">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.abxFileResult.result">
 	<remarks/>
@@ -247,22 +209,6 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.abxObjActionList">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DeleteFileContainerVersion.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DeleteFileContainerVersion.instanceName">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DeleteFileContainerVersion.objName">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DeleteFileContainerVersion.fileCode">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DeleteFileContainerVersion.versionNumber">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.DeleteFileContainerVersion">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.InsertFileResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.InsertFileResponse">
-	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.InsertFile.SessionId">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.InsertFile.instanceName">
@@ -275,6 +221,30 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.InsertFile">
 	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.IDtype.SessionID">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.IDtype.CryptSessionHash">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.IDtype.privilegedUser">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.IDtype">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DeleteFileContainerVersionResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.DeleteFileContainerVersionResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DeleteFileContainerVersion.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DeleteFileContainerVersion.instanceName">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DeleteFileContainerVersion.objName">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DeleteFileContainerVersion.fileCode">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DeleteFileContainerVersion.versionNumber">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.DeleteFileContainerVersion">
+	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.DeleteFileWAResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.DeleteFileWAResponse">
@@ -286,6 +256,44 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.DeleteFileWA.fileCode">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.DeleteFileWA">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetInstanceReplicationResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.GetInstanceReplicationResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.abxReplicationResult.result">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.abxReplicationResult.list">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.abxReplicationResult">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.abxArchiBoxInDomain.abxId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.abxArchiBoxInDomain.domainId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.abxArchiBoxInDomain.matricola">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.abxArchiBoxInDomain.description">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.abxArchiBoxInDomain.ipAddress">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.abxArchiBoxInDomain.location">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.abxArchiBoxInDomain.release">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.abxArchiBoxInDomain.serverId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.abxArchiBoxInDomain.status">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.abxArchiBoxInDomain.requestId">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.abxArchiBoxInDomain">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetInstanceReplication.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetInstanceReplication.instanceName">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.GetInstanceReplication">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.GetAllObjectWithSystemResponse.return">
 	<remarks/>
@@ -1031,22 +1039,6 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.DelUserSettings">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DeleteFileVersionResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.DeleteFileVersionResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DeleteFileVersion.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DeleteFileVersion.instanceName">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DeleteFileVersion.objName">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DeleteFileVersion.fileCode">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DeleteFileVersion.versionNumber">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.DeleteFileVersion">
-	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.CanModifyFileResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.CanModifyFileResponse">
@@ -1064,6 +1056,22 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.CanModifyFile.dataListInput">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.CanModifyFile">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DeleteFileVersionResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.DeleteFileVersionResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DeleteFileVersion.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DeleteFileVersion.instanceName">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DeleteFileVersion.objName">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DeleteFileVersion.fileCode">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DeleteFileVersion.versionNumber">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.DeleteFileVersion">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.DeleteContainerResponse.return">
 	<remarks/>
@@ -1150,12 +1158,6 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.DeleteContainer.ContainerName">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.DeleteContainer">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.StartSDKTask.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.StartSDKTask.taskId">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.StartSDKTask">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.Fk_getAllRecordResponse.return">
 	<remarks/>
@@ -1347,6 +1349,12 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.Fk_getAllRecord">
 	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.StartSDKTask.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.StartSDKTask.taskId">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.StartSDKTask">
+	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.GetUserSettingsResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetUserSettingsResponse">
@@ -1475,6 +1483,20 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetDataTPFileListByUsername">
 	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DownloadFileWAResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.DownloadFileWAResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DownloadFileWA.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DownloadFileWA.instanceName">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DownloadFileWA.dataAttachmentId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DownloadFileWA.dChunk">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.DownloadFileWA">
+	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.CreateFieldResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.CreateFieldResponse">
@@ -1510,38 +1532,6 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.abxComboRecord.default">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.abxComboRecord">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DownloadFileWAResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.DownloadFileWAResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DownloadFileWA.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DownloadFileWA.instanceName">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DownloadFileWA.dataAttachmentId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DownloadFileWA.dChunk">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.DownloadFileWA">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.canCreateDynorgResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.canCreateDynorgResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.canCreateDynorg.SessionId">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.canCreateDynorg">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.CanDeleteProtocolResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.CanDeleteProtocolResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.CanDeleteProtocol.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.CanDeleteProtocol.protocolId">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.CanDeleteProtocol">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.InsertSchedulerTaskResponse.return">
 	<remarks/>
@@ -1621,6 +1611,24 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.InsertSchedulerTask">
 	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.canCreateDynorgResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.canCreateDynorgResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.canCreateDynorg.SessionId">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.canCreateDynorg">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.CanDeleteProtocolResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.CanDeleteProtocolResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.CanDeleteProtocol.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.CanDeleteProtocol.protocolId">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.CanDeleteProtocol">
+	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.DownloadFileContainerUncResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.DownloadFileContainerUncResponse">
@@ -1659,18 +1667,6 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetDataTPFileListByDocument">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.RemoveUserByGroupResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.RemoveUserByGroupResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.RemoveUserByGroup.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.RemoveUserByGroup.username">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.RemoveUserByGroup.groupName">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.RemoveUserByGroup">
-	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.GetCountFileListResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetCountFileListResponse">
@@ -1682,6 +1678,18 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.GetCountFileList.dataId">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetCountFileList">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.RemoveUserByGroupResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.RemoveUserByGroupResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.RemoveUserByGroup.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.RemoveUserByGroup.username">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.RemoveUserByGroup.groupName">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.RemoveUserByGroup">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.DestroyContainerResponse.return">
 	<remarks/>
@@ -1821,6 +1829,28 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetSDKTaskWatchFolder">
 	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.SetTmpDownloadPathResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.SetTmpDownloadPathResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.SetTmpDownloadPath.path">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.SetTmpDownloadPath">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.CanInsertLinkContainerToDocumentResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.CanInsertLinkContainerToDocumentResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.CanInsertLinkContainerToDocument.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.CanInsertLinkContainerToDocument.linkTypeName">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.CanInsertLinkContainerToDocument.instanceNameFrom">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.CanInsertLinkContainerToDocument.instanceNameTo">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.CanInsertLinkContainerToDocument">
+	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.ResetUserSessionsResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.ResetUserSessionsResponse">
@@ -1872,28 +1902,6 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.abxLoginIdentity.usernameLogin">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.abxLoginIdentity">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.SetTmpDownloadPathResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.SetTmpDownloadPathResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.SetTmpDownloadPath.path">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.SetTmpDownloadPath">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.CanInsertLinkContainerToDocumentResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.CanInsertLinkContainerToDocumentResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.CanInsertLinkContainerToDocument.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.CanInsertLinkContainerToDocument.linkTypeName">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.CanInsertLinkContainerToDocument.instanceNameFrom">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.CanInsertLinkContainerToDocument.instanceNameTo">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.CanInsertLinkContainerToDocument">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.InsertWFFileResponse.return">
 	<remarks/>
@@ -2037,16 +2045,6 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.ModifyArchSostRule">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.VerifySDKTaskNameExistsResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.VerifySDKTaskNameExistsResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.VerifySDKTaskNameExists.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.VerifySDKTaskNameExists.taskId">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.VerifySDKTaskNameExists">
-	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.ModifySchedulerTaskScheduleResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.ModifySchedulerTaskScheduleResponse">
@@ -2056,6 +2054,16 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.ModifySchedulerTaskSchedule.abxSchedulerTask">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.ModifySchedulerTaskSchedule">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.VerifySDKTaskNameExistsResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.VerifySDKTaskNameExistsResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.VerifySDKTaskNameExists.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.VerifySDKTaskNameExists.taskId">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.VerifySDKTaskNameExists">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.CanInsertDataResponse.return">
 	<remarks/>
@@ -2127,18 +2135,6 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.UploadPreviewFile">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetDefaultProcessResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.GetDefaultProcessResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetDefaultProcess.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetDefaultProcess.instanceName">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetDefaultProcess.userName">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.GetDefaultProcess">
-	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.GetClasseDocumentaleResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetClasseDocumentaleResponse">
@@ -2180,6 +2176,18 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.GetClasseDocumentale.SessionId">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetClasseDocumentale">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetDefaultProcessResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.GetDefaultProcessResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetDefaultProcess.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetDefaultProcess.instanceName">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetDefaultProcess.userName">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.GetDefaultProcess">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.CanInsertFileResponse.return">
 	<remarks/>
@@ -2387,18 +2395,6 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.CanShowFile">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.ModifyTranslationResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.ModifyTranslationResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.ModifyTranslation.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.ModifyTranslation.translation_new">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.ModifyTranslation.messageId">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.ModifyTranslation">
-	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.GetFileAvailableResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetFileAvailableResponse">
@@ -2420,6 +2416,18 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.DeleteSchedulerTask.taskId">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.DeleteSchedulerTask">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.ModifyTranslationResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.ModifyTranslationResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.ModifyTranslation.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.ModifyTranslation.translation_new">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.ModifyTranslation.messageId">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.ModifyTranslation">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.CanModifyLinkContainerToDocumentResponse.return">
 	<remarks/>
@@ -2503,6 +2511,18 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.DeleteTranslation">
 	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.Fk_getLocalFieldListResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.Fk_getLocalFieldListResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.Fk_getLocalFieldList.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.Fk_getLocalFieldList.users">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.Fk_getLocalFieldList.groups">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.Fk_getLocalFieldList">
+	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.ChangeSchedulerTaskScheduleStatusResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.ChangeSchedulerTaskScheduleStatusResponse">
@@ -2516,18 +2536,6 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.ChangeSchedulerTaskScheduleStatus.scheduleStatus">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.ChangeSchedulerTaskScheduleStatus">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.Fk_getLocalFieldListResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.Fk_getLocalFieldListResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.Fk_getLocalFieldList.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.Fk_getLocalFieldList.users">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.Fk_getLocalFieldList.groups">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.Fk_getLocalFieldList">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.CreateContainerResponse.return">
 	<remarks/>
@@ -2615,6 +2623,18 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetNewProtocolNumber">
 	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.UploadSendChunkWAResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.UploadSendChunkWAResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.UploadSendChunkWA.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.UploadSendChunkWA.fileCode">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.UploadSendChunkWA.chunk">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.UploadSendChunkWA">
+	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.abxDomain.domain_hash">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.abxDomain.domain_name">
@@ -2634,18 +2654,6 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.GetDomainList.SessionId">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetDomainList">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.UploadSendChunkWAResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.UploadSendChunkWAResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.UploadSendChunkWA.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.UploadSendChunkWA.fileCode">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.UploadSendChunkWA.chunk">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.UploadSendChunkWA">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.GetContSignResponse.return">
 	<remarks/>
@@ -2999,6 +3007,14 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.DownloadFileByFileUniqueCode">
 	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetSchedulerTasksToRunResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.GetSchedulerTasksToRunResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetSchedulerTasksToRun.SessionId">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.GetSchedulerTasksToRun">
+	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.GetTranslationByLabelCodeResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetTranslationByLabelCodeResponse">
@@ -3008,14 +3024,6 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.GetTranslationByLabelCode.exLabelCode">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetTranslationByLabelCode">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetSchedulerTasksToRunResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.GetSchedulerTasksToRunResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetSchedulerTasksToRun.SessionId">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.GetSchedulerTasksToRun">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.GetRootIdResponse.return">
 	<remarks/>
@@ -3315,6 +3323,12 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.InsertUSFile">
 	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetWsdlVersionResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.GetWsdlVersionResponse">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.GetWsdlVersion">
+	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.DownloadGetChunkWAResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.DownloadGetChunkWAResponse">
@@ -3485,18 +3499,6 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetInstanceId">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.CanAddDigitalSignatureResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.CanAddDigitalSignatureResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.CanAddDigitalSignature.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.CanAddDigitalSignature.instanceName">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.CanAddDigitalSignature.dataListInput">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.CanAddDigitalSignature">
-	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.QueryResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.QueryResponse">
@@ -3610,6 +3612,18 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.Query.option4query">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.Query">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.CanAddDigitalSignatureResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.CanAddDigitalSignatureResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.CanAddDigitalSignature.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.CanAddDigitalSignature.instanceName">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.CanAddDigitalSignature.dataListInput">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.CanAddDigitalSignature">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.CanModifyDataResponse.return">
 	<remarks/>
@@ -3763,16 +3777,6 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.DeleteDataWA">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetFieldsPropertiesFromTemplateResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.GetFieldsPropertiesFromTemplateResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetFieldsPropertiesFromTemplate.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetFieldsPropertiesFromTemplate.TemplateName">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.GetFieldsPropertiesFromTemplate">
-	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.CheckOut_attachResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.CheckOut_attachResponse">
@@ -3784,6 +3788,16 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.CheckOut_attach.Path">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.CheckOut_attach">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetFieldsPropertiesFromTemplateResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.GetFieldsPropertiesFromTemplateResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetFieldsPropertiesFromTemplate.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetFieldsPropertiesFromTemplate.TemplateName">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.GetFieldsPropertiesFromTemplate">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.GetProtocolListResponse.return">
 	<remarks/>
@@ -3843,16 +3857,6 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.DownloadGetNext">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.InsertClasseDocumentaleResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.InsertClasseDocumentaleResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.InsertClasseDocumentale.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.InsertClasseDocumentale.classeDocumentale">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.InsertClasseDocumentale">
-	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.CheckOut_documentResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.CheckOut_documentResponse">
@@ -3865,13 +3869,15 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.CheckOut_document">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetAllFilterResponse.return">
+</member><member name="P:RYSOO_samples.abxws.InsertClasseDocumentaleResponse.return">
 	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.GetAllFilterResponse">
+</member><member name="T:RYSOO_samples.abxws.InsertClasseDocumentaleResponse">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetAllFilter.SessionId">
+</member><member name="P:RYSOO_samples.abxws.InsertClasseDocumentale.SessionId">
 	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.GetAllFilter">
+</member><member name="P:RYSOO_samples.abxws.InsertClasseDocumentale.classeDocumentale">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.InsertClasseDocumentale">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.Fk_getAllRecordByIndexResponse.return">
 	<remarks/>
@@ -3888,6 +3894,14 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.Fk_getAllRecordByIndex.InstanceName">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.Fk_getAllRecordByIndex">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetAllFilterResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.GetAllFilterResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetAllFilter.SessionId">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.GetAllFilter">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.GetDownloadDetailByFilecodeResponse.return">
 	<remarks/>
@@ -3939,16 +3953,6 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.EndPermissionSettings">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DeleteClasseDocumentaleResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.DeleteClasseDocumentaleResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DeleteClasseDocumentale.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DeleteClasseDocumentale.ClasseDocumentaleName">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.DeleteClasseDocumentale">
-	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.CanDeleteFileResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.CanDeleteFileResponse">
@@ -3962,6 +3966,16 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.CanDeleteFile.fileCode">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.CanDeleteFile">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DeleteClasseDocumentaleResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.DeleteClasseDocumentaleResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DeleteClasseDocumentale.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DeleteClasseDocumentale.ClasseDocumentaleName">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.DeleteClasseDocumentale">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.DownloadEndFileWAResponse.return">
 	<remarks/>
@@ -4003,24 +4017,6 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetArchSostRules">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetSDKWatchFolderDirectoriesResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.GetSDKWatchFolderDirectoriesResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetSDKWatchFolderDirectories.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetSDKWatchFolderDirectories.serverURL">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetSDKWatchFolderDirectories.serverRoot">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetSDKWatchFolderDirectories.serverType">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetSDKWatchFolderDirectories.username">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetSDKWatchFolderDirectories.password">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.GetSDKWatchFolderDirectories">
-	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.abxQtemplate.templateName">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.abxQtemplate.fields">
@@ -4057,6 +4053,24 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetQueryParam">
 	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetSDKWatchFolderDirectoriesResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.GetSDKWatchFolderDirectoriesResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetSDKWatchFolderDirectories.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetSDKWatchFolderDirectories.serverURL">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetSDKWatchFolderDirectories.serverRoot">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetSDKWatchFolderDirectories.serverType">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetSDKWatchFolderDirectories.username">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetSDKWatchFolderDirectories.password">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.GetSDKWatchFolderDirectories">
+	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.CanModifyLinkContainerToContainerResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.CanModifyLinkContainerToContainerResponse">
@@ -4091,16 +4105,6 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.canCreateRaccoglitoreParentDataID">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.CanInsertLinkContainerToContainerResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.CanInsertLinkContainerToContainerResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.CanInsertLinkContainerToContainer.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.CanInsertLinkContainerToContainer.instanceNameFrom">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.CanInsertLinkContainerToContainer">
-	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.UploadEndFileWAResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.UploadEndFileWAResponse">
@@ -4120,6 +4124,16 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.UploadEndFileWA.docTemplateName">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.UploadEndFileWA">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.CanInsertLinkContainerToContainerResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.CanInsertLinkContainerToContainerResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.CanInsertLinkContainerToContainer.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.CanInsertLinkContainerToContainer.instanceNameFrom">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.CanInsertLinkContainerToContainer">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.CreateRaccoglitoreResponse.return">
 	<remarks/>
@@ -4305,16 +4319,6 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.UploadEndFileContainer">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.Fk_getParsAllFkResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.Fk_getParsAllFkResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.Fk_getParsAllFk.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.Fk_getParsAllFk.fieldName">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.Fk_getParsAllFk">
-	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.GetLinksToDocumentResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetLinksToDocumentResponse">
@@ -4326,6 +4330,16 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.GetLinksToDocument.dataId">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetLinksToDocument">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.Fk_getParsAllFkResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.Fk_getParsAllFkResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.Fk_getParsAllFk.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.Fk_getParsAllFk.fieldName">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.Fk_getParsAllFk">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.GetDownloadDetailByContResponse.return">
 	<remarks/>
@@ -4397,6 +4411,18 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetTranslationByMessageId">
 	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.CheckOut_attachContainerResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.CheckOut_attachContainerResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.CheckOut_attachContainer.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.CheckOut_attachContainer.ObjName">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.CheckOut_attachContainer.Path">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.CheckOut_attachContainer">
+	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.Fk_getParsResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.Fk_getParsResponse">
@@ -4409,17 +4435,15 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.Fk_getPars">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.CheckOut_attachContainerResponse.return">
+</member><member name="P:RYSOO_samples.abxws.GetInstanceReplicationStatusResponse.return">
 	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.CheckOut_attachContainerResponse">
+</member><member name="T:RYSOO_samples.abxws.GetInstanceReplicationStatusResponse">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.CheckOut_attachContainer.SessionId">
+</member><member name="P:RYSOO_samples.abxws.GetInstanceReplicationStatus.SessionId">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.CheckOut_attachContainer.ObjName">
+</member><member name="P:RYSOO_samples.abxws.GetInstanceReplicationStatus.instanceName">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.CheckOut_attachContainer.Path">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.CheckOut_attachContainer">
+</member><member name="T:RYSOO_samples.abxws.GetInstanceReplicationStatus">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.GetDocumentLinksResponse.return">
 	<remarks/>
@@ -4434,16 +4458,6 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.GetDocumentLinks.linkTypeName">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetDocumentLinks">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetInstanceReplicationStatusResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.GetInstanceReplicationStatusResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetInstanceReplicationStatus.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetInstanceReplicationStatus.instanceName">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.GetInstanceReplicationStatus">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.AddMarkerResponse.return">
 	<remarks/>
@@ -4629,16 +4643,6 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.ModUserSettings">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DeleteRaccoglitoreResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.DeleteRaccoglitoreResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DeleteRaccoglitore.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DeleteRaccoglitore.ContainerName">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.DeleteRaccoglitore">
-	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.DeleteFileResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.DeleteFileResponse">
@@ -4651,13 +4655,15 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.DeleteFile">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.TestScritturaLetturaResponse.return">
+</member><member name="P:RYSOO_samples.abxws.DeleteRaccoglitoreResponse.return">
 	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.TestScritturaLetturaResponse">
+</member><member name="T:RYSOO_samples.abxws.DeleteRaccoglitoreResponse">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.TestScritturaLettura.SessionId">
+</member><member name="P:RYSOO_samples.abxws.DeleteRaccoglitore.SessionId">
 	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.TestScritturaLettura">
+</member><member name="P:RYSOO_samples.abxws.DeleteRaccoglitore.ContainerName">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.DeleteRaccoglitore">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.DeleteTemplateResponse.return">
 	<remarks/>
@@ -4668,6 +4674,14 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.DeleteTemplate.TemplateName">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.DeleteTemplate">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.TestScritturaLetturaResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.TestScritturaLetturaResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.TestScritturaLettura.SessionId">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.TestScritturaLettura">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.CanDeleteLinkFromContainerResponse.return">
 	<remarks/>
@@ -4979,15 +4993,15 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetUploadDetailByFilecode">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.PingResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.PingResponse">
-	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.AbxPingResult.result">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.AbxPingResult.value">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.AbxPingResult">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.PingResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.PingResponse">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.Ping.In">
 	<remarks/>
@@ -5007,18 +5021,6 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.DeleteFileContainer">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetTranslationByRangeLabelCodeResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.GetTranslationByRangeLabelCodeResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetTranslationByRangeLabelCode.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetTranslationByRangeLabelCode.exLabelCodeFrom">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetTranslationByRangeLabelCode.exLabelCodeTo">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.GetTranslationByRangeLabelCode">
-	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.GetCountDocumentLinksResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetCountDocumentLinksResponse">
@@ -5032,6 +5034,18 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.GetCountDocumentLinks.linkTypeName">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.GetCountDocumentLinks">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetTranslationByRangeLabelCodeResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.GetTranslationByRangeLabelCodeResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetTranslationByRangeLabelCode.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetTranslationByRangeLabelCode.exLabelCodeFrom">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetTranslationByRangeLabelCode.exLabelCodeTo">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.GetTranslationByRangeLabelCode">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.GetSDKRulesResponse.return">
 	<remarks/>
@@ -5105,18 +5119,6 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.Fk_getRemoteTableList">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DownloadTPFileResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.DownloadTPFileResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DownloadTPFile.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DownloadTPFile.attachmentId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.DownloadTPFile.dChunk">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.DownloadTPFile">
-	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.SetInstanceReplicationResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.SetInstanceReplicationResponse">
@@ -5128,6 +5130,18 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.SetInstanceReplication.replicationList">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.SetInstanceReplication">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DownloadTPFileResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.DownloadTPFileResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DownloadTPFile.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DownloadTPFile.attachmentId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.DownloadTPFile.dChunk">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.DownloadTPFile">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.IfFileExistResponse.return">
 	<remarks/>
@@ -5185,6 +5199,16 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.InsertFileContainer">
 	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.Fk_getColumnsNameResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.Fk_getColumnsNameResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.Fk_getColumnsName.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.Fk_getColumnsName.fk">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.Fk_getColumnsName">
+	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.Fk_createResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.Fk_createResponse">
@@ -5200,16 +5224,6 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.Fk_create.optionSetDesc">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.Fk_create">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.Fk_getColumnsNameResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.Fk_getColumnsNameResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.Fk_getColumnsName.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.Fk_getColumnsName.fk">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.Fk_getColumnsName">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.GetContSignByUserResponse.return">
 	<remarks/>
@@ -5891,16 +5905,6 @@ RYSOOsamples
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.Fk_DB_testConnection">
 	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetSDKImagesFromPDFTemplateResponse.return">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.GetSDKImagesFromPDFTemplateResponse">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetSDKImagesFromPDFTemplate.SessionId">
-	<remarks/>
-</member><member name="P:RYSOO_samples.abxws.GetSDKImagesFromPDFTemplate.taskId">
-	<remarks/>
-</member><member name="T:RYSOO_samples.abxws.GetSDKImagesFromPDFTemplate">
-	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.ModifyContainerResponse.return">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.ModifyContainerResponse">
@@ -5914,6 +5918,16 @@ RYSOOsamples
 </member><member name="P:RYSOO_samples.abxws.ModifyContainer.avl">
 	<remarks/>
 </member><member name="T:RYSOO_samples.abxws.ModifyContainer">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetSDKImagesFromPDFTemplateResponse.return">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.GetSDKImagesFromPDFTemplateResponse">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetSDKImagesFromPDFTemplate.SessionId">
+	<remarks/>
+</member><member name="P:RYSOO_samples.abxws.GetSDKImagesFromPDFTemplate.taskId">
+	<remarks/>
+</member><member name="T:RYSOO_samples.abxws.GetSDKImagesFromPDFTemplate">
 	<remarks/>
 </member><member name="P:RYSOO_samples.abxws.GetDataTPFileListByContainerResponse.return">
 	<remarks/>
