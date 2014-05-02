@@ -25,7 +25,10 @@ using namespace std;
     const int Login_OK_LOGIN = 0x00000001;
     const int Logout_OK = 0x00000010;
     const int Ping_OK = 0x00022000;
+    const int WsdlVersion_OK = 0x00042020;
 
+    const string wsdlversion_WARNING = "0000000002";    // this value must be equal to value returned from webservices when you compile program
+    const string wsdlversion_ERROR = "0000000001";      // this value must be equal to value returned from webservices when you compile program
 
 class base {
 private:

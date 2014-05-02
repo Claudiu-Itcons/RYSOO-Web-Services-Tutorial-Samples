@@ -128,27 +128,27 @@ char *abxWsGestPortBindingProxy::soap_sprint_fault(char *buf, size_t len)
 }
 #endif
 
-int abxWsGestPortBindingProxy::CreateContainer(const char *endpoint, const char *soap_action, ns1__CreateContainer *ns1__CreateContainer_, ns1__CreateContainerResponse *ns1__CreateContainerResponse_)
+int abxWsGestPortBindingProxy::GetWsdlVersion(const char *endpoint, const char *soap_action, ns1__GetWsdlVersion *ns1__GetWsdlVersion_, ns1__GetWsdlVersionResponse *ns1__GetWsdlVersionResponse_)
 {	struct soap *soap = this->soap;
-	struct __ns1__CreateContainer soap_tmp___ns1__CreateContainer;
+	struct __ns1__GetWsdlVersion soap_tmp___ns1__GetWsdlVersion;
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
 		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
 	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/CreateContainerRequest";
+		soap_action = "http://ws.abx/abxWsGest/GetWsdlVersionRequest";
 	soap_begin(soap);
 	soap->encodingStyle = NULL;
-	soap_tmp___ns1__CreateContainer.ns1__CreateContainer_ = ns1__CreateContainer_;
+	soap_tmp___ns1__GetWsdlVersion.ns1__GetWsdlVersion_ = ns1__GetWsdlVersion_;
 	soap_serializeheader(soap);
-	soap_serialize___ns1__CreateContainer(soap, &soap_tmp___ns1__CreateContainer);
+	soap_serialize___ns1__GetWsdlVersion(soap, &soap_tmp___ns1__GetWsdlVersion);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__CreateContainer(soap, &soap_tmp___ns1__CreateContainer, "-ns1:CreateContainer", NULL)
+		 || soap_put___ns1__GetWsdlVersion(soap, &soap_tmp___ns1__GetWsdlVersion, "-ns1:GetWsdlVersion", NULL)
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -159,20 +159,20 @@ int abxWsGestPortBindingProxy::CreateContainer(const char *endpoint, const char 
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__CreateContainer(soap, &soap_tmp___ns1__CreateContainer, "-ns1:CreateContainer", NULL)
+	 || soap_put___ns1__GetWsdlVersion(soap, &soap_tmp___ns1__GetWsdlVersion, "-ns1:GetWsdlVersion", NULL)
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
 		return soap_closesock(soap);
-	if (!ns1__CreateContainerResponse_)
+	if (!ns1__GetWsdlVersionResponse_)
 		return soap_closesock(soap);
-	ns1__CreateContainerResponse_->soap_default(soap);
+	ns1__GetWsdlVersionResponse_->soap_default(soap);
 	if (soap_begin_recv(soap)
 	 || soap_envelope_begin_in(soap)
 	 || soap_recv_header(soap)
 	 || soap_body_begin_in(soap))
 		return soap_closesock(soap);
-	ns1__CreateContainerResponse_->soap_get(soap, "ns1:CreateContainerResponse", "ns1:CreateContainerResponse");
+	ns1__GetWsdlVersionResponse_->soap_get(soap, "ns1:GetWsdlVersionResponse", "ns1:GetWsdlVersionResponse");
 	if (soap->error)
 		return soap_recv_fault(soap, 0);
 	if (soap_body_end_in(soap)
@@ -182,27 +182,27 @@ int abxWsGestPortBindingProxy::CreateContainer(const char *endpoint, const char 
 	return soap_closesock(soap);
 }
 
-int abxWsGestPortBindingProxy::CreateTemplate(const char *endpoint, const char *soap_action, ns1__CreateTemplate *ns1__CreateTemplate_, ns1__CreateTemplateResponse *ns1__CreateTemplateResponse_)
+int abxWsGestPortBindingProxy::Fk_USCOREgetColumnsName(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetColumnsName *ns1__Fk_USCOREgetColumnsName_, ns1__Fk_USCOREgetColumnsNameResponse *ns1__Fk_USCOREgetColumnsNameResponse_)
 {	struct soap *soap = this->soap;
-	struct __ns1__CreateTemplate soap_tmp___ns1__CreateTemplate;
+	struct __ns1__Fk_USCOREgetColumnsName soap_tmp___ns1__Fk_USCOREgetColumnsName;
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
 		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
 	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/CreateTemplateRequest";
+		soap_action = "http://ws.abx/abxWsGest/Fk_getColumnsNameRequest";
 	soap_begin(soap);
 	soap->encodingStyle = NULL;
-	soap_tmp___ns1__CreateTemplate.ns1__CreateTemplate_ = ns1__CreateTemplate_;
+	soap_tmp___ns1__Fk_USCOREgetColumnsName.ns1__Fk_USCOREgetColumnsName_ = ns1__Fk_USCOREgetColumnsName_;
 	soap_serializeheader(soap);
-	soap_serialize___ns1__CreateTemplate(soap, &soap_tmp___ns1__CreateTemplate);
+	soap_serialize___ns1__Fk_USCOREgetColumnsName(soap, &soap_tmp___ns1__Fk_USCOREgetColumnsName);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__CreateTemplate(soap, &soap_tmp___ns1__CreateTemplate, "-ns1:CreateTemplate", NULL)
+		 || soap_put___ns1__Fk_USCOREgetColumnsName(soap, &soap_tmp___ns1__Fk_USCOREgetColumnsName, "-ns1:Fk_getColumnsName", NULL)
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -213,20 +213,20 @@ int abxWsGestPortBindingProxy::CreateTemplate(const char *endpoint, const char *
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__CreateTemplate(soap, &soap_tmp___ns1__CreateTemplate, "-ns1:CreateTemplate", NULL)
+	 || soap_put___ns1__Fk_USCOREgetColumnsName(soap, &soap_tmp___ns1__Fk_USCOREgetColumnsName, "-ns1:Fk_getColumnsName", NULL)
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
 		return soap_closesock(soap);
-	if (!ns1__CreateTemplateResponse_)
+	if (!ns1__Fk_USCOREgetColumnsNameResponse_)
 		return soap_closesock(soap);
-	ns1__CreateTemplateResponse_->soap_default(soap);
+	ns1__Fk_USCOREgetColumnsNameResponse_->soap_default(soap);
 	if (soap_begin_recv(soap)
 	 || soap_envelope_begin_in(soap)
 	 || soap_recv_header(soap)
 	 || soap_body_begin_in(soap))
 		return soap_closesock(soap);
-	ns1__CreateTemplateResponse_->soap_get(soap, "ns1:CreateTemplateResponse", "ns1:CreateTemplateResponse");
+	ns1__Fk_USCOREgetColumnsNameResponse_->soap_get(soap, "ns1:Fk_getColumnsNameResponse", "ns1:Fk_getColumnsNameResponse");
 	if (soap->error)
 		return soap_recv_fault(soap, 0);
 	if (soap_body_end_in(soap)
@@ -236,27 +236,27 @@ int abxWsGestPortBindingProxy::CreateTemplate(const char *endpoint, const char *
 	return soap_closesock(soap);
 }
 
-int abxWsGestPortBindingProxy::CreateDynorg(const char *endpoint, const char *soap_action, ns1__CreateDynorg *ns1__CreateDynorg_, ns1__CreateDynorgResponse *ns1__CreateDynorgResponse_)
+int abxWsGestPortBindingProxy::Fk_USCOREgetRemoteDatabaseList(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetRemoteDatabaseList *ns1__Fk_USCOREgetRemoteDatabaseList_, ns1__Fk_USCOREgetRemoteDatabaseListResponse *ns1__Fk_USCOREgetRemoteDatabaseListResponse_)
 {	struct soap *soap = this->soap;
-	struct __ns1__CreateDynorg soap_tmp___ns1__CreateDynorg;
+	struct __ns1__Fk_USCOREgetRemoteDatabaseList soap_tmp___ns1__Fk_USCOREgetRemoteDatabaseList;
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
 		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
 	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/CreateDynorgRequest";
+		soap_action = "http://ws.abx/abxWsGest/Fk_getRemoteDatabaseListRequest";
 	soap_begin(soap);
 	soap->encodingStyle = NULL;
-	soap_tmp___ns1__CreateDynorg.ns1__CreateDynorg_ = ns1__CreateDynorg_;
+	soap_tmp___ns1__Fk_USCOREgetRemoteDatabaseList.ns1__Fk_USCOREgetRemoteDatabaseList_ = ns1__Fk_USCOREgetRemoteDatabaseList_;
 	soap_serializeheader(soap);
-	soap_serialize___ns1__CreateDynorg(soap, &soap_tmp___ns1__CreateDynorg);
+	soap_serialize___ns1__Fk_USCOREgetRemoteDatabaseList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteDatabaseList);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__CreateDynorg(soap, &soap_tmp___ns1__CreateDynorg, "-ns1:CreateDynorg", NULL)
+		 || soap_put___ns1__Fk_USCOREgetRemoteDatabaseList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteDatabaseList, "-ns1:Fk_getRemoteDatabaseList", NULL)
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -267,20 +267,1478 @@ int abxWsGestPortBindingProxy::CreateDynorg(const char *endpoint, const char *so
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__CreateDynorg(soap, &soap_tmp___ns1__CreateDynorg, "-ns1:CreateDynorg", NULL)
+	 || soap_put___ns1__Fk_USCOREgetRemoteDatabaseList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteDatabaseList, "-ns1:Fk_getRemoteDatabaseList", NULL)
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
 		return soap_closesock(soap);
-	if (!ns1__CreateDynorgResponse_)
+	if (!ns1__Fk_USCOREgetRemoteDatabaseListResponse_)
 		return soap_closesock(soap);
-	ns1__CreateDynorgResponse_->soap_default(soap);
+	ns1__Fk_USCOREgetRemoteDatabaseListResponse_->soap_default(soap);
 	if (soap_begin_recv(soap)
 	 || soap_envelope_begin_in(soap)
 	 || soap_recv_header(soap)
 	 || soap_body_begin_in(soap))
 		return soap_closesock(soap);
-	ns1__CreateDynorgResponse_->soap_get(soap, "ns1:CreateDynorgResponse", "ns1:CreateDynorgResponse");
+	ns1__Fk_USCOREgetRemoteDatabaseListResponse_->soap_get(soap, "ns1:Fk_getRemoteDatabaseListResponse", "ns1:Fk_getRemoteDatabaseListResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::Fk_USCOREgetRemoteTableList(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetRemoteTableList *ns1__Fk_USCOREgetRemoteTableList_, ns1__Fk_USCOREgetRemoteTableListResponse *ns1__Fk_USCOREgetRemoteTableListResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__Fk_USCOREgetRemoteTableList soap_tmp___ns1__Fk_USCOREgetRemoteTableList;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/Fk_getRemoteTableListRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__Fk_USCOREgetRemoteTableList.ns1__Fk_USCOREgetRemoteTableList_ = ns1__Fk_USCOREgetRemoteTableList_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__Fk_USCOREgetRemoteTableList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteTableList);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__Fk_USCOREgetRemoteTableList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteTableList, "-ns1:Fk_getRemoteTableList", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__Fk_USCOREgetRemoteTableList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteTableList, "-ns1:Fk_getRemoteTableList", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__Fk_USCOREgetRemoteTableListResponse_)
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetRemoteTableListResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetRemoteTableListResponse_->soap_get(soap, "ns1:Fk_getRemoteTableListResponse", "ns1:Fk_getRemoteTableListResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::Fk_USCOREgetRemoteViewList(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetRemoteViewList *ns1__Fk_USCOREgetRemoteViewList_, ns1__Fk_USCOREgetRemoteViewListResponse *ns1__Fk_USCOREgetRemoteViewListResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__Fk_USCOREgetRemoteViewList soap_tmp___ns1__Fk_USCOREgetRemoteViewList;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/Fk_getRemoteViewListRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__Fk_USCOREgetRemoteViewList.ns1__Fk_USCOREgetRemoteViewList_ = ns1__Fk_USCOREgetRemoteViewList_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__Fk_USCOREgetRemoteViewList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteViewList);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__Fk_USCOREgetRemoteViewList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteViewList, "-ns1:Fk_getRemoteViewList", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__Fk_USCOREgetRemoteViewList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteViewList, "-ns1:Fk_getRemoteViewList", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__Fk_USCOREgetRemoteViewListResponse_)
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetRemoteViewListResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetRemoteViewListResponse_->soap_get(soap, "ns1:Fk_getRemoteViewListResponse", "ns1:Fk_getRemoteViewListResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::Fk_USCOREgetRemoteFieldList(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetRemoteFieldList *ns1__Fk_USCOREgetRemoteFieldList_, ns1__Fk_USCOREgetRemoteFieldListResponse *ns1__Fk_USCOREgetRemoteFieldListResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__Fk_USCOREgetRemoteFieldList soap_tmp___ns1__Fk_USCOREgetRemoteFieldList;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/Fk_getRemoteFieldListRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__Fk_USCOREgetRemoteFieldList.ns1__Fk_USCOREgetRemoteFieldList_ = ns1__Fk_USCOREgetRemoteFieldList_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__Fk_USCOREgetRemoteFieldList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteFieldList);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__Fk_USCOREgetRemoteFieldList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteFieldList, "-ns1:Fk_getRemoteFieldList", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__Fk_USCOREgetRemoteFieldList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteFieldList, "-ns1:Fk_getRemoteFieldList", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__Fk_USCOREgetRemoteFieldListResponse_)
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetRemoteFieldListResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetRemoteFieldListResponse_->soap_get(soap, "ns1:Fk_getRemoteFieldListResponse", "ns1:Fk_getRemoteFieldListResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::Fk_USCOREgetLocalFieldList(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetLocalFieldList *ns1__Fk_USCOREgetLocalFieldList_, ns1__Fk_USCOREgetLocalFieldListResponse *ns1__Fk_USCOREgetLocalFieldListResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__Fk_USCOREgetLocalFieldList soap_tmp___ns1__Fk_USCOREgetLocalFieldList;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/Fk_getLocalFieldListRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__Fk_USCOREgetLocalFieldList.ns1__Fk_USCOREgetLocalFieldList_ = ns1__Fk_USCOREgetLocalFieldList_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__Fk_USCOREgetLocalFieldList(soap, &soap_tmp___ns1__Fk_USCOREgetLocalFieldList);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__Fk_USCOREgetLocalFieldList(soap, &soap_tmp___ns1__Fk_USCOREgetLocalFieldList, "-ns1:Fk_getLocalFieldList", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__Fk_USCOREgetLocalFieldList(soap, &soap_tmp___ns1__Fk_USCOREgetLocalFieldList, "-ns1:Fk_getLocalFieldList", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__Fk_USCOREgetLocalFieldListResponse_)
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetLocalFieldListResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetLocalFieldListResponse_->soap_get(soap, "ns1:Fk_getLocalFieldListResponse", "ns1:Fk_getLocalFieldListResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::Query(const char *endpoint, const char *soap_action, ns1__Query *ns1__Query_, ns1__QueryResponse *ns1__QueryResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__Query soap_tmp___ns1__Query;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/QueryRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__Query.ns1__Query_ = ns1__Query_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__Query(soap, &soap_tmp___ns1__Query);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__Query(soap, &soap_tmp___ns1__Query, "-ns1:Query", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__Query(soap, &soap_tmp___ns1__Query, "-ns1:Query", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__QueryResponse_)
+		return soap_closesock(soap);
+	ns1__QueryResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__QueryResponse_->soap_get(soap, "ns1:QueryResponse", "ns1:QueryResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::Fk_USCOREgetAllRecord(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetAllRecord *ns1__Fk_USCOREgetAllRecord_, ns1__Fk_USCOREgetAllRecordResponse *ns1__Fk_USCOREgetAllRecordResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__Fk_USCOREgetAllRecord soap_tmp___ns1__Fk_USCOREgetAllRecord;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/Fk_getAllRecordRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__Fk_USCOREgetAllRecord.ns1__Fk_USCOREgetAllRecord_ = ns1__Fk_USCOREgetAllRecord_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__Fk_USCOREgetAllRecord(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecord);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__Fk_USCOREgetAllRecord(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecord, "-ns1:Fk_getAllRecord", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__Fk_USCOREgetAllRecord(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecord, "-ns1:Fk_getAllRecord", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__Fk_USCOREgetAllRecordResponse_)
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetAllRecordResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetAllRecordResponse_->soap_get(soap, "ns1:Fk_getAllRecordResponse", "ns1:Fk_getAllRecordResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::Fk_USCOREgetCountAllRecord(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetCountAllRecord *ns1__Fk_USCOREgetCountAllRecord_, ns1__Fk_USCOREgetCountAllRecordResponse *ns1__Fk_USCOREgetCountAllRecordResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__Fk_USCOREgetCountAllRecord soap_tmp___ns1__Fk_USCOREgetCountAllRecord;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/Fk_getCountAllRecordRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__Fk_USCOREgetCountAllRecord.ns1__Fk_USCOREgetCountAllRecord_ = ns1__Fk_USCOREgetCountAllRecord_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__Fk_USCOREgetCountAllRecord(soap, &soap_tmp___ns1__Fk_USCOREgetCountAllRecord);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__Fk_USCOREgetCountAllRecord(soap, &soap_tmp___ns1__Fk_USCOREgetCountAllRecord, "-ns1:Fk_getCountAllRecord", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__Fk_USCOREgetCountAllRecord(soap, &soap_tmp___ns1__Fk_USCOREgetCountAllRecord, "-ns1:Fk_getCountAllRecord", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__Fk_USCOREgetCountAllRecordResponse_)
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetCountAllRecordResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetCountAllRecordResponse_->soap_get(soap, "ns1:Fk_getCountAllRecordResponse", "ns1:Fk_getCountAllRecordResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::Fk_USCOREgetAllRecordByIndex(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetAllRecordByIndex *ns1__Fk_USCOREgetAllRecordByIndex_, ns1__Fk_USCOREgetAllRecordByIndexResponse *ns1__Fk_USCOREgetAllRecordByIndexResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__Fk_USCOREgetAllRecordByIndex soap_tmp___ns1__Fk_USCOREgetAllRecordByIndex;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/Fk_getAllRecordByIndexRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__Fk_USCOREgetAllRecordByIndex.ns1__Fk_USCOREgetAllRecordByIndex_ = ns1__Fk_USCOREgetAllRecordByIndex_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__Fk_USCOREgetAllRecordByIndex(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecordByIndex);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__Fk_USCOREgetAllRecordByIndex(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecordByIndex, "-ns1:Fk_getAllRecordByIndex", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__Fk_USCOREgetAllRecordByIndex(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecordByIndex, "-ns1:Fk_getAllRecordByIndex", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__Fk_USCOREgetAllRecordByIndexResponse_)
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetAllRecordByIndexResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetAllRecordByIndexResponse_->soap_get(soap, "ns1:Fk_getAllRecordByIndexResponse", "ns1:Fk_getAllRecordByIndexResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::Fk_USCOREgetAllRecordByDesc(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetAllRecordByDesc *ns1__Fk_USCOREgetAllRecordByDesc_, ns1__Fk_USCOREgetAllRecordByDescResponse *ns1__Fk_USCOREgetAllRecordByDescResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__Fk_USCOREgetAllRecordByDesc soap_tmp___ns1__Fk_USCOREgetAllRecordByDesc;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/Fk_getAllRecordByDescRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__Fk_USCOREgetAllRecordByDesc.ns1__Fk_USCOREgetAllRecordByDesc_ = ns1__Fk_USCOREgetAllRecordByDesc_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__Fk_USCOREgetAllRecordByDesc(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecordByDesc);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__Fk_USCOREgetAllRecordByDesc(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecordByDesc, "-ns1:Fk_getAllRecordByDesc", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__Fk_USCOREgetAllRecordByDesc(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecordByDesc, "-ns1:Fk_getAllRecordByDesc", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__Fk_USCOREgetAllRecordByDescResponse_)
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetAllRecordByDescResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetAllRecordByDescResponse_->soap_get(soap, "ns1:Fk_getAllRecordByDescResponse", "ns1:Fk_getAllRecordByDescResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::Fk_USCOREgetCountAllRecordByDesc(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetCountAllRecordByDesc *ns1__Fk_USCOREgetCountAllRecordByDesc_, ns1__Fk_USCOREgetCountAllRecordByDescResponse *ns1__Fk_USCOREgetCountAllRecordByDescResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__Fk_USCOREgetCountAllRecordByDesc soap_tmp___ns1__Fk_USCOREgetCountAllRecordByDesc;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/Fk_getCountAllRecordByDescRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__Fk_USCOREgetCountAllRecordByDesc.ns1__Fk_USCOREgetCountAllRecordByDesc_ = ns1__Fk_USCOREgetCountAllRecordByDesc_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__Fk_USCOREgetCountAllRecordByDesc(soap, &soap_tmp___ns1__Fk_USCOREgetCountAllRecordByDesc);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__Fk_USCOREgetCountAllRecordByDesc(soap, &soap_tmp___ns1__Fk_USCOREgetCountAllRecordByDesc, "-ns1:Fk_getCountAllRecordByDesc", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__Fk_USCOREgetCountAllRecordByDesc(soap, &soap_tmp___ns1__Fk_USCOREgetCountAllRecordByDesc, "-ns1:Fk_getCountAllRecordByDesc", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__Fk_USCOREgetCountAllRecordByDescResponse_)
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetCountAllRecordByDescResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetCountAllRecordByDescResponse_->soap_get(soap, "ns1:Fk_getCountAllRecordByDescResponse", "ns1:Fk_getCountAllRecordByDescResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::Fk_USCOREgetCountAllRecordByIndexDesc(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetCountAllRecordByIndexDesc *ns1__Fk_USCOREgetCountAllRecordByIndexDesc_, ns1__Fk_USCOREgetCountAllRecordByIndexDescResponse *ns1__Fk_USCOREgetCountAllRecordByIndexDescResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__Fk_USCOREgetCountAllRecordByIndexDesc soap_tmp___ns1__Fk_USCOREgetCountAllRecordByIndexDesc;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/Fk_getCountAllRecordByIndexDescRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__Fk_USCOREgetCountAllRecordByIndexDesc.ns1__Fk_USCOREgetCountAllRecordByIndexDesc_ = ns1__Fk_USCOREgetCountAllRecordByIndexDesc_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__Fk_USCOREgetCountAllRecordByIndexDesc(soap, &soap_tmp___ns1__Fk_USCOREgetCountAllRecordByIndexDesc);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__Fk_USCOREgetCountAllRecordByIndexDesc(soap, &soap_tmp___ns1__Fk_USCOREgetCountAllRecordByIndexDesc, "-ns1:Fk_getCountAllRecordByIndexDesc", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__Fk_USCOREgetCountAllRecordByIndexDesc(soap, &soap_tmp___ns1__Fk_USCOREgetCountAllRecordByIndexDesc, "-ns1:Fk_getCountAllRecordByIndexDesc", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__Fk_USCOREgetCountAllRecordByIndexDescResponse_)
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetCountAllRecordByIndexDescResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetCountAllRecordByIndexDescResponse_->soap_get(soap, "ns1:Fk_getCountAllRecordByIndexDescResponse", "ns1:Fk_getCountAllRecordByIndexDescResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::Fk_USCOREgetAllRecordByIndexDesc(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetAllRecordByIndexDesc *ns1__Fk_USCOREgetAllRecordByIndexDesc_, ns1__Fk_USCOREgetAllRecordByIndexDescResponse *ns1__Fk_USCOREgetAllRecordByIndexDescResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__Fk_USCOREgetAllRecordByIndexDesc soap_tmp___ns1__Fk_USCOREgetAllRecordByIndexDesc;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/Fk_getAllRecordByIndexDescRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__Fk_USCOREgetAllRecordByIndexDesc.ns1__Fk_USCOREgetAllRecordByIndexDesc_ = ns1__Fk_USCOREgetAllRecordByIndexDesc_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__Fk_USCOREgetAllRecordByIndexDesc(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecordByIndexDesc);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__Fk_USCOREgetAllRecordByIndexDesc(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecordByIndexDesc, "-ns1:Fk_getAllRecordByIndexDesc", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__Fk_USCOREgetAllRecordByIndexDesc(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecordByIndexDesc, "-ns1:Fk_getAllRecordByIndexDesc", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__Fk_USCOREgetAllRecordByIndexDescResponse_)
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetAllRecordByIndexDescResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__Fk_USCOREgetAllRecordByIndexDescResponse_->soap_get(soap, "ns1:Fk_getAllRecordByIndexDescResponse", "ns1:Fk_getAllRecordByIndexDescResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::InsertDataWA(const char *endpoint, const char *soap_action, ns1__InsertDataWA *ns1__InsertDataWA_, ns1__InsertDataWAResponse *ns1__InsertDataWAResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__InsertDataWA soap_tmp___ns1__InsertDataWA;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/InsertDataWARequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__InsertDataWA.ns1__InsertDataWA_ = ns1__InsertDataWA_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__InsertDataWA(soap, &soap_tmp___ns1__InsertDataWA);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__InsertDataWA(soap, &soap_tmp___ns1__InsertDataWA, "-ns1:InsertDataWA", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__InsertDataWA(soap, &soap_tmp___ns1__InsertDataWA, "-ns1:InsertDataWA", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__InsertDataWAResponse_)
+		return soap_closesock(soap);
+	ns1__InsertDataWAResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__InsertDataWAResponse_->soap_get(soap, "ns1:InsertDataWAResponse", "ns1:InsertDataWAResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::GetListDataWA(const char *endpoint, const char *soap_action, ns1__GetListDataWA *ns1__GetListDataWA_, ns1__GetListDataWAResponse *ns1__GetListDataWAResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__GetListDataWA soap_tmp___ns1__GetListDataWA;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/GetListDataWARequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__GetListDataWA.ns1__GetListDataWA_ = ns1__GetListDataWA_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__GetListDataWA(soap, &soap_tmp___ns1__GetListDataWA);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__GetListDataWA(soap, &soap_tmp___ns1__GetListDataWA, "-ns1:GetListDataWA", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__GetListDataWA(soap, &soap_tmp___ns1__GetListDataWA, "-ns1:GetListDataWA", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__GetListDataWAResponse_)
+		return soap_closesock(soap);
+	ns1__GetListDataWAResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__GetListDataWAResponse_->soap_get(soap, "ns1:GetListDataWAResponse", "ns1:GetListDataWAResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::ModifyDataWA(const char *endpoint, const char *soap_action, ns1__ModifyDataWA *ns1__ModifyDataWA_, ns1__ModifyDataWAResponse *ns1__ModifyDataWAResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__ModifyDataWA soap_tmp___ns1__ModifyDataWA;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/ModifyDataWARequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__ModifyDataWA.ns1__ModifyDataWA_ = ns1__ModifyDataWA_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__ModifyDataWA(soap, &soap_tmp___ns1__ModifyDataWA);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__ModifyDataWA(soap, &soap_tmp___ns1__ModifyDataWA, "-ns1:ModifyDataWA", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__ModifyDataWA(soap, &soap_tmp___ns1__ModifyDataWA, "-ns1:ModifyDataWA", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__ModifyDataWAResponse_)
+		return soap_closesock(soap);
+	ns1__ModifyDataWAResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__ModifyDataWAResponse_->soap_get(soap, "ns1:ModifyDataWAResponse", "ns1:ModifyDataWAResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::DeleteDataWA(const char *endpoint, const char *soap_action, ns1__DeleteDataWA *ns1__DeleteDataWA_, ns1__DeleteDataWAResponse *ns1__DeleteDataWAResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__DeleteDataWA soap_tmp___ns1__DeleteDataWA;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/DeleteDataWARequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__DeleteDataWA.ns1__DeleteDataWA_ = ns1__DeleteDataWA_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__DeleteDataWA(soap, &soap_tmp___ns1__DeleteDataWA);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__DeleteDataWA(soap, &soap_tmp___ns1__DeleteDataWA, "-ns1:DeleteDataWA", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__DeleteDataWA(soap, &soap_tmp___ns1__DeleteDataWA, "-ns1:DeleteDataWA", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__DeleteDataWAResponse_)
+		return soap_closesock(soap);
+	ns1__DeleteDataWAResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__DeleteDataWAResponse_->soap_get(soap, "ns1:DeleteDataWAResponse", "ns1:DeleteDataWAResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::GetDataWAById(const char *endpoint, const char *soap_action, ns1__GetDataWAById *ns1__GetDataWAById_, ns1__GetDataWAByIdResponse *ns1__GetDataWAByIdResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__GetDataWAById soap_tmp___ns1__GetDataWAById;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/GetDataWAByIdRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__GetDataWAById.ns1__GetDataWAById_ = ns1__GetDataWAById_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__GetDataWAById(soap, &soap_tmp___ns1__GetDataWAById);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__GetDataWAById(soap, &soap_tmp___ns1__GetDataWAById, "-ns1:GetDataWAById", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__GetDataWAById(soap, &soap_tmp___ns1__GetDataWAById, "-ns1:GetDataWAById", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__GetDataWAByIdResponse_)
+		return soap_closesock(soap);
+	ns1__GetDataWAByIdResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__GetDataWAByIdResponse_->soap_get(soap, "ns1:GetDataWAByIdResponse", "ns1:GetDataWAByIdResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::InsertFileWA(const char *endpoint, const char *soap_action, ns1__InsertFileWA *ns1__InsertFileWA_, ns1__InsertFileWAResponse *ns1__InsertFileWAResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__InsertFileWA soap_tmp___ns1__InsertFileWA;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/InsertFileWARequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__InsertFileWA.ns1__InsertFileWA_ = ns1__InsertFileWA_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__InsertFileWA(soap, &soap_tmp___ns1__InsertFileWA);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__InsertFileWA(soap, &soap_tmp___ns1__InsertFileWA, "-ns1:InsertFileWA", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__InsertFileWA(soap, &soap_tmp___ns1__InsertFileWA, "-ns1:InsertFileWA", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__InsertFileWAResponse_)
+		return soap_closesock(soap);
+	ns1__InsertFileWAResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__InsertFileWAResponse_->soap_get(soap, "ns1:InsertFileWAResponse", "ns1:InsertFileWAResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::UploadSendChunkWA(const char *endpoint, const char *soap_action, ns1__UploadSendChunkWA *ns1__UploadSendChunkWA_, ns1__UploadSendChunkWAResponse *ns1__UploadSendChunkWAResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__UploadSendChunkWA soap_tmp___ns1__UploadSendChunkWA;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/UploadSendChunkWARequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__UploadSendChunkWA.ns1__UploadSendChunkWA_ = ns1__UploadSendChunkWA_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__UploadSendChunkWA(soap, &soap_tmp___ns1__UploadSendChunkWA);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__UploadSendChunkWA(soap, &soap_tmp___ns1__UploadSendChunkWA, "-ns1:UploadSendChunkWA", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__UploadSendChunkWA(soap, &soap_tmp___ns1__UploadSendChunkWA, "-ns1:UploadSendChunkWA", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__UploadSendChunkWAResponse_)
+		return soap_closesock(soap);
+	ns1__UploadSendChunkWAResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__UploadSendChunkWAResponse_->soap_get(soap, "ns1:UploadSendChunkWAResponse", "ns1:UploadSendChunkWAResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::UploadEndFileWA(const char *endpoint, const char *soap_action, ns1__UploadEndFileWA *ns1__UploadEndFileWA_, ns1__UploadEndFileWAResponse *ns1__UploadEndFileWAResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__UploadEndFileWA soap_tmp___ns1__UploadEndFileWA;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/UploadEndFileWARequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__UploadEndFileWA.ns1__UploadEndFileWA_ = ns1__UploadEndFileWA_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__UploadEndFileWA(soap, &soap_tmp___ns1__UploadEndFileWA);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__UploadEndFileWA(soap, &soap_tmp___ns1__UploadEndFileWA, "-ns1:UploadEndFileWA", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__UploadEndFileWA(soap, &soap_tmp___ns1__UploadEndFileWA, "-ns1:UploadEndFileWA", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__UploadEndFileWAResponse_)
+		return soap_closesock(soap);
+	ns1__UploadEndFileWAResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__UploadEndFileWAResponse_->soap_get(soap, "ns1:UploadEndFileWAResponse", "ns1:UploadEndFileWAResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::GetDataFileListWA(const char *endpoint, const char *soap_action, ns1__GetDataFileListWA *ns1__GetDataFileListWA_, ns1__GetDataFileListWAResponse *ns1__GetDataFileListWAResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__GetDataFileListWA soap_tmp___ns1__GetDataFileListWA;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/GetDataFileListWARequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__GetDataFileListWA.ns1__GetDataFileListWA_ = ns1__GetDataFileListWA_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__GetDataFileListWA(soap, &soap_tmp___ns1__GetDataFileListWA);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__GetDataFileListWA(soap, &soap_tmp___ns1__GetDataFileListWA, "-ns1:GetDataFileListWA", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__GetDataFileListWA(soap, &soap_tmp___ns1__GetDataFileListWA, "-ns1:GetDataFileListWA", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__GetDataFileListWAResponse_)
+		return soap_closesock(soap);
+	ns1__GetDataFileListWAResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__GetDataFileListWAResponse_->soap_get(soap, "ns1:GetDataFileListWAResponse", "ns1:GetDataFileListWAResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::DownloadFileWAByFileUniqueCode(const char *endpoint, const char *soap_action, ns1__DownloadFileWAByFileUniqueCode *ns1__DownloadFileWAByFileUniqueCode_, ns1__DownloadFileWAByFileUniqueCodeResponse *ns1__DownloadFileWAByFileUniqueCodeResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__DownloadFileWAByFileUniqueCode soap_tmp___ns1__DownloadFileWAByFileUniqueCode;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/DownloadFileWAByFileUniqueCodeRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__DownloadFileWAByFileUniqueCode.ns1__DownloadFileWAByFileUniqueCode_ = ns1__DownloadFileWAByFileUniqueCode_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__DownloadFileWAByFileUniqueCode(soap, &soap_tmp___ns1__DownloadFileWAByFileUniqueCode);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__DownloadFileWAByFileUniqueCode(soap, &soap_tmp___ns1__DownloadFileWAByFileUniqueCode, "-ns1:DownloadFileWAByFileUniqueCode", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__DownloadFileWAByFileUniqueCode(soap, &soap_tmp___ns1__DownloadFileWAByFileUniqueCode, "-ns1:DownloadFileWAByFileUniqueCode", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__DownloadFileWAByFileUniqueCodeResponse_)
+		return soap_closesock(soap);
+	ns1__DownloadFileWAByFileUniqueCodeResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__DownloadFileWAByFileUniqueCodeResponse_->soap_get(soap, "ns1:DownloadFileWAByFileUniqueCodeResponse", "ns1:DownloadFileWAByFileUniqueCodeResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::DownloadFileWA(const char *endpoint, const char *soap_action, ns1__DownloadFileWA *ns1__DownloadFileWA_, ns1__DownloadFileWAResponse *ns1__DownloadFileWAResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__DownloadFileWA soap_tmp___ns1__DownloadFileWA;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/DownloadFileWARequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__DownloadFileWA.ns1__DownloadFileWA_ = ns1__DownloadFileWA_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__DownloadFileWA(soap, &soap_tmp___ns1__DownloadFileWA);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__DownloadFileWA(soap, &soap_tmp___ns1__DownloadFileWA, "-ns1:DownloadFileWA", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__DownloadFileWA(soap, &soap_tmp___ns1__DownloadFileWA, "-ns1:DownloadFileWA", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__DownloadFileWAResponse_)
+		return soap_closesock(soap);
+	ns1__DownloadFileWAResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__DownloadFileWAResponse_->soap_get(soap, "ns1:DownloadFileWAResponse", "ns1:DownloadFileWAResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::DownloadGetNextWA(const char *endpoint, const char *soap_action, ns1__DownloadGetNextWA *ns1__DownloadGetNextWA_, ns1__DownloadGetNextWAResponse *ns1__DownloadGetNextWAResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__DownloadGetNextWA soap_tmp___ns1__DownloadGetNextWA;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/DownloadGetNextWARequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__DownloadGetNextWA.ns1__DownloadGetNextWA_ = ns1__DownloadGetNextWA_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__DownloadGetNextWA(soap, &soap_tmp___ns1__DownloadGetNextWA);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__DownloadGetNextWA(soap, &soap_tmp___ns1__DownloadGetNextWA, "-ns1:DownloadGetNextWA", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__DownloadGetNextWA(soap, &soap_tmp___ns1__DownloadGetNextWA, "-ns1:DownloadGetNextWA", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__DownloadGetNextWAResponse_)
+		return soap_closesock(soap);
+	ns1__DownloadGetNextWAResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__DownloadGetNextWAResponse_->soap_get(soap, "ns1:DownloadGetNextWAResponse", "ns1:DownloadGetNextWAResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::DownloadEndFileWA(const char *endpoint, const char *soap_action, ns1__DownloadEndFileWA *ns1__DownloadEndFileWA_, ns1__DownloadEndFileWAResponse *ns1__DownloadEndFileWAResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__DownloadEndFileWA soap_tmp___ns1__DownloadEndFileWA;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/DownloadEndFileWARequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__DownloadEndFileWA.ns1__DownloadEndFileWA_ = ns1__DownloadEndFileWA_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__DownloadEndFileWA(soap, &soap_tmp___ns1__DownloadEndFileWA);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__DownloadEndFileWA(soap, &soap_tmp___ns1__DownloadEndFileWA, "-ns1:DownloadEndFileWA", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__DownloadEndFileWA(soap, &soap_tmp___ns1__DownloadEndFileWA, "-ns1:DownloadEndFileWA", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__DownloadEndFileWAResponse_)
+		return soap_closesock(soap);
+	ns1__DownloadEndFileWAResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__DownloadEndFileWAResponse_->soap_get(soap, "ns1:DownloadEndFileWAResponse", "ns1:DownloadEndFileWAResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::DeleteFileWA(const char *endpoint, const char *soap_action, ns1__DeleteFileWA *ns1__DeleteFileWA_, ns1__DeleteFileWAResponse *ns1__DeleteFileWAResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__DeleteFileWA soap_tmp___ns1__DeleteFileWA;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/DeleteFileWARequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__DeleteFileWA.ns1__DeleteFileWA_ = ns1__DeleteFileWA_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__DeleteFileWA(soap, &soap_tmp___ns1__DeleteFileWA);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__DeleteFileWA(soap, &soap_tmp___ns1__DeleteFileWA, "-ns1:DeleteFileWA", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__DeleteFileWA(soap, &soap_tmp___ns1__DeleteFileWA, "-ns1:DeleteFileWA", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__DeleteFileWAResponse_)
+		return soap_closesock(soap);
+	ns1__DeleteFileWAResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__DeleteFileWAResponse_->soap_get(soap, "ns1:DeleteFileWAResponse", "ns1:DeleteFileWAResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::GetCountDocumentLinks(const char *endpoint, const char *soap_action, ns1__GetCountDocumentLinks *ns1__GetCountDocumentLinks_, ns1__GetCountDocumentLinksResponse *ns1__GetCountDocumentLinksResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__GetCountDocumentLinks soap_tmp___ns1__GetCountDocumentLinks;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/GetCountDocumentLinksRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__GetCountDocumentLinks.ns1__GetCountDocumentLinks_ = ns1__GetCountDocumentLinks_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__GetCountDocumentLinks(soap, &soap_tmp___ns1__GetCountDocumentLinks);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__GetCountDocumentLinks(soap, &soap_tmp___ns1__GetCountDocumentLinks, "-ns1:GetCountDocumentLinks", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__GetCountDocumentLinks(soap, &soap_tmp___ns1__GetCountDocumentLinks, "-ns1:GetCountDocumentLinks", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__GetCountDocumentLinksResponse_)
+		return soap_closesock(soap);
+	ns1__GetCountDocumentLinksResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__GetCountDocumentLinksResponse_->soap_get(soap, "ns1:GetCountDocumentLinksResponse", "ns1:GetCountDocumentLinksResponse");
 	if (soap->error)
 		return soap_recv_fault(soap, 0);
 	if (soap_body_end_in(soap)
@@ -1046,60 +2504,6 @@ int abxWsGestPortBindingProxy::DeleteDynorg(const char *endpoint, const char *so
 	return soap_closesock(soap);
 }
 
-int abxWsGestPortBindingProxy::DigitalSign(const char *endpoint, const char *soap_action, ns1__DigitalSign *ns1__DigitalSign_, ns1__DigitalSignResponse *ns1__DigitalSignResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__DigitalSign soap_tmp___ns1__DigitalSign;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/DigitalSignRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__DigitalSign.ns1__DigitalSign_ = ns1__DigitalSign_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__DigitalSign(soap, &soap_tmp___ns1__DigitalSign);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__DigitalSign(soap, &soap_tmp___ns1__DigitalSign, "-ns1:DigitalSign", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__DigitalSign(soap, &soap_tmp___ns1__DigitalSign, "-ns1:DigitalSign", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__DigitalSignResponse_)
-		return soap_closesock(soap);
-	ns1__DigitalSignResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__DigitalSignResponse_->soap_get(soap, "ns1:DigitalSignResponse", "ns1:DigitalSignResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
 int abxWsGestPortBindingProxy::GetArchiBoxInDomainByMatricola(const char *endpoint, const char *soap_action, ns1__GetArchiBoxInDomainByMatricola *ns1__GetArchiBoxInDomainByMatricola_, ns1__GetArchiBoxInDomainByMatricolaResponse *ns1__GetArchiBoxInDomainByMatricolaResponse_)
 {	struct soap *soap = this->soap;
 	struct __ns1__GetArchiBoxInDomainByMatricola soap_tmp___ns1__GetArchiBoxInDomainByMatricola;
@@ -1262,6 +2666,60 @@ int abxWsGestPortBindingProxy::GetArchiBoxInDomain(const char *endpoint, const c
 	return soap_closesock(soap);
 }
 
+int abxWsGestPortBindingProxy::DigitalSign(const char *endpoint, const char *soap_action, ns1__DigitalSign *ns1__DigitalSign_, ns1__DigitalSignResponse *ns1__DigitalSignResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__DigitalSign soap_tmp___ns1__DigitalSign;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/DigitalSignRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__DigitalSign.ns1__DigitalSign_ = ns1__DigitalSign_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__DigitalSign(soap, &soap_tmp___ns1__DigitalSign);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__DigitalSign(soap, &soap_tmp___ns1__DigitalSign, "-ns1:DigitalSign", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__DigitalSign(soap, &soap_tmp___ns1__DigitalSign, "-ns1:DigitalSign", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__DigitalSignResponse_)
+		return soap_closesock(soap);
+	ns1__DigitalSignResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__DigitalSignResponse_->soap_get(soap, "ns1:DigitalSignResponse", "ns1:DigitalSignResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
 int abxWsGestPortBindingProxy::GetInstanceReplicationStatus(const char *endpoint, const char *soap_action, ns1__GetInstanceReplicationStatus *ns1__GetInstanceReplicationStatus_, ns1__GetInstanceReplicationStatusResponse *ns1__GetInstanceReplicationStatusResponse_)
 {	struct soap *soap = this->soap;
 	struct __ns1__GetInstanceReplicationStatus soap_tmp___ns1__GetInstanceReplicationStatus;
@@ -1316,27 +2774,27 @@ int abxWsGestPortBindingProxy::GetInstanceReplicationStatus(const char *endpoint
 	return soap_closesock(soap);
 }
 
-int abxWsGestPortBindingProxy::GetCountDocumentLinks(const char *endpoint, const char *soap_action, ns1__GetCountDocumentLinks *ns1__GetCountDocumentLinks_, ns1__GetCountDocumentLinksResponse *ns1__GetCountDocumentLinksResponse_)
+int abxWsGestPortBindingProxy::CreateContainer(const char *endpoint, const char *soap_action, ns1__CreateContainer *ns1__CreateContainer_, ns1__CreateContainerResponse *ns1__CreateContainerResponse_)
 {	struct soap *soap = this->soap;
-	struct __ns1__GetCountDocumentLinks soap_tmp___ns1__GetCountDocumentLinks;
+	struct __ns1__CreateContainer soap_tmp___ns1__CreateContainer;
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
 		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
 	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/GetCountDocumentLinksRequest";
+		soap_action = "http://ws.abx/abxWsGest/CreateContainerRequest";
 	soap_begin(soap);
 	soap->encodingStyle = NULL;
-	soap_tmp___ns1__GetCountDocumentLinks.ns1__GetCountDocumentLinks_ = ns1__GetCountDocumentLinks_;
+	soap_tmp___ns1__CreateContainer.ns1__CreateContainer_ = ns1__CreateContainer_;
 	soap_serializeheader(soap);
-	soap_serialize___ns1__GetCountDocumentLinks(soap, &soap_tmp___ns1__GetCountDocumentLinks);
+	soap_serialize___ns1__CreateContainer(soap, &soap_tmp___ns1__CreateContainer);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__GetCountDocumentLinks(soap, &soap_tmp___ns1__GetCountDocumentLinks, "-ns1:GetCountDocumentLinks", NULL)
+		 || soap_put___ns1__CreateContainer(soap, &soap_tmp___ns1__CreateContainer, "-ns1:CreateContainer", NULL)
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -1347,20 +2805,20 @@ int abxWsGestPortBindingProxy::GetCountDocumentLinks(const char *endpoint, const
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__GetCountDocumentLinks(soap, &soap_tmp___ns1__GetCountDocumentLinks, "-ns1:GetCountDocumentLinks", NULL)
+	 || soap_put___ns1__CreateContainer(soap, &soap_tmp___ns1__CreateContainer, "-ns1:CreateContainer", NULL)
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
 		return soap_closesock(soap);
-	if (!ns1__GetCountDocumentLinksResponse_)
+	if (!ns1__CreateContainerResponse_)
 		return soap_closesock(soap);
-	ns1__GetCountDocumentLinksResponse_->soap_default(soap);
+	ns1__CreateContainerResponse_->soap_default(soap);
 	if (soap_begin_recv(soap)
 	 || soap_envelope_begin_in(soap)
 	 || soap_recv_header(soap)
 	 || soap_body_begin_in(soap))
 		return soap_closesock(soap);
-	ns1__GetCountDocumentLinksResponse_->soap_get(soap, "ns1:GetCountDocumentLinksResponse", "ns1:GetCountDocumentLinksResponse");
+	ns1__CreateContainerResponse_->soap_get(soap, "ns1:CreateContainerResponse", "ns1:CreateContainerResponse");
 	if (soap->error)
 		return soap_recv_fault(soap, 0);
 	if (soap_body_end_in(soap)
@@ -1370,27 +2828,27 @@ int abxWsGestPortBindingProxy::GetCountDocumentLinks(const char *endpoint, const
 	return soap_closesock(soap);
 }
 
-int abxWsGestPortBindingProxy::InsertDataWA(const char *endpoint, const char *soap_action, ns1__InsertDataWA *ns1__InsertDataWA_, ns1__InsertDataWAResponse *ns1__InsertDataWAResponse_)
+int abxWsGestPortBindingProxy::CreateTemplate(const char *endpoint, const char *soap_action, ns1__CreateTemplate *ns1__CreateTemplate_, ns1__CreateTemplateResponse *ns1__CreateTemplateResponse_)
 {	struct soap *soap = this->soap;
-	struct __ns1__InsertDataWA soap_tmp___ns1__InsertDataWA;
+	struct __ns1__CreateTemplate soap_tmp___ns1__CreateTemplate;
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
 		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
 	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/InsertDataWARequest";
+		soap_action = "http://ws.abx/abxWsGest/CreateTemplateRequest";
 	soap_begin(soap);
 	soap->encodingStyle = NULL;
-	soap_tmp___ns1__InsertDataWA.ns1__InsertDataWA_ = ns1__InsertDataWA_;
+	soap_tmp___ns1__CreateTemplate.ns1__CreateTemplate_ = ns1__CreateTemplate_;
 	soap_serializeheader(soap);
-	soap_serialize___ns1__InsertDataWA(soap, &soap_tmp___ns1__InsertDataWA);
+	soap_serialize___ns1__CreateTemplate(soap, &soap_tmp___ns1__CreateTemplate);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__InsertDataWA(soap, &soap_tmp___ns1__InsertDataWA, "-ns1:InsertDataWA", NULL)
+		 || soap_put___ns1__CreateTemplate(soap, &soap_tmp___ns1__CreateTemplate, "-ns1:CreateTemplate", NULL)
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -1401,20 +2859,20 @@ int abxWsGestPortBindingProxy::InsertDataWA(const char *endpoint, const char *so
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__InsertDataWA(soap, &soap_tmp___ns1__InsertDataWA, "-ns1:InsertDataWA", NULL)
+	 || soap_put___ns1__CreateTemplate(soap, &soap_tmp___ns1__CreateTemplate, "-ns1:CreateTemplate", NULL)
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
 		return soap_closesock(soap);
-	if (!ns1__InsertDataWAResponse_)
+	if (!ns1__CreateTemplateResponse_)
 		return soap_closesock(soap);
-	ns1__InsertDataWAResponse_->soap_default(soap);
+	ns1__CreateTemplateResponse_->soap_default(soap);
 	if (soap_begin_recv(soap)
 	 || soap_envelope_begin_in(soap)
 	 || soap_recv_header(soap)
 	 || soap_body_begin_in(soap))
 		return soap_closesock(soap);
-	ns1__InsertDataWAResponse_->soap_get(soap, "ns1:InsertDataWAResponse", "ns1:InsertDataWAResponse");
+	ns1__CreateTemplateResponse_->soap_get(soap, "ns1:CreateTemplateResponse", "ns1:CreateTemplateResponse");
 	if (soap->error)
 		return soap_recv_fault(soap, 0);
 	if (soap_body_end_in(soap)
@@ -1424,27 +2882,27 @@ int abxWsGestPortBindingProxy::InsertDataWA(const char *endpoint, const char *so
 	return soap_closesock(soap);
 }
 
-int abxWsGestPortBindingProxy::ModifyDataWA(const char *endpoint, const char *soap_action, ns1__ModifyDataWA *ns1__ModifyDataWA_, ns1__ModifyDataWAResponse *ns1__ModifyDataWAResponse_)
+int abxWsGestPortBindingProxy::CreateDynorg(const char *endpoint, const char *soap_action, ns1__CreateDynorg *ns1__CreateDynorg_, ns1__CreateDynorgResponse *ns1__CreateDynorgResponse_)
 {	struct soap *soap = this->soap;
-	struct __ns1__ModifyDataWA soap_tmp___ns1__ModifyDataWA;
+	struct __ns1__CreateDynorg soap_tmp___ns1__CreateDynorg;
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
 		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
 	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/ModifyDataWARequest";
+		soap_action = "http://ws.abx/abxWsGest/CreateDynorgRequest";
 	soap_begin(soap);
 	soap->encodingStyle = NULL;
-	soap_tmp___ns1__ModifyDataWA.ns1__ModifyDataWA_ = ns1__ModifyDataWA_;
+	soap_tmp___ns1__CreateDynorg.ns1__CreateDynorg_ = ns1__CreateDynorg_;
 	soap_serializeheader(soap);
-	soap_serialize___ns1__ModifyDataWA(soap, &soap_tmp___ns1__ModifyDataWA);
+	soap_serialize___ns1__CreateDynorg(soap, &soap_tmp___ns1__CreateDynorg);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__ModifyDataWA(soap, &soap_tmp___ns1__ModifyDataWA, "-ns1:ModifyDataWA", NULL)
+		 || soap_put___ns1__CreateDynorg(soap, &soap_tmp___ns1__CreateDynorg, "-ns1:CreateDynorg", NULL)
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -1455,1424 +2913,20 @@ int abxWsGestPortBindingProxy::ModifyDataWA(const char *endpoint, const char *so
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__ModifyDataWA(soap, &soap_tmp___ns1__ModifyDataWA, "-ns1:ModifyDataWA", NULL)
+	 || soap_put___ns1__CreateDynorg(soap, &soap_tmp___ns1__CreateDynorg, "-ns1:CreateDynorg", NULL)
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
 		return soap_closesock(soap);
-	if (!ns1__ModifyDataWAResponse_)
+	if (!ns1__CreateDynorgResponse_)
 		return soap_closesock(soap);
-	ns1__ModifyDataWAResponse_->soap_default(soap);
+	ns1__CreateDynorgResponse_->soap_default(soap);
 	if (soap_begin_recv(soap)
 	 || soap_envelope_begin_in(soap)
 	 || soap_recv_header(soap)
 	 || soap_body_begin_in(soap))
 		return soap_closesock(soap);
-	ns1__ModifyDataWAResponse_->soap_get(soap, "ns1:ModifyDataWAResponse", "ns1:ModifyDataWAResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::DeleteDataWA(const char *endpoint, const char *soap_action, ns1__DeleteDataWA *ns1__DeleteDataWA_, ns1__DeleteDataWAResponse *ns1__DeleteDataWAResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__DeleteDataWA soap_tmp___ns1__DeleteDataWA;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/DeleteDataWARequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__DeleteDataWA.ns1__DeleteDataWA_ = ns1__DeleteDataWA_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__DeleteDataWA(soap, &soap_tmp___ns1__DeleteDataWA);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__DeleteDataWA(soap, &soap_tmp___ns1__DeleteDataWA, "-ns1:DeleteDataWA", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__DeleteDataWA(soap, &soap_tmp___ns1__DeleteDataWA, "-ns1:DeleteDataWA", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__DeleteDataWAResponse_)
-		return soap_closesock(soap);
-	ns1__DeleteDataWAResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__DeleteDataWAResponse_->soap_get(soap, "ns1:DeleteDataWAResponse", "ns1:DeleteDataWAResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::GetListDataWA(const char *endpoint, const char *soap_action, ns1__GetListDataWA *ns1__GetListDataWA_, ns1__GetListDataWAResponse *ns1__GetListDataWAResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__GetListDataWA soap_tmp___ns1__GetListDataWA;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/GetListDataWARequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__GetListDataWA.ns1__GetListDataWA_ = ns1__GetListDataWA_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__GetListDataWA(soap, &soap_tmp___ns1__GetListDataWA);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__GetListDataWA(soap, &soap_tmp___ns1__GetListDataWA, "-ns1:GetListDataWA", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__GetListDataWA(soap, &soap_tmp___ns1__GetListDataWA, "-ns1:GetListDataWA", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__GetListDataWAResponse_)
-		return soap_closesock(soap);
-	ns1__GetListDataWAResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__GetListDataWAResponse_->soap_get(soap, "ns1:GetListDataWAResponse", "ns1:GetListDataWAResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::GetDataWAById(const char *endpoint, const char *soap_action, ns1__GetDataWAById *ns1__GetDataWAById_, ns1__GetDataWAByIdResponse *ns1__GetDataWAByIdResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__GetDataWAById soap_tmp___ns1__GetDataWAById;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/GetDataWAByIdRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__GetDataWAById.ns1__GetDataWAById_ = ns1__GetDataWAById_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__GetDataWAById(soap, &soap_tmp___ns1__GetDataWAById);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__GetDataWAById(soap, &soap_tmp___ns1__GetDataWAById, "-ns1:GetDataWAById", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__GetDataWAById(soap, &soap_tmp___ns1__GetDataWAById, "-ns1:GetDataWAById", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__GetDataWAByIdResponse_)
-		return soap_closesock(soap);
-	ns1__GetDataWAByIdResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__GetDataWAByIdResponse_->soap_get(soap, "ns1:GetDataWAByIdResponse", "ns1:GetDataWAByIdResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::InsertFileWA(const char *endpoint, const char *soap_action, ns1__InsertFileWA *ns1__InsertFileWA_, ns1__InsertFileWAResponse *ns1__InsertFileWAResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__InsertFileWA soap_tmp___ns1__InsertFileWA;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/InsertFileWARequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__InsertFileWA.ns1__InsertFileWA_ = ns1__InsertFileWA_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__InsertFileWA(soap, &soap_tmp___ns1__InsertFileWA);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__InsertFileWA(soap, &soap_tmp___ns1__InsertFileWA, "-ns1:InsertFileWA", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__InsertFileWA(soap, &soap_tmp___ns1__InsertFileWA, "-ns1:InsertFileWA", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__InsertFileWAResponse_)
-		return soap_closesock(soap);
-	ns1__InsertFileWAResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__InsertFileWAResponse_->soap_get(soap, "ns1:InsertFileWAResponse", "ns1:InsertFileWAResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::UploadSendChunkWA(const char *endpoint, const char *soap_action, ns1__UploadSendChunkWA *ns1__UploadSendChunkWA_, ns1__UploadSendChunkWAResponse *ns1__UploadSendChunkWAResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__UploadSendChunkWA soap_tmp___ns1__UploadSendChunkWA;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/UploadSendChunkWARequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__UploadSendChunkWA.ns1__UploadSendChunkWA_ = ns1__UploadSendChunkWA_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__UploadSendChunkWA(soap, &soap_tmp___ns1__UploadSendChunkWA);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__UploadSendChunkWA(soap, &soap_tmp___ns1__UploadSendChunkWA, "-ns1:UploadSendChunkWA", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__UploadSendChunkWA(soap, &soap_tmp___ns1__UploadSendChunkWA, "-ns1:UploadSendChunkWA", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__UploadSendChunkWAResponse_)
-		return soap_closesock(soap);
-	ns1__UploadSendChunkWAResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__UploadSendChunkWAResponse_->soap_get(soap, "ns1:UploadSendChunkWAResponse", "ns1:UploadSendChunkWAResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::UploadEndFileWA(const char *endpoint, const char *soap_action, ns1__UploadEndFileWA *ns1__UploadEndFileWA_, ns1__UploadEndFileWAResponse *ns1__UploadEndFileWAResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__UploadEndFileWA soap_tmp___ns1__UploadEndFileWA;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/UploadEndFileWARequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__UploadEndFileWA.ns1__UploadEndFileWA_ = ns1__UploadEndFileWA_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__UploadEndFileWA(soap, &soap_tmp___ns1__UploadEndFileWA);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__UploadEndFileWA(soap, &soap_tmp___ns1__UploadEndFileWA, "-ns1:UploadEndFileWA", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__UploadEndFileWA(soap, &soap_tmp___ns1__UploadEndFileWA, "-ns1:UploadEndFileWA", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__UploadEndFileWAResponse_)
-		return soap_closesock(soap);
-	ns1__UploadEndFileWAResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__UploadEndFileWAResponse_->soap_get(soap, "ns1:UploadEndFileWAResponse", "ns1:UploadEndFileWAResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::GetDataFileListWA(const char *endpoint, const char *soap_action, ns1__GetDataFileListWA *ns1__GetDataFileListWA_, ns1__GetDataFileListWAResponse *ns1__GetDataFileListWAResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__GetDataFileListWA soap_tmp___ns1__GetDataFileListWA;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/GetDataFileListWARequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__GetDataFileListWA.ns1__GetDataFileListWA_ = ns1__GetDataFileListWA_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__GetDataFileListWA(soap, &soap_tmp___ns1__GetDataFileListWA);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__GetDataFileListWA(soap, &soap_tmp___ns1__GetDataFileListWA, "-ns1:GetDataFileListWA", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__GetDataFileListWA(soap, &soap_tmp___ns1__GetDataFileListWA, "-ns1:GetDataFileListWA", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__GetDataFileListWAResponse_)
-		return soap_closesock(soap);
-	ns1__GetDataFileListWAResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__GetDataFileListWAResponse_->soap_get(soap, "ns1:GetDataFileListWAResponse", "ns1:GetDataFileListWAResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::DownloadFileWAByFileUniqueCode(const char *endpoint, const char *soap_action, ns1__DownloadFileWAByFileUniqueCode *ns1__DownloadFileWAByFileUniqueCode_, ns1__DownloadFileWAByFileUniqueCodeResponse *ns1__DownloadFileWAByFileUniqueCodeResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__DownloadFileWAByFileUniqueCode soap_tmp___ns1__DownloadFileWAByFileUniqueCode;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/DownloadFileWAByFileUniqueCodeRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__DownloadFileWAByFileUniqueCode.ns1__DownloadFileWAByFileUniqueCode_ = ns1__DownloadFileWAByFileUniqueCode_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__DownloadFileWAByFileUniqueCode(soap, &soap_tmp___ns1__DownloadFileWAByFileUniqueCode);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__DownloadFileWAByFileUniqueCode(soap, &soap_tmp___ns1__DownloadFileWAByFileUniqueCode, "-ns1:DownloadFileWAByFileUniqueCode", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__DownloadFileWAByFileUniqueCode(soap, &soap_tmp___ns1__DownloadFileWAByFileUniqueCode, "-ns1:DownloadFileWAByFileUniqueCode", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__DownloadFileWAByFileUniqueCodeResponse_)
-		return soap_closesock(soap);
-	ns1__DownloadFileWAByFileUniqueCodeResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__DownloadFileWAByFileUniqueCodeResponse_->soap_get(soap, "ns1:DownloadFileWAByFileUniqueCodeResponse", "ns1:DownloadFileWAByFileUniqueCodeResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::DownloadFileWA(const char *endpoint, const char *soap_action, ns1__DownloadFileWA *ns1__DownloadFileWA_, ns1__DownloadFileWAResponse *ns1__DownloadFileWAResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__DownloadFileWA soap_tmp___ns1__DownloadFileWA;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/DownloadFileWARequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__DownloadFileWA.ns1__DownloadFileWA_ = ns1__DownloadFileWA_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__DownloadFileWA(soap, &soap_tmp___ns1__DownloadFileWA);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__DownloadFileWA(soap, &soap_tmp___ns1__DownloadFileWA, "-ns1:DownloadFileWA", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__DownloadFileWA(soap, &soap_tmp___ns1__DownloadFileWA, "-ns1:DownloadFileWA", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__DownloadFileWAResponse_)
-		return soap_closesock(soap);
-	ns1__DownloadFileWAResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__DownloadFileWAResponse_->soap_get(soap, "ns1:DownloadFileWAResponse", "ns1:DownloadFileWAResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::DownloadGetNextWA(const char *endpoint, const char *soap_action, ns1__DownloadGetNextWA *ns1__DownloadGetNextWA_, ns1__DownloadGetNextWAResponse *ns1__DownloadGetNextWAResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__DownloadGetNextWA soap_tmp___ns1__DownloadGetNextWA;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/DownloadGetNextWARequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__DownloadGetNextWA.ns1__DownloadGetNextWA_ = ns1__DownloadGetNextWA_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__DownloadGetNextWA(soap, &soap_tmp___ns1__DownloadGetNextWA);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__DownloadGetNextWA(soap, &soap_tmp___ns1__DownloadGetNextWA, "-ns1:DownloadGetNextWA", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__DownloadGetNextWA(soap, &soap_tmp___ns1__DownloadGetNextWA, "-ns1:DownloadGetNextWA", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__DownloadGetNextWAResponse_)
-		return soap_closesock(soap);
-	ns1__DownloadGetNextWAResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__DownloadGetNextWAResponse_->soap_get(soap, "ns1:DownloadGetNextWAResponse", "ns1:DownloadGetNextWAResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::DownloadEndFileWA(const char *endpoint, const char *soap_action, ns1__DownloadEndFileWA *ns1__DownloadEndFileWA_, ns1__DownloadEndFileWAResponse *ns1__DownloadEndFileWAResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__DownloadEndFileWA soap_tmp___ns1__DownloadEndFileWA;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/DownloadEndFileWARequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__DownloadEndFileWA.ns1__DownloadEndFileWA_ = ns1__DownloadEndFileWA_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__DownloadEndFileWA(soap, &soap_tmp___ns1__DownloadEndFileWA);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__DownloadEndFileWA(soap, &soap_tmp___ns1__DownloadEndFileWA, "-ns1:DownloadEndFileWA", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__DownloadEndFileWA(soap, &soap_tmp___ns1__DownloadEndFileWA, "-ns1:DownloadEndFileWA", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__DownloadEndFileWAResponse_)
-		return soap_closesock(soap);
-	ns1__DownloadEndFileWAResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__DownloadEndFileWAResponse_->soap_get(soap, "ns1:DownloadEndFileWAResponse", "ns1:DownloadEndFileWAResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::DeleteFileWA(const char *endpoint, const char *soap_action, ns1__DeleteFileWA *ns1__DeleteFileWA_, ns1__DeleteFileWAResponse *ns1__DeleteFileWAResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__DeleteFileWA soap_tmp___ns1__DeleteFileWA;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/DeleteFileWARequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__DeleteFileWA.ns1__DeleteFileWA_ = ns1__DeleteFileWA_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__DeleteFileWA(soap, &soap_tmp___ns1__DeleteFileWA);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__DeleteFileWA(soap, &soap_tmp___ns1__DeleteFileWA, "-ns1:DeleteFileWA", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__DeleteFileWA(soap, &soap_tmp___ns1__DeleteFileWA, "-ns1:DeleteFileWA", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__DeleteFileWAResponse_)
-		return soap_closesock(soap);
-	ns1__DeleteFileWAResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__DeleteFileWAResponse_->soap_get(soap, "ns1:DeleteFileWAResponse", "ns1:DeleteFileWAResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::Fk_USCOREgetRemoteFieldList(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetRemoteFieldList *ns1__Fk_USCOREgetRemoteFieldList_, ns1__Fk_USCOREgetRemoteFieldListResponse *ns1__Fk_USCOREgetRemoteFieldListResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__Fk_USCOREgetRemoteFieldList soap_tmp___ns1__Fk_USCOREgetRemoteFieldList;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/Fk_getRemoteFieldListRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__Fk_USCOREgetRemoteFieldList.ns1__Fk_USCOREgetRemoteFieldList_ = ns1__Fk_USCOREgetRemoteFieldList_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__Fk_USCOREgetRemoteFieldList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteFieldList);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__Fk_USCOREgetRemoteFieldList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteFieldList, "-ns1:Fk_getRemoteFieldList", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__Fk_USCOREgetRemoteFieldList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteFieldList, "-ns1:Fk_getRemoteFieldList", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__Fk_USCOREgetRemoteFieldListResponse_)
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetRemoteFieldListResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetRemoteFieldListResponse_->soap_get(soap, "ns1:Fk_getRemoteFieldListResponse", "ns1:Fk_getRemoteFieldListResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::Fk_USCOREgetLocalFieldList(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetLocalFieldList *ns1__Fk_USCOREgetLocalFieldList_, ns1__Fk_USCOREgetLocalFieldListResponse *ns1__Fk_USCOREgetLocalFieldListResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__Fk_USCOREgetLocalFieldList soap_tmp___ns1__Fk_USCOREgetLocalFieldList;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/Fk_getLocalFieldListRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__Fk_USCOREgetLocalFieldList.ns1__Fk_USCOREgetLocalFieldList_ = ns1__Fk_USCOREgetLocalFieldList_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__Fk_USCOREgetLocalFieldList(soap, &soap_tmp___ns1__Fk_USCOREgetLocalFieldList);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__Fk_USCOREgetLocalFieldList(soap, &soap_tmp___ns1__Fk_USCOREgetLocalFieldList, "-ns1:Fk_getLocalFieldList", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__Fk_USCOREgetLocalFieldList(soap, &soap_tmp___ns1__Fk_USCOREgetLocalFieldList, "-ns1:Fk_getLocalFieldList", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__Fk_USCOREgetLocalFieldListResponse_)
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetLocalFieldListResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetLocalFieldListResponse_->soap_get(soap, "ns1:Fk_getLocalFieldListResponse", "ns1:Fk_getLocalFieldListResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::Query(const char *endpoint, const char *soap_action, ns1__Query *ns1__Query_, ns1__QueryResponse *ns1__QueryResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__Query soap_tmp___ns1__Query;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/QueryRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__Query.ns1__Query_ = ns1__Query_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__Query(soap, &soap_tmp___ns1__Query);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__Query(soap, &soap_tmp___ns1__Query, "-ns1:Query", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__Query(soap, &soap_tmp___ns1__Query, "-ns1:Query", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__QueryResponse_)
-		return soap_closesock(soap);
-	ns1__QueryResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__QueryResponse_->soap_get(soap, "ns1:QueryResponse", "ns1:QueryResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::Fk_USCOREgetAllRecord(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetAllRecord *ns1__Fk_USCOREgetAllRecord_, ns1__Fk_USCOREgetAllRecordResponse *ns1__Fk_USCOREgetAllRecordResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__Fk_USCOREgetAllRecord soap_tmp___ns1__Fk_USCOREgetAllRecord;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/Fk_getAllRecordRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__Fk_USCOREgetAllRecord.ns1__Fk_USCOREgetAllRecord_ = ns1__Fk_USCOREgetAllRecord_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__Fk_USCOREgetAllRecord(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecord);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__Fk_USCOREgetAllRecord(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecord, "-ns1:Fk_getAllRecord", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__Fk_USCOREgetAllRecord(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecord, "-ns1:Fk_getAllRecord", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__Fk_USCOREgetAllRecordResponse_)
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetAllRecordResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetAllRecordResponse_->soap_get(soap, "ns1:Fk_getAllRecordResponse", "ns1:Fk_getAllRecordResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::Fk_USCOREgetCountAllRecord(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetCountAllRecord *ns1__Fk_USCOREgetCountAllRecord_, ns1__Fk_USCOREgetCountAllRecordResponse *ns1__Fk_USCOREgetCountAllRecordResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__Fk_USCOREgetCountAllRecord soap_tmp___ns1__Fk_USCOREgetCountAllRecord;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/Fk_getCountAllRecordRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__Fk_USCOREgetCountAllRecord.ns1__Fk_USCOREgetCountAllRecord_ = ns1__Fk_USCOREgetCountAllRecord_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__Fk_USCOREgetCountAllRecord(soap, &soap_tmp___ns1__Fk_USCOREgetCountAllRecord);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__Fk_USCOREgetCountAllRecord(soap, &soap_tmp___ns1__Fk_USCOREgetCountAllRecord, "-ns1:Fk_getCountAllRecord", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__Fk_USCOREgetCountAllRecord(soap, &soap_tmp___ns1__Fk_USCOREgetCountAllRecord, "-ns1:Fk_getCountAllRecord", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__Fk_USCOREgetCountAllRecordResponse_)
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetCountAllRecordResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetCountAllRecordResponse_->soap_get(soap, "ns1:Fk_getCountAllRecordResponse", "ns1:Fk_getCountAllRecordResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::Fk_USCOREgetAllRecordByIndex(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetAllRecordByIndex *ns1__Fk_USCOREgetAllRecordByIndex_, ns1__Fk_USCOREgetAllRecordByIndexResponse *ns1__Fk_USCOREgetAllRecordByIndexResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__Fk_USCOREgetAllRecordByIndex soap_tmp___ns1__Fk_USCOREgetAllRecordByIndex;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/Fk_getAllRecordByIndexRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__Fk_USCOREgetAllRecordByIndex.ns1__Fk_USCOREgetAllRecordByIndex_ = ns1__Fk_USCOREgetAllRecordByIndex_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__Fk_USCOREgetAllRecordByIndex(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecordByIndex);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__Fk_USCOREgetAllRecordByIndex(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecordByIndex, "-ns1:Fk_getAllRecordByIndex", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__Fk_USCOREgetAllRecordByIndex(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecordByIndex, "-ns1:Fk_getAllRecordByIndex", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__Fk_USCOREgetAllRecordByIndexResponse_)
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetAllRecordByIndexResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetAllRecordByIndexResponse_->soap_get(soap, "ns1:Fk_getAllRecordByIndexResponse", "ns1:Fk_getAllRecordByIndexResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::Fk_USCOREgetAllRecordByDesc(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetAllRecordByDesc *ns1__Fk_USCOREgetAllRecordByDesc_, ns1__Fk_USCOREgetAllRecordByDescResponse *ns1__Fk_USCOREgetAllRecordByDescResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__Fk_USCOREgetAllRecordByDesc soap_tmp___ns1__Fk_USCOREgetAllRecordByDesc;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/Fk_getAllRecordByDescRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__Fk_USCOREgetAllRecordByDesc.ns1__Fk_USCOREgetAllRecordByDesc_ = ns1__Fk_USCOREgetAllRecordByDesc_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__Fk_USCOREgetAllRecordByDesc(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecordByDesc);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__Fk_USCOREgetAllRecordByDesc(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecordByDesc, "-ns1:Fk_getAllRecordByDesc", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__Fk_USCOREgetAllRecordByDesc(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecordByDesc, "-ns1:Fk_getAllRecordByDesc", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__Fk_USCOREgetAllRecordByDescResponse_)
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetAllRecordByDescResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetAllRecordByDescResponse_->soap_get(soap, "ns1:Fk_getAllRecordByDescResponse", "ns1:Fk_getAllRecordByDescResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::Fk_USCOREgetCountAllRecordByDesc(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetCountAllRecordByDesc *ns1__Fk_USCOREgetCountAllRecordByDesc_, ns1__Fk_USCOREgetCountAllRecordByDescResponse *ns1__Fk_USCOREgetCountAllRecordByDescResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__Fk_USCOREgetCountAllRecordByDesc soap_tmp___ns1__Fk_USCOREgetCountAllRecordByDesc;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/Fk_getCountAllRecordByDescRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__Fk_USCOREgetCountAllRecordByDesc.ns1__Fk_USCOREgetCountAllRecordByDesc_ = ns1__Fk_USCOREgetCountAllRecordByDesc_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__Fk_USCOREgetCountAllRecordByDesc(soap, &soap_tmp___ns1__Fk_USCOREgetCountAllRecordByDesc);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__Fk_USCOREgetCountAllRecordByDesc(soap, &soap_tmp___ns1__Fk_USCOREgetCountAllRecordByDesc, "-ns1:Fk_getCountAllRecordByDesc", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__Fk_USCOREgetCountAllRecordByDesc(soap, &soap_tmp___ns1__Fk_USCOREgetCountAllRecordByDesc, "-ns1:Fk_getCountAllRecordByDesc", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__Fk_USCOREgetCountAllRecordByDescResponse_)
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetCountAllRecordByDescResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetCountAllRecordByDescResponse_->soap_get(soap, "ns1:Fk_getCountAllRecordByDescResponse", "ns1:Fk_getCountAllRecordByDescResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::Fk_USCOREgetCountAllRecordByIndexDesc(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetCountAllRecordByIndexDesc *ns1__Fk_USCOREgetCountAllRecordByIndexDesc_, ns1__Fk_USCOREgetCountAllRecordByIndexDescResponse *ns1__Fk_USCOREgetCountAllRecordByIndexDescResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__Fk_USCOREgetCountAllRecordByIndexDesc soap_tmp___ns1__Fk_USCOREgetCountAllRecordByIndexDesc;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/Fk_getCountAllRecordByIndexDescRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__Fk_USCOREgetCountAllRecordByIndexDesc.ns1__Fk_USCOREgetCountAllRecordByIndexDesc_ = ns1__Fk_USCOREgetCountAllRecordByIndexDesc_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__Fk_USCOREgetCountAllRecordByIndexDesc(soap, &soap_tmp___ns1__Fk_USCOREgetCountAllRecordByIndexDesc);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__Fk_USCOREgetCountAllRecordByIndexDesc(soap, &soap_tmp___ns1__Fk_USCOREgetCountAllRecordByIndexDesc, "-ns1:Fk_getCountAllRecordByIndexDesc", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__Fk_USCOREgetCountAllRecordByIndexDesc(soap, &soap_tmp___ns1__Fk_USCOREgetCountAllRecordByIndexDesc, "-ns1:Fk_getCountAllRecordByIndexDesc", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__Fk_USCOREgetCountAllRecordByIndexDescResponse_)
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetCountAllRecordByIndexDescResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetCountAllRecordByIndexDescResponse_->soap_get(soap, "ns1:Fk_getCountAllRecordByIndexDescResponse", "ns1:Fk_getCountAllRecordByIndexDescResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::Fk_USCOREgetAllRecordByIndexDesc(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetAllRecordByIndexDesc *ns1__Fk_USCOREgetAllRecordByIndexDesc_, ns1__Fk_USCOREgetAllRecordByIndexDescResponse *ns1__Fk_USCOREgetAllRecordByIndexDescResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__Fk_USCOREgetAllRecordByIndexDesc soap_tmp___ns1__Fk_USCOREgetAllRecordByIndexDesc;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/Fk_getAllRecordByIndexDescRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__Fk_USCOREgetAllRecordByIndexDesc.ns1__Fk_USCOREgetAllRecordByIndexDesc_ = ns1__Fk_USCOREgetAllRecordByIndexDesc_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__Fk_USCOREgetAllRecordByIndexDesc(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecordByIndexDesc);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__Fk_USCOREgetAllRecordByIndexDesc(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecordByIndexDesc, "-ns1:Fk_getAllRecordByIndexDesc", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__Fk_USCOREgetAllRecordByIndexDesc(soap, &soap_tmp___ns1__Fk_USCOREgetAllRecordByIndexDesc, "-ns1:Fk_getAllRecordByIndexDesc", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__Fk_USCOREgetAllRecordByIndexDescResponse_)
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetAllRecordByIndexDescResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetAllRecordByIndexDescResponse_->soap_get(soap, "ns1:Fk_getAllRecordByIndexDescResponse", "ns1:Fk_getAllRecordByIndexDescResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::Fk_USCOREgetColumnsName(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetColumnsName *ns1__Fk_USCOREgetColumnsName_, ns1__Fk_USCOREgetColumnsNameResponse *ns1__Fk_USCOREgetColumnsNameResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__Fk_USCOREgetColumnsName soap_tmp___ns1__Fk_USCOREgetColumnsName;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/Fk_getColumnsNameRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__Fk_USCOREgetColumnsName.ns1__Fk_USCOREgetColumnsName_ = ns1__Fk_USCOREgetColumnsName_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__Fk_USCOREgetColumnsName(soap, &soap_tmp___ns1__Fk_USCOREgetColumnsName);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__Fk_USCOREgetColumnsName(soap, &soap_tmp___ns1__Fk_USCOREgetColumnsName, "-ns1:Fk_getColumnsName", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__Fk_USCOREgetColumnsName(soap, &soap_tmp___ns1__Fk_USCOREgetColumnsName, "-ns1:Fk_getColumnsName", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__Fk_USCOREgetColumnsNameResponse_)
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetColumnsNameResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetColumnsNameResponse_->soap_get(soap, "ns1:Fk_getColumnsNameResponse", "ns1:Fk_getColumnsNameResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::Fk_USCOREgetRemoteDatabaseList(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetRemoteDatabaseList *ns1__Fk_USCOREgetRemoteDatabaseList_, ns1__Fk_USCOREgetRemoteDatabaseListResponse *ns1__Fk_USCOREgetRemoteDatabaseListResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__Fk_USCOREgetRemoteDatabaseList soap_tmp___ns1__Fk_USCOREgetRemoteDatabaseList;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/Fk_getRemoteDatabaseListRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__Fk_USCOREgetRemoteDatabaseList.ns1__Fk_USCOREgetRemoteDatabaseList_ = ns1__Fk_USCOREgetRemoteDatabaseList_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__Fk_USCOREgetRemoteDatabaseList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteDatabaseList);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__Fk_USCOREgetRemoteDatabaseList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteDatabaseList, "-ns1:Fk_getRemoteDatabaseList", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__Fk_USCOREgetRemoteDatabaseList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteDatabaseList, "-ns1:Fk_getRemoteDatabaseList", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__Fk_USCOREgetRemoteDatabaseListResponse_)
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetRemoteDatabaseListResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetRemoteDatabaseListResponse_->soap_get(soap, "ns1:Fk_getRemoteDatabaseListResponse", "ns1:Fk_getRemoteDatabaseListResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::Fk_USCOREgetRemoteTableList(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetRemoteTableList *ns1__Fk_USCOREgetRemoteTableList_, ns1__Fk_USCOREgetRemoteTableListResponse *ns1__Fk_USCOREgetRemoteTableListResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__Fk_USCOREgetRemoteTableList soap_tmp___ns1__Fk_USCOREgetRemoteTableList;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/Fk_getRemoteTableListRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__Fk_USCOREgetRemoteTableList.ns1__Fk_USCOREgetRemoteTableList_ = ns1__Fk_USCOREgetRemoteTableList_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__Fk_USCOREgetRemoteTableList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteTableList);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__Fk_USCOREgetRemoteTableList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteTableList, "-ns1:Fk_getRemoteTableList", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__Fk_USCOREgetRemoteTableList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteTableList, "-ns1:Fk_getRemoteTableList", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__Fk_USCOREgetRemoteTableListResponse_)
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetRemoteTableListResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetRemoteTableListResponse_->soap_get(soap, "ns1:Fk_getRemoteTableListResponse", "ns1:Fk_getRemoteTableListResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::Fk_USCOREgetRemoteViewList(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetRemoteViewList *ns1__Fk_USCOREgetRemoteViewList_, ns1__Fk_USCOREgetRemoteViewListResponse *ns1__Fk_USCOREgetRemoteViewListResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__Fk_USCOREgetRemoteViewList soap_tmp___ns1__Fk_USCOREgetRemoteViewList;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/Fk_getRemoteViewListRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__Fk_USCOREgetRemoteViewList.ns1__Fk_USCOREgetRemoteViewList_ = ns1__Fk_USCOREgetRemoteViewList_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__Fk_USCOREgetRemoteViewList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteViewList);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__Fk_USCOREgetRemoteViewList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteViewList, "-ns1:Fk_getRemoteViewList", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__Fk_USCOREgetRemoteViewList(soap, &soap_tmp___ns1__Fk_USCOREgetRemoteViewList, "-ns1:Fk_getRemoteViewList", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__Fk_USCOREgetRemoteViewListResponse_)
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetRemoteViewListResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__Fk_USCOREgetRemoteViewListResponse_->soap_get(soap, "ns1:Fk_getRemoteViewListResponse", "ns1:Fk_getRemoteViewListResponse");
+	ns1__CreateDynorgResponse_->soap_get(soap, "ns1:CreateDynorgResponse", "ns1:CreateDynorgResponse");
 	if (soap->error)
 		return soap_recv_fault(soap, 0);
 	if (soap_body_end_in(soap)
@@ -2936,27 +2990,27 @@ int abxWsGestPortBindingProxy::GetFieldList(const char *endpoint, const char *so
 	return soap_closesock(soap);
 }
 
-int abxWsGestPortBindingProxy::ModifyField(const char *endpoint, const char *soap_action, ns1__ModifyField *ns1__ModifyField_, ns1__ModifyFieldResponse *ns1__ModifyFieldResponse_)
+int abxWsGestPortBindingProxy::GetFieldProperties(const char *endpoint, const char *soap_action, ns1__GetFieldProperties *ns1__GetFieldProperties_, ns1__GetFieldPropertiesResponse *ns1__GetFieldPropertiesResponse_)
 {	struct soap *soap = this->soap;
-	struct __ns1__ModifyField soap_tmp___ns1__ModifyField;
+	struct __ns1__GetFieldProperties soap_tmp___ns1__GetFieldProperties;
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
 		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
 	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/ModifyFieldRequest";
+		soap_action = "http://ws.abx/abxWsGest/GetFieldPropertiesRequest";
 	soap_begin(soap);
 	soap->encodingStyle = NULL;
-	soap_tmp___ns1__ModifyField.ns1__ModifyField_ = ns1__ModifyField_;
+	soap_tmp___ns1__GetFieldProperties.ns1__GetFieldProperties_ = ns1__GetFieldProperties_;
 	soap_serializeheader(soap);
-	soap_serialize___ns1__ModifyField(soap, &soap_tmp___ns1__ModifyField);
+	soap_serialize___ns1__GetFieldProperties(soap, &soap_tmp___ns1__GetFieldProperties);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__ModifyField(soap, &soap_tmp___ns1__ModifyField, "-ns1:ModifyField", NULL)
+		 || soap_put___ns1__GetFieldProperties(soap, &soap_tmp___ns1__GetFieldProperties, "-ns1:GetFieldProperties", NULL)
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -2967,20 +3021,74 @@ int abxWsGestPortBindingProxy::ModifyField(const char *endpoint, const char *soa
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__ModifyField(soap, &soap_tmp___ns1__ModifyField, "-ns1:ModifyField", NULL)
+	 || soap_put___ns1__GetFieldProperties(soap, &soap_tmp___ns1__GetFieldProperties, "-ns1:GetFieldProperties", NULL)
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
 		return soap_closesock(soap);
-	if (!ns1__ModifyFieldResponse_)
+	if (!ns1__GetFieldPropertiesResponse_)
 		return soap_closesock(soap);
-	ns1__ModifyFieldResponse_->soap_default(soap);
+	ns1__GetFieldPropertiesResponse_->soap_default(soap);
 	if (soap_begin_recv(soap)
 	 || soap_envelope_begin_in(soap)
 	 || soap_recv_header(soap)
 	 || soap_body_begin_in(soap))
 		return soap_closesock(soap);
-	ns1__ModifyFieldResponse_->soap_get(soap, "ns1:ModifyFieldResponse", "ns1:ModifyFieldResponse");
+	ns1__GetFieldPropertiesResponse_->soap_get(soap, "ns1:GetFieldPropertiesResponse", "ns1:GetFieldPropertiesResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::GetFieldsPropertiesFromTemplate(const char *endpoint, const char *soap_action, ns1__GetFieldsPropertiesFromTemplate *ns1__GetFieldsPropertiesFromTemplate_, ns1__GetFieldsPropertiesFromTemplateResponse *ns1__GetFieldsPropertiesFromTemplateResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__GetFieldsPropertiesFromTemplate soap_tmp___ns1__GetFieldsPropertiesFromTemplate;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/GetFieldsPropertiesFromTemplateRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__GetFieldsPropertiesFromTemplate.ns1__GetFieldsPropertiesFromTemplate_ = ns1__GetFieldsPropertiesFromTemplate_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__GetFieldsPropertiesFromTemplate(soap, &soap_tmp___ns1__GetFieldsPropertiesFromTemplate);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__GetFieldsPropertiesFromTemplate(soap, &soap_tmp___ns1__GetFieldsPropertiesFromTemplate, "-ns1:GetFieldsPropertiesFromTemplate", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__GetFieldsPropertiesFromTemplate(soap, &soap_tmp___ns1__GetFieldsPropertiesFromTemplate, "-ns1:GetFieldsPropertiesFromTemplate", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__GetFieldsPropertiesFromTemplateResponse_)
+		return soap_closesock(soap);
+	ns1__GetFieldsPropertiesFromTemplateResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__GetFieldsPropertiesFromTemplateResponse_->soap_get(soap, "ns1:GetFieldsPropertiesFromTemplateResponse", "ns1:GetFieldsPropertiesFromTemplateResponse");
 	if (soap->error)
 		return soap_recv_fault(soap, 0);
 	if (soap_body_end_in(soap)
@@ -3638,27 +3746,27 @@ int abxWsGestPortBindingProxy::ChangeSchedulerTaskScheduleStatus(const char *end
 	return soap_closesock(soap);
 }
 
-int abxWsGestPortBindingProxy::GetFieldProperties(const char *endpoint, const char *soap_action, ns1__GetFieldProperties *ns1__GetFieldProperties_, ns1__GetFieldPropertiesResponse *ns1__GetFieldPropertiesResponse_)
+int abxWsGestPortBindingProxy::ModifyField(const char *endpoint, const char *soap_action, ns1__ModifyField *ns1__ModifyField_, ns1__ModifyFieldResponse *ns1__ModifyFieldResponse_)
 {	struct soap *soap = this->soap;
-	struct __ns1__GetFieldProperties soap_tmp___ns1__GetFieldProperties;
+	struct __ns1__ModifyField soap_tmp___ns1__ModifyField;
 	if (endpoint)
 		soap_endpoint = endpoint;
 	if (soap_endpoint == NULL)
 		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
 	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/GetFieldPropertiesRequest";
+		soap_action = "http://ws.abx/abxWsGest/ModifyFieldRequest";
 	soap_begin(soap);
 	soap->encodingStyle = NULL;
-	soap_tmp___ns1__GetFieldProperties.ns1__GetFieldProperties_ = ns1__GetFieldProperties_;
+	soap_tmp___ns1__ModifyField.ns1__ModifyField_ = ns1__ModifyField_;
 	soap_serializeheader(soap);
-	soap_serialize___ns1__GetFieldProperties(soap, &soap_tmp___ns1__GetFieldProperties);
+	soap_serialize___ns1__ModifyField(soap, &soap_tmp___ns1__ModifyField);
 	if (soap_begin_count(soap))
 		return soap->error;
 	if (soap->mode & SOAP_IO_LENGTH)
 	{	if (soap_envelope_begin_out(soap)
 		 || soap_putheader(soap)
 		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__GetFieldProperties(soap, &soap_tmp___ns1__GetFieldProperties, "-ns1:GetFieldProperties", NULL)
+		 || soap_put___ns1__ModifyField(soap, &soap_tmp___ns1__ModifyField, "-ns1:ModifyField", NULL)
 		 || soap_body_end_out(soap)
 		 || soap_envelope_end_out(soap))
 			 return soap->error;
@@ -3669,74 +3777,20 @@ int abxWsGestPortBindingProxy::GetFieldProperties(const char *endpoint, const ch
 	 || soap_envelope_begin_out(soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__GetFieldProperties(soap, &soap_tmp___ns1__GetFieldProperties, "-ns1:GetFieldProperties", NULL)
+	 || soap_put___ns1__ModifyField(soap, &soap_tmp___ns1__ModifyField, "-ns1:ModifyField", NULL)
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
 		return soap_closesock(soap);
-	if (!ns1__GetFieldPropertiesResponse_)
+	if (!ns1__ModifyFieldResponse_)
 		return soap_closesock(soap);
-	ns1__GetFieldPropertiesResponse_->soap_default(soap);
+	ns1__ModifyFieldResponse_->soap_default(soap);
 	if (soap_begin_recv(soap)
 	 || soap_envelope_begin_in(soap)
 	 || soap_recv_header(soap)
 	 || soap_body_begin_in(soap))
 		return soap_closesock(soap);
-	ns1__GetFieldPropertiesResponse_->soap_get(soap, "ns1:GetFieldPropertiesResponse", "ns1:GetFieldPropertiesResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::GetFieldsPropertiesFromTemplate(const char *endpoint, const char *soap_action, ns1__GetFieldsPropertiesFromTemplate *ns1__GetFieldsPropertiesFromTemplate_, ns1__GetFieldsPropertiesFromTemplateResponse *ns1__GetFieldsPropertiesFromTemplateResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__GetFieldsPropertiesFromTemplate soap_tmp___ns1__GetFieldsPropertiesFromTemplate;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/GetFieldsPropertiesFromTemplateRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__GetFieldsPropertiesFromTemplate.ns1__GetFieldsPropertiesFromTemplate_ = ns1__GetFieldsPropertiesFromTemplate_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__GetFieldsPropertiesFromTemplate(soap, &soap_tmp___ns1__GetFieldsPropertiesFromTemplate);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__GetFieldsPropertiesFromTemplate(soap, &soap_tmp___ns1__GetFieldsPropertiesFromTemplate, "-ns1:GetFieldsPropertiesFromTemplate", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__GetFieldsPropertiesFromTemplate(soap, &soap_tmp___ns1__GetFieldsPropertiesFromTemplate, "-ns1:GetFieldsPropertiesFromTemplate", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__GetFieldsPropertiesFromTemplateResponse_)
-		return soap_closesock(soap);
-	ns1__GetFieldsPropertiesFromTemplateResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__GetFieldsPropertiesFromTemplateResponse_->soap_get(soap, "ns1:GetFieldsPropertiesFromTemplateResponse", "ns1:GetFieldsPropertiesFromTemplateResponse");
+	ns1__ModifyFieldResponse_->soap_get(soap, "ns1:ModifyFieldResponse", "ns1:ModifyFieldResponse");
 	if (soap->error)
 		return soap_recv_fault(soap, 0);
 	if (soap_body_end_in(soap)
@@ -5582,114 +5636,6 @@ int abxWsGestPortBindingProxy::QueryTotAttach(const char *endpoint, const char *
 	return soap_closesock(soap);
 }
 
-int abxWsGestPortBindingProxy::GetInstanceId(const char *endpoint, const char *soap_action, ns1__GetInstanceId *ns1__GetInstanceId_, ns1__GetInstanceIdResponse *ns1__GetInstanceIdResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__GetInstanceId soap_tmp___ns1__GetInstanceId;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/GetInstanceIdRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__GetInstanceId.ns1__GetInstanceId_ = ns1__GetInstanceId_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__GetInstanceId(soap, &soap_tmp___ns1__GetInstanceId);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__GetInstanceId(soap, &soap_tmp___ns1__GetInstanceId, "-ns1:GetInstanceId", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__GetInstanceId(soap, &soap_tmp___ns1__GetInstanceId, "-ns1:GetInstanceId", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__GetInstanceIdResponse_)
-		return soap_closesock(soap);
-	ns1__GetInstanceIdResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__GetInstanceIdResponse_->soap_get(soap, "ns1:GetInstanceIdResponse", "ns1:GetInstanceIdResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::GetTemplateProperties(const char *endpoint, const char *soap_action, ns1__GetTemplateProperties *ns1__GetTemplateProperties_, ns1__GetTemplatePropertiesResponse *ns1__GetTemplatePropertiesResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__GetTemplateProperties soap_tmp___ns1__GetTemplateProperties;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/GetTemplatePropertiesRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__GetTemplateProperties.ns1__GetTemplateProperties_ = ns1__GetTemplateProperties_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__GetTemplateProperties(soap, &soap_tmp___ns1__GetTemplateProperties);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__GetTemplateProperties(soap, &soap_tmp___ns1__GetTemplateProperties, "-ns1:GetTemplateProperties", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__GetTemplateProperties(soap, &soap_tmp___ns1__GetTemplateProperties, "-ns1:GetTemplateProperties", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__GetTemplatePropertiesResponse_)
-		return soap_closesock(soap);
-	ns1__GetTemplatePropertiesResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__GetTemplatePropertiesResponse_->soap_get(soap, "ns1:GetTemplatePropertiesResponse", "ns1:GetTemplatePropertiesResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
 int abxWsGestPortBindingProxy::DeleteFilter(const char *endpoint, const char *soap_action, ns1__DeleteFilter *ns1__DeleteFilter_, ns1__DeleteFilterResponse *ns1__DeleteFilterResponse_)
 {	struct soap *soap = this->soap;
 	struct __ns1__DeleteFilter soap_tmp___ns1__DeleteFilter;
@@ -5843,6 +5789,114 @@ int abxWsGestPortBindingProxy::InsertFilter(const char *endpoint, const char *so
 	 || soap_body_begin_in(soap))
 		return soap_closesock(soap);
 	ns1__InsertFilterResponse_->soap_get(soap, "ns1:InsertFilterResponse", "ns1:InsertFilterResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::GetInstanceId(const char *endpoint, const char *soap_action, ns1__GetInstanceId *ns1__GetInstanceId_, ns1__GetInstanceIdResponse *ns1__GetInstanceIdResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__GetInstanceId soap_tmp___ns1__GetInstanceId;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/GetInstanceIdRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__GetInstanceId.ns1__GetInstanceId_ = ns1__GetInstanceId_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__GetInstanceId(soap, &soap_tmp___ns1__GetInstanceId);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__GetInstanceId(soap, &soap_tmp___ns1__GetInstanceId, "-ns1:GetInstanceId", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__GetInstanceId(soap, &soap_tmp___ns1__GetInstanceId, "-ns1:GetInstanceId", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__GetInstanceIdResponse_)
+		return soap_closesock(soap);
+	ns1__GetInstanceIdResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__GetInstanceIdResponse_->soap_get(soap, "ns1:GetInstanceIdResponse", "ns1:GetInstanceIdResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::GetTemplateProperties(const char *endpoint, const char *soap_action, ns1__GetTemplateProperties *ns1__GetTemplateProperties_, ns1__GetTemplatePropertiesResponse *ns1__GetTemplatePropertiesResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__GetTemplateProperties soap_tmp___ns1__GetTemplateProperties;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/GetTemplatePropertiesRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__GetTemplateProperties.ns1__GetTemplateProperties_ = ns1__GetTemplateProperties_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__GetTemplateProperties(soap, &soap_tmp___ns1__GetTemplateProperties);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__GetTemplateProperties(soap, &soap_tmp___ns1__GetTemplateProperties, "-ns1:GetTemplateProperties", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__GetTemplateProperties(soap, &soap_tmp___ns1__GetTemplateProperties, "-ns1:GetTemplateProperties", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__GetTemplatePropertiesResponse_)
+		return soap_closesock(soap);
+	ns1__GetTemplatePropertiesResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__GetTemplatePropertiesResponse_->soap_get(soap, "ns1:GetTemplatePropertiesResponse", "ns1:GetTemplatePropertiesResponse");
 	if (soap->error)
 		return soap_recv_fault(soap, 0);
 	if (soap_body_end_in(soap)
@@ -11522,6 +11576,114 @@ int abxWsGestPortBindingProxy::GetUserDetailByUserId(const char *endpoint, const
 	return soap_closesock(soap);
 }
 
+int abxWsGestPortBindingProxy::ExistUserByUsername(const char *endpoint, const char *soap_action, ns1__ExistUserByUsername *ns1__ExistUserByUsername_, ns1__ExistUserByUsernameResponse *ns1__ExistUserByUsernameResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__ExistUserByUsername soap_tmp___ns1__ExistUserByUsername;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/ExistUserByUsernameRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__ExistUserByUsername.ns1__ExistUserByUsername_ = ns1__ExistUserByUsername_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__ExistUserByUsername(soap, &soap_tmp___ns1__ExistUserByUsername);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__ExistUserByUsername(soap, &soap_tmp___ns1__ExistUserByUsername, "-ns1:ExistUserByUsername", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__ExistUserByUsername(soap, &soap_tmp___ns1__ExistUserByUsername, "-ns1:ExistUserByUsername", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__ExistUserByUsernameResponse_)
+		return soap_closesock(soap);
+	ns1__ExistUserByUsernameResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__ExistUserByUsernameResponse_->soap_get(soap, "ns1:ExistUserByUsernameResponse", "ns1:ExistUserByUsernameResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+int abxWsGestPortBindingProxy::InsertGroup(const char *endpoint, const char *soap_action, ns1__InsertGroup *ns1__InsertGroup_, ns1__InsertGroupResponse *ns1__InsertGroupResponse_)
+{	struct soap *soap = this->soap;
+	struct __ns1__InsertGroup soap_tmp___ns1__InsertGroup;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
+	if (soap_action == NULL)
+		soap_action = "http://ws.abx/abxWsGest/InsertGroupRequest";
+	soap_begin(soap);
+	soap->encodingStyle = NULL;
+	soap_tmp___ns1__InsertGroup.ns1__InsertGroup_ = ns1__InsertGroup_;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__InsertGroup(soap, &soap_tmp___ns1__InsertGroup);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__InsertGroup(soap, &soap_tmp___ns1__InsertGroup, "-ns1:InsertGroup", NULL)
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__InsertGroup(soap, &soap_tmp___ns1__InsertGroup, "-ns1:InsertGroup", NULL)
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!ns1__InsertGroupResponse_)
+		return soap_closesock(soap);
+	ns1__InsertGroupResponse_->soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__InsertGroupResponse_->soap_get(soap, "ns1:InsertGroupResponse", "ns1:InsertGroupResponse");
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
 int abxWsGestPortBindingProxy::DeleteGroup(const char *endpoint, const char *soap_action, ns1__DeleteGroup *ns1__DeleteGroup_, ns1__DeleteGroupResponse *ns1__DeleteGroupResponse_)
 {	struct soap *soap = this->soap;
 	struct __ns1__DeleteGroup soap_tmp___ns1__DeleteGroup;
@@ -11630,60 +11792,6 @@ int abxWsGestPortBindingProxy::Ping(const char *endpoint, const char *soap_actio
 	return soap_closesock(soap);
 }
 
-int abxWsGestPortBindingProxy::ExistUserByUsername(const char *endpoint, const char *soap_action, ns1__ExistUserByUsername *ns1__ExistUserByUsername_, ns1__ExistUserByUsernameResponse *ns1__ExistUserByUsernameResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__ExistUserByUsername soap_tmp___ns1__ExistUserByUsername;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/ExistUserByUsernameRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__ExistUserByUsername.ns1__ExistUserByUsername_ = ns1__ExistUserByUsername_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__ExistUserByUsername(soap, &soap_tmp___ns1__ExistUserByUsername);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__ExistUserByUsername(soap, &soap_tmp___ns1__ExistUserByUsername, "-ns1:ExistUserByUsername", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__ExistUserByUsername(soap, &soap_tmp___ns1__ExistUserByUsername, "-ns1:ExistUserByUsername", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__ExistUserByUsernameResponse_)
-		return soap_closesock(soap);
-	ns1__ExistUserByUsernameResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__ExistUserByUsernameResponse_->soap_get(soap, "ns1:ExistUserByUsernameResponse", "ns1:ExistUserByUsernameResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
 int abxWsGestPortBindingProxy::DeleteUserByUsername(const char *endpoint, const char *soap_action, ns1__DeleteUserByUsername *ns1__DeleteUserByUsername_, ns1__DeleteUserByUsernameResponse *ns1__DeleteUserByUsernameResponse_)
 {	struct soap *soap = this->soap;
 	struct __ns1__DeleteUserByUsername soap_tmp___ns1__DeleteUserByUsername;
@@ -11729,60 +11837,6 @@ int abxWsGestPortBindingProxy::DeleteUserByUsername(const char *endpoint, const 
 	 || soap_body_begin_in(soap))
 		return soap_closesock(soap);
 	ns1__DeleteUserByUsernameResponse_->soap_get(soap, "ns1:DeleteUserByUsernameResponse", "ns1:DeleteUserByUsernameResponse");
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
-
-int abxWsGestPortBindingProxy::InsertGroup(const char *endpoint, const char *soap_action, ns1__InsertGroup *ns1__InsertGroup_, ns1__InsertGroupResponse *ns1__InsertGroupResponse_)
-{	struct soap *soap = this->soap;
-	struct __ns1__InsertGroup soap_tmp___ns1__InsertGroup;
-	if (endpoint)
-		soap_endpoint = endpoint;
-	if (soap_endpoint == NULL)
-		soap_endpoint = "http://iabx000002.iabx.net:80/abxWsGestService/abxWsGest";
-	if (soap_action == NULL)
-		soap_action = "http://ws.abx/abxWsGest/InsertGroupRequest";
-	soap_begin(soap);
-	soap->encodingStyle = NULL;
-	soap_tmp___ns1__InsertGroup.ns1__InsertGroup_ = ns1__InsertGroup_;
-	soap_serializeheader(soap);
-	soap_serialize___ns1__InsertGroup(soap, &soap_tmp___ns1__InsertGroup);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___ns1__InsertGroup(soap, &soap_tmp___ns1__InsertGroup, "-ns1:InsertGroup", NULL)
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_url(soap, soap_endpoint, NULL), soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___ns1__InsertGroup(soap, &soap_tmp___ns1__InsertGroup, "-ns1:InsertGroup", NULL)
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!ns1__InsertGroupResponse_)
-		return soap_closesock(soap);
-	ns1__InsertGroupResponse_->soap_default(soap);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	ns1__InsertGroupResponse_->soap_get(soap, "ns1:InsertGroupResponse", "ns1:InsertGroupResponse");
 	if (soap->error)
 		return soap_recv_fault(soap, 0);
 	if (soap_body_end_in(soap)

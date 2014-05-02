@@ -64,17 +64,125 @@ class SOAP_CMAC abxWsGestPortBindingProxy
 	virtual	char *soap_sprint_fault(char *buf, size_t len);
 #endif
 
-	/// Web service operation 'CreateContainer' (returns error code or SOAP_OK)
-	virtual	int CreateContainer(ns1__CreateContainer *ns1__CreateContainer_, ns1__CreateContainerResponse *ns1__CreateContainerResponse_) { return this->CreateContainer(NULL, NULL, ns1__CreateContainer_, ns1__CreateContainerResponse_); }
-	virtual	int CreateContainer(const char *endpoint, const char *soap_action, ns1__CreateContainer *ns1__CreateContainer_, ns1__CreateContainerResponse *ns1__CreateContainerResponse_);
+	/// Web service operation 'GetWsdlVersion' (returns error code or SOAP_OK)
+	virtual	int GetWsdlVersion(ns1__GetWsdlVersion *ns1__GetWsdlVersion_, ns1__GetWsdlVersionResponse *ns1__GetWsdlVersionResponse_) { return this->GetWsdlVersion(NULL, NULL, ns1__GetWsdlVersion_, ns1__GetWsdlVersionResponse_); }
+	virtual	int GetWsdlVersion(const char *endpoint, const char *soap_action, ns1__GetWsdlVersion *ns1__GetWsdlVersion_, ns1__GetWsdlVersionResponse *ns1__GetWsdlVersionResponse_);
 
-	/// Web service operation 'CreateTemplate' (returns error code or SOAP_OK)
-	virtual	int CreateTemplate(ns1__CreateTemplate *ns1__CreateTemplate_, ns1__CreateTemplateResponse *ns1__CreateTemplateResponse_) { return this->CreateTemplate(NULL, NULL, ns1__CreateTemplate_, ns1__CreateTemplateResponse_); }
-	virtual	int CreateTemplate(const char *endpoint, const char *soap_action, ns1__CreateTemplate *ns1__CreateTemplate_, ns1__CreateTemplateResponse *ns1__CreateTemplateResponse_);
+	/// Web service operation 'Fk_getColumnsName' (returns error code or SOAP_OK)
+	virtual	int Fk_USCOREgetColumnsName(ns1__Fk_USCOREgetColumnsName *ns1__Fk_USCOREgetColumnsName_, ns1__Fk_USCOREgetColumnsNameResponse *ns1__Fk_USCOREgetColumnsNameResponse_) { return this->Fk_USCOREgetColumnsName(NULL, NULL, ns1__Fk_USCOREgetColumnsName_, ns1__Fk_USCOREgetColumnsNameResponse_); }
+	virtual	int Fk_USCOREgetColumnsName(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetColumnsName *ns1__Fk_USCOREgetColumnsName_, ns1__Fk_USCOREgetColumnsNameResponse *ns1__Fk_USCOREgetColumnsNameResponse_);
 
-	/// Web service operation 'CreateDynorg' (returns error code or SOAP_OK)
-	virtual	int CreateDynorg(ns1__CreateDynorg *ns1__CreateDynorg_, ns1__CreateDynorgResponse *ns1__CreateDynorgResponse_) { return this->CreateDynorg(NULL, NULL, ns1__CreateDynorg_, ns1__CreateDynorgResponse_); }
-	virtual	int CreateDynorg(const char *endpoint, const char *soap_action, ns1__CreateDynorg *ns1__CreateDynorg_, ns1__CreateDynorgResponse *ns1__CreateDynorgResponse_);
+	/// Web service operation 'Fk_getRemoteDatabaseList' (returns error code or SOAP_OK)
+	virtual	int Fk_USCOREgetRemoteDatabaseList(ns1__Fk_USCOREgetRemoteDatabaseList *ns1__Fk_USCOREgetRemoteDatabaseList_, ns1__Fk_USCOREgetRemoteDatabaseListResponse *ns1__Fk_USCOREgetRemoteDatabaseListResponse_) { return this->Fk_USCOREgetRemoteDatabaseList(NULL, NULL, ns1__Fk_USCOREgetRemoteDatabaseList_, ns1__Fk_USCOREgetRemoteDatabaseListResponse_); }
+	virtual	int Fk_USCOREgetRemoteDatabaseList(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetRemoteDatabaseList *ns1__Fk_USCOREgetRemoteDatabaseList_, ns1__Fk_USCOREgetRemoteDatabaseListResponse *ns1__Fk_USCOREgetRemoteDatabaseListResponse_);
+
+	/// Web service operation 'Fk_getRemoteTableList' (returns error code or SOAP_OK)
+	virtual	int Fk_USCOREgetRemoteTableList(ns1__Fk_USCOREgetRemoteTableList *ns1__Fk_USCOREgetRemoteTableList_, ns1__Fk_USCOREgetRemoteTableListResponse *ns1__Fk_USCOREgetRemoteTableListResponse_) { return this->Fk_USCOREgetRemoteTableList(NULL, NULL, ns1__Fk_USCOREgetRemoteTableList_, ns1__Fk_USCOREgetRemoteTableListResponse_); }
+	virtual	int Fk_USCOREgetRemoteTableList(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetRemoteTableList *ns1__Fk_USCOREgetRemoteTableList_, ns1__Fk_USCOREgetRemoteTableListResponse *ns1__Fk_USCOREgetRemoteTableListResponse_);
+
+	/// Web service operation 'Fk_getRemoteViewList' (returns error code or SOAP_OK)
+	virtual	int Fk_USCOREgetRemoteViewList(ns1__Fk_USCOREgetRemoteViewList *ns1__Fk_USCOREgetRemoteViewList_, ns1__Fk_USCOREgetRemoteViewListResponse *ns1__Fk_USCOREgetRemoteViewListResponse_) { return this->Fk_USCOREgetRemoteViewList(NULL, NULL, ns1__Fk_USCOREgetRemoteViewList_, ns1__Fk_USCOREgetRemoteViewListResponse_); }
+	virtual	int Fk_USCOREgetRemoteViewList(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetRemoteViewList *ns1__Fk_USCOREgetRemoteViewList_, ns1__Fk_USCOREgetRemoteViewListResponse *ns1__Fk_USCOREgetRemoteViewListResponse_);
+
+	/// Web service operation 'Fk_getRemoteFieldList' (returns error code or SOAP_OK)
+	virtual	int Fk_USCOREgetRemoteFieldList(ns1__Fk_USCOREgetRemoteFieldList *ns1__Fk_USCOREgetRemoteFieldList_, ns1__Fk_USCOREgetRemoteFieldListResponse *ns1__Fk_USCOREgetRemoteFieldListResponse_) { return this->Fk_USCOREgetRemoteFieldList(NULL, NULL, ns1__Fk_USCOREgetRemoteFieldList_, ns1__Fk_USCOREgetRemoteFieldListResponse_); }
+	virtual	int Fk_USCOREgetRemoteFieldList(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetRemoteFieldList *ns1__Fk_USCOREgetRemoteFieldList_, ns1__Fk_USCOREgetRemoteFieldListResponse *ns1__Fk_USCOREgetRemoteFieldListResponse_);
+
+	/// Web service operation 'Fk_getLocalFieldList' (returns error code or SOAP_OK)
+	virtual	int Fk_USCOREgetLocalFieldList(ns1__Fk_USCOREgetLocalFieldList *ns1__Fk_USCOREgetLocalFieldList_, ns1__Fk_USCOREgetLocalFieldListResponse *ns1__Fk_USCOREgetLocalFieldListResponse_) { return this->Fk_USCOREgetLocalFieldList(NULL, NULL, ns1__Fk_USCOREgetLocalFieldList_, ns1__Fk_USCOREgetLocalFieldListResponse_); }
+	virtual	int Fk_USCOREgetLocalFieldList(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetLocalFieldList *ns1__Fk_USCOREgetLocalFieldList_, ns1__Fk_USCOREgetLocalFieldListResponse *ns1__Fk_USCOREgetLocalFieldListResponse_);
+
+	/// Web service operation 'Query' (returns error code or SOAP_OK)
+	virtual	int Query(ns1__Query *ns1__Query_, ns1__QueryResponse *ns1__QueryResponse_) { return this->Query(NULL, NULL, ns1__Query_, ns1__QueryResponse_); }
+	virtual	int Query(const char *endpoint, const char *soap_action, ns1__Query *ns1__Query_, ns1__QueryResponse *ns1__QueryResponse_);
+
+	/// Web service operation 'Fk_getAllRecord' (returns error code or SOAP_OK)
+	virtual	int Fk_USCOREgetAllRecord(ns1__Fk_USCOREgetAllRecord *ns1__Fk_USCOREgetAllRecord_, ns1__Fk_USCOREgetAllRecordResponse *ns1__Fk_USCOREgetAllRecordResponse_) { return this->Fk_USCOREgetAllRecord(NULL, NULL, ns1__Fk_USCOREgetAllRecord_, ns1__Fk_USCOREgetAllRecordResponse_); }
+	virtual	int Fk_USCOREgetAllRecord(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetAllRecord *ns1__Fk_USCOREgetAllRecord_, ns1__Fk_USCOREgetAllRecordResponse *ns1__Fk_USCOREgetAllRecordResponse_);
+
+	/// Web service operation 'Fk_getCountAllRecord' (returns error code or SOAP_OK)
+	virtual	int Fk_USCOREgetCountAllRecord(ns1__Fk_USCOREgetCountAllRecord *ns1__Fk_USCOREgetCountAllRecord_, ns1__Fk_USCOREgetCountAllRecordResponse *ns1__Fk_USCOREgetCountAllRecordResponse_) { return this->Fk_USCOREgetCountAllRecord(NULL, NULL, ns1__Fk_USCOREgetCountAllRecord_, ns1__Fk_USCOREgetCountAllRecordResponse_); }
+	virtual	int Fk_USCOREgetCountAllRecord(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetCountAllRecord *ns1__Fk_USCOREgetCountAllRecord_, ns1__Fk_USCOREgetCountAllRecordResponse *ns1__Fk_USCOREgetCountAllRecordResponse_);
+
+	/// Web service operation 'Fk_getAllRecordByIndex' (returns error code or SOAP_OK)
+	virtual	int Fk_USCOREgetAllRecordByIndex(ns1__Fk_USCOREgetAllRecordByIndex *ns1__Fk_USCOREgetAllRecordByIndex_, ns1__Fk_USCOREgetAllRecordByIndexResponse *ns1__Fk_USCOREgetAllRecordByIndexResponse_) { return this->Fk_USCOREgetAllRecordByIndex(NULL, NULL, ns1__Fk_USCOREgetAllRecordByIndex_, ns1__Fk_USCOREgetAllRecordByIndexResponse_); }
+	virtual	int Fk_USCOREgetAllRecordByIndex(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetAllRecordByIndex *ns1__Fk_USCOREgetAllRecordByIndex_, ns1__Fk_USCOREgetAllRecordByIndexResponse *ns1__Fk_USCOREgetAllRecordByIndexResponse_);
+
+	/// Web service operation 'Fk_getAllRecordByDesc' (returns error code or SOAP_OK)
+	virtual	int Fk_USCOREgetAllRecordByDesc(ns1__Fk_USCOREgetAllRecordByDesc *ns1__Fk_USCOREgetAllRecordByDesc_, ns1__Fk_USCOREgetAllRecordByDescResponse *ns1__Fk_USCOREgetAllRecordByDescResponse_) { return this->Fk_USCOREgetAllRecordByDesc(NULL, NULL, ns1__Fk_USCOREgetAllRecordByDesc_, ns1__Fk_USCOREgetAllRecordByDescResponse_); }
+	virtual	int Fk_USCOREgetAllRecordByDesc(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetAllRecordByDesc *ns1__Fk_USCOREgetAllRecordByDesc_, ns1__Fk_USCOREgetAllRecordByDescResponse *ns1__Fk_USCOREgetAllRecordByDescResponse_);
+
+	/// Web service operation 'Fk_getCountAllRecordByDesc' (returns error code or SOAP_OK)
+	virtual	int Fk_USCOREgetCountAllRecordByDesc(ns1__Fk_USCOREgetCountAllRecordByDesc *ns1__Fk_USCOREgetCountAllRecordByDesc_, ns1__Fk_USCOREgetCountAllRecordByDescResponse *ns1__Fk_USCOREgetCountAllRecordByDescResponse_) { return this->Fk_USCOREgetCountAllRecordByDesc(NULL, NULL, ns1__Fk_USCOREgetCountAllRecordByDesc_, ns1__Fk_USCOREgetCountAllRecordByDescResponse_); }
+	virtual	int Fk_USCOREgetCountAllRecordByDesc(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetCountAllRecordByDesc *ns1__Fk_USCOREgetCountAllRecordByDesc_, ns1__Fk_USCOREgetCountAllRecordByDescResponse *ns1__Fk_USCOREgetCountAllRecordByDescResponse_);
+
+	/// Web service operation 'Fk_getCountAllRecordByIndexDesc' (returns error code or SOAP_OK)
+	virtual	int Fk_USCOREgetCountAllRecordByIndexDesc(ns1__Fk_USCOREgetCountAllRecordByIndexDesc *ns1__Fk_USCOREgetCountAllRecordByIndexDesc_, ns1__Fk_USCOREgetCountAllRecordByIndexDescResponse *ns1__Fk_USCOREgetCountAllRecordByIndexDescResponse_) { return this->Fk_USCOREgetCountAllRecordByIndexDesc(NULL, NULL, ns1__Fk_USCOREgetCountAllRecordByIndexDesc_, ns1__Fk_USCOREgetCountAllRecordByIndexDescResponse_); }
+	virtual	int Fk_USCOREgetCountAllRecordByIndexDesc(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetCountAllRecordByIndexDesc *ns1__Fk_USCOREgetCountAllRecordByIndexDesc_, ns1__Fk_USCOREgetCountAllRecordByIndexDescResponse *ns1__Fk_USCOREgetCountAllRecordByIndexDescResponse_);
+
+	/// Web service operation 'Fk_getAllRecordByIndexDesc' (returns error code or SOAP_OK)
+	virtual	int Fk_USCOREgetAllRecordByIndexDesc(ns1__Fk_USCOREgetAllRecordByIndexDesc *ns1__Fk_USCOREgetAllRecordByIndexDesc_, ns1__Fk_USCOREgetAllRecordByIndexDescResponse *ns1__Fk_USCOREgetAllRecordByIndexDescResponse_) { return this->Fk_USCOREgetAllRecordByIndexDesc(NULL, NULL, ns1__Fk_USCOREgetAllRecordByIndexDesc_, ns1__Fk_USCOREgetAllRecordByIndexDescResponse_); }
+	virtual	int Fk_USCOREgetAllRecordByIndexDesc(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetAllRecordByIndexDesc *ns1__Fk_USCOREgetAllRecordByIndexDesc_, ns1__Fk_USCOREgetAllRecordByIndexDescResponse *ns1__Fk_USCOREgetAllRecordByIndexDescResponse_);
+
+	/// Web service operation 'InsertDataWA' (returns error code or SOAP_OK)
+	virtual	int InsertDataWA(ns1__InsertDataWA *ns1__InsertDataWA_, ns1__InsertDataWAResponse *ns1__InsertDataWAResponse_) { return this->InsertDataWA(NULL, NULL, ns1__InsertDataWA_, ns1__InsertDataWAResponse_); }
+	virtual	int InsertDataWA(const char *endpoint, const char *soap_action, ns1__InsertDataWA *ns1__InsertDataWA_, ns1__InsertDataWAResponse *ns1__InsertDataWAResponse_);
+
+	/// Web service operation 'GetListDataWA' (returns error code or SOAP_OK)
+	virtual	int GetListDataWA(ns1__GetListDataWA *ns1__GetListDataWA_, ns1__GetListDataWAResponse *ns1__GetListDataWAResponse_) { return this->GetListDataWA(NULL, NULL, ns1__GetListDataWA_, ns1__GetListDataWAResponse_); }
+	virtual	int GetListDataWA(const char *endpoint, const char *soap_action, ns1__GetListDataWA *ns1__GetListDataWA_, ns1__GetListDataWAResponse *ns1__GetListDataWAResponse_);
+
+	/// Web service operation 'ModifyDataWA' (returns error code or SOAP_OK)
+	virtual	int ModifyDataWA(ns1__ModifyDataWA *ns1__ModifyDataWA_, ns1__ModifyDataWAResponse *ns1__ModifyDataWAResponse_) { return this->ModifyDataWA(NULL, NULL, ns1__ModifyDataWA_, ns1__ModifyDataWAResponse_); }
+	virtual	int ModifyDataWA(const char *endpoint, const char *soap_action, ns1__ModifyDataWA *ns1__ModifyDataWA_, ns1__ModifyDataWAResponse *ns1__ModifyDataWAResponse_);
+
+	/// Web service operation 'DeleteDataWA' (returns error code or SOAP_OK)
+	virtual	int DeleteDataWA(ns1__DeleteDataWA *ns1__DeleteDataWA_, ns1__DeleteDataWAResponse *ns1__DeleteDataWAResponse_) { return this->DeleteDataWA(NULL, NULL, ns1__DeleteDataWA_, ns1__DeleteDataWAResponse_); }
+	virtual	int DeleteDataWA(const char *endpoint, const char *soap_action, ns1__DeleteDataWA *ns1__DeleteDataWA_, ns1__DeleteDataWAResponse *ns1__DeleteDataWAResponse_);
+
+	/// Web service operation 'GetDataWAById' (returns error code or SOAP_OK)
+	virtual	int GetDataWAById(ns1__GetDataWAById *ns1__GetDataWAById_, ns1__GetDataWAByIdResponse *ns1__GetDataWAByIdResponse_) { return this->GetDataWAById(NULL, NULL, ns1__GetDataWAById_, ns1__GetDataWAByIdResponse_); }
+	virtual	int GetDataWAById(const char *endpoint, const char *soap_action, ns1__GetDataWAById *ns1__GetDataWAById_, ns1__GetDataWAByIdResponse *ns1__GetDataWAByIdResponse_);
+
+	/// Web service operation 'InsertFileWA' (returns error code or SOAP_OK)
+	virtual	int InsertFileWA(ns1__InsertFileWA *ns1__InsertFileWA_, ns1__InsertFileWAResponse *ns1__InsertFileWAResponse_) { return this->InsertFileWA(NULL, NULL, ns1__InsertFileWA_, ns1__InsertFileWAResponse_); }
+	virtual	int InsertFileWA(const char *endpoint, const char *soap_action, ns1__InsertFileWA *ns1__InsertFileWA_, ns1__InsertFileWAResponse *ns1__InsertFileWAResponse_);
+
+	/// Web service operation 'UploadSendChunkWA' (returns error code or SOAP_OK)
+	virtual	int UploadSendChunkWA(ns1__UploadSendChunkWA *ns1__UploadSendChunkWA_, ns1__UploadSendChunkWAResponse *ns1__UploadSendChunkWAResponse_) { return this->UploadSendChunkWA(NULL, NULL, ns1__UploadSendChunkWA_, ns1__UploadSendChunkWAResponse_); }
+	virtual	int UploadSendChunkWA(const char *endpoint, const char *soap_action, ns1__UploadSendChunkWA *ns1__UploadSendChunkWA_, ns1__UploadSendChunkWAResponse *ns1__UploadSendChunkWAResponse_);
+
+	/// Web service operation 'UploadEndFileWA' (returns error code or SOAP_OK)
+	virtual	int UploadEndFileWA(ns1__UploadEndFileWA *ns1__UploadEndFileWA_, ns1__UploadEndFileWAResponse *ns1__UploadEndFileWAResponse_) { return this->UploadEndFileWA(NULL, NULL, ns1__UploadEndFileWA_, ns1__UploadEndFileWAResponse_); }
+	virtual	int UploadEndFileWA(const char *endpoint, const char *soap_action, ns1__UploadEndFileWA *ns1__UploadEndFileWA_, ns1__UploadEndFileWAResponse *ns1__UploadEndFileWAResponse_);
+
+	/// Web service operation 'GetDataFileListWA' (returns error code or SOAP_OK)
+	virtual	int GetDataFileListWA(ns1__GetDataFileListWA *ns1__GetDataFileListWA_, ns1__GetDataFileListWAResponse *ns1__GetDataFileListWAResponse_) { return this->GetDataFileListWA(NULL, NULL, ns1__GetDataFileListWA_, ns1__GetDataFileListWAResponse_); }
+	virtual	int GetDataFileListWA(const char *endpoint, const char *soap_action, ns1__GetDataFileListWA *ns1__GetDataFileListWA_, ns1__GetDataFileListWAResponse *ns1__GetDataFileListWAResponse_);
+
+	/// Web service operation 'DownloadFileWAByFileUniqueCode' (returns error code or SOAP_OK)
+	virtual	int DownloadFileWAByFileUniqueCode(ns1__DownloadFileWAByFileUniqueCode *ns1__DownloadFileWAByFileUniqueCode_, ns1__DownloadFileWAByFileUniqueCodeResponse *ns1__DownloadFileWAByFileUniqueCodeResponse_) { return this->DownloadFileWAByFileUniqueCode(NULL, NULL, ns1__DownloadFileWAByFileUniqueCode_, ns1__DownloadFileWAByFileUniqueCodeResponse_); }
+	virtual	int DownloadFileWAByFileUniqueCode(const char *endpoint, const char *soap_action, ns1__DownloadFileWAByFileUniqueCode *ns1__DownloadFileWAByFileUniqueCode_, ns1__DownloadFileWAByFileUniqueCodeResponse *ns1__DownloadFileWAByFileUniqueCodeResponse_);
+
+	/// Web service operation 'DownloadFileWA' (returns error code or SOAP_OK)
+	virtual	int DownloadFileWA(ns1__DownloadFileWA *ns1__DownloadFileWA_, ns1__DownloadFileWAResponse *ns1__DownloadFileWAResponse_) { return this->DownloadFileWA(NULL, NULL, ns1__DownloadFileWA_, ns1__DownloadFileWAResponse_); }
+	virtual	int DownloadFileWA(const char *endpoint, const char *soap_action, ns1__DownloadFileWA *ns1__DownloadFileWA_, ns1__DownloadFileWAResponse *ns1__DownloadFileWAResponse_);
+
+	/// Web service operation 'DownloadGetNextWA' (returns error code or SOAP_OK)
+	virtual	int DownloadGetNextWA(ns1__DownloadGetNextWA *ns1__DownloadGetNextWA_, ns1__DownloadGetNextWAResponse *ns1__DownloadGetNextWAResponse_) { return this->DownloadGetNextWA(NULL, NULL, ns1__DownloadGetNextWA_, ns1__DownloadGetNextWAResponse_); }
+	virtual	int DownloadGetNextWA(const char *endpoint, const char *soap_action, ns1__DownloadGetNextWA *ns1__DownloadGetNextWA_, ns1__DownloadGetNextWAResponse *ns1__DownloadGetNextWAResponse_);
+
+	/// Web service operation 'DownloadEndFileWA' (returns error code or SOAP_OK)
+	virtual	int DownloadEndFileWA(ns1__DownloadEndFileWA *ns1__DownloadEndFileWA_, ns1__DownloadEndFileWAResponse *ns1__DownloadEndFileWAResponse_) { return this->DownloadEndFileWA(NULL, NULL, ns1__DownloadEndFileWA_, ns1__DownloadEndFileWAResponse_); }
+	virtual	int DownloadEndFileWA(const char *endpoint, const char *soap_action, ns1__DownloadEndFileWA *ns1__DownloadEndFileWA_, ns1__DownloadEndFileWAResponse *ns1__DownloadEndFileWAResponse_);
+
+	/// Web service operation 'DeleteFileWA' (returns error code or SOAP_OK)
+	virtual	int DeleteFileWA(ns1__DeleteFileWA *ns1__DeleteFileWA_, ns1__DeleteFileWAResponse *ns1__DeleteFileWAResponse_) { return this->DeleteFileWA(NULL, NULL, ns1__DeleteFileWA_, ns1__DeleteFileWAResponse_); }
+	virtual	int DeleteFileWA(const char *endpoint, const char *soap_action, ns1__DeleteFileWA *ns1__DeleteFileWA_, ns1__DeleteFileWAResponse *ns1__DeleteFileWAResponse_);
+
+	/// Web service operation 'GetCountDocumentLinks' (returns error code or SOAP_OK)
+	virtual	int GetCountDocumentLinks(ns1__GetCountDocumentLinks *ns1__GetCountDocumentLinks_, ns1__GetCountDocumentLinksResponse *ns1__GetCountDocumentLinksResponse_) { return this->GetCountDocumentLinks(NULL, NULL, ns1__GetCountDocumentLinks_, ns1__GetCountDocumentLinksResponse_); }
+	virtual	int GetCountDocumentLinks(const char *endpoint, const char *soap_action, ns1__GetCountDocumentLinks *ns1__GetCountDocumentLinks_, ns1__GetCountDocumentLinksResponse *ns1__GetCountDocumentLinksResponse_);
 
 	/// Web service operation 'SetInstanceReplication' (returns error code or SOAP_OK)
 	virtual	int SetInstanceReplication(ns1__SetInstanceReplication *ns1__SetInstanceReplication_, ns1__SetInstanceReplicationResponse *ns1__SetInstanceReplicationResponse_) { return this->SetInstanceReplication(NULL, NULL, ns1__SetInstanceReplication_, ns1__SetInstanceReplicationResponse_); }
@@ -132,10 +240,6 @@ class SOAP_CMAC abxWsGestPortBindingProxy
 	virtual	int DeleteDynorg(ns1__DeleteDynorg *ns1__DeleteDynorg_, ns1__DeleteDynorgResponse *ns1__DeleteDynorgResponse_) { return this->DeleteDynorg(NULL, NULL, ns1__DeleteDynorg_, ns1__DeleteDynorgResponse_); }
 	virtual	int DeleteDynorg(const char *endpoint, const char *soap_action, ns1__DeleteDynorg *ns1__DeleteDynorg_, ns1__DeleteDynorgResponse *ns1__DeleteDynorgResponse_);
 
-	/// Web service operation 'DigitalSign' (returns error code or SOAP_OK)
-	virtual	int DigitalSign(ns1__DigitalSign *ns1__DigitalSign_, ns1__DigitalSignResponse *ns1__DigitalSignResponse_) { return this->DigitalSign(NULL, NULL, ns1__DigitalSign_, ns1__DigitalSignResponse_); }
-	virtual	int DigitalSign(const char *endpoint, const char *soap_action, ns1__DigitalSign *ns1__DigitalSign_, ns1__DigitalSignResponse *ns1__DigitalSignResponse_);
-
 	/// Web service operation 'GetArchiBoxInDomainByMatricola' (returns error code or SOAP_OK)
 	virtual	int GetArchiBoxInDomainByMatricola(ns1__GetArchiBoxInDomainByMatricola *ns1__GetArchiBoxInDomainByMatricola_, ns1__GetArchiBoxInDomainByMatricolaResponse *ns1__GetArchiBoxInDomainByMatricolaResponse_) { return this->GetArchiBoxInDomainByMatricola(NULL, NULL, ns1__GetArchiBoxInDomainByMatricola_, ns1__GetArchiBoxInDomainByMatricolaResponse_); }
 	virtual	int GetArchiBoxInDomainByMatricola(const char *endpoint, const char *soap_action, ns1__GetArchiBoxInDomainByMatricola *ns1__GetArchiBoxInDomainByMatricola_, ns1__GetArchiBoxInDomainByMatricolaResponse *ns1__GetArchiBoxInDomainByMatricolaResponse_);
@@ -148,133 +252,37 @@ class SOAP_CMAC abxWsGestPortBindingProxy
 	virtual	int GetArchiBoxInDomain(ns1__GetArchiBoxInDomain *ns1__GetArchiBoxInDomain_, ns1__GetArchiBoxInDomainResponse *ns1__GetArchiBoxInDomainResponse_) { return this->GetArchiBoxInDomain(NULL, NULL, ns1__GetArchiBoxInDomain_, ns1__GetArchiBoxInDomainResponse_); }
 	virtual	int GetArchiBoxInDomain(const char *endpoint, const char *soap_action, ns1__GetArchiBoxInDomain *ns1__GetArchiBoxInDomain_, ns1__GetArchiBoxInDomainResponse *ns1__GetArchiBoxInDomainResponse_);
 
+	/// Web service operation 'DigitalSign' (returns error code or SOAP_OK)
+	virtual	int DigitalSign(ns1__DigitalSign *ns1__DigitalSign_, ns1__DigitalSignResponse *ns1__DigitalSignResponse_) { return this->DigitalSign(NULL, NULL, ns1__DigitalSign_, ns1__DigitalSignResponse_); }
+	virtual	int DigitalSign(const char *endpoint, const char *soap_action, ns1__DigitalSign *ns1__DigitalSign_, ns1__DigitalSignResponse *ns1__DigitalSignResponse_);
+
 	/// Web service operation 'GetInstanceReplicationStatus' (returns error code or SOAP_OK)
 	virtual	int GetInstanceReplicationStatus(ns1__GetInstanceReplicationStatus *ns1__GetInstanceReplicationStatus_, ns1__GetInstanceReplicationStatusResponse *ns1__GetInstanceReplicationStatusResponse_) { return this->GetInstanceReplicationStatus(NULL, NULL, ns1__GetInstanceReplicationStatus_, ns1__GetInstanceReplicationStatusResponse_); }
 	virtual	int GetInstanceReplicationStatus(const char *endpoint, const char *soap_action, ns1__GetInstanceReplicationStatus *ns1__GetInstanceReplicationStatus_, ns1__GetInstanceReplicationStatusResponse *ns1__GetInstanceReplicationStatusResponse_);
 
-	/// Web service operation 'GetCountDocumentLinks' (returns error code or SOAP_OK)
-	virtual	int GetCountDocumentLinks(ns1__GetCountDocumentLinks *ns1__GetCountDocumentLinks_, ns1__GetCountDocumentLinksResponse *ns1__GetCountDocumentLinksResponse_) { return this->GetCountDocumentLinks(NULL, NULL, ns1__GetCountDocumentLinks_, ns1__GetCountDocumentLinksResponse_); }
-	virtual	int GetCountDocumentLinks(const char *endpoint, const char *soap_action, ns1__GetCountDocumentLinks *ns1__GetCountDocumentLinks_, ns1__GetCountDocumentLinksResponse *ns1__GetCountDocumentLinksResponse_);
+	/// Web service operation 'CreateContainer' (returns error code or SOAP_OK)
+	virtual	int CreateContainer(ns1__CreateContainer *ns1__CreateContainer_, ns1__CreateContainerResponse *ns1__CreateContainerResponse_) { return this->CreateContainer(NULL, NULL, ns1__CreateContainer_, ns1__CreateContainerResponse_); }
+	virtual	int CreateContainer(const char *endpoint, const char *soap_action, ns1__CreateContainer *ns1__CreateContainer_, ns1__CreateContainerResponse *ns1__CreateContainerResponse_);
 
-	/// Web service operation 'InsertDataWA' (returns error code or SOAP_OK)
-	virtual	int InsertDataWA(ns1__InsertDataWA *ns1__InsertDataWA_, ns1__InsertDataWAResponse *ns1__InsertDataWAResponse_) { return this->InsertDataWA(NULL, NULL, ns1__InsertDataWA_, ns1__InsertDataWAResponse_); }
-	virtual	int InsertDataWA(const char *endpoint, const char *soap_action, ns1__InsertDataWA *ns1__InsertDataWA_, ns1__InsertDataWAResponse *ns1__InsertDataWAResponse_);
+	/// Web service operation 'CreateTemplate' (returns error code or SOAP_OK)
+	virtual	int CreateTemplate(ns1__CreateTemplate *ns1__CreateTemplate_, ns1__CreateTemplateResponse *ns1__CreateTemplateResponse_) { return this->CreateTemplate(NULL, NULL, ns1__CreateTemplate_, ns1__CreateTemplateResponse_); }
+	virtual	int CreateTemplate(const char *endpoint, const char *soap_action, ns1__CreateTemplate *ns1__CreateTemplate_, ns1__CreateTemplateResponse *ns1__CreateTemplateResponse_);
 
-	/// Web service operation 'ModifyDataWA' (returns error code or SOAP_OK)
-	virtual	int ModifyDataWA(ns1__ModifyDataWA *ns1__ModifyDataWA_, ns1__ModifyDataWAResponse *ns1__ModifyDataWAResponse_) { return this->ModifyDataWA(NULL, NULL, ns1__ModifyDataWA_, ns1__ModifyDataWAResponse_); }
-	virtual	int ModifyDataWA(const char *endpoint, const char *soap_action, ns1__ModifyDataWA *ns1__ModifyDataWA_, ns1__ModifyDataWAResponse *ns1__ModifyDataWAResponse_);
-
-	/// Web service operation 'DeleteDataWA' (returns error code or SOAP_OK)
-	virtual	int DeleteDataWA(ns1__DeleteDataWA *ns1__DeleteDataWA_, ns1__DeleteDataWAResponse *ns1__DeleteDataWAResponse_) { return this->DeleteDataWA(NULL, NULL, ns1__DeleteDataWA_, ns1__DeleteDataWAResponse_); }
-	virtual	int DeleteDataWA(const char *endpoint, const char *soap_action, ns1__DeleteDataWA *ns1__DeleteDataWA_, ns1__DeleteDataWAResponse *ns1__DeleteDataWAResponse_);
-
-	/// Web service operation 'GetListDataWA' (returns error code or SOAP_OK)
-	virtual	int GetListDataWA(ns1__GetListDataWA *ns1__GetListDataWA_, ns1__GetListDataWAResponse *ns1__GetListDataWAResponse_) { return this->GetListDataWA(NULL, NULL, ns1__GetListDataWA_, ns1__GetListDataWAResponse_); }
-	virtual	int GetListDataWA(const char *endpoint, const char *soap_action, ns1__GetListDataWA *ns1__GetListDataWA_, ns1__GetListDataWAResponse *ns1__GetListDataWAResponse_);
-
-	/// Web service operation 'GetDataWAById' (returns error code or SOAP_OK)
-	virtual	int GetDataWAById(ns1__GetDataWAById *ns1__GetDataWAById_, ns1__GetDataWAByIdResponse *ns1__GetDataWAByIdResponse_) { return this->GetDataWAById(NULL, NULL, ns1__GetDataWAById_, ns1__GetDataWAByIdResponse_); }
-	virtual	int GetDataWAById(const char *endpoint, const char *soap_action, ns1__GetDataWAById *ns1__GetDataWAById_, ns1__GetDataWAByIdResponse *ns1__GetDataWAByIdResponse_);
-
-	/// Web service operation 'InsertFileWA' (returns error code or SOAP_OK)
-	virtual	int InsertFileWA(ns1__InsertFileWA *ns1__InsertFileWA_, ns1__InsertFileWAResponse *ns1__InsertFileWAResponse_) { return this->InsertFileWA(NULL, NULL, ns1__InsertFileWA_, ns1__InsertFileWAResponse_); }
-	virtual	int InsertFileWA(const char *endpoint, const char *soap_action, ns1__InsertFileWA *ns1__InsertFileWA_, ns1__InsertFileWAResponse *ns1__InsertFileWAResponse_);
-
-	/// Web service operation 'UploadSendChunkWA' (returns error code or SOAP_OK)
-	virtual	int UploadSendChunkWA(ns1__UploadSendChunkWA *ns1__UploadSendChunkWA_, ns1__UploadSendChunkWAResponse *ns1__UploadSendChunkWAResponse_) { return this->UploadSendChunkWA(NULL, NULL, ns1__UploadSendChunkWA_, ns1__UploadSendChunkWAResponse_); }
-	virtual	int UploadSendChunkWA(const char *endpoint, const char *soap_action, ns1__UploadSendChunkWA *ns1__UploadSendChunkWA_, ns1__UploadSendChunkWAResponse *ns1__UploadSendChunkWAResponse_);
-
-	/// Web service operation 'UploadEndFileWA' (returns error code or SOAP_OK)
-	virtual	int UploadEndFileWA(ns1__UploadEndFileWA *ns1__UploadEndFileWA_, ns1__UploadEndFileWAResponse *ns1__UploadEndFileWAResponse_) { return this->UploadEndFileWA(NULL, NULL, ns1__UploadEndFileWA_, ns1__UploadEndFileWAResponse_); }
-	virtual	int UploadEndFileWA(const char *endpoint, const char *soap_action, ns1__UploadEndFileWA *ns1__UploadEndFileWA_, ns1__UploadEndFileWAResponse *ns1__UploadEndFileWAResponse_);
-
-	/// Web service operation 'GetDataFileListWA' (returns error code or SOAP_OK)
-	virtual	int GetDataFileListWA(ns1__GetDataFileListWA *ns1__GetDataFileListWA_, ns1__GetDataFileListWAResponse *ns1__GetDataFileListWAResponse_) { return this->GetDataFileListWA(NULL, NULL, ns1__GetDataFileListWA_, ns1__GetDataFileListWAResponse_); }
-	virtual	int GetDataFileListWA(const char *endpoint, const char *soap_action, ns1__GetDataFileListWA *ns1__GetDataFileListWA_, ns1__GetDataFileListWAResponse *ns1__GetDataFileListWAResponse_);
-
-	/// Web service operation 'DownloadFileWAByFileUniqueCode' (returns error code or SOAP_OK)
-	virtual	int DownloadFileWAByFileUniqueCode(ns1__DownloadFileWAByFileUniqueCode *ns1__DownloadFileWAByFileUniqueCode_, ns1__DownloadFileWAByFileUniqueCodeResponse *ns1__DownloadFileWAByFileUniqueCodeResponse_) { return this->DownloadFileWAByFileUniqueCode(NULL, NULL, ns1__DownloadFileWAByFileUniqueCode_, ns1__DownloadFileWAByFileUniqueCodeResponse_); }
-	virtual	int DownloadFileWAByFileUniqueCode(const char *endpoint, const char *soap_action, ns1__DownloadFileWAByFileUniqueCode *ns1__DownloadFileWAByFileUniqueCode_, ns1__DownloadFileWAByFileUniqueCodeResponse *ns1__DownloadFileWAByFileUniqueCodeResponse_);
-
-	/// Web service operation 'DownloadFileWA' (returns error code or SOAP_OK)
-	virtual	int DownloadFileWA(ns1__DownloadFileWA *ns1__DownloadFileWA_, ns1__DownloadFileWAResponse *ns1__DownloadFileWAResponse_) { return this->DownloadFileWA(NULL, NULL, ns1__DownloadFileWA_, ns1__DownloadFileWAResponse_); }
-	virtual	int DownloadFileWA(const char *endpoint, const char *soap_action, ns1__DownloadFileWA *ns1__DownloadFileWA_, ns1__DownloadFileWAResponse *ns1__DownloadFileWAResponse_);
-
-	/// Web service operation 'DownloadGetNextWA' (returns error code or SOAP_OK)
-	virtual	int DownloadGetNextWA(ns1__DownloadGetNextWA *ns1__DownloadGetNextWA_, ns1__DownloadGetNextWAResponse *ns1__DownloadGetNextWAResponse_) { return this->DownloadGetNextWA(NULL, NULL, ns1__DownloadGetNextWA_, ns1__DownloadGetNextWAResponse_); }
-	virtual	int DownloadGetNextWA(const char *endpoint, const char *soap_action, ns1__DownloadGetNextWA *ns1__DownloadGetNextWA_, ns1__DownloadGetNextWAResponse *ns1__DownloadGetNextWAResponse_);
-
-	/// Web service operation 'DownloadEndFileWA' (returns error code or SOAP_OK)
-	virtual	int DownloadEndFileWA(ns1__DownloadEndFileWA *ns1__DownloadEndFileWA_, ns1__DownloadEndFileWAResponse *ns1__DownloadEndFileWAResponse_) { return this->DownloadEndFileWA(NULL, NULL, ns1__DownloadEndFileWA_, ns1__DownloadEndFileWAResponse_); }
-	virtual	int DownloadEndFileWA(const char *endpoint, const char *soap_action, ns1__DownloadEndFileWA *ns1__DownloadEndFileWA_, ns1__DownloadEndFileWAResponse *ns1__DownloadEndFileWAResponse_);
-
-	/// Web service operation 'DeleteFileWA' (returns error code or SOAP_OK)
-	virtual	int DeleteFileWA(ns1__DeleteFileWA *ns1__DeleteFileWA_, ns1__DeleteFileWAResponse *ns1__DeleteFileWAResponse_) { return this->DeleteFileWA(NULL, NULL, ns1__DeleteFileWA_, ns1__DeleteFileWAResponse_); }
-	virtual	int DeleteFileWA(const char *endpoint, const char *soap_action, ns1__DeleteFileWA *ns1__DeleteFileWA_, ns1__DeleteFileWAResponse *ns1__DeleteFileWAResponse_);
-
-	/// Web service operation 'Fk_getRemoteFieldList' (returns error code or SOAP_OK)
-	virtual	int Fk_USCOREgetRemoteFieldList(ns1__Fk_USCOREgetRemoteFieldList *ns1__Fk_USCOREgetRemoteFieldList_, ns1__Fk_USCOREgetRemoteFieldListResponse *ns1__Fk_USCOREgetRemoteFieldListResponse_) { return this->Fk_USCOREgetRemoteFieldList(NULL, NULL, ns1__Fk_USCOREgetRemoteFieldList_, ns1__Fk_USCOREgetRemoteFieldListResponse_); }
-	virtual	int Fk_USCOREgetRemoteFieldList(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetRemoteFieldList *ns1__Fk_USCOREgetRemoteFieldList_, ns1__Fk_USCOREgetRemoteFieldListResponse *ns1__Fk_USCOREgetRemoteFieldListResponse_);
-
-	/// Web service operation 'Fk_getLocalFieldList' (returns error code or SOAP_OK)
-	virtual	int Fk_USCOREgetLocalFieldList(ns1__Fk_USCOREgetLocalFieldList *ns1__Fk_USCOREgetLocalFieldList_, ns1__Fk_USCOREgetLocalFieldListResponse *ns1__Fk_USCOREgetLocalFieldListResponse_) { return this->Fk_USCOREgetLocalFieldList(NULL, NULL, ns1__Fk_USCOREgetLocalFieldList_, ns1__Fk_USCOREgetLocalFieldListResponse_); }
-	virtual	int Fk_USCOREgetLocalFieldList(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetLocalFieldList *ns1__Fk_USCOREgetLocalFieldList_, ns1__Fk_USCOREgetLocalFieldListResponse *ns1__Fk_USCOREgetLocalFieldListResponse_);
-
-	/// Web service operation 'Query' (returns error code or SOAP_OK)
-	virtual	int Query(ns1__Query *ns1__Query_, ns1__QueryResponse *ns1__QueryResponse_) { return this->Query(NULL, NULL, ns1__Query_, ns1__QueryResponse_); }
-	virtual	int Query(const char *endpoint, const char *soap_action, ns1__Query *ns1__Query_, ns1__QueryResponse *ns1__QueryResponse_);
-
-	/// Web service operation 'Fk_getAllRecord' (returns error code or SOAP_OK)
-	virtual	int Fk_USCOREgetAllRecord(ns1__Fk_USCOREgetAllRecord *ns1__Fk_USCOREgetAllRecord_, ns1__Fk_USCOREgetAllRecordResponse *ns1__Fk_USCOREgetAllRecordResponse_) { return this->Fk_USCOREgetAllRecord(NULL, NULL, ns1__Fk_USCOREgetAllRecord_, ns1__Fk_USCOREgetAllRecordResponse_); }
-	virtual	int Fk_USCOREgetAllRecord(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetAllRecord *ns1__Fk_USCOREgetAllRecord_, ns1__Fk_USCOREgetAllRecordResponse *ns1__Fk_USCOREgetAllRecordResponse_);
-
-	/// Web service operation 'Fk_getCountAllRecord' (returns error code or SOAP_OK)
-	virtual	int Fk_USCOREgetCountAllRecord(ns1__Fk_USCOREgetCountAllRecord *ns1__Fk_USCOREgetCountAllRecord_, ns1__Fk_USCOREgetCountAllRecordResponse *ns1__Fk_USCOREgetCountAllRecordResponse_) { return this->Fk_USCOREgetCountAllRecord(NULL, NULL, ns1__Fk_USCOREgetCountAllRecord_, ns1__Fk_USCOREgetCountAllRecordResponse_); }
-	virtual	int Fk_USCOREgetCountAllRecord(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetCountAllRecord *ns1__Fk_USCOREgetCountAllRecord_, ns1__Fk_USCOREgetCountAllRecordResponse *ns1__Fk_USCOREgetCountAllRecordResponse_);
-
-	/// Web service operation 'Fk_getAllRecordByIndex' (returns error code or SOAP_OK)
-	virtual	int Fk_USCOREgetAllRecordByIndex(ns1__Fk_USCOREgetAllRecordByIndex *ns1__Fk_USCOREgetAllRecordByIndex_, ns1__Fk_USCOREgetAllRecordByIndexResponse *ns1__Fk_USCOREgetAllRecordByIndexResponse_) { return this->Fk_USCOREgetAllRecordByIndex(NULL, NULL, ns1__Fk_USCOREgetAllRecordByIndex_, ns1__Fk_USCOREgetAllRecordByIndexResponse_); }
-	virtual	int Fk_USCOREgetAllRecordByIndex(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetAllRecordByIndex *ns1__Fk_USCOREgetAllRecordByIndex_, ns1__Fk_USCOREgetAllRecordByIndexResponse *ns1__Fk_USCOREgetAllRecordByIndexResponse_);
-
-	/// Web service operation 'Fk_getAllRecordByDesc' (returns error code or SOAP_OK)
-	virtual	int Fk_USCOREgetAllRecordByDesc(ns1__Fk_USCOREgetAllRecordByDesc *ns1__Fk_USCOREgetAllRecordByDesc_, ns1__Fk_USCOREgetAllRecordByDescResponse *ns1__Fk_USCOREgetAllRecordByDescResponse_) { return this->Fk_USCOREgetAllRecordByDesc(NULL, NULL, ns1__Fk_USCOREgetAllRecordByDesc_, ns1__Fk_USCOREgetAllRecordByDescResponse_); }
-	virtual	int Fk_USCOREgetAllRecordByDesc(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetAllRecordByDesc *ns1__Fk_USCOREgetAllRecordByDesc_, ns1__Fk_USCOREgetAllRecordByDescResponse *ns1__Fk_USCOREgetAllRecordByDescResponse_);
-
-	/// Web service operation 'Fk_getCountAllRecordByDesc' (returns error code or SOAP_OK)
-	virtual	int Fk_USCOREgetCountAllRecordByDesc(ns1__Fk_USCOREgetCountAllRecordByDesc *ns1__Fk_USCOREgetCountAllRecordByDesc_, ns1__Fk_USCOREgetCountAllRecordByDescResponse *ns1__Fk_USCOREgetCountAllRecordByDescResponse_) { return this->Fk_USCOREgetCountAllRecordByDesc(NULL, NULL, ns1__Fk_USCOREgetCountAllRecordByDesc_, ns1__Fk_USCOREgetCountAllRecordByDescResponse_); }
-	virtual	int Fk_USCOREgetCountAllRecordByDesc(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetCountAllRecordByDesc *ns1__Fk_USCOREgetCountAllRecordByDesc_, ns1__Fk_USCOREgetCountAllRecordByDescResponse *ns1__Fk_USCOREgetCountAllRecordByDescResponse_);
-
-	/// Web service operation 'Fk_getCountAllRecordByIndexDesc' (returns error code or SOAP_OK)
-	virtual	int Fk_USCOREgetCountAllRecordByIndexDesc(ns1__Fk_USCOREgetCountAllRecordByIndexDesc *ns1__Fk_USCOREgetCountAllRecordByIndexDesc_, ns1__Fk_USCOREgetCountAllRecordByIndexDescResponse *ns1__Fk_USCOREgetCountAllRecordByIndexDescResponse_) { return this->Fk_USCOREgetCountAllRecordByIndexDesc(NULL, NULL, ns1__Fk_USCOREgetCountAllRecordByIndexDesc_, ns1__Fk_USCOREgetCountAllRecordByIndexDescResponse_); }
-	virtual	int Fk_USCOREgetCountAllRecordByIndexDesc(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetCountAllRecordByIndexDesc *ns1__Fk_USCOREgetCountAllRecordByIndexDesc_, ns1__Fk_USCOREgetCountAllRecordByIndexDescResponse *ns1__Fk_USCOREgetCountAllRecordByIndexDescResponse_);
-
-	/// Web service operation 'Fk_getAllRecordByIndexDesc' (returns error code or SOAP_OK)
-	virtual	int Fk_USCOREgetAllRecordByIndexDesc(ns1__Fk_USCOREgetAllRecordByIndexDesc *ns1__Fk_USCOREgetAllRecordByIndexDesc_, ns1__Fk_USCOREgetAllRecordByIndexDescResponse *ns1__Fk_USCOREgetAllRecordByIndexDescResponse_) { return this->Fk_USCOREgetAllRecordByIndexDesc(NULL, NULL, ns1__Fk_USCOREgetAllRecordByIndexDesc_, ns1__Fk_USCOREgetAllRecordByIndexDescResponse_); }
-	virtual	int Fk_USCOREgetAllRecordByIndexDesc(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetAllRecordByIndexDesc *ns1__Fk_USCOREgetAllRecordByIndexDesc_, ns1__Fk_USCOREgetAllRecordByIndexDescResponse *ns1__Fk_USCOREgetAllRecordByIndexDescResponse_);
-
-	/// Web service operation 'Fk_getColumnsName' (returns error code or SOAP_OK)
-	virtual	int Fk_USCOREgetColumnsName(ns1__Fk_USCOREgetColumnsName *ns1__Fk_USCOREgetColumnsName_, ns1__Fk_USCOREgetColumnsNameResponse *ns1__Fk_USCOREgetColumnsNameResponse_) { return this->Fk_USCOREgetColumnsName(NULL, NULL, ns1__Fk_USCOREgetColumnsName_, ns1__Fk_USCOREgetColumnsNameResponse_); }
-	virtual	int Fk_USCOREgetColumnsName(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetColumnsName *ns1__Fk_USCOREgetColumnsName_, ns1__Fk_USCOREgetColumnsNameResponse *ns1__Fk_USCOREgetColumnsNameResponse_);
-
-	/// Web service operation 'Fk_getRemoteDatabaseList' (returns error code or SOAP_OK)
-	virtual	int Fk_USCOREgetRemoteDatabaseList(ns1__Fk_USCOREgetRemoteDatabaseList *ns1__Fk_USCOREgetRemoteDatabaseList_, ns1__Fk_USCOREgetRemoteDatabaseListResponse *ns1__Fk_USCOREgetRemoteDatabaseListResponse_) { return this->Fk_USCOREgetRemoteDatabaseList(NULL, NULL, ns1__Fk_USCOREgetRemoteDatabaseList_, ns1__Fk_USCOREgetRemoteDatabaseListResponse_); }
-	virtual	int Fk_USCOREgetRemoteDatabaseList(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetRemoteDatabaseList *ns1__Fk_USCOREgetRemoteDatabaseList_, ns1__Fk_USCOREgetRemoteDatabaseListResponse *ns1__Fk_USCOREgetRemoteDatabaseListResponse_);
-
-	/// Web service operation 'Fk_getRemoteTableList' (returns error code or SOAP_OK)
-	virtual	int Fk_USCOREgetRemoteTableList(ns1__Fk_USCOREgetRemoteTableList *ns1__Fk_USCOREgetRemoteTableList_, ns1__Fk_USCOREgetRemoteTableListResponse *ns1__Fk_USCOREgetRemoteTableListResponse_) { return this->Fk_USCOREgetRemoteTableList(NULL, NULL, ns1__Fk_USCOREgetRemoteTableList_, ns1__Fk_USCOREgetRemoteTableListResponse_); }
-	virtual	int Fk_USCOREgetRemoteTableList(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetRemoteTableList *ns1__Fk_USCOREgetRemoteTableList_, ns1__Fk_USCOREgetRemoteTableListResponse *ns1__Fk_USCOREgetRemoteTableListResponse_);
-
-	/// Web service operation 'Fk_getRemoteViewList' (returns error code or SOAP_OK)
-	virtual	int Fk_USCOREgetRemoteViewList(ns1__Fk_USCOREgetRemoteViewList *ns1__Fk_USCOREgetRemoteViewList_, ns1__Fk_USCOREgetRemoteViewListResponse *ns1__Fk_USCOREgetRemoteViewListResponse_) { return this->Fk_USCOREgetRemoteViewList(NULL, NULL, ns1__Fk_USCOREgetRemoteViewList_, ns1__Fk_USCOREgetRemoteViewListResponse_); }
-	virtual	int Fk_USCOREgetRemoteViewList(const char *endpoint, const char *soap_action, ns1__Fk_USCOREgetRemoteViewList *ns1__Fk_USCOREgetRemoteViewList_, ns1__Fk_USCOREgetRemoteViewListResponse *ns1__Fk_USCOREgetRemoteViewListResponse_);
+	/// Web service operation 'CreateDynorg' (returns error code or SOAP_OK)
+	virtual	int CreateDynorg(ns1__CreateDynorg *ns1__CreateDynorg_, ns1__CreateDynorgResponse *ns1__CreateDynorgResponse_) { return this->CreateDynorg(NULL, NULL, ns1__CreateDynorg_, ns1__CreateDynorgResponse_); }
+	virtual	int CreateDynorg(const char *endpoint, const char *soap_action, ns1__CreateDynorg *ns1__CreateDynorg_, ns1__CreateDynorgResponse *ns1__CreateDynorgResponse_);
 
 	/// Web service operation 'GetFieldList' (returns error code or SOAP_OK)
 	virtual	int GetFieldList(ns1__GetFieldList *ns1__GetFieldList_, ns1__GetFieldListResponse *ns1__GetFieldListResponse_) { return this->GetFieldList(NULL, NULL, ns1__GetFieldList_, ns1__GetFieldListResponse_); }
 	virtual	int GetFieldList(const char *endpoint, const char *soap_action, ns1__GetFieldList *ns1__GetFieldList_, ns1__GetFieldListResponse *ns1__GetFieldListResponse_);
 
-	/// Web service operation 'ModifyField' (returns error code or SOAP_OK)
-	virtual	int ModifyField(ns1__ModifyField *ns1__ModifyField_, ns1__ModifyFieldResponse *ns1__ModifyFieldResponse_) { return this->ModifyField(NULL, NULL, ns1__ModifyField_, ns1__ModifyFieldResponse_); }
-	virtual	int ModifyField(const char *endpoint, const char *soap_action, ns1__ModifyField *ns1__ModifyField_, ns1__ModifyFieldResponse *ns1__ModifyFieldResponse_);
+	/// Web service operation 'GetFieldProperties' (returns error code or SOAP_OK)
+	virtual	int GetFieldProperties(ns1__GetFieldProperties *ns1__GetFieldProperties_, ns1__GetFieldPropertiesResponse *ns1__GetFieldPropertiesResponse_) { return this->GetFieldProperties(NULL, NULL, ns1__GetFieldProperties_, ns1__GetFieldPropertiesResponse_); }
+	virtual	int GetFieldProperties(const char *endpoint, const char *soap_action, ns1__GetFieldProperties *ns1__GetFieldProperties_, ns1__GetFieldPropertiesResponse *ns1__GetFieldPropertiesResponse_);
+
+	/// Web service operation 'GetFieldsPropertiesFromTemplate' (returns error code or SOAP_OK)
+	virtual	int GetFieldsPropertiesFromTemplate(ns1__GetFieldsPropertiesFromTemplate *ns1__GetFieldsPropertiesFromTemplate_, ns1__GetFieldsPropertiesFromTemplateResponse *ns1__GetFieldsPropertiesFromTemplateResponse_) { return this->GetFieldsPropertiesFromTemplate(NULL, NULL, ns1__GetFieldsPropertiesFromTemplate_, ns1__GetFieldsPropertiesFromTemplateResponse_); }
+	virtual	int GetFieldsPropertiesFromTemplate(const char *endpoint, const char *soap_action, ns1__GetFieldsPropertiesFromTemplate *ns1__GetFieldsPropertiesFromTemplate_, ns1__GetFieldsPropertiesFromTemplateResponse *ns1__GetFieldsPropertiesFromTemplateResponse_);
 
 	/// Web service operation 'GetAdjacentArchiBox' (returns error code or SOAP_OK)
 	virtual	int GetAdjacentArchiBox(ns1__GetAdjacentArchiBox *ns1__GetAdjacentArchiBox_, ns1__GetAdjacentArchiBoxResponse *ns1__GetAdjacentArchiBoxResponse_) { return this->GetAdjacentArchiBox(NULL, NULL, ns1__GetAdjacentArchiBox_, ns1__GetAdjacentArchiBoxResponse_); }
@@ -324,13 +332,9 @@ class SOAP_CMAC abxWsGestPortBindingProxy
 	virtual	int ChangeSchedulerTaskScheduleStatus(ns1__ChangeSchedulerTaskScheduleStatus *ns1__ChangeSchedulerTaskScheduleStatus_, ns1__ChangeSchedulerTaskScheduleStatusResponse *ns1__ChangeSchedulerTaskScheduleStatusResponse_) { return this->ChangeSchedulerTaskScheduleStatus(NULL, NULL, ns1__ChangeSchedulerTaskScheduleStatus_, ns1__ChangeSchedulerTaskScheduleStatusResponse_); }
 	virtual	int ChangeSchedulerTaskScheduleStatus(const char *endpoint, const char *soap_action, ns1__ChangeSchedulerTaskScheduleStatus *ns1__ChangeSchedulerTaskScheduleStatus_, ns1__ChangeSchedulerTaskScheduleStatusResponse *ns1__ChangeSchedulerTaskScheduleStatusResponse_);
 
-	/// Web service operation 'GetFieldProperties' (returns error code or SOAP_OK)
-	virtual	int GetFieldProperties(ns1__GetFieldProperties *ns1__GetFieldProperties_, ns1__GetFieldPropertiesResponse *ns1__GetFieldPropertiesResponse_) { return this->GetFieldProperties(NULL, NULL, ns1__GetFieldProperties_, ns1__GetFieldPropertiesResponse_); }
-	virtual	int GetFieldProperties(const char *endpoint, const char *soap_action, ns1__GetFieldProperties *ns1__GetFieldProperties_, ns1__GetFieldPropertiesResponse *ns1__GetFieldPropertiesResponse_);
-
-	/// Web service operation 'GetFieldsPropertiesFromTemplate' (returns error code or SOAP_OK)
-	virtual	int GetFieldsPropertiesFromTemplate(ns1__GetFieldsPropertiesFromTemplate *ns1__GetFieldsPropertiesFromTemplate_, ns1__GetFieldsPropertiesFromTemplateResponse *ns1__GetFieldsPropertiesFromTemplateResponse_) { return this->GetFieldsPropertiesFromTemplate(NULL, NULL, ns1__GetFieldsPropertiesFromTemplate_, ns1__GetFieldsPropertiesFromTemplateResponse_); }
-	virtual	int GetFieldsPropertiesFromTemplate(const char *endpoint, const char *soap_action, ns1__GetFieldsPropertiesFromTemplate *ns1__GetFieldsPropertiesFromTemplate_, ns1__GetFieldsPropertiesFromTemplateResponse *ns1__GetFieldsPropertiesFromTemplateResponse_);
+	/// Web service operation 'ModifyField' (returns error code or SOAP_OK)
+	virtual	int ModifyField(ns1__ModifyField *ns1__ModifyField_, ns1__ModifyFieldResponse *ns1__ModifyFieldResponse_) { return this->ModifyField(NULL, NULL, ns1__ModifyField_, ns1__ModifyFieldResponse_); }
+	virtual	int ModifyField(const char *endpoint, const char *soap_action, ns1__ModifyField *ns1__ModifyField_, ns1__ModifyFieldResponse *ns1__ModifyFieldResponse_);
 
 	/// Web service operation 'DeleteField' (returns error code or SOAP_OK)
 	virtual	int DeleteField(ns1__DeleteField *ns1__DeleteField_, ns1__DeleteFieldResponse *ns1__DeleteFieldResponse_) { return this->DeleteField(NULL, NULL, ns1__DeleteField_, ns1__DeleteFieldResponse_); }
@@ -468,14 +472,6 @@ class SOAP_CMAC abxWsGestPortBindingProxy
 	virtual	int QueryTotAttach(ns1__QueryTotAttach *ns1__QueryTotAttach_, ns1__QueryTotAttachResponse *ns1__QueryTotAttachResponse_) { return this->QueryTotAttach(NULL, NULL, ns1__QueryTotAttach_, ns1__QueryTotAttachResponse_); }
 	virtual	int QueryTotAttach(const char *endpoint, const char *soap_action, ns1__QueryTotAttach *ns1__QueryTotAttach_, ns1__QueryTotAttachResponse *ns1__QueryTotAttachResponse_);
 
-	/// Web service operation 'GetInstanceId' (returns error code or SOAP_OK)
-	virtual	int GetInstanceId(ns1__GetInstanceId *ns1__GetInstanceId_, ns1__GetInstanceIdResponse *ns1__GetInstanceIdResponse_) { return this->GetInstanceId(NULL, NULL, ns1__GetInstanceId_, ns1__GetInstanceIdResponse_); }
-	virtual	int GetInstanceId(const char *endpoint, const char *soap_action, ns1__GetInstanceId *ns1__GetInstanceId_, ns1__GetInstanceIdResponse *ns1__GetInstanceIdResponse_);
-
-	/// Web service operation 'GetTemplateProperties' (returns error code or SOAP_OK)
-	virtual	int GetTemplateProperties(ns1__GetTemplateProperties *ns1__GetTemplateProperties_, ns1__GetTemplatePropertiesResponse *ns1__GetTemplatePropertiesResponse_) { return this->GetTemplateProperties(NULL, NULL, ns1__GetTemplateProperties_, ns1__GetTemplatePropertiesResponse_); }
-	virtual	int GetTemplateProperties(const char *endpoint, const char *soap_action, ns1__GetTemplateProperties *ns1__GetTemplateProperties_, ns1__GetTemplatePropertiesResponse *ns1__GetTemplatePropertiesResponse_);
-
 	/// Web service operation 'DeleteFilter' (returns error code or SOAP_OK)
 	virtual	int DeleteFilter(ns1__DeleteFilter *ns1__DeleteFilter_, ns1__DeleteFilterResponse *ns1__DeleteFilterResponse_) { return this->DeleteFilter(NULL, NULL, ns1__DeleteFilter_, ns1__DeleteFilterResponse_); }
 	virtual	int DeleteFilter(const char *endpoint, const char *soap_action, ns1__DeleteFilter *ns1__DeleteFilter_, ns1__DeleteFilterResponse *ns1__DeleteFilterResponse_);
@@ -487,6 +483,14 @@ class SOAP_CMAC abxWsGestPortBindingProxy
 	/// Web service operation 'InsertFilter' (returns error code or SOAP_OK)
 	virtual	int InsertFilter(ns1__InsertFilter *ns1__InsertFilter_, ns1__InsertFilterResponse *ns1__InsertFilterResponse_) { return this->InsertFilter(NULL, NULL, ns1__InsertFilter_, ns1__InsertFilterResponse_); }
 	virtual	int InsertFilter(const char *endpoint, const char *soap_action, ns1__InsertFilter *ns1__InsertFilter_, ns1__InsertFilterResponse *ns1__InsertFilterResponse_);
+
+	/// Web service operation 'GetInstanceId' (returns error code or SOAP_OK)
+	virtual	int GetInstanceId(ns1__GetInstanceId *ns1__GetInstanceId_, ns1__GetInstanceIdResponse *ns1__GetInstanceIdResponse_) { return this->GetInstanceId(NULL, NULL, ns1__GetInstanceId_, ns1__GetInstanceIdResponse_); }
+	virtual	int GetInstanceId(const char *endpoint, const char *soap_action, ns1__GetInstanceId *ns1__GetInstanceId_, ns1__GetInstanceIdResponse *ns1__GetInstanceIdResponse_);
+
+	/// Web service operation 'GetTemplateProperties' (returns error code or SOAP_OK)
+	virtual	int GetTemplateProperties(ns1__GetTemplateProperties *ns1__GetTemplateProperties_, ns1__GetTemplatePropertiesResponse *ns1__GetTemplatePropertiesResponse_) { return this->GetTemplateProperties(NULL, NULL, ns1__GetTemplateProperties_, ns1__GetTemplatePropertiesResponse_); }
+	virtual	int GetTemplateProperties(const char *endpoint, const char *soap_action, ns1__GetTemplateProperties *ns1__GetTemplateProperties_, ns1__GetTemplatePropertiesResponse *ns1__GetTemplatePropertiesResponse_);
 
 	/// Web service operation 'GetArchSostRules' (returns error code or SOAP_OK)
 	virtual	int GetArchSostRules(ns1__GetArchSostRules *ns1__GetArchSostRules_, ns1__GetArchSostRulesResponse *ns1__GetArchSostRulesResponse_) { return this->GetArchSostRules(NULL, NULL, ns1__GetArchSostRules_, ns1__GetArchSostRulesResponse_); }
@@ -908,6 +912,14 @@ class SOAP_CMAC abxWsGestPortBindingProxy
 	virtual	int GetUserDetailByUserId(ns1__GetUserDetailByUserId *ns1__GetUserDetailByUserId_, ns1__GetUserDetailByUserIdResponse *ns1__GetUserDetailByUserIdResponse_) { return this->GetUserDetailByUserId(NULL, NULL, ns1__GetUserDetailByUserId_, ns1__GetUserDetailByUserIdResponse_); }
 	virtual	int GetUserDetailByUserId(const char *endpoint, const char *soap_action, ns1__GetUserDetailByUserId *ns1__GetUserDetailByUserId_, ns1__GetUserDetailByUserIdResponse *ns1__GetUserDetailByUserIdResponse_);
 
+	/// Web service operation 'ExistUserByUsername' (returns error code or SOAP_OK)
+	virtual	int ExistUserByUsername(ns1__ExistUserByUsername *ns1__ExistUserByUsername_, ns1__ExistUserByUsernameResponse *ns1__ExistUserByUsernameResponse_) { return this->ExistUserByUsername(NULL, NULL, ns1__ExistUserByUsername_, ns1__ExistUserByUsernameResponse_); }
+	virtual	int ExistUserByUsername(const char *endpoint, const char *soap_action, ns1__ExistUserByUsername *ns1__ExistUserByUsername_, ns1__ExistUserByUsernameResponse *ns1__ExistUserByUsernameResponse_);
+
+	/// Web service operation 'InsertGroup' (returns error code or SOAP_OK)
+	virtual	int InsertGroup(ns1__InsertGroup *ns1__InsertGroup_, ns1__InsertGroupResponse *ns1__InsertGroupResponse_) { return this->InsertGroup(NULL, NULL, ns1__InsertGroup_, ns1__InsertGroupResponse_); }
+	virtual	int InsertGroup(const char *endpoint, const char *soap_action, ns1__InsertGroup *ns1__InsertGroup_, ns1__InsertGroupResponse *ns1__InsertGroupResponse_);
+
 	/// Web service operation 'DeleteGroup' (returns error code or SOAP_OK)
 	virtual	int DeleteGroup(ns1__DeleteGroup *ns1__DeleteGroup_, ns1__DeleteGroupResponse *ns1__DeleteGroupResponse_) { return this->DeleteGroup(NULL, NULL, ns1__DeleteGroup_, ns1__DeleteGroupResponse_); }
 	virtual	int DeleteGroup(const char *endpoint, const char *soap_action, ns1__DeleteGroup *ns1__DeleteGroup_, ns1__DeleteGroupResponse *ns1__DeleteGroupResponse_);
@@ -916,17 +928,9 @@ class SOAP_CMAC abxWsGestPortBindingProxy
 	virtual	int Ping(ns1__Ping *ns1__Ping_, ns1__PingResponse *ns1__PingResponse_) { return this->Ping(NULL, NULL, ns1__Ping_, ns1__PingResponse_); }
 	virtual	int Ping(const char *endpoint, const char *soap_action, ns1__Ping *ns1__Ping_, ns1__PingResponse *ns1__PingResponse_);
 
-	/// Web service operation 'ExistUserByUsername' (returns error code or SOAP_OK)
-	virtual	int ExistUserByUsername(ns1__ExistUserByUsername *ns1__ExistUserByUsername_, ns1__ExistUserByUsernameResponse *ns1__ExistUserByUsernameResponse_) { return this->ExistUserByUsername(NULL, NULL, ns1__ExistUserByUsername_, ns1__ExistUserByUsernameResponse_); }
-	virtual	int ExistUserByUsername(const char *endpoint, const char *soap_action, ns1__ExistUserByUsername *ns1__ExistUserByUsername_, ns1__ExistUserByUsernameResponse *ns1__ExistUserByUsernameResponse_);
-
 	/// Web service operation 'DeleteUserByUsername' (returns error code or SOAP_OK)
 	virtual	int DeleteUserByUsername(ns1__DeleteUserByUsername *ns1__DeleteUserByUsername_, ns1__DeleteUserByUsernameResponse *ns1__DeleteUserByUsernameResponse_) { return this->DeleteUserByUsername(NULL, NULL, ns1__DeleteUserByUsername_, ns1__DeleteUserByUsernameResponse_); }
 	virtual	int DeleteUserByUsername(const char *endpoint, const char *soap_action, ns1__DeleteUserByUsername *ns1__DeleteUserByUsername_, ns1__DeleteUserByUsernameResponse *ns1__DeleteUserByUsernameResponse_);
-
-	/// Web service operation 'InsertGroup' (returns error code or SOAP_OK)
-	virtual	int InsertGroup(ns1__InsertGroup *ns1__InsertGroup_, ns1__InsertGroupResponse *ns1__InsertGroupResponse_) { return this->InsertGroup(NULL, NULL, ns1__InsertGroup_, ns1__InsertGroupResponse_); }
-	virtual	int InsertGroup(const char *endpoint, const char *soap_action, ns1__InsertGroup *ns1__InsertGroup_, ns1__InsertGroupResponse *ns1__InsertGroupResponse_);
 
 	/// Web service operation 'ModifyGroup' (returns error code or SOAP_OK)
 	virtual	int ModifyGroup(ns1__ModifyGroup *ns1__ModifyGroup_, ns1__ModifyGroupResponse *ns1__ModifyGroupResponse_) { return this->ModifyGroup(NULL, NULL, ns1__ModifyGroup_, ns1__ModifyGroupResponse_); }

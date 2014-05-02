@@ -68,7 +68,27 @@ bool base::Connect(string srvEndPoint) {
             // ping is not ok
             ret = false;
         } else {
-            if (testString.compare(result.return_->value) != 0) {
+            if (testString.compare(result.return_->value) == 0) {
+                // check if wsdl is changed
+                ns1__GetWsdlVersion wsdlreq;
+                ns1__GetWsdlVersionResponse wsdlresponse;
+                port->GetWsdlVersion(&wsdlreq, &wsdlresponse);
+                if (wsdlresponse.return_->result != WsdlVersion_OK){
+                    // response ko
+                    ret = false;
+                }else{
+                    if (wsdlversion_ERROR.compare(wsdlresponse.return_->ERRORvalue) != 0){
+                        // wsdl is critical different 
+                        cerr << "Wsdl is critical different: stop program" << endl;
+                        ret = false;
+                    }else{
+                        if (wsdlversion_WARNING.compare(wsdlresponse.return_->WARNINGvalue) != 0){
+                            // wsdl is warning different
+                            cerr << "Wsdl is warning different: program can continue" << endl;
+                        }
+                    }
+                }
+            }else{
                 // strings are not equal
                 ret = false;
             }
