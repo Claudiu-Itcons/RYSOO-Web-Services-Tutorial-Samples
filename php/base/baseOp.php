@@ -31,6 +31,10 @@ class baseOp {
     const Login_OK_LOGIN = 0x00000001;
     const Logout_OK = 0x00000010;
     const Ping_OK = 0x00022000;
+    const WsdlVersion_OK = 0x00042020;
+    
+    const wsdlversion_WARNING = "0000000002";    // this value must be equal to value returned from webservices when you compile program
+    const wsdlversion_ERROR = "0000000001";      // this value must be equal to value returned from webservices when you compile program
 
     // sessionIDF contain data to identify active user session
     private $sessionIDF;
@@ -62,7 +66,26 @@ class baseOp {
                 // ping is not ok
                 $ret = false;
             }else{
-                if ($result->return->value != $testString){
+                if ($result->return->value == $testString){
+                    // check if wsdl is changed
+                    $wsdlreq = new GetWsdlVersion();
+                    $wsdlresponse = $this->port->GetWsdlVersion($wsdlreq);
+                    if ($wsdlresponse->return->result != self::WsdlVersion_OK){
+                        // response ko
+                        $ret = false;
+                    }else{
+                        if ($wsdlresponse->return->ERRORvalue != self::wsdlversion_ERROR){
+                            // wsdl is critical different 
+                            echo "Wsdl is critical different: stop program\n";
+                            $ret = false;
+                        }else{
+                            if ($wsdlresponse->return->WARNINGvalue != self::wsdlversion_WARNING){
+                                // wsdl is warning different
+                                echo "Wsdl is warning different: program can continue\n";
+                            }
+                        }
+                    }
+                }else{
                     // strings are not equal
                     $ret = false;
                 }
