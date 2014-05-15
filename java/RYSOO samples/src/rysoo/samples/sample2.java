@@ -18,23 +18,26 @@
  */
 package rysoo.samples;
 
+import abx.ws.AbxContainer;
 import abx.ws.AbxLoginIdentity;
 import base.baseOp;
+import java.util.List;
+import java.util.ArrayList;
+
 
 /**
  *
  * @author dev
- * 
  */
-public class sample1 {
+public class sample2 {
 
-    public static void run() {
+    public static String run(baseOp util) {
 
-        base.baseOp util = new baseOp();
-
+        String archiveName = null;
+        
         // try to connect on remote server via webservices
         if (util.Connect("http://iabx000002.iabx.net")) {
-            
+
             AbxLoginIdentity login = new AbxLoginIdentity();
 
             // login parameters
@@ -50,18 +53,34 @@ public class sample1 {
             // execute Login
             if (util.Login(login)) {
                 System.out.println("Login OK session: " + util.getSessionIDF().getSessionID());
+
+                // now we create a new archive
+                // we generate random number to have unique archive name
+                archiveName = "ArchTest1" + util.getRandomString();
                 
-                // wait 1 sec
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException ex) {
-                    Thread.currentThread().interrupt();
-                }
-                // execute Logout
-                if (util.Logout()){
-                    System.out.println("Logout OK session: " + util.getSessionIDF().getSessionID());
+                // we create description list
+                List<AbxContainer.AllDescription> descriptions = new ArrayList<>();
+                
+                // description in italian 
+                AbxContainer.AllDescription d1 = new AbxContainer.AllDescription();
+                d1.setLanguage(baseOp.languageItaliano);
+                d1.setDescription("Archivio di test: " + archiveName);
+                descriptions.add(d1);
+                
+                // description in english
+                AbxContainer.AllDescription d2 = new AbxContainer.AllDescription();
+                d2.setLanguage(baseOp.languageEnglish);
+                d2.setDescription("Test archive: " + archiveName);
+                descriptions.add(d2);
+
+                // archive creation
+                if (util.CreateArchive(archiveName, descriptions, baseOp.languageEnglish)){
+                    System.out.println("Create Archive OK : " + archiveName);
+                }else
+                    // CreateArchive has failed
+                    archiveName = null;
                 }
             }
-        }
+        return archiveName;
     }
 }

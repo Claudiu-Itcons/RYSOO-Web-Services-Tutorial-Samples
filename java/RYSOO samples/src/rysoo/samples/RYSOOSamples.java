@@ -16,8 +16,11 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  * MA 02110-1301  USA
  */
-
 package rysoo.samples;
+
+import abx.ws.AbxField;
+import base.baseOp;
+import java.util.List;
 
 /**
  *
@@ -25,12 +28,68 @@ package rysoo.samples;
  */
 public class RYSOOSamples {
 
+
+
+    public static final boolean onlySampleOne = false;
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
 
-    sample1.run();
-    
+        if (onlySampleOne) {
+            // execute only sample1
+            sample1.run();
+        } else {
+            baseOp util = new baseOp();
+
+            // in sample2 we create an archive
+            String archiveName = sample2.run(util);
+
+            if (archiveName != null) {
+                
+                int bindersQty = 10;
+                int documentsQty = 10;
+                
+                // in sample3 we create a list of text fields
+                List<AbxField> textfields = sample3.run(util);
+                if (textfields != null) {
+
+                    // in sample4 we create a list of int fields
+                    List<AbxField> intfields = sample4.run(util);
+                    if (intfields != null) {
+
+                        // in sample5 we create a list of int fields
+                        List<AbxField> datefields = sample5.run(util);
+                        if (datefields != null) {
+                            
+                            // in sample sample6 we create a list of binders
+                            List<String> bindersName = sample6.run(util, archiveName, textfields, intfields, datefields, bindersQty);
+                            if (bindersName != null){
+                                
+                                // in sample7 we create a list of documents in each binders
+                                docsInbinders binders = sample7.run(util, bindersName, textfields, intfields, datefields, documentsQty);
+                                
+                                if (!binders.getDocs().isEmpty()){
+                                    
+                                    // in sample 8 we upload e download a file for each document
+                                    if (sample8.run(util, binders, "e:\\", "prova.rar")){
+                                        
+                                        // in sample 9 we download a file
+                                        if (sample9.run(util, binders, "e:\\")){
+                                            System.out.println("All files downloaded");
+                                        }
+                                    }
+                                }                   
+                            }
+                        }
+                    }
+                }
+            }
+            // execute Logout
+            if (util.Logout()) {
+                System.out.println("Logout OK session: " + util.getSessionIDF().getSessionID());
+            }
+        }
     }
 }
