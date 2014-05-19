@@ -32,9 +32,7 @@ namespace RYSOO_samples
     {
         static void Main(string[] args)
         {
-
             sample1.run();
-            
         }
     }
 }
