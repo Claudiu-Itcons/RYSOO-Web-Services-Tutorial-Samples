@@ -59,7 +59,7 @@ public class RYSOOSamples {
                     AbxField intfield = sample4.run(util);
                     if (intfield != null) {
 
-                        // in sample5 we create a list of int fields
+                        // in sample5 we create a list of date fields
                         AbxField datefield = sample5.run(util);
                         if (datefield != null) {
                             

@@ -335,7 +335,7 @@ public class baseOp {
         return ret;
     }
 
-    // create template
+    // create binder
     public boolean CreateBinder(String BinderName, String archiveName, List<AbxField> fields, List<AbxContainer.AllDescription> descriptions, String defaultLanguage) {
 
         boolean ret = false;
