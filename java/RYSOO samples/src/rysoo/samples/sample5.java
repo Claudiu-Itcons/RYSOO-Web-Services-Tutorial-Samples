@@ -16,7 +16,6 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  * MA 02110-1301  USA
  */
-
 package rysoo.samples;
 
 import abx.ws.AbxField;
@@ -29,16 +28,8 @@ import java.util.List;
  * @author dev
  */
 public class sample5 {
-    public static List<AbxField> run(baseOp util) {
 
-        List<AbxField> ret = new ArrayList<>();
-            AbxField tmp = createOnDateField(util);
-            if (tmp != null){
-                ret.add(tmp);
-            }
-        return ret;
-    }
-        public static AbxField createOnDateField(baseOp util) {
+    public static AbxField run(baseOp util) {
 
         // now we create a new text field
         // we generate random number to have unique field name
@@ -63,7 +54,7 @@ public class sample5 {
         AbxField ret = util.CreateDateField(fieldName, descriptions, baseOp.languageEnglish);
         if (ret != null) {
             System.out.println("Create Date Field OK : " + fieldName);
-        } 
+        }
         return ret;
     }
 }

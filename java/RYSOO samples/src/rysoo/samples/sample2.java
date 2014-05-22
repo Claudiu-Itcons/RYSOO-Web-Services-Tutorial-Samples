@@ -24,7 +24,6 @@ import base.baseOp;
 import java.util.List;
 import java.util.ArrayList;
 
-
 /**
  *
  * @author dev
@@ -34,7 +33,7 @@ public class sample2 {
     public static String run(baseOp util) {
 
         String archiveName = null;
-        
+
         // try to connect on remote server via webservices
         if (util.Connect("http://iabx000002.iabx.net")) {
 
@@ -57,16 +56,16 @@ public class sample2 {
                 // now we create a new archive
                 // we generate random number to have unique archive name
                 archiveName = "ArchTest1" + util.getRandomString();
-                
+
                 // we create description list
                 List<AbxContainer.AllDescription> descriptions = new ArrayList<>();
-                
+
                 // description in italian 
                 AbxContainer.AllDescription d1 = new AbxContainer.AllDescription();
                 d1.setLanguage(baseOp.languageItaliano);
                 d1.setDescription("Archivio di test: " + archiveName);
                 descriptions.add(d1);
-                
+
                 // description in english
                 AbxContainer.AllDescription d2 = new AbxContainer.AllDescription();
                 d2.setLanguage(baseOp.languageEnglish);
@@ -74,13 +73,14 @@ public class sample2 {
                 descriptions.add(d2);
 
                 // archive creation
-                if (util.CreateArchive(archiveName, descriptions, baseOp.languageEnglish)){
+                if (util.CreateArchive(archiveName, descriptions, baseOp.languageEnglish)) {
                     System.out.println("Create Archive OK : " + archiveName);
-                }else
-                    // CreateArchive has failed
+                } else // CreateArchive has failed
+                {
                     archiveName = null;
                 }
             }
+        }
         return archiveName;
     }
 }

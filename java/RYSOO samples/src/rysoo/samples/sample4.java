@@ -16,30 +16,20 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  * MA 02110-1301  USA
  */
-
 package rysoo.samples;
 
 import abx.ws.AbxField;
 import base.baseOp;
 import java.util.ArrayList;
 import java.util.List;
-import static rysoo.samples.sample3.createOnTextField;
 
 /**
  *
  * @author dev
  */
 public class sample4 {
-        public static List<AbxField> run(baseOp util) {
 
-        List<AbxField> ret = new ArrayList<>();
-            AbxField tmp = createOnIntField(util);
-            if (tmp != null){
-                ret.add(tmp);
-            }
-        return ret;
-    }
-        public static AbxField createOnIntField(baseOp util) {
+    public static AbxField run(baseOp util) {
 
         // now we create a new text field
         // we generate random number to have unique field name
@@ -64,7 +54,7 @@ public class sample4 {
         AbxField ret = util.CreateIntField(fieldName, descriptions, baseOp.languageEnglish);
         if (ret != null) {
             System.out.println("Create Int Field OK : " + fieldName);
-        } 
+        }
         return ret;
     }
 }

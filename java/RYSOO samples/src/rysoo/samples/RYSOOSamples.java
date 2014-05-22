@@ -52,23 +52,23 @@ public class RYSOOSamples {
                 int documentsQty = 10;
                 
                 // in sample3 we create a list of text fields
-                List<AbxField> textfields = sample3.run(util);
-                if (textfields != null) {
+                AbxField textfield = sample3.run(util);
+                if (textfield != null) {
 
                     // in sample4 we create a list of int fields
-                    List<AbxField> intfields = sample4.run(util);
-                    if (intfields != null) {
+                    AbxField intfield = sample4.run(util);
+                    if (intfield != null) {
 
                         // in sample5 we create a list of int fields
-                        List<AbxField> datefields = sample5.run(util);
-                        if (datefields != null) {
+                        AbxField datefield = sample5.run(util);
+                        if (datefield != null) {
                             
                             // in sample sample6 we create a list of binders
-                            List<String> bindersName = sample6.run(util, archiveName, textfields, intfields, datefields, bindersQty);
+                            List<String> bindersName = sample6.run(util, archiveName, textfield, intfield, datefield, bindersQty);
                             if (bindersName != null){
                                 
                                 // in sample7 we create a list of documents in each binders
-                                docsInbinders binders = sample7.run(util, bindersName, textfields, intfields, datefields, documentsQty);
+                                docsInbinders binders = sample7.run(util, bindersName, textfield, intfield, datefield, documentsQty);
                                 
                                 if (!binders.getDocs().isEmpty()){
                                     

@@ -50,6 +50,7 @@ public class sample7 {
     private static String getRandomText() {
         return "txt " + getRandomString();
     }
+
     private static String getRandomDate() {
         Random rnd;
         Date dt;
@@ -63,11 +64,11 @@ public class sample7 {
         // Add up to 70 years to it (using modulus on the next long)
         ms = -946771200000L + (Math.abs(rnd.nextLong()) % (70L * 365 * 24 * 60 * 60 * 1000));
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        
+
         return formatter.format(new Date(ms));
     }
 
-    public static docsInbinders run(baseOp util, List<String> binderName, List<AbxField> textFieldName, List<AbxField> intFieldName, List<AbxField> dateFieldName, int documentsQty) {
+    public static docsInbinders run(baseOp util, List<String> binderName, AbxField textFieldName, AbxField intFieldName, AbxField dateFieldName, int documentsQty) {
 
         docsInbinders ret = new docsInbinders();
 
@@ -86,24 +87,20 @@ public class sample7 {
                 // we create documentsQty documents
                 // documents
                 AbxData doc = new AbxData();
-                Iterator<AbxField> textIt = textFieldName.iterator();
-                Iterator<AbxField> intIt = intFieldName.iterator();
-                Iterator<AbxField> dateIt = dateFieldName.iterator();
-                while (textIt.hasNext() && intIt.hasNext() && dateIt.hasNext()) {
-                    // we set value for each field
-                    AbxData.Data f1 = new AbxData.Data();
-                    f1.setField(textIt.next().getName());
-                    f1.setValue(getRandomText());
-                    doc.getData().add(f1);
-                    AbxData.Data f2 = new AbxData.Data();
-                    f2.setField(intIt.next().getName());
-                    f2.setValue(getRandomInt());
-                    doc.getData().add(f2);
-                    AbxData.Data f3 = new AbxData.Data();
-                    f3.setField(dateIt.next().getName());
-                    f3.setValue(getRandomDate());
-                    doc.getData().add(f3);
-                }
+                // we set value for each field
+                AbxData.Data f1 = new AbxData.Data();
+                f1.setField(textFieldName.getName());
+                f1.setValue(getRandomText());
+                doc.getData().add(f1);
+                AbxData.Data f2 = new AbxData.Data();
+                f2.setField(intFieldName.getName());
+                f2.setValue(getRandomInt());
+                doc.getData().add(f2);
+                AbxData.Data f3 = new AbxData.Data();
+                f3.setField(dateFieldName.getName());
+                f3.setValue(getRandomDate());
+                doc.getData().add(f3);
+
                 documents.getDataList().add(doc);
                 String docId = util.CreateDocument(binder, documents);
                 if (docId != null) {

@@ -24,7 +24,7 @@ import base.baseOp;
 /**
  *
  * @author dev
- * 
+ *
  */
 public class sample1 {
 
@@ -34,7 +34,7 @@ public class sample1 {
 
         // try to connect on remote server via webservices
         if (util.Connect("http://iabx000002.iabx.net")) {
-            
+
             AbxLoginIdentity login = new AbxLoginIdentity();
 
             // login parameters
@@ -50,7 +50,7 @@ public class sample1 {
             // execute Login
             if (util.Login(login)) {
                 System.out.println("Login OK session: " + util.getSessionIDF().getSessionID());
-                
+
                 // wait 1 sec
                 try {
                     Thread.sleep(1000);
@@ -58,7 +58,7 @@ public class sample1 {
                     Thread.currentThread().interrupt();
                 }
                 // execute Logout
-                if (util.Logout()){
+                if (util.Logout()) {
                     System.out.println("Logout OK session: " + util.getSessionIDF().getSessionID());
                 }
             }

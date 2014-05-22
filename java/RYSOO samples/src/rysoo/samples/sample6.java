@@ -32,25 +32,18 @@ import java.util.List;
  */
 public class sample6 {
 
-    public static List<String> run(baseOp util, String archiveName, List<AbxField> textfields, List<AbxField> intfields, List<AbxField> datefields, int bindersQty) {
+    public static List<String> run(baseOp util, String archiveName, AbxField textfield, AbxField intfield, AbxField datefield, int bindersQty) {
 
         List<String> ret = new ArrayList<>();
 
+        List<AbxField> fields = new ArrayList<>();
+        fields.add(textfield);
+        fields.add(intfield);
+        fields.add(datefield);
         for (int i = 0; i < bindersQty; i++) {
-            Iterator<AbxField> textit = textfields.iterator();
-            Iterator<AbxField> intit = intfields.iterator();
-            Iterator<AbxField> dateit = datefields.iterator();
-            while (textit.hasNext() && intit.hasNext() && dateit.hasNext()) {
-                List<AbxField> fields = new ArrayList<>();
-                fields.add(textit.next());
-                fields.add(intit.next());
-                fields.add(dateit.next());
-                String tmp = createBinder(util, archiveName, fields);
-                if (tmp != null) {
-                    ret.add(tmp);
-                } else {
-                    break;
-                }
+            String tmp = createBinder(util, archiveName, fields);
+            if (tmp != null) {
+                ret.add(tmp);
             }
         }
 
