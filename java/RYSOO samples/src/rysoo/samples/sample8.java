@@ -41,7 +41,7 @@ public class sample8 {
                     while (its.hasNext()){
                         // for each document upload file
                         String docID = its.next();
-                        if (!util.uploadFile(uploadPath, filename, binder.getBinderName(), docID)){
+                        if (!util.attachFile(uploadPath, filename, binder.getBinderName(), docID)){
                             // error
                             ok = false;
                             break;

@@ -401,6 +401,7 @@ public class baseOp {
         return ret;
     }
 
+    // return hash of a file
     private String getFileHash(File f, String hashType) throws Exception {
         MessageDigest digest = MessageDigest.getInstance(hashType);
         FileInputStream is = new FileInputStream(f);
@@ -513,8 +514,8 @@ public class baseOp {
         return ok;
     }
 
-    // upload file
-    public boolean uploadFile(String uploadPath, String fileName, String binderName, String docID) {
+    // attachFile file
+    public boolean attachFile(String uploadPath, String fileName, String binderName, String docID) {
 
         boolean ret = true;
 
