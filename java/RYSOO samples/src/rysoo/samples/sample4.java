@@ -31,7 +31,7 @@ public class sample4 {
 
     public static AbxField run(baseOp util) {
 
-        // now we create a new text field
+        // now we create a new int field
         // we generate random number to have unique field name
         String fieldName = "intfield" + util.getRandomString();
 
