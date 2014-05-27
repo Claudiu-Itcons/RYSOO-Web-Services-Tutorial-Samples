@@ -82,6 +82,13 @@ class abxProtocol
 
   /**
    * 
+   * @var int $numberLength
+   * @access public
+   */
+  public $numberLength;
+
+  /**
+   * 
    * @param allDescription $allDescription
    * @param string $defaultLanguage
    * @param string $messageId
@@ -93,9 +100,10 @@ class abxProtocol
    * @param string $note
    * @param string $idProtocol
    * @param string $protocolDesc
+   * @param int $numberLength
    * @access public
    */
-  public function __construct($allDescription, $defaultLanguage, $messageId, $protocolName, $checkDate, $checkSequenceDate, $annualReset, $format, $note, $idProtocol, $protocolDesc)
+  public function __construct($allDescription, $defaultLanguage, $messageId, $protocolName, $checkDate, $checkSequenceDate, $annualReset, $format, $note, $idProtocol, $protocolDesc, $numberLength)
   {
     $this->allDescription = $allDescription;
     $this->defaultLanguage = $defaultLanguage;
@@ -108,6 +116,7 @@ class abxProtocol
     $this->note = $note;
     $this->idProtocol = $idProtocol;
     $this->protocolDesc = $protocolDesc;
+    $this->numberLength = $numberLength;
   }
 
 }

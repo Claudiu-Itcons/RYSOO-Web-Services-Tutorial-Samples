@@ -41,6 +41,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="note" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="idProtocol" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="protocolDesc" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="numberLength" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -61,7 +62,8 @@ import javax.xml.bind.annotation.XmlType;
     "format",
     "note",
     "idProtocol",
-    "protocolDesc"
+    "protocolDesc",
+    "numberLength"
 })
 public class AbxProtocol {
 
@@ -84,6 +86,7 @@ public class AbxProtocol {
     protected String idProtocol;
     @XmlElement(required = true)
     protected String protocolDesc;
+    protected int numberLength;
 
     /**
      * Gets the value of the allDescription property.
@@ -328,6 +331,22 @@ public class AbxProtocol {
      */
     public void setProtocolDesc(String value) {
         this.protocolDesc = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà numberLength.
+     * 
+     */
+    public int getNumberLength() {
+        return numberLength;
+    }
+
+    /**
+     * Imposta il valore della proprietà numberLength.
+     * 
+     */
+    public void setNumberLength(int value) {
+        this.numberLength = value;
     }
 
 

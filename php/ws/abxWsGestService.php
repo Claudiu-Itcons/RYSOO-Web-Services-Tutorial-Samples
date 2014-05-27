@@ -35,13 +35,6 @@ include_once('abxUser.php');
 include_once('abxUserConfig.php');
 include_once('abxGroupList.php');
 include_once('abxGroup.php');
-include_once('AddExpression.php');
-include_once('abxExpression.php');
-include_once('returnWrongKeys.php');
-include_once('abxTranslation.php');
-include_once('AddExpressionResponse.php');
-include_once('abxExpressionResult.php');
-include_once('abxExpressionList.php');
 include_once('AddSign.php');
 include_once('abxWorkflow.php');
 include_once('processoDefUsers.php');
@@ -53,6 +46,15 @@ include_once('abxWorkflowResult.php');
 include_once('abxWorkflowList.php');
 include_once('GetUserDetailByUsername.php');
 include_once('GetUserDetailByUsernameResponse.php');
+include_once('AddExpression.php');
+include_once('abxExpression.php');
+include_once('returnWrongKeys.php');
+include_once('abxTranslation.php');
+include_once('AddExpressionResponse.php');
+include_once('abxExpressionResult.php');
+include_once('abxExpressionList.php');
+include_once('canModifyRaccoglitore.php');
+include_once('canModifyRaccoglitoreResponse.php');
 include_once('QueryTotAttach.php');
 include_once('abxQexpression.php');
 include_once('abxQnode.php');
@@ -81,8 +83,6 @@ include_once('abxQcHeadList.php');
 include_once('abxQcHead.php');
 include_once('abxQrowList.php');
 include_once('abxQrow.php');
-include_once('canModifyRaccoglitore.php');
-include_once('canModifyRaccoglitoreResponse.php');
 include_once('GetFileListByCode.php');
 include_once('GetFileListByCodeResponse.php');
 include_once('abxFileResult.php');
@@ -142,15 +142,15 @@ include_once('abxFileTpList.php');
 include_once('abxFileTp.php');
 include_once('bindingExcel.php');
 include_once('bindingWord.php');
-include_once('GetSDKImagesFromPDFTemplate.php');
-include_once('GetSDKImagesFromPDFTemplateResponse.php');
+include_once('Fk_DB_testConnection.php');
+include_once('Fk_DB_testConnectionResponse.php');
 include_once('ModifyContainer.php');
 include_once('abxVersioningList.php');
 include_once('abxVersioning.php');
 include_once('ModifyContainerResponse.php');
 include_once('abxContainerResult.php');
-include_once('Fk_DB_testConnection.php');
-include_once('Fk_DB_testConnectionResponse.php');
+include_once('GetSDKImagesFromPDFTemplate.php');
+include_once('GetSDKImagesFromPDFTemplateResponse.php');
 include_once('GetListMarker.php');
 include_once('GetListMarkerResponse.php');
 include_once('GetDataFileContainerDetail.php');
@@ -186,10 +186,10 @@ include_once('GetFieldListResponse.php');
 include_once('abxFieldResult.php');
 include_once('DownloadUSGetNext.php');
 include_once('DownloadUSGetNextResponse.php');
-include_once('canCreateField.php');
-include_once('canCreateFieldResponse.php');
 include_once('ModifyFileDescription.php');
 include_once('ModifyFileDescriptionResponse.php');
+include_once('canCreateField.php');
+include_once('canCreateFieldResponse.php');
 include_once('InsertData.php');
 include_once('abxDataList.php');
 include_once('abxData.php');
@@ -201,10 +201,10 @@ include_once('UploadWFSendChunk.php');
 include_once('UploadWFSendChunkResponse.php');
 include_once('GetDataLimit.php');
 include_once('GetDataLimitResponse.php');
-include_once('GetDataTPFileListByName.php');
-include_once('GetDataTPFileListByNameResponse.php');
 include_once('DownloadGetNextWA.php');
 include_once('DownloadGetNextWAResponse.php');
+include_once('GetDataTPFileListByName.php');
+include_once('GetDataTPFileListByNameResponse.php');
 include_once('DownloadUSFile.php');
 include_once('DownloadUSFileResponse.php');
 include_once('SetTmpTPUploadPath.php');
@@ -250,22 +250,22 @@ include_once('ExistUserByUsername.php');
 include_once('ExistUserByUsernameResponse.php');
 include_once('GetDownloadDetailByContId.php');
 include_once('GetDownloadDetailByContIdResponse.php');
-include_once('CreateSDKTaskFieldMapping.php');
-include_once('CreateSDKTaskFieldMappingResponse.php');
 include_once('GetUserListActiveDirectory.php');
 include_once('GetUserListActiveDirectoryResponse.php');
+include_once('CreateSDKTaskFieldMapping.php');
+include_once('CreateSDKTaskFieldMappingResponse.php');
 include_once('RegenerateDynOrg.php');
 include_once('RegenerateDynOrgResponse.php');
-include_once('GetSchedulerTaskByTaskTypeId.php');
-include_once('GetSchedulerTaskByTaskTypeIdResponse.php');
 include_once('DownloadUSGetChunk.php');
 include_once('DownloadUSGetChunkResponse.php');
+include_once('GetSchedulerTaskByTaskTypeId.php');
+include_once('GetSchedulerTaskByTaskTypeIdResponse.php');
 include_once('GetProtocolByNameDesc.php');
 include_once('GetProtocolByNameDescResponse.php');
-include_once('GetDynorgTypeList.php');
-include_once('GetDynorgTypeListResponse.php');
 include_once('canDeleteRaccoglitore.php');
 include_once('canDeleteRaccoglitoreResponse.php');
+include_once('GetDynorgTypeList.php');
+include_once('GetDynorgTypeListResponse.php');
 include_once('GetTemplateList.php');
 include_once('GetTemplateListResponse.php');
 include_once('UploadUSSendChunk.php');
@@ -294,14 +294,14 @@ include_once('GetExpression.php');
 include_once('GetExpressionResponse.php');
 include_once('DeleteField.php');
 include_once('DeleteFieldResponse.php');
-include_once('GetSDKTasks.php');
-include_once('GetSDKTasksResponse.php');
 include_once('GetContSignByUser.php');
 include_once('GetContSignByUserResponse.php');
-include_once('Fk_create.php');
-include_once('Fk_createResponse.php');
+include_once('GetSDKTasks.php');
+include_once('GetSDKTasksResponse.php');
 include_once('Fk_getColumnsName.php');
 include_once('Fk_getColumnsNameResponse.php');
+include_once('Fk_create.php');
+include_once('Fk_createResponse.php');
 include_once('InsertFileContainer.php');
 include_once('InsertFileContainerResponse.php');
 include_once('GetContainerLinks.php');
@@ -312,13 +312,13 @@ include_once('canDeleteContainer.php');
 include_once('canDeleteContainerResponse.php');
 include_once('IfFileExist.php');
 include_once('IfFileExistResponse.php');
-include_once('DownloadTPFile.php');
-include_once('DownloadTPFileResponse.php');
 include_once('SetInstanceReplication.php');
 include_once('abxReplicationList.php');
 include_once('abxArchiBoxInDomain.php');
 include_once('SetInstanceReplicationResponse.php');
 include_once('abxReplicationResult.php');
+include_once('DownloadTPFile.php');
+include_once('DownloadTPFileResponse.php');
 include_once('Fk_getRemoteTableList.php');
 include_once('Fk_getRemoteTableListResponse.php');
 include_once('GetDataFileListOnlyLastVersion.php');
@@ -329,21 +329,21 @@ include_once('ModDefaultProcess.php');
 include_once('ModDefaultProcessResponse.php');
 include_once('canModifyTemplate.php');
 include_once('canModifyTemplateResponse.php');
-include_once('GetSDKRules.php');
-include_once('GetSDKRulesResponse.php');
 include_once('GetTranslationByRangeLabelCode.php');
 include_once('GetTranslationByRangeLabelCodeResponse.php');
 include_once('abxTranslationResult.php');
 include_once('abxTranslationList.php');
 include_once('GetCountDocumentLinks.php');
 include_once('GetCountDocumentLinksResponse.php');
+include_once('GetSDKRules.php');
+include_once('GetSDKRulesResponse.php');
 include_once('DeleteFileContainer.php');
 include_once('DeleteFileContainerResponse.php');
+include_once('GetUploadDetailByFilecode.php');
+include_once('GetUploadDetailByFilecodeResponse.php');
 include_once('Ping.php');
 include_once('PingResponse.php');
 include_once('AbxPingResult.php');
-include_once('GetUploadDetailByFilecode.php');
-include_once('GetUploadDetailByFilecodeResponse.php');
 include_once('CanAddNewYear.php');
 include_once('CanAddNewYearResponse.php');
 include_once('InsertUser.php');
@@ -374,16 +374,16 @@ include_once('Fk_getCountAllRecordByDescResponse.php');
 include_once('SchedulerTaskScheduleProcessed.php');
 include_once('schedule.php');
 include_once('SchedulerTaskScheduleProcessedResponse.php');
-include_once('DownloadWFFile.php');
-include_once('DownloadWFFileResponse.php');
 include_once('EditProtocol.php');
 include_once('EditProtocolResponse.php');
-include_once('GetDataTPFileDetail.php');
-include_once('GetDataTPFileDetailResponse.php');
-include_once('GetDataCountWithoutPermission.php');
-include_once('GetDataCountWithoutPermissionResponse.php');
+include_once('DownloadWFFile.php');
+include_once('DownloadWFFileResponse.php');
 include_once('InsertLinkContainerToContainer.php');
 include_once('InsertLinkContainerToContainerResponse.php');
+include_once('GetDataCountWithoutPermission.php');
+include_once('GetDataCountWithoutPermissionResponse.php');
+include_once('GetDataTPFileDetail.php');
+include_once('GetDataTPFileDetailResponse.php');
 include_once('GetSign.php');
 include_once('GetSignResponse.php');
 include_once('UploadUSEndFile.php');
@@ -392,19 +392,19 @@ include_once('DelDefaultProcess.php');
 include_once('DelDefaultProcessResponse.php');
 include_once('GetDataCountWithPermission.php');
 include_once('GetDataCountWithPermissionResponse.php');
-include_once('GetExpressionValue.php');
-include_once('GetExpressionValueResponse.php');
 include_once('GetLanguages.php');
 include_once('GetLanguagesResponse.php');
 include_once('abxLanguageResult.php');
 include_once('abxLanguageList.php');
 include_once('abxLanguage.php');
+include_once('GetExpressionValue.php');
+include_once('GetExpressionValueResponse.php');
 include_once('CanDeleteLinkFromContainer.php');
 include_once('CanDeleteLinkFromContainerResponse.php');
-include_once('TestScritturaLettura.php');
-include_once('TestScritturaLetturaResponse.php');
 include_once('DeleteTemplate.php');
 include_once('DeleteTemplateResponse.php');
+include_once('TestScritturaLettura.php');
+include_once('TestScritturaLetturaResponse.php');
 include_once('DeleteRaccoglitore.php');
 include_once('DeleteRaccoglitoreResponse.php');
 include_once('DeleteFile.php');
@@ -427,10 +427,10 @@ include_once('DeleteSchedulerTaskSchedule.php');
 include_once('DeleteSchedulerTaskScheduleResponse.php');
 include_once('AddMarker.php');
 include_once('AddMarkerResponse.php');
-include_once('GetDocumentLinks.php');
-include_once('GetDocumentLinksResponse.php');
 include_once('GetInstanceReplicationStatus.php');
 include_once('GetInstanceReplicationStatusResponse.php');
+include_once('GetDocumentLinks.php');
+include_once('GetDocumentLinksResponse.php');
 include_once('Fk_getPars.php');
 include_once('Fk_getParsResponse.php');
 include_once('CheckOut_attachContainer.php');
@@ -444,24 +444,24 @@ include_once('GetSDKTaskExcelPreview.php');
 include_once('GetSDKTaskExcelPreviewResponse.php');
 include_once('CheckIn_attach.php');
 include_once('CheckIn_attachResponse.php');
-include_once('SetTmpWFUploadPath.php');
-include_once('SetTmpWFUploadPathResponse.php');
 include_once('ModifyData.php');
 include_once('ModifyDataResponse.php');
 include_once('GetDownloadDetailByCont.php');
 include_once('GetDownloadDetailByContResponse.php');
+include_once('SetTmpWFUploadPath.php');
+include_once('SetTmpWFUploadPathResponse.php');
 include_once('Fk_getParsAllFk.php');
 include_once('Fk_getParsAllFkResponse.php');
 include_once('GetLinksToDocument.php');
 include_once('GetLinksToDocumentResponse.php');
-include_once('UploadEndFileContainer.php');
-include_once('UploadEndFileContainerResponse.php');
 include_once('GetDownloadDetailByDataId.php');
 include_once('GetDownloadDetailByDataIdResponse.php');
-include_once('GetDataWAById.php');
-include_once('GetDataWAByIdResponse.php');
+include_once('UploadEndFileContainer.php');
+include_once('UploadEndFileContainerResponse.php');
 include_once('GetArchiBoxInDomain.php');
 include_once('GetArchiBoxInDomainResponse.php');
+include_once('GetDataWAById.php');
+include_once('GetDataWAByIdResponse.php');
 include_once('Fk_WS_insert.php');
 include_once('Fk_WS_insertResponse.php');
 include_once('CanDeleteData.php');
@@ -472,12 +472,12 @@ include_once('GetDataByIdForSecurity.php');
 include_once('GetDataByIdForSecurityResponse.php');
 include_once('ModifyUserConfig.php');
 include_once('ModifyUserConfigResponse.php');
-include_once('VerifyExpression.php');
-include_once('VerifyExpressionResponse.php');
 include_once('DeleteProtocol.php');
 include_once('DeleteProtocolResponse.php');
 include_once('DelSign.php');
 include_once('DelSignResponse.php');
+include_once('VerifyExpression.php');
+include_once('VerifyExpressionResponse.php');
 include_once('DeleteFilter.php');
 include_once('DeleteFilterResponse.php');
 include_once('CreateRaccoglitore.php');
@@ -490,8 +490,6 @@ include_once('canCreateRaccoglitore.php');
 include_once('canCreateRaccoglitoreResponse.php');
 include_once('CanModifyLinkContainerToContainer.php');
 include_once('CanModifyLinkContainerToContainerResponse.php');
-include_once('GetSDKWatchFolderDirectories.php');
-include_once('GetSDKWatchFolderDirectoriesResponse.php');
 include_once('GetQueryParam.php');
 include_once('GetQueryParamResponse.php');
 include_once('abxRetOption4QueryResult.php');
@@ -500,6 +498,8 @@ include_once('abxQobjectList.php');
 include_once('abxQobject.php');
 include_once('abxQtemplateList.php');
 include_once('abxQtemplate.php');
+include_once('GetSDKWatchFolderDirectories.php');
+include_once('GetSDKWatchFolderDirectoriesResponse.php');
 include_once('GetArchSostRules.php');
 include_once('GetArchSostRulesResponse.php');
 include_once('abxArchSostResult.php');
@@ -507,10 +507,10 @@ include_once('abxArchSostRuleList.php');
 include_once('abxArchSostRule.php');
 include_once('abxArchSostRuleFilters.php');
 include_once('abxArchSostRuleMap.php');
-include_once('GetSDKVariables.php');
-include_once('GetSDKVariablesResponse.php');
 include_once('DownloadFileWAByFileUniqueCode.php');
 include_once('DownloadFileWAByFileUniqueCodeResponse.php');
+include_once('GetSDKVariables.php');
+include_once('GetSDKVariablesResponse.php');
 include_once('DownloadEndFileWA.php');
 include_once('DownloadEndFileWAResponse.php');
 include_once('DeleteClasseDocumentale.php');
@@ -521,26 +521,26 @@ include_once('abxClasseDocumentale.php');
 include_once('Metadata.php');
 include_once('CanDeleteFile.php');
 include_once('CanDeleteFileResponse.php');
+include_once('InsertUserInGroup.php');
+include_once('InsertUserInGroupResponse.php');
 include_once('EndPermissionSettings.php');
 include_once('EndPermissionSettingsResponse.php');
 include_once('abxPermissionResult.php');
 include_once('abxPermissionElenco.php');
-include_once('InsertUserInGroup.php');
-include_once('InsertUserInGroupResponse.php');
-include_once('canCreateContainer.php');
-include_once('canCreateContainerResponse.php');
 include_once('GetDownloadDetailByFilecode.php');
 include_once('GetDownloadDetailByFilecodeResponse.php');
-include_once('GetAllFilter.php');
-include_once('GetAllFilterResponse.php');
+include_once('canCreateContainer.php');
+include_once('canCreateContainerResponse.php');
 include_once('Fk_getAllRecordByIndex.php');
 include_once('Fk_getAllRecordByIndexResponse.php');
+include_once('GetAllFilter.php');
+include_once('GetAllFilterResponse.php');
+include_once('DownloadGetNext.php');
+include_once('DownloadGetNextResponse.php');
 include_once('InsertClasseDocumentale.php');
 include_once('InsertClasseDocumentaleResponse.php');
 include_once('CheckOut_document.php');
 include_once('CheckOut_documentResponse.php');
-include_once('DownloadGetNext.php');
-include_once('DownloadGetNextResponse.php');
 include_once('SetTmpUSDownloadPath.php');
 include_once('SetTmpUSDownloadPathResponse.php');
 include_once('canCreateTemplate.php');
@@ -551,10 +551,10 @@ include_once('QueryHeader.php');
 include_once('QueryHeaderResponse.php');
 include_once('GetProtocolList.php');
 include_once('GetProtocolListResponse.php');
-include_once('GetFieldsPropertiesFromTemplate.php');
-include_once('GetFieldsPropertiesFromTemplateResponse.php');
 include_once('CheckOut_attach.php');
 include_once('CheckOut_attachResponse.php');
+include_once('GetFieldsPropertiesFromTemplate.php');
+include_once('GetFieldsPropertiesFromTemplateResponse.php');
 include_once('DeleteDataWA.php');
 include_once('DeleteDataWAResponse.php');
 include_once('DeleteArchSostRule.php');
@@ -566,10 +566,10 @@ include_once('abxMethodDef.php');
 include_once('elmethod.php');
 include_once('CanAddNewDate.php');
 include_once('CanAddNewDateResponse.php');
-include_once('ModifySDKTask.php');
-include_once('ModifySDKTaskResponse.php');
 include_once('GetArchiBoxInDomainByMatricola.php');
 include_once('GetArchiBoxInDomainByMatricolaResponse.php');
+include_once('ModifySDKTask.php');
+include_once('ModifySDKTaskResponse.php');
 include_once('InsertTranslationCode.php');
 include_once('InsertTranslationCodeResponse.php');
 include_once('GetGroupList.php');
@@ -578,10 +578,10 @@ include_once('Fk_getAllRecordByIndexDesc.php');
 include_once('Fk_getAllRecordByIndexDescResponse.php');
 include_once('CanModifyData.php');
 include_once('CanModifyDataResponse.php');
-include_once('CanAddDigitalSignature.php');
-include_once('CanAddDigitalSignatureResponse.php');
 include_once('Query.php');
 include_once('QueryResponse.php');
+include_once('CanAddDigitalSignature.php');
+include_once('CanAddDigitalSignatureResponse.php');
 include_once('GetInstanceId.php');
 include_once('GetInstanceIdResponse.php');
 include_once('abxGiiResult.php');
@@ -591,18 +591,18 @@ include_once('Combo_insert.php');
 include_once('Combo_insertResponse.php');
 include_once('abxComboResult.php');
 include_once('abxComboList.php');
-include_once('ExtractSDKPDFTemplateTextByArea.php');
-include_once('ExtractSDKPDFTemplateTextByAreaResponse.php');
-include_once('GetDefaultObjActList.php');
-include_once('GetDefaultObjActListResponse.php');
 include_once('GetAdjacentArchiBox.php');
 include_once('GetAdjacentArchiBoxResponse.php');
+include_once('GetDefaultObjActList.php');
+include_once('GetDefaultObjActListResponse.php');
+include_once('ExtractSDKPDFTemplateTextByArea.php');
+include_once('ExtractSDKPDFTemplateTextByAreaResponse.php');
 include_once('DeleteSDKTask.php');
 include_once('DeleteSDKTaskResponse.php');
-include_once('DownloadTPEndFile.php');
-include_once('DownloadTPEndFileResponse.php');
 include_once('GetUploadDetailByContId.php');
 include_once('GetUploadDetailByContIdResponse.php');
+include_once('DownloadTPEndFile.php');
+include_once('DownloadTPEndFileResponse.php');
 include_once('GetLinksToDocumentFiltered.php');
 include_once('GetLinksToDocumentFilteredResponse.php');
 include_once('Fk_getRemoteDatabaseList.php');
@@ -626,16 +626,16 @@ include_once('AddFileToSyncByArcCue.php');
 include_once('AddFileToSyncByArcCueResponse.php');
 include_once('AddLogSDK.php');
 include_once('AddLogSDKResponse.php');
-include_once('DigitalSign.php');
-include_once('DigitalSignResponse.php');
 include_once('GetUploadDetailByCont.php');
 include_once('GetUploadDetailByContResponse.php');
+include_once('DigitalSign.php');
+include_once('DigitalSignResponse.php');
 include_once('GetFieldProperties.php');
 include_once('GetFieldPropertiesResponse.php');
-include_once('DelExpression.php');
-include_once('DelExpressionResponse.php');
 include_once('SetTmpUploadPath.php');
 include_once('SetTmpUploadPathResponse.php');
+include_once('DelExpression.php');
+include_once('DelExpressionResponse.php');
 include_once('CanEditProtocol.php');
 include_once('CanEditProtocolResponse.php');
 include_once('GetUserList.php');
@@ -668,14 +668,14 @@ include_once('DownloadFileByFileUniqueCode.php');
 include_once('DownloadFileByFileUniqueCodeResponse.php');
 include_once('ModifyRaccoglitore.php');
 include_once('ModifyRaccoglitoreResponse.php');
-include_once('SetTmpUSUploadPath.php');
-include_once('SetTmpUSUploadPathResponse.php');
 include_once('Fk_DB_modify.php');
 include_once('Fk_DB_modifyResponse.php');
-include_once('UploadWFEndFile.php');
-include_once('UploadWFEndFileResponse.php');
+include_once('SetTmpUSUploadPath.php');
+include_once('SetTmpUSUploadPathResponse.php');
 include_once('GetDataFileListContainer.php');
 include_once('GetDataFileListContainerResponse.php');
+include_once('UploadWFEndFile.php');
+include_once('UploadWFEndFileResponse.php');
 include_once('ModSign.php');
 include_once('ModSignResponse.php');
 include_once('Combo_getAll.php');
@@ -710,10 +710,10 @@ include_once('ModifyDynorg.php');
 include_once('ModifyDynorgResponse.php');
 include_once('GetDataById.php');
 include_once('GetDataByIdResponse.php');
-include_once('DeleteWFFileByCode.php');
-include_once('DeleteWFFileByCodeResponse.php');
 include_once('GetListDataWA.php');
 include_once('GetListDataWAResponse.php');
+include_once('DeleteWFFileByCode.php');
+include_once('DeleteWFFileByCodeResponse.php');
 include_once('GetContSign.php');
 include_once('GetContSignResponse.php');
 include_once('GetDomainList.php');
@@ -723,22 +723,22 @@ include_once('abxDomainList.php');
 include_once('abxDomain.php');
 include_once('UploadSendChunkWA.php');
 include_once('UploadSendChunkWAResponse.php');
+include_once('InsertLinkDocumentToDocument.php');
+include_once('InsertLinkDocumentToDocumentResponse.php');
 include_once('GetNewProtocolNumber.php');
 include_once('GetNewProtocolNumberResponse.php');
 include_once('abxProtocolUseResult.php');
 include_once('abxProtocolUseList.php');
-include_once('InsertLinkDocumentToDocument.php');
-include_once('InsertLinkDocumentToDocumentResponse.php');
 include_once('Fk_getAllRecordByDesc.php');
 include_once('Fk_getAllRecordByDescResponse.php');
 include_once('CanUseProtocol.php');
 include_once('CanUseProtocolResponse.php');
 include_once('CreateContainer.php');
 include_once('CreateContainerResponse.php');
-include_once('ChangeSchedulerTaskScheduleStatus.php');
-include_once('ChangeSchedulerTaskScheduleStatusResponse.php');
 include_once('Fk_getLocalFieldList.php');
 include_once('Fk_getLocalFieldListResponse.php');
+include_once('ChangeSchedulerTaskScheduleStatus.php');
+include_once('ChangeSchedulerTaskScheduleStatusResponse.php');
 include_once('DeleteTranslation.php');
 include_once('DeleteTranslationResponse.php');
 include_once('Combo_removeAll.php');
@@ -755,10 +755,10 @@ include_once('CanModifyLinkContainerToDocument.php');
 include_once('CanModifyLinkContainerToDocumentResponse.php');
 include_once('ModifyTranslation.php');
 include_once('ModifyTranslationResponse.php');
-include_once('DeleteSchedulerTask.php');
-include_once('DeleteSchedulerTaskResponse.php');
 include_once('GetFileAvailable.php');
 include_once('GetFileAvailableResponse.php');
+include_once('DeleteSchedulerTask.php');
+include_once('DeleteSchedulerTaskResponse.php');
 include_once('CanShowFile.php');
 include_once('CanShowFileResponse.php');
 include_once('DeleteDynorg.php');
@@ -775,20 +775,20 @@ include_once('ModifyLinkContainerToDocument.php');
 include_once('ModifyLinkContainerToDocumentResponse.php');
 include_once('GetUserDetailByUserId.php');
 include_once('GetUserDetailByUserIdResponse.php');
-include_once('CreateSDKTask.php');
-include_once('CreateSDKTaskResponse.php');
-include_once('GetDataWFFileList.php');
-include_once('GetDataWFFileListResponse.php');
 include_once('GetUsersListByGroup.php');
 include_once('GetUsersListByGroupResponse.php');
+include_once('GetDataWFFileList.php');
+include_once('GetDataWFFileListResponse.php');
+include_once('CreateSDKTask.php');
+include_once('CreateSDKTaskResponse.php');
 include_once('ModifyDataWA.php');
 include_once('ModifyDataWAResponse.php');
 include_once('InsertFileWA.php');
 include_once('InsertFileWAResponse.php');
-include_once('ChangeSDKTaskStatus.php');
-include_once('ChangeSDKTaskStatusResponse.php');
 include_once('GetDataFileDetail.php');
 include_once('GetDataFileDetailResponse.php');
+include_once('ChangeSDKTaskStatus.php');
+include_once('ChangeSDKTaskStatusResponse.php');
 include_once('CanInsertFile.php');
 include_once('CanInsertFileResponse.php');
 include_once('GetDefaultProcess.php');
@@ -797,10 +797,10 @@ include_once('GetClasseDocumentale.php');
 include_once('GetClasseDocumentaleResponse.php');
 include_once('UploadPreviewFile.php');
 include_once('UploadPreviewFileResponse.php');
-include_once('InsertTPFile.php');
-include_once('InsertTPFileResponse.php');
 include_once('Combo_modify.php');
 include_once('Combo_modifyResponse.php');
+include_once('InsertTPFile.php');
+include_once('InsertTPFileResponse.php');
 include_once('GetWorkflowVariables.php');
 include_once('GetWorkflowVariablesResponse.php');
 include_once('DeleteWFFileById.php');
@@ -819,26 +819,26 @@ include_once('CanInsertProtocol.php');
 include_once('CanInsertProtocolResponse.php');
 include_once('UploadUSEndFileWithUser.php');
 include_once('UploadUSEndFileWithUserResponse.php');
-include_once('ModExpression.php');
-include_once('ModExpressionResponse.php');
-include_once('InsertWFFile.php');
-include_once('InsertWFFileResponse.php');
-include_once('ResetUserSessions.php');
-include_once('ResetUserSessionsResponse.php');
 include_once('CanInsertLinkContainerToDocument.php');
 include_once('CanInsertLinkContainerToDocumentResponse.php');
+include_once('ResetUserSessions.php');
+include_once('ResetUserSessionsResponse.php');
 include_once('SetTmpDownloadPath.php');
 include_once('SetTmpDownloadPathResponse.php');
-include_once('GetSDKTaskWatchFolder.php');
-include_once('GetSDKTaskWatchFolderResponse.php');
+include_once('InsertWFFile.php');
+include_once('InsertWFFileResponse.php');
+include_once('ModExpression.php');
+include_once('ModExpressionResponse.php');
 include_once('GetDownloadDetailByData.php');
 include_once('GetDownloadDetailByDataResponse.php');
-include_once('ModifySDKTaskWatchFolder.php');
-include_once('ModifySDKTaskWatchFolderResponse.php');
+include_once('GetSDKTaskWatchFolder.php');
+include_once('GetSDKTaskWatchFolderResponse.php');
 include_once('GetProtocolByDesc.php');
 include_once('GetProtocolByDescResponse.php');
 include_once('DeleteLink.php');
 include_once('DeleteLinkResponse.php');
+include_once('ModifySDKTaskWatchFolder.php');
+include_once('ModifySDKTaskWatchFolderResponse.php');
 include_once('InsertTranslation.php');
 include_once('InsertTranslationResponse.php');
 include_once('UploadSendChunk.php');
@@ -853,12 +853,12 @@ include_once('RemoveUserByGroup.php');
 include_once('RemoveUserByGroupResponse.php');
 include_once('GetCountFileList.php');
 include_once('GetCountFileListResponse.php');
-include_once('GetDataTPFileListByDocument.php');
-include_once('GetDataTPFileListByDocumentResponse.php');
-include_once('DownloadFile.php');
-include_once('DownloadFileResponse.php');
 include_once('DownloadFileContainerUnc.php');
 include_once('DownloadFileContainerUncResponse.php');
+include_once('DownloadFile.php');
+include_once('DownloadFileResponse.php');
+include_once('GetDataTPFileListByDocument.php');
+include_once('GetDataTPFileListByDocumentResponse.php');
 include_once('CanDeleteProtocol.php');
 include_once('CanDeleteProtocolResponse.php');
 include_once('canCreateDynorg.php');
@@ -867,21 +867,21 @@ include_once('InsertSchedulerTask.php');
 include_once('abxArchSostDocumentList.php');
 include_once('abxArchSostDocument.php');
 include_once('InsertSchedulerTaskResponse.php');
-include_once('CreateField.php');
-include_once('CreateFieldResponse.php');
 include_once('DownloadFileWA.php');
 include_once('DownloadFileWAResponse.php');
-include_once('GetDataTPFileListByUsername.php');
-include_once('GetDataTPFileListByUsernameResponse.php');
+include_once('CreateField.php');
+include_once('CreateFieldResponse.php');
 include_once('DownloadFileUnc.php');
 include_once('DownloadFileUncResponse.php');
-include_once('SaveChars.php');
-include_once('SaveCharsResponse.php');
+include_once('GetDataTPFileListByUsername.php');
+include_once('GetDataTPFileListByUsernameResponse.php');
 include_once('GetUserSettings.php');
 include_once('GetUserSettingsResponse.php');
-include_once('StartSDKTask.php');
+include_once('SaveChars.php');
+include_once('SaveCharsResponse.php');
 include_once('Fk_getAllRecord.php');
 include_once('Fk_getAllRecordResponse.php');
+include_once('StartSDKTask.php');
 include_once('DeleteContainer.php');
 include_once('DeleteContainerResponse.php');
 include_once('DeleteFileVersion.php');
@@ -892,38 +892,38 @@ include_once('DelUserSettings.php');
 include_once('DelUserSettingsResponse.php');
 include_once('CheckIn_document.php');
 include_once('CheckIn_documentResponse.php');
-include_once('SetTmpWFDownloadPath.php');
-include_once('SetTmpWFDownloadPathResponse.php');
 include_once('ShowProtocol.php');
 include_once('ShowProtocolResponse.php');
+include_once('SetTmpWFDownloadPath.php');
+include_once('SetTmpWFDownloadPathResponse.php');
 include_once('DeleteData.php');
 include_once('DeleteDataResponse.php');
-include_once('StoreSDKVariable.php');
-include_once('StoreSDKVariableResponse.php');
 include_once('GetObject.php');
 include_once('GetObjectResponse.php');
 include_once('abxGoResult.php');
 include_once('abxObjDef.php');
 include_once('elobj.php');
 include_once('methods.php');
-include_once('AddUser.php');
-include_once('AddUserResponse.php');
+include_once('StoreSDKVariable.php');
+include_once('StoreSDKVariableResponse.php');
 include_once('CheckIn_attachContainer.php');
 include_once('CheckIn_attachContainerResponse.php');
+include_once('AddUser.php');
+include_once('AddUserResponse.php');
 include_once('GetTemplateProperties.php');
 include_once('GetTemplatePropertiesResponse.php');
 include_once('GetDataWFFileDetail.php');
 include_once('GetDataWFFileDetailResponse.php');
 include_once('GetAllObjectWithSystem.php');
 include_once('GetAllObjectWithSystemResponse.php');
-include_once('GetInstanceReplication.php');
-include_once('GetInstanceReplicationResponse.php');
 include_once('DeleteFileWA.php');
 include_once('DeleteFileWAResponse.php');
 include_once('DeleteFileContainerVersion.php');
 include_once('DeleteFileContainerVersionResponse.php');
 include_once('InsertFile.php');
 include_once('InsertFileResponse.php');
+include_once('GetInstanceReplication.php');
+include_once('GetInstanceReplicationResponse.php');
 include_once('abxDynamicorgRuleList.php');
 include_once('abxDynamicorgRule.php');
 include_once('abxDynamicorgRuleElement.php');
@@ -980,14 +980,6 @@ class abxWsGestService extends SoapClient
     'abxUserConfig' => 'abxUserConfig',
     'abxGroupList' => 'abxGroupList',
     'abxGroup' => 'abxGroup',
-    'AddExpression' => 'AddExpression',
-    'abxExpression' => 'abxExpression',
-    'returnWrongKeys' => 'returnWrongKeys',
-    'abxTranslation' => 'abxTranslation',
-    'allDescription' => 'allDescription',
-    'AddExpressionResponse' => 'AddExpressionResponse',
-    'abxExpressionResult' => 'abxExpressionResult',
-    'abxExpressionList' => 'abxExpressionList',
     'AddSign' => 'AddSign',
     'abxWorkflow' => 'abxWorkflow',
     'processoDefUsers' => 'processoDefUsers',
@@ -999,6 +991,16 @@ class abxWsGestService extends SoapClient
     'abxWorkflowList' => 'abxWorkflowList',
     'GetUserDetailByUsername' => 'GetUserDetailByUsername',
     'GetUserDetailByUsernameResponse' => 'GetUserDetailByUsernameResponse',
+    'AddExpression' => 'AddExpression',
+    'abxExpression' => 'abxExpression',
+    'returnWrongKeys' => 'returnWrongKeys',
+    'abxTranslation' => 'abxTranslation',
+    'allDescription' => 'allDescription',
+    'AddExpressionResponse' => 'AddExpressionResponse',
+    'abxExpressionResult' => 'abxExpressionResult',
+    'abxExpressionList' => 'abxExpressionList',
+    'canModifyRaccoglitore' => 'canModifyRaccoglitore',
+    'canModifyRaccoglitoreResponse' => 'canModifyRaccoglitoreResponse',
     'QueryTotAttach' => 'QueryTotAttach',
     'abxQexpression' => 'abxQexpression',
     'abxQnode' => 'abxQnode',
@@ -1029,8 +1031,6 @@ class abxWsGestService extends SoapClient
     'abxQcHead' => 'abxQcHead',
     'abxQrowList' => 'abxQrowList',
     'abxQrow' => 'abxQrow',
-    'canModifyRaccoglitore' => 'canModifyRaccoglitore',
-    'canModifyRaccoglitoreResponse' => 'canModifyRaccoglitoreResponse',
     'GetFileListByCode' => 'GetFileListByCode',
     'GetFileListByCodeResponse' => 'GetFileListByCodeResponse',
     'abxFileResult' => 'abxFileResult',
@@ -1093,15 +1093,15 @@ class abxWsGestService extends SoapClient
     'abxFileTp' => 'abxFileTp',
     'bindingExcel' => 'bindingExcel',
     'bindingWord' => 'bindingWord',
-    'GetSDKImagesFromPDFTemplate' => 'GetSDKImagesFromPDFTemplate',
-    'GetSDKImagesFromPDFTemplateResponse' => 'GetSDKImagesFromPDFTemplateResponse',
+    'Fk_DB_testConnection' => 'Fk_DB_testConnection',
+    'Fk_DB_testConnectionResponse' => 'Fk_DB_testConnectionResponse',
     'ModifyContainer' => 'ModifyContainer',
     'abxVersioningList' => 'abxVersioningList',
     'abxVersioning' => 'abxVersioning',
     'ModifyContainerResponse' => 'ModifyContainerResponse',
     'abxContainerResult' => 'abxContainerResult',
-    'Fk_DB_testConnection' => 'Fk_DB_testConnection',
-    'Fk_DB_testConnectionResponse' => 'Fk_DB_testConnectionResponse',
+    'GetSDKImagesFromPDFTemplate' => 'GetSDKImagesFromPDFTemplate',
+    'GetSDKImagesFromPDFTemplateResponse' => 'GetSDKImagesFromPDFTemplateResponse',
     'GetListMarker' => 'GetListMarker',
     'GetListMarkerResponse' => 'GetListMarkerResponse',
     'GetDataFileContainerDetail' => 'GetDataFileContainerDetail',
@@ -1137,10 +1137,10 @@ class abxWsGestService extends SoapClient
     'abxFieldResult' => 'abxFieldResult',
     'DownloadUSGetNext' => 'DownloadUSGetNext',
     'DownloadUSGetNextResponse' => 'DownloadUSGetNextResponse',
-    'canCreateField' => 'canCreateField',
-    'canCreateFieldResponse' => 'canCreateFieldResponse',
     'ModifyFileDescription' => 'ModifyFileDescription',
     'ModifyFileDescriptionResponse' => 'ModifyFileDescriptionResponse',
+    'canCreateField' => 'canCreateField',
+    'canCreateFieldResponse' => 'canCreateFieldResponse',
     'InsertData' => 'InsertData',
     'abxDataList' => 'abxDataList',
     'abxData' => 'abxData',
@@ -1152,10 +1152,10 @@ class abxWsGestService extends SoapClient
     'UploadWFSendChunkResponse' => 'UploadWFSendChunkResponse',
     'GetDataLimit' => 'GetDataLimit',
     'GetDataLimitResponse' => 'GetDataLimitResponse',
-    'GetDataTPFileListByName' => 'GetDataTPFileListByName',
-    'GetDataTPFileListByNameResponse' => 'GetDataTPFileListByNameResponse',
     'DownloadGetNextWA' => 'DownloadGetNextWA',
     'DownloadGetNextWAResponse' => 'DownloadGetNextWAResponse',
+    'GetDataTPFileListByName' => 'GetDataTPFileListByName',
+    'GetDataTPFileListByNameResponse' => 'GetDataTPFileListByNameResponse',
     'DownloadUSFile' => 'DownloadUSFile',
     'DownloadUSFileResponse' => 'DownloadUSFileResponse',
     'SetTmpTPUploadPath' => 'SetTmpTPUploadPath',
@@ -1201,22 +1201,22 @@ class abxWsGestService extends SoapClient
     'ExistUserByUsernameResponse' => 'ExistUserByUsernameResponse',
     'GetDownloadDetailByContId' => 'GetDownloadDetailByContId',
     'GetDownloadDetailByContIdResponse' => 'GetDownloadDetailByContIdResponse',
-    'CreateSDKTaskFieldMapping' => 'CreateSDKTaskFieldMapping',
-    'CreateSDKTaskFieldMappingResponse' => 'CreateSDKTaskFieldMappingResponse',
     'GetUserListActiveDirectory' => 'GetUserListActiveDirectory',
     'GetUserListActiveDirectoryResponse' => 'GetUserListActiveDirectoryResponse',
+    'CreateSDKTaskFieldMapping' => 'CreateSDKTaskFieldMapping',
+    'CreateSDKTaskFieldMappingResponse' => 'CreateSDKTaskFieldMappingResponse',
     'RegenerateDynOrg' => 'RegenerateDynOrg',
     'RegenerateDynOrgResponse' => 'RegenerateDynOrgResponse',
-    'GetSchedulerTaskByTaskTypeId' => 'GetSchedulerTaskByTaskTypeId',
-    'GetSchedulerTaskByTaskTypeIdResponse' => 'GetSchedulerTaskByTaskTypeIdResponse',
     'DownloadUSGetChunk' => 'DownloadUSGetChunk',
     'DownloadUSGetChunkResponse' => 'DownloadUSGetChunkResponse',
+    'GetSchedulerTaskByTaskTypeId' => 'GetSchedulerTaskByTaskTypeId',
+    'GetSchedulerTaskByTaskTypeIdResponse' => 'GetSchedulerTaskByTaskTypeIdResponse',
     'GetProtocolByNameDesc' => 'GetProtocolByNameDesc',
     'GetProtocolByNameDescResponse' => 'GetProtocolByNameDescResponse',
-    'GetDynorgTypeList' => 'GetDynorgTypeList',
-    'GetDynorgTypeListResponse' => 'GetDynorgTypeListResponse',
     'canDeleteRaccoglitore' => 'canDeleteRaccoglitore',
     'canDeleteRaccoglitoreResponse' => 'canDeleteRaccoglitoreResponse',
+    'GetDynorgTypeList' => 'GetDynorgTypeList',
+    'GetDynorgTypeListResponse' => 'GetDynorgTypeListResponse',
     'GetTemplateList' => 'GetTemplateList',
     'GetTemplateListResponse' => 'GetTemplateListResponse',
     'UploadUSSendChunk' => 'UploadUSSendChunk',
@@ -1245,14 +1245,14 @@ class abxWsGestService extends SoapClient
     'GetExpressionResponse' => 'GetExpressionResponse',
     'DeleteField' => 'DeleteField',
     'DeleteFieldResponse' => 'DeleteFieldResponse',
-    'GetSDKTasks' => 'GetSDKTasks',
-    'GetSDKTasksResponse' => 'GetSDKTasksResponse',
     'GetContSignByUser' => 'GetContSignByUser',
     'GetContSignByUserResponse' => 'GetContSignByUserResponse',
-    'Fk_create' => 'Fk_create',
-    'Fk_createResponse' => 'Fk_createResponse',
+    'GetSDKTasks' => 'GetSDKTasks',
+    'GetSDKTasksResponse' => 'GetSDKTasksResponse',
     'Fk_getColumnsName' => 'Fk_getColumnsName',
     'Fk_getColumnsNameResponse' => 'Fk_getColumnsNameResponse',
+    'Fk_create' => 'Fk_create',
+    'Fk_createResponse' => 'Fk_createResponse',
     'InsertFileContainer' => 'InsertFileContainer',
     'InsertFileContainerResponse' => 'InsertFileContainerResponse',
     'GetContainerLinks' => 'GetContainerLinks',
@@ -1263,13 +1263,13 @@ class abxWsGestService extends SoapClient
     'canDeleteContainerResponse' => 'canDeleteContainerResponse',
     'IfFileExist' => 'IfFileExist',
     'IfFileExistResponse' => 'IfFileExistResponse',
-    'DownloadTPFile' => 'DownloadTPFile',
-    'DownloadTPFileResponse' => 'DownloadTPFileResponse',
     'SetInstanceReplication' => 'SetInstanceReplication',
     'abxReplicationList' => 'abxReplicationList',
     'abxArchiBoxInDomain' => 'abxArchiBoxInDomain',
     'SetInstanceReplicationResponse' => 'SetInstanceReplicationResponse',
     'abxReplicationResult' => 'abxReplicationResult',
+    'DownloadTPFile' => 'DownloadTPFile',
+    'DownloadTPFileResponse' => 'DownloadTPFileResponse',
     'Fk_getRemoteTableList' => 'Fk_getRemoteTableList',
     'Fk_getRemoteTableListResponse' => 'Fk_getRemoteTableListResponse',
     'GetDataFileListOnlyLastVersion' => 'GetDataFileListOnlyLastVersion',
@@ -1280,21 +1280,21 @@ class abxWsGestService extends SoapClient
     'ModDefaultProcessResponse' => 'ModDefaultProcessResponse',
     'canModifyTemplate' => 'canModifyTemplate',
     'canModifyTemplateResponse' => 'canModifyTemplateResponse',
-    'GetSDKRules' => 'GetSDKRules',
-    'GetSDKRulesResponse' => 'GetSDKRulesResponse',
     'GetTranslationByRangeLabelCode' => 'GetTranslationByRangeLabelCode',
     'GetTranslationByRangeLabelCodeResponse' => 'GetTranslationByRangeLabelCodeResponse',
     'abxTranslationResult' => 'abxTranslationResult',
     'abxTranslationList' => 'abxTranslationList',
     'GetCountDocumentLinks' => 'GetCountDocumentLinks',
     'GetCountDocumentLinksResponse' => 'GetCountDocumentLinksResponse',
+    'GetSDKRules' => 'GetSDKRules',
+    'GetSDKRulesResponse' => 'GetSDKRulesResponse',
     'DeleteFileContainer' => 'DeleteFileContainer',
     'DeleteFileContainerResponse' => 'DeleteFileContainerResponse',
+    'GetUploadDetailByFilecode' => 'GetUploadDetailByFilecode',
+    'GetUploadDetailByFilecodeResponse' => 'GetUploadDetailByFilecodeResponse',
     'Ping' => 'Ping',
     'PingResponse' => 'PingResponse',
     'AbxPingResult' => 'AbxPingResult',
-    'GetUploadDetailByFilecode' => 'GetUploadDetailByFilecode',
-    'GetUploadDetailByFilecodeResponse' => 'GetUploadDetailByFilecodeResponse',
     'CanAddNewYear' => 'CanAddNewYear',
     'CanAddNewYearResponse' => 'CanAddNewYearResponse',
     'InsertUser' => 'InsertUser',
@@ -1325,16 +1325,16 @@ class abxWsGestService extends SoapClient
     'SchedulerTaskScheduleProcessed' => 'SchedulerTaskScheduleProcessed',
     'schedule' => 'schedule',
     'SchedulerTaskScheduleProcessedResponse' => 'SchedulerTaskScheduleProcessedResponse',
-    'DownloadWFFile' => 'DownloadWFFile',
-    'DownloadWFFileResponse' => 'DownloadWFFileResponse',
     'EditProtocol' => 'EditProtocol',
     'EditProtocolResponse' => 'EditProtocolResponse',
-    'GetDataTPFileDetail' => 'GetDataTPFileDetail',
-    'GetDataTPFileDetailResponse' => 'GetDataTPFileDetailResponse',
-    'GetDataCountWithoutPermission' => 'GetDataCountWithoutPermission',
-    'GetDataCountWithoutPermissionResponse' => 'GetDataCountWithoutPermissionResponse',
+    'DownloadWFFile' => 'DownloadWFFile',
+    'DownloadWFFileResponse' => 'DownloadWFFileResponse',
     'InsertLinkContainerToContainer' => 'InsertLinkContainerToContainer',
     'InsertLinkContainerToContainerResponse' => 'InsertLinkContainerToContainerResponse',
+    'GetDataCountWithoutPermission' => 'GetDataCountWithoutPermission',
+    'GetDataCountWithoutPermissionResponse' => 'GetDataCountWithoutPermissionResponse',
+    'GetDataTPFileDetail' => 'GetDataTPFileDetail',
+    'GetDataTPFileDetailResponse' => 'GetDataTPFileDetailResponse',
     'GetSign' => 'GetSign',
     'GetSignResponse' => 'GetSignResponse',
     'UploadUSEndFile' => 'UploadUSEndFile',
@@ -1343,19 +1343,19 @@ class abxWsGestService extends SoapClient
     'DelDefaultProcessResponse' => 'DelDefaultProcessResponse',
     'GetDataCountWithPermission' => 'GetDataCountWithPermission',
     'GetDataCountWithPermissionResponse' => 'GetDataCountWithPermissionResponse',
-    'GetExpressionValue' => 'GetExpressionValue',
-    'GetExpressionValueResponse' => 'GetExpressionValueResponse',
     'GetLanguages' => 'GetLanguages',
     'GetLanguagesResponse' => 'GetLanguagesResponse',
     'abxLanguageResult' => 'abxLanguageResult',
     'abxLanguageList' => 'abxLanguageList',
     'abxLanguage' => 'abxLanguage',
+    'GetExpressionValue' => 'GetExpressionValue',
+    'GetExpressionValueResponse' => 'GetExpressionValueResponse',
     'CanDeleteLinkFromContainer' => 'CanDeleteLinkFromContainer',
     'CanDeleteLinkFromContainerResponse' => 'CanDeleteLinkFromContainerResponse',
-    'TestScritturaLettura' => 'TestScritturaLettura',
-    'TestScritturaLetturaResponse' => 'TestScritturaLetturaResponse',
     'DeleteTemplate' => 'DeleteTemplate',
     'DeleteTemplateResponse' => 'DeleteTemplateResponse',
+    'TestScritturaLettura' => 'TestScritturaLettura',
+    'TestScritturaLetturaResponse' => 'TestScritturaLetturaResponse',
     'DeleteRaccoglitore' => 'DeleteRaccoglitore',
     'DeleteRaccoglitoreResponse' => 'DeleteRaccoglitoreResponse',
     'DeleteFile' => 'DeleteFile',
@@ -1378,10 +1378,10 @@ class abxWsGestService extends SoapClient
     'DeleteSchedulerTaskScheduleResponse' => 'DeleteSchedulerTaskScheduleResponse',
     'AddMarker' => 'AddMarker',
     'AddMarkerResponse' => 'AddMarkerResponse',
-    'GetDocumentLinks' => 'GetDocumentLinks',
-    'GetDocumentLinksResponse' => 'GetDocumentLinksResponse',
     'GetInstanceReplicationStatus' => 'GetInstanceReplicationStatus',
     'GetInstanceReplicationStatusResponse' => 'GetInstanceReplicationStatusResponse',
+    'GetDocumentLinks' => 'GetDocumentLinks',
+    'GetDocumentLinksResponse' => 'GetDocumentLinksResponse',
     'Fk_getPars' => 'Fk_getPars',
     'Fk_getParsResponse' => 'Fk_getParsResponse',
     'CheckOut_attachContainer' => 'CheckOut_attachContainer',
@@ -1395,24 +1395,24 @@ class abxWsGestService extends SoapClient
     'GetSDKTaskExcelPreviewResponse' => 'GetSDKTaskExcelPreviewResponse',
     'CheckIn_attach' => 'CheckIn_attach',
     'CheckIn_attachResponse' => 'CheckIn_attachResponse',
-    'SetTmpWFUploadPath' => 'SetTmpWFUploadPath',
-    'SetTmpWFUploadPathResponse' => 'SetTmpWFUploadPathResponse',
     'ModifyData' => 'ModifyData',
     'ModifyDataResponse' => 'ModifyDataResponse',
     'GetDownloadDetailByCont' => 'GetDownloadDetailByCont',
     'GetDownloadDetailByContResponse' => 'GetDownloadDetailByContResponse',
+    'SetTmpWFUploadPath' => 'SetTmpWFUploadPath',
+    'SetTmpWFUploadPathResponse' => 'SetTmpWFUploadPathResponse',
     'Fk_getParsAllFk' => 'Fk_getParsAllFk',
     'Fk_getParsAllFkResponse' => 'Fk_getParsAllFkResponse',
     'GetLinksToDocument' => 'GetLinksToDocument',
     'GetLinksToDocumentResponse' => 'GetLinksToDocumentResponse',
-    'UploadEndFileContainer' => 'UploadEndFileContainer',
-    'UploadEndFileContainerResponse' => 'UploadEndFileContainerResponse',
     'GetDownloadDetailByDataId' => 'GetDownloadDetailByDataId',
     'GetDownloadDetailByDataIdResponse' => 'GetDownloadDetailByDataIdResponse',
-    'GetDataWAById' => 'GetDataWAById',
-    'GetDataWAByIdResponse' => 'GetDataWAByIdResponse',
+    'UploadEndFileContainer' => 'UploadEndFileContainer',
+    'UploadEndFileContainerResponse' => 'UploadEndFileContainerResponse',
     'GetArchiBoxInDomain' => 'GetArchiBoxInDomain',
     'GetArchiBoxInDomainResponse' => 'GetArchiBoxInDomainResponse',
+    'GetDataWAById' => 'GetDataWAById',
+    'GetDataWAByIdResponse' => 'GetDataWAByIdResponse',
     'Fk_WS_insert' => 'Fk_WS_insert',
     'Fk_WS_insertResponse' => 'Fk_WS_insertResponse',
     'CanDeleteData' => 'CanDeleteData',
@@ -1423,12 +1423,12 @@ class abxWsGestService extends SoapClient
     'GetDataByIdForSecurityResponse' => 'GetDataByIdForSecurityResponse',
     'ModifyUserConfig' => 'ModifyUserConfig',
     'ModifyUserConfigResponse' => 'ModifyUserConfigResponse',
-    'VerifyExpression' => 'VerifyExpression',
-    'VerifyExpressionResponse' => 'VerifyExpressionResponse',
     'DeleteProtocol' => 'DeleteProtocol',
     'DeleteProtocolResponse' => 'DeleteProtocolResponse',
     'DelSign' => 'DelSign',
     'DelSignResponse' => 'DelSignResponse',
+    'VerifyExpression' => 'VerifyExpression',
+    'VerifyExpressionResponse' => 'VerifyExpressionResponse',
     'DeleteFilter' => 'DeleteFilter',
     'DeleteFilterResponse' => 'DeleteFilterResponse',
     'CreateRaccoglitore' => 'CreateRaccoglitore',
@@ -1442,8 +1442,6 @@ class abxWsGestService extends SoapClient
     'canCreateRaccoglitoreResponse' => 'canCreateRaccoglitoreResponse',
     'CanModifyLinkContainerToContainer' => 'CanModifyLinkContainerToContainer',
     'CanModifyLinkContainerToContainerResponse' => 'CanModifyLinkContainerToContainerResponse',
-    'GetSDKWatchFolderDirectories' => 'GetSDKWatchFolderDirectories',
-    'GetSDKWatchFolderDirectoriesResponse' => 'GetSDKWatchFolderDirectoriesResponse',
     'GetQueryParam' => 'GetQueryParam',
     'GetQueryParamResponse' => 'GetQueryParamResponse',
     'abxRetOption4QueryResult' => 'abxRetOption4QueryResult',
@@ -1452,6 +1450,8 @@ class abxWsGestService extends SoapClient
     'abxQobject' => 'abxQobject',
     'abxQtemplateList' => 'abxQtemplateList',
     'abxQtemplate' => 'abxQtemplate',
+    'GetSDKWatchFolderDirectories' => 'GetSDKWatchFolderDirectories',
+    'GetSDKWatchFolderDirectoriesResponse' => 'GetSDKWatchFolderDirectoriesResponse',
     'GetArchSostRules' => 'GetArchSostRules',
     'GetArchSostRulesResponse' => 'GetArchSostRulesResponse',
     'abxArchSostResult' => 'abxArchSostResult',
@@ -1459,10 +1459,10 @@ class abxWsGestService extends SoapClient
     'abxArchSostRule' => 'abxArchSostRule',
     'abxArchSostRuleFilters' => 'abxArchSostRuleFilters',
     'abxArchSostRuleMap' => 'abxArchSostRuleMap',
-    'GetSDKVariables' => 'GetSDKVariables',
-    'GetSDKVariablesResponse' => 'GetSDKVariablesResponse',
     'DownloadFileWAByFileUniqueCode' => 'DownloadFileWAByFileUniqueCode',
     'DownloadFileWAByFileUniqueCodeResponse' => 'DownloadFileWAByFileUniqueCodeResponse',
+    'GetSDKVariables' => 'GetSDKVariables',
+    'GetSDKVariablesResponse' => 'GetSDKVariablesResponse',
     'DownloadEndFileWA' => 'DownloadEndFileWA',
     'DownloadEndFileWAResponse' => 'DownloadEndFileWAResponse',
     'DeleteClasseDocumentale' => 'DeleteClasseDocumentale',
@@ -1473,27 +1473,27 @@ class abxWsGestService extends SoapClient
     'Metadata' => 'Metadata',
     'CanDeleteFile' => 'CanDeleteFile',
     'CanDeleteFileResponse' => 'CanDeleteFileResponse',
+    'InsertUserInGroup' => 'InsertUserInGroup',
+    'InsertUserInGroupResponse' => 'InsertUserInGroupResponse',
     'EndPermissionSettings' => 'EndPermissionSettings',
     'EndPermissionSettingsResponse' => 'EndPermissionSettingsResponse',
     'abxPermissionResult' => 'abxPermissionResult',
     'abxPermissionElenco' => 'abxPermissionElenco',
-    'InsertUserInGroup' => 'InsertUserInGroup',
-    'InsertUserInGroupResponse' => 'InsertUserInGroupResponse',
+    'GetDownloadDetailByFilecode' => 'GetDownloadDetailByFilecode',
+    'GetDownloadDetailByFilecodeResponse' => 'GetDownloadDetailByFilecodeResponse',
     'canCreateContainer' => 'canCreateContainer',
     'parentDataID' => 'parentDataID',
     'canCreateContainerResponse' => 'canCreateContainerResponse',
-    'GetDownloadDetailByFilecode' => 'GetDownloadDetailByFilecode',
-    'GetDownloadDetailByFilecodeResponse' => 'GetDownloadDetailByFilecodeResponse',
-    'GetAllFilter' => 'GetAllFilter',
-    'GetAllFilterResponse' => 'GetAllFilterResponse',
     'Fk_getAllRecordByIndex' => 'Fk_getAllRecordByIndex',
     'Fk_getAllRecordByIndexResponse' => 'Fk_getAllRecordByIndexResponse',
+    'GetAllFilter' => 'GetAllFilter',
+    'GetAllFilterResponse' => 'GetAllFilterResponse',
+    'DownloadGetNext' => 'DownloadGetNext',
+    'DownloadGetNextResponse' => 'DownloadGetNextResponse',
     'InsertClasseDocumentale' => 'InsertClasseDocumentale',
     'InsertClasseDocumentaleResponse' => 'InsertClasseDocumentaleResponse',
     'CheckOut_document' => 'CheckOut_document',
     'CheckOut_documentResponse' => 'CheckOut_documentResponse',
-    'DownloadGetNext' => 'DownloadGetNext',
-    'DownloadGetNextResponse' => 'DownloadGetNextResponse',
     'SetTmpUSDownloadPath' => 'SetTmpUSDownloadPath',
     'SetTmpUSDownloadPathResponse' => 'SetTmpUSDownloadPathResponse',
     'canCreateTemplate' => 'canCreateTemplate',
@@ -1504,10 +1504,10 @@ class abxWsGestService extends SoapClient
     'QueryHeaderResponse' => 'QueryHeaderResponse',
     'GetProtocolList' => 'GetProtocolList',
     'GetProtocolListResponse' => 'GetProtocolListResponse',
-    'GetFieldsPropertiesFromTemplate' => 'GetFieldsPropertiesFromTemplate',
-    'GetFieldsPropertiesFromTemplateResponse' => 'GetFieldsPropertiesFromTemplateResponse',
     'CheckOut_attach' => 'CheckOut_attach',
     'CheckOut_attachResponse' => 'CheckOut_attachResponse',
+    'GetFieldsPropertiesFromTemplate' => 'GetFieldsPropertiesFromTemplate',
+    'GetFieldsPropertiesFromTemplateResponse' => 'GetFieldsPropertiesFromTemplateResponse',
     'DeleteDataWA' => 'DeleteDataWA',
     'DeleteDataWAResponse' => 'DeleteDataWAResponse',
     'DeleteArchSostRule' => 'DeleteArchSostRule',
@@ -1519,10 +1519,10 @@ class abxWsGestService extends SoapClient
     'elmethod' => 'elmethod',
     'CanAddNewDate' => 'CanAddNewDate',
     'CanAddNewDateResponse' => 'CanAddNewDateResponse',
-    'ModifySDKTask' => 'ModifySDKTask',
-    'ModifySDKTaskResponse' => 'ModifySDKTaskResponse',
     'GetArchiBoxInDomainByMatricola' => 'GetArchiBoxInDomainByMatricola',
     'GetArchiBoxInDomainByMatricolaResponse' => 'GetArchiBoxInDomainByMatricolaResponse',
+    'ModifySDKTask' => 'ModifySDKTask',
+    'ModifySDKTaskResponse' => 'ModifySDKTaskResponse',
     'InsertTranslationCode' => 'InsertTranslationCode',
     'InsertTranslationCodeResponse' => 'InsertTranslationCodeResponse',
     'GetGroupList' => 'GetGroupList',
@@ -1531,10 +1531,10 @@ class abxWsGestService extends SoapClient
     'Fk_getAllRecordByIndexDescResponse' => 'Fk_getAllRecordByIndexDescResponse',
     'CanModifyData' => 'CanModifyData',
     'CanModifyDataResponse' => 'CanModifyDataResponse',
-    'CanAddDigitalSignature' => 'CanAddDigitalSignature',
-    'CanAddDigitalSignatureResponse' => 'CanAddDigitalSignatureResponse',
     'Query' => 'Query',
     'QueryResponse' => 'QueryResponse',
+    'CanAddDigitalSignature' => 'CanAddDigitalSignature',
+    'CanAddDigitalSignatureResponse' => 'CanAddDigitalSignatureResponse',
     'GetInstanceId' => 'GetInstanceId',
     'GetInstanceIdResponse' => 'GetInstanceIdResponse',
     'abxGiiResult' => 'abxGiiResult',
@@ -1544,18 +1544,18 @@ class abxWsGestService extends SoapClient
     'Combo_insertResponse' => 'Combo_insertResponse',
     'abxComboResult' => 'abxComboResult',
     'abxComboList' => 'abxComboList',
-    'ExtractSDKPDFTemplateTextByArea' => 'ExtractSDKPDFTemplateTextByArea',
-    'ExtractSDKPDFTemplateTextByAreaResponse' => 'ExtractSDKPDFTemplateTextByAreaResponse',
-    'GetDefaultObjActList' => 'GetDefaultObjActList',
-    'GetDefaultObjActListResponse' => 'GetDefaultObjActListResponse',
     'GetAdjacentArchiBox' => 'GetAdjacentArchiBox',
     'GetAdjacentArchiBoxResponse' => 'GetAdjacentArchiBoxResponse',
+    'GetDefaultObjActList' => 'GetDefaultObjActList',
+    'GetDefaultObjActListResponse' => 'GetDefaultObjActListResponse',
+    'ExtractSDKPDFTemplateTextByArea' => 'ExtractSDKPDFTemplateTextByArea',
+    'ExtractSDKPDFTemplateTextByAreaResponse' => 'ExtractSDKPDFTemplateTextByAreaResponse',
     'DeleteSDKTask' => 'DeleteSDKTask',
     'DeleteSDKTaskResponse' => 'DeleteSDKTaskResponse',
-    'DownloadTPEndFile' => 'DownloadTPEndFile',
-    'DownloadTPEndFileResponse' => 'DownloadTPEndFileResponse',
     'GetUploadDetailByContId' => 'GetUploadDetailByContId',
     'GetUploadDetailByContIdResponse' => 'GetUploadDetailByContIdResponse',
+    'DownloadTPEndFile' => 'DownloadTPEndFile',
+    'DownloadTPEndFileResponse' => 'DownloadTPEndFileResponse',
     'GetLinksToDocumentFiltered' => 'GetLinksToDocumentFiltered',
     'GetLinksToDocumentFilteredResponse' => 'GetLinksToDocumentFilteredResponse',
     'Fk_getRemoteDatabaseList' => 'Fk_getRemoteDatabaseList',
@@ -1579,16 +1579,16 @@ class abxWsGestService extends SoapClient
     'AddFileToSyncByArcCueResponse' => 'AddFileToSyncByArcCueResponse',
     'AddLogSDK' => 'AddLogSDK',
     'AddLogSDKResponse' => 'AddLogSDKResponse',
-    'DigitalSign' => 'DigitalSign',
-    'DigitalSignResponse' => 'DigitalSignResponse',
     'GetUploadDetailByCont' => 'GetUploadDetailByCont',
     'GetUploadDetailByContResponse' => 'GetUploadDetailByContResponse',
+    'DigitalSign' => 'DigitalSign',
+    'DigitalSignResponse' => 'DigitalSignResponse',
     'GetFieldProperties' => 'GetFieldProperties',
     'GetFieldPropertiesResponse' => 'GetFieldPropertiesResponse',
-    'DelExpression' => 'DelExpression',
-    'DelExpressionResponse' => 'DelExpressionResponse',
     'SetTmpUploadPath' => 'SetTmpUploadPath',
     'SetTmpUploadPathResponse' => 'SetTmpUploadPathResponse',
+    'DelExpression' => 'DelExpression',
+    'DelExpressionResponse' => 'DelExpressionResponse',
     'CanEditProtocol' => 'CanEditProtocol',
     'CanEditProtocolResponse' => 'CanEditProtocolResponse',
     'GetUserList' => 'GetUserList',
@@ -1621,14 +1621,14 @@ class abxWsGestService extends SoapClient
     'DownloadFileByFileUniqueCodeResponse' => 'DownloadFileByFileUniqueCodeResponse',
     'ModifyRaccoglitore' => 'ModifyRaccoglitore',
     'ModifyRaccoglitoreResponse' => 'ModifyRaccoglitoreResponse',
-    'SetTmpUSUploadPath' => 'SetTmpUSUploadPath',
-    'SetTmpUSUploadPathResponse' => 'SetTmpUSUploadPathResponse',
     'Fk_DB_modify' => 'Fk_DB_modify',
     'Fk_DB_modifyResponse' => 'Fk_DB_modifyResponse',
-    'UploadWFEndFile' => 'UploadWFEndFile',
-    'UploadWFEndFileResponse' => 'UploadWFEndFileResponse',
+    'SetTmpUSUploadPath' => 'SetTmpUSUploadPath',
+    'SetTmpUSUploadPathResponse' => 'SetTmpUSUploadPathResponse',
     'GetDataFileListContainer' => 'GetDataFileListContainer',
     'GetDataFileListContainerResponse' => 'GetDataFileListContainerResponse',
+    'UploadWFEndFile' => 'UploadWFEndFile',
+    'UploadWFEndFileResponse' => 'UploadWFEndFileResponse',
     'ModSign' => 'ModSign',
     'ModSignResponse' => 'ModSignResponse',
     'Combo_getAll' => 'Combo_getAll',
@@ -1663,10 +1663,10 @@ class abxWsGestService extends SoapClient
     'ModifyDynorgResponse' => 'ModifyDynorgResponse',
     'GetDataById' => 'GetDataById',
     'GetDataByIdResponse' => 'GetDataByIdResponse',
-    'DeleteWFFileByCode' => 'DeleteWFFileByCode',
-    'DeleteWFFileByCodeResponse' => 'DeleteWFFileByCodeResponse',
     'GetListDataWA' => 'GetListDataWA',
     'GetListDataWAResponse' => 'GetListDataWAResponse',
+    'DeleteWFFileByCode' => 'DeleteWFFileByCode',
+    'DeleteWFFileByCodeResponse' => 'DeleteWFFileByCodeResponse',
     'GetContSign' => 'GetContSign',
     'GetContSignResponse' => 'GetContSignResponse',
     'GetDomainList' => 'GetDomainList',
@@ -1676,22 +1676,22 @@ class abxWsGestService extends SoapClient
     'abxDomain' => 'abxDomain',
     'UploadSendChunkWA' => 'UploadSendChunkWA',
     'UploadSendChunkWAResponse' => 'UploadSendChunkWAResponse',
+    'InsertLinkDocumentToDocument' => 'InsertLinkDocumentToDocument',
+    'InsertLinkDocumentToDocumentResponse' => 'InsertLinkDocumentToDocumentResponse',
     'GetNewProtocolNumber' => 'GetNewProtocolNumber',
     'GetNewProtocolNumberResponse' => 'GetNewProtocolNumberResponse',
     'abxProtocolUseResult' => 'abxProtocolUseResult',
     'abxProtocolUseList' => 'abxProtocolUseList',
-    'InsertLinkDocumentToDocument' => 'InsertLinkDocumentToDocument',
-    'InsertLinkDocumentToDocumentResponse' => 'InsertLinkDocumentToDocumentResponse',
     'Fk_getAllRecordByDesc' => 'Fk_getAllRecordByDesc',
     'Fk_getAllRecordByDescResponse' => 'Fk_getAllRecordByDescResponse',
     'CanUseProtocol' => 'CanUseProtocol',
     'CanUseProtocolResponse' => 'CanUseProtocolResponse',
     'CreateContainer' => 'CreateContainer',
     'CreateContainerResponse' => 'CreateContainerResponse',
-    'ChangeSchedulerTaskScheduleStatus' => 'ChangeSchedulerTaskScheduleStatus',
-    'ChangeSchedulerTaskScheduleStatusResponse' => 'ChangeSchedulerTaskScheduleStatusResponse',
     'Fk_getLocalFieldList' => 'Fk_getLocalFieldList',
     'Fk_getLocalFieldListResponse' => 'Fk_getLocalFieldListResponse',
+    'ChangeSchedulerTaskScheduleStatus' => 'ChangeSchedulerTaskScheduleStatus',
+    'ChangeSchedulerTaskScheduleStatusResponse' => 'ChangeSchedulerTaskScheduleStatusResponse',
     'DeleteTranslation' => 'DeleteTranslation',
     'DeleteTranslationResponse' => 'DeleteTranslationResponse',
     'Combo_removeAll' => 'Combo_removeAll',
@@ -1708,10 +1708,10 @@ class abxWsGestService extends SoapClient
     'CanModifyLinkContainerToDocumentResponse' => 'CanModifyLinkContainerToDocumentResponse',
     'ModifyTranslation' => 'ModifyTranslation',
     'ModifyTranslationResponse' => 'ModifyTranslationResponse',
-    'DeleteSchedulerTask' => 'DeleteSchedulerTask',
-    'DeleteSchedulerTaskResponse' => 'DeleteSchedulerTaskResponse',
     'GetFileAvailable' => 'GetFileAvailable',
     'GetFileAvailableResponse' => 'GetFileAvailableResponse',
+    'DeleteSchedulerTask' => 'DeleteSchedulerTask',
+    'DeleteSchedulerTaskResponse' => 'DeleteSchedulerTaskResponse',
     'CanShowFile' => 'CanShowFile',
     'CanShowFileResponse' => 'CanShowFileResponse',
     'DeleteDynorg' => 'DeleteDynorg',
@@ -1728,20 +1728,20 @@ class abxWsGestService extends SoapClient
     'ModifyLinkContainerToDocumentResponse' => 'ModifyLinkContainerToDocumentResponse',
     'GetUserDetailByUserId' => 'GetUserDetailByUserId',
     'GetUserDetailByUserIdResponse' => 'GetUserDetailByUserIdResponse',
-    'CreateSDKTask' => 'CreateSDKTask',
-    'CreateSDKTaskResponse' => 'CreateSDKTaskResponse',
-    'GetDataWFFileList' => 'GetDataWFFileList',
-    'GetDataWFFileListResponse' => 'GetDataWFFileListResponse',
     'GetUsersListByGroup' => 'GetUsersListByGroup',
     'GetUsersListByGroupResponse' => 'GetUsersListByGroupResponse',
+    'GetDataWFFileList' => 'GetDataWFFileList',
+    'GetDataWFFileListResponse' => 'GetDataWFFileListResponse',
+    'CreateSDKTask' => 'CreateSDKTask',
+    'CreateSDKTaskResponse' => 'CreateSDKTaskResponse',
     'ModifyDataWA' => 'ModifyDataWA',
     'ModifyDataWAResponse' => 'ModifyDataWAResponse',
     'InsertFileWA' => 'InsertFileWA',
     'InsertFileWAResponse' => 'InsertFileWAResponse',
-    'ChangeSDKTaskStatus' => 'ChangeSDKTaskStatus',
-    'ChangeSDKTaskStatusResponse' => 'ChangeSDKTaskStatusResponse',
     'GetDataFileDetail' => 'GetDataFileDetail',
     'GetDataFileDetailResponse' => 'GetDataFileDetailResponse',
+    'ChangeSDKTaskStatus' => 'ChangeSDKTaskStatus',
+    'ChangeSDKTaskStatusResponse' => 'ChangeSDKTaskStatusResponse',
     'CanInsertFile' => 'CanInsertFile',
     'CanInsertFileResponse' => 'CanInsertFileResponse',
     'GetDefaultProcess' => 'GetDefaultProcess',
@@ -1750,10 +1750,10 @@ class abxWsGestService extends SoapClient
     'GetClasseDocumentaleResponse' => 'GetClasseDocumentaleResponse',
     'UploadPreviewFile' => 'UploadPreviewFile',
     'UploadPreviewFileResponse' => 'UploadPreviewFileResponse',
-    'InsertTPFile' => 'InsertTPFile',
-    'InsertTPFileResponse' => 'InsertTPFileResponse',
     'Combo_modify' => 'Combo_modify',
     'Combo_modifyResponse' => 'Combo_modifyResponse',
+    'InsertTPFile' => 'InsertTPFile',
+    'InsertTPFileResponse' => 'InsertTPFileResponse',
     'GetWorkflowVariables' => 'GetWorkflowVariables',
     'GetWorkflowVariablesResponse' => 'GetWorkflowVariablesResponse',
     'DeleteWFFileById' => 'DeleteWFFileById',
@@ -1772,26 +1772,26 @@ class abxWsGestService extends SoapClient
     'CanInsertProtocolResponse' => 'CanInsertProtocolResponse',
     'UploadUSEndFileWithUser' => 'UploadUSEndFileWithUser',
     'UploadUSEndFileWithUserResponse' => 'UploadUSEndFileWithUserResponse',
-    'ModExpression' => 'ModExpression',
-    'ModExpressionResponse' => 'ModExpressionResponse',
-    'InsertWFFile' => 'InsertWFFile',
-    'InsertWFFileResponse' => 'InsertWFFileResponse',
-    'ResetUserSessions' => 'ResetUserSessions',
-    'ResetUserSessionsResponse' => 'ResetUserSessionsResponse',
     'CanInsertLinkContainerToDocument' => 'CanInsertLinkContainerToDocument',
     'CanInsertLinkContainerToDocumentResponse' => 'CanInsertLinkContainerToDocumentResponse',
+    'ResetUserSessions' => 'ResetUserSessions',
+    'ResetUserSessionsResponse' => 'ResetUserSessionsResponse',
     'SetTmpDownloadPath' => 'SetTmpDownloadPath',
     'SetTmpDownloadPathResponse' => 'SetTmpDownloadPathResponse',
-    'GetSDKTaskWatchFolder' => 'GetSDKTaskWatchFolder',
-    'GetSDKTaskWatchFolderResponse' => 'GetSDKTaskWatchFolderResponse',
+    'InsertWFFile' => 'InsertWFFile',
+    'InsertWFFileResponse' => 'InsertWFFileResponse',
+    'ModExpression' => 'ModExpression',
+    'ModExpressionResponse' => 'ModExpressionResponse',
     'GetDownloadDetailByData' => 'GetDownloadDetailByData',
     'GetDownloadDetailByDataResponse' => 'GetDownloadDetailByDataResponse',
-    'ModifySDKTaskWatchFolder' => 'ModifySDKTaskWatchFolder',
-    'ModifySDKTaskWatchFolderResponse' => 'ModifySDKTaskWatchFolderResponse',
+    'GetSDKTaskWatchFolder' => 'GetSDKTaskWatchFolder',
+    'GetSDKTaskWatchFolderResponse' => 'GetSDKTaskWatchFolderResponse',
     'GetProtocolByDesc' => 'GetProtocolByDesc',
     'GetProtocolByDescResponse' => 'GetProtocolByDescResponse',
     'DeleteLink' => 'DeleteLink',
     'DeleteLinkResponse' => 'DeleteLinkResponse',
+    'ModifySDKTaskWatchFolder' => 'ModifySDKTaskWatchFolder',
+    'ModifySDKTaskWatchFolderResponse' => 'ModifySDKTaskWatchFolderResponse',
     'InsertTranslation' => 'InsertTranslation',
     'InsertTranslationResponse' => 'InsertTranslationResponse',
     'UploadSendChunk' => 'UploadSendChunk',
@@ -1806,12 +1806,12 @@ class abxWsGestService extends SoapClient
     'RemoveUserByGroupResponse' => 'RemoveUserByGroupResponse',
     'GetCountFileList' => 'GetCountFileList',
     'GetCountFileListResponse' => 'GetCountFileListResponse',
-    'GetDataTPFileListByDocument' => 'GetDataTPFileListByDocument',
-    'GetDataTPFileListByDocumentResponse' => 'GetDataTPFileListByDocumentResponse',
-    'DownloadFile' => 'DownloadFile',
-    'DownloadFileResponse' => 'DownloadFileResponse',
     'DownloadFileContainerUnc' => 'DownloadFileContainerUnc',
     'DownloadFileContainerUncResponse' => 'DownloadFileContainerUncResponse',
+    'DownloadFile' => 'DownloadFile',
+    'DownloadFileResponse' => 'DownloadFileResponse',
+    'GetDataTPFileListByDocument' => 'GetDataTPFileListByDocument',
+    'GetDataTPFileListByDocumentResponse' => 'GetDataTPFileListByDocumentResponse',
     'CanDeleteProtocol' => 'CanDeleteProtocol',
     'CanDeleteProtocolResponse' => 'CanDeleteProtocolResponse',
     'canCreateDynorg' => 'canCreateDynorg',
@@ -1820,21 +1820,21 @@ class abxWsGestService extends SoapClient
     'abxArchSostDocumentList' => 'abxArchSostDocumentList',
     'abxArchSostDocument' => 'abxArchSostDocument',
     'InsertSchedulerTaskResponse' => 'InsertSchedulerTaskResponse',
-    'CreateField' => 'CreateField',
-    'CreateFieldResponse' => 'CreateFieldResponse',
     'DownloadFileWA' => 'DownloadFileWA',
     'DownloadFileWAResponse' => 'DownloadFileWAResponse',
-    'GetDataTPFileListByUsername' => 'GetDataTPFileListByUsername',
-    'GetDataTPFileListByUsernameResponse' => 'GetDataTPFileListByUsernameResponse',
+    'CreateField' => 'CreateField',
+    'CreateFieldResponse' => 'CreateFieldResponse',
     'DownloadFileUnc' => 'DownloadFileUnc',
     'DownloadFileUncResponse' => 'DownloadFileUncResponse',
-    'SaveChars' => 'SaveChars',
-    'SaveCharsResponse' => 'SaveCharsResponse',
+    'GetDataTPFileListByUsername' => 'GetDataTPFileListByUsername',
+    'GetDataTPFileListByUsernameResponse' => 'GetDataTPFileListByUsernameResponse',
     'GetUserSettings' => 'GetUserSettings',
     'GetUserSettingsResponse' => 'GetUserSettingsResponse',
-    'StartSDKTask' => 'StartSDKTask',
+    'SaveChars' => 'SaveChars',
+    'SaveCharsResponse' => 'SaveCharsResponse',
     'Fk_getAllRecord' => 'Fk_getAllRecord',
     'Fk_getAllRecordResponse' => 'Fk_getAllRecordResponse',
+    'StartSDKTask' => 'StartSDKTask',
     'DeleteContainer' => 'DeleteContainer',
     'DeleteContainerResponse' => 'DeleteContainerResponse',
     'DeleteFileVersion' => 'DeleteFileVersion',
@@ -1845,38 +1845,38 @@ class abxWsGestService extends SoapClient
     'DelUserSettingsResponse' => 'DelUserSettingsResponse',
     'CheckIn_document' => 'CheckIn_document',
     'CheckIn_documentResponse' => 'CheckIn_documentResponse',
-    'SetTmpWFDownloadPath' => 'SetTmpWFDownloadPath',
-    'SetTmpWFDownloadPathResponse' => 'SetTmpWFDownloadPathResponse',
     'ShowProtocol' => 'ShowProtocol',
     'ShowProtocolResponse' => 'ShowProtocolResponse',
+    'SetTmpWFDownloadPath' => 'SetTmpWFDownloadPath',
+    'SetTmpWFDownloadPathResponse' => 'SetTmpWFDownloadPathResponse',
     'DeleteData' => 'DeleteData',
     'DeleteDataResponse' => 'DeleteDataResponse',
-    'StoreSDKVariable' => 'StoreSDKVariable',
-    'StoreSDKVariableResponse' => 'StoreSDKVariableResponse',
     'GetObject' => 'GetObject',
     'GetObjectResponse' => 'GetObjectResponse',
     'abxGoResult' => 'abxGoResult',
     'abxObjDef' => 'abxObjDef',
     'elobj' => 'elobj',
     'methods' => 'methods',
-    'AddUser' => 'AddUser',
-    'AddUserResponse' => 'AddUserResponse',
+    'StoreSDKVariable' => 'StoreSDKVariable',
+    'StoreSDKVariableResponse' => 'StoreSDKVariableResponse',
     'CheckIn_attachContainer' => 'CheckIn_attachContainer',
     'CheckIn_attachContainerResponse' => 'CheckIn_attachContainerResponse',
+    'AddUser' => 'AddUser',
+    'AddUserResponse' => 'AddUserResponse',
     'GetTemplateProperties' => 'GetTemplateProperties',
     'GetTemplatePropertiesResponse' => 'GetTemplatePropertiesResponse',
     'GetDataWFFileDetail' => 'GetDataWFFileDetail',
     'GetDataWFFileDetailResponse' => 'GetDataWFFileDetailResponse',
     'GetAllObjectWithSystem' => 'GetAllObjectWithSystem',
     'GetAllObjectWithSystemResponse' => 'GetAllObjectWithSystemResponse',
-    'GetInstanceReplication' => 'GetInstanceReplication',
-    'GetInstanceReplicationResponse' => 'GetInstanceReplicationResponse',
     'DeleteFileWA' => 'DeleteFileWA',
     'DeleteFileWAResponse' => 'DeleteFileWAResponse',
     'DeleteFileContainerVersion' => 'DeleteFileContainerVersion',
     'DeleteFileContainerVersionResponse' => 'DeleteFileContainerVersionResponse',
     'InsertFile' => 'InsertFile',
     'InsertFileResponse' => 'InsertFileResponse',
+    'GetInstanceReplication' => 'GetInstanceReplication',
+    'GetInstanceReplicationResponse' => 'GetInstanceReplicationResponse',
     'abxDynamicorgRuleList' => 'abxDynamicorgRuleList',
     'abxDynamicorgRule' => 'abxDynamicorgRule',
     'abxDynamicorgRuleElement' => 'abxDynamicorgRuleElement',
@@ -1921,1102 +1921,12 @@ class abxWsGestService extends SoapClient
 
   /**
    * 
-   * @param Fk_getColumnsName $parameters
+   * @param GetMethod $parameters
    * @access public
    */
-  public function Fk_getColumnsName(Fk_getColumnsName $parameters)
+  public function GetMethod(GetMethod $parameters)
   {
-    return $this->__soapCall('Fk_getColumnsName', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Fk_getRemoteDatabaseList $parameters
-   * @access public
-   */
-  public function Fk_getRemoteDatabaseList(Fk_getRemoteDatabaseList $parameters)
-  {
-    return $this->__soapCall('Fk_getRemoteDatabaseList', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Fk_getRemoteTableList $parameters
-   * @access public
-   */
-  public function Fk_getRemoteTableList(Fk_getRemoteTableList $parameters)
-  {
-    return $this->__soapCall('Fk_getRemoteTableList', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Fk_getRemoteViewList $parameters
-   * @access public
-   */
-  public function Fk_getRemoteViewList(Fk_getRemoteViewList $parameters)
-  {
-    return $this->__soapCall('Fk_getRemoteViewList', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Fk_getRemoteFieldList $parameters
-   * @access public
-   */
-  public function Fk_getRemoteFieldList(Fk_getRemoteFieldList $parameters)
-  {
-    return $this->__soapCall('Fk_getRemoteFieldList', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Fk_getLocalFieldList $parameters
-   * @access public
-   */
-  public function Fk_getLocalFieldList(Fk_getLocalFieldList $parameters)
-  {
-    return $this->__soapCall('Fk_getLocalFieldList', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Query $parameters
-   * @access public
-   */
-  public function Query(Query $parameters)
-  {
-    return $this->__soapCall('Query', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Fk_getAllRecord $parameters
-   * @access public
-   */
-  public function Fk_getAllRecord(Fk_getAllRecord $parameters)
-  {
-    return $this->__soapCall('Fk_getAllRecord', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Fk_getCountAllRecord $parameters
-   * @access public
-   */
-  public function Fk_getCountAllRecord(Fk_getCountAllRecord $parameters)
-  {
-    return $this->__soapCall('Fk_getCountAllRecord', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Fk_getAllRecordByIndex $parameters
-   * @access public
-   */
-  public function Fk_getAllRecordByIndex(Fk_getAllRecordByIndex $parameters)
-  {
-    return $this->__soapCall('Fk_getAllRecordByIndex', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Fk_getAllRecordByDesc $parameters
-   * @access public
-   */
-  public function Fk_getAllRecordByDesc(Fk_getAllRecordByDesc $parameters)
-  {
-    return $this->__soapCall('Fk_getAllRecordByDesc', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Fk_getCountAllRecordByDesc $parameters
-   * @access public
-   */
-  public function Fk_getCountAllRecordByDesc(Fk_getCountAllRecordByDesc $parameters)
-  {
-    return $this->__soapCall('Fk_getCountAllRecordByDesc', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Fk_getCountAllRecordByIndexDesc $parameters
-   * @access public
-   */
-  public function Fk_getCountAllRecordByIndexDesc(Fk_getCountAllRecordByIndexDesc $parameters)
-  {
-    return $this->__soapCall('Fk_getCountAllRecordByIndexDesc', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Fk_getAllRecordByIndexDesc $parameters
-   * @access public
-   */
-  public function Fk_getAllRecordByIndexDesc(Fk_getAllRecordByIndexDesc $parameters)
-  {
-    return $this->__soapCall('Fk_getAllRecordByIndexDesc', array($parameters));
-  }
-
-  /**
-   * 
-   * @param InsertDataWA $parameters
-   * @access public
-   */
-  public function InsertDataWA(InsertDataWA $parameters)
-  {
-    return $this->__soapCall('InsertDataWA', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetListDataWA $parameters
-   * @access public
-   */
-  public function GetListDataWA(GetListDataWA $parameters)
-  {
-    return $this->__soapCall('GetListDataWA', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ModifyDataWA $parameters
-   * @access public
-   */
-  public function ModifyDataWA(ModifyDataWA $parameters)
-  {
-    return $this->__soapCall('ModifyDataWA', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DeleteDataWA $parameters
-   * @access public
-   */
-  public function DeleteDataWA(DeleteDataWA $parameters)
-  {
-    return $this->__soapCall('DeleteDataWA', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetDataWAById $parameters
-   * @access public
-   */
-  public function GetDataWAById(GetDataWAById $parameters)
-  {
-    return $this->__soapCall('GetDataWAById', array($parameters));
-  }
-
-  /**
-   * 
-   * @param InsertFileWA $parameters
-   * @access public
-   */
-  public function InsertFileWA(InsertFileWA $parameters)
-  {
-    return $this->__soapCall('InsertFileWA', array($parameters));
-  }
-
-  /**
-   * 
-   * @param UploadSendChunkWA $parameters
-   * @access public
-   */
-  public function UploadSendChunkWA(UploadSendChunkWA $parameters)
-  {
-    return $this->__soapCall('UploadSendChunkWA', array($parameters));
-  }
-
-  /**
-   * 
-   * @param UploadEndFileWA $parameters
-   * @access public
-   */
-  public function UploadEndFileWA(UploadEndFileWA $parameters)
-  {
-    return $this->__soapCall('UploadEndFileWA', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetDataFileListWA $parameters
-   * @access public
-   */
-  public function GetDataFileListWA(GetDataFileListWA $parameters)
-  {
-    return $this->__soapCall('GetDataFileListWA', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DownloadFileWAByFileUniqueCode $parameters
-   * @access public
-   */
-  public function DownloadFileWAByFileUniqueCode(DownloadFileWAByFileUniqueCode $parameters)
-  {
-    return $this->__soapCall('DownloadFileWAByFileUniqueCode', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DownloadFileWA $parameters
-   * @access public
-   */
-  public function DownloadFileWA(DownloadFileWA $parameters)
-  {
-    return $this->__soapCall('DownloadFileWA', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DownloadGetNextWA $parameters
-   * @access public
-   */
-  public function DownloadGetNextWA(DownloadGetNextWA $parameters)
-  {
-    return $this->__soapCall('DownloadGetNextWA', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DownloadEndFileWA $parameters
-   * @access public
-   */
-  public function DownloadEndFileWA(DownloadEndFileWA $parameters)
-  {
-    return $this->__soapCall('DownloadEndFileWA', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DeleteFileWA $parameters
-   * @access public
-   */
-  public function DeleteFileWA(DeleteFileWA $parameters)
-  {
-    return $this->__soapCall('DeleteFileWA', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetCountDocumentLinks $parameters
-   * @access public
-   */
-  public function GetCountDocumentLinks(GetCountDocumentLinks $parameters)
-  {
-    return $this->__soapCall('GetCountDocumentLinks', array($parameters));
-  }
-
-  /**
-   * 
-   * @param SetInstanceReplication $parameters
-   * @access public
-   */
-  public function SetInstanceReplication(SetInstanceReplication $parameters)
-  {
-    return $this->__soapCall('SetInstanceReplication', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ModifyContainer $parameters
-   * @access public
-   */
-  public function ModifyContainer(ModifyContainer $parameters)
-  {
-    return $this->__soapCall('ModifyContainer', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ModifyTemplate $parameters
-   * @access public
-   */
-  public function ModifyTemplate(ModifyTemplate $parameters)
-  {
-    return $this->__soapCall('ModifyTemplate', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DeleteTemplate $parameters
-   * @access public
-   */
-  public function DeleteTemplate(DeleteTemplate $parameters)
-  {
-    return $this->__soapCall('DeleteTemplate', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DeleteContainer $parameters
-   * @access public
-   */
-  public function DeleteContainer(DeleteContainer $parameters)
-  {
-    return $this->__soapCall('DeleteContainer', array($parameters));
-  }
-
-  /**
-   * 
-   * @param canModifyContainer $parameters
-   * @access public
-   */
-  public function canModifyContainer(canModifyContainer $parameters)
-  {
-    return $this->__soapCall('canModifyContainer', array($parameters));
-  }
-
-  /**
-   * 
-   * @param canModifyTemplate $parameters
-   * @access public
-   */
-  public function canModifyTemplate(canModifyTemplate $parameters)
-  {
-    return $this->__soapCall('canModifyTemplate', array($parameters));
-  }
-
-  /**
-   * 
-   * @param canDeleteContainer $parameters
-   * @access public
-   */
-  public function canDeleteContainer(canDeleteContainer $parameters)
-  {
-    return $this->__soapCall('canDeleteContainer', array($parameters));
-  }
-
-  /**
-   * 
-   * @param canDeleteTemplate $parameters
-   * @access public
-   */
-  public function canDeleteTemplate(canDeleteTemplate $parameters)
-  {
-    return $this->__soapCall('canDeleteTemplate', array($parameters));
-  }
-
-  /**
-   * 
-   * @param canCreateContainer $parameters
-   * @access public
-   */
-  public function canCreateContainer(canCreateContainer $parameters)
-  {
-    return $this->__soapCall('canCreateContainer', array($parameters));
-  }
-
-  /**
-   * 
-   * @param canCreateTemplate $parameters
-   * @access public
-   */
-  public function canCreateTemplate(canCreateTemplate $parameters)
-  {
-    return $this->__soapCall('canCreateTemplate', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetDynorgList $parameters
-   * @access public
-   */
-  public function GetDynorgList(GetDynorgList $parameters)
-  {
-    return $this->__soapCall('GetDynorgList', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ModifyDynorg $parameters
-   * @access public
-   */
-  public function ModifyDynorg(ModifyDynorg $parameters)
-  {
-    return $this->__soapCall('ModifyDynorg', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DeleteDynorg $parameters
-   * @access public
-   */
-  public function DeleteDynorg(DeleteDynorg $parameters)
-  {
-    return $this->__soapCall('DeleteDynorg', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetArchiBoxInDomainByMatricola $parameters
-   * @access public
-   */
-  public function GetArchiBoxInDomainByMatricola(GetArchiBoxInDomainByMatricola $parameters)
-  {
-    return $this->__soapCall('GetArchiBoxInDomainByMatricola', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetArchiBoxInfo $parameters
-   * @access public
-   */
-  public function GetArchiBoxInfo(GetArchiBoxInfo $parameters)
-  {
-    return $this->__soapCall('GetArchiBoxInfo', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetArchiBoxInDomain $parameters
-   * @access public
-   */
-  public function GetArchiBoxInDomain(GetArchiBoxInDomain $parameters)
-  {
-    return $this->__soapCall('GetArchiBoxInDomain', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DigitalSign $parameters
-   * @access public
-   */
-  public function DigitalSign(DigitalSign $parameters)
-  {
-    return $this->__soapCall('DigitalSign', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetInstanceReplicationStatus $parameters
-   * @access public
-   */
-  public function GetInstanceReplicationStatus(GetInstanceReplicationStatus $parameters)
-  {
-    return $this->__soapCall('GetInstanceReplicationStatus', array($parameters));
-  }
-
-  /**
-   * 
-   * @param CreateContainer $parameters
-   * @access public
-   */
-  public function CreateContainer(CreateContainer $parameters)
-  {
-    return $this->__soapCall('CreateContainer', array($parameters));
-  }
-
-  /**
-   * 
-   * @param CreateTemplate $parameters
-   * @access public
-   */
-  public function CreateTemplate(CreateTemplate $parameters)
-  {
-    return $this->__soapCall('CreateTemplate', array($parameters));
-  }
-
-  /**
-   * 
-   * @param CreateDynorg $parameters
-   * @access public
-   */
-  public function CreateDynorg(CreateDynorg $parameters)
-  {
-    return $this->__soapCall('CreateDynorg', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetFieldList $parameters
-   * @access public
-   */
-  public function GetFieldList(GetFieldList $parameters)
-  {
-    return $this->__soapCall('GetFieldList', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetFieldProperties $parameters
-   * @access public
-   */
-  public function GetFieldProperties(GetFieldProperties $parameters)
-  {
-    return $this->__soapCall('GetFieldProperties', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetFieldsPropertiesFromTemplate $parameters
-   * @access public
-   */
-  public function GetFieldsPropertiesFromTemplate(GetFieldsPropertiesFromTemplate $parameters)
-  {
-    return $this->__soapCall('GetFieldsPropertiesFromTemplate', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetAdjacentArchiBox $parameters
-   * @access public
-   */
-  public function GetAdjacentArchiBox(GetAdjacentArchiBox $parameters)
-  {
-    return $this->__soapCall('GetAdjacentArchiBox', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetInstanceReplication $parameters
-   * @access public
-   */
-  public function GetInstanceReplication(GetInstanceReplication $parameters)
-  {
-    return $this->__soapCall('GetInstanceReplication', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Login $parameters
-   * @access public
-   */
-  public function Login(Login $parameters)
-  {
-    return $this->__soapCall('Login', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Logout $parameters
-   * @access public
-   */
-  public function Logout(Logout $parameters)
-  {
-    return $this->__soapCall('Logout', array($parameters));
-  }
-
-  /**
-   * 
-   * @param InsertSchedulerTask $parameters
-   * @access public
-   */
-  public function InsertSchedulerTask(InsertSchedulerTask $parameters)
-  {
-    return $this->__soapCall('InsertSchedulerTask', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetSchedulerTasks $parameters
-   * @access public
-   */
-  public function GetSchedulerTasks(GetSchedulerTasks $parameters)
-  {
-    return $this->__soapCall('GetSchedulerTasks', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DeleteSchedulerTask $parameters
-   * @access public
-   */
-  public function DeleteSchedulerTask(DeleteSchedulerTask $parameters)
-  {
-    return $this->__soapCall('DeleteSchedulerTask', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetSchedulerTasksToRun $parameters
-   * @access public
-   */
-  public function GetSchedulerTasksToRun(GetSchedulerTasksToRun $parameters)
-  {
-    return $this->__soapCall('GetSchedulerTasksToRun', array($parameters));
-  }
-
-  /**
-   * 
-   * @param SchedulerTaskScheduleProcessed $parameters
-   * @access public
-   */
-  public function SchedulerTaskScheduleProcessed(SchedulerTaskScheduleProcessed $parameters)
-  {
-    return $this->__soapCall('SchedulerTaskScheduleProcessed', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ModifySchedulerTaskSchedule $parameters
-   * @access public
-   */
-  public function ModifySchedulerTaskSchedule(ModifySchedulerTaskSchedule $parameters)
-  {
-    return $this->__soapCall('ModifySchedulerTaskSchedule', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DeleteSchedulerTaskSchedule $parameters
-   * @access public
-   */
-  public function DeleteSchedulerTaskSchedule(DeleteSchedulerTaskSchedule $parameters)
-  {
-    return $this->__soapCall('DeleteSchedulerTaskSchedule', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ChangeSchedulerTaskScheduleStatus $parameters
-   * @access public
-   */
-  public function ChangeSchedulerTaskScheduleStatus(ChangeSchedulerTaskScheduleStatus $parameters)
-  {
-    return $this->__soapCall('ChangeSchedulerTaskScheduleStatus', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ModifyField $parameters
-   * @access public
-   */
-  public function ModifyField(ModifyField $parameters)
-  {
-    return $this->__soapCall('ModifyField', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DeleteField $parameters
-   * @access public
-   */
-  public function DeleteField(DeleteField $parameters)
-  {
-    return $this->__soapCall('DeleteField', array($parameters));
-  }
-
-  /**
-   * 
-   * @param CreateField $parameters
-   * @access public
-   */
-  public function CreateField(CreateField $parameters)
-  {
-    return $this->__soapCall('CreateField', array($parameters));
-  }
-
-  /**
-   * 
-   * @param canModifyField $parameters
-   * @access public
-   */
-  public function canModifyField(canModifyField $parameters)
-  {
-    return $this->__soapCall('canModifyField', array($parameters));
-  }
-
-  /**
-   * 
-   * @param canDeleteField $parameters
-   * @access public
-   */
-  public function canDeleteField(canDeleteField $parameters)
-  {
-    return $this->__soapCall('canDeleteField', array($parameters));
-  }
-
-  /**
-   * 
-   * @param canCreateField $parameters
-   * @access public
-   */
-  public function canCreateField(canCreateField $parameters)
-  {
-    return $this->__soapCall('canCreateField', array($parameters));
-  }
-
-  /**
-   * 
-   * @param CanDeleteLinkFromContainer $parameters
-   * @access public
-   */
-  public function CanDeleteLinkFromContainer(CanDeleteLinkFromContainer $parameters)
-  {
-    return $this->__soapCall('CanDeleteLinkFromContainer', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetDomainList $parameters
-   * @access public
-   */
-  public function GetDomainList(GetDomainList $parameters)
-  {
-    return $this->__soapCall('GetDomainList', array($parameters));
-  }
-
-  /**
-   * 
-   * @param InsertLinkContainerToContainer $parameters
-   * @access public
-   */
-  public function InsertLinkContainerToContainer(InsertLinkContainerToContainer $parameters)
-  {
-    return $this->__soapCall('InsertLinkContainerToContainer', array($parameters));
-  }
-
-  /**
-   * 
-   * @param CanInsertLinkContainerToContainer $parameters
-   * @access public
-   */
-  public function CanInsertLinkContainerToContainer(CanInsertLinkContainerToContainer $parameters)
-  {
-    return $this->__soapCall('CanInsertLinkContainerToContainer', array($parameters));
-  }
-
-  /**
-   * 
-   * @param InsertLinkContainerToDocument $parameters
-   * @access public
-   */
-  public function InsertLinkContainerToDocument(InsertLinkContainerToDocument $parameters)
-  {
-    return $this->__soapCall('InsertLinkContainerToDocument', array($parameters));
-  }
-
-  /**
-   * 
-   * @param CanInsertLinkContainerToDocument $parameters
-   * @access public
-   */
-  public function CanInsertLinkContainerToDocument(CanInsertLinkContainerToDocument $parameters)
-  {
-    return $this->__soapCall('CanInsertLinkContainerToDocument', array($parameters));
-  }
-
-  /**
-   * 
-   * @param InsertLinkDocumentToDocument $parameters
-   * @access public
-   */
-  public function InsertLinkDocumentToDocument(InsertLinkDocumentToDocument $parameters)
-  {
-    return $this->__soapCall('InsertLinkDocumentToDocument', array($parameters));
-  }
-
-  /**
-   * 
-   * @param CanInsertLinkDocumentToDocument $parameters
-   * @access public
-   */
-  public function CanInsertLinkDocumentToDocument(CanInsertLinkDocumentToDocument $parameters)
-  {
-    return $this->__soapCall('CanInsertLinkDocumentToDocument', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ModifyLinkContainerToContainer $parameters
-   * @access public
-   */
-  public function ModifyLinkContainerToContainer(ModifyLinkContainerToContainer $parameters)
-  {
-    return $this->__soapCall('ModifyLinkContainerToContainer', array($parameters));
-  }
-
-  /**
-   * 
-   * @param CanModifyLinkContainerToContainer $parameters
-   * @access public
-   */
-  public function CanModifyLinkContainerToContainer(CanModifyLinkContainerToContainer $parameters)
-  {
-    return $this->__soapCall('CanModifyLinkContainerToContainer', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ModifyLinkContainerToDocument $parameters
-   * @access public
-   */
-  public function ModifyLinkContainerToDocument(ModifyLinkContainerToDocument $parameters)
-  {
-    return $this->__soapCall('ModifyLinkContainerToDocument', array($parameters));
-  }
-
-  /**
-   * 
-   * @param CanModifyLinkContainerToDocument $parameters
-   * @access public
-   */
-  public function CanModifyLinkContainerToDocument(CanModifyLinkContainerToDocument $parameters)
-  {
-    return $this->__soapCall('CanModifyLinkContainerToDocument', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DeleteLink $parameters
-   * @access public
-   */
-  public function DeleteLink(DeleteLink $parameters)
-  {
-    return $this->__soapCall('DeleteLink', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetDocumentLinks $parameters
-   * @access public
-   */
-  public function GetDocumentLinks(GetDocumentLinks $parameters)
-  {
-    return $this->__soapCall('GetDocumentLinks', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetCountLinksToDocument $parameters
-   * @access public
-   */
-  public function GetCountLinksToDocument(GetCountLinksToDocument $parameters)
-  {
-    return $this->__soapCall('GetCountLinksToDocument', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetLinksToDocument $parameters
-   * @access public
-   */
-  public function GetLinksToDocument(GetLinksToDocument $parameters)
-  {
-    return $this->__soapCall('GetLinksToDocument', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetInstanceNameFromLinks $parameters
-   * @access public
-   */
-  public function GetInstanceNameFromLinks(GetInstanceNameFromLinks $parameters)
-  {
-    return $this->__soapCall('GetInstanceNameFromLinks', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetContainerLinks $parameters
-   * @access public
-   */
-  public function GetContainerLinks(GetContainerLinks $parameters)
-  {
-    return $this->__soapCall('GetContainerLinks', array($parameters));
-  }
-
-  /**
-   * 
-   * @param RegenerateDynOrg $parameters
-   * @access public
-   */
-  public function RegenerateDynOrg(RegenerateDynOrg $parameters)
-  {
-    return $this->__soapCall('RegenerateDynOrg', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetDynorgTypeList $parameters
-   * @access public
-   */
-  public function GetDynorgTypeList(GetDynorgTypeList $parameters)
-  {
-    return $this->__soapCall('GetDynorgTypeList', array($parameters));
-  }
-
-  /**
-   * 
-   * @param canModifyDynorg $parameters
-   * @access public
-   */
-  public function canModifyDynorg(canModifyDynorg $parameters)
-  {
-    return $this->__soapCall('canModifyDynorg', array($parameters));
-  }
-
-  /**
-   * 
-   * @param canDeleteDynorg $parameters
-   * @access public
-   */
-  public function canDeleteDynorg(canDeleteDynorg $parameters)
-  {
-    return $this->__soapCall('canDeleteDynorg', array($parameters));
-  }
-
-  /**
-   * 
-   * @param canCreateDynorg $parameters
-   * @access public
-   */
-  public function canCreateDynorg(canCreateDynorg $parameters)
-  {
-    return $this->__soapCall('canCreateDynorg', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetClasseDocumentale $parameters
-   * @access public
-   */
-  public function GetClasseDocumentale(GetClasseDocumentale $parameters)
-  {
-    return $this->__soapCall('GetClasseDocumentale', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DeleteClasseDocumentale $parameters
-   * @access public
-   */
-  public function DeleteClasseDocumentale(DeleteClasseDocumentale $parameters)
-  {
-    return $this->__soapCall('DeleteClasseDocumentale', array($parameters));
-  }
-
-  /**
-   * 
-   * @param InsertClasseDocumentale $parameters
-   * @access public
-   */
-  public function InsertClasseDocumentale(InsertClasseDocumentale $parameters)
-  {
-    return $this->__soapCall('InsertClasseDocumentale', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetQueryParam $parameters
-   * @access public
-   */
-  public function GetQueryParam(GetQueryParam $parameters)
-  {
-    return $this->__soapCall('GetQueryParam', array($parameters));
-  }
-
-  /**
-   * 
-   * @param QueryHeader $parameters
-   * @access public
-   */
-  public function QueryHeader(QueryHeader $parameters)
-  {
-    return $this->__soapCall('QueryHeader', array($parameters));
-  }
-
-  /**
-   * 
-   * @param QueryTotAttach $parameters
-   * @access public
-   */
-  public function QueryTotAttach(QueryTotAttach $parameters)
-  {
-    return $this->__soapCall('QueryTotAttach', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DeleteFilter $parameters
-   * @access public
-   */
-  public function DeleteFilter(DeleteFilter $parameters)
-  {
-    return $this->__soapCall('DeleteFilter', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ModifyFilter $parameters
-   * @access public
-   */
-  public function ModifyFilter(ModifyFilter $parameters)
-  {
-    return $this->__soapCall('ModifyFilter', array($parameters));
-  }
-
-  /**
-   * 
-   * @param InsertFilter $parameters
-   * @access public
-   */
-  public function InsertFilter(InsertFilter $parameters)
-  {
-    return $this->__soapCall('InsertFilter', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetInstanceId $parameters
-   * @access public
-   */
-  public function GetInstanceId(GetInstanceId $parameters)
-  {
-    return $this->__soapCall('GetInstanceId', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetTemplateProperties $parameters
-   * @access public
-   */
-  public function GetTemplateProperties(GetTemplateProperties $parameters)
-  {
-    return $this->__soapCall('GetTemplateProperties', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetArchSostRules $parameters
-   * @access public
-   */
-  public function GetArchSostRules(GetArchSostRules $parameters)
-  {
-    return $this->__soapCall('GetArchSostRules', array($parameters));
-  }
-
-  /**
-   * 
-   * @param InsertArchSostRule $parameters
-   * @access public
-   */
-  public function InsertArchSostRule(InsertArchSostRule $parameters)
-  {
-    return $this->__soapCall('InsertArchSostRule', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DeleteArchSostRule $parameters
-   * @access public
-   */
-  public function DeleteArchSostRule(DeleteArchSostRule $parameters)
-  {
-    return $this->__soapCall('DeleteArchSostRule', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ModifyArchSostRule $parameters
-   * @access public
-   */
-  public function ModifyArchSostRule(ModifyArchSostRule $parameters)
-  {
-    return $this->__soapCall('ModifyArchSostRule', array($parameters));
+    return $this->__soapCall('GetMethod', array($parameters));
   }
 
   /**
@@ -3067,16 +1977,6 @@ class abxWsGestService extends SoapClient
   public function GetAllObjectWithSystem(GetAllObjectWithSystem $parameters)
   {
     return $this->__soapCall('GetAllObjectWithSystem', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetMethod $parameters
-   * @access public
-   */
-  public function GetMethod(GetMethod $parameters)
-  {
-    return $this->__soapCall('GetMethod', array($parameters));
   }
 
   /**
@@ -3461,602 +2361,202 @@ class abxWsGestService extends SoapClient
 
   /**
    * 
-   * @param GetDataFileListContainer $parameters
+   * @param Query $parameters
    * @access public
    */
-  public function GetDataFileListContainer(GetDataFileListContainer $parameters)
+  public function Query(Query $parameters)
   {
-    return $this->__soapCall('GetDataFileListContainer', array($parameters));
+    return $this->__soapCall('Query', array($parameters));
   }
 
   /**
    * 
-   * @param GetDataFileListOnlyLastVersion $parameters
+   * @param GetAdjacentArchiBox $parameters
    * @access public
    */
-  public function GetDataFileListOnlyLastVersion(GetDataFileListOnlyLastVersion $parameters)
+  public function GetAdjacentArchiBox(GetAdjacentArchiBox $parameters)
   {
-    return $this->__soapCall('GetDataFileListOnlyLastVersion', array($parameters));
+    return $this->__soapCall('GetAdjacentArchiBox', array($parameters));
   }
 
   /**
    * 
-   * @param GetDataFileList $parameters
+   * @param GetInstanceReplication $parameters
    * @access public
    */
-  public function GetDataFileList(GetDataFileList $parameters)
+  public function GetInstanceReplication(GetInstanceReplication $parameters)
   {
-    return $this->__soapCall('GetDataFileList', array($parameters));
+    return $this->__soapCall('GetInstanceReplication', array($parameters));
   }
 
   /**
    * 
-   * @param GetDataFileListForSecurity $parameters
+   * @param Login $parameters
    * @access public
    */
-  public function GetDataFileListForSecurity(GetDataFileListForSecurity $parameters)
+  public function Login(Login $parameters)
   {
-    return $this->__soapCall('GetDataFileListForSecurity', array($parameters));
+    return $this->__soapCall('Login', array($parameters));
   }
 
   /**
    * 
-   * @param GetDataFileDetail $parameters
+   * @param Logout $parameters
    * @access public
    */
-  public function GetDataFileDetail(GetDataFileDetail $parameters)
+  public function Logout(Logout $parameters)
   {
-    return $this->__soapCall('GetDataFileDetail', array($parameters));
+    return $this->__soapCall('Logout', array($parameters));
   }
 
   /**
    * 
-   * @param GetDataFileContainerDetail $parameters
+   * @param CanModifyLinkContainerToContainer $parameters
    * @access public
    */
-  public function GetDataFileContainerDetail(GetDataFileContainerDetail $parameters)
+  public function CanModifyLinkContainerToContainer(CanModifyLinkContainerToContainer $parameters)
   {
-    return $this->__soapCall('GetDataFileContainerDetail', array($parameters));
+    return $this->__soapCall('CanModifyLinkContainerToContainer', array($parameters));
   }
 
   /**
    * 
-   * @param DownloadFile $parameters
+   * @param ModifyLinkContainerToDocument $parameters
    * @access public
    */
-  public function DownloadFile(DownloadFile $parameters)
+  public function ModifyLinkContainerToDocument(ModifyLinkContainerToDocument $parameters)
   {
-    return $this->__soapCall('DownloadFile', array($parameters));
+    return $this->__soapCall('ModifyLinkContainerToDocument', array($parameters));
   }
 
   /**
    * 
-   * @param DownloadFileByFileUniqueCode $parameters
+   * @param CanModifyLinkContainerToDocument $parameters
    * @access public
    */
-  public function DownloadFileByFileUniqueCode(DownloadFileByFileUniqueCode $parameters)
+  public function CanModifyLinkContainerToDocument(CanModifyLinkContainerToDocument $parameters)
   {
-    return $this->__soapCall('DownloadFileByFileUniqueCode', array($parameters));
+    return $this->__soapCall('CanModifyLinkContainerToDocument', array($parameters));
   }
 
   /**
    * 
-   * @param DownloadFileUnc $parameters
+   * @param DeleteLink $parameters
    * @access public
    */
-  public function DownloadFileUnc(DownloadFileUnc $parameters)
+  public function DeleteLink(DeleteLink $parameters)
   {
-    return $this->__soapCall('DownloadFileUnc', array($parameters));
+    return $this->__soapCall('DeleteLink', array($parameters));
   }
 
   /**
    * 
-   * @param DownloadFileContainerUnc $parameters
+   * @param CanDeleteLinkFromContainer $parameters
    * @access public
    */
-  public function DownloadFileContainerUnc(DownloadFileContainerUnc $parameters)
+  public function CanDeleteLinkFromContainer(CanDeleteLinkFromContainer $parameters)
   {
-    return $this->__soapCall('DownloadFileContainerUnc', array($parameters));
+    return $this->__soapCall('CanDeleteLinkFromContainer', array($parameters));
   }
 
   /**
    * 
-   * @param DownloadGetChunk $parameters
+   * @param GetDocumentLinks $parameters
    * @access public
    */
-  public function DownloadGetChunk(DownloadGetChunk $parameters)
+  public function GetDocumentLinks(GetDocumentLinks $parameters)
   {
-    return $this->__soapCall('DownloadGetChunk', array($parameters));
+    return $this->__soapCall('GetDocumentLinks', array($parameters));
   }
 
   /**
    * 
-   * @param DownloadGetNext $parameters
+   * @param GetCountLinksToDocument $parameters
    * @access public
    */
-  public function DownloadGetNext(DownloadGetNext $parameters)
+  public function GetCountLinksToDocument(GetCountLinksToDocument $parameters)
   {
-    return $this->__soapCall('DownloadGetNext', array($parameters));
+    return $this->__soapCall('GetCountLinksToDocument', array($parameters));
   }
 
   /**
    * 
-   * @param UploadSendChunk $parameters
+   * @param GetLinksToDocument $parameters
    * @access public
    */
-  public function UploadSendChunk(UploadSendChunk $parameters)
+  public function GetLinksToDocument(GetLinksToDocument $parameters)
   {
-    return $this->__soapCall('UploadSendChunk', array($parameters));
+    return $this->__soapCall('GetLinksToDocument', array($parameters));
   }
 
   /**
    * 
-   * @param DownloadFileContainer $parameters
+   * @param GetInstanceNameFromLinks $parameters
    * @access public
    */
-  public function DownloadFileContainer(DownloadFileContainer $parameters)
+  public function GetInstanceNameFromLinks(GetInstanceNameFromLinks $parameters)
   {
-    return $this->__soapCall('DownloadFileContainer', array($parameters));
+    return $this->__soapCall('GetInstanceNameFromLinks', array($parameters));
   }
 
   /**
    * 
-   * @param DownloadFilePreview $parameters
+   * @param GetContainerLinks $parameters
    * @access public
    */
-  public function DownloadFilePreview(DownloadFilePreview $parameters)
+  public function GetContainerLinks(GetContainerLinks $parameters)
   {
-    return $this->__soapCall('DownloadFilePreview', array($parameters));
+    return $this->__soapCall('GetContainerLinks', array($parameters));
   }
 
   /**
    * 
-   * @param GetUploadDetailByFilecode $parameters
+   * @param RegenerateDynOrg $parameters
    * @access public
    */
-  public function GetUploadDetailByFilecode(GetUploadDetailByFilecode $parameters)
+  public function RegenerateDynOrg(RegenerateDynOrg $parameters)
   {
-    return $this->__soapCall('GetUploadDetailByFilecode', array($parameters));
+    return $this->__soapCall('RegenerateDynOrg', array($parameters));
   }
 
   /**
    * 
-   * @param GetUploadDetailByDataId $parameters
+   * @param GetClasseDocumentale $parameters
    * @access public
    */
-  public function GetUploadDetailByDataId(GetUploadDetailByDataId $parameters)
+  public function GetClasseDocumentale(GetClasseDocumentale $parameters)
   {
-    return $this->__soapCall('GetUploadDetailByDataId', array($parameters));
+    return $this->__soapCall('GetClasseDocumentale', array($parameters));
   }
 
   /**
    * 
-   * @param GetUploadDetailByData $parameters
+   * @param DeleteClasseDocumentale $parameters
    * @access public
    */
-  public function GetUploadDetailByData(GetUploadDetailByData $parameters)
+  public function DeleteClasseDocumentale(DeleteClasseDocumentale $parameters)
   {
-    return $this->__soapCall('GetUploadDetailByData', array($parameters));
+    return $this->__soapCall('DeleteClasseDocumentale', array($parameters));
   }
 
   /**
    * 
-   * @param GetUploadDetailByContId $parameters
+   * @param InsertClasseDocumentale $parameters
    * @access public
    */
-  public function GetUploadDetailByContId(GetUploadDetailByContId $parameters)
+  public function InsertClasseDocumentale(InsertClasseDocumentale $parameters)
   {
-    return $this->__soapCall('GetUploadDetailByContId', array($parameters));
+    return $this->__soapCall('InsertClasseDocumentale', array($parameters));
   }
 
   /**
    * 
-   * @param GetUploadDetailByCont $parameters
+   * @param InsertDataWA $parameters
    * @access public
    */
-  public function GetUploadDetailByCont(GetUploadDetailByCont $parameters)
+  public function InsertDataWA(InsertDataWA $parameters)
   {
-    return $this->__soapCall('GetUploadDetailByCont', array($parameters));
-  }
-
-  /**
-   * 
-   * @param UploadEndFile $parameters
-   * @access public
-   */
-  public function UploadEndFile(UploadEndFile $parameters)
-  {
-    return $this->__soapCall('UploadEndFile', array($parameters));
-  }
-
-  /**
-   * 
-   * @param UploadEndFileContainer $parameters
-   * @access public
-   */
-  public function UploadEndFileContainer(UploadEndFileContainer $parameters)
-  {
-    return $this->__soapCall('UploadEndFileContainer', array($parameters));
-  }
-
-  /**
-   * 
-   * @param SetTmpUploadPath $parameters
-   * @access public
-   */
-  public function SetTmpUploadPath(SetTmpUploadPath $parameters)
-  {
-    return $this->__soapCall('SetTmpUploadPath', array($parameters));
-  }
-
-  /**
-   * 
-   * @param SetTmpDownloadPath $parameters
-   * @access public
-   */
-  public function SetTmpDownloadPath(SetTmpDownloadPath $parameters)
-  {
-    return $this->__soapCall('SetTmpDownloadPath', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetDownloadDetailByFilecode $parameters
-   * @access public
-   */
-  public function GetDownloadDetailByFilecode(GetDownloadDetailByFilecode $parameters)
-  {
-    return $this->__soapCall('GetDownloadDetailByFilecode', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetDownloadDetailByDataId $parameters
-   * @access public
-   */
-  public function GetDownloadDetailByDataId(GetDownloadDetailByDataId $parameters)
-  {
-    return $this->__soapCall('GetDownloadDetailByDataId', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetDownloadDetailByData $parameters
-   * @access public
-   */
-  public function GetDownloadDetailByData(GetDownloadDetailByData $parameters)
-  {
-    return $this->__soapCall('GetDownloadDetailByData', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetDownloadDetailByContId $parameters
-   * @access public
-   */
-  public function GetDownloadDetailByContId(GetDownloadDetailByContId $parameters)
-  {
-    return $this->__soapCall('GetDownloadDetailByContId', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetDownloadDetailByCont $parameters
-   * @access public
-   */
-  public function GetDownloadDetailByCont(GetDownloadDetailByCont $parameters)
-  {
-    return $this->__soapCall('GetDownloadDetailByCont', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetCountFileList $parameters
-   * @access public
-   */
-  public function GetCountFileList(GetCountFileList $parameters)
-  {
-    return $this->__soapCall('GetCountFileList', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ModifyFileDescription $parameters
-   * @access public
-   */
-  public function ModifyFileDescription(ModifyFileDescription $parameters)
-  {
-    return $this->__soapCall('ModifyFileDescription', array($parameters));
-  }
-
-  /**
-   * 
-   * @param CopyFile $parameters
-   * @access public
-   */
-  public function CopyFile(CopyFile $parameters)
-  {
-    return $this->__soapCall('CopyFile', array($parameters));
-  }
-
-  /**
-   * 
-   * @param IfFileExist $parameters
-   * @access public
-   */
-  public function IfFileExist(IfFileExist $parameters)
-  {
-    return $this->__soapCall('IfFileExist', array($parameters));
-  }
-
-  /**
-   * 
-   * @param SetFileAvailable $parameters
-   * @access public
-   */
-  public function SetFileAvailable(SetFileAvailable $parameters)
-  {
-    return $this->__soapCall('SetFileAvailable', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetFileAvailable $parameters
-   * @access public
-   */
-  public function GetFileAvailable(GetFileAvailable $parameters)
-  {
-    return $this->__soapCall('GetFileAvailable', array($parameters));
-  }
-
-  /**
-   * 
-   * @param AddFileToSyncByArcCue $parameters
-   * @access public
-   */
-  public function AddFileToSyncByArcCue(AddFileToSyncByArcCue $parameters)
-  {
-    return $this->__soapCall('AddFileToSyncByArcCue', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Fk_DB_testConnection $parameters
-   * @access public
-   */
-  public function Fk_DB_testConnection(Fk_DB_testConnection $parameters)
-  {
-    return $this->__soapCall('Fk_DB_testConnection', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Fk_WS_insert $parameters
-   * @access public
-   */
-  public function Fk_WS_insert(Fk_WS_insert $parameters)
-  {
-    return $this->__soapCall('Fk_WS_insert', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Fk_DB_modify $parameters
-   * @access public
-   */
-  public function Fk_DB_modify(Fk_DB_modify $parameters)
-  {
-    return $this->__soapCall('Fk_DB_modify', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Fk_DB_delete $parameters
-   * @access public
-   */
-  public function Fk_DB_delete(Fk_DB_delete $parameters)
-  {
-    return $this->__soapCall('Fk_DB_delete', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Fk_getParsAllFk $parameters
-   * @access public
-   */
-  public function Fk_getParsAllFk(Fk_getParsAllFk $parameters)
-  {
-    return $this->__soapCall('Fk_getParsAllFk', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Fk_getPars $parameters
-   * @access public
-   */
-  public function Fk_getPars(Fk_getPars $parameters)
-  {
-    return $this->__soapCall('Fk_getPars', array($parameters));
-  }
-
-  /**
-   * 
-   * @param Fk_create $parameters
-   * @access public
-   */
-  public function Fk_create(Fk_create $parameters)
-  {
-    return $this->__soapCall('Fk_create', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetLanguages $parameters
-   * @access public
-   */
-  public function GetLanguages(GetLanguages $parameters)
-  {
-    return $this->__soapCall('GetLanguages', array($parameters));
-  }
-
-  /**
-   * 
-   * @param AddLogSDK $parameters
-   * @access public
-   */
-  public function AddLogSDK(AddLogSDK $parameters)
-  {
-    return $this->__soapCall('AddLogSDK', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetSDKLogList $parameters
-   * @access public
-   */
-  public function GetSDKLogList(GetSDKLogList $parameters)
-  {
-    return $this->__soapCall('GetSDKLogList', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DeleteSDKLog $parameters
-   * @access public
-   */
-  public function DeleteSDKLog(DeleteSDKLog $parameters)
-  {
-    return $this->__soapCall('DeleteSDKLog', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ResetUserSessions $parameters
-   * @access public
-   */
-  public function ResetUserSessions(ResetUserSessions $parameters)
-  {
-    return $this->__soapCall('ResetUserSessions', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ValidateSession $parameters
-   * @access public
-   */
-  public function ValidateSession(ValidateSession $parameters)
-  {
-    return $this->__soapCall('ValidateSession', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetUserList $parameters
-   * @access public
-   */
-  public function GetUserList(GetUserList $parameters)
-  {
-    return $this->__soapCall('GetUserList', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetUserListActiveDirectory $parameters
-   * @access public
-   */
-  public function GetUserListActiveDirectory(GetUserListActiveDirectory $parameters)
-  {
-    return $this->__soapCall('GetUserListActiveDirectory', array($parameters));
-  }
-
-  /**
-   * 
-   * @param InsertUser $parameters
-   * @access public
-   */
-  public function InsertUser(InsertUser $parameters)
-  {
-    return $this->__soapCall('InsertUser', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ModifyUser $parameters
-   * @access public
-   */
-  public function ModifyUser(ModifyUser $parameters)
-  {
-    return $this->__soapCall('ModifyUser', array($parameters));
-  }
-
-  /**
-   * 
-   * @param InsertUserConfig $parameters
-   * @access public
-   */
-  public function InsertUserConfig(InsertUserConfig $parameters)
-  {
-    return $this->__soapCall('InsertUserConfig', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ModifyUserConfig $parameters
-   * @access public
-   */
-  public function ModifyUserConfig(ModifyUserConfig $parameters)
-  {
-    return $this->__soapCall('ModifyUserConfig', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetUserDetailByUsername $parameters
-   * @access public
-   */
-  public function GetUserDetailByUsername(GetUserDetailByUsername $parameters)
-  {
-    return $this->__soapCall('GetUserDetailByUsername', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetUserDetailByUserId $parameters
-   * @access public
-   */
-  public function GetUserDetailByUserId(GetUserDetailByUserId $parameters)
-  {
-    return $this->__soapCall('GetUserDetailByUserId', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ExistUserByUsername $parameters
-   * @access public
-   */
-  public function ExistUserByUsername(ExistUserByUsername $parameters)
-  {
-    return $this->__soapCall('ExistUserByUsername', array($parameters));
-  }
-
-  /**
-   * 
-   * @param InsertGroup $parameters
-   * @access public
-   */
-  public function InsertGroup(InsertGroup $parameters)
-  {
-    return $this->__soapCall('InsertGroup', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DeleteGroup $parameters
-   * @access public
-   */
-  public function DeleteGroup(DeleteGroup $parameters)
-  {
-    return $this->__soapCall('DeleteGroup', array($parameters));
+    return $this->__soapCall('InsertDataWA', array($parameters));
   }
 
   /**
@@ -4071,632 +2571,142 @@ class abxWsGestService extends SoapClient
 
   /**
    * 
-   * @param DeleteUserByUsername $parameters
+   * @param SetInstanceReplication $parameters
    * @access public
    */
-  public function DeleteUserByUsername(DeleteUserByUsername $parameters)
+  public function SetInstanceReplication(SetInstanceReplication $parameters)
   {
-    return $this->__soapCall('DeleteUserByUsername', array($parameters));
+    return $this->__soapCall('SetInstanceReplication', array($parameters));
   }
 
   /**
    * 
-   * @param ModifyGroup $parameters
+   * @param ModifyContainer $parameters
    * @access public
    */
-  public function ModifyGroup(ModifyGroup $parameters)
+  public function ModifyContainer(ModifyContainer $parameters)
   {
-    return $this->__soapCall('ModifyGroup', array($parameters));
+    return $this->__soapCall('ModifyContainer', array($parameters));
   }
 
   /**
    * 
-   * @param GetGroupList $parameters
+   * @param ModifyTemplate $parameters
    * @access public
    */
-  public function GetGroupList(GetGroupList $parameters)
+  public function ModifyTemplate(ModifyTemplate $parameters)
   {
-    return $this->__soapCall('GetGroupList', array($parameters));
+    return $this->__soapCall('ModifyTemplate', array($parameters));
   }
 
   /**
    * 
-   * @param InsertUserInGroup $parameters
+   * @param DeleteTemplate $parameters
    * @access public
    */
-  public function InsertUserInGroup(InsertUserInGroup $parameters)
+  public function DeleteTemplate(DeleteTemplate $parameters)
   {
-    return $this->__soapCall('InsertUserInGroup', array($parameters));
+    return $this->__soapCall('DeleteTemplate', array($parameters));
   }
 
   /**
    * 
-   * @param RemoveUserByAllGroups $parameters
+   * @param DeleteContainer $parameters
    * @access public
    */
-  public function RemoveUserByAllGroups(RemoveUserByAllGroups $parameters)
+  public function DeleteContainer(DeleteContainer $parameters)
   {
-    return $this->__soapCall('RemoveUserByAllGroups', array($parameters));
+    return $this->__soapCall('DeleteContainer', array($parameters));
   }
 
   /**
    * 
-   * @param RemoveUserByGroup $parameters
+   * @param canModifyContainer $parameters
    * @access public
    */
-  public function RemoveUserByGroup(RemoveUserByGroup $parameters)
+  public function canModifyContainer(canModifyContainer $parameters)
   {
-    return $this->__soapCall('RemoveUserByGroup', array($parameters));
+    return $this->__soapCall('canModifyContainer', array($parameters));
   }
 
   /**
    * 
-   * @param GetGroupsListByUser $parameters
+   * @param canModifyTemplate $parameters
    * @access public
    */
-  public function GetGroupsListByUser(GetGroupsListByUser $parameters)
+  public function canModifyTemplate(canModifyTemplate $parameters)
   {
-    return $this->__soapCall('GetGroupsListByUser', array($parameters));
+    return $this->__soapCall('canModifyTemplate', array($parameters));
   }
 
   /**
    * 
-   * @param GetUsersListByGroup $parameters
+   * @param canDeleteContainer $parameters
    * @access public
    */
-  public function GetUsersListByGroup(GetUsersListByGroup $parameters)
+  public function canDeleteContainer(canDeleteContainer $parameters)
   {
-    return $this->__soapCall('GetUsersListByGroup', array($parameters));
+    return $this->__soapCall('canDeleteContainer', array($parameters));
   }
 
   /**
    * 
-   * @param ModifyTranslation $parameters
+   * @param canDeleteTemplate $parameters
    * @access public
    */
-  public function ModifyTranslation(ModifyTranslation $parameters)
+  public function canDeleteTemplate(canDeleteTemplate $parameters)
   {
-    return $this->__soapCall('ModifyTranslation', array($parameters));
+    return $this->__soapCall('canDeleteTemplate', array($parameters));
   }
 
   /**
    * 
-   * @param DeleteTranslation $parameters
+   * @param canCreateContainer $parameters
    * @access public
    */
-  public function DeleteTranslation(DeleteTranslation $parameters)
+  public function canCreateContainer(canCreateContainer $parameters)
   {
-    return $this->__soapCall('DeleteTranslation', array($parameters));
+    return $this->__soapCall('canCreateContainer', array($parameters));
   }
 
   /**
    * 
-   * @param InsertTranslation $parameters
+   * @param canCreateTemplate $parameters
    * @access public
    */
-  public function InsertTranslation(InsertTranslation $parameters)
+  public function canCreateTemplate(canCreateTemplate $parameters)
   {
-    return $this->__soapCall('InsertTranslation', array($parameters));
+    return $this->__soapCall('canCreateTemplate', array($parameters));
   }
 
   /**
    * 
-   * @param InsertTranslationCode $parameters
+   * @param GetDynorgList $parameters
    * @access public
    */
-  public function InsertTranslationCode(InsertTranslationCode $parameters)
+  public function GetDynorgList(GetDynorgList $parameters)
   {
-    return $this->__soapCall('InsertTranslationCode', array($parameters));
+    return $this->__soapCall('GetDynorgList', array($parameters));
   }
 
   /**
    * 
-   * @param InsertTranslationDecimalCode $parameters
+   * @param ModifyDynorg $parameters
    * @access public
    */
-  public function InsertTranslationDecimalCode(InsertTranslationDecimalCode $parameters)
+  public function ModifyDynorg(ModifyDynorg $parameters)
   {
-    return $this->__soapCall('InsertTranslationDecimalCode', array($parameters));
+    return $this->__soapCall('ModifyDynorg', array($parameters));
   }
 
   /**
    * 
-   * @param GetTranslationByMessageId $parameters
+   * @param DeleteDynorg $parameters
    * @access public
    */
-  public function GetTranslationByMessageId(GetTranslationByMessageId $parameters)
+  public function DeleteDynorg(DeleteDynorg $parameters)
   {
-    return $this->__soapCall('GetTranslationByMessageId', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetTranslationByLabelCode $parameters
-   * @access public
-   */
-  public function GetTranslationByLabelCode(GetTranslationByLabelCode $parameters)
-  {
-    return $this->__soapCall('GetTranslationByLabelCode', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetTranslationByRangeLabelCode $parameters
-   * @access public
-   */
-  public function GetTranslationByRangeLabelCode(GetTranslationByRangeLabelCode $parameters)
-  {
-    return $this->__soapCall('GetTranslationByRangeLabelCode', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetTranslationBySourceSuffix $parameters
-   * @access public
-   */
-  public function GetTranslationBySourceSuffix(GetTranslationBySourceSuffix $parameters)
-  {
-    return $this->__soapCall('GetTranslationBySourceSuffix', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DeleteTranslationByCode $parameters
-   * @access public
-   */
-  public function DeleteTranslationByCode(DeleteTranslationByCode $parameters)
-  {
-    return $this->__soapCall('DeleteTranslationByCode', array($parameters));
-  }
-
-  /**
-   * 
-   * @param AddDefaultProcess $parameters
-   * @access public
-   */
-  public function AddDefaultProcess(AddDefaultProcess $parameters)
-  {
-    return $this->__soapCall('AddDefaultProcess', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ModDefaultProcess $parameters
-   * @access public
-   */
-  public function ModDefaultProcess(ModDefaultProcess $parameters)
-  {
-    return $this->__soapCall('ModDefaultProcess', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DelDefaultProcess $parameters
-   * @access public
-   */
-  public function DelDefaultProcess(DelDefaultProcess $parameters)
-  {
-    return $this->__soapCall('DelDefaultProcess', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetDefaultProcess $parameters
-   * @access public
-   */
-  public function GetDefaultProcess(GetDefaultProcess $parameters)
-  {
-    return $this->__soapCall('GetDefaultProcess', array($parameters));
-  }
-
-  /**
-   * 
-   * @param AddMarker $parameters
-   * @access public
-   */
-  public function AddMarker(AddMarker $parameters)
-  {
-    return $this->__soapCall('AddMarker', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DelMarker $parameters
-   * @access public
-   */
-  public function DelMarker(DelMarker $parameters)
-  {
-    return $this->__soapCall('DelMarker', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetListMarker $parameters
-   * @access public
-   */
-  public function GetListMarker(GetListMarker $parameters)
-  {
-    return $this->__soapCall('GetListMarker', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetWorkflowVariables $parameters
-   * @access public
-   */
-  public function GetWorkflowVariables(GetWorkflowVariables $parameters)
-  {
-    return $this->__soapCall('GetWorkflowVariables', array($parameters));
-  }
-
-  /**
-   * 
-   * @param AddSign $parameters
-   * @access public
-   */
-  public function AddSign(AddSign $parameters)
-  {
-    return $this->__soapCall('AddSign', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DelSign $parameters
-   * @access public
-   */
-  public function DelSign(DelSign $parameters)
-  {
-    return $this->__soapCall('DelSign', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetSign $parameters
-   * @access public
-   */
-  public function GetSign(GetSign $parameters)
-  {
-    return $this->__soapCall('GetSign', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetContSign $parameters
-   * @access public
-   */
-  public function GetContSign(GetContSign $parameters)
-  {
-    return $this->__soapCall('GetContSign', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetContSignByUser $parameters
-   * @access public
-   */
-  public function GetContSignByUser(GetContSignByUser $parameters)
-  {
-    return $this->__soapCall('GetContSignByUser', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ModSign $parameters
-   * @access public
-   */
-  public function ModSign(ModSign $parameters)
-  {
-    return $this->__soapCall('ModSign', array($parameters));
-  }
-
-  /**
-   * 
-   * @param AddUserSettings $parameters
-   * @access public
-   */
-  public function AddUserSettings(AddUserSettings $parameters)
-  {
-    return $this->__soapCall('AddUserSettings', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ModUserSettings $parameters
-   * @access public
-   */
-  public function ModUserSettings(ModUserSettings $parameters)
-  {
-    return $this->__soapCall('ModUserSettings', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DelUserSettings $parameters
-   * @access public
-   */
-  public function DelUserSettings(DelUserSettings $parameters)
-  {
-    return $this->__soapCall('DelUserSettings', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetUserSettings $parameters
-   * @access public
-   */
-  public function GetUserSettings(GetUserSettings $parameters)
-  {
-    return $this->__soapCall('GetUserSettings', array($parameters));
-  }
-
-  /**
-   * 
-   * @param InsertData $parameters
-   * @access public
-   */
-  public function InsertData(InsertData $parameters)
-  {
-    return $this->__soapCall('InsertData', array($parameters));
-  }
-
-  /**
-   * 
-   * @param CanInsertData $parameters
-   * @access public
-   */
-  public function CanInsertData(CanInsertData $parameters)
-  {
-    return $this->__soapCall('CanInsertData', array($parameters));
-  }
-
-  /**
-   * 
-   * @param CopyData $parameters
-   * @access public
-   */
-  public function CopyData(CopyData $parameters)
-  {
-    return $this->__soapCall('CopyData', array($parameters));
-  }
-
-  /**
-   * 
-   * @param MoveData $parameters
-   * @access public
-   */
-  public function MoveData(MoveData $parameters)
-  {
-    return $this->__soapCall('MoveData', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ModifyData $parameters
-   * @access public
-   */
-  public function ModifyData(ModifyData $parameters)
-  {
-    return $this->__soapCall('ModifyData', array($parameters));
-  }
-
-  /**
-   * 
-   * @param CanModifyData $parameters
-   * @access public
-   */
-  public function CanModifyData(CanModifyData $parameters)
-  {
-    return $this->__soapCall('CanModifyData', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DeleteData $parameters
-   * @access public
-   */
-  public function DeleteData(DeleteData $parameters)
-  {
-    return $this->__soapCall('DeleteData', array($parameters));
-  }
-
-  /**
-   * 
-   * @param CanDeleteData $parameters
-   * @access public
-   */
-  public function CanDeleteData(CanDeleteData $parameters)
-  {
-    return $this->__soapCall('CanDeleteData', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetData $parameters
-   * @access public
-   */
-  public function GetData(GetData $parameters)
-  {
-    return $this->__soapCall('GetData', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetDataLimit $parameters
-   * @access public
-   */
-  public function GetDataLimit(GetDataLimit $parameters)
-  {
-    return $this->__soapCall('GetDataLimit', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetDataByIdForSecurity $parameters
-   * @access public
-   */
-  public function GetDataByIdForSecurity(GetDataByIdForSecurity $parameters)
-  {
-    return $this->__soapCall('GetDataByIdForSecurity', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetDataById $parameters
-   * @access public
-   */
-  public function GetDataById(GetDataById $parameters)
-  {
-    return $this->__soapCall('GetDataById', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetDataCountWithoutPermission $parameters
-   * @access public
-   */
-  public function GetDataCountWithoutPermission(GetDataCountWithoutPermission $parameters)
-  {
-    return $this->__soapCall('GetDataCountWithoutPermission', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetDataCountWithPermission $parameters
-   * @access public
-   */
-  public function GetDataCountWithPermission(GetDataCountWithPermission $parameters)
-  {
-    return $this->__soapCall('GetDataCountWithPermission', array($parameters));
-  }
-
-  /**
-   * 
-   * @param InsertProtocol $parameters
-   * @access public
-   */
-  public function InsertProtocol(InsertProtocol $parameters)
-  {
-    return $this->__soapCall('InsertProtocol', array($parameters));
-  }
-
-  /**
-   * 
-   * @param EditProtocol $parameters
-   * @access public
-   */
-  public function EditProtocol(EditProtocol $parameters)
-  {
-    return $this->__soapCall('EditProtocol', array($parameters));
-  }
-
-  /**
-   * 
-   * @param DeleteProtocol $parameters
-   * @access public
-   */
-  public function DeleteProtocol(DeleteProtocol $parameters)
-  {
-    return $this->__soapCall('DeleteProtocol', array($parameters));
-  }
-
-  /**
-   * 
-   * @param ShowProtocol $parameters
-   * @access public
-   */
-  public function ShowProtocol(ShowProtocol $parameters)
-  {
-    return $this->__soapCall('ShowProtocol', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetProtocolList $parameters
-   * @access public
-   */
-  public function GetProtocolList(GetProtocolList $parameters)
-  {
-    return $this->__soapCall('GetProtocolList', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetProtocolById $parameters
-   * @access public
-   */
-  public function GetProtocolById(GetProtocolById $parameters)
-  {
-    return $this->__soapCall('GetProtocolById', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetProtocolByName $parameters
-   * @access public
-   */
-  public function GetProtocolByName(GetProtocolByName $parameters)
-  {
-    return $this->__soapCall('GetProtocolByName', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetProtocolByDesc $parameters
-   * @access public
-   */
-  public function GetProtocolByDesc(GetProtocolByDesc $parameters)
-  {
-    return $this->__soapCall('GetProtocolByDesc', array($parameters));
-  }
-
-  /**
-   * 
-   * @param GetProtocolByNameDesc $parameters
-   * @access public
-   */
-  public function GetProtocolByNameDesc(GetProtocolByNameDesc $parameters)
-  {
-    return $this->__soapCall('GetProtocolByNameDesc', array($parameters));
-  }
-
-  /**
-   * 
-   * @param CanUseProtocol $parameters
-   * @access public
-   */
-  public function CanUseProtocol(CanUseProtocol $parameters)
-  {
-    return $this->__soapCall('CanUseProtocol', array($parameters));
-  }
-
-  /**
-   * 
-   * @param CanAddNewYear $parameters
-   * @access public
-   */
-  public function CanAddNewYear(CanAddNewYear $parameters)
-  {
-    return $this->__soapCall('CanAddNewYear', array($parameters));
-  }
-
-  /**
-   * 
-   * @param CanAddNewDate $parameters
-   * @access public
-   */
-  public function CanAddNewDate(CanAddNewDate $parameters)
-  {
-    return $this->__soapCall('CanAddNewDate', array($parameters));
-  }
-
-  /**
-   * 
-   * @param CanInsertProtocol $parameters
-   * @access public
-   */
-  public function CanInsertProtocol(CanInsertProtocol $parameters)
-  {
-    return $this->__soapCall('CanInsertProtocol', array($parameters));
+    return $this->__soapCall('DeleteDynorg', array($parameters));
   }
 
   /**
@@ -4837,16 +2847,6 @@ class abxWsGestService extends SoapClient
   public function GetDataUSFileListByUsername(GetDataUSFileListByUsername $parameters)
   {
     return $this->__soapCall('GetDataUSFileListByUsername', array($parameters));
-  }
-
-  /**
-   * 
-   * @param InsertUSFile $parameters
-   * @access public
-   */
-  public function InsertUSFile(InsertUSFile $parameters)
-  {
-    return $this->__soapCall('InsertUSFile', array($parameters));
   }
 
   /**
@@ -5557,6 +3557,2006 @@ class abxWsGestService extends SoapClient
   public function ModifyUserPassword(ModifyUserPassword $parameters)
   {
     return $this->__soapCall('ModifyUserPassword', array($parameters));
+  }
+
+  /**
+   * 
+   * @param QueryHeader $parameters
+   * @access public
+   */
+  public function QueryHeader(QueryHeader $parameters)
+  {
+    return $this->__soapCall('QueryHeader', array($parameters));
+  }
+
+  /**
+   * 
+   * @param QueryTotAttach $parameters
+   * @access public
+   */
+  public function QueryTotAttach(QueryTotAttach $parameters)
+  {
+    return $this->__soapCall('QueryTotAttach', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDynorgTypeList $parameters
+   * @access public
+   */
+  public function GetDynorgTypeList(GetDynorgTypeList $parameters)
+  {
+    return $this->__soapCall('GetDynorgTypeList', array($parameters));
+  }
+
+  /**
+   * 
+   * @param canModifyDynorg $parameters
+   * @access public
+   */
+  public function canModifyDynorg(canModifyDynorg $parameters)
+  {
+    return $this->__soapCall('canModifyDynorg', array($parameters));
+  }
+
+  /**
+   * 
+   * @param canDeleteDynorg $parameters
+   * @access public
+   */
+  public function canDeleteDynorg(canDeleteDynorg $parameters)
+  {
+    return $this->__soapCall('canDeleteDynorg', array($parameters));
+  }
+
+  /**
+   * 
+   * @param canCreateDynorg $parameters
+   * @access public
+   */
+  public function canCreateDynorg(canCreateDynorg $parameters)
+  {
+    return $this->__soapCall('canCreateDynorg', array($parameters));
+  }
+
+  /**
+   * 
+   * @param InsertSchedulerTask $parameters
+   * @access public
+   */
+  public function InsertSchedulerTask(InsertSchedulerTask $parameters)
+  {
+    return $this->__soapCall('InsertSchedulerTask', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetSchedulerTasks $parameters
+   * @access public
+   */
+  public function GetSchedulerTasks(GetSchedulerTasks $parameters)
+  {
+    return $this->__soapCall('GetSchedulerTasks', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DeleteSchedulerTask $parameters
+   * @access public
+   */
+  public function DeleteSchedulerTask(DeleteSchedulerTask $parameters)
+  {
+    return $this->__soapCall('DeleteSchedulerTask', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetSchedulerTasksToRun $parameters
+   * @access public
+   */
+  public function GetSchedulerTasksToRun(GetSchedulerTasksToRun $parameters)
+  {
+    return $this->__soapCall('GetSchedulerTasksToRun', array($parameters));
+  }
+
+  /**
+   * 
+   * @param SchedulerTaskScheduleProcessed $parameters
+   * @access public
+   */
+  public function SchedulerTaskScheduleProcessed(SchedulerTaskScheduleProcessed $parameters)
+  {
+    return $this->__soapCall('SchedulerTaskScheduleProcessed', array($parameters));
+  }
+
+  /**
+   * 
+   * @param ModifySchedulerTaskSchedule $parameters
+   * @access public
+   */
+  public function ModifySchedulerTaskSchedule(ModifySchedulerTaskSchedule $parameters)
+  {
+    return $this->__soapCall('ModifySchedulerTaskSchedule', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DeleteSchedulerTaskSchedule $parameters
+   * @access public
+   */
+  public function DeleteSchedulerTaskSchedule(DeleteSchedulerTaskSchedule $parameters)
+  {
+    return $this->__soapCall('DeleteSchedulerTaskSchedule', array($parameters));
+  }
+
+  /**
+   * 
+   * @param ChangeSchedulerTaskScheduleStatus $parameters
+   * @access public
+   */
+  public function ChangeSchedulerTaskScheduleStatus(ChangeSchedulerTaskScheduleStatus $parameters)
+  {
+    return $this->__soapCall('ChangeSchedulerTaskScheduleStatus', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDomainList $parameters
+   * @access public
+   */
+  public function GetDomainList(GetDomainList $parameters)
+  {
+    return $this->__soapCall('GetDomainList', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DigitalSign $parameters
+   * @access public
+   */
+  public function DigitalSign(DigitalSign $parameters)
+  {
+    return $this->__soapCall('DigitalSign', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DeleteGroup $parameters
+   * @access public
+   */
+  public function DeleteGroup(DeleteGroup $parameters)
+  {
+    return $this->__soapCall('DeleteGroup', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDataById $parameters
+   * @access public
+   */
+  public function GetDataById(GetDataById $parameters)
+  {
+    return $this->__soapCall('GetDataById', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DeleteField $parameters
+   * @access public
+   */
+  public function DeleteField(DeleteField $parameters)
+  {
+    return $this->__soapCall('DeleteField', array($parameters));
+  }
+
+  /**
+   * 
+   * @param CreateField $parameters
+   * @access public
+   */
+  public function CreateField(CreateField $parameters)
+  {
+    return $this->__soapCall('CreateField', array($parameters));
+  }
+
+  /**
+   * 
+   * @param canModifyField $parameters
+   * @access public
+   */
+  public function canModifyField(canModifyField $parameters)
+  {
+    return $this->__soapCall('canModifyField', array($parameters));
+  }
+
+  /**
+   * 
+   * @param canDeleteField $parameters
+   * @access public
+   */
+  public function canDeleteField(canDeleteField $parameters)
+  {
+    return $this->__soapCall('canDeleteField', array($parameters));
+  }
+
+  /**
+   * 
+   * @param canCreateField $parameters
+   * @access public
+   */
+  public function canCreateField(canCreateField $parameters)
+  {
+    return $this->__soapCall('canCreateField', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetFieldsPropertiesFromTemplate $parameters
+   * @access public
+   */
+  public function GetFieldsPropertiesFromTemplate(GetFieldsPropertiesFromTemplate $parameters)
+  {
+    return $this->__soapCall('GetFieldsPropertiesFromTemplate', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDataWAById $parameters
+   * @access public
+   */
+  public function GetDataWAById(GetDataWAById $parameters)
+  {
+    return $this->__soapCall('GetDataWAById', array($parameters));
+  }
+
+  /**
+   * 
+   * @param InsertFileWA $parameters
+   * @access public
+   */
+  public function InsertFileWA(InsertFileWA $parameters)
+  {
+    return $this->__soapCall('InsertFileWA', array($parameters));
+  }
+
+  /**
+   * 
+   * @param UploadSendChunkWA $parameters
+   * @access public
+   */
+  public function UploadSendChunkWA(UploadSendChunkWA $parameters)
+  {
+    return $this->__soapCall('UploadSendChunkWA', array($parameters));
+  }
+
+  /**
+   * 
+   * @param UploadEndFileWA $parameters
+   * @access public
+   */
+  public function UploadEndFileWA(UploadEndFileWA $parameters)
+  {
+    return $this->__soapCall('UploadEndFileWA', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDataFileListWA $parameters
+   * @access public
+   */
+  public function GetDataFileListWA(GetDataFileListWA $parameters)
+  {
+    return $this->__soapCall('GetDataFileListWA', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DownloadFileWAByFileUniqueCode $parameters
+   * @access public
+   */
+  public function DownloadFileWAByFileUniqueCode(DownloadFileWAByFileUniqueCode $parameters)
+  {
+    return $this->__soapCall('DownloadFileWAByFileUniqueCode', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DownloadFileWA $parameters
+   * @access public
+   */
+  public function DownloadFileWA(DownloadFileWA $parameters)
+  {
+    return $this->__soapCall('DownloadFileWA', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DownloadGetNextWA $parameters
+   * @access public
+   */
+  public function DownloadGetNextWA(DownloadGetNextWA $parameters)
+  {
+    return $this->__soapCall('DownloadGetNextWA', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DownloadEndFileWA $parameters
+   * @access public
+   */
+  public function DownloadEndFileWA(DownloadEndFileWA $parameters)
+  {
+    return $this->__soapCall('DownloadEndFileWA', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DeleteFileWA $parameters
+   * @access public
+   */
+  public function DeleteFileWA(DeleteFileWA $parameters)
+  {
+    return $this->__soapCall('DeleteFileWA', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetCountDocumentLinks $parameters
+   * @access public
+   */
+  public function GetCountDocumentLinks(GetCountDocumentLinks $parameters)
+  {
+    return $this->__soapCall('GetCountDocumentLinks', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetArchSostRules $parameters
+   * @access public
+   */
+  public function GetArchSostRules(GetArchSostRules $parameters)
+  {
+    return $this->__soapCall('GetArchSostRules', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDataFileListContainer $parameters
+   * @access public
+   */
+  public function GetDataFileListContainer(GetDataFileListContainer $parameters)
+  {
+    return $this->__soapCall('GetDataFileListContainer', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDataFileListOnlyLastVersion $parameters
+   * @access public
+   */
+  public function GetDataFileListOnlyLastVersion(GetDataFileListOnlyLastVersion $parameters)
+  {
+    return $this->__soapCall('GetDataFileListOnlyLastVersion', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDataFileList $parameters
+   * @access public
+   */
+  public function GetDataFileList(GetDataFileList $parameters)
+  {
+    return $this->__soapCall('GetDataFileList', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDataFileListForSecurity $parameters
+   * @access public
+   */
+  public function GetDataFileListForSecurity(GetDataFileListForSecurity $parameters)
+  {
+    return $this->__soapCall('GetDataFileListForSecurity', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDataFileDetail $parameters
+   * @access public
+   */
+  public function GetDataFileDetail(GetDataFileDetail $parameters)
+  {
+    return $this->__soapCall('GetDataFileDetail', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDataFileContainerDetail $parameters
+   * @access public
+   */
+  public function GetDataFileContainerDetail(GetDataFileContainerDetail $parameters)
+  {
+    return $this->__soapCall('GetDataFileContainerDetail', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DownloadFile $parameters
+   * @access public
+   */
+  public function DownloadFile(DownloadFile $parameters)
+  {
+    return $this->__soapCall('DownloadFile', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DownloadFileByFileUniqueCode $parameters
+   * @access public
+   */
+  public function DownloadFileByFileUniqueCode(DownloadFileByFileUniqueCode $parameters)
+  {
+    return $this->__soapCall('DownloadFileByFileUniqueCode', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DownloadFileUnc $parameters
+   * @access public
+   */
+  public function DownloadFileUnc(DownloadFileUnc $parameters)
+  {
+    return $this->__soapCall('DownloadFileUnc', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DownloadFileContainerUnc $parameters
+   * @access public
+   */
+  public function DownloadFileContainerUnc(DownloadFileContainerUnc $parameters)
+  {
+    return $this->__soapCall('DownloadFileContainerUnc', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DownloadGetChunk $parameters
+   * @access public
+   */
+  public function DownloadGetChunk(DownloadGetChunk $parameters)
+  {
+    return $this->__soapCall('DownloadGetChunk', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DownloadGetNext $parameters
+   * @access public
+   */
+  public function DownloadGetNext(DownloadGetNext $parameters)
+  {
+    return $this->__soapCall('DownloadGetNext', array($parameters));
+  }
+
+  /**
+   * 
+   * @param UploadSendChunk $parameters
+   * @access public
+   */
+  public function UploadSendChunk(UploadSendChunk $parameters)
+  {
+    return $this->__soapCall('UploadSendChunk', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DownloadFileContainer $parameters
+   * @access public
+   */
+  public function DownloadFileContainer(DownloadFileContainer $parameters)
+  {
+    return $this->__soapCall('DownloadFileContainer', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DownloadFilePreview $parameters
+   * @access public
+   */
+  public function DownloadFilePreview(DownloadFilePreview $parameters)
+  {
+    return $this->__soapCall('DownloadFilePreview', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetUploadDetailByFilecode $parameters
+   * @access public
+   */
+  public function GetUploadDetailByFilecode(GetUploadDetailByFilecode $parameters)
+  {
+    return $this->__soapCall('GetUploadDetailByFilecode', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetUploadDetailByDataId $parameters
+   * @access public
+   */
+  public function GetUploadDetailByDataId(GetUploadDetailByDataId $parameters)
+  {
+    return $this->__soapCall('GetUploadDetailByDataId', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetUploadDetailByData $parameters
+   * @access public
+   */
+  public function GetUploadDetailByData(GetUploadDetailByData $parameters)
+  {
+    return $this->__soapCall('GetUploadDetailByData', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetUploadDetailByContId $parameters
+   * @access public
+   */
+  public function GetUploadDetailByContId(GetUploadDetailByContId $parameters)
+  {
+    return $this->__soapCall('GetUploadDetailByContId', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetUploadDetailByCont $parameters
+   * @access public
+   */
+  public function GetUploadDetailByCont(GetUploadDetailByCont $parameters)
+  {
+    return $this->__soapCall('GetUploadDetailByCont', array($parameters));
+  }
+
+  /**
+   * 
+   * @param UploadEndFile $parameters
+   * @access public
+   */
+  public function UploadEndFile(UploadEndFile $parameters)
+  {
+    return $this->__soapCall('UploadEndFile', array($parameters));
+  }
+
+  /**
+   * 
+   * @param UploadEndFileContainer $parameters
+   * @access public
+   */
+  public function UploadEndFileContainer(UploadEndFileContainer $parameters)
+  {
+    return $this->__soapCall('UploadEndFileContainer', array($parameters));
+  }
+
+  /**
+   * 
+   * @param SetTmpUploadPath $parameters
+   * @access public
+   */
+  public function SetTmpUploadPath(SetTmpUploadPath $parameters)
+  {
+    return $this->__soapCall('SetTmpUploadPath', array($parameters));
+  }
+
+  /**
+   * 
+   * @param SetTmpDownloadPath $parameters
+   * @access public
+   */
+  public function SetTmpDownloadPath(SetTmpDownloadPath $parameters)
+  {
+    return $this->__soapCall('SetTmpDownloadPath', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDownloadDetailByFilecode $parameters
+   * @access public
+   */
+  public function GetDownloadDetailByFilecode(GetDownloadDetailByFilecode $parameters)
+  {
+    return $this->__soapCall('GetDownloadDetailByFilecode', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDownloadDetailByDataId $parameters
+   * @access public
+   */
+  public function GetDownloadDetailByDataId(GetDownloadDetailByDataId $parameters)
+  {
+    return $this->__soapCall('GetDownloadDetailByDataId', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDownloadDetailByData $parameters
+   * @access public
+   */
+  public function GetDownloadDetailByData(GetDownloadDetailByData $parameters)
+  {
+    return $this->__soapCall('GetDownloadDetailByData', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDownloadDetailByContId $parameters
+   * @access public
+   */
+  public function GetDownloadDetailByContId(GetDownloadDetailByContId $parameters)
+  {
+    return $this->__soapCall('GetDownloadDetailByContId', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDownloadDetailByCont $parameters
+   * @access public
+   */
+  public function GetDownloadDetailByCont(GetDownloadDetailByCont $parameters)
+  {
+    return $this->__soapCall('GetDownloadDetailByCont', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetCountFileList $parameters
+   * @access public
+   */
+  public function GetCountFileList(GetCountFileList $parameters)
+  {
+    return $this->__soapCall('GetCountFileList', array($parameters));
+  }
+
+  /**
+   * 
+   * @param ModifyFileDescription $parameters
+   * @access public
+   */
+  public function ModifyFileDescription(ModifyFileDescription $parameters)
+  {
+    return $this->__soapCall('ModifyFileDescription', array($parameters));
+  }
+
+  /**
+   * 
+   * @param CopyFile $parameters
+   * @access public
+   */
+  public function CopyFile(CopyFile $parameters)
+  {
+    return $this->__soapCall('CopyFile', array($parameters));
+  }
+
+  /**
+   * 
+   * @param IfFileExist $parameters
+   * @access public
+   */
+  public function IfFileExist(IfFileExist $parameters)
+  {
+    return $this->__soapCall('IfFileExist', array($parameters));
+  }
+
+  /**
+   * 
+   * @param SetFileAvailable $parameters
+   * @access public
+   */
+  public function SetFileAvailable(SetFileAvailable $parameters)
+  {
+    return $this->__soapCall('SetFileAvailable', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetFileAvailable $parameters
+   * @access public
+   */
+  public function GetFileAvailable(GetFileAvailable $parameters)
+  {
+    return $this->__soapCall('GetFileAvailable', array($parameters));
+  }
+
+  /**
+   * 
+   * @param AddFileToSyncByArcCue $parameters
+   * @access public
+   */
+  public function AddFileToSyncByArcCue(AddFileToSyncByArcCue $parameters)
+  {
+    return $this->__soapCall('AddFileToSyncByArcCue', array($parameters));
+  }
+
+  /**
+   * 
+   * @param Fk_DB_testConnection $parameters
+   * @access public
+   */
+  public function Fk_DB_testConnection(Fk_DB_testConnection $parameters)
+  {
+    return $this->__soapCall('Fk_DB_testConnection', array($parameters));
+  }
+
+  /**
+   * 
+   * @param Fk_WS_insert $parameters
+   * @access public
+   */
+  public function Fk_WS_insert(Fk_WS_insert $parameters)
+  {
+    return $this->__soapCall('Fk_WS_insert', array($parameters));
+  }
+
+  /**
+   * 
+   * @param Fk_DB_modify $parameters
+   * @access public
+   */
+  public function Fk_DB_modify(Fk_DB_modify $parameters)
+  {
+    return $this->__soapCall('Fk_DB_modify', array($parameters));
+  }
+
+  /**
+   * 
+   * @param Fk_DB_delete $parameters
+   * @access public
+   */
+  public function Fk_DB_delete(Fk_DB_delete $parameters)
+  {
+    return $this->__soapCall('Fk_DB_delete', array($parameters));
+  }
+
+  /**
+   * 
+   * @param Fk_getParsAllFk $parameters
+   * @access public
+   */
+  public function Fk_getParsAllFk(Fk_getParsAllFk $parameters)
+  {
+    return $this->__soapCall('Fk_getParsAllFk', array($parameters));
+  }
+
+  /**
+   * 
+   * @param Fk_getPars $parameters
+   * @access public
+   */
+  public function Fk_getPars(Fk_getPars $parameters)
+  {
+    return $this->__soapCall('Fk_getPars', array($parameters));
+  }
+
+  /**
+   * 
+   * @param Fk_create $parameters
+   * @access public
+   */
+  public function Fk_create(Fk_create $parameters)
+  {
+    return $this->__soapCall('Fk_create', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetLanguages $parameters
+   * @access public
+   */
+  public function GetLanguages(GetLanguages $parameters)
+  {
+    return $this->__soapCall('GetLanguages', array($parameters));
+  }
+
+  /**
+   * 
+   * @param AddLogSDK $parameters
+   * @access public
+   */
+  public function AddLogSDK(AddLogSDK $parameters)
+  {
+    return $this->__soapCall('AddLogSDK', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetSDKLogList $parameters
+   * @access public
+   */
+  public function GetSDKLogList(GetSDKLogList $parameters)
+  {
+    return $this->__soapCall('GetSDKLogList', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DeleteSDKLog $parameters
+   * @access public
+   */
+  public function DeleteSDKLog(DeleteSDKLog $parameters)
+  {
+    return $this->__soapCall('DeleteSDKLog', array($parameters));
+  }
+
+  /**
+   * 
+   * @param ResetUserSessions $parameters
+   * @access public
+   */
+  public function ResetUserSessions(ResetUserSessions $parameters)
+  {
+    return $this->__soapCall('ResetUserSessions', array($parameters));
+  }
+
+  /**
+   * 
+   * @param ValidateSession $parameters
+   * @access public
+   */
+  public function ValidateSession(ValidateSession $parameters)
+  {
+    return $this->__soapCall('ValidateSession', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetUserList $parameters
+   * @access public
+   */
+  public function GetUserList(GetUserList $parameters)
+  {
+    return $this->__soapCall('GetUserList', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetUserListActiveDirectory $parameters
+   * @access public
+   */
+  public function GetUserListActiveDirectory(GetUserListActiveDirectory $parameters)
+  {
+    return $this->__soapCall('GetUserListActiveDirectory', array($parameters));
+  }
+
+  /**
+   * 
+   * @param InsertUser $parameters
+   * @access public
+   */
+  public function InsertUser(InsertUser $parameters)
+  {
+    return $this->__soapCall('InsertUser', array($parameters));
+  }
+
+  /**
+   * 
+   * @param ModifyUser $parameters
+   * @access public
+   */
+  public function ModifyUser(ModifyUser $parameters)
+  {
+    return $this->__soapCall('ModifyUser', array($parameters));
+  }
+
+  /**
+   * 
+   * @param InsertUserConfig $parameters
+   * @access public
+   */
+  public function InsertUserConfig(InsertUserConfig $parameters)
+  {
+    return $this->__soapCall('InsertUserConfig', array($parameters));
+  }
+
+  /**
+   * 
+   * @param ModifyUserConfig $parameters
+   * @access public
+   */
+  public function ModifyUserConfig(ModifyUserConfig $parameters)
+  {
+    return $this->__soapCall('ModifyUserConfig', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetUserDetailByUsername $parameters
+   * @access public
+   */
+  public function GetUserDetailByUsername(GetUserDetailByUsername $parameters)
+  {
+    return $this->__soapCall('GetUserDetailByUsername', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetUserDetailByUserId $parameters
+   * @access public
+   */
+  public function GetUserDetailByUserId(GetUserDetailByUserId $parameters)
+  {
+    return $this->__soapCall('GetUserDetailByUserId', array($parameters));
+  }
+
+  /**
+   * 
+   * @param ExistUserByUsername $parameters
+   * @access public
+   */
+  public function ExistUserByUsername(ExistUserByUsername $parameters)
+  {
+    return $this->__soapCall('ExistUserByUsername', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DeleteUserByUsername $parameters
+   * @access public
+   */
+  public function DeleteUserByUsername(DeleteUserByUsername $parameters)
+  {
+    return $this->__soapCall('DeleteUserByUsername', array($parameters));
+  }
+
+  /**
+   * 
+   * @param InsertGroup $parameters
+   * @access public
+   */
+  public function InsertGroup(InsertGroup $parameters)
+  {
+    return $this->__soapCall('InsertGroup', array($parameters));
+  }
+
+  /**
+   * 
+   * @param ModifyGroup $parameters
+   * @access public
+   */
+  public function ModifyGroup(ModifyGroup $parameters)
+  {
+    return $this->__soapCall('ModifyGroup', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetGroupList $parameters
+   * @access public
+   */
+  public function GetGroupList(GetGroupList $parameters)
+  {
+    return $this->__soapCall('GetGroupList', array($parameters));
+  }
+
+  /**
+   * 
+   * @param InsertUserInGroup $parameters
+   * @access public
+   */
+  public function InsertUserInGroup(InsertUserInGroup $parameters)
+  {
+    return $this->__soapCall('InsertUserInGroup', array($parameters));
+  }
+
+  /**
+   * 
+   * @param RemoveUserByAllGroups $parameters
+   * @access public
+   */
+  public function RemoveUserByAllGroups(RemoveUserByAllGroups $parameters)
+  {
+    return $this->__soapCall('RemoveUserByAllGroups', array($parameters));
+  }
+
+  /**
+   * 
+   * @param RemoveUserByGroup $parameters
+   * @access public
+   */
+  public function RemoveUserByGroup(RemoveUserByGroup $parameters)
+  {
+    return $this->__soapCall('RemoveUserByGroup', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetGroupsListByUser $parameters
+   * @access public
+   */
+  public function GetGroupsListByUser(GetGroupsListByUser $parameters)
+  {
+    return $this->__soapCall('GetGroupsListByUser', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetUsersListByGroup $parameters
+   * @access public
+   */
+  public function GetUsersListByGroup(GetUsersListByGroup $parameters)
+  {
+    return $this->__soapCall('GetUsersListByGroup', array($parameters));
+  }
+
+  /**
+   * 
+   * @param ModifyTranslation $parameters
+   * @access public
+   */
+  public function ModifyTranslation(ModifyTranslation $parameters)
+  {
+    return $this->__soapCall('ModifyTranslation', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DeleteTranslation $parameters
+   * @access public
+   */
+  public function DeleteTranslation(DeleteTranslation $parameters)
+  {
+    return $this->__soapCall('DeleteTranslation', array($parameters));
+  }
+
+  /**
+   * 
+   * @param InsertTranslation $parameters
+   * @access public
+   */
+  public function InsertTranslation(InsertTranslation $parameters)
+  {
+    return $this->__soapCall('InsertTranslation', array($parameters));
+  }
+
+  /**
+   * 
+   * @param InsertTranslationCode $parameters
+   * @access public
+   */
+  public function InsertTranslationCode(InsertTranslationCode $parameters)
+  {
+    return $this->__soapCall('InsertTranslationCode', array($parameters));
+  }
+
+  /**
+   * 
+   * @param InsertTranslationDecimalCode $parameters
+   * @access public
+   */
+  public function InsertTranslationDecimalCode(InsertTranslationDecimalCode $parameters)
+  {
+    return $this->__soapCall('InsertTranslationDecimalCode', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetTranslationByMessageId $parameters
+   * @access public
+   */
+  public function GetTranslationByMessageId(GetTranslationByMessageId $parameters)
+  {
+    return $this->__soapCall('GetTranslationByMessageId', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetTranslationByLabelCode $parameters
+   * @access public
+   */
+  public function GetTranslationByLabelCode(GetTranslationByLabelCode $parameters)
+  {
+    return $this->__soapCall('GetTranslationByLabelCode', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetTranslationByRangeLabelCode $parameters
+   * @access public
+   */
+  public function GetTranslationByRangeLabelCode(GetTranslationByRangeLabelCode $parameters)
+  {
+    return $this->__soapCall('GetTranslationByRangeLabelCode', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetTranslationBySourceSuffix $parameters
+   * @access public
+   */
+  public function GetTranslationBySourceSuffix(GetTranslationBySourceSuffix $parameters)
+  {
+    return $this->__soapCall('GetTranslationBySourceSuffix', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DeleteTranslationByCode $parameters
+   * @access public
+   */
+  public function DeleteTranslationByCode(DeleteTranslationByCode $parameters)
+  {
+    return $this->__soapCall('DeleteTranslationByCode', array($parameters));
+  }
+
+  /**
+   * 
+   * @param AddDefaultProcess $parameters
+   * @access public
+   */
+  public function AddDefaultProcess(AddDefaultProcess $parameters)
+  {
+    return $this->__soapCall('AddDefaultProcess', array($parameters));
+  }
+
+  /**
+   * 
+   * @param ModDefaultProcess $parameters
+   * @access public
+   */
+  public function ModDefaultProcess(ModDefaultProcess $parameters)
+  {
+    return $this->__soapCall('ModDefaultProcess', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DelDefaultProcess $parameters
+   * @access public
+   */
+  public function DelDefaultProcess(DelDefaultProcess $parameters)
+  {
+    return $this->__soapCall('DelDefaultProcess', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDefaultProcess $parameters
+   * @access public
+   */
+  public function GetDefaultProcess(GetDefaultProcess $parameters)
+  {
+    return $this->__soapCall('GetDefaultProcess', array($parameters));
+  }
+
+  /**
+   * 
+   * @param AddMarker $parameters
+   * @access public
+   */
+  public function AddMarker(AddMarker $parameters)
+  {
+    return $this->__soapCall('AddMarker', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DelMarker $parameters
+   * @access public
+   */
+  public function DelMarker(DelMarker $parameters)
+  {
+    return $this->__soapCall('DelMarker', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetListMarker $parameters
+   * @access public
+   */
+  public function GetListMarker(GetListMarker $parameters)
+  {
+    return $this->__soapCall('GetListMarker', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetWorkflowVariables $parameters
+   * @access public
+   */
+  public function GetWorkflowVariables(GetWorkflowVariables $parameters)
+  {
+    return $this->__soapCall('GetWorkflowVariables', array($parameters));
+  }
+
+  /**
+   * 
+   * @param AddSign $parameters
+   * @access public
+   */
+  public function AddSign(AddSign $parameters)
+  {
+    return $this->__soapCall('AddSign', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DelSign $parameters
+   * @access public
+   */
+  public function DelSign(DelSign $parameters)
+  {
+    return $this->__soapCall('DelSign', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetSign $parameters
+   * @access public
+   */
+  public function GetSign(GetSign $parameters)
+  {
+    return $this->__soapCall('GetSign', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetContSign $parameters
+   * @access public
+   */
+  public function GetContSign(GetContSign $parameters)
+  {
+    return $this->__soapCall('GetContSign', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetContSignByUser $parameters
+   * @access public
+   */
+  public function GetContSignByUser(GetContSignByUser $parameters)
+  {
+    return $this->__soapCall('GetContSignByUser', array($parameters));
+  }
+
+  /**
+   * 
+   * @param ModSign $parameters
+   * @access public
+   */
+  public function ModSign(ModSign $parameters)
+  {
+    return $this->__soapCall('ModSign', array($parameters));
+  }
+
+  /**
+   * 
+   * @param AddUserSettings $parameters
+   * @access public
+   */
+  public function AddUserSettings(AddUserSettings $parameters)
+  {
+    return $this->__soapCall('AddUserSettings', array($parameters));
+  }
+
+  /**
+   * 
+   * @param ModUserSettings $parameters
+   * @access public
+   */
+  public function ModUserSettings(ModUserSettings $parameters)
+  {
+    return $this->__soapCall('ModUserSettings', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DelUserSettings $parameters
+   * @access public
+   */
+  public function DelUserSettings(DelUserSettings $parameters)
+  {
+    return $this->__soapCall('DelUserSettings', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetUserSettings $parameters
+   * @access public
+   */
+  public function GetUserSettings(GetUserSettings $parameters)
+  {
+    return $this->__soapCall('GetUserSettings', array($parameters));
+  }
+
+  /**
+   * 
+   * @param InsertData $parameters
+   * @access public
+   */
+  public function InsertData(InsertData $parameters)
+  {
+    return $this->__soapCall('InsertData', array($parameters));
+  }
+
+  /**
+   * 
+   * @param CanInsertData $parameters
+   * @access public
+   */
+  public function CanInsertData(CanInsertData $parameters)
+  {
+    return $this->__soapCall('CanInsertData', array($parameters));
+  }
+
+  /**
+   * 
+   * @param CopyData $parameters
+   * @access public
+   */
+  public function CopyData(CopyData $parameters)
+  {
+    return $this->__soapCall('CopyData', array($parameters));
+  }
+
+  /**
+   * 
+   * @param MoveData $parameters
+   * @access public
+   */
+  public function MoveData(MoveData $parameters)
+  {
+    return $this->__soapCall('MoveData', array($parameters));
+  }
+
+  /**
+   * 
+   * @param ModifyData $parameters
+   * @access public
+   */
+  public function ModifyData(ModifyData $parameters)
+  {
+    return $this->__soapCall('ModifyData', array($parameters));
+  }
+
+  /**
+   * 
+   * @param CanModifyData $parameters
+   * @access public
+   */
+  public function CanModifyData(CanModifyData $parameters)
+  {
+    return $this->__soapCall('CanModifyData', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DeleteData $parameters
+   * @access public
+   */
+  public function DeleteData(DeleteData $parameters)
+  {
+    return $this->__soapCall('DeleteData', array($parameters));
+  }
+
+  /**
+   * 
+   * @param CanDeleteData $parameters
+   * @access public
+   */
+  public function CanDeleteData(CanDeleteData $parameters)
+  {
+    return $this->__soapCall('CanDeleteData', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetData $parameters
+   * @access public
+   */
+  public function GetData(GetData $parameters)
+  {
+    return $this->__soapCall('GetData', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDataLimit $parameters
+   * @access public
+   */
+  public function GetDataLimit(GetDataLimit $parameters)
+  {
+    return $this->__soapCall('GetDataLimit', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDataByIdForSecurity $parameters
+   * @access public
+   */
+  public function GetDataByIdForSecurity(GetDataByIdForSecurity $parameters)
+  {
+    return $this->__soapCall('GetDataByIdForSecurity', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDataCountWithoutPermission $parameters
+   * @access public
+   */
+  public function GetDataCountWithoutPermission(GetDataCountWithoutPermission $parameters)
+  {
+    return $this->__soapCall('GetDataCountWithoutPermission', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDataCountWithPermission $parameters
+   * @access public
+   */
+  public function GetDataCountWithPermission(GetDataCountWithPermission $parameters)
+  {
+    return $this->__soapCall('GetDataCountWithPermission', array($parameters));
+  }
+
+  /**
+   * 
+   * @param InsertProtocol $parameters
+   * @access public
+   */
+  public function InsertProtocol(InsertProtocol $parameters)
+  {
+    return $this->__soapCall('InsertProtocol', array($parameters));
+  }
+
+  /**
+   * 
+   * @param EditProtocol $parameters
+   * @access public
+   */
+  public function EditProtocol(EditProtocol $parameters)
+  {
+    return $this->__soapCall('EditProtocol', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DeleteProtocol $parameters
+   * @access public
+   */
+  public function DeleteProtocol(DeleteProtocol $parameters)
+  {
+    return $this->__soapCall('DeleteProtocol', array($parameters));
+  }
+
+  /**
+   * 
+   * @param ShowProtocol $parameters
+   * @access public
+   */
+  public function ShowProtocol(ShowProtocol $parameters)
+  {
+    return $this->__soapCall('ShowProtocol', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetProtocolList $parameters
+   * @access public
+   */
+  public function GetProtocolList(GetProtocolList $parameters)
+  {
+    return $this->__soapCall('GetProtocolList', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetProtocolById $parameters
+   * @access public
+   */
+  public function GetProtocolById(GetProtocolById $parameters)
+  {
+    return $this->__soapCall('GetProtocolById', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetProtocolByName $parameters
+   * @access public
+   */
+  public function GetProtocolByName(GetProtocolByName $parameters)
+  {
+    return $this->__soapCall('GetProtocolByName', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetProtocolByDesc $parameters
+   * @access public
+   */
+  public function GetProtocolByDesc(GetProtocolByDesc $parameters)
+  {
+    return $this->__soapCall('GetProtocolByDesc', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetProtocolByNameDesc $parameters
+   * @access public
+   */
+  public function GetProtocolByNameDesc(GetProtocolByNameDesc $parameters)
+  {
+    return $this->__soapCall('GetProtocolByNameDesc', array($parameters));
+  }
+
+  /**
+   * 
+   * @param CanUseProtocol $parameters
+   * @access public
+   */
+  public function CanUseProtocol(CanUseProtocol $parameters)
+  {
+    return $this->__soapCall('CanUseProtocol', array($parameters));
+  }
+
+  /**
+   * 
+   * @param CanAddNewYear $parameters
+   * @access public
+   */
+  public function CanAddNewYear(CanAddNewYear $parameters)
+  {
+    return $this->__soapCall('CanAddNewYear', array($parameters));
+  }
+
+  /**
+   * 
+   * @param CanAddNewDate $parameters
+   * @access public
+   */
+  public function CanAddNewDate(CanAddNewDate $parameters)
+  {
+    return $this->__soapCall('CanAddNewDate', array($parameters));
+  }
+
+  /**
+   * 
+   * @param CanInsertProtocol $parameters
+   * @access public
+   */
+  public function CanInsertProtocol(CanInsertProtocol $parameters)
+  {
+    return $this->__soapCall('CanInsertProtocol', array($parameters));
+  }
+
+  /**
+   * 
+   * @param InsertUSFile $parameters
+   * @access public
+   */
+  public function InsertUSFile(InsertUSFile $parameters)
+  {
+    return $this->__soapCall('InsertUSFile', array($parameters));
+  }
+
+  /**
+   * 
+   * @param InsertArchSostRule $parameters
+   * @access public
+   */
+  public function InsertArchSostRule(InsertArchSostRule $parameters)
+  {
+    return $this->__soapCall('InsertArchSostRule', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DeleteArchSostRule $parameters
+   * @access public
+   */
+  public function DeleteArchSostRule(DeleteArchSostRule $parameters)
+  {
+    return $this->__soapCall('DeleteArchSostRule', array($parameters));
+  }
+
+  /**
+   * 
+   * @param ModifyArchSostRule $parameters
+   * @access public
+   */
+  public function ModifyArchSostRule(ModifyArchSostRule $parameters)
+  {
+    return $this->__soapCall('ModifyArchSostRule', array($parameters));
+  }
+
+  /**
+   * 
+   * @param Fk_getAllRecord $parameters
+   * @access public
+   */
+  public function Fk_getAllRecord(Fk_getAllRecord $parameters)
+  {
+    return $this->__soapCall('Fk_getAllRecord', array($parameters));
+  }
+
+  /**
+   * 
+   * @param Fk_getCountAllRecord $parameters
+   * @access public
+   */
+  public function Fk_getCountAllRecord(Fk_getCountAllRecord $parameters)
+  {
+    return $this->__soapCall('Fk_getCountAllRecord', array($parameters));
+  }
+
+  /**
+   * 
+   * @param Fk_getAllRecordByIndex $parameters
+   * @access public
+   */
+  public function Fk_getAllRecordByIndex(Fk_getAllRecordByIndex $parameters)
+  {
+    return $this->__soapCall('Fk_getAllRecordByIndex', array($parameters));
+  }
+
+  /**
+   * 
+   * @param Fk_getAllRecordByDesc $parameters
+   * @access public
+   */
+  public function Fk_getAllRecordByDesc(Fk_getAllRecordByDesc $parameters)
+  {
+    return $this->__soapCall('Fk_getAllRecordByDesc', array($parameters));
+  }
+
+  /**
+   * 
+   * @param Fk_getCountAllRecordByDesc $parameters
+   * @access public
+   */
+  public function Fk_getCountAllRecordByDesc(Fk_getCountAllRecordByDesc $parameters)
+  {
+    return $this->__soapCall('Fk_getCountAllRecordByDesc', array($parameters));
+  }
+
+  /**
+   * 
+   * @param Fk_getCountAllRecordByIndexDesc $parameters
+   * @access public
+   */
+  public function Fk_getCountAllRecordByIndexDesc(Fk_getCountAllRecordByIndexDesc $parameters)
+  {
+    return $this->__soapCall('Fk_getCountAllRecordByIndexDesc', array($parameters));
+  }
+
+  /**
+   * 
+   * @param Fk_getAllRecordByIndexDesc $parameters
+   * @access public
+   */
+  public function Fk_getAllRecordByIndexDesc(Fk_getAllRecordByIndexDesc $parameters)
+  {
+    return $this->__soapCall('Fk_getAllRecordByIndexDesc', array($parameters));
+  }
+
+  /**
+   * 
+   * @param Fk_getColumnsName $parameters
+   * @access public
+   */
+  public function Fk_getColumnsName(Fk_getColumnsName $parameters)
+  {
+    return $this->__soapCall('Fk_getColumnsName', array($parameters));
+  }
+
+  /**
+   * 
+   * @param Fk_getRemoteDatabaseList $parameters
+   * @access public
+   */
+  public function Fk_getRemoteDatabaseList(Fk_getRemoteDatabaseList $parameters)
+  {
+    return $this->__soapCall('Fk_getRemoteDatabaseList', array($parameters));
+  }
+
+  /**
+   * 
+   * @param Fk_getRemoteTableList $parameters
+   * @access public
+   */
+  public function Fk_getRemoteTableList(Fk_getRemoteTableList $parameters)
+  {
+    return $this->__soapCall('Fk_getRemoteTableList', array($parameters));
+  }
+
+  /**
+   * 
+   * @param Fk_getRemoteViewList $parameters
+   * @access public
+   */
+  public function Fk_getRemoteViewList(Fk_getRemoteViewList $parameters)
+  {
+    return $this->__soapCall('Fk_getRemoteViewList', array($parameters));
+  }
+
+  /**
+   * 
+   * @param Fk_getRemoteFieldList $parameters
+   * @access public
+   */
+  public function Fk_getRemoteFieldList(Fk_getRemoteFieldList $parameters)
+  {
+    return $this->__soapCall('Fk_getRemoteFieldList', array($parameters));
+  }
+
+  /**
+   * 
+   * @param Fk_getLocalFieldList $parameters
+   * @access public
+   */
+  public function Fk_getLocalFieldList(Fk_getLocalFieldList $parameters)
+  {
+    return $this->__soapCall('Fk_getLocalFieldList', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DeleteFilter $parameters
+   * @access public
+   */
+  public function DeleteFilter(DeleteFilter $parameters)
+  {
+    return $this->__soapCall('DeleteFilter', array($parameters));
+  }
+
+  /**
+   * 
+   * @param ModifyFilter $parameters
+   * @access public
+   */
+  public function ModifyFilter(ModifyFilter $parameters)
+  {
+    return $this->__soapCall('ModifyFilter', array($parameters));
+  }
+
+  /**
+   * 
+   * @param InsertFilter $parameters
+   * @access public
+   */
+  public function InsertFilter(InsertFilter $parameters)
+  {
+    return $this->__soapCall('InsertFilter', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetInstanceId $parameters
+   * @access public
+   */
+  public function GetInstanceId(GetInstanceId $parameters)
+  {
+    return $this->__soapCall('GetInstanceId', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetTemplateProperties $parameters
+   * @access public
+   */
+  public function GetTemplateProperties(GetTemplateProperties $parameters)
+  {
+    return $this->__soapCall('GetTemplateProperties', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetQueryParam $parameters
+   * @access public
+   */
+  public function GetQueryParam(GetQueryParam $parameters)
+  {
+    return $this->__soapCall('GetQueryParam', array($parameters));
+  }
+
+  /**
+   * 
+   * @param InsertLinkContainerToContainer $parameters
+   * @access public
+   */
+  public function InsertLinkContainerToContainer(InsertLinkContainerToContainer $parameters)
+  {
+    return $this->__soapCall('InsertLinkContainerToContainer', array($parameters));
+  }
+
+  /**
+   * 
+   * @param CanInsertLinkContainerToContainer $parameters
+   * @access public
+   */
+  public function CanInsertLinkContainerToContainer(CanInsertLinkContainerToContainer $parameters)
+  {
+    return $this->__soapCall('CanInsertLinkContainerToContainer', array($parameters));
+  }
+
+  /**
+   * 
+   * @param InsertLinkContainerToDocument $parameters
+   * @access public
+   */
+  public function InsertLinkContainerToDocument(InsertLinkContainerToDocument $parameters)
+  {
+    return $this->__soapCall('InsertLinkContainerToDocument', array($parameters));
+  }
+
+  /**
+   * 
+   * @param CanInsertLinkContainerToDocument $parameters
+   * @access public
+   */
+  public function CanInsertLinkContainerToDocument(CanInsertLinkContainerToDocument $parameters)
+  {
+    return $this->__soapCall('CanInsertLinkContainerToDocument', array($parameters));
+  }
+
+  /**
+   * 
+   * @param InsertLinkDocumentToDocument $parameters
+   * @access public
+   */
+  public function InsertLinkDocumentToDocument(InsertLinkDocumentToDocument $parameters)
+  {
+    return $this->__soapCall('InsertLinkDocumentToDocument', array($parameters));
+  }
+
+  /**
+   * 
+   * @param CanInsertLinkDocumentToDocument $parameters
+   * @access public
+   */
+  public function CanInsertLinkDocumentToDocument(CanInsertLinkDocumentToDocument $parameters)
+  {
+    return $this->__soapCall('CanInsertLinkDocumentToDocument', array($parameters));
+  }
+
+  /**
+   * 
+   * @param ModifyLinkContainerToContainer $parameters
+   * @access public
+   */
+  public function ModifyLinkContainerToContainer(ModifyLinkContainerToContainer $parameters)
+  {
+    return $this->__soapCall('ModifyLinkContainerToContainer', array($parameters));
+  }
+
+  /**
+   * 
+   * @param CreateContainer $parameters
+   * @access public
+   */
+  public function CreateContainer(CreateContainer $parameters)
+  {
+    return $this->__soapCall('CreateContainer', array($parameters));
+  }
+
+  /**
+   * 
+   * @param CreateTemplate $parameters
+   * @access public
+   */
+  public function CreateTemplate(CreateTemplate $parameters)
+  {
+    return $this->__soapCall('CreateTemplate', array($parameters));
+  }
+
+  /**
+   * 
+   * @param CreateDynorg $parameters
+   * @access public
+   */
+  public function CreateDynorg(CreateDynorg $parameters)
+  {
+    return $this->__soapCall('CreateDynorg', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetInstanceReplicationStatus $parameters
+   * @access public
+   */
+  public function GetInstanceReplicationStatus(GetInstanceReplicationStatus $parameters)
+  {
+    return $this->__soapCall('GetInstanceReplicationStatus', array($parameters));
+  }
+
+  /**
+   * 
+   * @param ModifyDataWA $parameters
+   * @access public
+   */
+  public function ModifyDataWA(ModifyDataWA $parameters)
+  {
+    return $this->__soapCall('ModifyDataWA', array($parameters));
+  }
+
+  /**
+   * 
+   * @param DeleteDataWA $parameters
+   * @access public
+   */
+  public function DeleteDataWA(DeleteDataWA $parameters)
+  {
+    return $this->__soapCall('DeleteDataWA', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetListDataWA $parameters
+   * @access public
+   */
+  public function GetListDataWA(GetListDataWA $parameters)
+  {
+    return $this->__soapCall('GetListDataWA', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetFieldList $parameters
+   * @access public
+   */
+  public function GetFieldList(GetFieldList $parameters)
+  {
+    return $this->__soapCall('GetFieldList', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetFieldProperties $parameters
+   * @access public
+   */
+  public function GetFieldProperties(GetFieldProperties $parameters)
+  {
+    return $this->__soapCall('GetFieldProperties', array($parameters));
+  }
+
+  /**
+   * 
+   * @param ModifyField $parameters
+   * @access public
+   */
+  public function ModifyField(ModifyField $parameters)
+  {
+    return $this->__soapCall('ModifyField', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetArchiBoxInDomainByMatricola $parameters
+   * @access public
+   */
+  public function GetArchiBoxInDomainByMatricola(GetArchiBoxInDomainByMatricola $parameters)
+  {
+    return $this->__soapCall('GetArchiBoxInDomainByMatricola', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetArchiBoxInfo $parameters
+   * @access public
+   */
+  public function GetArchiBoxInfo(GetArchiBoxInfo $parameters)
+  {
+    return $this->__soapCall('GetArchiBoxInfo', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetArchiBoxInDomain $parameters
+   * @access public
+   */
+  public function GetArchiBoxInDomain(GetArchiBoxInDomain $parameters)
+  {
+    return $this->__soapCall('GetArchiBoxInDomain', array($parameters));
   }
 
 }

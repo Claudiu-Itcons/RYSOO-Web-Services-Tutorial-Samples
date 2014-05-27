@@ -24,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="protocolName" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="date" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="number" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="numberLength" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="resultFormatted" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="filters" maxOccurs="unbounded">
  *           &lt;complexType>
@@ -56,6 +57,7 @@ import javax.xml.bind.annotation.XmlType;
     "protocolName",
     "date",
     "number",
+    "numberLength",
     "resultFormatted",
     "filters"
 })
@@ -71,6 +73,7 @@ public class AbxProtocolUse {
     protected String date;
     @XmlElement(required = true)
     protected String number;
+    protected int numberLength;
     @XmlElement(required = true)
     protected String resultFormatted;
     @XmlElement(required = true)
@@ -194,6 +197,22 @@ public class AbxProtocolUse {
      */
     public void setNumber(String value) {
         this.number = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà numberLength.
+     * 
+     */
+    public int getNumberLength() {
+        return numberLength;
+    }
+
+    /**
+     * Imposta il valore della proprietà numberLength.
+     * 
+     */
+    public void setNumberLength(int value) {
+        this.numberLength = value;
     }
 
     /**

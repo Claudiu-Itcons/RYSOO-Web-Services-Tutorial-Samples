@@ -40,6 +40,13 @@ class abxProtocolUse
 
   /**
    * 
+   * @var int $numberLength
+   * @access public
+   */
+  public $numberLength;
+
+  /**
+   * 
    * @var string $resultFormatted
    * @access public
    */
@@ -59,17 +66,19 @@ class abxProtocolUse
    * @param string $protocolName
    * @param string $date
    * @param string $number
+   * @param int $numberLength
    * @param string $resultFormatted
    * @param filters $filters
    * @access public
    */
-  public function __construct($serverId, $protocolId, $protocolName, $date, $number, $resultFormatted, $filters)
+  public function __construct($serverId, $protocolId, $protocolName, $date, $number, $numberLength, $resultFormatted, $filters)
   {
     $this->serverId = $serverId;
     $this->protocolId = $protocolId;
     $this->protocolName = $protocolName;
     $this->date = $date;
     $this->number = $number;
+    $this->numberLength = $numberLength;
     $this->resultFormatted = $resultFormatted;
     $this->filters = $filters;
   }

@@ -753,9 +753,9 @@ public class ObjectFactory {
     private final static QName _CreateContainer_QNAME = new QName("http://ws.abx/", "CreateContainer");
     private final static QName _ChangeSchedulerTaskScheduleStatus_QNAME = new QName("http://ws.abx/", "ChangeSchedulerTaskScheduleStatus");
     private final static QName _UploadSendChunkWAResponse_QNAME = new QName("http://ws.abx/", "UploadSendChunkWAResponse");
-    private final static QName _UploadUSSendChunkObjName_QNAME = new QName("", "objName");
-    private final static QName _UploadTPSendChunkChunk_QNAME = new QName("", "chunk");
+    private final static QName _UploadWFSendChunkObjName_QNAME = new QName("", "objName");
     private final static QName _UploadPreviewFileFile_QNAME = new QName("", "file");
+    private final static QName _UploadSendChunkChunk_QNAME = new QName("", "chunk");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: abx.ws
@@ -14745,18 +14745,9 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "objName", scope = UploadUSSendChunk.class)
-    public JAXBElement<byte[]> createUploadUSSendChunkObjName(byte[] value) {
-        return new JAXBElement<byte[]>(_UploadUSSendChunkObjName_QNAME, byte[].class, UploadUSSendChunk.class, ((byte[]) value));
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "chunk", scope = UploadTPSendChunk.class)
-    public JAXBElement<byte[]> createUploadTPSendChunkChunk(byte[] value) {
-        return new JAXBElement<byte[]>(_UploadTPSendChunkChunk_QNAME, byte[].class, UploadTPSendChunk.class, ((byte[]) value));
+    @XmlElementDecl(namespace = "", name = "objName", scope = UploadWFSendChunk.class)
+    public JAXBElement<byte[]> createUploadWFSendChunkObjName(byte[] value) {
+        return new JAXBElement<byte[]>(_UploadWFSendChunkObjName_QNAME, byte[].class, UploadWFSendChunk.class, ((byte[]) value));
     }
 
     /**
@@ -14772,9 +14763,18 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
      * 
      */
+    @XmlElementDecl(namespace = "", name = "objName", scope = UploadUSSendChunk.class)
+    public JAXBElement<byte[]> createUploadUSSendChunkObjName(byte[] value) {
+        return new JAXBElement<byte[]>(_UploadWFSendChunkObjName_QNAME, byte[].class, UploadUSSendChunk.class, ((byte[]) value));
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
     @XmlElementDecl(namespace = "", name = "chunk", scope = UploadSendChunk.class)
     public JAXBElement<byte[]> createUploadSendChunkChunk(byte[] value) {
-        return new JAXBElement<byte[]>(_UploadTPSendChunkChunk_QNAME, byte[].class, UploadSendChunk.class, ((byte[]) value));
+        return new JAXBElement<byte[]>(_UploadSendChunkChunk_QNAME, byte[].class, UploadSendChunk.class, ((byte[]) value));
     }
 
     /**
@@ -14783,16 +14783,16 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "chunk", scope = UploadSendChunkWA.class)
     public JAXBElement<byte[]> createUploadSendChunkWAChunk(byte[] value) {
-        return new JAXBElement<byte[]>(_UploadTPSendChunkChunk_QNAME, byte[].class, UploadSendChunkWA.class, ((byte[]) value));
+        return new JAXBElement<byte[]>(_UploadSendChunkChunk_QNAME, byte[].class, UploadSendChunkWA.class, ((byte[]) value));
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "objName", scope = UploadWFSendChunk.class)
-    public JAXBElement<byte[]> createUploadWFSendChunkObjName(byte[] value) {
-        return new JAXBElement<byte[]>(_UploadUSSendChunkObjName_QNAME, byte[].class, UploadWFSendChunk.class, ((byte[]) value));
+    @XmlElementDecl(namespace = "", name = "chunk", scope = UploadTPSendChunk.class)
+    public JAXBElement<byte[]> createUploadTPSendChunkChunk(byte[] value) {
+        return new JAXBElement<byte[]>(_UploadSendChunkChunk_QNAME, byte[].class, UploadTPSendChunk.class, ((byte[]) value));
     }
 
 }

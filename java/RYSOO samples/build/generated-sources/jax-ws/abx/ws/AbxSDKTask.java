@@ -32,6 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="PDFPreview" type="{http://ws.abx/}abxSDKTaskPDFPreview" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="TXTPreview" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="validateData" type="{http://ws.abx/}abxSDKTaskValidateData" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="templateFilePassword" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -54,7 +55,8 @@ import javax.xml.bind.annotation.XmlType;
     "excelPreviewSheets",
     "pdfPreview",
     "txtPreview",
-    "validateData"
+    "validateData",
+    "templateFilePassword"
 })
 public class AbxSDKTask {
 
@@ -77,6 +79,7 @@ public class AbxSDKTask {
     protected List<String> txtPreview;
     @XmlElement(nillable = true)
     protected List<AbxSDKTaskValidateData> validateData;
+    protected String templateFilePassword;
 
     /**
      * Recupera il valore della proprietà id.
@@ -418,6 +421,30 @@ public class AbxSDKTask {
             validateData = new ArrayList<AbxSDKTaskValidateData>();
         }
         return this.validateData;
+    }
+
+    /**
+     * Recupera il valore della proprietà templateFilePassword.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getTemplateFilePassword() {
+        return templateFilePassword;
+    }
+
+    /**
+     * Imposta il valore della proprietà templateFilePassword.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setTemplateFilePassword(String value) {
+        this.templateFilePassword = value;
     }
 
 }

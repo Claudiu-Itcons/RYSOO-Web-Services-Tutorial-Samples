@@ -96,6 +96,13 @@ class abxSDKTask
 
   /**
    * 
+   * @var string $templateFilePassword
+   * @access public
+   */
+  public $templateFilePassword;
+
+  /**
+   * 
    * @param string $id
    * @param string $name
    * @param string $description
@@ -109,9 +116,10 @@ class abxSDKTask
    * @param abxSDKTaskPDFPreview $PDFPreview
    * @param string $TXTPreview
    * @param abxSDKTaskValidateData $validateData
+   * @param string $templateFilePassword
    * @access public
    */
-  public function __construct($id, $name, $description, $instanceName, $fileType, $status, $templateFile, $watchFolder, $fieldMappings, $excelPreviewSheets, $PDFPreview, $TXTPreview, $validateData)
+  public function __construct($id, $name, $description, $instanceName, $fileType, $status, $templateFile, $watchFolder, $fieldMappings, $excelPreviewSheets, $PDFPreview, $TXTPreview, $validateData, $templateFilePassword)
   {
     $this->id = $id;
     $this->name = $name;
@@ -126,6 +134,7 @@ class abxSDKTask
     $this->PDFPreview = $PDFPreview;
     $this->TXTPreview = $TXTPreview;
     $this->validateData = $validateData;
+    $this->templateFilePassword = $templateFilePassword;
   }
 
 }

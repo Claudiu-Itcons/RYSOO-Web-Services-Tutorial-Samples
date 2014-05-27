@@ -316,6 +316,7 @@ public:
 	char *note;	/* required element of type xsd:string */
 	char *idProtocol;	/* required element of type xsd:string */
 	char *protocolDesc;	/* required element of type xsd:string */
+	int numberLength;	/* required element of type xsd:int */
 public:
 	virtual int soap_type() const { return 25; } /* = unique id SOAP_TYPE_ns2__abxProtocol */
 	virtual void soap_default(struct soap*);
@@ -637,6 +638,7 @@ public:
 	char **TXTPreview;	/* optional element of type xsd:string */
 	int __sizevalidateData;	/* sequence of elements <validateData> */
 	class ns1__abxSDKTaskValidateData **validateData;	/* optional element of type ns1:abxSDKTaskValidateData */
+	char *templateFilePassword;	/* optional element of type xsd:string */
 public:
 	virtual int soap_type() const { return 39; } /* = unique id SOAP_TYPE_ns1__abxSDKTask */
 	virtual void soap_default(struct soap*);
@@ -1200,183 +1202,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__AddExpression
-#define SOAP_TYPE_ns1__AddExpression (64)
-/* ns1:AddExpression */
-class SOAP_CMAC ns1__AddExpression : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	class ns1__abxExpression *expr;	/* optional element of type ns1:abxExpression */
-public:
-	virtual int soap_type() const { return 64; } /* = unique id SOAP_TYPE_ns1__AddExpression */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__AddExpression() { ns1__AddExpression::soap_default(NULL); }
-	virtual ~ns1__AddExpression() { }
-};
-#endif
-
-#ifndef SOAP_TYPE__ns1__abxExpression_returnWrongKeys
-#define SOAP_TYPE__ns1__abxExpression_returnWrongKeys (987)
-/* ns1:abxExpression-returnWrongKeys */
-class SOAP_CMAC _ns1__abxExpression_returnWrongKeys
-{
-public:
-	int __sizekey;	/* sequence of elements <key> */
-	char **key;	/* required element of type xsd:string */
-public:
-	virtual int soap_type() const { return 987; } /* = unique id SOAP_TYPE__ns1__abxExpression_returnWrongKeys */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         _ns1__abxExpression_returnWrongKeys() { _ns1__abxExpression_returnWrongKeys::soap_default(NULL); }
-	virtual ~_ns1__abxExpression_returnWrongKeys() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__abxExpression
-#define SOAP_TYPE_ns1__abxExpression (65)
-/* ns1:abxExpression */
-class SOAP_CMAC ns1__abxExpression : public xsd__anyType
-{
-public:
-	char *id;	/* required element of type xsd:string */
-	char *instanceName;	/* required element of type xsd:string */
-	class ns1__abxTranslation *translationList;	/* required element of type ns1:abxTranslation */
-	char *expressionName;	/* required element of type xsd:string */
-	char *defaultLanguage;	/* required element of type xsd:string */
-	char *defaultExpression;	/* required element of type xsd:string */
-	_ns1__abxExpression_returnWrongKeys returnWrongKeys;	/* required element of type ns1:abxExpression-returnWrongKeys */
-public:
-	virtual int soap_type() const { return 65; } /* = unique id SOAP_TYPE_ns1__abxExpression */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__abxExpression() { ns1__abxExpression::soap_default(NULL); }
-	virtual ~ns1__abxExpression() { }
-};
-#endif
-
-#ifndef SOAP_TYPE__ns1__abxTranslation_allDescription
-#define SOAP_TYPE__ns1__abxTranslation_allDescription (988)
-/* ns1:abxTranslation-allDescription */
-class SOAP_CMAC _ns1__abxTranslation_allDescription
-{
-public:
-	char *language;	/* required element of type xsd:string */
-	char *description;	/* required element of type xsd:string */
-public:
-	virtual int soap_type() const { return 988; } /* = unique id SOAP_TYPE__ns1__abxTranslation_allDescription */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         _ns1__abxTranslation_allDescription() { _ns1__abxTranslation_allDescription::soap_default(NULL); }
-	virtual ~_ns1__abxTranslation_allDescription() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__abxTranslation
-#define SOAP_TYPE_ns1__abxTranslation (66)
-/* ns1:abxTranslation */
-class SOAP_CMAC ns1__abxTranslation : public xsd__anyType
-{
-public:
-	char *languageType;	/* required element of type xsd:string */
-	char *messageId;	/* required element of type xsd:string */
-	int __sizeallDescription;	/* sequence of elements <allDescription> */
-	_ns1__abxTranslation_allDescription *allDescription;	/* required element of type ns1:abxTranslation-allDescription */
-	char *messageCode;	/* required element of type xsd:string */
-public:
-	virtual int soap_type() const { return 66; } /* = unique id SOAP_TYPE_ns1__abxTranslation */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__abxTranslation() { ns1__abxTranslation::soap_default(NULL); }
-	virtual ~ns1__abxTranslation() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__AddExpressionResponse
-#define SOAP_TYPE_ns1__AddExpressionResponse (67)
-/* ns1:AddExpressionResponse */
-class SOAP_CMAC ns1__AddExpressionResponse : public xsd__anyType
-{
-public:
-	class ns1__abxExpressionResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxExpressionResult */
-public:
-	virtual int soap_type() const { return 67; } /* = unique id SOAP_TYPE_ns1__AddExpressionResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__AddExpressionResponse() { ns1__AddExpressionResponse::soap_default(NULL); }
-	virtual ~ns1__AddExpressionResponse() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__abxExpressionResult
-#define SOAP_TYPE_ns1__abxExpressionResult (68)
-/* ns1:abxExpressionResult */
-class SOAP_CMAC ns1__abxExpressionResult : public xsd__anyType
-{
-public:
-	class ns1__abxExpressionList *list;	/* required element of type ns1:abxExpressionList */
-	unsigned int result;	/* required element of type xsd:unsignedInt */
-public:
-	virtual int soap_type() const { return 68; } /* = unique id SOAP_TYPE_ns1__abxExpressionResult */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__abxExpressionResult() { ns1__abxExpressionResult::soap_default(NULL); }
-	virtual ~ns1__abxExpressionResult() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__abxExpressionList
-#define SOAP_TYPE_ns1__abxExpressionList (69)
-/* ns1:abxExpressionList */
-class SOAP_CMAC ns1__abxExpressionList : public xsd__anyType
-{
-public:
-	int __sizedataList;	/* sequence of elements <dataList> */
-	ns1__abxExpression **dataList;	/* required element of type ns1:abxExpression */
-public:
-	virtual int soap_type() const { return 69; } /* = unique id SOAP_TYPE_ns1__abxExpressionList */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__abxExpressionList() { ns1__abxExpressionList::soap_default(NULL); }
-	virtual ~ns1__abxExpressionList() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__AddSign
-#define SOAP_TYPE_ns1__AddSign (70)
+#define SOAP_TYPE_ns1__AddSign (64)
 /* ns1:AddSign */
 class SOAP_CMAC ns1__AddSign : public xsd__anyType
 {
@@ -1384,7 +1211,7 @@ public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	class ns1__abxWorkflow *aw;	/* optional element of type ns1:abxWorkflow */
 public:
-	virtual int soap_type() const { return 70; } /* = unique id SOAP_TYPE_ns1__AddSign */
+	virtual int soap_type() const { return 64; } /* = unique id SOAP_TYPE_ns1__AddSign */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1397,7 +1224,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE__ns1__abxWorkflow_processoDefUsers
-#define SOAP_TYPE__ns1__abxWorkflow_processoDefUsers (994)
+#define SOAP_TYPE__ns1__abxWorkflow_processoDefUsers (986)
 /* ns1:abxWorkflow-processoDefUsers */
 class SOAP_CMAC _ns1__abxWorkflow_processoDefUsers
 {
@@ -1410,7 +1237,7 @@ public:
 	char *nomeProcesso;	/* required element of type xsd:string */
 	char *username;	/* required element of type xsd:string */
 public:
-	virtual int soap_type() const { return 994; } /* = unique id SOAP_TYPE__ns1__abxWorkflow_processoDefUsers */
+	virtual int soap_type() const { return 986; } /* = unique id SOAP_TYPE__ns1__abxWorkflow_processoDefUsers */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1423,7 +1250,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE__ns1__abxWorkflow_signList
-#define SOAP_TYPE__ns1__abxWorkflow_signList (996)
+#define SOAP_TYPE__ns1__abxWorkflow_signList (988)
 /* ns1:abxWorkflow-signList */
 class SOAP_CMAC _ns1__abxWorkflow_signList
 {
@@ -1437,7 +1264,7 @@ public:
 	int posX;	/* required element of type xsd:int */
 	int posY;	/* required element of type xsd:int */
 public:
-	virtual int soap_type() const { return 996; } /* = unique id SOAP_TYPE__ns1__abxWorkflow_signList */
+	virtual int soap_type() const { return 988; } /* = unique id SOAP_TYPE__ns1__abxWorkflow_signList */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1450,7 +1277,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE__ns1__abxWorkflow_userSettings
-#define SOAP_TYPE__ns1__abxWorkflow_userSettings (998)
+#define SOAP_TYPE__ns1__abxWorkflow_userSettings (990)
 /* ns1:abxWorkflow-userSettings */
 class SOAP_CMAC _ns1__abxWorkflow_userSettings
 {
@@ -1460,7 +1287,7 @@ public:
 	int __sizeworklistFields;	/* sequence of elements <worklistFields> */
 	char **worklistFields;	/* required element of type xsd:string */
 public:
-	virtual int soap_type() const { return 998; } /* = unique id SOAP_TYPE__ns1__abxWorkflow_userSettings */
+	virtual int soap_type() const { return 990; } /* = unique id SOAP_TYPE__ns1__abxWorkflow_userSettings */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1473,7 +1300,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE__ns1__abxWorkflow_variables
-#define SOAP_TYPE__ns1__abxWorkflow_variables (1000)
+#define SOAP_TYPE__ns1__abxWorkflow_variables (992)
 /* ns1:abxWorkflow-variables */
 class SOAP_CMAC _ns1__abxWorkflow_variables
 {
@@ -1481,7 +1308,7 @@ public:
 	char *name;	/* required element of type xsd:string */
 	char *value;	/* required element of type xsd:string */
 public:
-	virtual int soap_type() const { return 1000; } /* = unique id SOAP_TYPE__ns1__abxWorkflow_variables */
+	virtual int soap_type() const { return 992; } /* = unique id SOAP_TYPE__ns1__abxWorkflow_variables */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1494,7 +1321,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxWorkflow
-#define SOAP_TYPE_ns1__abxWorkflow (71)
+#define SOAP_TYPE_ns1__abxWorkflow (65)
 /* ns1:abxWorkflow */
 class SOAP_CMAC ns1__abxWorkflow : public xsd__anyType
 {
@@ -1508,7 +1335,7 @@ public:
 	int __sizevariables;	/* sequence of elements <variables> */
 	_ns1__abxWorkflow_variables *variables;	/* required element of type ns1:abxWorkflow-variables */
 public:
-	virtual int soap_type() const { return 71; } /* = unique id SOAP_TYPE_ns1__abxWorkflow */
+	virtual int soap_type() const { return 65; } /* = unique id SOAP_TYPE_ns1__abxWorkflow */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1521,14 +1348,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__AddSignResponse
-#define SOAP_TYPE_ns1__AddSignResponse (72)
+#define SOAP_TYPE_ns1__AddSignResponse (66)
 /* ns1:AddSignResponse */
 class SOAP_CMAC ns1__AddSignResponse : public xsd__anyType
 {
 public:
 	class ns1__abxWorkflowResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxWorkflowResult */
 public:
-	virtual int soap_type() const { return 72; } /* = unique id SOAP_TYPE_ns1__AddSignResponse */
+	virtual int soap_type() const { return 66; } /* = unique id SOAP_TYPE_ns1__AddSignResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1541,7 +1368,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxWorkflowResult
-#define SOAP_TYPE_ns1__abxWorkflowResult (73)
+#define SOAP_TYPE_ns1__abxWorkflowResult (67)
 /* ns1:abxWorkflowResult */
 class SOAP_CMAC ns1__abxWorkflowResult : public xsd__anyType
 {
@@ -1549,7 +1376,7 @@ public:
 	unsigned int result;	/* required element of type xsd:unsignedInt */
 	class ns1__abxWorkflowList *list;	/* required element of type ns1:abxWorkflowList */
 public:
-	virtual int soap_type() const { return 73; } /* = unique id SOAP_TYPE_ns1__abxWorkflowResult */
+	virtual int soap_type() const { return 67; } /* = unique id SOAP_TYPE_ns1__abxWorkflowResult */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1562,7 +1389,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxWorkflowList
-#define SOAP_TYPE_ns1__abxWorkflowList (74)
+#define SOAP_TYPE_ns1__abxWorkflowList (68)
 /* ns1:abxWorkflowList */
 class SOAP_CMAC ns1__abxWorkflowList : public xsd__anyType
 {
@@ -1570,7 +1397,7 @@ public:
 	int __sizeworkflowList;	/* sequence of elements <workflowList> */
 	ns1__abxWorkflow **workflowList;	/* required element of type ns1:abxWorkflow */
 public:
-	virtual int soap_type() const { return 74; } /* = unique id SOAP_TYPE_ns1__abxWorkflowList */
+	virtual int soap_type() const { return 68; } /* = unique id SOAP_TYPE_ns1__abxWorkflowList */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1583,7 +1410,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetUserDetailByUsername
-#define SOAP_TYPE_ns1__GetUserDetailByUsername (75)
+#define SOAP_TYPE_ns1__GetUserDetailByUsername (69)
 /* ns1:GetUserDetailByUsername */
 class SOAP_CMAC ns1__GetUserDetailByUsername : public xsd__anyType
 {
@@ -1591,7 +1418,7 @@ public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	char *username;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 75; } /* = unique id SOAP_TYPE_ns1__GetUserDetailByUsername */
+	virtual int soap_type() const { return 69; } /* = unique id SOAP_TYPE_ns1__GetUserDetailByUsername */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1604,14 +1431,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetUserDetailByUsernameResponse
-#define SOAP_TYPE_ns1__GetUserDetailByUsernameResponse (76)
+#define SOAP_TYPE_ns1__GetUserDetailByUsernameResponse (70)
 /* ns1:GetUserDetailByUsernameResponse */
 class SOAP_CMAC ns1__GetUserDetailByUsernameResponse : public xsd__anyType
 {
 public:
 	ns1__abxUserListResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxUserListResult */
 public:
-	virtual int soap_type() const { return 76; } /* = unique id SOAP_TYPE_ns1__GetUserDetailByUsernameResponse */
+	virtual int soap_type() const { return 70; } /* = unique id SOAP_TYPE_ns1__GetUserDetailByUsernameResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1623,8 +1450,225 @@ public:
 };
 #endif
 
+#ifndef SOAP_TYPE_ns1__AddExpression
+#define SOAP_TYPE_ns1__AddExpression (71)
+/* ns1:AddExpression */
+class SOAP_CMAC ns1__AddExpression : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	class ns1__abxExpression *expr;	/* optional element of type ns1:abxExpression */
+public:
+	virtual int soap_type() const { return 71; } /* = unique id SOAP_TYPE_ns1__AddExpression */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__AddExpression() { ns1__AddExpression::soap_default(NULL); }
+	virtual ~ns1__AddExpression() { }
+};
+#endif
+
+#ifndef SOAP_TYPE__ns1__abxExpression_returnWrongKeys
+#define SOAP_TYPE__ns1__abxExpression_returnWrongKeys (999)
+/* ns1:abxExpression-returnWrongKeys */
+class SOAP_CMAC _ns1__abxExpression_returnWrongKeys
+{
+public:
+	int __sizekey;	/* sequence of elements <key> */
+	char **key;	/* required element of type xsd:string */
+public:
+	virtual int soap_type() const { return 999; } /* = unique id SOAP_TYPE__ns1__abxExpression_returnWrongKeys */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         _ns1__abxExpression_returnWrongKeys() { _ns1__abxExpression_returnWrongKeys::soap_default(NULL); }
+	virtual ~_ns1__abxExpression_returnWrongKeys() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__abxExpression
+#define SOAP_TYPE_ns1__abxExpression (72)
+/* ns1:abxExpression */
+class SOAP_CMAC ns1__abxExpression : public xsd__anyType
+{
+public:
+	char *id;	/* required element of type xsd:string */
+	char *instanceName;	/* required element of type xsd:string */
+	class ns1__abxTranslation *translationList;	/* required element of type ns1:abxTranslation */
+	char *expressionName;	/* required element of type xsd:string */
+	char *defaultLanguage;	/* required element of type xsd:string */
+	char *defaultExpression;	/* required element of type xsd:string */
+	_ns1__abxExpression_returnWrongKeys returnWrongKeys;	/* required element of type ns1:abxExpression-returnWrongKeys */
+public:
+	virtual int soap_type() const { return 72; } /* = unique id SOAP_TYPE_ns1__abxExpression */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__abxExpression() { ns1__abxExpression::soap_default(NULL); }
+	virtual ~ns1__abxExpression() { }
+};
+#endif
+
+#ifndef SOAP_TYPE__ns1__abxTranslation_allDescription
+#define SOAP_TYPE__ns1__abxTranslation_allDescription (1000)
+/* ns1:abxTranslation-allDescription */
+class SOAP_CMAC _ns1__abxTranslation_allDescription
+{
+public:
+	char *language;	/* required element of type xsd:string */
+	char *description;	/* required element of type xsd:string */
+public:
+	virtual int soap_type() const { return 1000; } /* = unique id SOAP_TYPE__ns1__abxTranslation_allDescription */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         _ns1__abxTranslation_allDescription() { _ns1__abxTranslation_allDescription::soap_default(NULL); }
+	virtual ~_ns1__abxTranslation_allDescription() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__abxTranslation
+#define SOAP_TYPE_ns1__abxTranslation (73)
+/* ns1:abxTranslation */
+class SOAP_CMAC ns1__abxTranslation : public xsd__anyType
+{
+public:
+	char *languageType;	/* required element of type xsd:string */
+	char *messageId;	/* required element of type xsd:string */
+	int __sizeallDescription;	/* sequence of elements <allDescription> */
+	_ns1__abxTranslation_allDescription *allDescription;	/* required element of type ns1:abxTranslation-allDescription */
+	char *messageCode;	/* required element of type xsd:string */
+public:
+	virtual int soap_type() const { return 73; } /* = unique id SOAP_TYPE_ns1__abxTranslation */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__abxTranslation() { ns1__abxTranslation::soap_default(NULL); }
+	virtual ~ns1__abxTranslation() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__AddExpressionResponse
+#define SOAP_TYPE_ns1__AddExpressionResponse (74)
+/* ns1:AddExpressionResponse */
+class SOAP_CMAC ns1__AddExpressionResponse : public xsd__anyType
+{
+public:
+	class ns1__abxExpressionResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxExpressionResult */
+public:
+	virtual int soap_type() const { return 74; } /* = unique id SOAP_TYPE_ns1__AddExpressionResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__AddExpressionResponse() { ns1__AddExpressionResponse::soap_default(NULL); }
+	virtual ~ns1__AddExpressionResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__abxExpressionResult
+#define SOAP_TYPE_ns1__abxExpressionResult (75)
+/* ns1:abxExpressionResult */
+class SOAP_CMAC ns1__abxExpressionResult : public xsd__anyType
+{
+public:
+	class ns1__abxExpressionList *list;	/* required element of type ns1:abxExpressionList */
+	unsigned int result;	/* required element of type xsd:unsignedInt */
+public:
+	virtual int soap_type() const { return 75; } /* = unique id SOAP_TYPE_ns1__abxExpressionResult */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__abxExpressionResult() { ns1__abxExpressionResult::soap_default(NULL); }
+	virtual ~ns1__abxExpressionResult() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__abxExpressionList
+#define SOAP_TYPE_ns1__abxExpressionList (76)
+/* ns1:abxExpressionList */
+class SOAP_CMAC ns1__abxExpressionList : public xsd__anyType
+{
+public:
+	int __sizedataList;	/* sequence of elements <dataList> */
+	ns1__abxExpression **dataList;	/* required element of type ns1:abxExpression */
+public:
+	virtual int soap_type() const { return 76; } /* = unique id SOAP_TYPE_ns1__abxExpressionList */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__abxExpressionList() { ns1__abxExpressionList::soap_default(NULL); }
+	virtual ~ns1__abxExpressionList() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__canModifyRaccoglitore
+#define SOAP_TYPE_ns1__canModifyRaccoglitore (77)
+/* ns1:canModifyRaccoglitore */
+class SOAP_CMAC ns1__canModifyRaccoglitore : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *TemplateName;	/* optional element of type xsd:string */
+	char *ContainerName;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 77; } /* = unique id SOAP_TYPE_ns1__canModifyRaccoglitore */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__canModifyRaccoglitore() { ns1__canModifyRaccoglitore::soap_default(NULL); }
+	virtual ~ns1__canModifyRaccoglitore() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__canModifyRaccoglitoreResponse
+#define SOAP_TYPE_ns1__canModifyRaccoglitoreResponse (78)
+/* ns1:canModifyRaccoglitoreResponse */
+class SOAP_CMAC ns1__canModifyRaccoglitoreResponse : public xsd__anyType
+{
+public:
+	ns4__abxCan *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns4:abxCan */
+public:
+	virtual int soap_type() const { return 78; } /* = unique id SOAP_TYPE_ns1__canModifyRaccoglitoreResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__canModifyRaccoglitoreResponse() { ns1__canModifyRaccoglitoreResponse::soap_default(NULL); }
+	virtual ~ns1__canModifyRaccoglitoreResponse() { }
+};
+#endif
+
 #ifndef SOAP_TYPE_ns1__QueryTotAttach
-#define SOAP_TYPE_ns1__QueryTotAttach (77)
+#define SOAP_TYPE_ns1__QueryTotAttach (79)
 /* ns1:QueryTotAttach */
 class SOAP_CMAC ns1__QueryTotAttach : public xsd__anyType
 {
@@ -1633,7 +1677,7 @@ public:
 	class ns1__abxQexpression *option4query;	/* optional element of type ns1:abxQexpression */
 	class ns1__abxProtocolUse *protuse;	/* optional element of type ns1:abxProtocolUse */
 public:
-	virtual int soap_type() const { return 77; } /* = unique id SOAP_TYPE_ns1__QueryTotAttach */
+	virtual int soap_type() const { return 79; } /* = unique id SOAP_TYPE_ns1__QueryTotAttach */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1646,7 +1690,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxQexpression
-#define SOAP_TYPE_ns1__abxQexpression (78)
+#define SOAP_TYPE_ns1__abxQexpression (80)
 /* ns1:abxQexpression */
 class SOAP_CMAC ns1__abxQexpression : public xsd__anyType
 {
@@ -1658,7 +1702,7 @@ public:
 	char *queryLimit;	/* required element of type xsd:string */
 	char *queryOffset;	/* required element of type xsd:string */
 public:
-	virtual int soap_type() const { return 78; } /* = unique id SOAP_TYPE_ns1__abxQexpression */
+	virtual int soap_type() const { return 80; } /* = unique id SOAP_TYPE_ns1__abxQexpression */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1671,7 +1715,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxQnode
-#define SOAP_TYPE_ns1__abxQnode (79)
+#define SOAP_TYPE_ns1__abxQnode (81)
 /* ns1:abxQnode */
 class SOAP_CMAC ns1__abxQnode : public xsd__anyType
 {
@@ -1681,7 +1725,7 @@ public:
 	ns1__abxQnode *operandDX;	/* required element of type ns1:abxQnode */
 	class ns1__abxQField *field;	/* required element of type ns1:abxQField */
 public:
-	virtual int soap_type() const { return 79; } /* = unique id SOAP_TYPE_ns1__abxQnode */
+	virtual int soap_type() const { return 81; } /* = unique id SOAP_TYPE_ns1__abxQnode */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1694,7 +1738,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxQField
-#define SOAP_TYPE_ns1__abxQField (80)
+#define SOAP_TYPE_ns1__abxQField (82)
 /* ns1:abxQField */
 class SOAP_CMAC ns1__abxQField : public xsd__anyType
 {
@@ -1706,7 +1750,7 @@ public:
 	class ns1__abxQFieldRange *range;	/* required element of type ns1:abxQFieldRange */
 	char *fOperator;	/* required element of type xsd:string */
 public:
-	virtual int soap_type() const { return 80; } /* = unique id SOAP_TYPE_ns1__abxQField */
+	virtual int soap_type() const { return 82; } /* = unique id SOAP_TYPE_ns1__abxQField */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1719,7 +1763,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE__ns1__abxField_allDescription
-#define SOAP_TYPE__ns1__abxField_allDescription (1012)
+#define SOAP_TYPE__ns1__abxField_allDescription (1013)
 /* ns1:abxField-allDescription */
 class SOAP_CMAC _ns1__abxField_allDescription
 {
@@ -1727,7 +1771,7 @@ public:
 	char *language;	/* required element of type xsd:string */
 	char *description;	/* required element of type xsd:string */
 public:
-	virtual int soap_type() const { return 1012; } /* = unique id SOAP_TYPE__ns1__abxField_allDescription */
+	virtual int soap_type() const { return 1013; } /* = unique id SOAP_TYPE__ns1__abxField_allDescription */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1740,7 +1784,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE__ns1__abxField_allOptionDescription
-#define SOAP_TYPE__ns1__abxField_allOptionDescription (1014)
+#define SOAP_TYPE__ns1__abxField_allOptionDescription (1015)
 /* ns1:abxField-allOptionDescription */
 class SOAP_CMAC _ns1__abxField_allOptionDescription
 {
@@ -1748,7 +1792,7 @@ public:
 	char *language;	/* required element of type xsd:string */
 	char *description;	/* required element of type xsd:string */
 public:
-	virtual int soap_type() const { return 1014; } /* = unique id SOAP_TYPE__ns1__abxField_allOptionDescription */
+	virtual int soap_type() const { return 1015; } /* = unique id SOAP_TYPE__ns1__abxField_allOptionDescription */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1761,7 +1805,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE__ns1__abxField_extended
-#define SOAP_TYPE__ns1__abxField_extended (1016)
+#define SOAP_TYPE__ns1__abxField_extended (1017)
 /* ns1:abxField-extended */
 class SOAP_CMAC _ns1__abxField_extended
 {
@@ -1771,7 +1815,7 @@ public:
 	char *property3;	/* required element of type xsd:string */
 	char *property4;	/* required element of type xsd:string */
 public:
-	virtual int soap_type() const { return 1016; } /* = unique id SOAP_TYPE__ns1__abxField_extended */
+	virtual int soap_type() const { return 1017; } /* = unique id SOAP_TYPE__ns1__abxField_extended */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1784,7 +1828,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxField
-#define SOAP_TYPE_ns1__abxField (81)
+#define SOAP_TYPE_ns1__abxField (83)
 /* ns1:abxField */
 class SOAP_CMAC ns1__abxField : public xsd__anyType
 {
@@ -1813,7 +1857,7 @@ public:
 	unsigned int displayindex;	/* required element of type xsd:unsignedInt */
 	ns1__abxPermission *permission;	/* required element of type ns1:abxPermission */
 public:
-	virtual int soap_type() const { return 81; } /* = unique id SOAP_TYPE_ns1__abxField */
+	virtual int soap_type() const { return 83; } /* = unique id SOAP_TYPE_ns1__abxField */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1826,7 +1870,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE__ns1__abxPermission_list
-#define SOAP_TYPE__ns1__abxPermission_list (1018)
+#define SOAP_TYPE__ns1__abxPermission_list (1019)
 /* ns1:abxPermission-list */
 class SOAP_CMAC _ns1__abxPermission_list
 {
@@ -1834,7 +1878,7 @@ public:
 	char *actionName;	/* required element of type xsd:string */
 	bool value;	/* required element of type xsd:boolean */
 public:
-	virtual int soap_type() const { return 1018; } /* = unique id SOAP_TYPE__ns1__abxPermission_list */
+	virtual int soap_type() const { return 1019; } /* = unique id SOAP_TYPE__ns1__abxPermission_list */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1847,7 +1891,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE__ns1__abxPermission_editPermission
-#define SOAP_TYPE__ns1__abxPermission_editPermission (1021)
+#define SOAP_TYPE__ns1__abxPermission_editPermission (1022)
 /* ns1:abxPermission-editPermission */
 class SOAP_CMAC _ns1__abxPermission_editPermission
 {
@@ -1857,7 +1901,7 @@ public:
 	time_t editTimeStamp;	/* required element of type xsd:dateTime */
 	class ns1__abxEditPermissionList *permissionSettings;	/* required element of type ns1:abxEditPermissionList */
 public:
-	virtual int soap_type() const { return 1021; } /* = unique id SOAP_TYPE__ns1__abxPermission_editPermission */
+	virtual int soap_type() const { return 1022; } /* = unique id SOAP_TYPE__ns1__abxPermission_editPermission */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1870,7 +1914,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxPermission
-#define SOAP_TYPE_ns1__abxPermission (82)
+#define SOAP_TYPE_ns1__abxPermission (84)
 /* ns1:abxPermission */
 class SOAP_CMAC ns1__abxPermission : public xsd__anyType
 {
@@ -1880,7 +1924,7 @@ public:
 	class ns1__abxObjAction *defaultObjActionList;	/* required element of type ns1:abxObjAction */
 	_ns1__abxPermission_editPermission editPermission;	/* required element of type ns1:abxPermission-editPermission */
 public:
-	virtual int soap_type() const { return 82; } /* = unique id SOAP_TYPE_ns1__abxPermission */
+	virtual int soap_type() const { return 84; } /* = unique id SOAP_TYPE_ns1__abxPermission */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1893,7 +1937,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE__ns1__abxObjAction_list
-#define SOAP_TYPE__ns1__abxObjAction_list (1023)
+#define SOAP_TYPE__ns1__abxObjAction_list (1024)
 /* ns1:abxObjAction-list */
 class SOAP_CMAC _ns1__abxObjAction_list
 {
@@ -1907,7 +1951,7 @@ public:
 	char *defaultDescription;	/* required element of type xsd:string */
 	char *defaultLanguage;	/* required element of type xsd:string */
 public:
-	virtual int soap_type() const { return 1023; } /* = unique id SOAP_TYPE__ns1__abxObjAction_list */
+	virtual int soap_type() const { return 1024; } /* = unique id SOAP_TYPE__ns1__abxObjAction_list */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1920,7 +1964,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxObjAction
-#define SOAP_TYPE_ns1__abxObjAction (83)
+#define SOAP_TYPE_ns1__abxObjAction (85)
 /* ns1:abxObjAction */
 class SOAP_CMAC ns1__abxObjAction : public xsd__anyType
 {
@@ -1929,7 +1973,7 @@ public:
 	_ns1__abxObjAction_list *list;	/* required element of type ns1:abxObjAction-list */
 	xsd__anyType *xxx;	/* required element of type xsd:anyType */
 public:
-	virtual int soap_type() const { return 83; } /* = unique id SOAP_TYPE_ns1__abxObjAction */
+	virtual int soap_type() const { return 85; } /* = unique id SOAP_TYPE_ns1__abxObjAction */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1942,7 +1986,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxEditPermissionList
-#define SOAP_TYPE_ns1__abxEditPermissionList (84)
+#define SOAP_TYPE_ns1__abxEditPermissionList (86)
 /* ns1:abxEditPermissionList */
 class SOAP_CMAC ns1__abxEditPermissionList : public xsd__anyType
 {
@@ -1950,7 +1994,7 @@ public:
 	int __sizelist;	/* sequence of elements <list> */
 	class ns1__abxEditPermission **list;	/* required element of type ns1:abxEditPermission */
 public:
-	virtual int soap_type() const { return 84; } /* = unique id SOAP_TYPE_ns1__abxEditPermissionList */
+	virtual int soap_type() const { return 86; } /* = unique id SOAP_TYPE_ns1__abxEditPermissionList */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1963,7 +2007,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE__ns1__abxEditPermission_permissionSingleList
-#define SOAP_TYPE__ns1__abxEditPermission_permissionSingleList (1028)
+#define SOAP_TYPE__ns1__abxEditPermission_permissionSingleList (1029)
 /* ns1:abxEditPermission-permissionSingleList */
 class SOAP_CMAC _ns1__abxEditPermission_permissionSingleList
 {
@@ -1971,7 +2015,7 @@ public:
 	char *positionId;	/* required element of type xsd:string */
 	char *value;	/* required element of type xsd:string */
 public:
-	virtual int soap_type() const { return 1028; } /* = unique id SOAP_TYPE__ns1__abxEditPermission_permissionSingleList */
+	virtual int soap_type() const { return 1029; } /* = unique id SOAP_TYPE__ns1__abxEditPermission_permissionSingleList */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -1984,7 +2028,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxEditPermission
-#define SOAP_TYPE_ns1__abxEditPermission (85)
+#define SOAP_TYPE_ns1__abxEditPermission (87)
 /* ns1:abxEditPermission */
 class SOAP_CMAC ns1__abxEditPermission : public xsd__anyType
 {
@@ -2001,7 +2045,7 @@ public:
 	_ns1__abxEditPermission_permissionSingleList *permissionSingleList;	/* required element of type ns1:abxEditPermission-permissionSingleList */
 	char *todelete;	/* required element of type xsd:string */
 public:
-	virtual int soap_type() const { return 85; } /* = unique id SOAP_TYPE_ns1__abxEditPermission */
+	virtual int soap_type() const { return 87; } /* = unique id SOAP_TYPE_ns1__abxEditPermission */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -2014,7 +2058,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxQFieldRange
-#define SOAP_TYPE_ns1__abxQFieldRange (86)
+#define SOAP_TYPE_ns1__abxQFieldRange (88)
 /* ns1:abxQFieldRange */
 class SOAP_CMAC ns1__abxQFieldRange : public xsd__anyType
 {
@@ -2022,7 +2066,7 @@ public:
 	char *fromValue;	/* required element of type xsd:string */
 	char *toValue;	/* required element of type xsd:string */
 public:
-	virtual int soap_type() const { return 86; } /* = unique id SOAP_TYPE_ns1__abxQFieldRange */
+	virtual int soap_type() const { return 88; } /* = unique id SOAP_TYPE_ns1__abxQFieldRange */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -2035,14 +2079,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE__ns1__abxOption4Query_fieldList
-#define SOAP_TYPE__ns1__abxOption4Query_fieldList (1030)
+#define SOAP_TYPE__ns1__abxOption4Query_fieldList (1031)
 /* ns1:abxOption4Query-fieldList */
 class SOAP_CMAC _ns1__abxOption4Query_fieldList
 {
 public:
 	char *fieldName;	/* required element of type xsd:string */
 public:
-	virtual int soap_type() const { return 1030; } /* = unique id SOAP_TYPE__ns1__abxOption4Query_fieldList */
+	virtual int soap_type() const { return 1031; } /* = unique id SOAP_TYPE__ns1__abxOption4Query_fieldList */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -2055,7 +2099,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE__ns1__abxOption4Query_sortFieldList
-#define SOAP_TYPE__ns1__abxOption4Query_sortFieldList (1032)
+#define SOAP_TYPE__ns1__abxOption4Query_sortFieldList (1033)
 /* ns1:abxOption4Query-sortFieldList */
 class SOAP_CMAC _ns1__abxOption4Query_sortFieldList
 {
@@ -2064,7 +2108,7 @@ public:
 	bool isDataId;	/* required element of type xsd:boolean */
 	char *sortOrder;	/* required element of type xsd:string */
 public:
-	virtual int soap_type() const { return 1032; } /* = unique id SOAP_TYPE__ns1__abxOption4Query_sortFieldList */
+	virtual int soap_type() const { return 1033; } /* = unique id SOAP_TYPE__ns1__abxOption4Query_sortFieldList */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -2077,7 +2121,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxOption4Query
-#define SOAP_TYPE_ns1__abxOption4Query (87)
+#define SOAP_TYPE_ns1__abxOption4Query (89)
 /* ns1:abxOption4Query */
 class SOAP_CMAC ns1__abxOption4Query : public xsd__anyType
 {
@@ -2091,7 +2135,7 @@ public:
 	int __sizesortFieldList;	/* sequence of elements <sortFieldList> */
 	_ns1__abxOption4Query_sortFieldList *sortFieldList;	/* optional element of type ns1:abxOption4Query-sortFieldList */
 public:
-	virtual int soap_type() const { return 87; } /* = unique id SOAP_TYPE_ns1__abxOption4Query */
+	virtual int soap_type() const { return 89; } /* = unique id SOAP_TYPE_ns1__abxOption4Query */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -2104,7 +2148,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE__ns1__abxProtocolUse_filters
-#define SOAP_TYPE__ns1__abxProtocolUse_filters (1034)
+#define SOAP_TYPE__ns1__abxProtocolUse_filters (1035)
 /* ns1:abxProtocolUse-filters */
 class SOAP_CMAC _ns1__abxProtocolUse_filters
 {
@@ -2116,7 +2160,7 @@ public:
 	char *numberTo;	/* required element of type xsd:string */
 	char *protocolId;	/* required element of type xsd:string */
 public:
-	virtual int soap_type() const { return 1034; } /* = unique id SOAP_TYPE__ns1__abxProtocolUse_filters */
+	virtual int soap_type() const { return 1035; } /* = unique id SOAP_TYPE__ns1__abxProtocolUse_filters */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -2129,7 +2173,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxProtocolUse
-#define SOAP_TYPE_ns1__abxProtocolUse (88)
+#define SOAP_TYPE_ns1__abxProtocolUse (90)
 /* ns1:abxProtocolUse */
 class SOAP_CMAC ns1__abxProtocolUse : public xsd__anyType
 {
@@ -2139,11 +2183,12 @@ public:
 	char *protocolName;	/* required element of type xsd:string */
 	char *date;	/* required element of type xsd:string */
 	char *number;	/* required element of type xsd:string */
+	int numberLength;	/* required element of type xsd:int */
 	char *resultFormatted;	/* required element of type xsd:string */
 	int __sizefilters;	/* sequence of elements <filters> */
 	_ns1__abxProtocolUse_filters *filters;	/* required element of type ns1:abxProtocolUse-filters */
 public:
-	virtual int soap_type() const { return 88; } /* = unique id SOAP_TYPE_ns1__abxProtocolUse */
+	virtual int soap_type() const { return 90; } /* = unique id SOAP_TYPE_ns1__abxProtocolUse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -2156,14 +2201,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__QueryTotAttachResponse
-#define SOAP_TYPE_ns1__QueryTotAttachResponse (89)
+#define SOAP_TYPE_ns1__QueryTotAttachResponse (91)
 /* ns1:QueryTotAttachResponse */
 class SOAP_CMAC ns1__QueryTotAttachResponse : public xsd__anyType
 {
 public:
 	class ns1__abxRetQueryResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxRetQueryResult */
 public:
-	virtual int soap_type() const { return 89; } /* = unique id SOAP_TYPE_ns1__QueryTotAttachResponse */
+	virtual int soap_type() const { return 91; } /* = unique id SOAP_TYPE_ns1__QueryTotAttachResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -2176,7 +2221,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxRetQueryResult
-#define SOAP_TYPE_ns1__abxRetQueryResult (90)
+#define SOAP_TYPE_ns1__abxRetQueryResult (92)
 /* ns1:abxRetQueryResult */
 class SOAP_CMAC ns1__abxRetQueryResult : public xsd__anyType
 {
@@ -2186,7 +2231,7 @@ public:
 	class ns1__abxResultsList *queryResults;	/* required element of type ns1:abxResultsList */
 	unsigned int queryTotalFound;	/* required element of type xsd:unsignedInt */
 public:
-	virtual int soap_type() const { return 90; } /* = unique id SOAP_TYPE_ns1__abxRetQueryResult */
+	virtual int soap_type() const { return 92; } /* = unique id SOAP_TYPE_ns1__abxRetQueryResult */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -2199,7 +2244,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxResultsList
-#define SOAP_TYPE_ns1__abxResultsList (91)
+#define SOAP_TYPE_ns1__abxResultsList (93)
 /* ns1:abxResultsList */
 class SOAP_CMAC ns1__abxResultsList : public xsd__anyType
 {
@@ -2207,7 +2252,7 @@ public:
 	int __sizeresults;	/* sequence of elements <results> */
 	class ns1__abxResults **results;	/* required element of type ns1:abxResults */
 public:
-	virtual int soap_type() const { return 91; } /* = unique id SOAP_TYPE_ns1__abxResultsList */
+	virtual int soap_type() const { return 93; } /* = unique id SOAP_TYPE_ns1__abxResultsList */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -2220,7 +2265,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxResults
-#define SOAP_TYPE_ns1__abxResults (92)
+#define SOAP_TYPE_ns1__abxResults (94)
 /* ns1:abxResults */
 class SOAP_CMAC ns1__abxResults : public xsd__anyType
 {
@@ -2229,7 +2274,7 @@ public:
 	class ns1__abxQrowList *matrix;	/* required element of type ns1:abxQrowList */
 	char *containerName;	/* required element of type xsd:string */
 public:
-	virtual int soap_type() const { return 92; } /* = unique id SOAP_TYPE_ns1__abxResults */
+	virtual int soap_type() const { return 94; } /* = unique id SOAP_TYPE_ns1__abxResults */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -2242,7 +2287,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxQcHeadList
-#define SOAP_TYPE_ns1__abxQcHeadList (93)
+#define SOAP_TYPE_ns1__abxQcHeadList (95)
 /* ns1:abxQcHeadList */
 class SOAP_CMAC ns1__abxQcHeadList : public xsd__anyType
 {
@@ -2250,7 +2295,7 @@ public:
 	int __sizelist;	/* sequence of elements <list> */
 	class ns1__abxQcHead **list;	/* required element of type ns1:abxQcHead */
 public:
-	virtual int soap_type() const { return 93; } /* = unique id SOAP_TYPE_ns1__abxQcHeadList */
+	virtual int soap_type() const { return 95; } /* = unique id SOAP_TYPE_ns1__abxQcHeadList */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -2263,14 +2308,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxQcHead
-#define SOAP_TYPE_ns1__abxQcHead (94)
+#define SOAP_TYPE_ns1__abxQcHead (96)
 /* ns1:abxQcHead */
 class SOAP_CMAC ns1__abxQcHead : public xsd__anyType
 {
 public:
 	ns1__abxField *field;	/* required element of type ns1:abxField */
 public:
-	virtual int soap_type() const { return 94; } /* = unique id SOAP_TYPE_ns1__abxQcHead */
+	virtual int soap_type() const { return 96; } /* = unique id SOAP_TYPE_ns1__abxQcHead */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -2283,7 +2328,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxQrowList
-#define SOAP_TYPE_ns1__abxQrowList (95)
+#define SOAP_TYPE_ns1__abxQrowList (97)
 /* ns1:abxQrowList */
 class SOAP_CMAC ns1__abxQrowList : public xsd__anyType
 {
@@ -2291,7 +2336,7 @@ public:
 	int __sizel;	/* sequence of elements <l> */
 	class ns1__abxQrow **l;	/* required element of type ns1:abxQrow */
 public:
-	virtual int soap_type() const { return 95; } /* = unique id SOAP_TYPE_ns1__abxQrowList */
+	virtual int soap_type() const { return 97; } /* = unique id SOAP_TYPE_ns1__abxQrowList */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -2304,7 +2349,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxQrow
-#define SOAP_TYPE_ns1__abxQrow (96)
+#define SOAP_TYPE_ns1__abxQrow (98)
 /* ns1:abxQrow */
 class SOAP_CMAC ns1__abxQrow : public xsd__anyType
 {
@@ -2316,7 +2361,7 @@ public:
 	char *totAttach;	/* required element of type xsd:string */
 	ns1__abxProtocolUse *protocol;	/* required element of type ns1:abxProtocolUse */
 public:
-	virtual int soap_type() const { return 96; } /* = unique id SOAP_TYPE_ns1__abxQrow */
+	virtual int soap_type() const { return 98; } /* = unique id SOAP_TYPE_ns1__abxQrow */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -2325,48 +2370,6 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__abxQrow() { ns1__abxQrow::soap_default(NULL); }
 	virtual ~ns1__abxQrow() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__canModifyRaccoglitore
-#define SOAP_TYPE_ns1__canModifyRaccoglitore (97)
-/* ns1:canModifyRaccoglitore */
-class SOAP_CMAC ns1__canModifyRaccoglitore : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *TemplateName;	/* optional element of type xsd:string */
-	char *ContainerName;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 97; } /* = unique id SOAP_TYPE_ns1__canModifyRaccoglitore */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__canModifyRaccoglitore() { ns1__canModifyRaccoglitore::soap_default(NULL); }
-	virtual ~ns1__canModifyRaccoglitore() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__canModifyRaccoglitoreResponse
-#define SOAP_TYPE_ns1__canModifyRaccoglitoreResponse (98)
-/* ns1:canModifyRaccoglitoreResponse */
-class SOAP_CMAC ns1__canModifyRaccoglitoreResponse : public xsd__anyType
-{
-public:
-	ns4__abxCan *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns4:abxCan */
-public:
-	virtual int soap_type() const { return 98; } /* = unique id SOAP_TYPE_ns1__canModifyRaccoglitoreResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__canModifyRaccoglitoreResponse() { ns1__canModifyRaccoglitoreResponse::soap_default(NULL); }
-	virtual ~ns1__canModifyRaccoglitoreResponse() { }
 };
 #endif
 
@@ -3859,44 +3862,47 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetSDKImagesFromPDFTemplate
-#define SOAP_TYPE_ns1__GetSDKImagesFromPDFTemplate (155)
-/* ns1:GetSDKImagesFromPDFTemplate */
-class SOAP_CMAC ns1__GetSDKImagesFromPDFTemplate : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__Fk_USCOREDB_USCOREtestConnection
+#define SOAP_TYPE_ns1__Fk_USCOREDB_USCOREtestConnection (155)
+/* ns1:Fk_DB_testConnection */
+class SOAP_CMAC ns1__Fk_USCOREDB_USCOREtestConnection : public xsd__anyType
 {
 public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *taskId;	/* optional element of type xsd:string */
+	char *host;	/* optional element of type xsd:string */
+	char *user;	/* optional element of type xsd:string */
+	char *pwd;	/* optional element of type xsd:string */
+	char *dbType;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 155; } /* = unique id SOAP_TYPE_ns1__GetSDKImagesFromPDFTemplate */
+	virtual int soap_type() const { return 155; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREDB_USCOREtestConnection */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetSDKImagesFromPDFTemplate() { ns1__GetSDKImagesFromPDFTemplate::soap_default(NULL); }
-	virtual ~ns1__GetSDKImagesFromPDFTemplate() { }
+	         ns1__Fk_USCOREDB_USCOREtestConnection() { ns1__Fk_USCOREDB_USCOREtestConnection::soap_default(NULL); }
+	virtual ~ns1__Fk_USCOREDB_USCOREtestConnection() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetSDKImagesFromPDFTemplateResponse
-#define SOAP_TYPE_ns1__GetSDKImagesFromPDFTemplateResponse (156)
-/* ns1:GetSDKImagesFromPDFTemplateResponse */
-class SOAP_CMAC ns1__GetSDKImagesFromPDFTemplateResponse : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__Fk_USCOREDB_USCOREtestConnectionResponse
+#define SOAP_TYPE_ns1__Fk_USCOREDB_USCOREtestConnectionResponse (156)
+/* ns1:Fk_DB_testConnectionResponse */
+class SOAP_CMAC ns1__Fk_USCOREDB_USCOREtestConnectionResponse : public xsd__anyType
 {
 public:
-	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
+	ns1__abxFKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFKResult */
 public:
-	virtual int soap_type() const { return 156; } /* = unique id SOAP_TYPE_ns1__GetSDKImagesFromPDFTemplateResponse */
+	virtual int soap_type() const { return 156; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREDB_USCOREtestConnectionResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetSDKImagesFromPDFTemplateResponse() { ns1__GetSDKImagesFromPDFTemplateResponse::soap_default(NULL); }
-	virtual ~ns1__GetSDKImagesFromPDFTemplateResponse() { }
+	         ns1__Fk_USCOREDB_USCOREtestConnectionResponse() { ns1__Fk_USCOREDB_USCOREtestConnectionResponse::soap_default(NULL); }
+	virtual ~ns1__Fk_USCOREDB_USCOREtestConnectionResponse() { }
 };
 #endif
 
@@ -4006,47 +4012,44 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__Fk_USCOREDB_USCOREtestConnection
-#define SOAP_TYPE_ns1__Fk_USCOREDB_USCOREtestConnection (162)
-/* ns1:Fk_DB_testConnection */
-class SOAP_CMAC ns1__Fk_USCOREDB_USCOREtestConnection : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__GetSDKImagesFromPDFTemplate
+#define SOAP_TYPE_ns1__GetSDKImagesFromPDFTemplate (162)
+/* ns1:GetSDKImagesFromPDFTemplate */
+class SOAP_CMAC ns1__GetSDKImagesFromPDFTemplate : public xsd__anyType
 {
 public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *host;	/* optional element of type xsd:string */
-	char *user;	/* optional element of type xsd:string */
-	char *pwd;	/* optional element of type xsd:string */
-	char *dbType;	/* optional element of type xsd:string */
+	char *taskId;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 162; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREDB_USCOREtestConnection */
+	virtual int soap_type() const { return 162; } /* = unique id SOAP_TYPE_ns1__GetSDKImagesFromPDFTemplate */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__Fk_USCOREDB_USCOREtestConnection() { ns1__Fk_USCOREDB_USCOREtestConnection::soap_default(NULL); }
-	virtual ~ns1__Fk_USCOREDB_USCOREtestConnection() { }
+	         ns1__GetSDKImagesFromPDFTemplate() { ns1__GetSDKImagesFromPDFTemplate::soap_default(NULL); }
+	virtual ~ns1__GetSDKImagesFromPDFTemplate() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__Fk_USCOREDB_USCOREtestConnectionResponse
-#define SOAP_TYPE_ns1__Fk_USCOREDB_USCOREtestConnectionResponse (163)
-/* ns1:Fk_DB_testConnectionResponse */
-class SOAP_CMAC ns1__Fk_USCOREDB_USCOREtestConnectionResponse : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__GetSDKImagesFromPDFTemplateResponse
+#define SOAP_TYPE_ns1__GetSDKImagesFromPDFTemplateResponse (163)
+/* ns1:GetSDKImagesFromPDFTemplateResponse */
+class SOAP_CMAC ns1__GetSDKImagesFromPDFTemplateResponse : public xsd__anyType
 {
 public:
-	ns1__abxFKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFKResult */
+	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
 public:
-	virtual int soap_type() const { return 163; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREDB_USCOREtestConnectionResponse */
+	virtual int soap_type() const { return 163; } /* = unique id SOAP_TYPE_ns1__GetSDKImagesFromPDFTemplateResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__Fk_USCOREDB_USCOREtestConnectionResponse() { ns1__Fk_USCOREDB_USCOREtestConnectionResponse::soap_default(NULL); }
-	virtual ~ns1__Fk_USCOREDB_USCOREtestConnectionResponse() { }
+	         ns1__GetSDKImagesFromPDFTemplateResponse() { ns1__GetSDKImagesFromPDFTemplateResponse::soap_default(NULL); }
+	virtual ~ns1__GetSDKImagesFromPDFTemplateResponse() { }
 };
 #endif
 
@@ -4799,48 +4802,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__canCreateField
-#define SOAP_TYPE_ns1__canCreateField (199)
-/* ns1:canCreateField */
-class SOAP_CMAC ns1__canCreateField : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-public:
-	virtual int soap_type() const { return 199; } /* = unique id SOAP_TYPE_ns1__canCreateField */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__canCreateField() { ns1__canCreateField::soap_default(NULL); }
-	virtual ~ns1__canCreateField() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__canCreateFieldResponse
-#define SOAP_TYPE_ns1__canCreateFieldResponse (200)
-/* ns1:canCreateFieldResponse */
-class SOAP_CMAC ns1__canCreateFieldResponse : public xsd__anyType
-{
-public:
-	ns4__abxCan *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns4:abxCan */
-public:
-	virtual int soap_type() const { return 200; } /* = unique id SOAP_TYPE_ns1__canCreateFieldResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__canCreateFieldResponse() { ns1__canCreateFieldResponse::soap_default(NULL); }
-	virtual ~ns1__canCreateFieldResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__ModifyFileDescription
-#define SOAP_TYPE_ns1__ModifyFileDescription (201)
+#define SOAP_TYPE_ns1__ModifyFileDescription (199)
 /* ns1:ModifyFileDescription */
 class SOAP_CMAC ns1__ModifyFileDescription : public xsd__anyType
 {
@@ -4850,7 +4813,7 @@ public:
 	char *dataId;	/* optional element of type xsd:string */
 	ns1__abxFile *file;	/* optional element of type ns1:abxFile */
 public:
-	virtual int soap_type() const { return 201; } /* = unique id SOAP_TYPE_ns1__ModifyFileDescription */
+	virtual int soap_type() const { return 199; } /* = unique id SOAP_TYPE_ns1__ModifyFileDescription */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -4863,14 +4826,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__ModifyFileDescriptionResponse
-#define SOAP_TYPE_ns1__ModifyFileDescriptionResponse (202)
+#define SOAP_TYPE_ns1__ModifyFileDescriptionResponse (200)
 /* ns1:ModifyFileDescriptionResponse */
 class SOAP_CMAC ns1__ModifyFileDescriptionResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 202; } /* = unique id SOAP_TYPE_ns1__ModifyFileDescriptionResponse */
+	virtual int soap_type() const { return 200; } /* = unique id SOAP_TYPE_ns1__ModifyFileDescriptionResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -4879,6 +4842,46 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__ModifyFileDescriptionResponse() { ns1__ModifyFileDescriptionResponse::soap_default(NULL); }
 	virtual ~ns1__ModifyFileDescriptionResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__canCreateField
+#define SOAP_TYPE_ns1__canCreateField (201)
+/* ns1:canCreateField */
+class SOAP_CMAC ns1__canCreateField : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+public:
+	virtual int soap_type() const { return 201; } /* = unique id SOAP_TYPE_ns1__canCreateField */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__canCreateField() { ns1__canCreateField::soap_default(NULL); }
+	virtual ~ns1__canCreateField() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__canCreateFieldResponse
+#define SOAP_TYPE_ns1__canCreateFieldResponse (202)
+/* ns1:canCreateFieldResponse */
+class SOAP_CMAC ns1__canCreateFieldResponse : public xsd__anyType
+{
+public:
+	ns4__abxCan *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns4:abxCan */
+public:
+	virtual int soap_type() const { return 202; } /* = unique id SOAP_TYPE_ns1__canCreateFieldResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__canCreateFieldResponse() { ns1__canCreateFieldResponse::soap_default(NULL); }
+	virtual ~ns1__canCreateFieldResponse() { }
 };
 #endif
 
@@ -5132,49 +5135,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetDataTPFileListByName
-#define SOAP_TYPE_ns1__GetDataTPFileListByName (212)
-/* ns1:GetDataTPFileListByName */
-class SOAP_CMAC ns1__GetDataTPFileListByName : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *templateName;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 212; } /* = unique id SOAP_TYPE_ns1__GetDataTPFileListByName */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetDataTPFileListByName() { ns1__GetDataTPFileListByName::soap_default(NULL); }
-	virtual ~ns1__GetDataTPFileListByName() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__GetDataTPFileListByNameResponse
-#define SOAP_TYPE_ns1__GetDataTPFileListByNameResponse (213)
-/* ns1:GetDataTPFileListByNameResponse */
-class SOAP_CMAC ns1__GetDataTPFileListByNameResponse : public xsd__anyType
-{
-public:
-	ns1__abxFileTpResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileTpResult */
-public:
-	virtual int soap_type() const { return 213; } /* = unique id SOAP_TYPE_ns1__GetDataTPFileListByNameResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetDataTPFileListByNameResponse() { ns1__GetDataTPFileListByNameResponse::soap_default(NULL); }
-	virtual ~ns1__GetDataTPFileListByNameResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__DownloadGetNextWA
-#define SOAP_TYPE_ns1__DownloadGetNextWA (214)
+#define SOAP_TYPE_ns1__DownloadGetNextWA (212)
 /* ns1:DownloadGetNextWA */
 class SOAP_CMAC ns1__DownloadGetNextWA : public xsd__anyType
 {
@@ -5182,7 +5144,7 @@ public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	char *fileCode;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 214; } /* = unique id SOAP_TYPE_ns1__DownloadGetNextWA */
+	virtual int soap_type() const { return 212; } /* = unique id SOAP_TYPE_ns1__DownloadGetNextWA */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -5195,14 +5157,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__DownloadGetNextWAResponse
-#define SOAP_TYPE_ns1__DownloadGetNextWAResponse (215)
+#define SOAP_TYPE_ns1__DownloadGetNextWAResponse (213)
 /* ns1:DownloadGetNextWAResponse */
 class SOAP_CMAC ns1__DownloadGetNextWAResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 215; } /* = unique id SOAP_TYPE_ns1__DownloadGetNextWAResponse */
+	virtual int soap_type() const { return 213; } /* = unique id SOAP_TYPE_ns1__DownloadGetNextWAResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -5211,6 +5173,47 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__DownloadGetNextWAResponse() { ns1__DownloadGetNextWAResponse::soap_default(NULL); }
 	virtual ~ns1__DownloadGetNextWAResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetDataTPFileListByName
+#define SOAP_TYPE_ns1__GetDataTPFileListByName (214)
+/* ns1:GetDataTPFileListByName */
+class SOAP_CMAC ns1__GetDataTPFileListByName : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *templateName;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 214; } /* = unique id SOAP_TYPE_ns1__GetDataTPFileListByName */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetDataTPFileListByName() { ns1__GetDataTPFileListByName::soap_default(NULL); }
+	virtual ~ns1__GetDataTPFileListByName() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetDataTPFileListByNameResponse
+#define SOAP_TYPE_ns1__GetDataTPFileListByNameResponse (215)
+/* ns1:GetDataTPFileListByNameResponse */
+class SOAP_CMAC ns1__GetDataTPFileListByNameResponse : public xsd__anyType
+{
+public:
+	ns1__abxFileTpResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileTpResult */
+public:
+	virtual int soap_type() const { return 215; } /* = unique id SOAP_TYPE_ns1__GetDataTPFileListByNameResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetDataTPFileListByNameResponse() { ns1__GetDataTPFileListByNameResponse::soap_default(NULL); }
+	virtual ~ns1__GetDataTPFileListByNameResponse() { }
 };
 #endif
 
@@ -6172,49 +6175,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__CreateSDKTaskFieldMapping
-#define SOAP_TYPE_ns1__CreateSDKTaskFieldMapping (260)
-/* ns1:CreateSDKTaskFieldMapping */
-class SOAP_CMAC ns1__CreateSDKTaskFieldMapping : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	ns1__abxSDKTask *sdkTask;	/* optional element of type ns1:abxSDKTask */
-public:
-	virtual int soap_type() const { return 260; } /* = unique id SOAP_TYPE_ns1__CreateSDKTaskFieldMapping */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__CreateSDKTaskFieldMapping() { ns1__CreateSDKTaskFieldMapping::soap_default(NULL); }
-	virtual ~ns1__CreateSDKTaskFieldMapping() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__CreateSDKTaskFieldMappingResponse
-#define SOAP_TYPE_ns1__CreateSDKTaskFieldMappingResponse (261)
-/* ns1:CreateSDKTaskFieldMappingResponse */
-class SOAP_CMAC ns1__CreateSDKTaskFieldMappingResponse : public xsd__anyType
-{
-public:
-	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
-public:
-	virtual int soap_type() const { return 261; } /* = unique id SOAP_TYPE_ns1__CreateSDKTaskFieldMappingResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__CreateSDKTaskFieldMappingResponse() { ns1__CreateSDKTaskFieldMappingResponse::soap_default(NULL); }
-	virtual ~ns1__CreateSDKTaskFieldMappingResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__GetUserListActiveDirectory
-#define SOAP_TYPE_ns1__GetUserListActiveDirectory (262)
+#define SOAP_TYPE_ns1__GetUserListActiveDirectory (260)
 /* ns1:GetUserListActiveDirectory */
 class SOAP_CMAC ns1__GetUserListActiveDirectory : public xsd__anyType
 {
@@ -6222,7 +6184,7 @@ public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	ns1__abxUser *userField;	/* optional element of type ns1:abxUser */
 public:
-	virtual int soap_type() const { return 262; } /* = unique id SOAP_TYPE_ns1__GetUserListActiveDirectory */
+	virtual int soap_type() const { return 260; } /* = unique id SOAP_TYPE_ns1__GetUserListActiveDirectory */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -6235,14 +6197,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetUserListActiveDirectoryResponse
-#define SOAP_TYPE_ns1__GetUserListActiveDirectoryResponse (263)
+#define SOAP_TYPE_ns1__GetUserListActiveDirectoryResponse (261)
 /* ns1:GetUserListActiveDirectoryResponse */
 class SOAP_CMAC ns1__GetUserListActiveDirectoryResponse : public xsd__anyType
 {
 public:
 	ns1__abxUserListResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxUserListResult */
 public:
-	virtual int soap_type() const { return 263; } /* = unique id SOAP_TYPE_ns1__GetUserListActiveDirectoryResponse */
+	virtual int soap_type() const { return 261; } /* = unique id SOAP_TYPE_ns1__GetUserListActiveDirectoryResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -6251,6 +6213,47 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__GetUserListActiveDirectoryResponse() { ns1__GetUserListActiveDirectoryResponse::soap_default(NULL); }
 	virtual ~ns1__GetUserListActiveDirectoryResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__CreateSDKTaskFieldMapping
+#define SOAP_TYPE_ns1__CreateSDKTaskFieldMapping (262)
+/* ns1:CreateSDKTaskFieldMapping */
+class SOAP_CMAC ns1__CreateSDKTaskFieldMapping : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	ns1__abxSDKTask *sdkTask;	/* optional element of type ns1:abxSDKTask */
+public:
+	virtual int soap_type() const { return 262; } /* = unique id SOAP_TYPE_ns1__CreateSDKTaskFieldMapping */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__CreateSDKTaskFieldMapping() { ns1__CreateSDKTaskFieldMapping::soap_default(NULL); }
+	virtual ~ns1__CreateSDKTaskFieldMapping() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__CreateSDKTaskFieldMappingResponse
+#define SOAP_TYPE_ns1__CreateSDKTaskFieldMappingResponse (263)
+/* ns1:CreateSDKTaskFieldMappingResponse */
+class SOAP_CMAC ns1__CreateSDKTaskFieldMappingResponse : public xsd__anyType
+{
+public:
+	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
+public:
+	virtual int soap_type() const { return 263; } /* = unique id SOAP_TYPE_ns1__CreateSDKTaskFieldMappingResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__CreateSDKTaskFieldMappingResponse() { ns1__CreateSDKTaskFieldMappingResponse::soap_default(NULL); }
+	virtual ~ns1__CreateSDKTaskFieldMappingResponse() { }
 };
 #endif
 
@@ -6295,50 +6298,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetSchedulerTaskByTaskTypeId
-#define SOAP_TYPE_ns1__GetSchedulerTaskByTaskTypeId (266)
-/* ns1:GetSchedulerTaskByTaskTypeId */
-class SOAP_CMAC ns1__GetSchedulerTaskByTaskTypeId : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *taskType;	/* optional element of type xsd:string */
-	char *taskTypeId;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 266; } /* = unique id SOAP_TYPE_ns1__GetSchedulerTaskByTaskTypeId */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetSchedulerTaskByTaskTypeId() { ns1__GetSchedulerTaskByTaskTypeId::soap_default(NULL); }
-	virtual ~ns1__GetSchedulerTaskByTaskTypeId() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__GetSchedulerTaskByTaskTypeIdResponse
-#define SOAP_TYPE_ns1__GetSchedulerTaskByTaskTypeIdResponse (267)
-/* ns1:GetSchedulerTaskByTaskTypeIdResponse */
-class SOAP_CMAC ns1__GetSchedulerTaskByTaskTypeIdResponse : public xsd__anyType
-{
-public:
-	ns1__abxSchedulerResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSchedulerResult */
-public:
-	virtual int soap_type() const { return 267; } /* = unique id SOAP_TYPE_ns1__GetSchedulerTaskByTaskTypeIdResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetSchedulerTaskByTaskTypeIdResponse() { ns1__GetSchedulerTaskByTaskTypeIdResponse::soap_default(NULL); }
-	virtual ~ns1__GetSchedulerTaskByTaskTypeIdResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__DownloadUSGetChunk
-#define SOAP_TYPE_ns1__DownloadUSGetChunk (268)
+#define SOAP_TYPE_ns1__DownloadUSGetChunk (266)
 /* ns1:DownloadUSGetChunk */
 class SOAP_CMAC ns1__DownloadUSGetChunk : public xsd__anyType
 {
@@ -6348,7 +6309,7 @@ public:
 	char *dChunk;	/* optional element of type xsd:string */
 	char *oset;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 268; } /* = unique id SOAP_TYPE_ns1__DownloadUSGetChunk */
+	virtual int soap_type() const { return 266; } /* = unique id SOAP_TYPE_ns1__DownloadUSGetChunk */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -6361,14 +6322,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__DownloadUSGetChunkResponse
-#define SOAP_TYPE_ns1__DownloadUSGetChunkResponse (269)
+#define SOAP_TYPE_ns1__DownloadUSGetChunkResponse (267)
 /* ns1:DownloadUSGetChunkResponse */
 class SOAP_CMAC ns1__DownloadUSGetChunkResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 269; } /* = unique id SOAP_TYPE_ns1__DownloadUSGetChunkResponse */
+	virtual int soap_type() const { return 267; } /* = unique id SOAP_TYPE_ns1__DownloadUSGetChunkResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -6377,6 +6338,48 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__DownloadUSGetChunkResponse() { ns1__DownloadUSGetChunkResponse::soap_default(NULL); }
 	virtual ~ns1__DownloadUSGetChunkResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetSchedulerTaskByTaskTypeId
+#define SOAP_TYPE_ns1__GetSchedulerTaskByTaskTypeId (268)
+/* ns1:GetSchedulerTaskByTaskTypeId */
+class SOAP_CMAC ns1__GetSchedulerTaskByTaskTypeId : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *taskType;	/* optional element of type xsd:string */
+	char *taskTypeId;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 268; } /* = unique id SOAP_TYPE_ns1__GetSchedulerTaskByTaskTypeId */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetSchedulerTaskByTaskTypeId() { ns1__GetSchedulerTaskByTaskTypeId::soap_default(NULL); }
+	virtual ~ns1__GetSchedulerTaskByTaskTypeId() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetSchedulerTaskByTaskTypeIdResponse
+#define SOAP_TYPE_ns1__GetSchedulerTaskByTaskTypeIdResponse (269)
+/* ns1:GetSchedulerTaskByTaskTypeIdResponse */
+class SOAP_CMAC ns1__GetSchedulerTaskByTaskTypeIdResponse : public xsd__anyType
+{
+public:
+	ns1__abxSchedulerResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSchedulerResult */
+public:
+	virtual int soap_type() const { return 269; } /* = unique id SOAP_TYPE_ns1__GetSchedulerTaskByTaskTypeIdResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetSchedulerTaskByTaskTypeIdResponse() { ns1__GetSchedulerTaskByTaskTypeIdResponse::soap_default(NULL); }
+	virtual ~ns1__GetSchedulerTaskByTaskTypeIdResponse() { }
 };
 #endif
 
@@ -6422,48 +6425,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetDynorgTypeList
-#define SOAP_TYPE_ns1__GetDynorgTypeList (272)
-/* ns1:GetDynorgTypeList */
-class SOAP_CMAC ns1__GetDynorgTypeList : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-public:
-	virtual int soap_type() const { return 272; } /* = unique id SOAP_TYPE_ns1__GetDynorgTypeList */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetDynorgTypeList() { ns1__GetDynorgTypeList::soap_default(NULL); }
-	virtual ~ns1__GetDynorgTypeList() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__GetDynorgTypeListResponse
-#define SOAP_TYPE_ns1__GetDynorgTypeListResponse (273)
-/* ns1:GetDynorgTypeListResponse */
-class SOAP_CMAC ns1__GetDynorgTypeListResponse : public xsd__anyType
-{
-public:
-	ns3__abxDynorgTypeResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns3:abxDynorgTypeResult */
-public:
-	virtual int soap_type() const { return 273; } /* = unique id SOAP_TYPE_ns1__GetDynorgTypeListResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetDynorgTypeListResponse() { ns1__GetDynorgTypeListResponse::soap_default(NULL); }
-	virtual ~ns1__GetDynorgTypeListResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__canDeleteRaccoglitore
-#define SOAP_TYPE_ns1__canDeleteRaccoglitore (274)
+#define SOAP_TYPE_ns1__canDeleteRaccoglitore (272)
 /* ns1:canDeleteRaccoglitore */
 class SOAP_CMAC ns1__canDeleteRaccoglitore : public xsd__anyType
 {
@@ -6472,7 +6435,7 @@ public:
 	char *TemplateName;	/* optional element of type xsd:string */
 	char *ContainerName;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 274; } /* = unique id SOAP_TYPE_ns1__canDeleteRaccoglitore */
+	virtual int soap_type() const { return 272; } /* = unique id SOAP_TYPE_ns1__canDeleteRaccoglitore */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -6485,14 +6448,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__canDeleteRaccoglitoreResponse
-#define SOAP_TYPE_ns1__canDeleteRaccoglitoreResponse (275)
+#define SOAP_TYPE_ns1__canDeleteRaccoglitoreResponse (273)
 /* ns1:canDeleteRaccoglitoreResponse */
 class SOAP_CMAC ns1__canDeleteRaccoglitoreResponse : public xsd__anyType
 {
 public:
 	ns4__abxCan *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns4:abxCan */
 public:
-	virtual int soap_type() const { return 275; } /* = unique id SOAP_TYPE_ns1__canDeleteRaccoglitoreResponse */
+	virtual int soap_type() const { return 273; } /* = unique id SOAP_TYPE_ns1__canDeleteRaccoglitoreResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -6501,6 +6464,46 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__canDeleteRaccoglitoreResponse() { ns1__canDeleteRaccoglitoreResponse::soap_default(NULL); }
 	virtual ~ns1__canDeleteRaccoglitoreResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetDynorgTypeList
+#define SOAP_TYPE_ns1__GetDynorgTypeList (274)
+/* ns1:GetDynorgTypeList */
+class SOAP_CMAC ns1__GetDynorgTypeList : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+public:
+	virtual int soap_type() const { return 274; } /* = unique id SOAP_TYPE_ns1__GetDynorgTypeList */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetDynorgTypeList() { ns1__GetDynorgTypeList::soap_default(NULL); }
+	virtual ~ns1__GetDynorgTypeList() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetDynorgTypeListResponse
+#define SOAP_TYPE_ns1__GetDynorgTypeListResponse (275)
+/* ns1:GetDynorgTypeListResponse */
+class SOAP_CMAC ns1__GetDynorgTypeListResponse : public xsd__anyType
+{
+public:
+	ns3__abxDynorgTypeResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns3:abxDynorgTypeResult */
+public:
+	virtual int soap_type() const { return 275; } /* = unique id SOAP_TYPE_ns1__GetDynorgTypeListResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetDynorgTypeListResponse() { ns1__GetDynorgTypeListResponse::soap_default(NULL); }
+	virtual ~ns1__GetDynorgTypeListResponse() { }
 };
 #endif
 
@@ -7105,48 +7108,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetSDKTasks
-#define SOAP_TYPE_ns1__GetSDKTasks (303)
-/* ns1:GetSDKTasks */
-class SOAP_CMAC ns1__GetSDKTasks : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-public:
-	virtual int soap_type() const { return 303; } /* = unique id SOAP_TYPE_ns1__GetSDKTasks */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetSDKTasks() { ns1__GetSDKTasks::soap_default(NULL); }
-	virtual ~ns1__GetSDKTasks() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__GetSDKTasksResponse
-#define SOAP_TYPE_ns1__GetSDKTasksResponse (304)
-/* ns1:GetSDKTasksResponse */
-class SOAP_CMAC ns1__GetSDKTasksResponse : public xsd__anyType
-{
-public:
-	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
-public:
-	virtual int soap_type() const { return 304; } /* = unique id SOAP_TYPE_ns1__GetSDKTasksResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetSDKTasksResponse() { ns1__GetSDKTasksResponse::soap_default(NULL); }
-	virtual ~ns1__GetSDKTasksResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__GetContSignByUser
-#define SOAP_TYPE_ns1__GetContSignByUser (305)
+#define SOAP_TYPE_ns1__GetContSignByUser (303)
 /* ns1:GetContSignByUser */
 class SOAP_CMAC ns1__GetContSignByUser : public xsd__anyType
 {
@@ -7155,7 +7118,7 @@ public:
 	char *instanceName;	/* optional element of type xsd:string */
 	char *userName;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 305; } /* = unique id SOAP_TYPE_ns1__GetContSignByUser */
+	virtual int soap_type() const { return 303; } /* = unique id SOAP_TYPE_ns1__GetContSignByUser */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -7168,14 +7131,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetContSignByUserResponse
-#define SOAP_TYPE_ns1__GetContSignByUserResponse (306)
+#define SOAP_TYPE_ns1__GetContSignByUserResponse (304)
 /* ns1:GetContSignByUserResponse */
 class SOAP_CMAC ns1__GetContSignByUserResponse : public xsd__anyType
 {
 public:
 	ns1__abxWorkflowResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxWorkflowResult */
 public:
-	virtual int soap_type() const { return 306; } /* = unique id SOAP_TYPE_ns1__GetContSignByUserResponse */
+	virtual int soap_type() const { return 304; } /* = unique id SOAP_TYPE_ns1__GetContSignByUserResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -7187,52 +7150,48 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__Fk_USCOREcreate
-#define SOAP_TYPE_ns1__Fk_USCOREcreate (307)
-/* ns1:Fk_create */
-class SOAP_CMAC ns1__Fk_USCOREcreate : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__GetSDKTasks
+#define SOAP_TYPE_ns1__GetSDKTasks (305)
+/* ns1:GetSDKTasks */
+class SOAP_CMAC ns1__GetSDKTasks : public xsd__anyType
 {
 public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *fieldName;	/* optional element of type xsd:string */
-	ns1__abxFK *fkp;	/* optional element of type ns1:abxFK */
-	bool optionGetCache;	/* required element of type xsd:boolean */
-	bool optionSetDesc;	/* required element of type xsd:boolean */
 public:
-	virtual int soap_type() const { return 307; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREcreate */
+	virtual int soap_type() const { return 305; } /* = unique id SOAP_TYPE_ns1__GetSDKTasks */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__Fk_USCOREcreate() { ns1__Fk_USCOREcreate::soap_default(NULL); }
-	virtual ~ns1__Fk_USCOREcreate() { }
+	         ns1__GetSDKTasks() { ns1__GetSDKTasks::soap_default(NULL); }
+	virtual ~ns1__GetSDKTasks() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__Fk_USCOREcreateResponse
-#define SOAP_TYPE_ns1__Fk_USCOREcreateResponse (308)
-/* ns1:Fk_createResponse */
-class SOAP_CMAC ns1__Fk_USCOREcreateResponse : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__GetSDKTasksResponse
+#define SOAP_TYPE_ns1__GetSDKTasksResponse (306)
+/* ns1:GetSDKTasksResponse */
+class SOAP_CMAC ns1__GetSDKTasksResponse : public xsd__anyType
 {
 public:
-	ns1__abxFKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFKResult */
+	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
 public:
-	virtual int soap_type() const { return 308; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREcreateResponse */
+	virtual int soap_type() const { return 306; } /* = unique id SOAP_TYPE_ns1__GetSDKTasksResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__Fk_USCOREcreateResponse() { ns1__Fk_USCOREcreateResponse::soap_default(NULL); }
-	virtual ~ns1__Fk_USCOREcreateResponse() { }
+	         ns1__GetSDKTasksResponse() { ns1__GetSDKTasksResponse::soap_default(NULL); }
+	virtual ~ns1__GetSDKTasksResponse() { }
 };
 #endif
 
 #ifndef SOAP_TYPE_ns1__Fk_USCOREgetColumnsName
-#define SOAP_TYPE_ns1__Fk_USCOREgetColumnsName (309)
+#define SOAP_TYPE_ns1__Fk_USCOREgetColumnsName (307)
 /* ns1:Fk_getColumnsName */
 class SOAP_CMAC ns1__Fk_USCOREgetColumnsName : public xsd__anyType
 {
@@ -7240,7 +7199,7 @@ public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	ns1__abxFK *fk;	/* optional element of type ns1:abxFK */
 public:
-	virtual int soap_type() const { return 309; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREgetColumnsName */
+	virtual int soap_type() const { return 307; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREgetColumnsName */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -7253,14 +7212,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__Fk_USCOREgetColumnsNameResponse
-#define SOAP_TYPE_ns1__Fk_USCOREgetColumnsNameResponse (310)
+#define SOAP_TYPE_ns1__Fk_USCOREgetColumnsNameResponse (308)
 /* ns1:Fk_getColumnsNameResponse */
 class SOAP_CMAC ns1__Fk_USCOREgetColumnsNameResponse : public xsd__anyType
 {
 public:
 	ns1__abxFKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFKResult */
 public:
-	virtual int soap_type() const { return 310; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREgetColumnsNameResponse */
+	virtual int soap_type() const { return 308; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREgetColumnsNameResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -7269,6 +7228,50 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__Fk_USCOREgetColumnsNameResponse() { ns1__Fk_USCOREgetColumnsNameResponse::soap_default(NULL); }
 	virtual ~ns1__Fk_USCOREgetColumnsNameResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__Fk_USCOREcreate
+#define SOAP_TYPE_ns1__Fk_USCOREcreate (309)
+/* ns1:Fk_create */
+class SOAP_CMAC ns1__Fk_USCOREcreate : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *fieldName;	/* optional element of type xsd:string */
+	ns1__abxFK *fkp;	/* optional element of type ns1:abxFK */
+	bool optionGetCache;	/* required element of type xsd:boolean */
+	bool optionSetDesc;	/* required element of type xsd:boolean */
+public:
+	virtual int soap_type() const { return 309; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREcreate */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__Fk_USCOREcreate() { ns1__Fk_USCOREcreate::soap_default(NULL); }
+	virtual ~ns1__Fk_USCOREcreate() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__Fk_USCOREcreateResponse
+#define SOAP_TYPE_ns1__Fk_USCOREcreateResponse (310)
+/* ns1:Fk_createResponse */
+class SOAP_CMAC ns1__Fk_USCOREcreateResponse : public xsd__anyType
+{
+public:
+	ns1__abxFKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFKResult */
+public:
+	virtual int soap_type() const { return 310; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREcreateResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__Fk_USCOREcreateResponse() { ns1__Fk_USCOREcreateResponse::soap_default(NULL); }
+	virtual ~ns1__Fk_USCOREcreateResponse() { }
 };
 #endif
 
@@ -7480,50 +7483,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__DownloadTPFile
-#define SOAP_TYPE_ns1__DownloadTPFile (321)
-/* ns1:DownloadTPFile */
-class SOAP_CMAC ns1__DownloadTPFile : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *attachmentId;	/* optional element of type xsd:string */
-	char *dChunk;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 321; } /* = unique id SOAP_TYPE_ns1__DownloadTPFile */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__DownloadTPFile() { ns1__DownloadTPFile::soap_default(NULL); }
-	virtual ~ns1__DownloadTPFile() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__DownloadTPFileResponse
-#define SOAP_TYPE_ns1__DownloadTPFileResponse (322)
-/* ns1:DownloadTPFileResponse */
-class SOAP_CMAC ns1__DownloadTPFileResponse : public xsd__anyType
-{
-public:
-	ns1__abxFileTpResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileTpResult */
-public:
-	virtual int soap_type() const { return 322; } /* = unique id SOAP_TYPE_ns1__DownloadTPFileResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__DownloadTPFileResponse() { ns1__DownloadTPFileResponse::soap_default(NULL); }
-	virtual ~ns1__DownloadTPFileResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__SetInstanceReplication
-#define SOAP_TYPE_ns1__SetInstanceReplication (323)
+#define SOAP_TYPE_ns1__SetInstanceReplication (321)
 /* ns1:SetInstanceReplication */
 class SOAP_CMAC ns1__SetInstanceReplication : public xsd__anyType
 {
@@ -7532,7 +7493,7 @@ public:
 	char *instanceName;	/* optional element of type xsd:string */
 	class ns1__abxReplicationList *replicationList;	/* optional element of type ns1:abxReplicationList */
 public:
-	virtual int soap_type() const { return 323; } /* = unique id SOAP_TYPE_ns1__SetInstanceReplication */
+	virtual int soap_type() const { return 321; } /* = unique id SOAP_TYPE_ns1__SetInstanceReplication */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -7545,7 +7506,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxReplicationList
-#define SOAP_TYPE_ns1__abxReplicationList (324)
+#define SOAP_TYPE_ns1__abxReplicationList (322)
 /* ns1:abxReplicationList */
 class SOAP_CMAC ns1__abxReplicationList : public xsd__anyType
 {
@@ -7553,7 +7514,7 @@ public:
 	int __sizedataList;	/* sequence of elements <dataList> */
 	class ns1__abxArchiBoxInDomain **dataList;	/* required element of type ns1:abxArchiBoxInDomain */
 public:
-	virtual int soap_type() const { return 324; } /* = unique id SOAP_TYPE_ns1__abxReplicationList */
+	virtual int soap_type() const { return 322; } /* = unique id SOAP_TYPE_ns1__abxReplicationList */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -7566,7 +7527,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxArchiBoxInDomain
-#define SOAP_TYPE_ns1__abxArchiBoxInDomain (325)
+#define SOAP_TYPE_ns1__abxArchiBoxInDomain (323)
 /* ns1:abxArchiBoxInDomain */
 class SOAP_CMAC ns1__abxArchiBoxInDomain : public xsd__anyType
 {
@@ -7582,7 +7543,7 @@ public:
 	char *status;	/* required element of type xsd:string */
 	int requestId;	/* required element of type xsd:int */
 public:
-	virtual int soap_type() const { return 325; } /* = unique id SOAP_TYPE_ns1__abxArchiBoxInDomain */
+	virtual int soap_type() const { return 323; } /* = unique id SOAP_TYPE_ns1__abxArchiBoxInDomain */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -7595,14 +7556,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__SetInstanceReplicationResponse
-#define SOAP_TYPE_ns1__SetInstanceReplicationResponse (326)
+#define SOAP_TYPE_ns1__SetInstanceReplicationResponse (324)
 /* ns1:SetInstanceReplicationResponse */
 class SOAP_CMAC ns1__SetInstanceReplicationResponse : public xsd__anyType
 {
 public:
 	class ns1__abxReplicationResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxReplicationResult */
 public:
-	virtual int soap_type() const { return 326; } /* = unique id SOAP_TYPE_ns1__SetInstanceReplicationResponse */
+	virtual int soap_type() const { return 324; } /* = unique id SOAP_TYPE_ns1__SetInstanceReplicationResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -7615,7 +7576,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxReplicationResult
-#define SOAP_TYPE_ns1__abxReplicationResult (327)
+#define SOAP_TYPE_ns1__abxReplicationResult (325)
 /* ns1:abxReplicationResult */
 class SOAP_CMAC ns1__abxReplicationResult : public xsd__anyType
 {
@@ -7623,7 +7584,7 @@ public:
 	unsigned int result;	/* required element of type xsd:unsignedInt */
 	ns1__abxReplicationList *list;	/* required element of type ns1:abxReplicationList */
 public:
-	virtual int soap_type() const { return 327; } /* = unique id SOAP_TYPE_ns1__abxReplicationResult */
+	virtual int soap_type() const { return 325; } /* = unique id SOAP_TYPE_ns1__abxReplicationResult */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -7632,6 +7593,48 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__abxReplicationResult() { ns1__abxReplicationResult::soap_default(NULL); }
 	virtual ~ns1__abxReplicationResult() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__DownloadTPFile
+#define SOAP_TYPE_ns1__DownloadTPFile (326)
+/* ns1:DownloadTPFile */
+class SOAP_CMAC ns1__DownloadTPFile : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *attachmentId;	/* optional element of type xsd:string */
+	char *dChunk;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 326; } /* = unique id SOAP_TYPE_ns1__DownloadTPFile */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__DownloadTPFile() { ns1__DownloadTPFile::soap_default(NULL); }
+	virtual ~ns1__DownloadTPFile() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__DownloadTPFileResponse
+#define SOAP_TYPE_ns1__DownloadTPFileResponse (327)
+/* ns1:DownloadTPFileResponse */
+class SOAP_CMAC ns1__DownloadTPFileResponse : public xsd__anyType
+{
+public:
+	ns1__abxFileTpResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileTpResult */
+public:
+	virtual int soap_type() const { return 327; } /* = unique id SOAP_TYPE_ns1__DownloadTPFileResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__DownloadTPFileResponse() { ns1__DownloadTPFileResponse::soap_default(NULL); }
+	virtual ~ns1__DownloadTPFileResponse() { }
 };
 #endif
 
@@ -7846,48 +7849,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetSDKRules
-#define SOAP_TYPE_ns1__GetSDKRules (338)
-/* ns1:GetSDKRules */
-class SOAP_CMAC ns1__GetSDKRules : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-public:
-	virtual int soap_type() const { return 338; } /* = unique id SOAP_TYPE_ns1__GetSDKRules */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetSDKRules() { ns1__GetSDKRules::soap_default(NULL); }
-	virtual ~ns1__GetSDKRules() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__GetSDKRulesResponse
-#define SOAP_TYPE_ns1__GetSDKRulesResponse (339)
-/* ns1:GetSDKRulesResponse */
-class SOAP_CMAC ns1__GetSDKRulesResponse : public xsd__anyType
-{
-public:
-	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
-public:
-	virtual int soap_type() const { return 339; } /* = unique id SOAP_TYPE_ns1__GetSDKRulesResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetSDKRulesResponse() { ns1__GetSDKRulesResponse::soap_default(NULL); }
-	virtual ~ns1__GetSDKRulesResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__GetTranslationByRangeLabelCode
-#define SOAP_TYPE_ns1__GetTranslationByRangeLabelCode (340)
+#define SOAP_TYPE_ns1__GetTranslationByRangeLabelCode (338)
 /* ns1:GetTranslationByRangeLabelCode */
 class SOAP_CMAC ns1__GetTranslationByRangeLabelCode : public xsd__anyType
 {
@@ -7896,7 +7859,7 @@ public:
 	char *exLabelCodeFrom;	/* optional element of type xsd:string */
 	char *exLabelCodeTo;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 340; } /* = unique id SOAP_TYPE_ns1__GetTranslationByRangeLabelCode */
+	virtual int soap_type() const { return 338; } /* = unique id SOAP_TYPE_ns1__GetTranslationByRangeLabelCode */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -7909,14 +7872,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetTranslationByRangeLabelCodeResponse
-#define SOAP_TYPE_ns1__GetTranslationByRangeLabelCodeResponse (341)
+#define SOAP_TYPE_ns1__GetTranslationByRangeLabelCodeResponse (339)
 /* ns1:GetTranslationByRangeLabelCodeResponse */
 class SOAP_CMAC ns1__GetTranslationByRangeLabelCodeResponse : public xsd__anyType
 {
 public:
 	class ns1__abxTranslationResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxTranslationResult */
 public:
-	virtual int soap_type() const { return 341; } /* = unique id SOAP_TYPE_ns1__GetTranslationByRangeLabelCodeResponse */
+	virtual int soap_type() const { return 339; } /* = unique id SOAP_TYPE_ns1__GetTranslationByRangeLabelCodeResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -7929,7 +7892,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxTranslationResult
-#define SOAP_TYPE_ns1__abxTranslationResult (342)
+#define SOAP_TYPE_ns1__abxTranslationResult (340)
 /* ns1:abxTranslationResult */
 class SOAP_CMAC ns1__abxTranslationResult : public xsd__anyType
 {
@@ -7937,7 +7900,7 @@ public:
 	unsigned int result;	/* required element of type xsd:unsignedInt */
 	class ns1__abxTranslationList *list;	/* required element of type ns1:abxTranslationList */
 public:
-	virtual int soap_type() const { return 342; } /* = unique id SOAP_TYPE_ns1__abxTranslationResult */
+	virtual int soap_type() const { return 340; } /* = unique id SOAP_TYPE_ns1__abxTranslationResult */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -7950,7 +7913,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxTranslationList
-#define SOAP_TYPE_ns1__abxTranslationList (343)
+#define SOAP_TYPE_ns1__abxTranslationList (341)
 /* ns1:abxTranslationList */
 class SOAP_CMAC ns1__abxTranslationList : public xsd__anyType
 {
@@ -7958,7 +7921,7 @@ public:
 	int __sizedataList;	/* sequence of elements <dataList> */
 	ns1__abxTranslation **dataList;	/* required element of type ns1:abxTranslation */
 public:
-	virtual int soap_type() const { return 343; } /* = unique id SOAP_TYPE_ns1__abxTranslationList */
+	virtual int soap_type() const { return 341; } /* = unique id SOAP_TYPE_ns1__abxTranslationList */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -7971,7 +7934,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetCountDocumentLinks
-#define SOAP_TYPE_ns1__GetCountDocumentLinks (344)
+#define SOAP_TYPE_ns1__GetCountDocumentLinks (342)
 /* ns1:GetCountDocumentLinks */
 class SOAP_CMAC ns1__GetCountDocumentLinks : public xsd__anyType
 {
@@ -7981,7 +7944,7 @@ public:
 	char *dataId;	/* optional element of type xsd:string */
 	char *linkTypeName;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 344; } /* = unique id SOAP_TYPE_ns1__GetCountDocumentLinks */
+	virtual int soap_type() const { return 342; } /* = unique id SOAP_TYPE_ns1__GetCountDocumentLinks */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -7994,14 +7957,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetCountDocumentLinksResponse
-#define SOAP_TYPE_ns1__GetCountDocumentLinksResponse (345)
+#define SOAP_TYPE_ns1__GetCountDocumentLinksResponse (343)
 /* ns1:GetCountDocumentLinksResponse */
 class SOAP_CMAC ns1__GetCountDocumentLinksResponse : public xsd__anyType
 {
 public:
 	ns1__abxLinkResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxLinkResult */
 public:
-	virtual int soap_type() const { return 345; } /* = unique id SOAP_TYPE_ns1__GetCountDocumentLinksResponse */
+	virtual int soap_type() const { return 343; } /* = unique id SOAP_TYPE_ns1__GetCountDocumentLinksResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -8010,6 +7973,46 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__GetCountDocumentLinksResponse() { ns1__GetCountDocumentLinksResponse::soap_default(NULL); }
 	virtual ~ns1__GetCountDocumentLinksResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetSDKRules
+#define SOAP_TYPE_ns1__GetSDKRules (344)
+/* ns1:GetSDKRules */
+class SOAP_CMAC ns1__GetSDKRules : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+public:
+	virtual int soap_type() const { return 344; } /* = unique id SOAP_TYPE_ns1__GetSDKRules */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetSDKRules() { ns1__GetSDKRules::soap_default(NULL); }
+	virtual ~ns1__GetSDKRules() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetSDKRulesResponse
+#define SOAP_TYPE_ns1__GetSDKRulesResponse (345)
+/* ns1:GetSDKRulesResponse */
+class SOAP_CMAC ns1__GetSDKRulesResponse : public xsd__anyType
+{
+public:
+	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
+public:
+	virtual int soap_type() const { return 345; } /* = unique id SOAP_TYPE_ns1__GetSDKRulesResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetSDKRulesResponse() { ns1__GetSDKRulesResponse::soap_default(NULL); }
+	virtual ~ns1__GetSDKRulesResponse() { }
 };
 #endif
 
@@ -8056,69 +8059,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__Ping
-#define SOAP_TYPE_ns1__Ping (348)
-/* ns1:Ping */
-class SOAP_CMAC ns1__Ping : public xsd__anyType
-{
-public:
-	char *In;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 348; } /* = unique id SOAP_TYPE_ns1__Ping */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__Ping() { ns1__Ping::soap_default(NULL); }
-	virtual ~ns1__Ping() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__PingResponse
-#define SOAP_TYPE_ns1__PingResponse (349)
-/* ns1:PingResponse */
-class SOAP_CMAC ns1__PingResponse : public xsd__anyType
-{
-public:
-	class ns1__AbxPingResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:AbxPingResult */
-public:
-	virtual int soap_type() const { return 349; } /* = unique id SOAP_TYPE_ns1__PingResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__PingResponse() { ns1__PingResponse::soap_default(NULL); }
-	virtual ~ns1__PingResponse() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__AbxPingResult
-#define SOAP_TYPE_ns1__AbxPingResult (350)
-/* ns1:AbxPingResult */
-class SOAP_CMAC ns1__AbxPingResult : public xsd__anyType
-{
-public:
-	unsigned int result;	/* required element of type xsd:unsignedInt */
-	char *value;	/* required element of type xsd:string */
-public:
-	virtual int soap_type() const { return 350; } /* = unique id SOAP_TYPE_ns1__AbxPingResult */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__AbxPingResult() { ns1__AbxPingResult::soap_default(NULL); }
-	virtual ~ns1__AbxPingResult() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__GetUploadDetailByFilecode
-#define SOAP_TYPE_ns1__GetUploadDetailByFilecode (351)
+#define SOAP_TYPE_ns1__GetUploadDetailByFilecode (348)
 /* ns1:GetUploadDetailByFilecode */
 class SOAP_CMAC ns1__GetUploadDetailByFilecode : public xsd__anyType
 {
@@ -8126,7 +8068,7 @@ public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	char *fileCode;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 351; } /* = unique id SOAP_TYPE_ns1__GetUploadDetailByFilecode */
+	virtual int soap_type() const { return 348; } /* = unique id SOAP_TYPE_ns1__GetUploadDetailByFilecode */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -8139,14 +8081,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetUploadDetailByFilecodeResponse
-#define SOAP_TYPE_ns1__GetUploadDetailByFilecodeResponse (352)
+#define SOAP_TYPE_ns1__GetUploadDetailByFilecodeResponse (349)
 /* ns1:GetUploadDetailByFilecodeResponse */
 class SOAP_CMAC ns1__GetUploadDetailByFilecodeResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 352; } /* = unique id SOAP_TYPE_ns1__GetUploadDetailByFilecodeResponse */
+	virtual int soap_type() const { return 349; } /* = unique id SOAP_TYPE_ns1__GetUploadDetailByFilecodeResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -8155,6 +8097,67 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__GetUploadDetailByFilecodeResponse() { ns1__GetUploadDetailByFilecodeResponse::soap_default(NULL); }
 	virtual ~ns1__GetUploadDetailByFilecodeResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__Ping
+#define SOAP_TYPE_ns1__Ping (350)
+/* ns1:Ping */
+class SOAP_CMAC ns1__Ping : public xsd__anyType
+{
+public:
+	char *In;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 350; } /* = unique id SOAP_TYPE_ns1__Ping */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__Ping() { ns1__Ping::soap_default(NULL); }
+	virtual ~ns1__Ping() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__PingResponse
+#define SOAP_TYPE_ns1__PingResponse (351)
+/* ns1:PingResponse */
+class SOAP_CMAC ns1__PingResponse : public xsd__anyType
+{
+public:
+	class ns1__AbxPingResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:AbxPingResult */
+public:
+	virtual int soap_type() const { return 351; } /* = unique id SOAP_TYPE_ns1__PingResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__PingResponse() { ns1__PingResponse::soap_default(NULL); }
+	virtual ~ns1__PingResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__AbxPingResult
+#define SOAP_TYPE_ns1__AbxPingResult (352)
+/* ns1:AbxPingResult */
+class SOAP_CMAC ns1__AbxPingResult : public xsd__anyType
+{
+public:
+	unsigned int result;	/* required element of type xsd:unsignedInt */
+	char *value;	/* required element of type xsd:string */
+public:
+	virtual int soap_type() const { return 352; } /* = unique id SOAP_TYPE_ns1__AbxPingResult */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__AbxPingResult() { ns1__AbxPingResult::soap_default(NULL); }
+	virtual ~ns1__AbxPingResult() { }
 };
 #endif
 
@@ -8792,50 +8795,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__DownloadWFFile
-#define SOAP_TYPE_ns1__DownloadWFFile (382)
-/* ns1:DownloadWFFile */
-class SOAP_CMAC ns1__DownloadWFFile : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *attachmentId;	/* optional element of type xsd:string */
-	char *dChunk;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 382; } /* = unique id SOAP_TYPE_ns1__DownloadWFFile */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__DownloadWFFile() { ns1__DownloadWFFile::soap_default(NULL); }
-	virtual ~ns1__DownloadWFFile() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__DownloadWFFileResponse
-#define SOAP_TYPE_ns1__DownloadWFFileResponse (383)
-/* ns1:DownloadWFFileResponse */
-class SOAP_CMAC ns1__DownloadWFFileResponse : public xsd__anyType
-{
-public:
-	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
-public:
-	virtual int soap_type() const { return 383; } /* = unique id SOAP_TYPE_ns1__DownloadWFFileResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__DownloadWFFileResponse() { ns1__DownloadWFFileResponse::soap_default(NULL); }
-	virtual ~ns1__DownloadWFFileResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__EditProtocol
-#define SOAP_TYPE_ns1__EditProtocol (384)
+#define SOAP_TYPE_ns1__EditProtocol (382)
 /* ns1:EditProtocol */
 class SOAP_CMAC ns1__EditProtocol : public xsd__anyType
 {
@@ -8843,7 +8804,7 @@ public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	ns2__abxProtocol *protocolData;	/* optional element of type ns2:abxProtocol */
 public:
-	virtual int soap_type() const { return 384; } /* = unique id SOAP_TYPE_ns1__EditProtocol */
+	virtual int soap_type() const { return 382; } /* = unique id SOAP_TYPE_ns1__EditProtocol */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -8856,14 +8817,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__EditProtocolResponse
-#define SOAP_TYPE_ns1__EditProtocolResponse (385)
+#define SOAP_TYPE_ns1__EditProtocolResponse (383)
 /* ns1:EditProtocolResponse */
 class SOAP_CMAC ns1__EditProtocolResponse : public xsd__anyType
 {
 public:
 	ns2__abxProtocolResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns2:abxProtocolResult */
 public:
-	virtual int soap_type() const { return 385; } /* = unique id SOAP_TYPE_ns1__EditProtocolResponse */
+	virtual int soap_type() const { return 383; } /* = unique id SOAP_TYPE_ns1__EditProtocolResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -8875,44 +8836,89 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetDataTPFileDetail
-#define SOAP_TYPE_ns1__GetDataTPFileDetail (386)
-/* ns1:GetDataTPFileDetail */
-class SOAP_CMAC ns1__GetDataTPFileDetail : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__DownloadWFFile
+#define SOAP_TYPE_ns1__DownloadWFFile (384)
+/* ns1:DownloadWFFile */
+class SOAP_CMAC ns1__DownloadWFFile : public xsd__anyType
 {
 public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	char *attachmentId;	/* optional element of type xsd:string */
+	char *dChunk;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 386; } /* = unique id SOAP_TYPE_ns1__GetDataTPFileDetail */
+	virtual int soap_type() const { return 384; } /* = unique id SOAP_TYPE_ns1__DownloadWFFile */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetDataTPFileDetail() { ns1__GetDataTPFileDetail::soap_default(NULL); }
-	virtual ~ns1__GetDataTPFileDetail() { }
+	         ns1__DownloadWFFile() { ns1__DownloadWFFile::soap_default(NULL); }
+	virtual ~ns1__DownloadWFFile() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetDataTPFileDetailResponse
-#define SOAP_TYPE_ns1__GetDataTPFileDetailResponse (387)
-/* ns1:GetDataTPFileDetailResponse */
-class SOAP_CMAC ns1__GetDataTPFileDetailResponse : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__DownloadWFFileResponse
+#define SOAP_TYPE_ns1__DownloadWFFileResponse (385)
+/* ns1:DownloadWFFileResponse */
+class SOAP_CMAC ns1__DownloadWFFileResponse : public xsd__anyType
 {
 public:
-	ns1__abxFileTpResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileTpResult */
+	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 387; } /* = unique id SOAP_TYPE_ns1__GetDataTPFileDetailResponse */
+	virtual int soap_type() const { return 385; } /* = unique id SOAP_TYPE_ns1__DownloadWFFileResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetDataTPFileDetailResponse() { ns1__GetDataTPFileDetailResponse::soap_default(NULL); }
-	virtual ~ns1__GetDataTPFileDetailResponse() { }
+	         ns1__DownloadWFFileResponse() { ns1__DownloadWFFileResponse::soap_default(NULL); }
+	virtual ~ns1__DownloadWFFileResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__InsertLinkContainerToContainer
+#define SOAP_TYPE_ns1__InsertLinkContainerToContainer (386)
+/* ns1:InsertLinkContainerToContainer */
+class SOAP_CMAC ns1__InsertLinkContainerToContainer : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *linkTypeName;	/* optional element of type xsd:string */
+	char *instanceNameFrom;	/* optional element of type xsd:string */
+	char *instanceNameTo;	/* optional element of type xsd:string */
+	char *note;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 386; } /* = unique id SOAP_TYPE_ns1__InsertLinkContainerToContainer */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__InsertLinkContainerToContainer() { ns1__InsertLinkContainerToContainer::soap_default(NULL); }
+	virtual ~ns1__InsertLinkContainerToContainer() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__InsertLinkContainerToContainerResponse
+#define SOAP_TYPE_ns1__InsertLinkContainerToContainerResponse (387)
+/* ns1:InsertLinkContainerToContainerResponse */
+class SOAP_CMAC ns1__InsertLinkContainerToContainerResponse : public xsd__anyType
+{
+public:
+	ns1__abxLinkResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxLinkResult */
+public:
+	virtual int soap_type() const { return 387; } /* = unique id SOAP_TYPE_ns1__InsertLinkContainerToContainerResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__InsertLinkContainerToContainerResponse() { ns1__InsertLinkContainerToContainerResponse::soap_default(NULL); }
+	virtual ~ns1__InsertLinkContainerToContainerResponse() { }
 };
 #endif
 
@@ -8957,47 +8963,44 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__InsertLinkContainerToContainer
-#define SOAP_TYPE_ns1__InsertLinkContainerToContainer (390)
-/* ns1:InsertLinkContainerToContainer */
-class SOAP_CMAC ns1__InsertLinkContainerToContainer : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__GetDataTPFileDetail
+#define SOAP_TYPE_ns1__GetDataTPFileDetail (390)
+/* ns1:GetDataTPFileDetail */
+class SOAP_CMAC ns1__GetDataTPFileDetail : public xsd__anyType
 {
 public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *linkTypeName;	/* optional element of type xsd:string */
-	char *instanceNameFrom;	/* optional element of type xsd:string */
-	char *instanceNameTo;	/* optional element of type xsd:string */
-	char *note;	/* optional element of type xsd:string */
+	char *attachmentId;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 390; } /* = unique id SOAP_TYPE_ns1__InsertLinkContainerToContainer */
+	virtual int soap_type() const { return 390; } /* = unique id SOAP_TYPE_ns1__GetDataTPFileDetail */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__InsertLinkContainerToContainer() { ns1__InsertLinkContainerToContainer::soap_default(NULL); }
-	virtual ~ns1__InsertLinkContainerToContainer() { }
+	         ns1__GetDataTPFileDetail() { ns1__GetDataTPFileDetail::soap_default(NULL); }
+	virtual ~ns1__GetDataTPFileDetail() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__InsertLinkContainerToContainerResponse
-#define SOAP_TYPE_ns1__InsertLinkContainerToContainerResponse (391)
-/* ns1:InsertLinkContainerToContainerResponse */
-class SOAP_CMAC ns1__InsertLinkContainerToContainerResponse : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__GetDataTPFileDetailResponse
+#define SOAP_TYPE_ns1__GetDataTPFileDetailResponse (391)
+/* ns1:GetDataTPFileDetailResponse */
+class SOAP_CMAC ns1__GetDataTPFileDetailResponse : public xsd__anyType
 {
 public:
-	ns1__abxLinkResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxLinkResult */
+	ns1__abxFileTpResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileTpResult */
 public:
-	virtual int soap_type() const { return 391; } /* = unique id SOAP_TYPE_ns1__InsertLinkContainerToContainerResponse */
+	virtual int soap_type() const { return 391; } /* = unique id SOAP_TYPE_ns1__GetDataTPFileDetailResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__InsertLinkContainerToContainerResponse() { ns1__InsertLinkContainerToContainerResponse::soap_default(NULL); }
-	virtual ~ns1__InsertLinkContainerToContainerResponse() { }
+	         ns1__GetDataTPFileDetailResponse() { ns1__GetDataTPFileDetailResponse::soap_default(NULL); }
+	virtual ~ns1__GetDataTPFileDetailResponse() { }
 };
 #endif
 
@@ -9164,56 +9167,13 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetExpressionValue
-#define SOAP_TYPE_ns1__GetExpressionValue (400)
-/* ns1:GetExpressionValue */
-class SOAP_CMAC ns1__GetExpressionValue : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *dataid;	/* optional element of type xsd:string */
-	char *instanceName;	/* optional element of type xsd:string */
-	char *expressionName;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 400; } /* = unique id SOAP_TYPE_ns1__GetExpressionValue */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetExpressionValue() { ns1__GetExpressionValue::soap_default(NULL); }
-	virtual ~ns1__GetExpressionValue() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__GetExpressionValueResponse
-#define SOAP_TYPE_ns1__GetExpressionValueResponse (401)
-/* ns1:GetExpressionValueResponse */
-class SOAP_CMAC ns1__GetExpressionValueResponse : public xsd__anyType
-{
-public:
-	ns1__abxExpressionResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxExpressionResult */
-public:
-	virtual int soap_type() const { return 401; } /* = unique id SOAP_TYPE_ns1__GetExpressionValueResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetExpressionValueResponse() { ns1__GetExpressionValueResponse::soap_default(NULL); }
-	virtual ~ns1__GetExpressionValueResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__GetLanguages
-#define SOAP_TYPE_ns1__GetLanguages (402)
+#define SOAP_TYPE_ns1__GetLanguages (400)
 /* Primitive ns1:GetLanguages schema type: */
 class SOAP_CMAC ns1__GetLanguages : public xsd__anyType
 {
 public:
-	virtual int soap_type() const { return 402; } /* = unique id SOAP_TYPE_ns1__GetLanguages */
+	virtual int soap_type() const { return 400; } /* = unique id SOAP_TYPE_ns1__GetLanguages */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -9226,14 +9186,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetLanguagesResponse
-#define SOAP_TYPE_ns1__GetLanguagesResponse (403)
+#define SOAP_TYPE_ns1__GetLanguagesResponse (401)
 /* ns1:GetLanguagesResponse */
 class SOAP_CMAC ns1__GetLanguagesResponse : public xsd__anyType
 {
 public:
 	class ns1__abxLanguageResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxLanguageResult */
 public:
-	virtual int soap_type() const { return 403; } /* = unique id SOAP_TYPE_ns1__GetLanguagesResponse */
+	virtual int soap_type() const { return 401; } /* = unique id SOAP_TYPE_ns1__GetLanguagesResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -9246,7 +9206,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxLanguageResult
-#define SOAP_TYPE_ns1__abxLanguageResult (404)
+#define SOAP_TYPE_ns1__abxLanguageResult (402)
 /* ns1:abxLanguageResult */
 class SOAP_CMAC ns1__abxLanguageResult : public xsd__anyType
 {
@@ -9254,7 +9214,7 @@ public:
 	unsigned int result;	/* required element of type xsd:unsignedInt */
 	class ns1__abxLanguageList *list;	/* required element of type ns1:abxLanguageList */
 public:
-	virtual int soap_type() const { return 404; } /* = unique id SOAP_TYPE_ns1__abxLanguageResult */
+	virtual int soap_type() const { return 402; } /* = unique id SOAP_TYPE_ns1__abxLanguageResult */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -9267,7 +9227,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxLanguageList
-#define SOAP_TYPE_ns1__abxLanguageList (405)
+#define SOAP_TYPE_ns1__abxLanguageList (403)
 /* ns1:abxLanguageList */
 class SOAP_CMAC ns1__abxLanguageList : public xsd__anyType
 {
@@ -9275,7 +9235,7 @@ public:
 	int __sizedataList;	/* sequence of elements <dataList> */
 	class ns1__abxLanguage **dataList;	/* required element of type ns1:abxLanguage */
 public:
-	virtual int soap_type() const { return 405; } /* = unique id SOAP_TYPE_ns1__abxLanguageList */
+	virtual int soap_type() const { return 403; } /* = unique id SOAP_TYPE_ns1__abxLanguageList */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -9288,7 +9248,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxLanguage
-#define SOAP_TYPE_ns1__abxLanguage (406)
+#define SOAP_TYPE_ns1__abxLanguage (404)
 /* ns1:abxLanguage */
 class SOAP_CMAC ns1__abxLanguage : public xsd__anyType
 {
@@ -9297,7 +9257,7 @@ public:
 	char *languageId;	/* required element of type xsd:string */
 	char *languageCode;	/* required element of type xsd:string */
 public:
-	virtual int soap_type() const { return 406; } /* = unique id SOAP_TYPE_ns1__abxLanguage */
+	virtual int soap_type() const { return 404; } /* = unique id SOAP_TYPE_ns1__abxLanguage */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -9306,6 +9266,49 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__abxLanguage() { ns1__abxLanguage::soap_default(NULL); }
 	virtual ~ns1__abxLanguage() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetExpressionValue
+#define SOAP_TYPE_ns1__GetExpressionValue (405)
+/* ns1:GetExpressionValue */
+class SOAP_CMAC ns1__GetExpressionValue : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *dataid;	/* optional element of type xsd:string */
+	char *instanceName;	/* optional element of type xsd:string */
+	char *expressionName;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 405; } /* = unique id SOAP_TYPE_ns1__GetExpressionValue */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetExpressionValue() { ns1__GetExpressionValue::soap_default(NULL); }
+	virtual ~ns1__GetExpressionValue() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetExpressionValueResponse
+#define SOAP_TYPE_ns1__GetExpressionValueResponse (406)
+/* ns1:GetExpressionValueResponse */
+class SOAP_CMAC ns1__GetExpressionValueResponse : public xsd__anyType
+{
+public:
+	ns1__abxExpressionResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxExpressionResult */
+public:
+	virtual int soap_type() const { return 406; } /* = unique id SOAP_TYPE_ns1__GetExpressionValueResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetExpressionValueResponse() { ns1__GetExpressionValueResponse::soap_default(NULL); }
+	virtual ~ns1__GetExpressionValueResponse() { }
 };
 #endif
 
@@ -9351,48 +9354,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__TestScritturaLettura
-#define SOAP_TYPE_ns1__TestScritturaLettura (409)
-/* ns1:TestScritturaLettura */
-class SOAP_CMAC ns1__TestScritturaLettura : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-public:
-	virtual int soap_type() const { return 409; } /* = unique id SOAP_TYPE_ns1__TestScritturaLettura */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__TestScritturaLettura() { ns1__TestScritturaLettura::soap_default(NULL); }
-	virtual ~ns1__TestScritturaLettura() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__TestScritturaLetturaResponse
-#define SOAP_TYPE_ns1__TestScritturaLetturaResponse (410)
-/* ns1:TestScritturaLetturaResponse */
-class SOAP_CMAC ns1__TestScritturaLetturaResponse : public xsd__anyType
-{
-public:
-	char *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 410; } /* = unique id SOAP_TYPE_ns1__TestScritturaLetturaResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__TestScritturaLetturaResponse() { ns1__TestScritturaLetturaResponse::soap_default(NULL); }
-	virtual ~ns1__TestScritturaLetturaResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__DeleteTemplate
-#define SOAP_TYPE_ns1__DeleteTemplate (411)
+#define SOAP_TYPE_ns1__DeleteTemplate (409)
 /* ns1:DeleteTemplate */
 class SOAP_CMAC ns1__DeleteTemplate : public xsd__anyType
 {
@@ -9400,7 +9363,7 @@ public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	char *TemplateName;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 411; } /* = unique id SOAP_TYPE_ns1__DeleteTemplate */
+	virtual int soap_type() const { return 409; } /* = unique id SOAP_TYPE_ns1__DeleteTemplate */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -9413,14 +9376,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__DeleteTemplateResponse
-#define SOAP_TYPE_ns1__DeleteTemplateResponse (412)
+#define SOAP_TYPE_ns1__DeleteTemplateResponse (410)
 /* ns1:DeleteTemplateResponse */
 class SOAP_CMAC ns1__DeleteTemplateResponse : public xsd__anyType
 {
 public:
 	ns1__abxTemplateResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxTemplateResult */
 public:
-	virtual int soap_type() const { return 412; } /* = unique id SOAP_TYPE_ns1__DeleteTemplateResponse */
+	virtual int soap_type() const { return 410; } /* = unique id SOAP_TYPE_ns1__DeleteTemplateResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -9429,6 +9392,46 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__DeleteTemplateResponse() { ns1__DeleteTemplateResponse::soap_default(NULL); }
 	virtual ~ns1__DeleteTemplateResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__TestScritturaLettura
+#define SOAP_TYPE_ns1__TestScritturaLettura (411)
+/* ns1:TestScritturaLettura */
+class SOAP_CMAC ns1__TestScritturaLettura : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+public:
+	virtual int soap_type() const { return 411; } /* = unique id SOAP_TYPE_ns1__TestScritturaLettura */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__TestScritturaLettura() { ns1__TestScritturaLettura::soap_default(NULL); }
+	virtual ~ns1__TestScritturaLettura() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__TestScritturaLetturaResponse
+#define SOAP_TYPE_ns1__TestScritturaLetturaResponse (412)
+/* ns1:TestScritturaLetturaResponse */
+class SOAP_CMAC ns1__TestScritturaLetturaResponse : public xsd__anyType
+{
+public:
+	char *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 412; } /* = unique id SOAP_TYPE_ns1__TestScritturaLetturaResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__TestScritturaLetturaResponse() { ns1__TestScritturaLetturaResponse::soap_default(NULL); }
+	virtual ~ns1__TestScritturaLetturaResponse() { }
 };
 #endif
 
@@ -9897,51 +9900,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetDocumentLinks
-#define SOAP_TYPE_ns1__GetDocumentLinks (435)
-/* ns1:GetDocumentLinks */
-class SOAP_CMAC ns1__GetDocumentLinks : public xsd__anyType
-{
-public:
-	ns1__IDtype *IDtype_USCORESessionId;	/* optional element of type ns1:IDtype */
-	char *instanceName;	/* optional element of type xsd:string */
-	char *dataId;	/* optional element of type xsd:string */
-	char *linkTypeName;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 435; } /* = unique id SOAP_TYPE_ns1__GetDocumentLinks */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetDocumentLinks() { ns1__GetDocumentLinks::soap_default(NULL); }
-	virtual ~ns1__GetDocumentLinks() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__GetDocumentLinksResponse
-#define SOAP_TYPE_ns1__GetDocumentLinksResponse (436)
-/* ns1:GetDocumentLinksResponse */
-class SOAP_CMAC ns1__GetDocumentLinksResponse : public xsd__anyType
-{
-public:
-	ns1__abxLinkResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxLinkResult */
-public:
-	virtual int soap_type() const { return 436; } /* = unique id SOAP_TYPE_ns1__GetDocumentLinksResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetDocumentLinksResponse() { ns1__GetDocumentLinksResponse::soap_default(NULL); }
-	virtual ~ns1__GetDocumentLinksResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__GetInstanceReplicationStatus
-#define SOAP_TYPE_ns1__GetInstanceReplicationStatus (437)
+#define SOAP_TYPE_ns1__GetInstanceReplicationStatus (435)
 /* ns1:GetInstanceReplicationStatus */
 class SOAP_CMAC ns1__GetInstanceReplicationStatus : public xsd__anyType
 {
@@ -9949,7 +9909,7 @@ public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	char *instanceName;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 437; } /* = unique id SOAP_TYPE_ns1__GetInstanceReplicationStatus */
+	virtual int soap_type() const { return 435; } /* = unique id SOAP_TYPE_ns1__GetInstanceReplicationStatus */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -9962,14 +9922,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetInstanceReplicationStatusResponse
-#define SOAP_TYPE_ns1__GetInstanceReplicationStatusResponse (438)
+#define SOAP_TYPE_ns1__GetInstanceReplicationStatusResponse (436)
 /* ns1:GetInstanceReplicationStatusResponse */
 class SOAP_CMAC ns1__GetInstanceReplicationStatusResponse : public xsd__anyType
 {
 public:
 	ns1__abxReplicationResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxReplicationResult */
 public:
-	virtual int soap_type() const { return 438; } /* = unique id SOAP_TYPE_ns1__GetInstanceReplicationStatusResponse */
+	virtual int soap_type() const { return 436; } /* = unique id SOAP_TYPE_ns1__GetInstanceReplicationStatusResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -9978,6 +9938,49 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__GetInstanceReplicationStatusResponse() { ns1__GetInstanceReplicationStatusResponse::soap_default(NULL); }
 	virtual ~ns1__GetInstanceReplicationStatusResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetDocumentLinks
+#define SOAP_TYPE_ns1__GetDocumentLinks (437)
+/* ns1:GetDocumentLinks */
+class SOAP_CMAC ns1__GetDocumentLinks : public xsd__anyType
+{
+public:
+	ns1__IDtype *IDtype_USCORESessionId;	/* optional element of type ns1:IDtype */
+	char *instanceName;	/* optional element of type xsd:string */
+	char *dataId;	/* optional element of type xsd:string */
+	char *linkTypeName;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 437; } /* = unique id SOAP_TYPE_ns1__GetDocumentLinks */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetDocumentLinks() { ns1__GetDocumentLinks::soap_default(NULL); }
+	virtual ~ns1__GetDocumentLinks() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetDocumentLinksResponse
+#define SOAP_TYPE_ns1__GetDocumentLinksResponse (438)
+/* ns1:GetDocumentLinksResponse */
+class SOAP_CMAC ns1__GetDocumentLinksResponse : public xsd__anyType
+{
+public:
+	ns1__abxLinkResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxLinkResult */
+public:
+	virtual int soap_type() const { return 438; } /* = unique id SOAP_TYPE_ns1__GetDocumentLinksResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetDocumentLinksResponse() { ns1__GetDocumentLinksResponse::soap_default(NULL); }
+	virtual ~ns1__GetDocumentLinksResponse() { }
 };
 #endif
 
@@ -10250,48 +10253,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__SetTmpWFUploadPath
-#define SOAP_TYPE_ns1__SetTmpWFUploadPath (452)
-/* ns1:SetTmpWFUploadPath */
-class SOAP_CMAC ns1__SetTmpWFUploadPath : public xsd__anyType
-{
-public:
-	char *path;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 452; } /* = unique id SOAP_TYPE_ns1__SetTmpWFUploadPath */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__SetTmpWFUploadPath() { ns1__SetTmpWFUploadPath::soap_default(NULL); }
-	virtual ~ns1__SetTmpWFUploadPath() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__SetTmpWFUploadPathResponse
-#define SOAP_TYPE_ns1__SetTmpWFUploadPathResponse (453)
-/* ns1:SetTmpWFUploadPathResponse */
-class SOAP_CMAC ns1__SetTmpWFUploadPathResponse : public xsd__anyType
-{
-public:
-	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
-public:
-	virtual int soap_type() const { return 453; } /* = unique id SOAP_TYPE_ns1__SetTmpWFUploadPathResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__SetTmpWFUploadPathResponse() { ns1__SetTmpWFUploadPathResponse::soap_default(NULL); }
-	virtual ~ns1__SetTmpWFUploadPathResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__ModifyData
-#define SOAP_TYPE_ns1__ModifyData (454)
+#define SOAP_TYPE_ns1__ModifyData (452)
 /* ns1:ModifyData */
 class SOAP_CMAC ns1__ModifyData : public xsd__anyType
 {
@@ -10305,7 +10268,7 @@ public:
 	char *masterId;	/* optional element of type xsd:string */
 	char *note;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 454; } /* = unique id SOAP_TYPE_ns1__ModifyData */
+	virtual int soap_type() const { return 452; } /* = unique id SOAP_TYPE_ns1__ModifyData */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -10318,14 +10281,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__ModifyDataResponse
-#define SOAP_TYPE_ns1__ModifyDataResponse (455)
+#define SOAP_TYPE_ns1__ModifyDataResponse (453)
 /* ns1:ModifyDataResponse */
 class SOAP_CMAC ns1__ModifyDataResponse : public xsd__anyType
 {
 public:
 	ns1__abxDataResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxDataResult */
 public:
-	virtual int soap_type() const { return 455; } /* = unique id SOAP_TYPE_ns1__ModifyDataResponse */
+	virtual int soap_type() const { return 453; } /* = unique id SOAP_TYPE_ns1__ModifyDataResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -10338,14 +10301,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetDownloadDetailByCont
-#define SOAP_TYPE_ns1__GetDownloadDetailByCont (456)
+#define SOAP_TYPE_ns1__GetDownloadDetailByCont (454)
 /* ns1:GetDownloadDetailByCont */
 class SOAP_CMAC ns1__GetDownloadDetailByCont : public xsd__anyType
 {
 public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 public:
-	virtual int soap_type() const { return 456; } /* = unique id SOAP_TYPE_ns1__GetDownloadDetailByCont */
+	virtual int soap_type() const { return 454; } /* = unique id SOAP_TYPE_ns1__GetDownloadDetailByCont */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -10358,14 +10321,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetDownloadDetailByContResponse
-#define SOAP_TYPE_ns1__GetDownloadDetailByContResponse (457)
+#define SOAP_TYPE_ns1__GetDownloadDetailByContResponse (455)
 /* ns1:GetDownloadDetailByContResponse */
 class SOAP_CMAC ns1__GetDownloadDetailByContResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 457; } /* = unique id SOAP_TYPE_ns1__GetDownloadDetailByContResponse */
+	virtual int soap_type() const { return 455; } /* = unique id SOAP_TYPE_ns1__GetDownloadDetailByContResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -10374,6 +10337,46 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__GetDownloadDetailByContResponse() { ns1__GetDownloadDetailByContResponse::soap_default(NULL); }
 	virtual ~ns1__GetDownloadDetailByContResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__SetTmpWFUploadPath
+#define SOAP_TYPE_ns1__SetTmpWFUploadPath (456)
+/* ns1:SetTmpWFUploadPath */
+class SOAP_CMAC ns1__SetTmpWFUploadPath : public xsd__anyType
+{
+public:
+	char *path;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 456; } /* = unique id SOAP_TYPE_ns1__SetTmpWFUploadPath */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__SetTmpWFUploadPath() { ns1__SetTmpWFUploadPath::soap_default(NULL); }
+	virtual ~ns1__SetTmpWFUploadPath() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__SetTmpWFUploadPathResponse
+#define SOAP_TYPE_ns1__SetTmpWFUploadPathResponse (457)
+/* ns1:SetTmpWFUploadPathResponse */
+class SOAP_CMAC ns1__SetTmpWFUploadPathResponse : public xsd__anyType
+{
+public:
+	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
+public:
+	virtual int soap_type() const { return 457; } /* = unique id SOAP_TYPE_ns1__SetTmpWFUploadPathResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__SetTmpWFUploadPathResponse() { ns1__SetTmpWFUploadPathResponse::soap_default(NULL); }
+	virtual ~ns1__SetTmpWFUploadPathResponse() { }
 };
 #endif
 
@@ -10460,52 +10463,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__UploadEndFileContainer
-#define SOAP_TYPE_ns1__UploadEndFileContainer (462)
-/* ns1:UploadEndFileContainer */
-class SOAP_CMAC ns1__UploadEndFileContainer : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *instanceName;	/* optional element of type xsd:string */
-	char *objName;	/* optional element of type xsd:string */
-	ns1__abxFileList *dataListInput;	/* optional element of type ns1:abxFileList */
-	char *docTemplateName;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 462; } /* = unique id SOAP_TYPE_ns1__UploadEndFileContainer */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__UploadEndFileContainer() { ns1__UploadEndFileContainer::soap_default(NULL); }
-	virtual ~ns1__UploadEndFileContainer() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__UploadEndFileContainerResponse
-#define SOAP_TYPE_ns1__UploadEndFileContainerResponse (463)
-/* ns1:UploadEndFileContainerResponse */
-class SOAP_CMAC ns1__UploadEndFileContainerResponse : public xsd__anyType
-{
-public:
-	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
-public:
-	virtual int soap_type() const { return 463; } /* = unique id SOAP_TYPE_ns1__UploadEndFileContainerResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__UploadEndFileContainerResponse() { ns1__UploadEndFileContainerResponse::soap_default(NULL); }
-	virtual ~ns1__UploadEndFileContainerResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__GetDownloadDetailByDataId
-#define SOAP_TYPE_ns1__GetDownloadDetailByDataId (464)
+#define SOAP_TYPE_ns1__GetDownloadDetailByDataId (462)
 /* ns1:GetDownloadDetailByDataId */
 class SOAP_CMAC ns1__GetDownloadDetailByDataId : public xsd__anyType
 {
@@ -10514,7 +10473,7 @@ public:
 	char *instanceName;	/* optional element of type xsd:string */
 	char *dataId;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 464; } /* = unique id SOAP_TYPE_ns1__GetDownloadDetailByDataId */
+	virtual int soap_type() const { return 462; } /* = unique id SOAP_TYPE_ns1__GetDownloadDetailByDataId */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -10527,14 +10486,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetDownloadDetailByDataIdResponse
-#define SOAP_TYPE_ns1__GetDownloadDetailByDataIdResponse (465)
+#define SOAP_TYPE_ns1__GetDownloadDetailByDataIdResponse (463)
 /* ns1:GetDownloadDetailByDataIdResponse */
 class SOAP_CMAC ns1__GetDownloadDetailByDataIdResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 465; } /* = unique id SOAP_TYPE_ns1__GetDownloadDetailByDataIdResponse */
+	virtual int soap_type() const { return 463; } /* = unique id SOAP_TYPE_ns1__GetDownloadDetailByDataIdResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -10546,57 +10505,59 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetDataWAById
-#define SOAP_TYPE_ns1__GetDataWAById (466)
-/* ns1:GetDataWAById */
-class SOAP_CMAC ns1__GetDataWAById : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__UploadEndFileContainer
+#define SOAP_TYPE_ns1__UploadEndFileContainer (464)
+/* ns1:UploadEndFileContainer */
+class SOAP_CMAC ns1__UploadEndFileContainer : public xsd__anyType
 {
 public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	char *instanceName;	/* optional element of type xsd:string */
-	char *annotazioneId;	/* optional element of type xsd:string */
+	char *objName;	/* optional element of type xsd:string */
+	ns1__abxFileList *dataListInput;	/* optional element of type ns1:abxFileList */
+	char *docTemplateName;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 466; } /* = unique id SOAP_TYPE_ns1__GetDataWAById */
+	virtual int soap_type() const { return 464; } /* = unique id SOAP_TYPE_ns1__UploadEndFileContainer */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetDataWAById() { ns1__GetDataWAById::soap_default(NULL); }
-	virtual ~ns1__GetDataWAById() { }
+	         ns1__UploadEndFileContainer() { ns1__UploadEndFileContainer::soap_default(NULL); }
+	virtual ~ns1__UploadEndFileContainer() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetDataWAByIdResponse
-#define SOAP_TYPE_ns1__GetDataWAByIdResponse (467)
-/* ns1:GetDataWAByIdResponse */
-class SOAP_CMAC ns1__GetDataWAByIdResponse : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__UploadEndFileContainerResponse
+#define SOAP_TYPE_ns1__UploadEndFileContainerResponse (465)
+/* ns1:UploadEndFileContainerResponse */
+class SOAP_CMAC ns1__UploadEndFileContainerResponse : public xsd__anyType
 {
 public:
-	ns1__abxDataResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxDataResult */
+	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 467; } /* = unique id SOAP_TYPE_ns1__GetDataWAByIdResponse */
+	virtual int soap_type() const { return 465; } /* = unique id SOAP_TYPE_ns1__UploadEndFileContainerResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetDataWAByIdResponse() { ns1__GetDataWAByIdResponse::soap_default(NULL); }
-	virtual ~ns1__GetDataWAByIdResponse() { }
+	         ns1__UploadEndFileContainerResponse() { ns1__UploadEndFileContainerResponse::soap_default(NULL); }
+	virtual ~ns1__UploadEndFileContainerResponse() { }
 };
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetArchiBoxInDomain
-#define SOAP_TYPE_ns1__GetArchiBoxInDomain (468)
+#define SOAP_TYPE_ns1__GetArchiBoxInDomain (466)
 /* ns1:GetArchiBoxInDomain */
 class SOAP_CMAC ns1__GetArchiBoxInDomain : public xsd__anyType
 {
 public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 public:
-	virtual int soap_type() const { return 468; } /* = unique id SOAP_TYPE_ns1__GetArchiBoxInDomain */
+	virtual int soap_type() const { return 466; } /* = unique id SOAP_TYPE_ns1__GetArchiBoxInDomain */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -10609,14 +10570,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetArchiBoxInDomainResponse
-#define SOAP_TYPE_ns1__GetArchiBoxInDomainResponse (469)
+#define SOAP_TYPE_ns1__GetArchiBoxInDomainResponse (467)
 /* ns1:GetArchiBoxInDomainResponse */
 class SOAP_CMAC ns1__GetArchiBoxInDomainResponse : public xsd__anyType
 {
 public:
 	ns1__abxArchiBoxDomainResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxArchiBoxDomainResult */
 public:
-	virtual int soap_type() const { return 469; } /* = unique id SOAP_TYPE_ns1__GetArchiBoxInDomainResponse */
+	virtual int soap_type() const { return 467; } /* = unique id SOAP_TYPE_ns1__GetArchiBoxInDomainResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -10625,6 +10586,48 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__GetArchiBoxInDomainResponse() { ns1__GetArchiBoxInDomainResponse::soap_default(NULL); }
 	virtual ~ns1__GetArchiBoxInDomainResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetDataWAById
+#define SOAP_TYPE_ns1__GetDataWAById (468)
+/* ns1:GetDataWAById */
+class SOAP_CMAC ns1__GetDataWAById : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *instanceName;	/* optional element of type xsd:string */
+	char *annotazioneId;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 468; } /* = unique id SOAP_TYPE_ns1__GetDataWAById */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetDataWAById() { ns1__GetDataWAById::soap_default(NULL); }
+	virtual ~ns1__GetDataWAById() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetDataWAByIdResponse
+#define SOAP_TYPE_ns1__GetDataWAByIdResponse (469)
+/* ns1:GetDataWAByIdResponse */
+class SOAP_CMAC ns1__GetDataWAByIdResponse : public xsd__anyType
+{
+public:
+	ns1__abxDataResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxDataResult */
+public:
+	virtual int soap_type() const { return 469; } /* = unique id SOAP_TYPE_ns1__GetDataWAByIdResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetDataWAByIdResponse() { ns1__GetDataWAByIdResponse::soap_default(NULL); }
+	virtual ~ns1__GetDataWAByIdResponse() { }
 };
 #endif
 
@@ -10846,49 +10849,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__VerifyExpression
-#define SOAP_TYPE_ns1__VerifyExpression (480)
-/* ns1:VerifyExpression */
-class SOAP_CMAC ns1__VerifyExpression : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	ns1__abxExpression *expr;	/* optional element of type ns1:abxExpression */
-public:
-	virtual int soap_type() const { return 480; } /* = unique id SOAP_TYPE_ns1__VerifyExpression */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__VerifyExpression() { ns1__VerifyExpression::soap_default(NULL); }
-	virtual ~ns1__VerifyExpression() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__VerifyExpressionResponse
-#define SOAP_TYPE_ns1__VerifyExpressionResponse (481)
-/* ns1:VerifyExpressionResponse */
-class SOAP_CMAC ns1__VerifyExpressionResponse : public xsd__anyType
-{
-public:
-	ns1__abxExpressionResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxExpressionResult */
-public:
-	virtual int soap_type() const { return 481; } /* = unique id SOAP_TYPE_ns1__VerifyExpressionResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__VerifyExpressionResponse() { ns1__VerifyExpressionResponse::soap_default(NULL); }
-	virtual ~ns1__VerifyExpressionResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__DeleteProtocol
-#define SOAP_TYPE_ns1__DeleteProtocol (482)
+#define SOAP_TYPE_ns1__DeleteProtocol (480)
 /* ns1:DeleteProtocol */
 class SOAP_CMAC ns1__DeleteProtocol : public xsd__anyType
 {
@@ -10896,7 +10858,7 @@ public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	ns2__abxProtocol *protocolData;	/* optional element of type ns2:abxProtocol */
 public:
-	virtual int soap_type() const { return 482; } /* = unique id SOAP_TYPE_ns1__DeleteProtocol */
+	virtual int soap_type() const { return 480; } /* = unique id SOAP_TYPE_ns1__DeleteProtocol */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -10909,14 +10871,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__DeleteProtocolResponse
-#define SOAP_TYPE_ns1__DeleteProtocolResponse (483)
+#define SOAP_TYPE_ns1__DeleteProtocolResponse (481)
 /* ns1:DeleteProtocolResponse */
 class SOAP_CMAC ns1__DeleteProtocolResponse : public xsd__anyType
 {
 public:
 	ns2__abxProtocolResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns2:abxProtocolResult */
 public:
-	virtual int soap_type() const { return 483; } /* = unique id SOAP_TYPE_ns1__DeleteProtocolResponse */
+	virtual int soap_type() const { return 481; } /* = unique id SOAP_TYPE_ns1__DeleteProtocolResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -10929,7 +10891,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__DelSign
-#define SOAP_TYPE_ns1__DelSign (484)
+#define SOAP_TYPE_ns1__DelSign (482)
 /* ns1:DelSign */
 class SOAP_CMAC ns1__DelSign : public xsd__anyType
 {
@@ -10937,7 +10899,7 @@ public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	ns1__abxWorkflow *aw;	/* optional element of type ns1:abxWorkflow */
 public:
-	virtual int soap_type() const { return 484; } /* = unique id SOAP_TYPE_ns1__DelSign */
+	virtual int soap_type() const { return 482; } /* = unique id SOAP_TYPE_ns1__DelSign */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -10950,14 +10912,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__DelSignResponse
-#define SOAP_TYPE_ns1__DelSignResponse (485)
+#define SOAP_TYPE_ns1__DelSignResponse (483)
 /* ns1:DelSignResponse */
 class SOAP_CMAC ns1__DelSignResponse : public xsd__anyType
 {
 public:
 	ns1__abxWorkflowResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxWorkflowResult */
 public:
-	virtual int soap_type() const { return 485; } /* = unique id SOAP_TYPE_ns1__DelSignResponse */
+	virtual int soap_type() const { return 483; } /* = unique id SOAP_TYPE_ns1__DelSignResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -10966,6 +10928,47 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__DelSignResponse() { ns1__DelSignResponse::soap_default(NULL); }
 	virtual ~ns1__DelSignResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__VerifyExpression
+#define SOAP_TYPE_ns1__VerifyExpression (484)
+/* ns1:VerifyExpression */
+class SOAP_CMAC ns1__VerifyExpression : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	ns1__abxExpression *expr;	/* optional element of type ns1:abxExpression */
+public:
+	virtual int soap_type() const { return 484; } /* = unique id SOAP_TYPE_ns1__VerifyExpression */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__VerifyExpression() { ns1__VerifyExpression::soap_default(NULL); }
+	virtual ~ns1__VerifyExpression() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__VerifyExpressionResponse
+#define SOAP_TYPE_ns1__VerifyExpressionResponse (485)
+/* ns1:VerifyExpressionResponse */
+class SOAP_CMAC ns1__VerifyExpressionResponse : public xsd__anyType
+{
+public:
+	ns1__abxExpressionResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxExpressionResult */
+public:
+	virtual int soap_type() const { return 485; } /* = unique id SOAP_TYPE_ns1__VerifyExpressionResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__VerifyExpressionResponse() { ns1__VerifyExpressionResponse::soap_default(NULL); }
+	virtual ~ns1__VerifyExpressionResponse() { }
 };
 #endif
 
@@ -11250,53 +11253,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetSDKWatchFolderDirectories
-#define SOAP_TYPE_ns1__GetSDKWatchFolderDirectories (498)
-/* ns1:GetSDKWatchFolderDirectories */
-class SOAP_CMAC ns1__GetSDKWatchFolderDirectories : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *serverURL;	/* optional element of type xsd:string */
-	char *serverRoot;	/* optional element of type xsd:string */
-	char *serverType;	/* optional element of type xsd:string */
-	char *username;	/* optional element of type xsd:string */
-	char *password;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 498; } /* = unique id SOAP_TYPE_ns1__GetSDKWatchFolderDirectories */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetSDKWatchFolderDirectories() { ns1__GetSDKWatchFolderDirectories::soap_default(NULL); }
-	virtual ~ns1__GetSDKWatchFolderDirectories() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__GetSDKWatchFolderDirectoriesResponse
-#define SOAP_TYPE_ns1__GetSDKWatchFolderDirectoriesResponse (499)
-/* ns1:GetSDKWatchFolderDirectoriesResponse */
-class SOAP_CMAC ns1__GetSDKWatchFolderDirectoriesResponse : public xsd__anyType
-{
-public:
-	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
-public:
-	virtual int soap_type() const { return 499; } /* = unique id SOAP_TYPE_ns1__GetSDKWatchFolderDirectoriesResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetSDKWatchFolderDirectoriesResponse() { ns1__GetSDKWatchFolderDirectoriesResponse::soap_default(NULL); }
-	virtual ~ns1__GetSDKWatchFolderDirectoriesResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__GetQueryParam
-#define SOAP_TYPE_ns1__GetQueryParam (500)
+#define SOAP_TYPE_ns1__GetQueryParam (498)
 /* ns1:GetQueryParam */
 class SOAP_CMAC ns1__GetQueryParam : public xsd__anyType
 {
@@ -11304,7 +11262,7 @@ public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	ns1__abxOption4Query *option4query;	/* optional element of type ns1:abxOption4Query */
 public:
-	virtual int soap_type() const { return 500; } /* = unique id SOAP_TYPE_ns1__GetQueryParam */
+	virtual int soap_type() const { return 498; } /* = unique id SOAP_TYPE_ns1__GetQueryParam */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -11317,14 +11275,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetQueryParamResponse
-#define SOAP_TYPE_ns1__GetQueryParamResponse (501)
+#define SOAP_TYPE_ns1__GetQueryParamResponse (499)
 /* ns1:GetQueryParamResponse */
 class SOAP_CMAC ns1__GetQueryParamResponse : public xsd__anyType
 {
 public:
 	class ns1__abxRetOption4QueryResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxRetOption4QueryResult */
 public:
-	virtual int soap_type() const { return 501; } /* = unique id SOAP_TYPE_ns1__GetQueryParamResponse */
+	virtual int soap_type() const { return 499; } /* = unique id SOAP_TYPE_ns1__GetQueryParamResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -11337,7 +11295,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxRetOption4QueryResult
-#define SOAP_TYPE_ns1__abxRetOption4QueryResult (502)
+#define SOAP_TYPE_ns1__abxRetOption4QueryResult (500)
 /* ns1:abxRetOption4QueryResult */
 class SOAP_CMAC ns1__abxRetOption4QueryResult : public xsd__anyType
 {
@@ -11349,7 +11307,7 @@ public:
 	ns1__abxQFieldList *commonFields;	/* required element of type ns1:abxQFieldList */
 	ns1__abxOption4Query *option4Query;	/* required element of type ns1:abxOption4Query */
 public:
-	virtual int soap_type() const { return 502; } /* = unique id SOAP_TYPE_ns1__abxRetOption4QueryResult */
+	virtual int soap_type() const { return 500; } /* = unique id SOAP_TYPE_ns1__abxRetOption4QueryResult */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -11362,7 +11320,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxQFieldList
-#define SOAP_TYPE_ns1__abxQFieldList (503)
+#define SOAP_TYPE_ns1__abxQFieldList (501)
 /* ns1:abxQFieldList */
 class SOAP_CMAC ns1__abxQFieldList : public xsd__anyType
 {
@@ -11370,7 +11328,7 @@ public:
 	int __sizelist;	/* sequence of elements <list> */
 	ns1__abxQField **list;	/* required element of type ns1:abxQField */
 public:
-	virtual int soap_type() const { return 503; } /* = unique id SOAP_TYPE_ns1__abxQFieldList */
+	virtual int soap_type() const { return 501; } /* = unique id SOAP_TYPE_ns1__abxQFieldList */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -11383,7 +11341,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxQobjectList
-#define SOAP_TYPE_ns1__abxQobjectList (504)
+#define SOAP_TYPE_ns1__abxQobjectList (502)
 /* ns1:abxQobjectList */
 class SOAP_CMAC ns1__abxQobjectList : public xsd__anyType
 {
@@ -11391,7 +11349,7 @@ public:
 	int __sizelist;	/* sequence of elements <list> */
 	class ns1__abxQobject **list;	/* required element of type ns1:abxQobject */
 public:
-	virtual int soap_type() const { return 504; } /* = unique id SOAP_TYPE_ns1__abxQobjectList */
+	virtual int soap_type() const { return 502; } /* = unique id SOAP_TYPE_ns1__abxQobjectList */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -11404,7 +11362,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxQobject
-#define SOAP_TYPE_ns1__abxQobject (505)
+#define SOAP_TYPE_ns1__abxQobject (503)
 /* ns1:abxQobject */
 class SOAP_CMAC ns1__abxQobject : public xsd__anyType
 {
@@ -11412,7 +11370,7 @@ public:
 	char *ObjName;	/* required element of type xsd:string */
 	ns1__abxQFieldList *fields;	/* required element of type ns1:abxQFieldList */
 public:
-	virtual int soap_type() const { return 505; } /* = unique id SOAP_TYPE_ns1__abxQobject */
+	virtual int soap_type() const { return 503; } /* = unique id SOAP_TYPE_ns1__abxQobject */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -11425,7 +11383,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxQtemplateList
-#define SOAP_TYPE_ns1__abxQtemplateList (506)
+#define SOAP_TYPE_ns1__abxQtemplateList (504)
 /* ns1:abxQtemplateList */
 class SOAP_CMAC ns1__abxQtemplateList : public xsd__anyType
 {
@@ -11433,7 +11391,7 @@ public:
 	int __sizelist;	/* sequence of elements <list> */
 	class ns1__abxQtemplate **list;	/* required element of type ns1:abxQtemplate */
 public:
-	virtual int soap_type() const { return 506; } /* = unique id SOAP_TYPE_ns1__abxQtemplateList */
+	virtual int soap_type() const { return 504; } /* = unique id SOAP_TYPE_ns1__abxQtemplateList */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -11446,7 +11404,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxQtemplate
-#define SOAP_TYPE_ns1__abxQtemplate (507)
+#define SOAP_TYPE_ns1__abxQtemplate (505)
 /* ns1:abxQtemplate */
 class SOAP_CMAC ns1__abxQtemplate : public xsd__anyType
 {
@@ -11454,7 +11412,7 @@ public:
 	char *templateName;	/* required element of type xsd:string */
 	ns1__abxQFieldList *fields;	/* required element of type ns1:abxQFieldList */
 public:
-	virtual int soap_type() const { return 507; } /* = unique id SOAP_TYPE_ns1__abxQtemplate */
+	virtual int soap_type() const { return 505; } /* = unique id SOAP_TYPE_ns1__abxQtemplate */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -11463,6 +11421,51 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__abxQtemplate() { ns1__abxQtemplate::soap_default(NULL); }
 	virtual ~ns1__abxQtemplate() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetSDKWatchFolderDirectories
+#define SOAP_TYPE_ns1__GetSDKWatchFolderDirectories (506)
+/* ns1:GetSDKWatchFolderDirectories */
+class SOAP_CMAC ns1__GetSDKWatchFolderDirectories : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *serverURL;	/* optional element of type xsd:string */
+	char *serverRoot;	/* optional element of type xsd:string */
+	char *serverType;	/* optional element of type xsd:string */
+	char *username;	/* optional element of type xsd:string */
+	char *password;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 506; } /* = unique id SOAP_TYPE_ns1__GetSDKWatchFolderDirectories */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetSDKWatchFolderDirectories() { ns1__GetSDKWatchFolderDirectories::soap_default(NULL); }
+	virtual ~ns1__GetSDKWatchFolderDirectories() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetSDKWatchFolderDirectoriesResponse
+#define SOAP_TYPE_ns1__GetSDKWatchFolderDirectoriesResponse (507)
+/* ns1:GetSDKWatchFolderDirectoriesResponse */
+class SOAP_CMAC ns1__GetSDKWatchFolderDirectoriesResponse : public xsd__anyType
+{
+public:
+	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
+public:
+	virtual int soap_type() const { return 507; } /* = unique id SOAP_TYPE_ns1__GetSDKWatchFolderDirectoriesResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetSDKWatchFolderDirectoriesResponse() { ns1__GetSDKWatchFolderDirectoriesResponse::soap_default(NULL); }
+	virtual ~ns1__GetSDKWatchFolderDirectoriesResponse() { }
 };
 #endif
 
@@ -11633,48 +11636,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetSDKVariables
-#define SOAP_TYPE_ns1__GetSDKVariables (513)
-/* ns1:GetSDKVariables */
-class SOAP_CMAC ns1__GetSDKVariables : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-public:
-	virtual int soap_type() const { return 513; } /* = unique id SOAP_TYPE_ns1__GetSDKVariables */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetSDKVariables() { ns1__GetSDKVariables::soap_default(NULL); }
-	virtual ~ns1__GetSDKVariables() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__GetSDKVariablesResponse
-#define SOAP_TYPE_ns1__GetSDKVariablesResponse (514)
-/* ns1:GetSDKVariablesResponse */
-class SOAP_CMAC ns1__GetSDKVariablesResponse : public xsd__anyType
-{
-public:
-	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
-public:
-	virtual int soap_type() const { return 514; } /* = unique id SOAP_TYPE_ns1__GetSDKVariablesResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetSDKVariablesResponse() { ns1__GetSDKVariablesResponse::soap_default(NULL); }
-	virtual ~ns1__GetSDKVariablesResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__DownloadFileWAByFileUniqueCode
-#define SOAP_TYPE_ns1__DownloadFileWAByFileUniqueCode (515)
+#define SOAP_TYPE_ns1__DownloadFileWAByFileUniqueCode (513)
 /* ns1:DownloadFileWAByFileUniqueCode */
 class SOAP_CMAC ns1__DownloadFileWAByFileUniqueCode : public xsd__anyType
 {
@@ -11684,7 +11647,7 @@ public:
 	char *fileUniqueCode;	/* optional element of type xsd:string */
 	char *dChunk;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 515; } /* = unique id SOAP_TYPE_ns1__DownloadFileWAByFileUniqueCode */
+	virtual int soap_type() const { return 513; } /* = unique id SOAP_TYPE_ns1__DownloadFileWAByFileUniqueCode */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -11697,14 +11660,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__DownloadFileWAByFileUniqueCodeResponse
-#define SOAP_TYPE_ns1__DownloadFileWAByFileUniqueCodeResponse (516)
+#define SOAP_TYPE_ns1__DownloadFileWAByFileUniqueCodeResponse (514)
 /* ns1:DownloadFileWAByFileUniqueCodeResponse */
 class SOAP_CMAC ns1__DownloadFileWAByFileUniqueCodeResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 516; } /* = unique id SOAP_TYPE_ns1__DownloadFileWAByFileUniqueCodeResponse */
+	virtual int soap_type() const { return 514; } /* = unique id SOAP_TYPE_ns1__DownloadFileWAByFileUniqueCodeResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -11713,6 +11676,46 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__DownloadFileWAByFileUniqueCodeResponse() { ns1__DownloadFileWAByFileUniqueCodeResponse::soap_default(NULL); }
 	virtual ~ns1__DownloadFileWAByFileUniqueCodeResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetSDKVariables
+#define SOAP_TYPE_ns1__GetSDKVariables (515)
+/* ns1:GetSDKVariables */
+class SOAP_CMAC ns1__GetSDKVariables : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+public:
+	virtual int soap_type() const { return 515; } /* = unique id SOAP_TYPE_ns1__GetSDKVariables */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetSDKVariables() { ns1__GetSDKVariables::soap_default(NULL); }
+	virtual ~ns1__GetSDKVariables() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetSDKVariablesResponse
+#define SOAP_TYPE_ns1__GetSDKVariablesResponse (516)
+/* ns1:GetSDKVariablesResponse */
+class SOAP_CMAC ns1__GetSDKVariablesResponse : public xsd__anyType
+{
+public:
+	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
+public:
+	virtual int soap_type() const { return 516; } /* = unique id SOAP_TYPE_ns1__GetSDKVariablesResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetSDKVariablesResponse() { ns1__GetSDKVariablesResponse::soap_default(NULL); }
+	virtual ~ns1__GetSDKVariablesResponse() { }
 };
 #endif
 
@@ -11934,91 +11937,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__EndPermissionSettings
-#define SOAP_TYPE_ns1__EndPermissionSettings (526)
-/* ns1:EndPermissionSettings */
-class SOAP_CMAC ns1__EndPermissionSettings : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	ns1__abxPermission *permissionToSet;	/* optional element of type ns1:abxPermission */
-public:
-	virtual int soap_type() const { return 526; } /* = unique id SOAP_TYPE_ns1__EndPermissionSettings */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__EndPermissionSettings() { ns1__EndPermissionSettings::soap_default(NULL); }
-	virtual ~ns1__EndPermissionSettings() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__EndPermissionSettingsResponse
-#define SOAP_TYPE_ns1__EndPermissionSettingsResponse (527)
-/* ns1:EndPermissionSettingsResponse */
-class SOAP_CMAC ns1__EndPermissionSettingsResponse : public xsd__anyType
-{
-public:
-	class ns1__abxPermissionResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxPermissionResult */
-public:
-	virtual int soap_type() const { return 527; } /* = unique id SOAP_TYPE_ns1__EndPermissionSettingsResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__EndPermissionSettingsResponse() { ns1__EndPermissionSettingsResponse::soap_default(NULL); }
-	virtual ~ns1__EndPermissionSettingsResponse() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__abxPermissionResult
-#define SOAP_TYPE_ns1__abxPermissionResult (528)
-/* ns1:abxPermissionResult */
-class SOAP_CMAC ns1__abxPermissionResult : public xsd__anyType
-{
-public:
-	unsigned int result;	/* required element of type xsd:unsignedInt */
-	class ns1__abxPermissionElenco *list;	/* required element of type ns1:abxPermissionElenco */
-public:
-	virtual int soap_type() const { return 528; } /* = unique id SOAP_TYPE_ns1__abxPermissionResult */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__abxPermissionResult() { ns1__abxPermissionResult::soap_default(NULL); }
-	virtual ~ns1__abxPermissionResult() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__abxPermissionElenco
-#define SOAP_TYPE_ns1__abxPermissionElenco (529)
-/* ns1:abxPermissionElenco */
-class SOAP_CMAC ns1__abxPermissionElenco : public xsd__anyType
-{
-public:
-	int __sizelista;	/* sequence of elements <lista> */
-	ns1__abxPermission **lista;	/* required element of type ns1:abxPermission */
-public:
-	virtual int soap_type() const { return 529; } /* = unique id SOAP_TYPE_ns1__abxPermissionElenco */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__abxPermissionElenco() { ns1__abxPermissionElenco::soap_default(NULL); }
-	virtual ~ns1__abxPermissionElenco() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__InsertUserInGroup
-#define SOAP_TYPE_ns1__InsertUserInGroup (530)
+#define SOAP_TYPE_ns1__InsertUserInGroup (526)
 /* ns1:InsertUserInGroup */
 class SOAP_CMAC ns1__InsertUserInGroup : public xsd__anyType
 {
@@ -12027,7 +11947,7 @@ public:
 	char *username;	/* optional element of type xsd:string */
 	char *groupName;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 530; } /* = unique id SOAP_TYPE_ns1__InsertUserInGroup */
+	virtual int soap_type() const { return 526; } /* = unique id SOAP_TYPE_ns1__InsertUserInGroup */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -12040,14 +11960,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__InsertUserInGroupResponse
-#define SOAP_TYPE_ns1__InsertUserInGroupResponse (531)
+#define SOAP_TYPE_ns1__InsertUserInGroupResponse (527)
 /* ns1:InsertUserInGroupResponse */
 class SOAP_CMAC ns1__InsertUserInGroupResponse : public xsd__anyType
 {
 public:
 	ns1__abxUserListResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxUserListResult */
 public:
-	virtual int soap_type() const { return 531; } /* = unique id SOAP_TYPE_ns1__InsertUserInGroupResponse */
+	virtual int soap_type() const { return 527; } /* = unique id SOAP_TYPE_ns1__InsertUserInGroupResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -12056,6 +11976,130 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__InsertUserInGroupResponse() { ns1__InsertUserInGroupResponse::soap_default(NULL); }
 	virtual ~ns1__InsertUserInGroupResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__EndPermissionSettings
+#define SOAP_TYPE_ns1__EndPermissionSettings (528)
+/* ns1:EndPermissionSettings */
+class SOAP_CMAC ns1__EndPermissionSettings : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	ns1__abxPermission *permissionToSet;	/* optional element of type ns1:abxPermission */
+public:
+	virtual int soap_type() const { return 528; } /* = unique id SOAP_TYPE_ns1__EndPermissionSettings */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__EndPermissionSettings() { ns1__EndPermissionSettings::soap_default(NULL); }
+	virtual ~ns1__EndPermissionSettings() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__EndPermissionSettingsResponse
+#define SOAP_TYPE_ns1__EndPermissionSettingsResponse (529)
+/* ns1:EndPermissionSettingsResponse */
+class SOAP_CMAC ns1__EndPermissionSettingsResponse : public xsd__anyType
+{
+public:
+	class ns1__abxPermissionResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxPermissionResult */
+public:
+	virtual int soap_type() const { return 529; } /* = unique id SOAP_TYPE_ns1__EndPermissionSettingsResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__EndPermissionSettingsResponse() { ns1__EndPermissionSettingsResponse::soap_default(NULL); }
+	virtual ~ns1__EndPermissionSettingsResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__abxPermissionResult
+#define SOAP_TYPE_ns1__abxPermissionResult (530)
+/* ns1:abxPermissionResult */
+class SOAP_CMAC ns1__abxPermissionResult : public xsd__anyType
+{
+public:
+	unsigned int result;	/* required element of type xsd:unsignedInt */
+	class ns1__abxPermissionElenco *list;	/* required element of type ns1:abxPermissionElenco */
+public:
+	virtual int soap_type() const { return 530; } /* = unique id SOAP_TYPE_ns1__abxPermissionResult */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__abxPermissionResult() { ns1__abxPermissionResult::soap_default(NULL); }
+	virtual ~ns1__abxPermissionResult() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__abxPermissionElenco
+#define SOAP_TYPE_ns1__abxPermissionElenco (531)
+/* ns1:abxPermissionElenco */
+class SOAP_CMAC ns1__abxPermissionElenco : public xsd__anyType
+{
+public:
+	int __sizelista;	/* sequence of elements <lista> */
+	ns1__abxPermission **lista;	/* required element of type ns1:abxPermission */
+public:
+	virtual int soap_type() const { return 531; } /* = unique id SOAP_TYPE_ns1__abxPermissionElenco */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__abxPermissionElenco() { ns1__abxPermissionElenco::soap_default(NULL); }
+	virtual ~ns1__abxPermissionElenco() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetDownloadDetailByFilecode
+#define SOAP_TYPE_ns1__GetDownloadDetailByFilecode (532)
+/* ns1:GetDownloadDetailByFilecode */
+class SOAP_CMAC ns1__GetDownloadDetailByFilecode : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *fileCode;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 532; } /* = unique id SOAP_TYPE_ns1__GetDownloadDetailByFilecode */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetDownloadDetailByFilecode() { ns1__GetDownloadDetailByFilecode::soap_default(NULL); }
+	virtual ~ns1__GetDownloadDetailByFilecode() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetDownloadDetailByFilecodeResponse
+#define SOAP_TYPE_ns1__GetDownloadDetailByFilecodeResponse (533)
+/* ns1:GetDownloadDetailByFilecodeResponse */
+class SOAP_CMAC ns1__GetDownloadDetailByFilecodeResponse : public xsd__anyType
+{
+public:
+	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
+public:
+	virtual int soap_type() const { return 533; } /* = unique id SOAP_TYPE_ns1__GetDownloadDetailByFilecodeResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetDownloadDetailByFilecodeResponse() { ns1__GetDownloadDetailByFilecodeResponse::soap_default(NULL); }
+	virtual ~ns1__GetDownloadDetailByFilecodeResponse() { }
 };
 #endif
 
@@ -12081,7 +12125,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__canCreateContainer
-#define SOAP_TYPE_ns1__canCreateContainer (532)
+#define SOAP_TYPE_ns1__canCreateContainer (534)
 /* ns1:canCreateContainer */
 class SOAP_CMAC ns1__canCreateContainer : public xsd__anyType
 {
@@ -12090,7 +12134,7 @@ public:
 	char *ContainerParentName;	/* optional element of type xsd:string */
 	_ns1__canCreateContainer_parentDataID *parentDataID;	/* optional element of type ns1:canCreateContainer-parentDataID */
 public:
-	virtual int soap_type() const { return 532; } /* = unique id SOAP_TYPE_ns1__canCreateContainer */
+	virtual int soap_type() const { return 534; } /* = unique id SOAP_TYPE_ns1__canCreateContainer */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -12103,14 +12147,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__canCreateContainerResponse
-#define SOAP_TYPE_ns1__canCreateContainerResponse (533)
+#define SOAP_TYPE_ns1__canCreateContainerResponse (535)
 /* ns1:canCreateContainerResponse */
 class SOAP_CMAC ns1__canCreateContainerResponse : public xsd__anyType
 {
 public:
 	ns4__abxCan *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns4:abxCan */
 public:
-	virtual int soap_type() const { return 533; } /* = unique id SOAP_TYPE_ns1__canCreateContainerResponse */
+	virtual int soap_type() const { return 535; } /* = unique id SOAP_TYPE_ns1__canCreateContainerResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -12122,89 +12166,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetDownloadDetailByFilecode
-#define SOAP_TYPE_ns1__GetDownloadDetailByFilecode (534)
-/* ns1:GetDownloadDetailByFilecode */
-class SOAP_CMAC ns1__GetDownloadDetailByFilecode : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *fileCode;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 534; } /* = unique id SOAP_TYPE_ns1__GetDownloadDetailByFilecode */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetDownloadDetailByFilecode() { ns1__GetDownloadDetailByFilecode::soap_default(NULL); }
-	virtual ~ns1__GetDownloadDetailByFilecode() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__GetDownloadDetailByFilecodeResponse
-#define SOAP_TYPE_ns1__GetDownloadDetailByFilecodeResponse (535)
-/* ns1:GetDownloadDetailByFilecodeResponse */
-class SOAP_CMAC ns1__GetDownloadDetailByFilecodeResponse : public xsd__anyType
-{
-public:
-	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
-public:
-	virtual int soap_type() const { return 535; } /* = unique id SOAP_TYPE_ns1__GetDownloadDetailByFilecodeResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetDownloadDetailByFilecodeResponse() { ns1__GetDownloadDetailByFilecodeResponse::soap_default(NULL); }
-	virtual ~ns1__GetDownloadDetailByFilecodeResponse() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__GetAllFilter
-#define SOAP_TYPE_ns1__GetAllFilter (536)
-/* ns1:GetAllFilter */
-class SOAP_CMAC ns1__GetAllFilter : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-public:
-	virtual int soap_type() const { return 536; } /* = unique id SOAP_TYPE_ns1__GetAllFilter */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetAllFilter() { ns1__GetAllFilter::soap_default(NULL); }
-	virtual ~ns1__GetAllFilter() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__GetAllFilterResponse
-#define SOAP_TYPE_ns1__GetAllFilterResponse (537)
-/* ns1:GetAllFilterResponse */
-class SOAP_CMAC ns1__GetAllFilterResponse : public xsd__anyType
-{
-public:
-	ns1__AbxFilterResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:AbxFilterResult */
-public:
-	virtual int soap_type() const { return 537; } /* = unique id SOAP_TYPE_ns1__GetAllFilterResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetAllFilterResponse() { ns1__GetAllFilterResponse::soap_default(NULL); }
-	virtual ~ns1__GetAllFilterResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__Fk_USCOREgetAllRecordByIndex
-#define SOAP_TYPE_ns1__Fk_USCOREgetAllRecordByIndex (538)
+#define SOAP_TYPE_ns1__Fk_USCOREgetAllRecordByIndex (536)
 /* ns1:Fk_getAllRecordByIndex */
 class SOAP_CMAC ns1__Fk_USCOREgetAllRecordByIndex : public xsd__anyType
 {
@@ -12215,7 +12178,7 @@ public:
 	bool directionDesc;	/* required element of type xsd:boolean */
 	char *InstanceName;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 538; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREgetAllRecordByIndex */
+	virtual int soap_type() const { return 536; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREgetAllRecordByIndex */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -12228,14 +12191,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__Fk_USCOREgetAllRecordByIndexResponse
-#define SOAP_TYPE_ns1__Fk_USCOREgetAllRecordByIndexResponse (539)
+#define SOAP_TYPE_ns1__Fk_USCOREgetAllRecordByIndexResponse (537)
 /* ns1:Fk_getAllRecordByIndexResponse */
 class SOAP_CMAC ns1__Fk_USCOREgetAllRecordByIndexResponse : public xsd__anyType
 {
 public:
 	ns1__abxFKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFKResult */
 public:
-	virtual int soap_type() const { return 539; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREgetAllRecordByIndexResponse */
+	virtual int soap_type() const { return 537; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREgetAllRecordByIndexResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -12247,91 +12210,48 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__InsertClasseDocumentale
-#define SOAP_TYPE_ns1__InsertClasseDocumentale (540)
-/* ns1:InsertClasseDocumentale */
-class SOAP_CMAC ns1__InsertClasseDocumentale : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__GetAllFilter
+#define SOAP_TYPE_ns1__GetAllFilter (538)
+/* ns1:GetAllFilter */
+class SOAP_CMAC ns1__GetAllFilter : public xsd__anyType
 {
 public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	ns1__abxClasseDocumentale *classeDocumentale;	/* optional element of type ns1:abxClasseDocumentale */
 public:
-	virtual int soap_type() const { return 540; } /* = unique id SOAP_TYPE_ns1__InsertClasseDocumentale */
+	virtual int soap_type() const { return 538; } /* = unique id SOAP_TYPE_ns1__GetAllFilter */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__InsertClasseDocumentale() { ns1__InsertClasseDocumentale::soap_default(NULL); }
-	virtual ~ns1__InsertClasseDocumentale() { }
+	         ns1__GetAllFilter() { ns1__GetAllFilter::soap_default(NULL); }
+	virtual ~ns1__GetAllFilter() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__InsertClasseDocumentaleResponse
-#define SOAP_TYPE_ns1__InsertClasseDocumentaleResponse (541)
-/* ns1:InsertClasseDocumentaleResponse */
-class SOAP_CMAC ns1__InsertClasseDocumentaleResponse : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__GetAllFilterResponse
+#define SOAP_TYPE_ns1__GetAllFilterResponse (539)
+/* ns1:GetAllFilterResponse */
+class SOAP_CMAC ns1__GetAllFilterResponse : public xsd__anyType
 {
 public:
-	ns1__abxClasseDocumentaleResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxClasseDocumentaleResult */
+	ns1__AbxFilterResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:AbxFilterResult */
 public:
-	virtual int soap_type() const { return 541; } /* = unique id SOAP_TYPE_ns1__InsertClasseDocumentaleResponse */
+	virtual int soap_type() const { return 539; } /* = unique id SOAP_TYPE_ns1__GetAllFilterResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__InsertClasseDocumentaleResponse() { ns1__InsertClasseDocumentaleResponse::soap_default(NULL); }
-	virtual ~ns1__InsertClasseDocumentaleResponse() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__CheckOut_USCOREdocument
-#define SOAP_TYPE_ns1__CheckOut_USCOREdocument (542)
-/* ns1:CheckOut_document */
-class SOAP_CMAC ns1__CheckOut_USCOREdocument : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *InstanceName;	/* optional element of type xsd:string */
-	char *Path;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 542; } /* = unique id SOAP_TYPE_ns1__CheckOut_USCOREdocument */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__CheckOut_USCOREdocument() { ns1__CheckOut_USCOREdocument::soap_default(NULL); }
-	virtual ~ns1__CheckOut_USCOREdocument() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__CheckOut_USCOREdocumentResponse
-#define SOAP_TYPE_ns1__CheckOut_USCOREdocumentResponse (543)
-/* ns1:CheckOut_documentResponse */
-class SOAP_CMAC ns1__CheckOut_USCOREdocumentResponse : public xsd__anyType
-{
-public:
-	ns1__abxCheckinResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxCheckinResult */
-public:
-	virtual int soap_type() const { return 543; } /* = unique id SOAP_TYPE_ns1__CheckOut_USCOREdocumentResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__CheckOut_USCOREdocumentResponse() { ns1__CheckOut_USCOREdocumentResponse::soap_default(NULL); }
-	virtual ~ns1__CheckOut_USCOREdocumentResponse() { }
+	         ns1__GetAllFilterResponse() { ns1__GetAllFilterResponse::soap_default(NULL); }
+	virtual ~ns1__GetAllFilterResponse() { }
 };
 #endif
 
 #ifndef SOAP_TYPE_ns1__DownloadGetNext
-#define SOAP_TYPE_ns1__DownloadGetNext (544)
+#define SOAP_TYPE_ns1__DownloadGetNext (540)
 /* ns1:DownloadGetNext */
 class SOAP_CMAC ns1__DownloadGetNext : public xsd__anyType
 {
@@ -12339,7 +12259,7 @@ public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	char *fileCode;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 544; } /* = unique id SOAP_TYPE_ns1__DownloadGetNext */
+	virtual int soap_type() const { return 540; } /* = unique id SOAP_TYPE_ns1__DownloadGetNext */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -12352,14 +12272,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__DownloadGetNextResponse
-#define SOAP_TYPE_ns1__DownloadGetNextResponse (545)
+#define SOAP_TYPE_ns1__DownloadGetNextResponse (541)
 /* ns1:DownloadGetNextResponse */
 class SOAP_CMAC ns1__DownloadGetNextResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 545; } /* = unique id SOAP_TYPE_ns1__DownloadGetNextResponse */
+	virtual int soap_type() const { return 541; } /* = unique id SOAP_TYPE_ns1__DownloadGetNextResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -12368,6 +12288,89 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__DownloadGetNextResponse() { ns1__DownloadGetNextResponse::soap_default(NULL); }
 	virtual ~ns1__DownloadGetNextResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__InsertClasseDocumentale
+#define SOAP_TYPE_ns1__InsertClasseDocumentale (542)
+/* ns1:InsertClasseDocumentale */
+class SOAP_CMAC ns1__InsertClasseDocumentale : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	ns1__abxClasseDocumentale *classeDocumentale;	/* optional element of type ns1:abxClasseDocumentale */
+public:
+	virtual int soap_type() const { return 542; } /* = unique id SOAP_TYPE_ns1__InsertClasseDocumentale */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__InsertClasseDocumentale() { ns1__InsertClasseDocumentale::soap_default(NULL); }
+	virtual ~ns1__InsertClasseDocumentale() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__InsertClasseDocumentaleResponse
+#define SOAP_TYPE_ns1__InsertClasseDocumentaleResponse (543)
+/* ns1:InsertClasseDocumentaleResponse */
+class SOAP_CMAC ns1__InsertClasseDocumentaleResponse : public xsd__anyType
+{
+public:
+	ns1__abxClasseDocumentaleResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxClasseDocumentaleResult */
+public:
+	virtual int soap_type() const { return 543; } /* = unique id SOAP_TYPE_ns1__InsertClasseDocumentaleResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__InsertClasseDocumentaleResponse() { ns1__InsertClasseDocumentaleResponse::soap_default(NULL); }
+	virtual ~ns1__InsertClasseDocumentaleResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__CheckOut_USCOREdocument
+#define SOAP_TYPE_ns1__CheckOut_USCOREdocument (544)
+/* ns1:CheckOut_document */
+class SOAP_CMAC ns1__CheckOut_USCOREdocument : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *InstanceName;	/* optional element of type xsd:string */
+	char *Path;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 544; } /* = unique id SOAP_TYPE_ns1__CheckOut_USCOREdocument */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__CheckOut_USCOREdocument() { ns1__CheckOut_USCOREdocument::soap_default(NULL); }
+	virtual ~ns1__CheckOut_USCOREdocument() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__CheckOut_USCOREdocumentResponse
+#define SOAP_TYPE_ns1__CheckOut_USCOREdocumentResponse (545)
+/* ns1:CheckOut_documentResponse */
+class SOAP_CMAC ns1__CheckOut_USCOREdocumentResponse : public xsd__anyType
+{
+public:
+	ns1__abxCheckinResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxCheckinResult */
+public:
+	virtual int soap_type() const { return 545; } /* = unique id SOAP_TYPE_ns1__CheckOut_USCOREdocumentResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__CheckOut_USCOREdocumentResponse() { ns1__CheckOut_USCOREdocumentResponse::soap_default(NULL); }
+	virtual ~ns1__CheckOut_USCOREdocumentResponse() { }
 };
 #endif
 
@@ -12575,49 +12578,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetFieldsPropertiesFromTemplate
-#define SOAP_TYPE_ns1__GetFieldsPropertiesFromTemplate (556)
-/* ns1:GetFieldsPropertiesFromTemplate */
-class SOAP_CMAC ns1__GetFieldsPropertiesFromTemplate : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *TemplateName;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 556; } /* = unique id SOAP_TYPE_ns1__GetFieldsPropertiesFromTemplate */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetFieldsPropertiesFromTemplate() { ns1__GetFieldsPropertiesFromTemplate::soap_default(NULL); }
-	virtual ~ns1__GetFieldsPropertiesFromTemplate() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__GetFieldsPropertiesFromTemplateResponse
-#define SOAP_TYPE_ns1__GetFieldsPropertiesFromTemplateResponse (557)
-/* ns1:GetFieldsPropertiesFromTemplateResponse */
-class SOAP_CMAC ns1__GetFieldsPropertiesFromTemplateResponse : public xsd__anyType
-{
-public:
-	ns1__abxFieldResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFieldResult */
-public:
-	virtual int soap_type() const { return 557; } /* = unique id SOAP_TYPE_ns1__GetFieldsPropertiesFromTemplateResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetFieldsPropertiesFromTemplateResponse() { ns1__GetFieldsPropertiesFromTemplateResponse::soap_default(NULL); }
-	virtual ~ns1__GetFieldsPropertiesFromTemplateResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__CheckOut_USCOREattach
-#define SOAP_TYPE_ns1__CheckOut_USCOREattach (558)
+#define SOAP_TYPE_ns1__CheckOut_USCOREattach (556)
 /* ns1:CheckOut_attach */
 class SOAP_CMAC ns1__CheckOut_USCOREattach : public xsd__anyType
 {
@@ -12626,7 +12588,7 @@ public:
 	char *InstanceName;	/* optional element of type xsd:string */
 	char *Path;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 558; } /* = unique id SOAP_TYPE_ns1__CheckOut_USCOREattach */
+	virtual int soap_type() const { return 556; } /* = unique id SOAP_TYPE_ns1__CheckOut_USCOREattach */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -12639,14 +12601,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__CheckOut_USCOREattachResponse
-#define SOAP_TYPE_ns1__CheckOut_USCOREattachResponse (559)
+#define SOAP_TYPE_ns1__CheckOut_USCOREattachResponse (557)
 /* ns1:CheckOut_attachResponse */
 class SOAP_CMAC ns1__CheckOut_USCOREattachResponse : public xsd__anyType
 {
 public:
 	ns1__abxCheckinResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxCheckinResult */
 public:
-	virtual int soap_type() const { return 559; } /* = unique id SOAP_TYPE_ns1__CheckOut_USCOREattachResponse */
+	virtual int soap_type() const { return 557; } /* = unique id SOAP_TYPE_ns1__CheckOut_USCOREattachResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -12655,6 +12617,47 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__CheckOut_USCOREattachResponse() { ns1__CheckOut_USCOREattachResponse::soap_default(NULL); }
 	virtual ~ns1__CheckOut_USCOREattachResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetFieldsPropertiesFromTemplate
+#define SOAP_TYPE_ns1__GetFieldsPropertiesFromTemplate (558)
+/* ns1:GetFieldsPropertiesFromTemplate */
+class SOAP_CMAC ns1__GetFieldsPropertiesFromTemplate : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *TemplateName;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 558; } /* = unique id SOAP_TYPE_ns1__GetFieldsPropertiesFromTemplate */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetFieldsPropertiesFromTemplate() { ns1__GetFieldsPropertiesFromTemplate::soap_default(NULL); }
+	virtual ~ns1__GetFieldsPropertiesFromTemplate() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetFieldsPropertiesFromTemplateResponse
+#define SOAP_TYPE_ns1__GetFieldsPropertiesFromTemplateResponse (559)
+/* ns1:GetFieldsPropertiesFromTemplateResponse */
+class SOAP_CMAC ns1__GetFieldsPropertiesFromTemplateResponse : public xsd__anyType
+{
+public:
+	ns1__abxFieldResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFieldResult */
+public:
+	virtual int soap_type() const { return 559; } /* = unique id SOAP_TYPE_ns1__GetFieldsPropertiesFromTemplateResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetFieldsPropertiesFromTemplateResponse() { ns1__GetFieldsPropertiesFromTemplateResponse::soap_default(NULL); }
+	virtual ~ns1__GetFieldsPropertiesFromTemplateResponse() { }
 };
 #endif
 
@@ -12886,49 +12889,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__ModifySDKTask
-#define SOAP_TYPE_ns1__ModifySDKTask (570)
-/* ns1:ModifySDKTask */
-class SOAP_CMAC ns1__ModifySDKTask : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	ns1__abxSDKTask *sdkTask;	/* optional element of type ns1:abxSDKTask */
-public:
-	virtual int soap_type() const { return 570; } /* = unique id SOAP_TYPE_ns1__ModifySDKTask */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__ModifySDKTask() { ns1__ModifySDKTask::soap_default(NULL); }
-	virtual ~ns1__ModifySDKTask() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__ModifySDKTaskResponse
-#define SOAP_TYPE_ns1__ModifySDKTaskResponse (571)
-/* ns1:ModifySDKTaskResponse */
-class SOAP_CMAC ns1__ModifySDKTaskResponse : public xsd__anyType
-{
-public:
-	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
-public:
-	virtual int soap_type() const { return 571; } /* = unique id SOAP_TYPE_ns1__ModifySDKTaskResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__ModifySDKTaskResponse() { ns1__ModifySDKTaskResponse::soap_default(NULL); }
-	virtual ~ns1__ModifySDKTaskResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__GetArchiBoxInDomainByMatricola
-#define SOAP_TYPE_ns1__GetArchiBoxInDomainByMatricola (572)
+#define SOAP_TYPE_ns1__GetArchiBoxInDomainByMatricola (570)
 /* ns1:GetArchiBoxInDomainByMatricola */
 class SOAP_CMAC ns1__GetArchiBoxInDomainByMatricola : public xsd__anyType
 {
@@ -12936,7 +12898,7 @@ public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	char *matricola;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 572; } /* = unique id SOAP_TYPE_ns1__GetArchiBoxInDomainByMatricola */
+	virtual int soap_type() const { return 570; } /* = unique id SOAP_TYPE_ns1__GetArchiBoxInDomainByMatricola */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -12949,14 +12911,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetArchiBoxInDomainByMatricolaResponse
-#define SOAP_TYPE_ns1__GetArchiBoxInDomainByMatricolaResponse (573)
+#define SOAP_TYPE_ns1__GetArchiBoxInDomainByMatricolaResponse (571)
 /* ns1:GetArchiBoxInDomainByMatricolaResponse */
 class SOAP_CMAC ns1__GetArchiBoxInDomainByMatricolaResponse : public xsd__anyType
 {
 public:
 	ns1__abxArchiBoxDomainResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxArchiBoxDomainResult */
 public:
-	virtual int soap_type() const { return 573; } /* = unique id SOAP_TYPE_ns1__GetArchiBoxInDomainByMatricolaResponse */
+	virtual int soap_type() const { return 571; } /* = unique id SOAP_TYPE_ns1__GetArchiBoxInDomainByMatricolaResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -12965,6 +12927,47 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__GetArchiBoxInDomainByMatricolaResponse() { ns1__GetArchiBoxInDomainByMatricolaResponse::soap_default(NULL); }
 	virtual ~ns1__GetArchiBoxInDomainByMatricolaResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__ModifySDKTask
+#define SOAP_TYPE_ns1__ModifySDKTask (572)
+/* ns1:ModifySDKTask */
+class SOAP_CMAC ns1__ModifySDKTask : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	ns1__abxSDKTask *sdkTask;	/* optional element of type ns1:abxSDKTask */
+public:
+	virtual int soap_type() const { return 572; } /* = unique id SOAP_TYPE_ns1__ModifySDKTask */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__ModifySDKTask() { ns1__ModifySDKTask::soap_default(NULL); }
+	virtual ~ns1__ModifySDKTask() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__ModifySDKTaskResponse
+#define SOAP_TYPE_ns1__ModifySDKTaskResponse (573)
+/* ns1:ModifySDKTaskResponse */
+class SOAP_CMAC ns1__ModifySDKTaskResponse : public xsd__anyType
+{
+public:
+	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
+public:
+	virtual int soap_type() const { return 573; } /* = unique id SOAP_TYPE_ns1__ModifySDKTaskResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__ModifySDKTaskResponse() { ns1__ModifySDKTaskResponse::soap_default(NULL); }
+	virtual ~ns1__ModifySDKTaskResponse() { }
 };
 #endif
 
@@ -13139,50 +13142,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__CanAddDigitalSignature
-#define SOAP_TYPE_ns1__CanAddDigitalSignature (582)
-/* ns1:CanAddDigitalSignature */
-class SOAP_CMAC ns1__CanAddDigitalSignature : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *instanceName;	/* optional element of type xsd:string */
-	ns1__abxFileList *dataListInput;	/* optional element of type ns1:abxFileList */
-public:
-	virtual int soap_type() const { return 582; } /* = unique id SOAP_TYPE_ns1__CanAddDigitalSignature */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__CanAddDigitalSignature() { ns1__CanAddDigitalSignature::soap_default(NULL); }
-	virtual ~ns1__CanAddDigitalSignature() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__CanAddDigitalSignatureResponse
-#define SOAP_TYPE_ns1__CanAddDigitalSignatureResponse (583)
-/* ns1:CanAddDigitalSignatureResponse */
-class SOAP_CMAC ns1__CanAddDigitalSignatureResponse : public xsd__anyType
-{
-public:
-	ns4__abxCan *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns4:abxCan */
-public:
-	virtual int soap_type() const { return 583; } /* = unique id SOAP_TYPE_ns1__CanAddDigitalSignatureResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__CanAddDigitalSignatureResponse() { ns1__CanAddDigitalSignatureResponse::soap_default(NULL); }
-	virtual ~ns1__CanAddDigitalSignatureResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__Query
-#define SOAP_TYPE_ns1__Query (584)
+#define SOAP_TYPE_ns1__Query (582)
 /* ns1:Query */
 class SOAP_CMAC ns1__Query : public xsd__anyType
 {
@@ -13190,7 +13151,7 @@ public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	ns1__abxQexpression *option4query;	/* optional element of type ns1:abxQexpression */
 public:
-	virtual int soap_type() const { return 584; } /* = unique id SOAP_TYPE_ns1__Query */
+	virtual int soap_type() const { return 582; } /* = unique id SOAP_TYPE_ns1__Query */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -13203,14 +13164,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__QueryResponse
-#define SOAP_TYPE_ns1__QueryResponse (585)
+#define SOAP_TYPE_ns1__QueryResponse (583)
 /* ns1:QueryResponse */
 class SOAP_CMAC ns1__QueryResponse : public xsd__anyType
 {
 public:
 	ns1__abxRetQueryResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxRetQueryResult */
 public:
-	virtual int soap_type() const { return 585; } /* = unique id SOAP_TYPE_ns1__QueryResponse */
+	virtual int soap_type() const { return 583; } /* = unique id SOAP_TYPE_ns1__QueryResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -13219,6 +13180,48 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__QueryResponse() { ns1__QueryResponse::soap_default(NULL); }
 	virtual ~ns1__QueryResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__CanAddDigitalSignature
+#define SOAP_TYPE_ns1__CanAddDigitalSignature (584)
+/* ns1:CanAddDigitalSignature */
+class SOAP_CMAC ns1__CanAddDigitalSignature : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *instanceName;	/* optional element of type xsd:string */
+	ns1__abxFileList *dataListInput;	/* optional element of type ns1:abxFileList */
+public:
+	virtual int soap_type() const { return 584; } /* = unique id SOAP_TYPE_ns1__CanAddDigitalSignature */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__CanAddDigitalSignature() { ns1__CanAddDigitalSignature::soap_default(NULL); }
+	virtual ~ns1__CanAddDigitalSignature() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__CanAddDigitalSignatureResponse
+#define SOAP_TYPE_ns1__CanAddDigitalSignatureResponse (585)
+/* ns1:CanAddDigitalSignatureResponse */
+class SOAP_CMAC ns1__CanAddDigitalSignatureResponse : public xsd__anyType
+{
+public:
+	ns4__abxCan *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns4:abxCan */
+public:
+	virtual int soap_type() const { return 585; } /* = unique id SOAP_TYPE_ns1__CanAddDigitalSignatureResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__CanAddDigitalSignatureResponse() { ns1__CanAddDigitalSignatureResponse::soap_default(NULL); }
+	virtual ~ns1__CanAddDigitalSignatureResponse() { }
 };
 #endif
 
@@ -13409,49 +13412,43 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__ExtractSDKPDFTemplateTextByArea
-#define SOAP_TYPE_ns1__ExtractSDKPDFTemplateTextByArea (595)
-/* ns1:ExtractSDKPDFTemplateTextByArea */
-class SOAP_CMAC ns1__ExtractSDKPDFTemplateTextByArea : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__GetAdjacentArchiBox
+#define SOAP_TYPE_ns1__GetAdjacentArchiBox (595)
+/* ns1:GetAdjacentArchiBox */
+class SOAP_CMAC ns1__GetAdjacentArchiBox : public xsd__anyType
 {
 public:
-	ns1__IDtype *sessionId;	/* optional element of type ns1:IDtype */
-	char *idTask;	/* optional element of type xsd:string */
-	int x;	/* required element of type xsd:int */
-	int y;	/* required element of type xsd:int */
-	int width;	/* required element of type xsd:int */
-	int height;	/* required element of type xsd:int */
-	int page;	/* required element of type xsd:int */
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 public:
-	virtual int soap_type() const { return 595; } /* = unique id SOAP_TYPE_ns1__ExtractSDKPDFTemplateTextByArea */
+	virtual int soap_type() const { return 595; } /* = unique id SOAP_TYPE_ns1__GetAdjacentArchiBox */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__ExtractSDKPDFTemplateTextByArea() { ns1__ExtractSDKPDFTemplateTextByArea::soap_default(NULL); }
-	virtual ~ns1__ExtractSDKPDFTemplateTextByArea() { }
+	         ns1__GetAdjacentArchiBox() { ns1__GetAdjacentArchiBox::soap_default(NULL); }
+	virtual ~ns1__GetAdjacentArchiBox() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__ExtractSDKPDFTemplateTextByAreaResponse
-#define SOAP_TYPE_ns1__ExtractSDKPDFTemplateTextByAreaResponse (596)
-/* ns1:ExtractSDKPDFTemplateTextByAreaResponse */
-class SOAP_CMAC ns1__ExtractSDKPDFTemplateTextByAreaResponse : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__GetAdjacentArchiBoxResponse
+#define SOAP_TYPE_ns1__GetAdjacentArchiBoxResponse (596)
+/* ns1:GetAdjacentArchiBoxResponse */
+class SOAP_CMAC ns1__GetAdjacentArchiBoxResponse : public xsd__anyType
 {
 public:
-	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
+	ns1__abxReplicationResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxReplicationResult */
 public:
-	virtual int soap_type() const { return 596; } /* = unique id SOAP_TYPE_ns1__ExtractSDKPDFTemplateTextByAreaResponse */
+	virtual int soap_type() const { return 596; } /* = unique id SOAP_TYPE_ns1__GetAdjacentArchiBoxResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__ExtractSDKPDFTemplateTextByAreaResponse() { ns1__ExtractSDKPDFTemplateTextByAreaResponse::soap_default(NULL); }
-	virtual ~ns1__ExtractSDKPDFTemplateTextByAreaResponse() { }
+	         ns1__GetAdjacentArchiBoxResponse() { ns1__GetAdjacentArchiBoxResponse::soap_default(NULL); }
+	virtual ~ns1__GetAdjacentArchiBoxResponse() { }
 };
 #endif
 
@@ -13495,43 +13492,49 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetAdjacentArchiBox
-#define SOAP_TYPE_ns1__GetAdjacentArchiBox (599)
-/* ns1:GetAdjacentArchiBox */
-class SOAP_CMAC ns1__GetAdjacentArchiBox : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__ExtractSDKPDFTemplateTextByArea
+#define SOAP_TYPE_ns1__ExtractSDKPDFTemplateTextByArea (599)
+/* ns1:ExtractSDKPDFTemplateTextByArea */
+class SOAP_CMAC ns1__ExtractSDKPDFTemplateTextByArea : public xsd__anyType
 {
 public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	ns1__IDtype *sessionId;	/* optional element of type ns1:IDtype */
+	char *idTask;	/* optional element of type xsd:string */
+	int x;	/* required element of type xsd:int */
+	int y;	/* required element of type xsd:int */
+	int width;	/* required element of type xsd:int */
+	int height;	/* required element of type xsd:int */
+	int page;	/* required element of type xsd:int */
 public:
-	virtual int soap_type() const { return 599; } /* = unique id SOAP_TYPE_ns1__GetAdjacentArchiBox */
+	virtual int soap_type() const { return 599; } /* = unique id SOAP_TYPE_ns1__ExtractSDKPDFTemplateTextByArea */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetAdjacentArchiBox() { ns1__GetAdjacentArchiBox::soap_default(NULL); }
-	virtual ~ns1__GetAdjacentArchiBox() { }
+	         ns1__ExtractSDKPDFTemplateTextByArea() { ns1__ExtractSDKPDFTemplateTextByArea::soap_default(NULL); }
+	virtual ~ns1__ExtractSDKPDFTemplateTextByArea() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetAdjacentArchiBoxResponse
-#define SOAP_TYPE_ns1__GetAdjacentArchiBoxResponse (600)
-/* ns1:GetAdjacentArchiBoxResponse */
-class SOAP_CMAC ns1__GetAdjacentArchiBoxResponse : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__ExtractSDKPDFTemplateTextByAreaResponse
+#define SOAP_TYPE_ns1__ExtractSDKPDFTemplateTextByAreaResponse (600)
+/* ns1:ExtractSDKPDFTemplateTextByAreaResponse */
+class SOAP_CMAC ns1__ExtractSDKPDFTemplateTextByAreaResponse : public xsd__anyType
 {
 public:
-	ns1__abxReplicationResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxReplicationResult */
+	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
 public:
-	virtual int soap_type() const { return 600; } /* = unique id SOAP_TYPE_ns1__GetAdjacentArchiBoxResponse */
+	virtual int soap_type() const { return 600; } /* = unique id SOAP_TYPE_ns1__ExtractSDKPDFTemplateTextByAreaResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetAdjacentArchiBoxResponse() { ns1__GetAdjacentArchiBoxResponse::soap_default(NULL); }
-	virtual ~ns1__GetAdjacentArchiBoxResponse() { }
+	         ns1__ExtractSDKPDFTemplateTextByAreaResponse() { ns1__ExtractSDKPDFTemplateTextByAreaResponse::soap_default(NULL); }
+	virtual ~ns1__ExtractSDKPDFTemplateTextByAreaResponse() { }
 };
 #endif
 
@@ -13576,49 +13579,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__DownloadTPEndFile
-#define SOAP_TYPE_ns1__DownloadTPEndFile (603)
-/* ns1:DownloadTPEndFile */
-class SOAP_CMAC ns1__DownloadTPEndFile : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *fileCode;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 603; } /* = unique id SOAP_TYPE_ns1__DownloadTPEndFile */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__DownloadTPEndFile() { ns1__DownloadTPEndFile::soap_default(NULL); }
-	virtual ~ns1__DownloadTPEndFile() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__DownloadTPEndFileResponse
-#define SOAP_TYPE_ns1__DownloadTPEndFileResponse (604)
-/* ns1:DownloadTPEndFileResponse */
-class SOAP_CMAC ns1__DownloadTPEndFileResponse : public xsd__anyType
-{
-public:
-	ns1__abxFileTpResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileTpResult */
-public:
-	virtual int soap_type() const { return 604; } /* = unique id SOAP_TYPE_ns1__DownloadTPEndFileResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__DownloadTPEndFileResponse() { ns1__DownloadTPEndFileResponse::soap_default(NULL); }
-	virtual ~ns1__DownloadTPEndFileResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__GetUploadDetailByContId
-#define SOAP_TYPE_ns1__GetUploadDetailByContId (605)
+#define SOAP_TYPE_ns1__GetUploadDetailByContId (603)
 /* ns1:GetUploadDetailByContId */
 class SOAP_CMAC ns1__GetUploadDetailByContId : public xsd__anyType
 {
@@ -13626,7 +13588,7 @@ public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	char *instanceName;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 605; } /* = unique id SOAP_TYPE_ns1__GetUploadDetailByContId */
+	virtual int soap_type() const { return 603; } /* = unique id SOAP_TYPE_ns1__GetUploadDetailByContId */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -13639,14 +13601,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetUploadDetailByContIdResponse
-#define SOAP_TYPE_ns1__GetUploadDetailByContIdResponse (606)
+#define SOAP_TYPE_ns1__GetUploadDetailByContIdResponse (604)
 /* ns1:GetUploadDetailByContIdResponse */
 class SOAP_CMAC ns1__GetUploadDetailByContIdResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 606; } /* = unique id SOAP_TYPE_ns1__GetUploadDetailByContIdResponse */
+	virtual int soap_type() const { return 604; } /* = unique id SOAP_TYPE_ns1__GetUploadDetailByContIdResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -13655,6 +13617,47 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__GetUploadDetailByContIdResponse() { ns1__GetUploadDetailByContIdResponse::soap_default(NULL); }
 	virtual ~ns1__GetUploadDetailByContIdResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__DownloadTPEndFile
+#define SOAP_TYPE_ns1__DownloadTPEndFile (605)
+/* ns1:DownloadTPEndFile */
+class SOAP_CMAC ns1__DownloadTPEndFile : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *fileCode;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 605; } /* = unique id SOAP_TYPE_ns1__DownloadTPEndFile */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__DownloadTPEndFile() { ns1__DownloadTPEndFile::soap_default(NULL); }
+	virtual ~ns1__DownloadTPEndFile() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__DownloadTPEndFileResponse
+#define SOAP_TYPE_ns1__DownloadTPEndFileResponse (606)
+/* ns1:DownloadTPEndFileResponse */
+class SOAP_CMAC ns1__DownloadTPEndFileResponse : public xsd__anyType
+{
+public:
+	ns1__abxFileTpResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileTpResult */
+public:
+	virtual int soap_type() const { return 606; } /* = unique id SOAP_TYPE_ns1__DownloadTPEndFileResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__DownloadTPEndFileResponse() { ns1__DownloadTPEndFileResponse::soap_default(NULL); }
+	virtual ~ns1__DownloadTPEndFileResponse() { }
 };
 #endif
 
@@ -14144,8 +14147,48 @@ public:
 };
 #endif
 
+#ifndef SOAP_TYPE_ns1__GetUploadDetailByCont
+#define SOAP_TYPE_ns1__GetUploadDetailByCont (630)
+/* ns1:GetUploadDetailByCont */
+class SOAP_CMAC ns1__GetUploadDetailByCont : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+public:
+	virtual int soap_type() const { return 630; } /* = unique id SOAP_TYPE_ns1__GetUploadDetailByCont */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetUploadDetailByCont() { ns1__GetUploadDetailByCont::soap_default(NULL); }
+	virtual ~ns1__GetUploadDetailByCont() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetUploadDetailByContResponse
+#define SOAP_TYPE_ns1__GetUploadDetailByContResponse (631)
+/* ns1:GetUploadDetailByContResponse */
+class SOAP_CMAC ns1__GetUploadDetailByContResponse : public xsd__anyType
+{
+public:
+	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
+public:
+	virtual int soap_type() const { return 631; } /* = unique id SOAP_TYPE_ns1__GetUploadDetailByContResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetUploadDetailByContResponse() { ns1__GetUploadDetailByContResponse::soap_default(NULL); }
+	virtual ~ns1__GetUploadDetailByContResponse() { }
+};
+#endif
+
 #ifndef SOAP_TYPE_ns1__DigitalSign
-#define SOAP_TYPE_ns1__DigitalSign (630)
+#define SOAP_TYPE_ns1__DigitalSign (632)
 /* ns1:DigitalSign */
 class SOAP_CMAC ns1__DigitalSign : public xsd__anyType
 {
@@ -14160,7 +14203,7 @@ public:
 	char *signPassword;	/* optional element of type xsd:string */
 	int *signType;	/* optional element of type xsd:int */
 public:
-	virtual int soap_type() const { return 630; } /* = unique id SOAP_TYPE_ns1__DigitalSign */
+	virtual int soap_type() const { return 632; } /* = unique id SOAP_TYPE_ns1__DigitalSign */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -14173,14 +14216,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__DigitalSignResponse
-#define SOAP_TYPE_ns1__DigitalSignResponse (631)
+#define SOAP_TYPE_ns1__DigitalSignResponse (633)
 /* ns1:DigitalSignResponse */
 class SOAP_CMAC ns1__DigitalSignResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 631; } /* = unique id SOAP_TYPE_ns1__DigitalSignResponse */
+	virtual int soap_type() const { return 633; } /* = unique id SOAP_TYPE_ns1__DigitalSignResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -14189,46 +14232,6 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__DigitalSignResponse() { ns1__DigitalSignResponse::soap_default(NULL); }
 	virtual ~ns1__DigitalSignResponse() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__GetUploadDetailByCont
-#define SOAP_TYPE_ns1__GetUploadDetailByCont (632)
-/* ns1:GetUploadDetailByCont */
-class SOAP_CMAC ns1__GetUploadDetailByCont : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-public:
-	virtual int soap_type() const { return 632; } /* = unique id SOAP_TYPE_ns1__GetUploadDetailByCont */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetUploadDetailByCont() { ns1__GetUploadDetailByCont::soap_default(NULL); }
-	virtual ~ns1__GetUploadDetailByCont() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__GetUploadDetailByContResponse
-#define SOAP_TYPE_ns1__GetUploadDetailByContResponse (633)
-/* ns1:GetUploadDetailByContResponse */
-class SOAP_CMAC ns1__GetUploadDetailByContResponse : public xsd__anyType
-{
-public:
-	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
-public:
-	virtual int soap_type() const { return 633; } /* = unique id SOAP_TYPE_ns1__GetUploadDetailByContResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetUploadDetailByContResponse() { ns1__GetUploadDetailByContResponse::soap_default(NULL); }
-	virtual ~ns1__GetUploadDetailByContResponse() { }
 };
 #endif
 
@@ -14273,56 +14276,15 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__DelExpression
-#define SOAP_TYPE_ns1__DelExpression (636)
-/* ns1:DelExpression */
-class SOAP_CMAC ns1__DelExpression : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	ns1__abxExpression *expr;	/* optional element of type ns1:abxExpression */
-public:
-	virtual int soap_type() const { return 636; } /* = unique id SOAP_TYPE_ns1__DelExpression */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__DelExpression() { ns1__DelExpression::soap_default(NULL); }
-	virtual ~ns1__DelExpression() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__DelExpressionResponse
-#define SOAP_TYPE_ns1__DelExpressionResponse (637)
-/* ns1:DelExpressionResponse */
-class SOAP_CMAC ns1__DelExpressionResponse : public xsd__anyType
-{
-public:
-	ns1__abxExpressionResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxExpressionResult */
-public:
-	virtual int soap_type() const { return 637; } /* = unique id SOAP_TYPE_ns1__DelExpressionResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__DelExpressionResponse() { ns1__DelExpressionResponse::soap_default(NULL); }
-	virtual ~ns1__DelExpressionResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__SetTmpUploadPath
-#define SOAP_TYPE_ns1__SetTmpUploadPath (638)
+#define SOAP_TYPE_ns1__SetTmpUploadPath (636)
 /* ns1:SetTmpUploadPath */
 class SOAP_CMAC ns1__SetTmpUploadPath : public xsd__anyType
 {
 public:
 	char *path;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 638; } /* = unique id SOAP_TYPE_ns1__SetTmpUploadPath */
+	virtual int soap_type() const { return 636; } /* = unique id SOAP_TYPE_ns1__SetTmpUploadPath */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -14335,14 +14297,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__SetTmpUploadPathResponse
-#define SOAP_TYPE_ns1__SetTmpUploadPathResponse (639)
+#define SOAP_TYPE_ns1__SetTmpUploadPathResponse (637)
 /* ns1:SetTmpUploadPathResponse */
 class SOAP_CMAC ns1__SetTmpUploadPathResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 639; } /* = unique id SOAP_TYPE_ns1__SetTmpUploadPathResponse */
+	virtual int soap_type() const { return 637; } /* = unique id SOAP_TYPE_ns1__SetTmpUploadPathResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -14351,6 +14313,47 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__SetTmpUploadPathResponse() { ns1__SetTmpUploadPathResponse::soap_default(NULL); }
 	virtual ~ns1__SetTmpUploadPathResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__DelExpression
+#define SOAP_TYPE_ns1__DelExpression (638)
+/* ns1:DelExpression */
+class SOAP_CMAC ns1__DelExpression : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	ns1__abxExpression *expr;	/* optional element of type ns1:abxExpression */
+public:
+	virtual int soap_type() const { return 638; } /* = unique id SOAP_TYPE_ns1__DelExpression */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__DelExpression() { ns1__DelExpression::soap_default(NULL); }
+	virtual ~ns1__DelExpression() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__DelExpressionResponse
+#define SOAP_TYPE_ns1__DelExpressionResponse (639)
+/* ns1:DelExpressionResponse */
+class SOAP_CMAC ns1__DelExpressionResponse : public xsd__anyType
+{
+public:
+	ns1__abxExpressionResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxExpressionResult */
+public:
+	virtual int soap_type() const { return 639; } /* = unique id SOAP_TYPE_ns1__DelExpressionResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__DelExpressionResponse() { ns1__DelExpressionResponse::soap_default(NULL); }
+	virtual ~ns1__DelExpressionResponse() { }
 };
 #endif
 
@@ -15017,48 +15020,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__SetTmpUSUploadPath
-#define SOAP_TYPE_ns1__SetTmpUSUploadPath (672)
-/* ns1:SetTmpUSUploadPath */
-class SOAP_CMAC ns1__SetTmpUSUploadPath : public xsd__anyType
-{
-public:
-	char *path;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 672; } /* = unique id SOAP_TYPE_ns1__SetTmpUSUploadPath */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__SetTmpUSUploadPath() { ns1__SetTmpUSUploadPath::soap_default(NULL); }
-	virtual ~ns1__SetTmpUSUploadPath() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__SetTmpUSUploadPathResponse
-#define SOAP_TYPE_ns1__SetTmpUSUploadPathResponse (673)
-/* ns1:SetTmpUSUploadPathResponse */
-class SOAP_CMAC ns1__SetTmpUSUploadPathResponse : public xsd__anyType
-{
-public:
-	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
-public:
-	virtual int soap_type() const { return 673; } /* = unique id SOAP_TYPE_ns1__SetTmpUSUploadPathResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__SetTmpUSUploadPathResponse() { ns1__SetTmpUSUploadPathResponse::soap_default(NULL); }
-	virtual ~ns1__SetTmpUSUploadPathResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__Fk_USCOREDB_USCOREmodify
-#define SOAP_TYPE_ns1__Fk_USCOREDB_USCOREmodify (674)
+#define SOAP_TYPE_ns1__Fk_USCOREDB_USCOREmodify (672)
 /* ns1:Fk_DB_modify */
 class SOAP_CMAC ns1__Fk_USCOREDB_USCOREmodify : public xsd__anyType
 {
@@ -15069,7 +15032,7 @@ public:
 	bool optionGetCache;	/* required element of type xsd:boolean */
 	bool optionSetDesc;	/* required element of type xsd:boolean */
 public:
-	virtual int soap_type() const { return 674; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREDB_USCOREmodify */
+	virtual int soap_type() const { return 672; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREDB_USCOREmodify */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -15082,14 +15045,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__Fk_USCOREDB_USCOREmodifyResponse
-#define SOAP_TYPE_ns1__Fk_USCOREDB_USCOREmodifyResponse (675)
+#define SOAP_TYPE_ns1__Fk_USCOREDB_USCOREmodifyResponse (673)
 /* ns1:Fk_DB_modifyResponse */
 class SOAP_CMAC ns1__Fk_USCOREDB_USCOREmodifyResponse : public xsd__anyType
 {
 public:
 	ns1__abxFKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFKResult */
 public:
-	virtual int soap_type() const { return 675; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREDB_USCOREmodifyResponse */
+	virtual int soap_type() const { return 673; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREDB_USCOREmodifyResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -15101,52 +15064,48 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__UploadWFEndFile
-#define SOAP_TYPE_ns1__UploadWFEndFile (676)
-/* ns1:UploadWFEndFile */
-class SOAP_CMAC ns1__UploadWFEndFile : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__SetTmpUSUploadPath
+#define SOAP_TYPE_ns1__SetTmpUSUploadPath (674)
+/* ns1:SetTmpUSUploadPath */
+class SOAP_CMAC ns1__SetTmpUSUploadPath : public xsd__anyType
 {
 public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *instanceName;	/* optional element of type xsd:string */
-	char *objName;	/* optional element of type xsd:string */
-	ns1__abxFileList *dataListInput;	/* optional element of type ns1:abxFileList */
-	char *codePrevioWFVersion;	/* optional element of type xsd:string */
+	char *path;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 676; } /* = unique id SOAP_TYPE_ns1__UploadWFEndFile */
+	virtual int soap_type() const { return 674; } /* = unique id SOAP_TYPE_ns1__SetTmpUSUploadPath */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__UploadWFEndFile() { ns1__UploadWFEndFile::soap_default(NULL); }
-	virtual ~ns1__UploadWFEndFile() { }
+	         ns1__SetTmpUSUploadPath() { ns1__SetTmpUSUploadPath::soap_default(NULL); }
+	virtual ~ns1__SetTmpUSUploadPath() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__UploadWFEndFileResponse
-#define SOAP_TYPE_ns1__UploadWFEndFileResponse (677)
-/* ns1:UploadWFEndFileResponse */
-class SOAP_CMAC ns1__UploadWFEndFileResponse : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__SetTmpUSUploadPathResponse
+#define SOAP_TYPE_ns1__SetTmpUSUploadPathResponse (675)
+/* ns1:SetTmpUSUploadPathResponse */
+class SOAP_CMAC ns1__SetTmpUSUploadPathResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 677; } /* = unique id SOAP_TYPE_ns1__UploadWFEndFileResponse */
+	virtual int soap_type() const { return 675; } /* = unique id SOAP_TYPE_ns1__SetTmpUSUploadPathResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__UploadWFEndFileResponse() { ns1__UploadWFEndFileResponse::soap_default(NULL); }
-	virtual ~ns1__UploadWFEndFileResponse() { }
+	         ns1__SetTmpUSUploadPathResponse() { ns1__SetTmpUSUploadPathResponse::soap_default(NULL); }
+	virtual ~ns1__SetTmpUSUploadPathResponse() { }
 };
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetDataFileListContainer
-#define SOAP_TYPE_ns1__GetDataFileListContainer (678)
+#define SOAP_TYPE_ns1__GetDataFileListContainer (676)
 /* ns1:GetDataFileListContainer */
 class SOAP_CMAC ns1__GetDataFileListContainer : public xsd__anyType
 {
@@ -15154,7 +15113,7 @@ public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	char *instanceName;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 678; } /* = unique id SOAP_TYPE_ns1__GetDataFileListContainer */
+	virtual int soap_type() const { return 676; } /* = unique id SOAP_TYPE_ns1__GetDataFileListContainer */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -15167,14 +15126,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetDataFileListContainerResponse
-#define SOAP_TYPE_ns1__GetDataFileListContainerResponse (679)
+#define SOAP_TYPE_ns1__GetDataFileListContainerResponse (677)
 /* ns1:GetDataFileListContainerResponse */
 class SOAP_CMAC ns1__GetDataFileListContainerResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 679; } /* = unique id SOAP_TYPE_ns1__GetDataFileListContainerResponse */
+	virtual int soap_type() const { return 677; } /* = unique id SOAP_TYPE_ns1__GetDataFileListContainerResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -15183,6 +15142,50 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__GetDataFileListContainerResponse() { ns1__GetDataFileListContainerResponse::soap_default(NULL); }
 	virtual ~ns1__GetDataFileListContainerResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__UploadWFEndFile
+#define SOAP_TYPE_ns1__UploadWFEndFile (678)
+/* ns1:UploadWFEndFile */
+class SOAP_CMAC ns1__UploadWFEndFile : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *instanceName;	/* optional element of type xsd:string */
+	char *objName;	/* optional element of type xsd:string */
+	ns1__abxFileList *dataListInput;	/* optional element of type ns1:abxFileList */
+	char *codePrevioWFVersion;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 678; } /* = unique id SOAP_TYPE_ns1__UploadWFEndFile */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__UploadWFEndFile() { ns1__UploadWFEndFile::soap_default(NULL); }
+	virtual ~ns1__UploadWFEndFile() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__UploadWFEndFileResponse
+#define SOAP_TYPE_ns1__UploadWFEndFileResponse (679)
+/* ns1:UploadWFEndFileResponse */
+class SOAP_CMAC ns1__UploadWFEndFileResponse : public xsd__anyType
+{
+public:
+	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
+public:
+	virtual int soap_type() const { return 679; } /* = unique id SOAP_TYPE_ns1__UploadWFEndFileResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__UploadWFEndFileResponse() { ns1__UploadWFEndFileResponse::soap_default(NULL); }
+	virtual ~ns1__UploadWFEndFileResponse() { }
 };
 #endif
 
@@ -15893,49 +15896,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__DeleteWFFileByCode
-#define SOAP_TYPE_ns1__DeleteWFFileByCode (714)
-/* ns1:DeleteWFFileByCode */
-class SOAP_CMAC ns1__DeleteWFFileByCode : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *fileCode;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 714; } /* = unique id SOAP_TYPE_ns1__DeleteWFFileByCode */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__DeleteWFFileByCode() { ns1__DeleteWFFileByCode::soap_default(NULL); }
-	virtual ~ns1__DeleteWFFileByCode() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__DeleteWFFileByCodeResponse
-#define SOAP_TYPE_ns1__DeleteWFFileByCodeResponse (715)
-/* ns1:DeleteWFFileByCodeResponse */
-class SOAP_CMAC ns1__DeleteWFFileByCodeResponse : public xsd__anyType
-{
-public:
-	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
-public:
-	virtual int soap_type() const { return 715; } /* = unique id SOAP_TYPE_ns1__DeleteWFFileByCodeResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__DeleteWFFileByCodeResponse() { ns1__DeleteWFFileByCodeResponse::soap_default(NULL); }
-	virtual ~ns1__DeleteWFFileByCodeResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__GetListDataWA
-#define SOAP_TYPE_ns1__GetListDataWA (716)
+#define SOAP_TYPE_ns1__GetListDataWA (714)
 /* ns1:GetListDataWA */
 class SOAP_CMAC ns1__GetListDataWA : public xsd__anyType
 {
@@ -15944,7 +15906,7 @@ public:
 	char *instanceName;	/* optional element of type xsd:string */
 	char *dataId;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 716; } /* = unique id SOAP_TYPE_ns1__GetListDataWA */
+	virtual int soap_type() const { return 714; } /* = unique id SOAP_TYPE_ns1__GetListDataWA */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -15957,14 +15919,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetListDataWAResponse
-#define SOAP_TYPE_ns1__GetListDataWAResponse (717)
+#define SOAP_TYPE_ns1__GetListDataWAResponse (715)
 /* ns1:GetListDataWAResponse */
 class SOAP_CMAC ns1__GetListDataWAResponse : public xsd__anyType
 {
 public:
 	ns1__abxDataResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxDataResult */
 public:
-	virtual int soap_type() const { return 717; } /* = unique id SOAP_TYPE_ns1__GetListDataWAResponse */
+	virtual int soap_type() const { return 715; } /* = unique id SOAP_TYPE_ns1__GetListDataWAResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -15973,6 +15935,47 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__GetListDataWAResponse() { ns1__GetListDataWAResponse::soap_default(NULL); }
 	virtual ~ns1__GetListDataWAResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__DeleteWFFileByCode
+#define SOAP_TYPE_ns1__DeleteWFFileByCode (716)
+/* ns1:DeleteWFFileByCode */
+class SOAP_CMAC ns1__DeleteWFFileByCode : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *fileCode;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 716; } /* = unique id SOAP_TYPE_ns1__DeleteWFFileByCode */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__DeleteWFFileByCode() { ns1__DeleteWFFileByCode::soap_default(NULL); }
+	virtual ~ns1__DeleteWFFileByCode() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__DeleteWFFileByCodeResponse
+#define SOAP_TYPE_ns1__DeleteWFFileByCodeResponse (717)
+/* ns1:DeleteWFFileByCodeResponse */
+class SOAP_CMAC ns1__DeleteWFFileByCodeResponse : public xsd__anyType
+{
+public:
+	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
+public:
+	virtual int soap_type() const { return 717; } /* = unique id SOAP_TYPE_ns1__DeleteWFFileByCodeResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__DeleteWFFileByCodeResponse() { ns1__DeleteWFFileByCodeResponse::soap_default(NULL); }
+	virtual ~ns1__DeleteWFFileByCodeResponse() { }
 };
 #endif
 
@@ -16162,91 +16165,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetNewProtocolNumber
-#define SOAP_TYPE_ns1__GetNewProtocolNumber (727)
-/* ns1:GetNewProtocolNumber */
-class SOAP_CMAC ns1__GetNewProtocolNumber : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	ns1__abxProtocolUse *protocolData;	/* optional element of type ns1:abxProtocolUse */
-public:
-	virtual int soap_type() const { return 727; } /* = unique id SOAP_TYPE_ns1__GetNewProtocolNumber */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetNewProtocolNumber() { ns1__GetNewProtocolNumber::soap_default(NULL); }
-	virtual ~ns1__GetNewProtocolNumber() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__GetNewProtocolNumberResponse
-#define SOAP_TYPE_ns1__GetNewProtocolNumberResponse (728)
-/* ns1:GetNewProtocolNumberResponse */
-class SOAP_CMAC ns1__GetNewProtocolNumberResponse : public xsd__anyType
-{
-public:
-	class ns1__abxProtocolUseResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxProtocolUseResult */
-public:
-	virtual int soap_type() const { return 728; } /* = unique id SOAP_TYPE_ns1__GetNewProtocolNumberResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetNewProtocolNumberResponse() { ns1__GetNewProtocolNumberResponse::soap_default(NULL); }
-	virtual ~ns1__GetNewProtocolNumberResponse() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__abxProtocolUseResult
-#define SOAP_TYPE_ns1__abxProtocolUseResult (729)
-/* ns1:abxProtocolUseResult */
-class SOAP_CMAC ns1__abxProtocolUseResult : public xsd__anyType
-{
-public:
-	unsigned int result;	/* required element of type xsd:unsignedInt */
-	class ns1__abxProtocolUseList *list;	/* required element of type ns1:abxProtocolUseList */
-public:
-	virtual int soap_type() const { return 729; } /* = unique id SOAP_TYPE_ns1__abxProtocolUseResult */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__abxProtocolUseResult() { ns1__abxProtocolUseResult::soap_default(NULL); }
-	virtual ~ns1__abxProtocolUseResult() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__abxProtocolUseList
-#define SOAP_TYPE_ns1__abxProtocolUseList (730)
-/* ns1:abxProtocolUseList */
-class SOAP_CMAC ns1__abxProtocolUseList : public xsd__anyType
-{
-public:
-	int __sizeprotocolUseList;	/* sequence of elements <protocolUseList> */
-	ns1__abxProtocolUse **protocolUseList;	/* required element of type ns1:abxProtocolUse */
-public:
-	virtual int soap_type() const { return 730; } /* = unique id SOAP_TYPE_ns1__abxProtocolUseList */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__abxProtocolUseList() { ns1__abxProtocolUseList::soap_default(NULL); }
-	virtual ~ns1__abxProtocolUseList() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__InsertLinkDocumentToDocument
-#define SOAP_TYPE_ns1__InsertLinkDocumentToDocument (731)
+#define SOAP_TYPE_ns1__InsertLinkDocumentToDocument (727)
 /* ns1:InsertLinkDocumentToDocument */
 class SOAP_CMAC ns1__InsertLinkDocumentToDocument : public xsd__anyType
 {
@@ -16259,7 +16179,7 @@ public:
 	char *dataIdTo;	/* optional element of type xsd:string */
 	char *note;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 731; } /* = unique id SOAP_TYPE_ns1__InsertLinkDocumentToDocument */
+	virtual int soap_type() const { return 727; } /* = unique id SOAP_TYPE_ns1__InsertLinkDocumentToDocument */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -16272,14 +16192,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__InsertLinkDocumentToDocumentResponse
-#define SOAP_TYPE_ns1__InsertLinkDocumentToDocumentResponse (732)
+#define SOAP_TYPE_ns1__InsertLinkDocumentToDocumentResponse (728)
 /* ns1:InsertLinkDocumentToDocumentResponse */
 class SOAP_CMAC ns1__InsertLinkDocumentToDocumentResponse : public xsd__anyType
 {
 public:
 	ns1__abxLinkResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxLinkResult */
 public:
-	virtual int soap_type() const { return 732; } /* = unique id SOAP_TYPE_ns1__InsertLinkDocumentToDocumentResponse */
+	virtual int soap_type() const { return 728; } /* = unique id SOAP_TYPE_ns1__InsertLinkDocumentToDocumentResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -16288,6 +16208,89 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__InsertLinkDocumentToDocumentResponse() { ns1__InsertLinkDocumentToDocumentResponse::soap_default(NULL); }
 	virtual ~ns1__InsertLinkDocumentToDocumentResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetNewProtocolNumber
+#define SOAP_TYPE_ns1__GetNewProtocolNumber (729)
+/* ns1:GetNewProtocolNumber */
+class SOAP_CMAC ns1__GetNewProtocolNumber : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	ns1__abxProtocolUse *protocolData;	/* optional element of type ns1:abxProtocolUse */
+public:
+	virtual int soap_type() const { return 729; } /* = unique id SOAP_TYPE_ns1__GetNewProtocolNumber */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetNewProtocolNumber() { ns1__GetNewProtocolNumber::soap_default(NULL); }
+	virtual ~ns1__GetNewProtocolNumber() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetNewProtocolNumberResponse
+#define SOAP_TYPE_ns1__GetNewProtocolNumberResponse (730)
+/* ns1:GetNewProtocolNumberResponse */
+class SOAP_CMAC ns1__GetNewProtocolNumberResponse : public xsd__anyType
+{
+public:
+	class ns1__abxProtocolUseResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxProtocolUseResult */
+public:
+	virtual int soap_type() const { return 730; } /* = unique id SOAP_TYPE_ns1__GetNewProtocolNumberResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetNewProtocolNumberResponse() { ns1__GetNewProtocolNumberResponse::soap_default(NULL); }
+	virtual ~ns1__GetNewProtocolNumberResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__abxProtocolUseResult
+#define SOAP_TYPE_ns1__abxProtocolUseResult (731)
+/* ns1:abxProtocolUseResult */
+class SOAP_CMAC ns1__abxProtocolUseResult : public xsd__anyType
+{
+public:
+	unsigned int result;	/* required element of type xsd:unsignedInt */
+	class ns1__abxProtocolUseList *list;	/* required element of type ns1:abxProtocolUseList */
+public:
+	virtual int soap_type() const { return 731; } /* = unique id SOAP_TYPE_ns1__abxProtocolUseResult */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__abxProtocolUseResult() { ns1__abxProtocolUseResult::soap_default(NULL); }
+	virtual ~ns1__abxProtocolUseResult() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__abxProtocolUseList
+#define SOAP_TYPE_ns1__abxProtocolUseList (732)
+/* ns1:abxProtocolUseList */
+class SOAP_CMAC ns1__abxProtocolUseList : public xsd__anyType
+{
+public:
+	int __sizeprotocolUseList;	/* sequence of elements <protocolUseList> */
+	ns1__abxProtocolUse **protocolUseList;	/* required element of type ns1:abxProtocolUse */
+public:
+	virtual int soap_type() const { return 732; } /* = unique id SOAP_TYPE_ns1__abxProtocolUseList */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__abxProtocolUseList() { ns1__abxProtocolUseList::soap_default(NULL); }
+	virtual ~ns1__abxProtocolUseList() { }
 };
 #endif
 
@@ -16421,51 +16424,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__ChangeSchedulerTaskScheduleStatus
-#define SOAP_TYPE_ns1__ChangeSchedulerTaskScheduleStatus (739)
-/* ns1:ChangeSchedulerTaskScheduleStatus */
-class SOAP_CMAC ns1__ChangeSchedulerTaskScheduleStatus : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *scheduleId;	/* optional element of type xsd:string */
-	int scheduleType;	/* required element of type xsd:int */
-	int scheduleStatus;	/* required element of type xsd:int */
-public:
-	virtual int soap_type() const { return 739; } /* = unique id SOAP_TYPE_ns1__ChangeSchedulerTaskScheduleStatus */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__ChangeSchedulerTaskScheduleStatus() { ns1__ChangeSchedulerTaskScheduleStatus::soap_default(NULL); }
-	virtual ~ns1__ChangeSchedulerTaskScheduleStatus() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__ChangeSchedulerTaskScheduleStatusResponse
-#define SOAP_TYPE_ns1__ChangeSchedulerTaskScheduleStatusResponse (740)
-/* ns1:ChangeSchedulerTaskScheduleStatusResponse */
-class SOAP_CMAC ns1__ChangeSchedulerTaskScheduleStatusResponse : public xsd__anyType
-{
-public:
-	ns1__abxSchedulerResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSchedulerResult */
-public:
-	virtual int soap_type() const { return 740; } /* = unique id SOAP_TYPE_ns1__ChangeSchedulerTaskScheduleStatusResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__ChangeSchedulerTaskScheduleStatusResponse() { ns1__ChangeSchedulerTaskScheduleStatusResponse::soap_default(NULL); }
-	virtual ~ns1__ChangeSchedulerTaskScheduleStatusResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__Fk_USCOREgetLocalFieldList
-#define SOAP_TYPE_ns1__Fk_USCOREgetLocalFieldList (741)
+#define SOAP_TYPE_ns1__Fk_USCOREgetLocalFieldList (739)
 /* ns1:Fk_getLocalFieldList */
 class SOAP_CMAC ns1__Fk_USCOREgetLocalFieldList : public xsd__anyType
 {
@@ -16474,7 +16434,7 @@ public:
 	bool users;	/* required element of type xsd:boolean */
 	bool groups;	/* required element of type xsd:boolean */
 public:
-	virtual int soap_type() const { return 741; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREgetLocalFieldList */
+	virtual int soap_type() const { return 739; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREgetLocalFieldList */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -16487,14 +16447,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__Fk_USCOREgetLocalFieldListResponse
-#define SOAP_TYPE_ns1__Fk_USCOREgetLocalFieldListResponse (742)
+#define SOAP_TYPE_ns1__Fk_USCOREgetLocalFieldListResponse (740)
 /* ns1:Fk_getLocalFieldListResponse */
 class SOAP_CMAC ns1__Fk_USCOREgetLocalFieldListResponse : public xsd__anyType
 {
 public:
 	ns1__abxFKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFKResult */
 public:
-	virtual int soap_type() const { return 742; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREgetLocalFieldListResponse */
+	virtual int soap_type() const { return 740; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREgetLocalFieldListResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -16503,6 +16463,49 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__Fk_USCOREgetLocalFieldListResponse() { ns1__Fk_USCOREgetLocalFieldListResponse::soap_default(NULL); }
 	virtual ~ns1__Fk_USCOREgetLocalFieldListResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__ChangeSchedulerTaskScheduleStatus
+#define SOAP_TYPE_ns1__ChangeSchedulerTaskScheduleStatus (741)
+/* ns1:ChangeSchedulerTaskScheduleStatus */
+class SOAP_CMAC ns1__ChangeSchedulerTaskScheduleStatus : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *scheduleId;	/* optional element of type xsd:string */
+	int scheduleType;	/* required element of type xsd:int */
+	int scheduleStatus;	/* required element of type xsd:int */
+public:
+	virtual int soap_type() const { return 741; } /* = unique id SOAP_TYPE_ns1__ChangeSchedulerTaskScheduleStatus */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__ChangeSchedulerTaskScheduleStatus() { ns1__ChangeSchedulerTaskScheduleStatus::soap_default(NULL); }
+	virtual ~ns1__ChangeSchedulerTaskScheduleStatus() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__ChangeSchedulerTaskScheduleStatusResponse
+#define SOAP_TYPE_ns1__ChangeSchedulerTaskScheduleStatusResponse (742)
+/* ns1:ChangeSchedulerTaskScheduleStatusResponse */
+class SOAP_CMAC ns1__ChangeSchedulerTaskScheduleStatusResponse : public xsd__anyType
+{
+public:
+	ns1__abxSchedulerResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSchedulerResult */
+public:
+	virtual int soap_type() const { return 742; } /* = unique id SOAP_TYPE_ns1__ChangeSchedulerTaskScheduleStatusResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__ChangeSchedulerTaskScheduleStatusResponse() { ns1__ChangeSchedulerTaskScheduleStatusResponse::soap_default(NULL); }
+	virtual ~ns1__ChangeSchedulerTaskScheduleStatusResponse() { }
 };
 #endif
 
@@ -16841,49 +16844,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__DeleteSchedulerTask
-#define SOAP_TYPE_ns1__DeleteSchedulerTask (759)
-/* ns1:DeleteSchedulerTask */
-class SOAP_CMAC ns1__DeleteSchedulerTask : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *taskId;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 759; } /* = unique id SOAP_TYPE_ns1__DeleteSchedulerTask */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__DeleteSchedulerTask() { ns1__DeleteSchedulerTask::soap_default(NULL); }
-	virtual ~ns1__DeleteSchedulerTask() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__DeleteSchedulerTaskResponse
-#define SOAP_TYPE_ns1__DeleteSchedulerTaskResponse (760)
-/* ns1:DeleteSchedulerTaskResponse */
-class SOAP_CMAC ns1__DeleteSchedulerTaskResponse : public xsd__anyType
-{
-public:
-	ns1__abxSchedulerResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSchedulerResult */
-public:
-	virtual int soap_type() const { return 760; } /* = unique id SOAP_TYPE_ns1__DeleteSchedulerTaskResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__DeleteSchedulerTaskResponse() { ns1__DeleteSchedulerTaskResponse::soap_default(NULL); }
-	virtual ~ns1__DeleteSchedulerTaskResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__GetFileAvailable
-#define SOAP_TYPE_ns1__GetFileAvailable (761)
+#define SOAP_TYPE_ns1__GetFileAvailable (759)
 /* ns1:GetFileAvailable */
 class SOAP_CMAC ns1__GetFileAvailable : public xsd__anyType
 {
@@ -16892,7 +16854,7 @@ public:
 	char *instanceName;	/* optional element of type xsd:string */
 	char *fileCode;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 761; } /* = unique id SOAP_TYPE_ns1__GetFileAvailable */
+	virtual int soap_type() const { return 759; } /* = unique id SOAP_TYPE_ns1__GetFileAvailable */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -16905,14 +16867,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetFileAvailableResponse
-#define SOAP_TYPE_ns1__GetFileAvailableResponse (762)
+#define SOAP_TYPE_ns1__GetFileAvailableResponse (760)
 /* ns1:GetFileAvailableResponse */
 class SOAP_CMAC ns1__GetFileAvailableResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 762; } /* = unique id SOAP_TYPE_ns1__GetFileAvailableResponse */
+	virtual int soap_type() const { return 760; } /* = unique id SOAP_TYPE_ns1__GetFileAvailableResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -16921,6 +16883,47 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__GetFileAvailableResponse() { ns1__GetFileAvailableResponse::soap_default(NULL); }
 	virtual ~ns1__GetFileAvailableResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__DeleteSchedulerTask
+#define SOAP_TYPE_ns1__DeleteSchedulerTask (761)
+/* ns1:DeleteSchedulerTask */
+class SOAP_CMAC ns1__DeleteSchedulerTask : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *taskId;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 761; } /* = unique id SOAP_TYPE_ns1__DeleteSchedulerTask */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__DeleteSchedulerTask() { ns1__DeleteSchedulerTask::soap_default(NULL); }
+	virtual ~ns1__DeleteSchedulerTask() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__DeleteSchedulerTaskResponse
+#define SOAP_TYPE_ns1__DeleteSchedulerTaskResponse (762)
+/* ns1:DeleteSchedulerTaskResponse */
+class SOAP_CMAC ns1__DeleteSchedulerTaskResponse : public xsd__anyType
+{
+public:
+	ns1__abxSchedulerResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSchedulerResult */
+public:
+	virtual int soap_type() const { return 762; } /* = unique id SOAP_TYPE_ns1__DeleteSchedulerTaskResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__DeleteSchedulerTaskResponse() { ns1__DeleteSchedulerTaskResponse::soap_default(NULL); }
+	virtual ~ns1__DeleteSchedulerTaskResponse() { }
 };
 #endif
 
@@ -17263,44 +17266,44 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__CreateSDKTask
-#define SOAP_TYPE_ns1__CreateSDKTask (779)
-/* ns1:CreateSDKTask */
-class SOAP_CMAC ns1__CreateSDKTask : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__GetUsersListByGroup
+#define SOAP_TYPE_ns1__GetUsersListByGroup (779)
+/* ns1:GetUsersListByGroup */
+class SOAP_CMAC ns1__GetUsersListByGroup : public xsd__anyType
 {
 public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	ns1__abxSDKTask *sdkTask;	/* optional element of type ns1:abxSDKTask */
+	char *groupname;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 779; } /* = unique id SOAP_TYPE_ns1__CreateSDKTask */
+	virtual int soap_type() const { return 779; } /* = unique id SOAP_TYPE_ns1__GetUsersListByGroup */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__CreateSDKTask() { ns1__CreateSDKTask::soap_default(NULL); }
-	virtual ~ns1__CreateSDKTask() { }
+	         ns1__GetUsersListByGroup() { ns1__GetUsersListByGroup::soap_default(NULL); }
+	virtual ~ns1__GetUsersListByGroup() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__CreateSDKTaskResponse
-#define SOAP_TYPE_ns1__CreateSDKTaskResponse (780)
-/* ns1:CreateSDKTaskResponse */
-class SOAP_CMAC ns1__CreateSDKTaskResponse : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__GetUsersListByGroupResponse
+#define SOAP_TYPE_ns1__GetUsersListByGroupResponse (780)
+/* ns1:GetUsersListByGroupResponse */
+class SOAP_CMAC ns1__GetUsersListByGroupResponse : public xsd__anyType
 {
 public:
-	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
+	ns1__abxUserListResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxUserListResult */
 public:
-	virtual int soap_type() const { return 780; } /* = unique id SOAP_TYPE_ns1__CreateSDKTaskResponse */
+	virtual int soap_type() const { return 780; } /* = unique id SOAP_TYPE_ns1__GetUsersListByGroupResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__CreateSDKTaskResponse() { ns1__CreateSDKTaskResponse::soap_default(NULL); }
-	virtual ~ns1__CreateSDKTaskResponse() { }
+	         ns1__GetUsersListByGroupResponse() { ns1__GetUsersListByGroupResponse::soap_default(NULL); }
+	virtual ~ns1__GetUsersListByGroupResponse() { }
 };
 #endif
 
@@ -17344,44 +17347,44 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetUsersListByGroup
-#define SOAP_TYPE_ns1__GetUsersListByGroup (783)
-/* ns1:GetUsersListByGroup */
-class SOAP_CMAC ns1__GetUsersListByGroup : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__CreateSDKTask
+#define SOAP_TYPE_ns1__CreateSDKTask (783)
+/* ns1:CreateSDKTask */
+class SOAP_CMAC ns1__CreateSDKTask : public xsd__anyType
 {
 public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *groupname;	/* optional element of type xsd:string */
+	ns1__abxSDKTask *sdkTask;	/* optional element of type ns1:abxSDKTask */
 public:
-	virtual int soap_type() const { return 783; } /* = unique id SOAP_TYPE_ns1__GetUsersListByGroup */
+	virtual int soap_type() const { return 783; } /* = unique id SOAP_TYPE_ns1__CreateSDKTask */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetUsersListByGroup() { ns1__GetUsersListByGroup::soap_default(NULL); }
-	virtual ~ns1__GetUsersListByGroup() { }
+	         ns1__CreateSDKTask() { ns1__CreateSDKTask::soap_default(NULL); }
+	virtual ~ns1__CreateSDKTask() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetUsersListByGroupResponse
-#define SOAP_TYPE_ns1__GetUsersListByGroupResponse (784)
-/* ns1:GetUsersListByGroupResponse */
-class SOAP_CMAC ns1__GetUsersListByGroupResponse : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__CreateSDKTaskResponse
+#define SOAP_TYPE_ns1__CreateSDKTaskResponse (784)
+/* ns1:CreateSDKTaskResponse */
+class SOAP_CMAC ns1__CreateSDKTaskResponse : public xsd__anyType
 {
 public:
-	ns1__abxUserListResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxUserListResult */
+	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
 public:
-	virtual int soap_type() const { return 784; } /* = unique id SOAP_TYPE_ns1__GetUsersListByGroupResponse */
+	virtual int soap_type() const { return 784; } /* = unique id SOAP_TYPE_ns1__CreateSDKTaskResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetUsersListByGroupResponse() { ns1__GetUsersListByGroupResponse::soap_default(NULL); }
-	virtual ~ns1__GetUsersListByGroupResponse() { }
+	         ns1__CreateSDKTaskResponse() { ns1__CreateSDKTaskResponse::soap_default(NULL); }
+	virtual ~ns1__CreateSDKTaskResponse() { }
 };
 #endif
 
@@ -17472,50 +17475,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__ChangeSDKTaskStatus
-#define SOAP_TYPE_ns1__ChangeSDKTaskStatus (789)
-/* ns1:ChangeSDKTaskStatus */
-class SOAP_CMAC ns1__ChangeSDKTaskStatus : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *taskId;	/* optional element of type xsd:string */
-	int taskStatus;	/* required element of type xsd:int */
-public:
-	virtual int soap_type() const { return 789; } /* = unique id SOAP_TYPE_ns1__ChangeSDKTaskStatus */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__ChangeSDKTaskStatus() { ns1__ChangeSDKTaskStatus::soap_default(NULL); }
-	virtual ~ns1__ChangeSDKTaskStatus() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__ChangeSDKTaskStatusResponse
-#define SOAP_TYPE_ns1__ChangeSDKTaskStatusResponse (790)
-/* ns1:ChangeSDKTaskStatusResponse */
-class SOAP_CMAC ns1__ChangeSDKTaskStatusResponse : public xsd__anyType
-{
-public:
-	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
-public:
-	virtual int soap_type() const { return 790; } /* = unique id SOAP_TYPE_ns1__ChangeSDKTaskStatusResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__ChangeSDKTaskStatusResponse() { ns1__ChangeSDKTaskStatusResponse::soap_default(NULL); }
-	virtual ~ns1__ChangeSDKTaskStatusResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__GetDataFileDetail
-#define SOAP_TYPE_ns1__GetDataFileDetail (791)
+#define SOAP_TYPE_ns1__GetDataFileDetail (789)
 /* ns1:GetDataFileDetail */
 class SOAP_CMAC ns1__GetDataFileDetail : public xsd__anyType
 {
@@ -17525,7 +17486,7 @@ public:
 	char *instanceName;	/* optional element of type xsd:string */
 	char *dataAttachmentId;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 791; } /* = unique id SOAP_TYPE_ns1__GetDataFileDetail */
+	virtual int soap_type() const { return 789; } /* = unique id SOAP_TYPE_ns1__GetDataFileDetail */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -17538,14 +17499,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetDataFileDetailResponse
-#define SOAP_TYPE_ns1__GetDataFileDetailResponse (792)
+#define SOAP_TYPE_ns1__GetDataFileDetailResponse (790)
 /* ns1:GetDataFileDetailResponse */
 class SOAP_CMAC ns1__GetDataFileDetailResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 792; } /* = unique id SOAP_TYPE_ns1__GetDataFileDetailResponse */
+	virtual int soap_type() const { return 790; } /* = unique id SOAP_TYPE_ns1__GetDataFileDetailResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -17554,6 +17515,48 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__GetDataFileDetailResponse() { ns1__GetDataFileDetailResponse::soap_default(NULL); }
 	virtual ~ns1__GetDataFileDetailResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__ChangeSDKTaskStatus
+#define SOAP_TYPE_ns1__ChangeSDKTaskStatus (791)
+/* ns1:ChangeSDKTaskStatus */
+class SOAP_CMAC ns1__ChangeSDKTaskStatus : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *taskId;	/* optional element of type xsd:string */
+	int taskStatus;	/* required element of type xsd:int */
+public:
+	virtual int soap_type() const { return 791; } /* = unique id SOAP_TYPE_ns1__ChangeSDKTaskStatus */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__ChangeSDKTaskStatus() { ns1__ChangeSDKTaskStatus::soap_default(NULL); }
+	virtual ~ns1__ChangeSDKTaskStatus() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__ChangeSDKTaskStatusResponse
+#define SOAP_TYPE_ns1__ChangeSDKTaskStatusResponse (792)
+/* ns1:ChangeSDKTaskStatusResponse */
+class SOAP_CMAC ns1__ChangeSDKTaskStatusResponse : public xsd__anyType
+{
+public:
+	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
+public:
+	virtual int soap_type() const { return 792; } /* = unique id SOAP_TYPE_ns1__ChangeSDKTaskStatusResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__ChangeSDKTaskStatusResponse() { ns1__ChangeSDKTaskStatusResponse::soap_default(NULL); }
+	virtual ~ns1__ChangeSDKTaskStatusResponse() { }
 };
 #endif
 
@@ -17724,50 +17727,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__InsertTPFile
-#define SOAP_TYPE_ns1__InsertTPFile (801)
-/* ns1:InsertTPFile */
-class SOAP_CMAC ns1__InsertTPFile : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	ns1__abxFileTpList *dataListInput;	/* optional element of type ns1:abxFileTpList */
-	char *abxSecurityId;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 801; } /* = unique id SOAP_TYPE_ns1__InsertTPFile */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__InsertTPFile() { ns1__InsertTPFile::soap_default(NULL); }
-	virtual ~ns1__InsertTPFile() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__InsertTPFileResponse
-#define SOAP_TYPE_ns1__InsertTPFileResponse (802)
-/* ns1:InsertTPFileResponse */
-class SOAP_CMAC ns1__InsertTPFileResponse : public xsd__anyType
-{
-public:
-	ns1__abxFileTpResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileTpResult */
-public:
-	virtual int soap_type() const { return 802; } /* = unique id SOAP_TYPE_ns1__InsertTPFileResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__InsertTPFileResponse() { ns1__InsertTPFileResponse::soap_default(NULL); }
-	virtual ~ns1__InsertTPFileResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__Combo_USCOREmodify
-#define SOAP_TYPE_ns1__Combo_USCOREmodify (803)
+#define SOAP_TYPE_ns1__Combo_USCOREmodify (801)
 /* ns1:Combo_modify */
 class SOAP_CMAC ns1__Combo_USCOREmodify : public xsd__anyType
 {
@@ -17776,7 +17737,7 @@ public:
 	char *fieldName;	/* optional element of type xsd:string */
 	ns1__abxCombo *recordsArray;	/* optional element of type ns1:abxCombo */
 public:
-	virtual int soap_type() const { return 803; } /* = unique id SOAP_TYPE_ns1__Combo_USCOREmodify */
+	virtual int soap_type() const { return 801; } /* = unique id SOAP_TYPE_ns1__Combo_USCOREmodify */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -17789,14 +17750,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__Combo_USCOREmodifyResponse
-#define SOAP_TYPE_ns1__Combo_USCOREmodifyResponse (804)
+#define SOAP_TYPE_ns1__Combo_USCOREmodifyResponse (802)
 /* ns1:Combo_modifyResponse */
 class SOAP_CMAC ns1__Combo_USCOREmodifyResponse : public xsd__anyType
 {
 public:
 	ns1__abxComboResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxComboResult */
 public:
-	virtual int soap_type() const { return 804; } /* = unique id SOAP_TYPE_ns1__Combo_USCOREmodifyResponse */
+	virtual int soap_type() const { return 802; } /* = unique id SOAP_TYPE_ns1__Combo_USCOREmodifyResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -17805,6 +17766,48 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__Combo_USCOREmodifyResponse() { ns1__Combo_USCOREmodifyResponse::soap_default(NULL); }
 	virtual ~ns1__Combo_USCOREmodifyResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__InsertTPFile
+#define SOAP_TYPE_ns1__InsertTPFile (803)
+/* ns1:InsertTPFile */
+class SOAP_CMAC ns1__InsertTPFile : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	ns1__abxFileTpList *dataListInput;	/* optional element of type ns1:abxFileTpList */
+	char *abxSecurityId;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 803; } /* = unique id SOAP_TYPE_ns1__InsertTPFile */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__InsertTPFile() { ns1__InsertTPFile::soap_default(NULL); }
+	virtual ~ns1__InsertTPFile() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__InsertTPFileResponse
+#define SOAP_TYPE_ns1__InsertTPFileResponse (804)
+/* ns1:InsertTPFileResponse */
+class SOAP_CMAC ns1__InsertTPFileResponse : public xsd__anyType
+{
+public:
+	ns1__abxFileTpResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileTpResult */
+public:
+	virtual int soap_type() const { return 804; } /* = unique id SOAP_TYPE_ns1__InsertTPFileResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__InsertTPFileResponse() { ns1__InsertTPFileResponse::soap_default(NULL); }
+	virtual ~ns1__InsertTPFileResponse() { }
 };
 #endif
 
@@ -18179,133 +18182,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__ModExpression
-#define SOAP_TYPE_ns1__ModExpression (823)
-/* ns1:ModExpression */
-class SOAP_CMAC ns1__ModExpression : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	ns1__abxExpression *expr;	/* optional element of type ns1:abxExpression */
-public:
-	virtual int soap_type() const { return 823; } /* = unique id SOAP_TYPE_ns1__ModExpression */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__ModExpression() { ns1__ModExpression::soap_default(NULL); }
-	virtual ~ns1__ModExpression() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__ModExpressionResponse
-#define SOAP_TYPE_ns1__ModExpressionResponse (824)
-/* ns1:ModExpressionResponse */
-class SOAP_CMAC ns1__ModExpressionResponse : public xsd__anyType
-{
-public:
-	ns1__abxExpressionResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxExpressionResult */
-public:
-	virtual int soap_type() const { return 824; } /* = unique id SOAP_TYPE_ns1__ModExpressionResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__ModExpressionResponse() { ns1__ModExpressionResponse::soap_default(NULL); }
-	virtual ~ns1__ModExpressionResponse() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__InsertWFFile
-#define SOAP_TYPE_ns1__InsertWFFile (825)
-/* ns1:InsertWFFile */
-class SOAP_CMAC ns1__InsertWFFile : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *instanceName;	/* optional element of type xsd:string */
-	char *objName;	/* optional element of type xsd:string */
-	ns1__abxFileList *dataListInput;	/* optional element of type ns1:abxFileList */
-	char *abxSecurityId;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 825; } /* = unique id SOAP_TYPE_ns1__InsertWFFile */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__InsertWFFile() { ns1__InsertWFFile::soap_default(NULL); }
-	virtual ~ns1__InsertWFFile() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__InsertWFFileResponse
-#define SOAP_TYPE_ns1__InsertWFFileResponse (826)
-/* ns1:InsertWFFileResponse */
-class SOAP_CMAC ns1__InsertWFFileResponse : public xsd__anyType
-{
-public:
-	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
-public:
-	virtual int soap_type() const { return 826; } /* = unique id SOAP_TYPE_ns1__InsertWFFileResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__InsertWFFileResponse() { ns1__InsertWFFileResponse::soap_default(NULL); }
-	virtual ~ns1__InsertWFFileResponse() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__ResetUserSessions
-#define SOAP_TYPE_ns1__ResetUserSessions (827)
-/* ns1:ResetUserSessions */
-class SOAP_CMAC ns1__ResetUserSessions : public xsd__anyType
-{
-public:
-	ns1__abxLoginIdentity *LoginParam;	/* optional element of type ns1:abxLoginIdentity */
-public:
-	virtual int soap_type() const { return 827; } /* = unique id SOAP_TYPE_ns1__ResetUserSessions */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__ResetUserSessions() { ns1__ResetUserSessions::soap_default(NULL); }
-	virtual ~ns1__ResetUserSessions() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__ResetUserSessionsResponse
-#define SOAP_TYPE_ns1__ResetUserSessionsResponse (828)
-/* ns1:ResetUserSessionsResponse */
-class SOAP_CMAC ns1__ResetUserSessionsResponse : public xsd__anyType
-{
-public:
-	ns1__abxLoginResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxLoginResult */
-public:
-	virtual int soap_type() const { return 828; } /* = unique id SOAP_TYPE_ns1__ResetUserSessionsResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__ResetUserSessionsResponse() { ns1__ResetUserSessionsResponse::soap_default(NULL); }
-	virtual ~ns1__ResetUserSessionsResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__CanInsertLinkContainerToDocument
-#define SOAP_TYPE_ns1__CanInsertLinkContainerToDocument (829)
+#define SOAP_TYPE_ns1__CanInsertLinkContainerToDocument (823)
 /* ns1:CanInsertLinkContainerToDocument */
 class SOAP_CMAC ns1__CanInsertLinkContainerToDocument : public xsd__anyType
 {
@@ -18315,7 +18193,7 @@ public:
 	char *instanceNameFrom;	/* optional element of type xsd:string */
 	char *instanceNameTo;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 829; } /* = unique id SOAP_TYPE_ns1__CanInsertLinkContainerToDocument */
+	virtual int soap_type() const { return 823; } /* = unique id SOAP_TYPE_ns1__CanInsertLinkContainerToDocument */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -18328,14 +18206,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__CanInsertLinkContainerToDocumentResponse
-#define SOAP_TYPE_ns1__CanInsertLinkContainerToDocumentResponse (830)
+#define SOAP_TYPE_ns1__CanInsertLinkContainerToDocumentResponse (824)
 /* ns1:CanInsertLinkContainerToDocumentResponse */
 class SOAP_CMAC ns1__CanInsertLinkContainerToDocumentResponse : public xsd__anyType
 {
 public:
 	ns4__abxCan *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns4:abxCan */
 public:
-	virtual int soap_type() const { return 830; } /* = unique id SOAP_TYPE_ns1__CanInsertLinkContainerToDocumentResponse */
+	virtual int soap_type() const { return 824; } /* = unique id SOAP_TYPE_ns1__CanInsertLinkContainerToDocumentResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -18347,15 +18225,55 @@ public:
 };
 #endif
 
+#ifndef SOAP_TYPE_ns1__ResetUserSessions
+#define SOAP_TYPE_ns1__ResetUserSessions (825)
+/* ns1:ResetUserSessions */
+class SOAP_CMAC ns1__ResetUserSessions : public xsd__anyType
+{
+public:
+	ns1__abxLoginIdentity *LoginParam;	/* optional element of type ns1:abxLoginIdentity */
+public:
+	virtual int soap_type() const { return 825; } /* = unique id SOAP_TYPE_ns1__ResetUserSessions */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__ResetUserSessions() { ns1__ResetUserSessions::soap_default(NULL); }
+	virtual ~ns1__ResetUserSessions() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__ResetUserSessionsResponse
+#define SOAP_TYPE_ns1__ResetUserSessionsResponse (826)
+/* ns1:ResetUserSessionsResponse */
+class SOAP_CMAC ns1__ResetUserSessionsResponse : public xsd__anyType
+{
+public:
+	ns1__abxLoginResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxLoginResult */
+public:
+	virtual int soap_type() const { return 826; } /* = unique id SOAP_TYPE_ns1__ResetUserSessionsResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__ResetUserSessionsResponse() { ns1__ResetUserSessionsResponse::soap_default(NULL); }
+	virtual ~ns1__ResetUserSessionsResponse() { }
+};
+#endif
+
 #ifndef SOAP_TYPE_ns1__SetTmpDownloadPath
-#define SOAP_TYPE_ns1__SetTmpDownloadPath (831)
+#define SOAP_TYPE_ns1__SetTmpDownloadPath (827)
 /* ns1:SetTmpDownloadPath */
 class SOAP_CMAC ns1__SetTmpDownloadPath : public xsd__anyType
 {
 public:
 	char *path;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 831; } /* = unique id SOAP_TYPE_ns1__SetTmpDownloadPath */
+	virtual int soap_type() const { return 827; } /* = unique id SOAP_TYPE_ns1__SetTmpDownloadPath */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -18368,14 +18286,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__SetTmpDownloadPathResponse
-#define SOAP_TYPE_ns1__SetTmpDownloadPathResponse (832)
+#define SOAP_TYPE_ns1__SetTmpDownloadPathResponse (828)
 /* ns1:SetTmpDownloadPathResponse */
 class SOAP_CMAC ns1__SetTmpDownloadPathResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 832; } /* = unique id SOAP_TYPE_ns1__SetTmpDownloadPathResponse */
+	virtual int soap_type() const { return 828; } /* = unique id SOAP_TYPE_ns1__SetTmpDownloadPathResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -18387,49 +18305,93 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetSDKTaskWatchFolder
-#define SOAP_TYPE_ns1__GetSDKTaskWatchFolder (833)
-/* ns1:GetSDKTaskWatchFolder */
-class SOAP_CMAC ns1__GetSDKTaskWatchFolder : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__InsertWFFile
+#define SOAP_TYPE_ns1__InsertWFFile (829)
+/* ns1:InsertWFFile */
+class SOAP_CMAC ns1__InsertWFFile : public xsd__anyType
 {
 public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *taskId;	/* optional element of type xsd:string */
+	char *instanceName;	/* optional element of type xsd:string */
+	char *objName;	/* optional element of type xsd:string */
+	ns1__abxFileList *dataListInput;	/* optional element of type ns1:abxFileList */
+	char *abxSecurityId;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 833; } /* = unique id SOAP_TYPE_ns1__GetSDKTaskWatchFolder */
+	virtual int soap_type() const { return 829; } /* = unique id SOAP_TYPE_ns1__InsertWFFile */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetSDKTaskWatchFolder() { ns1__GetSDKTaskWatchFolder::soap_default(NULL); }
-	virtual ~ns1__GetSDKTaskWatchFolder() { }
+	         ns1__InsertWFFile() { ns1__InsertWFFile::soap_default(NULL); }
+	virtual ~ns1__InsertWFFile() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetSDKTaskWatchFolderResponse
-#define SOAP_TYPE_ns1__GetSDKTaskWatchFolderResponse (834)
-/* ns1:GetSDKTaskWatchFolderResponse */
-class SOAP_CMAC ns1__GetSDKTaskWatchFolderResponse : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__InsertWFFileResponse
+#define SOAP_TYPE_ns1__InsertWFFileResponse (830)
+/* ns1:InsertWFFileResponse */
+class SOAP_CMAC ns1__InsertWFFileResponse : public xsd__anyType
 {
 public:
-	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
+	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 834; } /* = unique id SOAP_TYPE_ns1__GetSDKTaskWatchFolderResponse */
+	virtual int soap_type() const { return 830; } /* = unique id SOAP_TYPE_ns1__InsertWFFileResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetSDKTaskWatchFolderResponse() { ns1__GetSDKTaskWatchFolderResponse::soap_default(NULL); }
-	virtual ~ns1__GetSDKTaskWatchFolderResponse() { }
+	         ns1__InsertWFFileResponse() { ns1__InsertWFFileResponse::soap_default(NULL); }
+	virtual ~ns1__InsertWFFileResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__ModExpression
+#define SOAP_TYPE_ns1__ModExpression (831)
+/* ns1:ModExpression */
+class SOAP_CMAC ns1__ModExpression : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	ns1__abxExpression *expr;	/* optional element of type ns1:abxExpression */
+public:
+	virtual int soap_type() const { return 831; } /* = unique id SOAP_TYPE_ns1__ModExpression */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__ModExpression() { ns1__ModExpression::soap_default(NULL); }
+	virtual ~ns1__ModExpression() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__ModExpressionResponse
+#define SOAP_TYPE_ns1__ModExpressionResponse (832)
+/* ns1:ModExpressionResponse */
+class SOAP_CMAC ns1__ModExpressionResponse : public xsd__anyType
+{
+public:
+	ns1__abxExpressionResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxExpressionResult */
+public:
+	virtual int soap_type() const { return 832; } /* = unique id SOAP_TYPE_ns1__ModExpressionResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__ModExpressionResponse() { ns1__ModExpressionResponse::soap_default(NULL); }
+	virtual ~ns1__ModExpressionResponse() { }
 };
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetDownloadDetailByData
-#define SOAP_TYPE_ns1__GetDownloadDetailByData (835)
+#define SOAP_TYPE_ns1__GetDownloadDetailByData (833)
 /* ns1:GetDownloadDetailByData */
 class SOAP_CMAC ns1__GetDownloadDetailByData : public xsd__anyType
 {
@@ -18437,7 +18399,7 @@ public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	char *instanceName;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 835; } /* = unique id SOAP_TYPE_ns1__GetDownloadDetailByData */
+	virtual int soap_type() const { return 833; } /* = unique id SOAP_TYPE_ns1__GetDownloadDetailByData */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -18450,14 +18412,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetDownloadDetailByDataResponse
-#define SOAP_TYPE_ns1__GetDownloadDetailByDataResponse (836)
+#define SOAP_TYPE_ns1__GetDownloadDetailByDataResponse (834)
 /* ns1:GetDownloadDetailByDataResponse */
 class SOAP_CMAC ns1__GetDownloadDetailByDataResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 836; } /* = unique id SOAP_TYPE_ns1__GetDownloadDetailByDataResponse */
+	virtual int soap_type() const { return 834; } /* = unique id SOAP_TYPE_ns1__GetDownloadDetailByDataResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -18469,49 +18431,49 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__ModifySDKTaskWatchFolder
-#define SOAP_TYPE_ns1__ModifySDKTaskWatchFolder (837)
-/* ns1:ModifySDKTaskWatchFolder */
-class SOAP_CMAC ns1__ModifySDKTaskWatchFolder : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__GetSDKTaskWatchFolder
+#define SOAP_TYPE_ns1__GetSDKTaskWatchFolder (835)
+/* ns1:GetSDKTaskWatchFolder */
+class SOAP_CMAC ns1__GetSDKTaskWatchFolder : public xsd__anyType
 {
 public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	ns1__abxSDKTask *sdkTask;	/* optional element of type ns1:abxSDKTask */
+	char *taskId;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 837; } /* = unique id SOAP_TYPE_ns1__ModifySDKTaskWatchFolder */
+	virtual int soap_type() const { return 835; } /* = unique id SOAP_TYPE_ns1__GetSDKTaskWatchFolder */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__ModifySDKTaskWatchFolder() { ns1__ModifySDKTaskWatchFolder::soap_default(NULL); }
-	virtual ~ns1__ModifySDKTaskWatchFolder() { }
+	         ns1__GetSDKTaskWatchFolder() { ns1__GetSDKTaskWatchFolder::soap_default(NULL); }
+	virtual ~ns1__GetSDKTaskWatchFolder() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__ModifySDKTaskWatchFolderResponse
-#define SOAP_TYPE_ns1__ModifySDKTaskWatchFolderResponse (838)
-/* ns1:ModifySDKTaskWatchFolderResponse */
-class SOAP_CMAC ns1__ModifySDKTaskWatchFolderResponse : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__GetSDKTaskWatchFolderResponse
+#define SOAP_TYPE_ns1__GetSDKTaskWatchFolderResponse (836)
+/* ns1:GetSDKTaskWatchFolderResponse */
+class SOAP_CMAC ns1__GetSDKTaskWatchFolderResponse : public xsd__anyType
 {
 public:
 	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
 public:
-	virtual int soap_type() const { return 838; } /* = unique id SOAP_TYPE_ns1__ModifySDKTaskWatchFolderResponse */
+	virtual int soap_type() const { return 836; } /* = unique id SOAP_TYPE_ns1__GetSDKTaskWatchFolderResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__ModifySDKTaskWatchFolderResponse() { ns1__ModifySDKTaskWatchFolderResponse::soap_default(NULL); }
-	virtual ~ns1__ModifySDKTaskWatchFolderResponse() { }
+	         ns1__GetSDKTaskWatchFolderResponse() { ns1__GetSDKTaskWatchFolderResponse::soap_default(NULL); }
+	virtual ~ns1__GetSDKTaskWatchFolderResponse() { }
 };
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetProtocolByDesc
-#define SOAP_TYPE_ns1__GetProtocolByDesc (839)
+#define SOAP_TYPE_ns1__GetProtocolByDesc (837)
 /* ns1:GetProtocolByDesc */
 class SOAP_CMAC ns1__GetProtocolByDesc : public xsd__anyType
 {
@@ -18519,7 +18481,7 @@ public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	char *protocolDesc;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 839; } /* = unique id SOAP_TYPE_ns1__GetProtocolByDesc */
+	virtual int soap_type() const { return 837; } /* = unique id SOAP_TYPE_ns1__GetProtocolByDesc */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -18532,14 +18494,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetProtocolByDescResponse
-#define SOAP_TYPE_ns1__GetProtocolByDescResponse (840)
+#define SOAP_TYPE_ns1__GetProtocolByDescResponse (838)
 /* ns1:GetProtocolByDescResponse */
 class SOAP_CMAC ns1__GetProtocolByDescResponse : public xsd__anyType
 {
 public:
 	ns2__abxProtocolResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns2:abxProtocolResult */
 public:
-	virtual int soap_type() const { return 840; } /* = unique id SOAP_TYPE_ns1__GetProtocolByDescResponse */
+	virtual int soap_type() const { return 838; } /* = unique id SOAP_TYPE_ns1__GetProtocolByDescResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -18552,7 +18514,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__DeleteLink
-#define SOAP_TYPE_ns1__DeleteLink (841)
+#define SOAP_TYPE_ns1__DeleteLink (839)
 /* ns1:DeleteLink */
 class SOAP_CMAC ns1__DeleteLink : public xsd__anyType
 {
@@ -18561,7 +18523,7 @@ public:
 	char *instanceNameFrom;	/* optional element of type xsd:string */
 	char *linkId;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 841; } /* = unique id SOAP_TYPE_ns1__DeleteLink */
+	virtual int soap_type() const { return 839; } /* = unique id SOAP_TYPE_ns1__DeleteLink */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -18574,14 +18536,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__DeleteLinkResponse
-#define SOAP_TYPE_ns1__DeleteLinkResponse (842)
+#define SOAP_TYPE_ns1__DeleteLinkResponse (840)
 /* ns1:DeleteLinkResponse */
 class SOAP_CMAC ns1__DeleteLinkResponse : public xsd__anyType
 {
 public:
 	ns1__abxLinkResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxLinkResult */
 public:
-	virtual int soap_type() const { return 842; } /* = unique id SOAP_TYPE_ns1__DeleteLinkResponse */
+	virtual int soap_type() const { return 840; } /* = unique id SOAP_TYPE_ns1__DeleteLinkResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -18590,6 +18552,47 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__DeleteLinkResponse() { ns1__DeleteLinkResponse::soap_default(NULL); }
 	virtual ~ns1__DeleteLinkResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__ModifySDKTaskWatchFolder
+#define SOAP_TYPE_ns1__ModifySDKTaskWatchFolder (841)
+/* ns1:ModifySDKTaskWatchFolder */
+class SOAP_CMAC ns1__ModifySDKTaskWatchFolder : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	ns1__abxSDKTask *sdkTask;	/* optional element of type ns1:abxSDKTask */
+public:
+	virtual int soap_type() const { return 841; } /* = unique id SOAP_TYPE_ns1__ModifySDKTaskWatchFolder */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__ModifySDKTaskWatchFolder() { ns1__ModifySDKTaskWatchFolder::soap_default(NULL); }
+	virtual ~ns1__ModifySDKTaskWatchFolder() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__ModifySDKTaskWatchFolderResponse
+#define SOAP_TYPE_ns1__ModifySDKTaskWatchFolderResponse (842)
+/* ns1:ModifySDKTaskWatchFolderResponse */
+class SOAP_CMAC ns1__ModifySDKTaskWatchFolderResponse : public xsd__anyType
+{
+public:
+	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
+public:
+	virtual int soap_type() const { return 842; } /* = unique id SOAP_TYPE_ns1__ModifySDKTaskWatchFolderResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__ModifySDKTaskWatchFolderResponse() { ns1__ModifySDKTaskWatchFolderResponse::soap_default(NULL); }
+	virtual ~ns1__ModifySDKTaskWatchFolderResponse() { }
 };
 #endif
 
@@ -18884,45 +18887,45 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetDataTPFileListByDocument
-#define SOAP_TYPE_ns1__GetDataTPFileListByDocument (857)
-/* ns1:GetDataTPFileListByDocument */
-class SOAP_CMAC ns1__GetDataTPFileListByDocument : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__DownloadFileContainerUnc
+#define SOAP_TYPE_ns1__DownloadFileContainerUnc (857)
+/* ns1:DownloadFileContainerUnc */
+class SOAP_CMAC ns1__DownloadFileContainerUnc : public xsd__anyType
 {
 public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *instanceName;	/* optional element of type xsd:string */
-	char *dataId;	/* optional element of type xsd:string */
+	char *UNCPath;	/* optional element of type xsd:string */
+	char *dChunk;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 857; } /* = unique id SOAP_TYPE_ns1__GetDataTPFileListByDocument */
+	virtual int soap_type() const { return 857; } /* = unique id SOAP_TYPE_ns1__DownloadFileContainerUnc */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetDataTPFileListByDocument() { ns1__GetDataTPFileListByDocument::soap_default(NULL); }
-	virtual ~ns1__GetDataTPFileListByDocument() { }
+	         ns1__DownloadFileContainerUnc() { ns1__DownloadFileContainerUnc::soap_default(NULL); }
+	virtual ~ns1__DownloadFileContainerUnc() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetDataTPFileListByDocumentResponse
-#define SOAP_TYPE_ns1__GetDataTPFileListByDocumentResponse (858)
-/* ns1:GetDataTPFileListByDocumentResponse */
-class SOAP_CMAC ns1__GetDataTPFileListByDocumentResponse : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__DownloadFileContainerUncResponse
+#define SOAP_TYPE_ns1__DownloadFileContainerUncResponse (858)
+/* ns1:DownloadFileContainerUncResponse */
+class SOAP_CMAC ns1__DownloadFileContainerUncResponse : public xsd__anyType
 {
 public:
-	ns1__abxFileTpResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileTpResult */
+	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 858; } /* = unique id SOAP_TYPE_ns1__GetDataTPFileListByDocumentResponse */
+	virtual int soap_type() const { return 858; } /* = unique id SOAP_TYPE_ns1__DownloadFileContainerUncResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetDataTPFileListByDocumentResponse() { ns1__GetDataTPFileListByDocumentResponse::soap_default(NULL); }
-	virtual ~ns1__GetDataTPFileListByDocumentResponse() { }
+	         ns1__DownloadFileContainerUncResponse() { ns1__DownloadFileContainerUncResponse::soap_default(NULL); }
+	virtual ~ns1__DownloadFileContainerUncResponse() { }
 };
 #endif
 
@@ -18969,45 +18972,45 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__DownloadFileContainerUnc
-#define SOAP_TYPE_ns1__DownloadFileContainerUnc (861)
-/* ns1:DownloadFileContainerUnc */
-class SOAP_CMAC ns1__DownloadFileContainerUnc : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__GetDataTPFileListByDocument
+#define SOAP_TYPE_ns1__GetDataTPFileListByDocument (861)
+/* ns1:GetDataTPFileListByDocument */
+class SOAP_CMAC ns1__GetDataTPFileListByDocument : public xsd__anyType
 {
 public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *UNCPath;	/* optional element of type xsd:string */
-	char *dChunk;	/* optional element of type xsd:string */
+	char *instanceName;	/* optional element of type xsd:string */
+	char *dataId;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 861; } /* = unique id SOAP_TYPE_ns1__DownloadFileContainerUnc */
+	virtual int soap_type() const { return 861; } /* = unique id SOAP_TYPE_ns1__GetDataTPFileListByDocument */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__DownloadFileContainerUnc() { ns1__DownloadFileContainerUnc::soap_default(NULL); }
-	virtual ~ns1__DownloadFileContainerUnc() { }
+	         ns1__GetDataTPFileListByDocument() { ns1__GetDataTPFileListByDocument::soap_default(NULL); }
+	virtual ~ns1__GetDataTPFileListByDocument() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__DownloadFileContainerUncResponse
-#define SOAP_TYPE_ns1__DownloadFileContainerUncResponse (862)
-/* ns1:DownloadFileContainerUncResponse */
-class SOAP_CMAC ns1__DownloadFileContainerUncResponse : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__GetDataTPFileListByDocumentResponse
+#define SOAP_TYPE_ns1__GetDataTPFileListByDocumentResponse (862)
+/* ns1:GetDataTPFileListByDocumentResponse */
+class SOAP_CMAC ns1__GetDataTPFileListByDocumentResponse : public xsd__anyType
 {
 public:
-	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
+	ns1__abxFileTpResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileTpResult */
 public:
-	virtual int soap_type() const { return 862; } /* = unique id SOAP_TYPE_ns1__DownloadFileContainerUncResponse */
+	virtual int soap_type() const { return 862; } /* = unique id SOAP_TYPE_ns1__GetDataTPFileListByDocumentResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__DownloadFileContainerUncResponse() { ns1__DownloadFileContainerUncResponse::soap_default(NULL); }
-	virtual ~ns1__DownloadFileContainerUncResponse() { }
+	         ns1__GetDataTPFileListByDocumentResponse() { ns1__GetDataTPFileListByDocumentResponse::soap_default(NULL); }
+	virtual ~ns1__GetDataTPFileListByDocumentResponse() { }
 };
 #endif
 
@@ -19181,53 +19184,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__CreateField
-#define SOAP_TYPE_ns1__CreateField (871)
-/* ns1:CreateField */
-class SOAP_CMAC ns1__CreateField : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	ns1__abxField *Field2Update;	/* optional element of type ns1:abxField */
-	ns1__abxCombo *recordsArray;	/* optional element of type ns1:abxCombo */
-	ns1__abxFK *fkp;	/* optional element of type ns1:abxFK */
-	bool optionGetCache;	/* required element of type xsd:boolean */
-	bool optionSetDesc;	/* required element of type xsd:boolean */
-public:
-	virtual int soap_type() const { return 871; } /* = unique id SOAP_TYPE_ns1__CreateField */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__CreateField() { ns1__CreateField::soap_default(NULL); }
-	virtual ~ns1__CreateField() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__CreateFieldResponse
-#define SOAP_TYPE_ns1__CreateFieldResponse (872)
-/* ns1:CreateFieldResponse */
-class SOAP_CMAC ns1__CreateFieldResponse : public xsd__anyType
-{
-public:
-	ns1__abxFieldResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFieldResult */
-public:
-	virtual int soap_type() const { return 872; } /* = unique id SOAP_TYPE_ns1__CreateFieldResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__CreateFieldResponse() { ns1__CreateFieldResponse::soap_default(NULL); }
-	virtual ~ns1__CreateFieldResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__DownloadFileWA
-#define SOAP_TYPE_ns1__DownloadFileWA (873)
+#define SOAP_TYPE_ns1__DownloadFileWA (871)
 /* ns1:DownloadFileWA */
 class SOAP_CMAC ns1__DownloadFileWA : public xsd__anyType
 {
@@ -19237,7 +19195,7 @@ public:
 	char *dataAttachmentId;	/* optional element of type xsd:string */
 	char *dChunk;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 873; } /* = unique id SOAP_TYPE_ns1__DownloadFileWA */
+	virtual int soap_type() const { return 871; } /* = unique id SOAP_TYPE_ns1__DownloadFileWA */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -19250,14 +19208,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__DownloadFileWAResponse
-#define SOAP_TYPE_ns1__DownloadFileWAResponse (874)
+#define SOAP_TYPE_ns1__DownloadFileWAResponse (872)
 /* ns1:DownloadFileWAResponse */
 class SOAP_CMAC ns1__DownloadFileWAResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 874; } /* = unique id SOAP_TYPE_ns1__DownloadFileWAResponse */
+	virtual int soap_type() const { return 872; } /* = unique id SOAP_TYPE_ns1__DownloadFileWAResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -19269,49 +19227,53 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetDataTPFileListByUsername
-#define SOAP_TYPE_ns1__GetDataTPFileListByUsername (875)
-/* ns1:GetDataTPFileListByUsername */
-class SOAP_CMAC ns1__GetDataTPFileListByUsername : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__CreateField
+#define SOAP_TYPE_ns1__CreateField (873)
+/* ns1:CreateField */
+class SOAP_CMAC ns1__CreateField : public xsd__anyType
 {
 public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *username;	/* optional element of type xsd:string */
+	ns1__abxField *Field2Update;	/* optional element of type ns1:abxField */
+	ns1__abxCombo *recordsArray;	/* optional element of type ns1:abxCombo */
+	ns1__abxFK *fkp;	/* optional element of type ns1:abxFK */
+	bool optionGetCache;	/* required element of type xsd:boolean */
+	bool optionSetDesc;	/* required element of type xsd:boolean */
 public:
-	virtual int soap_type() const { return 875; } /* = unique id SOAP_TYPE_ns1__GetDataTPFileListByUsername */
+	virtual int soap_type() const { return 873; } /* = unique id SOAP_TYPE_ns1__CreateField */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetDataTPFileListByUsername() { ns1__GetDataTPFileListByUsername::soap_default(NULL); }
-	virtual ~ns1__GetDataTPFileListByUsername() { }
+	         ns1__CreateField() { ns1__CreateField::soap_default(NULL); }
+	virtual ~ns1__CreateField() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetDataTPFileListByUsernameResponse
-#define SOAP_TYPE_ns1__GetDataTPFileListByUsernameResponse (876)
-/* ns1:GetDataTPFileListByUsernameResponse */
-class SOAP_CMAC ns1__GetDataTPFileListByUsernameResponse : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__CreateFieldResponse
+#define SOAP_TYPE_ns1__CreateFieldResponse (874)
+/* ns1:CreateFieldResponse */
+class SOAP_CMAC ns1__CreateFieldResponse : public xsd__anyType
 {
 public:
-	ns1__abxFileTpResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileTpResult */
+	ns1__abxFieldResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFieldResult */
 public:
-	virtual int soap_type() const { return 876; } /* = unique id SOAP_TYPE_ns1__GetDataTPFileListByUsernameResponse */
+	virtual int soap_type() const { return 874; } /* = unique id SOAP_TYPE_ns1__CreateFieldResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetDataTPFileListByUsernameResponse() { ns1__GetDataTPFileListByUsernameResponse::soap_default(NULL); }
-	virtual ~ns1__GetDataTPFileListByUsernameResponse() { }
+	         ns1__CreateFieldResponse() { ns1__CreateFieldResponse::soap_default(NULL); }
+	virtual ~ns1__CreateFieldResponse() { }
 };
 #endif
 
 #ifndef SOAP_TYPE_ns1__DownloadFileUnc
-#define SOAP_TYPE_ns1__DownloadFileUnc (877)
+#define SOAP_TYPE_ns1__DownloadFileUnc (875)
 /* ns1:DownloadFileUnc */
 class SOAP_CMAC ns1__DownloadFileUnc : public xsd__anyType
 {
@@ -19320,7 +19282,7 @@ public:
 	char *UNCPath;	/* optional element of type xsd:string */
 	char *dChunk;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 877; } /* = unique id SOAP_TYPE_ns1__DownloadFileUnc */
+	virtual int soap_type() const { return 875; } /* = unique id SOAP_TYPE_ns1__DownloadFileUnc */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -19333,14 +19295,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__DownloadFileUncResponse
-#define SOAP_TYPE_ns1__DownloadFileUncResponse (878)
+#define SOAP_TYPE_ns1__DownloadFileUncResponse (876)
 /* ns1:DownloadFileUncResponse */
 class SOAP_CMAC ns1__DownloadFileUncResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 878; } /* = unique id SOAP_TYPE_ns1__DownloadFileUncResponse */
+	virtual int soap_type() const { return 876; } /* = unique id SOAP_TYPE_ns1__DownloadFileUncResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -19352,46 +19314,49 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__SaveChars
-#define SOAP_TYPE_ns1__SaveChars (879)
-/* Primitive ns1:SaveChars schema type: */
-class SOAP_CMAC ns1__SaveChars : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__GetDataTPFileListByUsername
+#define SOAP_TYPE_ns1__GetDataTPFileListByUsername (877)
+/* ns1:GetDataTPFileListByUsername */
+class SOAP_CMAC ns1__GetDataTPFileListByUsername : public xsd__anyType
 {
 public:
-	virtual int soap_type() const { return 879; } /* = unique id SOAP_TYPE_ns1__SaveChars */
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *username;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 877; } /* = unique id SOAP_TYPE_ns1__GetDataTPFileListByUsername */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__SaveChars() { ns1__SaveChars::soap_default(NULL); }
-	virtual ~ns1__SaveChars() { }
+	         ns1__GetDataTPFileListByUsername() { ns1__GetDataTPFileListByUsername::soap_default(NULL); }
+	virtual ~ns1__GetDataTPFileListByUsername() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__SaveCharsResponse
-#define SOAP_TYPE_ns1__SaveCharsResponse (880)
-/* ns1:SaveCharsResponse */
-class SOAP_CMAC ns1__SaveCharsResponse : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__GetDataTPFileListByUsernameResponse
+#define SOAP_TYPE_ns1__GetDataTPFileListByUsernameResponse (878)
+/* ns1:GetDataTPFileListByUsernameResponse */
+class SOAP_CMAC ns1__GetDataTPFileListByUsernameResponse : public xsd__anyType
 {
 public:
-	char *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
+	ns1__abxFileTpResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileTpResult */
 public:
-	virtual int soap_type() const { return 880; } /* = unique id SOAP_TYPE_ns1__SaveCharsResponse */
+	virtual int soap_type() const { return 878; } /* = unique id SOAP_TYPE_ns1__GetDataTPFileListByUsernameResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__SaveCharsResponse() { ns1__SaveCharsResponse::soap_default(NULL); }
-	virtual ~ns1__SaveCharsResponse() { }
+	         ns1__GetDataTPFileListByUsernameResponse() { ns1__GetDataTPFileListByUsernameResponse::soap_default(NULL); }
+	virtual ~ns1__GetDataTPFileListByUsernameResponse() { }
 };
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetUserSettings
-#define SOAP_TYPE_ns1__GetUserSettings (881)
+#define SOAP_TYPE_ns1__GetUserSettings (879)
 /* ns1:GetUserSettings */
 class SOAP_CMAC ns1__GetUserSettings : public xsd__anyType
 {
@@ -19400,7 +19365,7 @@ public:
 	char *instanceName;	/* optional element of type xsd:string */
 	char *userName;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 881; } /* = unique id SOAP_TYPE_ns1__GetUserSettings */
+	virtual int soap_type() const { return 879; } /* = unique id SOAP_TYPE_ns1__GetUserSettings */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -19413,14 +19378,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetUserSettingsResponse
-#define SOAP_TYPE_ns1__GetUserSettingsResponse (882)
+#define SOAP_TYPE_ns1__GetUserSettingsResponse (880)
 /* ns1:GetUserSettingsResponse */
 class SOAP_CMAC ns1__GetUserSettingsResponse : public xsd__anyType
 {
 public:
 	ns1__abxWorkflowResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxWorkflowResult */
 public:
-	virtual int soap_type() const { return 882; } /* = unique id SOAP_TYPE_ns1__GetUserSettingsResponse */
+	virtual int soap_type() const { return 880; } /* = unique id SOAP_TYPE_ns1__GetUserSettingsResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -19432,29 +19397,46 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__StartSDKTask
-#define SOAP_TYPE_ns1__StartSDKTask (883)
-/* ns1:StartSDKTask */
-class SOAP_CMAC ns1__StartSDKTask : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__SaveChars
+#define SOAP_TYPE_ns1__SaveChars (881)
+/* Primitive ns1:SaveChars schema type: */
+class SOAP_CMAC ns1__SaveChars : public xsd__anyType
 {
 public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *taskId;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 883; } /* = unique id SOAP_TYPE_ns1__StartSDKTask */
+	virtual int soap_type() const { return 881; } /* = unique id SOAP_TYPE_ns1__SaveChars */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__StartSDKTask() { ns1__StartSDKTask::soap_default(NULL); }
-	virtual ~ns1__StartSDKTask() { }
+	         ns1__SaveChars() { ns1__SaveChars::soap_default(NULL); }
+	virtual ~ns1__SaveChars() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__SaveCharsResponse
+#define SOAP_TYPE_ns1__SaveCharsResponse (882)
+/* ns1:SaveCharsResponse */
+class SOAP_CMAC ns1__SaveCharsResponse : public xsd__anyType
+{
+public:
+	char *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 882; } /* = unique id SOAP_TYPE_ns1__SaveCharsResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__SaveCharsResponse() { ns1__SaveCharsResponse::soap_default(NULL); }
+	virtual ~ns1__SaveCharsResponse() { }
 };
 #endif
 
 #ifndef SOAP_TYPE_ns1__Fk_USCOREgetAllRecord
-#define SOAP_TYPE_ns1__Fk_USCOREgetAllRecord (884)
+#define SOAP_TYPE_ns1__Fk_USCOREgetAllRecord (883)
 /* ns1:Fk_getAllRecord */
 class SOAP_CMAC ns1__Fk_USCOREgetAllRecord : public xsd__anyType
 {
@@ -19466,7 +19448,7 @@ public:
 	bool directionDesc;	/* required element of type xsd:boolean */
 	char *InstanceName;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 884; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREgetAllRecord */
+	virtual int soap_type() const { return 883; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREgetAllRecord */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -19479,14 +19461,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__Fk_USCOREgetAllRecordResponse
-#define SOAP_TYPE_ns1__Fk_USCOREgetAllRecordResponse (885)
+#define SOAP_TYPE_ns1__Fk_USCOREgetAllRecordResponse (884)
 /* ns1:Fk_getAllRecordResponse */
 class SOAP_CMAC ns1__Fk_USCOREgetAllRecordResponse : public xsd__anyType
 {
 public:
 	ns1__abxFKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFKResult */
 public:
-	virtual int soap_type() const { return 885; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREgetAllRecordResponse */
+	virtual int soap_type() const { return 884; } /* = unique id SOAP_TYPE_ns1__Fk_USCOREgetAllRecordResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -19495,6 +19477,27 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__Fk_USCOREgetAllRecordResponse() { ns1__Fk_USCOREgetAllRecordResponse::soap_default(NULL); }
 	virtual ~ns1__Fk_USCOREgetAllRecordResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__StartSDKTask
+#define SOAP_TYPE_ns1__StartSDKTask (885)
+/* ns1:StartSDKTask */
+class SOAP_CMAC ns1__StartSDKTask : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *taskId;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 885; } /* = unique id SOAP_TYPE_ns1__StartSDKTask */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__StartSDKTask() { ns1__StartSDKTask::soap_default(NULL); }
+	virtual ~ns1__StartSDKTask() { }
 };
 #endif
 
@@ -19708,48 +19711,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__SetTmpWFDownloadPath
-#define SOAP_TYPE_ns1__SetTmpWFDownloadPath (896)
-/* ns1:SetTmpWFDownloadPath */
-class SOAP_CMAC ns1__SetTmpWFDownloadPath : public xsd__anyType
-{
-public:
-	char *path;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 896; } /* = unique id SOAP_TYPE_ns1__SetTmpWFDownloadPath */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__SetTmpWFDownloadPath() { ns1__SetTmpWFDownloadPath::soap_default(NULL); }
-	virtual ~ns1__SetTmpWFDownloadPath() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__SetTmpWFDownloadPathResponse
-#define SOAP_TYPE_ns1__SetTmpWFDownloadPathResponse (897)
-/* ns1:SetTmpWFDownloadPathResponse */
-class SOAP_CMAC ns1__SetTmpWFDownloadPathResponse : public xsd__anyType
-{
-public:
-	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
-public:
-	virtual int soap_type() const { return 897; } /* = unique id SOAP_TYPE_ns1__SetTmpWFDownloadPathResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__SetTmpWFDownloadPathResponse() { ns1__SetTmpWFDownloadPathResponse::soap_default(NULL); }
-	virtual ~ns1__SetTmpWFDownloadPathResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__ShowProtocol
-#define SOAP_TYPE_ns1__ShowProtocol (898)
+#define SOAP_TYPE_ns1__ShowProtocol (896)
 /* ns1:ShowProtocol */
 class SOAP_CMAC ns1__ShowProtocol : public xsd__anyType
 {
@@ -19757,7 +19720,7 @@ public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 	ns2__abxProtocol *protocolData;	/* optional element of type ns2:abxProtocol */
 public:
-	virtual int soap_type() const { return 898; } /* = unique id SOAP_TYPE_ns1__ShowProtocol */
+	virtual int soap_type() const { return 896; } /* = unique id SOAP_TYPE_ns1__ShowProtocol */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -19770,14 +19733,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__ShowProtocolResponse
-#define SOAP_TYPE_ns1__ShowProtocolResponse (899)
+#define SOAP_TYPE_ns1__ShowProtocolResponse (897)
 /* ns1:ShowProtocolResponse */
 class SOAP_CMAC ns1__ShowProtocolResponse : public xsd__anyType
 {
 public:
 	ns2__abxProtocolResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns2:abxProtocolResult */
 public:
-	virtual int soap_type() const { return 899; } /* = unique id SOAP_TYPE_ns1__ShowProtocolResponse */
+	virtual int soap_type() const { return 897; } /* = unique id SOAP_TYPE_ns1__ShowProtocolResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -19786,6 +19749,46 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__ShowProtocolResponse() { ns1__ShowProtocolResponse::soap_default(NULL); }
 	virtual ~ns1__ShowProtocolResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__SetTmpWFDownloadPath
+#define SOAP_TYPE_ns1__SetTmpWFDownloadPath (898)
+/* ns1:SetTmpWFDownloadPath */
+class SOAP_CMAC ns1__SetTmpWFDownloadPath : public xsd__anyType
+{
+public:
+	char *path;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 898; } /* = unique id SOAP_TYPE_ns1__SetTmpWFDownloadPath */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__SetTmpWFDownloadPath() { ns1__SetTmpWFDownloadPath::soap_default(NULL); }
+	virtual ~ns1__SetTmpWFDownloadPath() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__SetTmpWFDownloadPathResponse
+#define SOAP_TYPE_ns1__SetTmpWFDownloadPathResponse (899)
+/* ns1:SetTmpWFDownloadPathResponse */
+class SOAP_CMAC ns1__SetTmpWFDownloadPathResponse : public xsd__anyType
+{
+public:
+	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
+public:
+	virtual int soap_type() const { return 899; } /* = unique id SOAP_TYPE_ns1__SetTmpWFDownloadPathResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__SetTmpWFDownloadPathResponse() { ns1__SetTmpWFDownloadPathResponse::soap_default(NULL); }
+	virtual ~ns1__SetTmpWFDownloadPathResponse() { }
 };
 #endif
 
@@ -19831,57 +19834,15 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__StoreSDKVariable
-#define SOAP_TYPE_ns1__StoreSDKVariable (902)
-/* ns1:StoreSDKVariable */
-class SOAP_CMAC ns1__StoreSDKVariable : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *variableKey;	/* optional element of type xsd:string */
-	char *variableValue;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 902; } /* = unique id SOAP_TYPE_ns1__StoreSDKVariable */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__StoreSDKVariable() { ns1__StoreSDKVariable::soap_default(NULL); }
-	virtual ~ns1__StoreSDKVariable() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__StoreSDKVariableResponse
-#define SOAP_TYPE_ns1__StoreSDKVariableResponse (903)
-/* ns1:StoreSDKVariableResponse */
-class SOAP_CMAC ns1__StoreSDKVariableResponse : public xsd__anyType
-{
-public:
-	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
-public:
-	virtual int soap_type() const { return 903; } /* = unique id SOAP_TYPE_ns1__StoreSDKVariableResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__StoreSDKVariableResponse() { ns1__StoreSDKVariableResponse::soap_default(NULL); }
-	virtual ~ns1__StoreSDKVariableResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__GetObject
-#define SOAP_TYPE_ns1__GetObject (904)
+#define SOAP_TYPE_ns1__GetObject (902)
 /* ns1:GetObject */
 class SOAP_CMAC ns1__GetObject : public xsd__anyType
 {
 public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
 public:
-	virtual int soap_type() const { return 904; } /* = unique id SOAP_TYPE_ns1__GetObject */
+	virtual int soap_type() const { return 902; } /* = unique id SOAP_TYPE_ns1__GetObject */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -19894,14 +19855,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__GetObjectResponse
-#define SOAP_TYPE_ns1__GetObjectResponse (905)
+#define SOAP_TYPE_ns1__GetObjectResponse (903)
 /* ns1:GetObjectResponse */
 class SOAP_CMAC ns1__GetObjectResponse : public xsd__anyType
 {
 public:
 	class ns1__abxGoResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxGoResult */
 public:
-	virtual int soap_type() const { return 905; } /* = unique id SOAP_TYPE_ns1__GetObjectResponse */
+	virtual int soap_type() const { return 903; } /* = unique id SOAP_TYPE_ns1__GetObjectResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -19914,7 +19875,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxGoResult
-#define SOAP_TYPE_ns1__abxGoResult (906)
+#define SOAP_TYPE_ns1__abxGoResult (904)
 /* ns1:abxGoResult */
 class SOAP_CMAC ns1__abxGoResult : public xsd__anyType
 {
@@ -19922,7 +19883,7 @@ public:
 	unsigned int result;	/* required element of type xsd:unsignedInt */
 	class ns1__abxObjDef *object;	/* required element of type ns1:abxObjDef */
 public:
-	virtual int soap_type() const { return 906; } /* = unique id SOAP_TYPE_ns1__abxGoResult */
+	virtual int soap_type() const { return 904; } /* = unique id SOAP_TYPE_ns1__abxGoResult */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -19978,7 +19939,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__abxObjDef
-#define SOAP_TYPE_ns1__abxObjDef (907)
+#define SOAP_TYPE_ns1__abxObjDef (905)
 /* ns1:abxObjDef */
 class SOAP_CMAC ns1__abxObjDef : public xsd__anyType
 {
@@ -19987,7 +19948,7 @@ public:
 	_ns1__abxObjDef_elobj *elobj;	/* required element of type ns1:abxObjDef-elobj */
 	xsd__anyType *xxx;	/* required element of type xsd:anyType */
 public:
-	virtual int soap_type() const { return 907; } /* = unique id SOAP_TYPE_ns1__abxObjDef */
+	virtual int soap_type() const { return 905; } /* = unique id SOAP_TYPE_ns1__abxObjDef */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -19999,50 +19960,50 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__AddUser
-#define SOAP_TYPE_ns1__AddUser (908)
-/* ns1:AddUser */
-class SOAP_CMAC ns1__AddUser : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__StoreSDKVariable
+#define SOAP_TYPE_ns1__StoreSDKVariable (906)
+/* ns1:StoreSDKVariable */
+class SOAP_CMAC ns1__StoreSDKVariable : public xsd__anyType
 {
 public:
 	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *password;	/* optional element of type xsd:string */
-	ns1__abxUser *user;	/* optional element of type ns1:abxUser */
+	char *variableKey;	/* optional element of type xsd:string */
+	char *variableValue;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 908; } /* = unique id SOAP_TYPE_ns1__AddUser */
+	virtual int soap_type() const { return 906; } /* = unique id SOAP_TYPE_ns1__StoreSDKVariable */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__AddUser() { ns1__AddUser::soap_default(NULL); }
-	virtual ~ns1__AddUser() { }
+	         ns1__StoreSDKVariable() { ns1__StoreSDKVariable::soap_default(NULL); }
+	virtual ~ns1__StoreSDKVariable() { }
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__AddUserResponse
-#define SOAP_TYPE_ns1__AddUserResponse (909)
-/* ns1:AddUserResponse */
-class SOAP_CMAC ns1__AddUserResponse : public xsd__anyType
+#ifndef SOAP_TYPE_ns1__StoreSDKVariableResponse
+#define SOAP_TYPE_ns1__StoreSDKVariableResponse (907)
+/* ns1:StoreSDKVariableResponse */
+class SOAP_CMAC ns1__StoreSDKVariableResponse : public xsd__anyType
 {
 public:
-	ns1__abxUserListResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxUserListResult */
+	ns1__abxSDKResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxSDKResult */
 public:
-	virtual int soap_type() const { return 909; } /* = unique id SOAP_TYPE_ns1__AddUserResponse */
+	virtual int soap_type() const { return 907; } /* = unique id SOAP_TYPE_ns1__StoreSDKVariableResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
 	virtual int soap_out(struct soap*, const char*, int, const char*) const;
 	virtual void *soap_get(struct soap*, const char*, const char*);
 	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__AddUserResponse() { ns1__AddUserResponse::soap_default(NULL); }
-	virtual ~ns1__AddUserResponse() { }
+	         ns1__StoreSDKVariableResponse() { ns1__StoreSDKVariableResponse::soap_default(NULL); }
+	virtual ~ns1__StoreSDKVariableResponse() { }
 };
 #endif
 
 #ifndef SOAP_TYPE_ns1__CheckIn_USCOREattachContainer
-#define SOAP_TYPE_ns1__CheckIn_USCOREattachContainer (910)
+#define SOAP_TYPE_ns1__CheckIn_USCOREattachContainer (908)
 /* ns1:CheckIn_attachContainer */
 class SOAP_CMAC ns1__CheckIn_USCOREattachContainer : public xsd__anyType
 {
@@ -20051,7 +20012,7 @@ public:
 	char *ObjName;	/* optional element of type xsd:string */
 	char *Path;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 910; } /* = unique id SOAP_TYPE_ns1__CheckIn_USCOREattachContainer */
+	virtual int soap_type() const { return 908; } /* = unique id SOAP_TYPE_ns1__CheckIn_USCOREattachContainer */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -20064,14 +20025,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__CheckIn_USCOREattachContainerResponse
-#define SOAP_TYPE_ns1__CheckIn_USCOREattachContainerResponse (911)
+#define SOAP_TYPE_ns1__CheckIn_USCOREattachContainerResponse (909)
 /* ns1:CheckIn_attachContainerResponse */
 class SOAP_CMAC ns1__CheckIn_USCOREattachContainerResponse : public xsd__anyType
 {
 public:
 	ns1__abxCheckinResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxCheckinResult */
 public:
-	virtual int soap_type() const { return 911; } /* = unique id SOAP_TYPE_ns1__CheckIn_USCOREattachContainerResponse */
+	virtual int soap_type() const { return 909; } /* = unique id SOAP_TYPE_ns1__CheckIn_USCOREattachContainerResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -20080,6 +20041,48 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__CheckIn_USCOREattachContainerResponse() { ns1__CheckIn_USCOREattachContainerResponse::soap_default(NULL); }
 	virtual ~ns1__CheckIn_USCOREattachContainerResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__AddUser
+#define SOAP_TYPE_ns1__AddUser (910)
+/* ns1:AddUser */
+class SOAP_CMAC ns1__AddUser : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *password;	/* optional element of type xsd:string */
+	ns1__abxUser *user;	/* optional element of type ns1:abxUser */
+public:
+	virtual int soap_type() const { return 910; } /* = unique id SOAP_TYPE_ns1__AddUser */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__AddUser() { ns1__AddUser::soap_default(NULL); }
+	virtual ~ns1__AddUser() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__AddUserResponse
+#define SOAP_TYPE_ns1__AddUserResponse (911)
+/* ns1:AddUserResponse */
+class SOAP_CMAC ns1__AddUserResponse : public xsd__anyType
+{
+public:
+	ns1__abxUserListResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxUserListResult */
+public:
+	virtual int soap_type() const { return 911; } /* = unique id SOAP_TYPE_ns1__AddUserResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__AddUserResponse() { ns1__AddUserResponse::soap_default(NULL); }
+	virtual ~ns1__AddUserResponse() { }
 };
 #endif
 
@@ -20207,49 +20210,8 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__GetInstanceReplication
-#define SOAP_TYPE_ns1__GetInstanceReplication (918)
-/* ns1:GetInstanceReplication */
-class SOAP_CMAC ns1__GetInstanceReplication : public xsd__anyType
-{
-public:
-	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
-	char *instanceName;	/* optional element of type xsd:string */
-public:
-	virtual int soap_type() const { return 918; } /* = unique id SOAP_TYPE_ns1__GetInstanceReplication */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetInstanceReplication() { ns1__GetInstanceReplication::soap_default(NULL); }
-	virtual ~ns1__GetInstanceReplication() { }
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__GetInstanceReplicationResponse
-#define SOAP_TYPE_ns1__GetInstanceReplicationResponse (919)
-/* ns1:GetInstanceReplicationResponse */
-class SOAP_CMAC ns1__GetInstanceReplicationResponse : public xsd__anyType
-{
-public:
-	ns1__abxReplicationResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxReplicationResult */
-public:
-	virtual int soap_type() const { return 919; } /* = unique id SOAP_TYPE_ns1__GetInstanceReplicationResponse */
-	virtual void soap_default(struct soap*);
-	virtual void soap_serialize(struct soap*) const;
-	virtual int soap_put(struct soap*, const char*, const char*) const;
-	virtual int soap_out(struct soap*, const char*, int, const char*) const;
-	virtual void *soap_get(struct soap*, const char*, const char*);
-	virtual void *soap_in(struct soap*, const char*, const char*);
-	         ns1__GetInstanceReplicationResponse() { ns1__GetInstanceReplicationResponse::soap_default(NULL); }
-	virtual ~ns1__GetInstanceReplicationResponse() { }
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__DeleteFileWA
-#define SOAP_TYPE_ns1__DeleteFileWA (920)
+#define SOAP_TYPE_ns1__DeleteFileWA (918)
 /* ns1:DeleteFileWA */
 class SOAP_CMAC ns1__DeleteFileWA : public xsd__anyType
 {
@@ -20258,7 +20220,7 @@ public:
 	char *instanceName;	/* optional element of type xsd:string */
 	char *fileCode;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 920; } /* = unique id SOAP_TYPE_ns1__DeleteFileWA */
+	virtual int soap_type() const { return 918; } /* = unique id SOAP_TYPE_ns1__DeleteFileWA */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -20271,14 +20233,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__DeleteFileWAResponse
-#define SOAP_TYPE_ns1__DeleteFileWAResponse (921)
+#define SOAP_TYPE_ns1__DeleteFileWAResponse (919)
 /* ns1:DeleteFileWAResponse */
 class SOAP_CMAC ns1__DeleteFileWAResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 921; } /* = unique id SOAP_TYPE_ns1__DeleteFileWAResponse */
+	virtual int soap_type() const { return 919; } /* = unique id SOAP_TYPE_ns1__DeleteFileWAResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -20291,7 +20253,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__DeleteFileContainerVersion
-#define SOAP_TYPE_ns1__DeleteFileContainerVersion (922)
+#define SOAP_TYPE_ns1__DeleteFileContainerVersion (920)
 /* ns1:DeleteFileContainerVersion */
 class SOAP_CMAC ns1__DeleteFileContainerVersion : public xsd__anyType
 {
@@ -20302,7 +20264,7 @@ public:
 	char *fileCode;	/* optional element of type xsd:string */
 	char *versionNumber;	/* optional element of type xsd:string */
 public:
-	virtual int soap_type() const { return 922; } /* = unique id SOAP_TYPE_ns1__DeleteFileContainerVersion */
+	virtual int soap_type() const { return 920; } /* = unique id SOAP_TYPE_ns1__DeleteFileContainerVersion */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -20315,14 +20277,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__DeleteFileContainerVersionResponse
-#define SOAP_TYPE_ns1__DeleteFileContainerVersionResponse (923)
+#define SOAP_TYPE_ns1__DeleteFileContainerVersionResponse (921)
 /* ns1:DeleteFileContainerVersionResponse */
 class SOAP_CMAC ns1__DeleteFileContainerVersionResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 923; } /* = unique id SOAP_TYPE_ns1__DeleteFileContainerVersionResponse */
+	virtual int soap_type() const { return 921; } /* = unique id SOAP_TYPE_ns1__DeleteFileContainerVersionResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -20335,7 +20297,7 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__InsertFile
-#define SOAP_TYPE_ns1__InsertFile (924)
+#define SOAP_TYPE_ns1__InsertFile (922)
 /* ns1:InsertFile */
 class SOAP_CMAC ns1__InsertFile : public xsd__anyType
 {
@@ -20346,7 +20308,7 @@ public:
 	ns1__abxFileList *dataListInput;	/* optional element of type ns1:abxFileList */
 	bool retrieveCodeIfMissing;	/* required element of type xsd:boolean */
 public:
-	virtual int soap_type() const { return 924; } /* = unique id SOAP_TYPE_ns1__InsertFile */
+	virtual int soap_type() const { return 922; } /* = unique id SOAP_TYPE_ns1__InsertFile */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -20359,14 +20321,14 @@ public:
 #endif
 
 #ifndef SOAP_TYPE_ns1__InsertFileResponse
-#define SOAP_TYPE_ns1__InsertFileResponse (925)
+#define SOAP_TYPE_ns1__InsertFileResponse (923)
 /* ns1:InsertFileResponse */
 class SOAP_CMAC ns1__InsertFileResponse : public xsd__anyType
 {
 public:
 	ns1__abxFileResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxFileResult */
 public:
-	virtual int soap_type() const { return 925; } /* = unique id SOAP_TYPE_ns1__InsertFileResponse */
+	virtual int soap_type() const { return 923; } /* = unique id SOAP_TYPE_ns1__InsertFileResponse */
 	virtual void soap_default(struct soap*);
 	virtual void soap_serialize(struct soap*) const;
 	virtual int soap_put(struct soap*, const char*, const char*) const;
@@ -20375,6 +20337,47 @@ public:
 	virtual void *soap_in(struct soap*, const char*, const char*);
 	         ns1__InsertFileResponse() { ns1__InsertFileResponse::soap_default(NULL); }
 	virtual ~ns1__InsertFileResponse() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetInstanceReplication
+#define SOAP_TYPE_ns1__GetInstanceReplication (924)
+/* ns1:GetInstanceReplication */
+class SOAP_CMAC ns1__GetInstanceReplication : public xsd__anyType
+{
+public:
+	ns1__IDtype *SessionId;	/* optional element of type ns1:IDtype */
+	char *instanceName;	/* optional element of type xsd:string */
+public:
+	virtual int soap_type() const { return 924; } /* = unique id SOAP_TYPE_ns1__GetInstanceReplication */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetInstanceReplication() { ns1__GetInstanceReplication::soap_default(NULL); }
+	virtual ~ns1__GetInstanceReplication() { }
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__GetInstanceReplicationResponse
+#define SOAP_TYPE_ns1__GetInstanceReplicationResponse (925)
+/* ns1:GetInstanceReplicationResponse */
+class SOAP_CMAC ns1__GetInstanceReplicationResponse : public xsd__anyType
+{
+public:
+	ns1__abxReplicationResult *return_;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type ns1:abxReplicationResult */
+public:
+	virtual int soap_type() const { return 925; } /* = unique id SOAP_TYPE_ns1__GetInstanceReplicationResponse */
+	virtual void soap_default(struct soap*);
+	virtual void soap_serialize(struct soap*) const;
+	virtual int soap_put(struct soap*, const char*, const char*) const;
+	virtual int soap_out(struct soap*, const char*, int, const char*) const;
+	virtual void *soap_get(struct soap*, const char*, const char*);
+	virtual void *soap_in(struct soap*, const char*, const char*);
+	         ns1__GetInstanceReplicationResponse() { ns1__GetInstanceReplicationResponse::soap_default(NULL); }
+	virtual ~ns1__GetInstanceReplicationResponse() { }
 };
 #endif
 
@@ -20390,4371 +20393,4371 @@ public:
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__Fk_USCOREgetColumnsName
-#define SOAP_TYPE___ns1__Fk_USCOREgetColumnsName (1248)
-/* Operation wrapper: */
-struct __ns1__Fk_USCOREgetColumnsName
-{
-public:
-	ns1__Fk_USCOREgetColumnsName *ns1__Fk_USCOREgetColumnsName_;	/* optional element of type ns1:Fk_getColumnsName */
-public:
-	int soap_type() const { return 1248; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetColumnsName */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Fk_USCOREgetRemoteDatabaseList
-#define SOAP_TYPE___ns1__Fk_USCOREgetRemoteDatabaseList (1252)
-/* Operation wrapper: */
-struct __ns1__Fk_USCOREgetRemoteDatabaseList
-{
-public:
-	ns1__Fk_USCOREgetRemoteDatabaseList *ns1__Fk_USCOREgetRemoteDatabaseList_;	/* optional element of type ns1:Fk_getRemoteDatabaseList */
-public:
-	int soap_type() const { return 1252; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetRemoteDatabaseList */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Fk_USCOREgetRemoteTableList
-#define SOAP_TYPE___ns1__Fk_USCOREgetRemoteTableList (1256)
-/* Operation wrapper: */
-struct __ns1__Fk_USCOREgetRemoteTableList
-{
-public:
-	ns1__Fk_USCOREgetRemoteTableList *ns1__Fk_USCOREgetRemoteTableList_;	/* optional element of type ns1:Fk_getRemoteTableList */
-public:
-	int soap_type() const { return 1256; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetRemoteTableList */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Fk_USCOREgetRemoteViewList
-#define SOAP_TYPE___ns1__Fk_USCOREgetRemoteViewList (1260)
-/* Operation wrapper: */
-struct __ns1__Fk_USCOREgetRemoteViewList
-{
-public:
-	ns1__Fk_USCOREgetRemoteViewList *ns1__Fk_USCOREgetRemoteViewList_;	/* optional element of type ns1:Fk_getRemoteViewList */
-public:
-	int soap_type() const { return 1260; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetRemoteViewList */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Fk_USCOREgetRemoteFieldList
-#define SOAP_TYPE___ns1__Fk_USCOREgetRemoteFieldList (1264)
-/* Operation wrapper: */
-struct __ns1__Fk_USCOREgetRemoteFieldList
-{
-public:
-	ns1__Fk_USCOREgetRemoteFieldList *ns1__Fk_USCOREgetRemoteFieldList_;	/* optional element of type ns1:Fk_getRemoteFieldList */
-public:
-	int soap_type() const { return 1264; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetRemoteFieldList */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Fk_USCOREgetLocalFieldList
-#define SOAP_TYPE___ns1__Fk_USCOREgetLocalFieldList (1268)
-/* Operation wrapper: */
-struct __ns1__Fk_USCOREgetLocalFieldList
-{
-public:
-	ns1__Fk_USCOREgetLocalFieldList *ns1__Fk_USCOREgetLocalFieldList_;	/* optional element of type ns1:Fk_getLocalFieldList */
-public:
-	int soap_type() const { return 1268; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetLocalFieldList */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Query
-#define SOAP_TYPE___ns1__Query (1272)
-/* Operation wrapper: */
-struct __ns1__Query
-{
-public:
-	ns1__Query *ns1__Query_;	/* optional element of type ns1:Query */
-public:
-	int soap_type() const { return 1272; } /* = unique id SOAP_TYPE___ns1__Query */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Fk_USCOREgetAllRecord
-#define SOAP_TYPE___ns1__Fk_USCOREgetAllRecord (1276)
-/* Operation wrapper: */
-struct __ns1__Fk_USCOREgetAllRecord
-{
-public:
-	ns1__Fk_USCOREgetAllRecord *ns1__Fk_USCOREgetAllRecord_;	/* optional element of type ns1:Fk_getAllRecord */
-public:
-	int soap_type() const { return 1276; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetAllRecord */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Fk_USCOREgetCountAllRecord
-#define SOAP_TYPE___ns1__Fk_USCOREgetCountAllRecord (1280)
-/* Operation wrapper: */
-struct __ns1__Fk_USCOREgetCountAllRecord
-{
-public:
-	ns1__Fk_USCOREgetCountAllRecord *ns1__Fk_USCOREgetCountAllRecord_;	/* optional element of type ns1:Fk_getCountAllRecord */
-public:
-	int soap_type() const { return 1280; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetCountAllRecord */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Fk_USCOREgetAllRecordByIndex
-#define SOAP_TYPE___ns1__Fk_USCOREgetAllRecordByIndex (1284)
-/* Operation wrapper: */
-struct __ns1__Fk_USCOREgetAllRecordByIndex
-{
-public:
-	ns1__Fk_USCOREgetAllRecordByIndex *ns1__Fk_USCOREgetAllRecordByIndex_;	/* optional element of type ns1:Fk_getAllRecordByIndex */
-public:
-	int soap_type() const { return 1284; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetAllRecordByIndex */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Fk_USCOREgetAllRecordByDesc
-#define SOAP_TYPE___ns1__Fk_USCOREgetAllRecordByDesc (1288)
-/* Operation wrapper: */
-struct __ns1__Fk_USCOREgetAllRecordByDesc
-{
-public:
-	ns1__Fk_USCOREgetAllRecordByDesc *ns1__Fk_USCOREgetAllRecordByDesc_;	/* optional element of type ns1:Fk_getAllRecordByDesc */
-public:
-	int soap_type() const { return 1288; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetAllRecordByDesc */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Fk_USCOREgetCountAllRecordByDesc
-#define SOAP_TYPE___ns1__Fk_USCOREgetCountAllRecordByDesc (1292)
-/* Operation wrapper: */
-struct __ns1__Fk_USCOREgetCountAllRecordByDesc
-{
-public:
-	ns1__Fk_USCOREgetCountAllRecordByDesc *ns1__Fk_USCOREgetCountAllRecordByDesc_;	/* optional element of type ns1:Fk_getCountAllRecordByDesc */
-public:
-	int soap_type() const { return 1292; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetCountAllRecordByDesc */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Fk_USCOREgetCountAllRecordByIndexDesc
-#define SOAP_TYPE___ns1__Fk_USCOREgetCountAllRecordByIndexDesc (1296)
-/* Operation wrapper: */
-struct __ns1__Fk_USCOREgetCountAllRecordByIndexDesc
-{
-public:
-	ns1__Fk_USCOREgetCountAllRecordByIndexDesc *ns1__Fk_USCOREgetCountAllRecordByIndexDesc_;	/* optional element of type ns1:Fk_getCountAllRecordByIndexDesc */
-public:
-	int soap_type() const { return 1296; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetCountAllRecordByIndexDesc */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Fk_USCOREgetAllRecordByIndexDesc
-#define SOAP_TYPE___ns1__Fk_USCOREgetAllRecordByIndexDesc (1300)
-/* Operation wrapper: */
-struct __ns1__Fk_USCOREgetAllRecordByIndexDesc
-{
-public:
-	ns1__Fk_USCOREgetAllRecordByIndexDesc *ns1__Fk_USCOREgetAllRecordByIndexDesc_;	/* optional element of type ns1:Fk_getAllRecordByIndexDesc */
-public:
-	int soap_type() const { return 1300; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetAllRecordByIndexDesc */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__InsertDataWA
-#define SOAP_TYPE___ns1__InsertDataWA (1304)
-/* Operation wrapper: */
-struct __ns1__InsertDataWA
-{
-public:
-	ns1__InsertDataWA *ns1__InsertDataWA_;	/* optional element of type ns1:InsertDataWA */
-public:
-	int soap_type() const { return 1304; } /* = unique id SOAP_TYPE___ns1__InsertDataWA */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetListDataWA
-#define SOAP_TYPE___ns1__GetListDataWA (1308)
-/* Operation wrapper: */
-struct __ns1__GetListDataWA
-{
-public:
-	ns1__GetListDataWA *ns1__GetListDataWA_;	/* optional element of type ns1:GetListDataWA */
-public:
-	int soap_type() const { return 1308; } /* = unique id SOAP_TYPE___ns1__GetListDataWA */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ModifyDataWA
-#define SOAP_TYPE___ns1__ModifyDataWA (1312)
-/* Operation wrapper: */
-struct __ns1__ModifyDataWA
-{
-public:
-	ns1__ModifyDataWA *ns1__ModifyDataWA_;	/* optional element of type ns1:ModifyDataWA */
-public:
-	int soap_type() const { return 1312; } /* = unique id SOAP_TYPE___ns1__ModifyDataWA */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DeleteDataWA
-#define SOAP_TYPE___ns1__DeleteDataWA (1316)
-/* Operation wrapper: */
-struct __ns1__DeleteDataWA
-{
-public:
-	ns1__DeleteDataWA *ns1__DeleteDataWA_;	/* optional element of type ns1:DeleteDataWA */
-public:
-	int soap_type() const { return 1316; } /* = unique id SOAP_TYPE___ns1__DeleteDataWA */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetDataWAById
-#define SOAP_TYPE___ns1__GetDataWAById (1320)
-/* Operation wrapper: */
-struct __ns1__GetDataWAById
-{
-public:
-	ns1__GetDataWAById *ns1__GetDataWAById_;	/* optional element of type ns1:GetDataWAById */
-public:
-	int soap_type() const { return 1320; } /* = unique id SOAP_TYPE___ns1__GetDataWAById */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__InsertFileWA
-#define SOAP_TYPE___ns1__InsertFileWA (1324)
-/* Operation wrapper: */
-struct __ns1__InsertFileWA
-{
-public:
-	ns1__InsertFileWA *ns1__InsertFileWA_;	/* optional element of type ns1:InsertFileWA */
-public:
-	int soap_type() const { return 1324; } /* = unique id SOAP_TYPE___ns1__InsertFileWA */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__UploadSendChunkWA
-#define SOAP_TYPE___ns1__UploadSendChunkWA (1328)
-/* Operation wrapper: */
-struct __ns1__UploadSendChunkWA
-{
-public:
-	ns1__UploadSendChunkWA *ns1__UploadSendChunkWA_;	/* optional element of type ns1:UploadSendChunkWA */
-public:
-	int soap_type() const { return 1328; } /* = unique id SOAP_TYPE___ns1__UploadSendChunkWA */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__UploadEndFileWA
-#define SOAP_TYPE___ns1__UploadEndFileWA (1332)
-/* Operation wrapper: */
-struct __ns1__UploadEndFileWA
-{
-public:
-	ns1__UploadEndFileWA *ns1__UploadEndFileWA_;	/* optional element of type ns1:UploadEndFileWA */
-public:
-	int soap_type() const { return 1332; } /* = unique id SOAP_TYPE___ns1__UploadEndFileWA */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetDataFileListWA
-#define SOAP_TYPE___ns1__GetDataFileListWA (1336)
-/* Operation wrapper: */
-struct __ns1__GetDataFileListWA
-{
-public:
-	ns1__GetDataFileListWA *ns1__GetDataFileListWA_;	/* optional element of type ns1:GetDataFileListWA */
-public:
-	int soap_type() const { return 1336; } /* = unique id SOAP_TYPE___ns1__GetDataFileListWA */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DownloadFileWAByFileUniqueCode
-#define SOAP_TYPE___ns1__DownloadFileWAByFileUniqueCode (1340)
-/* Operation wrapper: */
-struct __ns1__DownloadFileWAByFileUniqueCode
-{
-public:
-	ns1__DownloadFileWAByFileUniqueCode *ns1__DownloadFileWAByFileUniqueCode_;	/* optional element of type ns1:DownloadFileWAByFileUniqueCode */
-public:
-	int soap_type() const { return 1340; } /* = unique id SOAP_TYPE___ns1__DownloadFileWAByFileUniqueCode */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DownloadFileWA
-#define SOAP_TYPE___ns1__DownloadFileWA (1344)
-/* Operation wrapper: */
-struct __ns1__DownloadFileWA
-{
-public:
-	ns1__DownloadFileWA *ns1__DownloadFileWA_;	/* optional element of type ns1:DownloadFileWA */
-public:
-	int soap_type() const { return 1344; } /* = unique id SOAP_TYPE___ns1__DownloadFileWA */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DownloadGetNextWA
-#define SOAP_TYPE___ns1__DownloadGetNextWA (1348)
-/* Operation wrapper: */
-struct __ns1__DownloadGetNextWA
-{
-public:
-	ns1__DownloadGetNextWA *ns1__DownloadGetNextWA_;	/* optional element of type ns1:DownloadGetNextWA */
-public:
-	int soap_type() const { return 1348; } /* = unique id SOAP_TYPE___ns1__DownloadGetNextWA */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DownloadEndFileWA
-#define SOAP_TYPE___ns1__DownloadEndFileWA (1352)
-/* Operation wrapper: */
-struct __ns1__DownloadEndFileWA
-{
-public:
-	ns1__DownloadEndFileWA *ns1__DownloadEndFileWA_;	/* optional element of type ns1:DownloadEndFileWA */
-public:
-	int soap_type() const { return 1352; } /* = unique id SOAP_TYPE___ns1__DownloadEndFileWA */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DeleteFileWA
-#define SOAP_TYPE___ns1__DeleteFileWA (1356)
-/* Operation wrapper: */
-struct __ns1__DeleteFileWA
-{
-public:
-	ns1__DeleteFileWA *ns1__DeleteFileWA_;	/* optional element of type ns1:DeleteFileWA */
-public:
-	int soap_type() const { return 1356; } /* = unique id SOAP_TYPE___ns1__DeleteFileWA */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetCountDocumentLinks
-#define SOAP_TYPE___ns1__GetCountDocumentLinks (1360)
-/* Operation wrapper: */
-struct __ns1__GetCountDocumentLinks
-{
-public:
-	ns1__GetCountDocumentLinks *ns1__GetCountDocumentLinks_;	/* optional element of type ns1:GetCountDocumentLinks */
-public:
-	int soap_type() const { return 1360; } /* = unique id SOAP_TYPE___ns1__GetCountDocumentLinks */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__SetInstanceReplication
-#define SOAP_TYPE___ns1__SetInstanceReplication (1364)
-/* Operation wrapper: */
-struct __ns1__SetInstanceReplication
-{
-public:
-	ns1__SetInstanceReplication *ns1__SetInstanceReplication_;	/* optional element of type ns1:SetInstanceReplication */
-public:
-	int soap_type() const { return 1364; } /* = unique id SOAP_TYPE___ns1__SetInstanceReplication */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ModifyContainer
-#define SOAP_TYPE___ns1__ModifyContainer (1368)
-/* Operation wrapper: */
-struct __ns1__ModifyContainer
-{
-public:
-	ns1__ModifyContainer *ns1__ModifyContainer_;	/* optional element of type ns1:ModifyContainer */
-public:
-	int soap_type() const { return 1368; } /* = unique id SOAP_TYPE___ns1__ModifyContainer */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ModifyTemplate
-#define SOAP_TYPE___ns1__ModifyTemplate (1372)
-/* Operation wrapper: */
-struct __ns1__ModifyTemplate
-{
-public:
-	ns1__ModifyTemplate *ns1__ModifyTemplate_;	/* optional element of type ns1:ModifyTemplate */
-public:
-	int soap_type() const { return 1372; } /* = unique id SOAP_TYPE___ns1__ModifyTemplate */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DeleteTemplate
-#define SOAP_TYPE___ns1__DeleteTemplate (1376)
-/* Operation wrapper: */
-struct __ns1__DeleteTemplate
-{
-public:
-	ns1__DeleteTemplate *ns1__DeleteTemplate_;	/* optional element of type ns1:DeleteTemplate */
-public:
-	int soap_type() const { return 1376; } /* = unique id SOAP_TYPE___ns1__DeleteTemplate */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DeleteContainer
-#define SOAP_TYPE___ns1__DeleteContainer (1380)
-/* Operation wrapper: */
-struct __ns1__DeleteContainer
-{
-public:
-	ns1__DeleteContainer *ns1__DeleteContainer_;	/* optional element of type ns1:DeleteContainer */
-public:
-	int soap_type() const { return 1380; } /* = unique id SOAP_TYPE___ns1__DeleteContainer */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__canModifyContainer
-#define SOAP_TYPE___ns1__canModifyContainer (1384)
-/* Operation wrapper: */
-struct __ns1__canModifyContainer
-{
-public:
-	ns1__canModifyContainer *ns1__canModifyContainer_;	/* optional element of type ns1:canModifyContainer */
-public:
-	int soap_type() const { return 1384; } /* = unique id SOAP_TYPE___ns1__canModifyContainer */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__canModifyTemplate
-#define SOAP_TYPE___ns1__canModifyTemplate (1388)
-/* Operation wrapper: */
-struct __ns1__canModifyTemplate
-{
-public:
-	ns1__canModifyTemplate *ns1__canModifyTemplate_;	/* optional element of type ns1:canModifyTemplate */
-public:
-	int soap_type() const { return 1388; } /* = unique id SOAP_TYPE___ns1__canModifyTemplate */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__canDeleteContainer
-#define SOAP_TYPE___ns1__canDeleteContainer (1392)
-/* Operation wrapper: */
-struct __ns1__canDeleteContainer
-{
-public:
-	ns1__canDeleteContainer *ns1__canDeleteContainer_;	/* optional element of type ns1:canDeleteContainer */
-public:
-	int soap_type() const { return 1392; } /* = unique id SOAP_TYPE___ns1__canDeleteContainer */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__canDeleteTemplate
-#define SOAP_TYPE___ns1__canDeleteTemplate (1396)
-/* Operation wrapper: */
-struct __ns1__canDeleteTemplate
-{
-public:
-	ns1__canDeleteTemplate *ns1__canDeleteTemplate_;	/* optional element of type ns1:canDeleteTemplate */
-public:
-	int soap_type() const { return 1396; } /* = unique id SOAP_TYPE___ns1__canDeleteTemplate */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__canCreateContainer
-#define SOAP_TYPE___ns1__canCreateContainer (1400)
-/* Operation wrapper: */
-struct __ns1__canCreateContainer
-{
-public:
-	ns1__canCreateContainer *ns1__canCreateContainer_;	/* optional element of type ns1:canCreateContainer */
-public:
-	int soap_type() const { return 1400; } /* = unique id SOAP_TYPE___ns1__canCreateContainer */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__canCreateTemplate
-#define SOAP_TYPE___ns1__canCreateTemplate (1404)
-/* Operation wrapper: */
-struct __ns1__canCreateTemplate
-{
-public:
-	ns1__canCreateTemplate *ns1__canCreateTemplate_;	/* optional element of type ns1:canCreateTemplate */
-public:
-	int soap_type() const { return 1404; } /* = unique id SOAP_TYPE___ns1__canCreateTemplate */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetDynorgList
-#define SOAP_TYPE___ns1__GetDynorgList (1408)
-/* Operation wrapper: */
-struct __ns1__GetDynorgList
-{
-public:
-	ns1__GetDynorgList *ns1__GetDynorgList_;	/* optional element of type ns1:GetDynorgList */
-public:
-	int soap_type() const { return 1408; } /* = unique id SOAP_TYPE___ns1__GetDynorgList */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ModifyDynorg
-#define SOAP_TYPE___ns1__ModifyDynorg (1412)
-/* Operation wrapper: */
-struct __ns1__ModifyDynorg
-{
-public:
-	ns1__ModifyDynorg *ns1__ModifyDynorg_;	/* optional element of type ns1:ModifyDynorg */
-public:
-	int soap_type() const { return 1412; } /* = unique id SOAP_TYPE___ns1__ModifyDynorg */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DeleteDynorg
-#define SOAP_TYPE___ns1__DeleteDynorg (1416)
-/* Operation wrapper: */
-struct __ns1__DeleteDynorg
-{
-public:
-	ns1__DeleteDynorg *ns1__DeleteDynorg_;	/* optional element of type ns1:DeleteDynorg */
-public:
-	int soap_type() const { return 1416; } /* = unique id SOAP_TYPE___ns1__DeleteDynorg */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetArchiBoxInDomainByMatricola
-#define SOAP_TYPE___ns1__GetArchiBoxInDomainByMatricola (1420)
-/* Operation wrapper: */
-struct __ns1__GetArchiBoxInDomainByMatricola
-{
-public:
-	ns1__GetArchiBoxInDomainByMatricola *ns1__GetArchiBoxInDomainByMatricola_;	/* optional element of type ns1:GetArchiBoxInDomainByMatricola */
-public:
-	int soap_type() const { return 1420; } /* = unique id SOAP_TYPE___ns1__GetArchiBoxInDomainByMatricola */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetArchiBoxInfo
-#define SOAP_TYPE___ns1__GetArchiBoxInfo (1424)
-/* Operation wrapper: */
-struct __ns1__GetArchiBoxInfo
-{
-public:
-	ns1__GetArchiBoxInfo *ns1__GetArchiBoxInfo_;	/* optional element of type ns1:GetArchiBoxInfo */
-public:
-	int soap_type() const { return 1424; } /* = unique id SOAP_TYPE___ns1__GetArchiBoxInfo */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetArchiBoxInDomain
-#define SOAP_TYPE___ns1__GetArchiBoxInDomain (1428)
-/* Operation wrapper: */
-struct __ns1__GetArchiBoxInDomain
-{
-public:
-	ns1__GetArchiBoxInDomain *ns1__GetArchiBoxInDomain_;	/* optional element of type ns1:GetArchiBoxInDomain */
-public:
-	int soap_type() const { return 1428; } /* = unique id SOAP_TYPE___ns1__GetArchiBoxInDomain */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DigitalSign
-#define SOAP_TYPE___ns1__DigitalSign (1432)
-/* Operation wrapper: */
-struct __ns1__DigitalSign
-{
-public:
-	ns1__DigitalSign *ns1__DigitalSign_;	/* optional element of type ns1:DigitalSign */
-public:
-	int soap_type() const { return 1432; } /* = unique id SOAP_TYPE___ns1__DigitalSign */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetInstanceReplicationStatus
-#define SOAP_TYPE___ns1__GetInstanceReplicationStatus (1436)
-/* Operation wrapper: */
-struct __ns1__GetInstanceReplicationStatus
-{
-public:
-	ns1__GetInstanceReplicationStatus *ns1__GetInstanceReplicationStatus_;	/* optional element of type ns1:GetInstanceReplicationStatus */
-public:
-	int soap_type() const { return 1436; } /* = unique id SOAP_TYPE___ns1__GetInstanceReplicationStatus */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__CreateContainer
-#define SOAP_TYPE___ns1__CreateContainer (1440)
-/* Operation wrapper: */
-struct __ns1__CreateContainer
-{
-public:
-	ns1__CreateContainer *ns1__CreateContainer_;	/* optional element of type ns1:CreateContainer */
-public:
-	int soap_type() const { return 1440; } /* = unique id SOAP_TYPE___ns1__CreateContainer */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__CreateTemplate
-#define SOAP_TYPE___ns1__CreateTemplate (1444)
-/* Operation wrapper: */
-struct __ns1__CreateTemplate
-{
-public:
-	ns1__CreateTemplate *ns1__CreateTemplate_;	/* optional element of type ns1:CreateTemplate */
-public:
-	int soap_type() const { return 1444; } /* = unique id SOAP_TYPE___ns1__CreateTemplate */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__CreateDynorg
-#define SOAP_TYPE___ns1__CreateDynorg (1448)
-/* Operation wrapper: */
-struct __ns1__CreateDynorg
-{
-public:
-	ns1__CreateDynorg *ns1__CreateDynorg_;	/* optional element of type ns1:CreateDynorg */
-public:
-	int soap_type() const { return 1448; } /* = unique id SOAP_TYPE___ns1__CreateDynorg */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetFieldList
-#define SOAP_TYPE___ns1__GetFieldList (1452)
-/* Operation wrapper: */
-struct __ns1__GetFieldList
-{
-public:
-	ns1__GetFieldList *ns1__GetFieldList_;	/* optional element of type ns1:GetFieldList */
-public:
-	int soap_type() const { return 1452; } /* = unique id SOAP_TYPE___ns1__GetFieldList */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetFieldProperties
-#define SOAP_TYPE___ns1__GetFieldProperties (1456)
-/* Operation wrapper: */
-struct __ns1__GetFieldProperties
-{
-public:
-	ns1__GetFieldProperties *ns1__GetFieldProperties_;	/* optional element of type ns1:GetFieldProperties */
-public:
-	int soap_type() const { return 1456; } /* = unique id SOAP_TYPE___ns1__GetFieldProperties */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetFieldsPropertiesFromTemplate
-#define SOAP_TYPE___ns1__GetFieldsPropertiesFromTemplate (1460)
-/* Operation wrapper: */
-struct __ns1__GetFieldsPropertiesFromTemplate
-{
-public:
-	ns1__GetFieldsPropertiesFromTemplate *ns1__GetFieldsPropertiesFromTemplate_;	/* optional element of type ns1:GetFieldsPropertiesFromTemplate */
-public:
-	int soap_type() const { return 1460; } /* = unique id SOAP_TYPE___ns1__GetFieldsPropertiesFromTemplate */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetAdjacentArchiBox
-#define SOAP_TYPE___ns1__GetAdjacentArchiBox (1464)
-/* Operation wrapper: */
-struct __ns1__GetAdjacentArchiBox
-{
-public:
-	ns1__GetAdjacentArchiBox *ns1__GetAdjacentArchiBox_;	/* optional element of type ns1:GetAdjacentArchiBox */
-public:
-	int soap_type() const { return 1464; } /* = unique id SOAP_TYPE___ns1__GetAdjacentArchiBox */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetInstanceReplication
-#define SOAP_TYPE___ns1__GetInstanceReplication (1468)
-/* Operation wrapper: */
-struct __ns1__GetInstanceReplication
-{
-public:
-	ns1__GetInstanceReplication *ns1__GetInstanceReplication_;	/* optional element of type ns1:GetInstanceReplication */
-public:
-	int soap_type() const { return 1468; } /* = unique id SOAP_TYPE___ns1__GetInstanceReplication */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Login
-#define SOAP_TYPE___ns1__Login (1472)
-/* Operation wrapper: */
-struct __ns1__Login
-{
-public:
-	ns1__Login *ns1__Login_;	/* optional element of type ns1:Login */
-public:
-	int soap_type() const { return 1472; } /* = unique id SOAP_TYPE___ns1__Login */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Logout
-#define SOAP_TYPE___ns1__Logout (1476)
-/* Operation wrapper: */
-struct __ns1__Logout
-{
-public:
-	ns1__Logout *ns1__Logout_;	/* optional element of type ns1:Logout */
-public:
-	int soap_type() const { return 1476; } /* = unique id SOAP_TYPE___ns1__Logout */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__InsertSchedulerTask
-#define SOAP_TYPE___ns1__InsertSchedulerTask (1480)
-/* Operation wrapper: */
-struct __ns1__InsertSchedulerTask
-{
-public:
-	ns1__InsertSchedulerTask *ns1__InsertSchedulerTask_;	/* optional element of type ns1:InsertSchedulerTask */
-public:
-	int soap_type() const { return 1480; } /* = unique id SOAP_TYPE___ns1__InsertSchedulerTask */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetSchedulerTasks
-#define SOAP_TYPE___ns1__GetSchedulerTasks (1484)
-/* Operation wrapper: */
-struct __ns1__GetSchedulerTasks
-{
-public:
-	ns1__GetSchedulerTasks *ns1__GetSchedulerTasks_;	/* optional element of type ns1:GetSchedulerTasks */
-public:
-	int soap_type() const { return 1484; } /* = unique id SOAP_TYPE___ns1__GetSchedulerTasks */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DeleteSchedulerTask
-#define SOAP_TYPE___ns1__DeleteSchedulerTask (1488)
-/* Operation wrapper: */
-struct __ns1__DeleteSchedulerTask
-{
-public:
-	ns1__DeleteSchedulerTask *ns1__DeleteSchedulerTask_;	/* optional element of type ns1:DeleteSchedulerTask */
-public:
-	int soap_type() const { return 1488; } /* = unique id SOAP_TYPE___ns1__DeleteSchedulerTask */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetSchedulerTasksToRun
-#define SOAP_TYPE___ns1__GetSchedulerTasksToRun (1492)
-/* Operation wrapper: */
-struct __ns1__GetSchedulerTasksToRun
-{
-public:
-	ns1__GetSchedulerTasksToRun *ns1__GetSchedulerTasksToRun_;	/* optional element of type ns1:GetSchedulerTasksToRun */
-public:
-	int soap_type() const { return 1492; } /* = unique id SOAP_TYPE___ns1__GetSchedulerTasksToRun */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__SchedulerTaskScheduleProcessed
-#define SOAP_TYPE___ns1__SchedulerTaskScheduleProcessed (1496)
-/* Operation wrapper: */
-struct __ns1__SchedulerTaskScheduleProcessed
-{
-public:
-	ns1__SchedulerTaskScheduleProcessed *ns1__SchedulerTaskScheduleProcessed_;	/* optional element of type ns1:SchedulerTaskScheduleProcessed */
-public:
-	int soap_type() const { return 1496; } /* = unique id SOAP_TYPE___ns1__SchedulerTaskScheduleProcessed */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ModifySchedulerTaskSchedule
-#define SOAP_TYPE___ns1__ModifySchedulerTaskSchedule (1500)
-/* Operation wrapper: */
-struct __ns1__ModifySchedulerTaskSchedule
-{
-public:
-	ns1__ModifySchedulerTaskSchedule *ns1__ModifySchedulerTaskSchedule_;	/* optional element of type ns1:ModifySchedulerTaskSchedule */
-public:
-	int soap_type() const { return 1500; } /* = unique id SOAP_TYPE___ns1__ModifySchedulerTaskSchedule */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DeleteSchedulerTaskSchedule
-#define SOAP_TYPE___ns1__DeleteSchedulerTaskSchedule (1504)
-/* Operation wrapper: */
-struct __ns1__DeleteSchedulerTaskSchedule
-{
-public:
-	ns1__DeleteSchedulerTaskSchedule *ns1__DeleteSchedulerTaskSchedule_;	/* optional element of type ns1:DeleteSchedulerTaskSchedule */
-public:
-	int soap_type() const { return 1504; } /* = unique id SOAP_TYPE___ns1__DeleteSchedulerTaskSchedule */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ChangeSchedulerTaskScheduleStatus
-#define SOAP_TYPE___ns1__ChangeSchedulerTaskScheduleStatus (1508)
-/* Operation wrapper: */
-struct __ns1__ChangeSchedulerTaskScheduleStatus
-{
-public:
-	ns1__ChangeSchedulerTaskScheduleStatus *ns1__ChangeSchedulerTaskScheduleStatus_;	/* optional element of type ns1:ChangeSchedulerTaskScheduleStatus */
-public:
-	int soap_type() const { return 1508; } /* = unique id SOAP_TYPE___ns1__ChangeSchedulerTaskScheduleStatus */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ModifyField
-#define SOAP_TYPE___ns1__ModifyField (1512)
-/* Operation wrapper: */
-struct __ns1__ModifyField
-{
-public:
-	ns1__ModifyField *ns1__ModifyField_;	/* optional element of type ns1:ModifyField */
-public:
-	int soap_type() const { return 1512; } /* = unique id SOAP_TYPE___ns1__ModifyField */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DeleteField
-#define SOAP_TYPE___ns1__DeleteField (1516)
-/* Operation wrapper: */
-struct __ns1__DeleteField
-{
-public:
-	ns1__DeleteField *ns1__DeleteField_;	/* optional element of type ns1:DeleteField */
-public:
-	int soap_type() const { return 1516; } /* = unique id SOAP_TYPE___ns1__DeleteField */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__CreateField
-#define SOAP_TYPE___ns1__CreateField (1520)
-/* Operation wrapper: */
-struct __ns1__CreateField
-{
-public:
-	ns1__CreateField *ns1__CreateField_;	/* optional element of type ns1:CreateField */
-public:
-	int soap_type() const { return 1520; } /* = unique id SOAP_TYPE___ns1__CreateField */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__canModifyField
-#define SOAP_TYPE___ns1__canModifyField (1524)
-/* Operation wrapper: */
-struct __ns1__canModifyField
-{
-public:
-	ns1__canModifyField *ns1__canModifyField_;	/* optional element of type ns1:canModifyField */
-public:
-	int soap_type() const { return 1524; } /* = unique id SOAP_TYPE___ns1__canModifyField */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__canDeleteField
-#define SOAP_TYPE___ns1__canDeleteField (1528)
-/* Operation wrapper: */
-struct __ns1__canDeleteField
-{
-public:
-	ns1__canDeleteField *ns1__canDeleteField_;	/* optional element of type ns1:canDeleteField */
-public:
-	int soap_type() const { return 1528; } /* = unique id SOAP_TYPE___ns1__canDeleteField */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__canCreateField
-#define SOAP_TYPE___ns1__canCreateField (1532)
-/* Operation wrapper: */
-struct __ns1__canCreateField
-{
-public:
-	ns1__canCreateField *ns1__canCreateField_;	/* optional element of type ns1:canCreateField */
-public:
-	int soap_type() const { return 1532; } /* = unique id SOAP_TYPE___ns1__canCreateField */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__CanDeleteLinkFromContainer
-#define SOAP_TYPE___ns1__CanDeleteLinkFromContainer (1536)
-/* Operation wrapper: */
-struct __ns1__CanDeleteLinkFromContainer
-{
-public:
-	ns1__CanDeleteLinkFromContainer *ns1__CanDeleteLinkFromContainer_;	/* optional element of type ns1:CanDeleteLinkFromContainer */
-public:
-	int soap_type() const { return 1536; } /* = unique id SOAP_TYPE___ns1__CanDeleteLinkFromContainer */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetDomainList
-#define SOAP_TYPE___ns1__GetDomainList (1540)
-/* Operation wrapper: */
-struct __ns1__GetDomainList
-{
-public:
-	ns1__GetDomainList *ns1__GetDomainList_;	/* optional element of type ns1:GetDomainList */
-public:
-	int soap_type() const { return 1540; } /* = unique id SOAP_TYPE___ns1__GetDomainList */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__InsertLinkContainerToContainer
-#define SOAP_TYPE___ns1__InsertLinkContainerToContainer (1544)
-/* Operation wrapper: */
-struct __ns1__InsertLinkContainerToContainer
-{
-public:
-	ns1__InsertLinkContainerToContainer *ns1__InsertLinkContainerToContainer_;	/* optional element of type ns1:InsertLinkContainerToContainer */
-public:
-	int soap_type() const { return 1544; } /* = unique id SOAP_TYPE___ns1__InsertLinkContainerToContainer */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__CanInsertLinkContainerToContainer
-#define SOAP_TYPE___ns1__CanInsertLinkContainerToContainer (1548)
-/* Operation wrapper: */
-struct __ns1__CanInsertLinkContainerToContainer
-{
-public:
-	ns1__CanInsertLinkContainerToContainer *ns1__CanInsertLinkContainerToContainer_;	/* optional element of type ns1:CanInsertLinkContainerToContainer */
-public:
-	int soap_type() const { return 1548; } /* = unique id SOAP_TYPE___ns1__CanInsertLinkContainerToContainer */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__InsertLinkContainerToDocument
-#define SOAP_TYPE___ns1__InsertLinkContainerToDocument (1552)
-/* Operation wrapper: */
-struct __ns1__InsertLinkContainerToDocument
-{
-public:
-	ns1__InsertLinkContainerToDocument *ns1__InsertLinkContainerToDocument_;	/* optional element of type ns1:InsertLinkContainerToDocument */
-public:
-	int soap_type() const { return 1552; } /* = unique id SOAP_TYPE___ns1__InsertLinkContainerToDocument */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__CanInsertLinkContainerToDocument
-#define SOAP_TYPE___ns1__CanInsertLinkContainerToDocument (1556)
-/* Operation wrapper: */
-struct __ns1__CanInsertLinkContainerToDocument
-{
-public:
-	ns1__CanInsertLinkContainerToDocument *ns1__CanInsertLinkContainerToDocument_;	/* optional element of type ns1:CanInsertLinkContainerToDocument */
-public:
-	int soap_type() const { return 1556; } /* = unique id SOAP_TYPE___ns1__CanInsertLinkContainerToDocument */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__InsertLinkDocumentToDocument
-#define SOAP_TYPE___ns1__InsertLinkDocumentToDocument (1560)
-/* Operation wrapper: */
-struct __ns1__InsertLinkDocumentToDocument
-{
-public:
-	ns1__InsertLinkDocumentToDocument *ns1__InsertLinkDocumentToDocument_;	/* optional element of type ns1:InsertLinkDocumentToDocument */
-public:
-	int soap_type() const { return 1560; } /* = unique id SOAP_TYPE___ns1__InsertLinkDocumentToDocument */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__CanInsertLinkDocumentToDocument
-#define SOAP_TYPE___ns1__CanInsertLinkDocumentToDocument (1564)
-/* Operation wrapper: */
-struct __ns1__CanInsertLinkDocumentToDocument
-{
-public:
-	ns1__CanInsertLinkDocumentToDocument *ns1__CanInsertLinkDocumentToDocument_;	/* optional element of type ns1:CanInsertLinkDocumentToDocument */
-public:
-	int soap_type() const { return 1564; } /* = unique id SOAP_TYPE___ns1__CanInsertLinkDocumentToDocument */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ModifyLinkContainerToContainer
-#define SOAP_TYPE___ns1__ModifyLinkContainerToContainer (1568)
-/* Operation wrapper: */
-struct __ns1__ModifyLinkContainerToContainer
-{
-public:
-	ns1__ModifyLinkContainerToContainer *ns1__ModifyLinkContainerToContainer_;	/* optional element of type ns1:ModifyLinkContainerToContainer */
-public:
-	int soap_type() const { return 1568; } /* = unique id SOAP_TYPE___ns1__ModifyLinkContainerToContainer */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__CanModifyLinkContainerToContainer
-#define SOAP_TYPE___ns1__CanModifyLinkContainerToContainer (1572)
-/* Operation wrapper: */
-struct __ns1__CanModifyLinkContainerToContainer
-{
-public:
-	ns1__CanModifyLinkContainerToContainer *ns1__CanModifyLinkContainerToContainer_;	/* optional element of type ns1:CanModifyLinkContainerToContainer */
-public:
-	int soap_type() const { return 1572; } /* = unique id SOAP_TYPE___ns1__CanModifyLinkContainerToContainer */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ModifyLinkContainerToDocument
-#define SOAP_TYPE___ns1__ModifyLinkContainerToDocument (1576)
-/* Operation wrapper: */
-struct __ns1__ModifyLinkContainerToDocument
-{
-public:
-	ns1__ModifyLinkContainerToDocument *ns1__ModifyLinkContainerToDocument_;	/* optional element of type ns1:ModifyLinkContainerToDocument */
-public:
-	int soap_type() const { return 1576; } /* = unique id SOAP_TYPE___ns1__ModifyLinkContainerToDocument */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__CanModifyLinkContainerToDocument
-#define SOAP_TYPE___ns1__CanModifyLinkContainerToDocument (1580)
-/* Operation wrapper: */
-struct __ns1__CanModifyLinkContainerToDocument
-{
-public:
-	ns1__CanModifyLinkContainerToDocument *ns1__CanModifyLinkContainerToDocument_;	/* optional element of type ns1:CanModifyLinkContainerToDocument */
-public:
-	int soap_type() const { return 1580; } /* = unique id SOAP_TYPE___ns1__CanModifyLinkContainerToDocument */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DeleteLink
-#define SOAP_TYPE___ns1__DeleteLink (1584)
-/* Operation wrapper: */
-struct __ns1__DeleteLink
-{
-public:
-	ns1__DeleteLink *ns1__DeleteLink_;	/* optional element of type ns1:DeleteLink */
-public:
-	int soap_type() const { return 1584; } /* = unique id SOAP_TYPE___ns1__DeleteLink */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetDocumentLinks
-#define SOAP_TYPE___ns1__GetDocumentLinks (1588)
-/* Operation wrapper: */
-struct __ns1__GetDocumentLinks
-{
-public:
-	ns1__GetDocumentLinks *ns1__GetDocumentLinks_;	/* optional element of type ns1:GetDocumentLinks */
-public:
-	int soap_type() const { return 1588; } /* = unique id SOAP_TYPE___ns1__GetDocumentLinks */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetCountLinksToDocument
-#define SOAP_TYPE___ns1__GetCountLinksToDocument (1592)
-/* Operation wrapper: */
-struct __ns1__GetCountLinksToDocument
-{
-public:
-	ns1__GetCountLinksToDocument *ns1__GetCountLinksToDocument_;	/* optional element of type ns1:GetCountLinksToDocument */
-public:
-	int soap_type() const { return 1592; } /* = unique id SOAP_TYPE___ns1__GetCountLinksToDocument */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetLinksToDocument
-#define SOAP_TYPE___ns1__GetLinksToDocument (1596)
-/* Operation wrapper: */
-struct __ns1__GetLinksToDocument
-{
-public:
-	ns1__GetLinksToDocument *ns1__GetLinksToDocument_;	/* optional element of type ns1:GetLinksToDocument */
-public:
-	int soap_type() const { return 1596; } /* = unique id SOAP_TYPE___ns1__GetLinksToDocument */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetInstanceNameFromLinks
-#define SOAP_TYPE___ns1__GetInstanceNameFromLinks (1600)
-/* Operation wrapper: */
-struct __ns1__GetInstanceNameFromLinks
-{
-public:
-	ns1__GetInstanceNameFromLinks *ns1__GetInstanceNameFromLinks_;	/* optional element of type ns1:GetInstanceNameFromLinks */
-public:
-	int soap_type() const { return 1600; } /* = unique id SOAP_TYPE___ns1__GetInstanceNameFromLinks */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetContainerLinks
-#define SOAP_TYPE___ns1__GetContainerLinks (1604)
-/* Operation wrapper: */
-struct __ns1__GetContainerLinks
-{
-public:
-	ns1__GetContainerLinks *ns1__GetContainerLinks_;	/* optional element of type ns1:GetContainerLinks */
-public:
-	int soap_type() const { return 1604; } /* = unique id SOAP_TYPE___ns1__GetContainerLinks */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__RegenerateDynOrg
-#define SOAP_TYPE___ns1__RegenerateDynOrg (1608)
-/* Operation wrapper: */
-struct __ns1__RegenerateDynOrg
-{
-public:
-	ns1__RegenerateDynOrg *ns1__RegenerateDynOrg_;	/* optional element of type ns1:RegenerateDynOrg */
-public:
-	int soap_type() const { return 1608; } /* = unique id SOAP_TYPE___ns1__RegenerateDynOrg */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetDynorgTypeList
-#define SOAP_TYPE___ns1__GetDynorgTypeList (1612)
-/* Operation wrapper: */
-struct __ns1__GetDynorgTypeList
-{
-public:
-	ns1__GetDynorgTypeList *ns1__GetDynorgTypeList_;	/* optional element of type ns1:GetDynorgTypeList */
-public:
-	int soap_type() const { return 1612; } /* = unique id SOAP_TYPE___ns1__GetDynorgTypeList */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__canModifyDynorg
-#define SOAP_TYPE___ns1__canModifyDynorg (1616)
-/* Operation wrapper: */
-struct __ns1__canModifyDynorg
-{
-public:
-	ns1__canModifyDynorg *ns1__canModifyDynorg_;	/* optional element of type ns1:canModifyDynorg */
-public:
-	int soap_type() const { return 1616; } /* = unique id SOAP_TYPE___ns1__canModifyDynorg */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__canDeleteDynorg
-#define SOAP_TYPE___ns1__canDeleteDynorg (1620)
-/* Operation wrapper: */
-struct __ns1__canDeleteDynorg
-{
-public:
-	ns1__canDeleteDynorg *ns1__canDeleteDynorg_;	/* optional element of type ns1:canDeleteDynorg */
-public:
-	int soap_type() const { return 1620; } /* = unique id SOAP_TYPE___ns1__canDeleteDynorg */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__canCreateDynorg
-#define SOAP_TYPE___ns1__canCreateDynorg (1624)
-/* Operation wrapper: */
-struct __ns1__canCreateDynorg
-{
-public:
-	ns1__canCreateDynorg *ns1__canCreateDynorg_;	/* optional element of type ns1:canCreateDynorg */
-public:
-	int soap_type() const { return 1624; } /* = unique id SOAP_TYPE___ns1__canCreateDynorg */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetClasseDocumentale
-#define SOAP_TYPE___ns1__GetClasseDocumentale (1628)
-/* Operation wrapper: */
-struct __ns1__GetClasseDocumentale
-{
-public:
-	ns1__GetClasseDocumentale *ns1__GetClasseDocumentale_;	/* optional element of type ns1:GetClasseDocumentale */
-public:
-	int soap_type() const { return 1628; } /* = unique id SOAP_TYPE___ns1__GetClasseDocumentale */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DeleteClasseDocumentale
-#define SOAP_TYPE___ns1__DeleteClasseDocumentale (1632)
-/* Operation wrapper: */
-struct __ns1__DeleteClasseDocumentale
-{
-public:
-	ns1__DeleteClasseDocumentale *ns1__DeleteClasseDocumentale_;	/* optional element of type ns1:DeleteClasseDocumentale */
-public:
-	int soap_type() const { return 1632; } /* = unique id SOAP_TYPE___ns1__DeleteClasseDocumentale */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__InsertClasseDocumentale
-#define SOAP_TYPE___ns1__InsertClasseDocumentale (1636)
-/* Operation wrapper: */
-struct __ns1__InsertClasseDocumentale
-{
-public:
-	ns1__InsertClasseDocumentale *ns1__InsertClasseDocumentale_;	/* optional element of type ns1:InsertClasseDocumentale */
-public:
-	int soap_type() const { return 1636; } /* = unique id SOAP_TYPE___ns1__InsertClasseDocumentale */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetQueryParam
-#define SOAP_TYPE___ns1__GetQueryParam (1640)
-/* Operation wrapper: */
-struct __ns1__GetQueryParam
-{
-public:
-	ns1__GetQueryParam *ns1__GetQueryParam_;	/* optional element of type ns1:GetQueryParam */
-public:
-	int soap_type() const { return 1640; } /* = unique id SOAP_TYPE___ns1__GetQueryParam */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__QueryHeader
-#define SOAP_TYPE___ns1__QueryHeader (1644)
-/* Operation wrapper: */
-struct __ns1__QueryHeader
-{
-public:
-	ns1__QueryHeader *ns1__QueryHeader_;	/* optional element of type ns1:QueryHeader */
-public:
-	int soap_type() const { return 1644; } /* = unique id SOAP_TYPE___ns1__QueryHeader */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__QueryTotAttach
-#define SOAP_TYPE___ns1__QueryTotAttach (1648)
-/* Operation wrapper: */
-struct __ns1__QueryTotAttach
-{
-public:
-	ns1__QueryTotAttach *ns1__QueryTotAttach_;	/* optional element of type ns1:QueryTotAttach */
-public:
-	int soap_type() const { return 1648; } /* = unique id SOAP_TYPE___ns1__QueryTotAttach */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DeleteFilter
-#define SOAP_TYPE___ns1__DeleteFilter (1652)
-/* Operation wrapper: */
-struct __ns1__DeleteFilter
-{
-public:
-	ns1__DeleteFilter *ns1__DeleteFilter_;	/* optional element of type ns1:DeleteFilter */
-public:
-	int soap_type() const { return 1652; } /* = unique id SOAP_TYPE___ns1__DeleteFilter */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ModifyFilter
-#define SOAP_TYPE___ns1__ModifyFilter (1656)
-/* Operation wrapper: */
-struct __ns1__ModifyFilter
-{
-public:
-	ns1__ModifyFilter *ns1__ModifyFilter_;	/* optional element of type ns1:ModifyFilter */
-public:
-	int soap_type() const { return 1656; } /* = unique id SOAP_TYPE___ns1__ModifyFilter */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__InsertFilter
-#define SOAP_TYPE___ns1__InsertFilter (1660)
-/* Operation wrapper: */
-struct __ns1__InsertFilter
-{
-public:
-	ns1__InsertFilter *ns1__InsertFilter_;	/* optional element of type ns1:InsertFilter */
-public:
-	int soap_type() const { return 1660; } /* = unique id SOAP_TYPE___ns1__InsertFilter */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetInstanceId
-#define SOAP_TYPE___ns1__GetInstanceId (1664)
-/* Operation wrapper: */
-struct __ns1__GetInstanceId
-{
-public:
-	ns1__GetInstanceId *ns1__GetInstanceId_;	/* optional element of type ns1:GetInstanceId */
-public:
-	int soap_type() const { return 1664; } /* = unique id SOAP_TYPE___ns1__GetInstanceId */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetTemplateProperties
-#define SOAP_TYPE___ns1__GetTemplateProperties (1668)
-/* Operation wrapper: */
-struct __ns1__GetTemplateProperties
-{
-public:
-	ns1__GetTemplateProperties *ns1__GetTemplateProperties_;	/* optional element of type ns1:GetTemplateProperties */
-public:
-	int soap_type() const { return 1668; } /* = unique id SOAP_TYPE___ns1__GetTemplateProperties */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetArchSostRules
-#define SOAP_TYPE___ns1__GetArchSostRules (1672)
-/* Operation wrapper: */
-struct __ns1__GetArchSostRules
-{
-public:
-	ns1__GetArchSostRules *ns1__GetArchSostRules_;	/* optional element of type ns1:GetArchSostRules */
-public:
-	int soap_type() const { return 1672; } /* = unique id SOAP_TYPE___ns1__GetArchSostRules */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__InsertArchSostRule
-#define SOAP_TYPE___ns1__InsertArchSostRule (1676)
-/* Operation wrapper: */
-struct __ns1__InsertArchSostRule
-{
-public:
-	ns1__InsertArchSostRule *ns1__InsertArchSostRule_;	/* optional element of type ns1:InsertArchSostRule */
-public:
-	int soap_type() const { return 1676; } /* = unique id SOAP_TYPE___ns1__InsertArchSostRule */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DeleteArchSostRule
-#define SOAP_TYPE___ns1__DeleteArchSostRule (1680)
-/* Operation wrapper: */
-struct __ns1__DeleteArchSostRule
-{
-public:
-	ns1__DeleteArchSostRule *ns1__DeleteArchSostRule_;	/* optional element of type ns1:DeleteArchSostRule */
-public:
-	int soap_type() const { return 1680; } /* = unique id SOAP_TYPE___ns1__DeleteArchSostRule */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ModifyArchSostRule
-#define SOAP_TYPE___ns1__ModifyArchSostRule (1684)
-/* Operation wrapper: */
-struct __ns1__ModifyArchSostRule
-{
-public:
-	ns1__ModifyArchSostRule *ns1__ModifyArchSostRule_;	/* optional element of type ns1:ModifyArchSostRule */
-public:
-	int soap_type() const { return 1684; } /* = unique id SOAP_TYPE___ns1__ModifyArchSostRule */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DestroyContainer
-#define SOAP_TYPE___ns1__DestroyContainer (1688)
-/* Operation wrapper: */
-struct __ns1__DestroyContainer
-{
-public:
-	ns1__DestroyContainer *ns1__DestroyContainer_;	/* optional element of type ns1:DestroyContainer */
-public:
-	int soap_type() const { return 1688; } /* = unique id SOAP_TYPE___ns1__DestroyContainer */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetRootId
-#define SOAP_TYPE___ns1__GetRootId (1692)
-/* Operation wrapper: */
-struct __ns1__GetRootId
-{
-public:
-	ns1__GetRootId *ns1__GetRootId_;	/* optional element of type ns1:GetRootId */
-public:
-	int soap_type() const { return 1692; } /* = unique id SOAP_TYPE___ns1__GetRootId */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetInstancePathname
-#define SOAP_TYPE___ns1__GetInstancePathname (1696)
-/* Operation wrapper: */
-struct __ns1__GetInstancePathname
-{
-public:
-	ns1__GetInstancePathname *ns1__GetInstancePathname_;	/* optional element of type ns1:GetInstancePathname */
-public:
-	int soap_type() const { return 1696; } /* = unique id SOAP_TYPE___ns1__GetInstancePathname */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetObject
-#define SOAP_TYPE___ns1__GetObject (1700)
-/* Operation wrapper: */
-struct __ns1__GetObject
-{
-public:
-	ns1__GetObject *ns1__GetObject_;	/* optional element of type ns1:GetObject */
-public:
-	int soap_type() const { return 1700; } /* = unique id SOAP_TYPE___ns1__GetObject */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetAllObjectWithSystem
-#define SOAP_TYPE___ns1__GetAllObjectWithSystem (1704)
-/* Operation wrapper: */
-struct __ns1__GetAllObjectWithSystem
-{
-public:
-	ns1__GetAllObjectWithSystem *ns1__GetAllObjectWithSystem_;	/* optional element of type ns1:GetAllObjectWithSystem */
-public:
-	int soap_type() const { return 1704; } /* = unique id SOAP_TYPE___ns1__GetAllObjectWithSystem */
-};
-#endif
-
 #ifndef SOAP_TYPE___ns1__GetMethod
-#define SOAP_TYPE___ns1__GetMethod (1708)
+#define SOAP_TYPE___ns1__GetMethod (1248)
 /* Operation wrapper: */
 struct __ns1__GetMethod
 {
 public:
 	ns1__GetMethod *ns1__GetMethod_;	/* optional element of type ns1:GetMethod */
 public:
-	int soap_type() const { return 1708; } /* = unique id SOAP_TYPE___ns1__GetMethod */
+	int soap_type() const { return 1248; } /* = unique id SOAP_TYPE___ns1__GetMethod */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DestroyContainer
+#define SOAP_TYPE___ns1__DestroyContainer (1252)
+/* Operation wrapper: */
+struct __ns1__DestroyContainer
+{
+public:
+	ns1__DestroyContainer *ns1__DestroyContainer_;	/* optional element of type ns1:DestroyContainer */
+public:
+	int soap_type() const { return 1252; } /* = unique id SOAP_TYPE___ns1__DestroyContainer */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetRootId
+#define SOAP_TYPE___ns1__GetRootId (1256)
+/* Operation wrapper: */
+struct __ns1__GetRootId
+{
+public:
+	ns1__GetRootId *ns1__GetRootId_;	/* optional element of type ns1:GetRootId */
+public:
+	int soap_type() const { return 1256; } /* = unique id SOAP_TYPE___ns1__GetRootId */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetInstancePathname
+#define SOAP_TYPE___ns1__GetInstancePathname (1260)
+/* Operation wrapper: */
+struct __ns1__GetInstancePathname
+{
+public:
+	ns1__GetInstancePathname *ns1__GetInstancePathname_;	/* optional element of type ns1:GetInstancePathname */
+public:
+	int soap_type() const { return 1260; } /* = unique id SOAP_TYPE___ns1__GetInstancePathname */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetObject
+#define SOAP_TYPE___ns1__GetObject (1264)
+/* Operation wrapper: */
+struct __ns1__GetObject
+{
+public:
+	ns1__GetObject *ns1__GetObject_;	/* optional element of type ns1:GetObject */
+public:
+	int soap_type() const { return 1264; } /* = unique id SOAP_TYPE___ns1__GetObject */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetAllObjectWithSystem
+#define SOAP_TYPE___ns1__GetAllObjectWithSystem (1268)
+/* Operation wrapper: */
+struct __ns1__GetAllObjectWithSystem
+{
+public:
+	ns1__GetAllObjectWithSystem *ns1__GetAllObjectWithSystem_;	/* optional element of type ns1:GetAllObjectWithSystem */
+public:
+	int soap_type() const { return 1268; } /* = unique id SOAP_TYPE___ns1__GetAllObjectWithSystem */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__FullTreePathName
-#define SOAP_TYPE___ns1__FullTreePathName (1712)
+#define SOAP_TYPE___ns1__FullTreePathName (1272)
 /* Operation wrapper: */
 struct __ns1__FullTreePathName
 {
 public:
 	ns1__FullTreePathName *ns1__FullTreePathName_;	/* optional element of type ns1:FullTreePathName */
 public:
-	int soap_type() const { return 1712; } /* = unique id SOAP_TYPE___ns1__FullTreePathName */
+	int soap_type() const { return 1272; } /* = unique id SOAP_TYPE___ns1__FullTreePathName */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetTreeForSecurity
-#define SOAP_TYPE___ns1__GetTreeForSecurity (1716)
+#define SOAP_TYPE___ns1__GetTreeForSecurity (1276)
 /* Operation wrapper: */
 struct __ns1__GetTreeForSecurity
 {
 public:
 	ns1__GetTreeForSecurity *ns1__GetTreeForSecurity_;	/* optional element of type ns1:GetTreeForSecurity */
 public:
-	int soap_type() const { return 1716; } /* = unique id SOAP_TYPE___ns1__GetTreeForSecurity */
+	int soap_type() const { return 1276; } /* = unique id SOAP_TYPE___ns1__GetTreeForSecurity */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetTree
-#define SOAP_TYPE___ns1__GetTree (1720)
+#define SOAP_TYPE___ns1__GetTree (1280)
 /* Operation wrapper: */
 struct __ns1__GetTree
 {
 public:
 	ns1__GetTree *ns1__GetTree_;	/* optional element of type ns1:GetTree */
 public:
-	int soap_type() const { return 1720; } /* = unique id SOAP_TYPE___ns1__GetTree */
+	int soap_type() const { return 1280; } /* = unique id SOAP_TYPE___ns1__GetTree */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__CreateRaccoglitore
-#define SOAP_TYPE___ns1__CreateRaccoglitore (1724)
+#define SOAP_TYPE___ns1__CreateRaccoglitore (1284)
 /* Operation wrapper: */
 struct __ns1__CreateRaccoglitore
 {
 public:
 	ns1__CreateRaccoglitore *ns1__CreateRaccoglitore_;	/* optional element of type ns1:CreateRaccoglitore */
 public:
-	int soap_type() const { return 1724; } /* = unique id SOAP_TYPE___ns1__CreateRaccoglitore */
+	int soap_type() const { return 1284; } /* = unique id SOAP_TYPE___ns1__CreateRaccoglitore */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DeleteRaccoglitore
-#define SOAP_TYPE___ns1__DeleteRaccoglitore (1728)
+#define SOAP_TYPE___ns1__DeleteRaccoglitore (1288)
 /* Operation wrapper: */
 struct __ns1__DeleteRaccoglitore
 {
 public:
 	ns1__DeleteRaccoglitore *ns1__DeleteRaccoglitore_;	/* optional element of type ns1:DeleteRaccoglitore */
 public:
-	int soap_type() const { return 1728; } /* = unique id SOAP_TYPE___ns1__DeleteRaccoglitore */
+	int soap_type() const { return 1288; } /* = unique id SOAP_TYPE___ns1__DeleteRaccoglitore */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DestroyRaccoglitore
-#define SOAP_TYPE___ns1__DestroyRaccoglitore (1732)
+#define SOAP_TYPE___ns1__DestroyRaccoglitore (1292)
 /* Operation wrapper: */
 struct __ns1__DestroyRaccoglitore
 {
 public:
 	ns1__DestroyRaccoglitore *ns1__DestroyRaccoglitore_;	/* optional element of type ns1:DestroyRaccoglitore */
 public:
-	int soap_type() const { return 1732; } /* = unique id SOAP_TYPE___ns1__DestroyRaccoglitore */
+	int soap_type() const { return 1292; } /* = unique id SOAP_TYPE___ns1__DestroyRaccoglitore */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__ModifyRaccoglitore
-#define SOAP_TYPE___ns1__ModifyRaccoglitore (1736)
+#define SOAP_TYPE___ns1__ModifyRaccoglitore (1296)
 /* Operation wrapper: */
 struct __ns1__ModifyRaccoglitore
 {
 public:
 	ns1__ModifyRaccoglitore *ns1__ModifyRaccoglitore_;	/* optional element of type ns1:ModifyRaccoglitore */
 public:
-	int soap_type() const { return 1736; } /* = unique id SOAP_TYPE___ns1__ModifyRaccoglitore */
+	int soap_type() const { return 1296; } /* = unique id SOAP_TYPE___ns1__ModifyRaccoglitore */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__canCreateRaccoglitore
-#define SOAP_TYPE___ns1__canCreateRaccoglitore (1740)
+#define SOAP_TYPE___ns1__canCreateRaccoglitore (1300)
 /* Operation wrapper: */
 struct __ns1__canCreateRaccoglitore
 {
 public:
 	ns1__canCreateRaccoglitore *ns1__canCreateRaccoglitore_;	/* optional element of type ns1:canCreateRaccoglitore */
 public:
-	int soap_type() const { return 1740; } /* = unique id SOAP_TYPE___ns1__canCreateRaccoglitore */
+	int soap_type() const { return 1300; } /* = unique id SOAP_TYPE___ns1__canCreateRaccoglitore */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__canDeleteRaccoglitore
-#define SOAP_TYPE___ns1__canDeleteRaccoglitore (1744)
+#define SOAP_TYPE___ns1__canDeleteRaccoglitore (1304)
 /* Operation wrapper: */
 struct __ns1__canDeleteRaccoglitore
 {
 public:
 	ns1__canDeleteRaccoglitore *ns1__canDeleteRaccoglitore_;	/* optional element of type ns1:canDeleteRaccoglitore */
 public:
-	int soap_type() const { return 1744; } /* = unique id SOAP_TYPE___ns1__canDeleteRaccoglitore */
+	int soap_type() const { return 1304; } /* = unique id SOAP_TYPE___ns1__canDeleteRaccoglitore */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__canModifyRaccoglitore
-#define SOAP_TYPE___ns1__canModifyRaccoglitore (1748)
+#define SOAP_TYPE___ns1__canModifyRaccoglitore (1308)
 /* Operation wrapper: */
 struct __ns1__canModifyRaccoglitore
 {
 public:
 	ns1__canModifyRaccoglitore *ns1__canModifyRaccoglitore_;	/* optional element of type ns1:canModifyRaccoglitore */
 public:
-	int soap_type() const { return 1748; } /* = unique id SOAP_TYPE___ns1__canModifyRaccoglitore */
+	int soap_type() const { return 1308; } /* = unique id SOAP_TYPE___ns1__canModifyRaccoglitore */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetTemplateList
-#define SOAP_TYPE___ns1__GetTemplateList (1752)
+#define SOAP_TYPE___ns1__GetTemplateList (1312)
 /* Operation wrapper: */
 struct __ns1__GetTemplateList
 {
 public:
 	ns1__GetTemplateList *ns1__GetTemplateList_;	/* optional element of type ns1:GetTemplateList */
 public:
-	int soap_type() const { return 1752; } /* = unique id SOAP_TYPE___ns1__GetTemplateList */
+	int soap_type() const { return 1312; } /* = unique id SOAP_TYPE___ns1__GetTemplateList */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetLinksToDocumentFiltered
-#define SOAP_TYPE___ns1__GetLinksToDocumentFiltered (1756)
+#define SOAP_TYPE___ns1__GetLinksToDocumentFiltered (1316)
 /* Operation wrapper: */
 struct __ns1__GetLinksToDocumentFiltered
 {
 public:
 	ns1__GetLinksToDocumentFiltered *ns1__GetLinksToDocumentFiltered_;	/* optional element of type ns1:GetLinksToDocumentFiltered */
 public:
-	int soap_type() const { return 1756; } /* = unique id SOAP_TYPE___ns1__GetLinksToDocumentFiltered */
+	int soap_type() const { return 1316; } /* = unique id SOAP_TYPE___ns1__GetLinksToDocumentFiltered */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__CheckIn_USCOREattach
-#define SOAP_TYPE___ns1__CheckIn_USCOREattach (1760)
+#define SOAP_TYPE___ns1__CheckIn_USCOREattach (1320)
 /* Operation wrapper: */
 struct __ns1__CheckIn_USCOREattach
 {
 public:
 	ns1__CheckIn_USCOREattach *ns1__CheckIn_USCOREattach_;	/* optional element of type ns1:CheckIn_attach */
 public:
-	int soap_type() const { return 1760; } /* = unique id SOAP_TYPE___ns1__CheckIn_USCOREattach */
+	int soap_type() const { return 1320; } /* = unique id SOAP_TYPE___ns1__CheckIn_USCOREattach */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__CheckIn_USCOREattachContainer
-#define SOAP_TYPE___ns1__CheckIn_USCOREattachContainer (1764)
+#define SOAP_TYPE___ns1__CheckIn_USCOREattachContainer (1324)
 /* Operation wrapper: */
 struct __ns1__CheckIn_USCOREattachContainer
 {
 public:
 	ns1__CheckIn_USCOREattachContainer *ns1__CheckIn_USCOREattachContainer_;	/* optional element of type ns1:CheckIn_attachContainer */
 public:
-	int soap_type() const { return 1764; } /* = unique id SOAP_TYPE___ns1__CheckIn_USCOREattachContainer */
+	int soap_type() const { return 1324; } /* = unique id SOAP_TYPE___ns1__CheckIn_USCOREattachContainer */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__CheckIn_USCOREdocument
-#define SOAP_TYPE___ns1__CheckIn_USCOREdocument (1768)
+#define SOAP_TYPE___ns1__CheckIn_USCOREdocument (1328)
 /* Operation wrapper: */
 struct __ns1__CheckIn_USCOREdocument
 {
 public:
 	ns1__CheckIn_USCOREdocument *ns1__CheckIn_USCOREdocument_;	/* optional element of type ns1:CheckIn_document */
 public:
-	int soap_type() const { return 1768; } /* = unique id SOAP_TYPE___ns1__CheckIn_USCOREdocument */
+	int soap_type() const { return 1328; } /* = unique id SOAP_TYPE___ns1__CheckIn_USCOREdocument */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__CheckOut_USCOREattach
-#define SOAP_TYPE___ns1__CheckOut_USCOREattach (1772)
+#define SOAP_TYPE___ns1__CheckOut_USCOREattach (1332)
 /* Operation wrapper: */
 struct __ns1__CheckOut_USCOREattach
 {
 public:
 	ns1__CheckOut_USCOREattach *ns1__CheckOut_USCOREattach_;	/* optional element of type ns1:CheckOut_attach */
 public:
-	int soap_type() const { return 1772; } /* = unique id SOAP_TYPE___ns1__CheckOut_USCOREattach */
+	int soap_type() const { return 1332; } /* = unique id SOAP_TYPE___ns1__CheckOut_USCOREattach */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__CheckOut_USCOREattachContainer
-#define SOAP_TYPE___ns1__CheckOut_USCOREattachContainer (1776)
+#define SOAP_TYPE___ns1__CheckOut_USCOREattachContainer (1336)
 /* Operation wrapper: */
 struct __ns1__CheckOut_USCOREattachContainer
 {
 public:
 	ns1__CheckOut_USCOREattachContainer *ns1__CheckOut_USCOREattachContainer_;	/* optional element of type ns1:CheckOut_attachContainer */
 public:
-	int soap_type() const { return 1776; } /* = unique id SOAP_TYPE___ns1__CheckOut_USCOREattachContainer */
+	int soap_type() const { return 1336; } /* = unique id SOAP_TYPE___ns1__CheckOut_USCOREattachContainer */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__CheckOut_USCOREdocument
-#define SOAP_TYPE___ns1__CheckOut_USCOREdocument (1780)
+#define SOAP_TYPE___ns1__CheckOut_USCOREdocument (1340)
 /* Operation wrapper: */
 struct __ns1__CheckOut_USCOREdocument
 {
 public:
 	ns1__CheckOut_USCOREdocument *ns1__CheckOut_USCOREdocument_;	/* optional element of type ns1:CheckOut_document */
 public:
-	int soap_type() const { return 1780; } /* = unique id SOAP_TYPE___ns1__CheckOut_USCOREdocument */
+	int soap_type() const { return 1340; } /* = unique id SOAP_TYPE___ns1__CheckOut_USCOREdocument */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__Combo_USCOREinsert
-#define SOAP_TYPE___ns1__Combo_USCOREinsert (1784)
+#define SOAP_TYPE___ns1__Combo_USCOREinsert (1344)
 /* Operation wrapper: */
 struct __ns1__Combo_USCOREinsert
 {
 public:
 	ns1__Combo_USCOREinsert *ns1__Combo_USCOREinsert_;	/* optional element of type ns1:Combo_insert */
 public:
-	int soap_type() const { return 1784; } /* = unique id SOAP_TYPE___ns1__Combo_USCOREinsert */
+	int soap_type() const { return 1344; } /* = unique id SOAP_TYPE___ns1__Combo_USCOREinsert */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__Combo_USCOREremoveItem
-#define SOAP_TYPE___ns1__Combo_USCOREremoveItem (1788)
+#define SOAP_TYPE___ns1__Combo_USCOREremoveItem (1348)
 /* Operation wrapper: */
 struct __ns1__Combo_USCOREremoveItem
 {
 public:
 	ns1__Combo_USCOREremoveItem *ns1__Combo_USCOREremoveItem_;	/* optional element of type ns1:Combo_removeItem */
 public:
-	int soap_type() const { return 1788; } /* = unique id SOAP_TYPE___ns1__Combo_USCOREremoveItem */
+	int soap_type() const { return 1348; } /* = unique id SOAP_TYPE___ns1__Combo_USCOREremoveItem */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__Combo_USCOREremoveAll
-#define SOAP_TYPE___ns1__Combo_USCOREremoveAll (1792)
+#define SOAP_TYPE___ns1__Combo_USCOREremoveAll (1352)
 /* Operation wrapper: */
 struct __ns1__Combo_USCOREremoveAll
 {
 public:
 	ns1__Combo_USCOREremoveAll *ns1__Combo_USCOREremoveAll_;	/* optional element of type ns1:Combo_removeAll */
 public:
-	int soap_type() const { return 1792; } /* = unique id SOAP_TYPE___ns1__Combo_USCOREremoveAll */
+	int soap_type() const { return 1352; } /* = unique id SOAP_TYPE___ns1__Combo_USCOREremoveAll */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__Combo_USCOREgetAll
-#define SOAP_TYPE___ns1__Combo_USCOREgetAll (1796)
+#define SOAP_TYPE___ns1__Combo_USCOREgetAll (1356)
 /* Operation wrapper: */
 struct __ns1__Combo_USCOREgetAll
 {
 public:
 	ns1__Combo_USCOREgetAll *ns1__Combo_USCOREgetAll_;	/* optional element of type ns1:Combo_getAll */
 public:
-	int soap_type() const { return 1796; } /* = unique id SOAP_TYPE___ns1__Combo_USCOREgetAll */
+	int soap_type() const { return 1356; } /* = unique id SOAP_TYPE___ns1__Combo_USCOREgetAll */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__Combo_USCOREisCombo
-#define SOAP_TYPE___ns1__Combo_USCOREisCombo (1800)
+#define SOAP_TYPE___ns1__Combo_USCOREisCombo (1360)
 /* Operation wrapper: */
 struct __ns1__Combo_USCOREisCombo
 {
 public:
 	ns1__Combo_USCOREisCombo *ns1__Combo_USCOREisCombo_;	/* optional element of type ns1:Combo_isCombo */
 public:
-	int soap_type() const { return 1800; } /* = unique id SOAP_TYPE___ns1__Combo_USCOREisCombo */
+	int soap_type() const { return 1360; } /* = unique id SOAP_TYPE___ns1__Combo_USCOREisCombo */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__Combo_USCOREmodify
-#define SOAP_TYPE___ns1__Combo_USCOREmodify (1804)
+#define SOAP_TYPE___ns1__Combo_USCOREmodify (1364)
 /* Operation wrapper: */
 struct __ns1__Combo_USCOREmodify
 {
 public:
 	ns1__Combo_USCOREmodify *ns1__Combo_USCOREmodify_;	/* optional element of type ns1:Combo_modify */
 public:
-	int soap_type() const { return 1804; } /* = unique id SOAP_TYPE___ns1__Combo_USCOREmodify */
+	int soap_type() const { return 1364; } /* = unique id SOAP_TYPE___ns1__Combo_USCOREmodify */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DeleteFile
-#define SOAP_TYPE___ns1__DeleteFile (1808)
+#define SOAP_TYPE___ns1__DeleteFile (1368)
 /* Operation wrapper: */
 struct __ns1__DeleteFile
 {
 public:
 	ns1__DeleteFile *ns1__DeleteFile_;	/* optional element of type ns1:DeleteFile */
 public:
-	int soap_type() const { return 1808; } /* = unique id SOAP_TYPE___ns1__DeleteFile */
+	int soap_type() const { return 1368; } /* = unique id SOAP_TYPE___ns1__DeleteFile */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DeleteFileContainer
-#define SOAP_TYPE___ns1__DeleteFileContainer (1812)
+#define SOAP_TYPE___ns1__DeleteFileContainer (1372)
 /* Operation wrapper: */
 struct __ns1__DeleteFileContainer
 {
 public:
 	ns1__DeleteFileContainer *ns1__DeleteFileContainer_;	/* optional element of type ns1:DeleteFileContainer */
 public:
-	int soap_type() const { return 1812; } /* = unique id SOAP_TYPE___ns1__DeleteFileContainer */
+	int soap_type() const { return 1372; } /* = unique id SOAP_TYPE___ns1__DeleteFileContainer */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__CanDeleteFile
-#define SOAP_TYPE___ns1__CanDeleteFile (1816)
+#define SOAP_TYPE___ns1__CanDeleteFile (1376)
 /* Operation wrapper: */
 struct __ns1__CanDeleteFile
 {
 public:
 	ns1__CanDeleteFile *ns1__CanDeleteFile_;	/* optional element of type ns1:CanDeleteFile */
 public:
-	int soap_type() const { return 1816; } /* = unique id SOAP_TYPE___ns1__CanDeleteFile */
+	int soap_type() const { return 1376; } /* = unique id SOAP_TYPE___ns1__CanDeleteFile */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__CanDeleteFileContainer
-#define SOAP_TYPE___ns1__CanDeleteFileContainer (1820)
+#define SOAP_TYPE___ns1__CanDeleteFileContainer (1380)
 /* Operation wrapper: */
 struct __ns1__CanDeleteFileContainer
 {
 public:
 	ns1__CanDeleteFileContainer *ns1__CanDeleteFileContainer_;	/* optional element of type ns1:CanDeleteFileContainer */
 public:
-	int soap_type() const { return 1820; } /* = unique id SOAP_TYPE___ns1__CanDeleteFileContainer */
+	int soap_type() const { return 1380; } /* = unique id SOAP_TYPE___ns1__CanDeleteFileContainer */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DeleteFileVersion
-#define SOAP_TYPE___ns1__DeleteFileVersion (1824)
+#define SOAP_TYPE___ns1__DeleteFileVersion (1384)
 /* Operation wrapper: */
 struct __ns1__DeleteFileVersion
 {
 public:
 	ns1__DeleteFileVersion *ns1__DeleteFileVersion_;	/* optional element of type ns1:DeleteFileVersion */
 public:
-	int soap_type() const { return 1824; } /* = unique id SOAP_TYPE___ns1__DeleteFileVersion */
+	int soap_type() const { return 1384; } /* = unique id SOAP_TYPE___ns1__DeleteFileVersion */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DeleteFileContainerVersion
-#define SOAP_TYPE___ns1__DeleteFileContainerVersion (1828)
+#define SOAP_TYPE___ns1__DeleteFileContainerVersion (1388)
 /* Operation wrapper: */
 struct __ns1__DeleteFileContainerVersion
 {
 public:
 	ns1__DeleteFileContainerVersion *ns1__DeleteFileContainerVersion_;	/* optional element of type ns1:DeleteFileContainerVersion */
 public:
-	int soap_type() const { return 1828; } /* = unique id SOAP_TYPE___ns1__DeleteFileContainerVersion */
+	int soap_type() const { return 1388; } /* = unique id SOAP_TYPE___ns1__DeleteFileContainerVersion */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__InsertFile
-#define SOAP_TYPE___ns1__InsertFile (1832)
+#define SOAP_TYPE___ns1__InsertFile (1392)
 /* Operation wrapper: */
 struct __ns1__InsertFile
 {
 public:
 	ns1__InsertFile *ns1__InsertFile_;	/* optional element of type ns1:InsertFile */
 public:
-	int soap_type() const { return 1832; } /* = unique id SOAP_TYPE___ns1__InsertFile */
+	int soap_type() const { return 1392; } /* = unique id SOAP_TYPE___ns1__InsertFile */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__InsertFileContainer
-#define SOAP_TYPE___ns1__InsertFileContainer (1836)
+#define SOAP_TYPE___ns1__InsertFileContainer (1396)
 /* Operation wrapper: */
 struct __ns1__InsertFileContainer
 {
 public:
 	ns1__InsertFileContainer *ns1__InsertFileContainer_;	/* optional element of type ns1:InsertFileContainer */
 public:
-	int soap_type() const { return 1836; } /* = unique id SOAP_TYPE___ns1__InsertFileContainer */
+	int soap_type() const { return 1396; } /* = unique id SOAP_TYPE___ns1__InsertFileContainer */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__CanInsertFile
-#define SOAP_TYPE___ns1__CanInsertFile (1840)
+#define SOAP_TYPE___ns1__CanInsertFile (1400)
 /* Operation wrapper: */
 struct __ns1__CanInsertFile
 {
 public:
 	ns1__CanInsertFile *ns1__CanInsertFile_;	/* optional element of type ns1:CanInsertFile */
 public:
-	int soap_type() const { return 1840; } /* = unique id SOAP_TYPE___ns1__CanInsertFile */
+	int soap_type() const { return 1400; } /* = unique id SOAP_TYPE___ns1__CanInsertFile */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__CanInsertFileContainer
-#define SOAP_TYPE___ns1__CanInsertFileContainer (1844)
+#define SOAP_TYPE___ns1__CanInsertFileContainer (1404)
 /* Operation wrapper: */
 struct __ns1__CanInsertFileContainer
 {
 public:
 	ns1__CanInsertFileContainer *ns1__CanInsertFileContainer_;	/* optional element of type ns1:CanInsertFileContainer */
 public:
-	int soap_type() const { return 1844; } /* = unique id SOAP_TYPE___ns1__CanInsertFileContainer */
+	int soap_type() const { return 1404; } /* = unique id SOAP_TYPE___ns1__CanInsertFileContainer */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__CanModifyFile
-#define SOAP_TYPE___ns1__CanModifyFile (1848)
+#define SOAP_TYPE___ns1__CanModifyFile (1408)
 /* Operation wrapper: */
 struct __ns1__CanModifyFile
 {
 public:
 	ns1__CanModifyFile *ns1__CanModifyFile_;	/* optional element of type ns1:CanModifyFile */
 public:
-	int soap_type() const { return 1848; } /* = unique id SOAP_TYPE___ns1__CanModifyFile */
+	int soap_type() const { return 1408; } /* = unique id SOAP_TYPE___ns1__CanModifyFile */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__CanShowFile
-#define SOAP_TYPE___ns1__CanShowFile (1852)
+#define SOAP_TYPE___ns1__CanShowFile (1412)
 /* Operation wrapper: */
 struct __ns1__CanShowFile
 {
 public:
 	ns1__CanShowFile *ns1__CanShowFile_;	/* optional element of type ns1:CanShowFile */
 public:
-	int soap_type() const { return 1852; } /* = unique id SOAP_TYPE___ns1__CanShowFile */
+	int soap_type() const { return 1412; } /* = unique id SOAP_TYPE___ns1__CanShowFile */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetFileListByCode
-#define SOAP_TYPE___ns1__GetFileListByCode (1856)
+#define SOAP_TYPE___ns1__GetFileListByCode (1416)
 /* Operation wrapper: */
 struct __ns1__GetFileListByCode
 {
 public:
 	ns1__GetFileListByCode *ns1__GetFileListByCode_;	/* optional element of type ns1:GetFileListByCode */
 public:
-	int soap_type() const { return 1856; } /* = unique id SOAP_TYPE___ns1__GetFileListByCode */
+	int soap_type() const { return 1416; } /* = unique id SOAP_TYPE___ns1__GetFileListByCode */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetFileListByCodeForSecurity
-#define SOAP_TYPE___ns1__GetFileListByCodeForSecurity (1860)
+#define SOAP_TYPE___ns1__GetFileListByCodeForSecurity (1420)
 /* Operation wrapper: */
 struct __ns1__GetFileListByCodeForSecurity
 {
 public:
 	ns1__GetFileListByCodeForSecurity *ns1__GetFileListByCodeForSecurity_;	/* optional element of type ns1:GetFileListByCodeForSecurity */
 public:
-	int soap_type() const { return 1860; } /* = unique id SOAP_TYPE___ns1__GetFileListByCodeForSecurity */
+	int soap_type() const { return 1420; } /* = unique id SOAP_TYPE___ns1__GetFileListByCodeForSecurity */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__GetDataFileListContainer
-#define SOAP_TYPE___ns1__GetDataFileListContainer (1864)
+#ifndef SOAP_TYPE___ns1__Query
+#define SOAP_TYPE___ns1__Query (1424)
 /* Operation wrapper: */
-struct __ns1__GetDataFileListContainer
+struct __ns1__Query
 {
 public:
-	ns1__GetDataFileListContainer *ns1__GetDataFileListContainer_;	/* optional element of type ns1:GetDataFileListContainer */
+	ns1__Query *ns1__Query_;	/* optional element of type ns1:Query */
 public:
-	int soap_type() const { return 1864; } /* = unique id SOAP_TYPE___ns1__GetDataFileListContainer */
+	int soap_type() const { return 1424; } /* = unique id SOAP_TYPE___ns1__Query */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__GetDataFileListOnlyLastVersion
-#define SOAP_TYPE___ns1__GetDataFileListOnlyLastVersion (1868)
+#ifndef SOAP_TYPE___ns1__GetAdjacentArchiBox
+#define SOAP_TYPE___ns1__GetAdjacentArchiBox (1428)
 /* Operation wrapper: */
-struct __ns1__GetDataFileListOnlyLastVersion
+struct __ns1__GetAdjacentArchiBox
 {
 public:
-	ns1__GetDataFileListOnlyLastVersion *ns1__GetDataFileListOnlyLastVersion_;	/* optional element of type ns1:GetDataFileListOnlyLastVersion */
+	ns1__GetAdjacentArchiBox *ns1__GetAdjacentArchiBox_;	/* optional element of type ns1:GetAdjacentArchiBox */
 public:
-	int soap_type() const { return 1868; } /* = unique id SOAP_TYPE___ns1__GetDataFileListOnlyLastVersion */
+	int soap_type() const { return 1428; } /* = unique id SOAP_TYPE___ns1__GetAdjacentArchiBox */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__GetDataFileList
-#define SOAP_TYPE___ns1__GetDataFileList (1872)
+#ifndef SOAP_TYPE___ns1__GetInstanceReplication
+#define SOAP_TYPE___ns1__GetInstanceReplication (1432)
 /* Operation wrapper: */
-struct __ns1__GetDataFileList
+struct __ns1__GetInstanceReplication
 {
 public:
-	ns1__GetDataFileList *ns1__GetDataFileList_;	/* optional element of type ns1:GetDataFileList */
+	ns1__GetInstanceReplication *ns1__GetInstanceReplication_;	/* optional element of type ns1:GetInstanceReplication */
 public:
-	int soap_type() const { return 1872; } /* = unique id SOAP_TYPE___ns1__GetDataFileList */
+	int soap_type() const { return 1432; } /* = unique id SOAP_TYPE___ns1__GetInstanceReplication */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__GetDataFileListForSecurity
-#define SOAP_TYPE___ns1__GetDataFileListForSecurity (1876)
+#ifndef SOAP_TYPE___ns1__Login
+#define SOAP_TYPE___ns1__Login (1436)
 /* Operation wrapper: */
-struct __ns1__GetDataFileListForSecurity
+struct __ns1__Login
 {
 public:
-	ns1__GetDataFileListForSecurity *ns1__GetDataFileListForSecurity_;	/* optional element of type ns1:GetDataFileListForSecurity */
+	ns1__Login *ns1__Login_;	/* optional element of type ns1:Login */
 public:
-	int soap_type() const { return 1876; } /* = unique id SOAP_TYPE___ns1__GetDataFileListForSecurity */
+	int soap_type() const { return 1436; } /* = unique id SOAP_TYPE___ns1__Login */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__GetDataFileDetail
-#define SOAP_TYPE___ns1__GetDataFileDetail (1880)
+#ifndef SOAP_TYPE___ns1__Logout
+#define SOAP_TYPE___ns1__Logout (1440)
 /* Operation wrapper: */
-struct __ns1__GetDataFileDetail
+struct __ns1__Logout
 {
 public:
-	ns1__GetDataFileDetail *ns1__GetDataFileDetail_;	/* optional element of type ns1:GetDataFileDetail */
+	ns1__Logout *ns1__Logout_;	/* optional element of type ns1:Logout */
 public:
-	int soap_type() const { return 1880; } /* = unique id SOAP_TYPE___ns1__GetDataFileDetail */
+	int soap_type() const { return 1440; } /* = unique id SOAP_TYPE___ns1__Logout */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__GetDataFileContainerDetail
-#define SOAP_TYPE___ns1__GetDataFileContainerDetail (1884)
+#ifndef SOAP_TYPE___ns1__CanModifyLinkContainerToContainer
+#define SOAP_TYPE___ns1__CanModifyLinkContainerToContainer (1444)
 /* Operation wrapper: */
-struct __ns1__GetDataFileContainerDetail
+struct __ns1__CanModifyLinkContainerToContainer
 {
 public:
-	ns1__GetDataFileContainerDetail *ns1__GetDataFileContainerDetail_;	/* optional element of type ns1:GetDataFileContainerDetail */
+	ns1__CanModifyLinkContainerToContainer *ns1__CanModifyLinkContainerToContainer_;	/* optional element of type ns1:CanModifyLinkContainerToContainer */
 public:
-	int soap_type() const { return 1884; } /* = unique id SOAP_TYPE___ns1__GetDataFileContainerDetail */
+	int soap_type() const { return 1444; } /* = unique id SOAP_TYPE___ns1__CanModifyLinkContainerToContainer */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__DownloadFile
-#define SOAP_TYPE___ns1__DownloadFile (1888)
+#ifndef SOAP_TYPE___ns1__ModifyLinkContainerToDocument
+#define SOAP_TYPE___ns1__ModifyLinkContainerToDocument (1448)
 /* Operation wrapper: */
-struct __ns1__DownloadFile
+struct __ns1__ModifyLinkContainerToDocument
 {
 public:
-	ns1__DownloadFile *ns1__DownloadFile_;	/* optional element of type ns1:DownloadFile */
+	ns1__ModifyLinkContainerToDocument *ns1__ModifyLinkContainerToDocument_;	/* optional element of type ns1:ModifyLinkContainerToDocument */
 public:
-	int soap_type() const { return 1888; } /* = unique id SOAP_TYPE___ns1__DownloadFile */
+	int soap_type() const { return 1448; } /* = unique id SOAP_TYPE___ns1__ModifyLinkContainerToDocument */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__DownloadFileByFileUniqueCode
-#define SOAP_TYPE___ns1__DownloadFileByFileUniqueCode (1892)
+#ifndef SOAP_TYPE___ns1__CanModifyLinkContainerToDocument
+#define SOAP_TYPE___ns1__CanModifyLinkContainerToDocument (1452)
 /* Operation wrapper: */
-struct __ns1__DownloadFileByFileUniqueCode
+struct __ns1__CanModifyLinkContainerToDocument
 {
 public:
-	ns1__DownloadFileByFileUniqueCode *ns1__DownloadFileByFileUniqueCode_;	/* optional element of type ns1:DownloadFileByFileUniqueCode */
+	ns1__CanModifyLinkContainerToDocument *ns1__CanModifyLinkContainerToDocument_;	/* optional element of type ns1:CanModifyLinkContainerToDocument */
 public:
-	int soap_type() const { return 1892; } /* = unique id SOAP_TYPE___ns1__DownloadFileByFileUniqueCode */
+	int soap_type() const { return 1452; } /* = unique id SOAP_TYPE___ns1__CanModifyLinkContainerToDocument */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__DownloadFileUnc
-#define SOAP_TYPE___ns1__DownloadFileUnc (1896)
+#ifndef SOAP_TYPE___ns1__DeleteLink
+#define SOAP_TYPE___ns1__DeleteLink (1456)
 /* Operation wrapper: */
-struct __ns1__DownloadFileUnc
+struct __ns1__DeleteLink
 {
 public:
-	ns1__DownloadFileUnc *ns1__DownloadFileUnc_;	/* optional element of type ns1:DownloadFileUnc */
+	ns1__DeleteLink *ns1__DeleteLink_;	/* optional element of type ns1:DeleteLink */
 public:
-	int soap_type() const { return 1896; } /* = unique id SOAP_TYPE___ns1__DownloadFileUnc */
+	int soap_type() const { return 1456; } /* = unique id SOAP_TYPE___ns1__DeleteLink */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__DownloadFileContainerUnc
-#define SOAP_TYPE___ns1__DownloadFileContainerUnc (1900)
+#ifndef SOAP_TYPE___ns1__CanDeleteLinkFromContainer
+#define SOAP_TYPE___ns1__CanDeleteLinkFromContainer (1460)
 /* Operation wrapper: */
-struct __ns1__DownloadFileContainerUnc
+struct __ns1__CanDeleteLinkFromContainer
 {
 public:
-	ns1__DownloadFileContainerUnc *ns1__DownloadFileContainerUnc_;	/* optional element of type ns1:DownloadFileContainerUnc */
+	ns1__CanDeleteLinkFromContainer *ns1__CanDeleteLinkFromContainer_;	/* optional element of type ns1:CanDeleteLinkFromContainer */
 public:
-	int soap_type() const { return 1900; } /* = unique id SOAP_TYPE___ns1__DownloadFileContainerUnc */
+	int soap_type() const { return 1460; } /* = unique id SOAP_TYPE___ns1__CanDeleteLinkFromContainer */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__DownloadGetChunk
-#define SOAP_TYPE___ns1__DownloadGetChunk (1904)
+#ifndef SOAP_TYPE___ns1__GetDocumentLinks
+#define SOAP_TYPE___ns1__GetDocumentLinks (1464)
 /* Operation wrapper: */
-struct __ns1__DownloadGetChunk
+struct __ns1__GetDocumentLinks
 {
 public:
-	ns1__DownloadGetChunk *ns1__DownloadGetChunk_;	/* optional element of type ns1:DownloadGetChunk */
+	ns1__GetDocumentLinks *ns1__GetDocumentLinks_;	/* optional element of type ns1:GetDocumentLinks */
 public:
-	int soap_type() const { return 1904; } /* = unique id SOAP_TYPE___ns1__DownloadGetChunk */
+	int soap_type() const { return 1464; } /* = unique id SOAP_TYPE___ns1__GetDocumentLinks */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__DownloadGetNext
-#define SOAP_TYPE___ns1__DownloadGetNext (1908)
+#ifndef SOAP_TYPE___ns1__GetCountLinksToDocument
+#define SOAP_TYPE___ns1__GetCountLinksToDocument (1468)
 /* Operation wrapper: */
-struct __ns1__DownloadGetNext
+struct __ns1__GetCountLinksToDocument
 {
 public:
-	ns1__DownloadGetNext *ns1__DownloadGetNext_;	/* optional element of type ns1:DownloadGetNext */
+	ns1__GetCountLinksToDocument *ns1__GetCountLinksToDocument_;	/* optional element of type ns1:GetCountLinksToDocument */
 public:
-	int soap_type() const { return 1908; } /* = unique id SOAP_TYPE___ns1__DownloadGetNext */
+	int soap_type() const { return 1468; } /* = unique id SOAP_TYPE___ns1__GetCountLinksToDocument */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__UploadSendChunk
-#define SOAP_TYPE___ns1__UploadSendChunk (1912)
+#ifndef SOAP_TYPE___ns1__GetLinksToDocument
+#define SOAP_TYPE___ns1__GetLinksToDocument (1472)
 /* Operation wrapper: */
-struct __ns1__UploadSendChunk
+struct __ns1__GetLinksToDocument
 {
 public:
-	ns1__UploadSendChunk *ns1__UploadSendChunk_;	/* optional element of type ns1:UploadSendChunk */
+	ns1__GetLinksToDocument *ns1__GetLinksToDocument_;	/* optional element of type ns1:GetLinksToDocument */
 public:
-	int soap_type() const { return 1912; } /* = unique id SOAP_TYPE___ns1__UploadSendChunk */
+	int soap_type() const { return 1472; } /* = unique id SOAP_TYPE___ns1__GetLinksToDocument */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__DownloadFileContainer
-#define SOAP_TYPE___ns1__DownloadFileContainer (1916)
+#ifndef SOAP_TYPE___ns1__GetInstanceNameFromLinks
+#define SOAP_TYPE___ns1__GetInstanceNameFromLinks (1476)
 /* Operation wrapper: */
-struct __ns1__DownloadFileContainer
+struct __ns1__GetInstanceNameFromLinks
 {
 public:
-	ns1__DownloadFileContainer *ns1__DownloadFileContainer_;	/* optional element of type ns1:DownloadFileContainer */
+	ns1__GetInstanceNameFromLinks *ns1__GetInstanceNameFromLinks_;	/* optional element of type ns1:GetInstanceNameFromLinks */
 public:
-	int soap_type() const { return 1916; } /* = unique id SOAP_TYPE___ns1__DownloadFileContainer */
+	int soap_type() const { return 1476; } /* = unique id SOAP_TYPE___ns1__GetInstanceNameFromLinks */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__DownloadFilePreview
-#define SOAP_TYPE___ns1__DownloadFilePreview (1920)
+#ifndef SOAP_TYPE___ns1__GetContainerLinks
+#define SOAP_TYPE___ns1__GetContainerLinks (1480)
 /* Operation wrapper: */
-struct __ns1__DownloadFilePreview
+struct __ns1__GetContainerLinks
 {
 public:
-	ns1__DownloadFilePreview *ns1__DownloadFilePreview_;	/* optional element of type ns1:DownloadFilePreview */
+	ns1__GetContainerLinks *ns1__GetContainerLinks_;	/* optional element of type ns1:GetContainerLinks */
 public:
-	int soap_type() const { return 1920; } /* = unique id SOAP_TYPE___ns1__DownloadFilePreview */
+	int soap_type() const { return 1480; } /* = unique id SOAP_TYPE___ns1__GetContainerLinks */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__GetUploadDetailByFilecode
-#define SOAP_TYPE___ns1__GetUploadDetailByFilecode (1924)
+#ifndef SOAP_TYPE___ns1__RegenerateDynOrg
+#define SOAP_TYPE___ns1__RegenerateDynOrg (1484)
 /* Operation wrapper: */
-struct __ns1__GetUploadDetailByFilecode
+struct __ns1__RegenerateDynOrg
 {
 public:
-	ns1__GetUploadDetailByFilecode *ns1__GetUploadDetailByFilecode_;	/* optional element of type ns1:GetUploadDetailByFilecode */
+	ns1__RegenerateDynOrg *ns1__RegenerateDynOrg_;	/* optional element of type ns1:RegenerateDynOrg */
 public:
-	int soap_type() const { return 1924; } /* = unique id SOAP_TYPE___ns1__GetUploadDetailByFilecode */
+	int soap_type() const { return 1484; } /* = unique id SOAP_TYPE___ns1__RegenerateDynOrg */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__GetUploadDetailByDataId
-#define SOAP_TYPE___ns1__GetUploadDetailByDataId (1928)
+#ifndef SOAP_TYPE___ns1__GetClasseDocumentale
+#define SOAP_TYPE___ns1__GetClasseDocumentale (1488)
 /* Operation wrapper: */
-struct __ns1__GetUploadDetailByDataId
+struct __ns1__GetClasseDocumentale
 {
 public:
-	ns1__GetUploadDetailByDataId *ns1__GetUploadDetailByDataId_;	/* optional element of type ns1:GetUploadDetailByDataId */
+	ns1__GetClasseDocumentale *ns1__GetClasseDocumentale_;	/* optional element of type ns1:GetClasseDocumentale */
 public:
-	int soap_type() const { return 1928; } /* = unique id SOAP_TYPE___ns1__GetUploadDetailByDataId */
+	int soap_type() const { return 1488; } /* = unique id SOAP_TYPE___ns1__GetClasseDocumentale */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__GetUploadDetailByData
-#define SOAP_TYPE___ns1__GetUploadDetailByData (1932)
+#ifndef SOAP_TYPE___ns1__DeleteClasseDocumentale
+#define SOAP_TYPE___ns1__DeleteClasseDocumentale (1492)
 /* Operation wrapper: */
-struct __ns1__GetUploadDetailByData
+struct __ns1__DeleteClasseDocumentale
 {
 public:
-	ns1__GetUploadDetailByData *ns1__GetUploadDetailByData_;	/* optional element of type ns1:GetUploadDetailByData */
+	ns1__DeleteClasseDocumentale *ns1__DeleteClasseDocumentale_;	/* optional element of type ns1:DeleteClasseDocumentale */
 public:
-	int soap_type() const { return 1932; } /* = unique id SOAP_TYPE___ns1__GetUploadDetailByData */
+	int soap_type() const { return 1492; } /* = unique id SOAP_TYPE___ns1__DeleteClasseDocumentale */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__GetUploadDetailByContId
-#define SOAP_TYPE___ns1__GetUploadDetailByContId (1936)
+#ifndef SOAP_TYPE___ns1__InsertClasseDocumentale
+#define SOAP_TYPE___ns1__InsertClasseDocumentale (1496)
 /* Operation wrapper: */
-struct __ns1__GetUploadDetailByContId
+struct __ns1__InsertClasseDocumentale
 {
 public:
-	ns1__GetUploadDetailByContId *ns1__GetUploadDetailByContId_;	/* optional element of type ns1:GetUploadDetailByContId */
+	ns1__InsertClasseDocumentale *ns1__InsertClasseDocumentale_;	/* optional element of type ns1:InsertClasseDocumentale */
 public:
-	int soap_type() const { return 1936; } /* = unique id SOAP_TYPE___ns1__GetUploadDetailByContId */
+	int soap_type() const { return 1496; } /* = unique id SOAP_TYPE___ns1__InsertClasseDocumentale */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__GetUploadDetailByCont
-#define SOAP_TYPE___ns1__GetUploadDetailByCont (1940)
+#ifndef SOAP_TYPE___ns1__InsertDataWA
+#define SOAP_TYPE___ns1__InsertDataWA (1500)
 /* Operation wrapper: */
-struct __ns1__GetUploadDetailByCont
+struct __ns1__InsertDataWA
 {
 public:
-	ns1__GetUploadDetailByCont *ns1__GetUploadDetailByCont_;	/* optional element of type ns1:GetUploadDetailByCont */
+	ns1__InsertDataWA *ns1__InsertDataWA_;	/* optional element of type ns1:InsertDataWA */
 public:
-	int soap_type() const { return 1940; } /* = unique id SOAP_TYPE___ns1__GetUploadDetailByCont */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__UploadEndFile
-#define SOAP_TYPE___ns1__UploadEndFile (1944)
-/* Operation wrapper: */
-struct __ns1__UploadEndFile
-{
-public:
-	ns1__UploadEndFile *ns1__UploadEndFile_;	/* optional element of type ns1:UploadEndFile */
-public:
-	int soap_type() const { return 1944; } /* = unique id SOAP_TYPE___ns1__UploadEndFile */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__UploadEndFileContainer
-#define SOAP_TYPE___ns1__UploadEndFileContainer (1948)
-/* Operation wrapper: */
-struct __ns1__UploadEndFileContainer
-{
-public:
-	ns1__UploadEndFileContainer *ns1__UploadEndFileContainer_;	/* optional element of type ns1:UploadEndFileContainer */
-public:
-	int soap_type() const { return 1948; } /* = unique id SOAP_TYPE___ns1__UploadEndFileContainer */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__SetTmpUploadPath
-#define SOAP_TYPE___ns1__SetTmpUploadPath (1952)
-/* Operation wrapper: */
-struct __ns1__SetTmpUploadPath
-{
-public:
-	ns1__SetTmpUploadPath *ns1__SetTmpUploadPath_;	/* optional element of type ns1:SetTmpUploadPath */
-public:
-	int soap_type() const { return 1952; } /* = unique id SOAP_TYPE___ns1__SetTmpUploadPath */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__SetTmpDownloadPath
-#define SOAP_TYPE___ns1__SetTmpDownloadPath (1956)
-/* Operation wrapper: */
-struct __ns1__SetTmpDownloadPath
-{
-public:
-	ns1__SetTmpDownloadPath *ns1__SetTmpDownloadPath_;	/* optional element of type ns1:SetTmpDownloadPath */
-public:
-	int soap_type() const { return 1956; } /* = unique id SOAP_TYPE___ns1__SetTmpDownloadPath */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetDownloadDetailByFilecode
-#define SOAP_TYPE___ns1__GetDownloadDetailByFilecode (1960)
-/* Operation wrapper: */
-struct __ns1__GetDownloadDetailByFilecode
-{
-public:
-	ns1__GetDownloadDetailByFilecode *ns1__GetDownloadDetailByFilecode_;	/* optional element of type ns1:GetDownloadDetailByFilecode */
-public:
-	int soap_type() const { return 1960; } /* = unique id SOAP_TYPE___ns1__GetDownloadDetailByFilecode */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetDownloadDetailByDataId
-#define SOAP_TYPE___ns1__GetDownloadDetailByDataId (1964)
-/* Operation wrapper: */
-struct __ns1__GetDownloadDetailByDataId
-{
-public:
-	ns1__GetDownloadDetailByDataId *ns1__GetDownloadDetailByDataId_;	/* optional element of type ns1:GetDownloadDetailByDataId */
-public:
-	int soap_type() const { return 1964; } /* = unique id SOAP_TYPE___ns1__GetDownloadDetailByDataId */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetDownloadDetailByData
-#define SOAP_TYPE___ns1__GetDownloadDetailByData (1968)
-/* Operation wrapper: */
-struct __ns1__GetDownloadDetailByData
-{
-public:
-	ns1__GetDownloadDetailByData *ns1__GetDownloadDetailByData_;	/* optional element of type ns1:GetDownloadDetailByData */
-public:
-	int soap_type() const { return 1968; } /* = unique id SOAP_TYPE___ns1__GetDownloadDetailByData */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetDownloadDetailByContId
-#define SOAP_TYPE___ns1__GetDownloadDetailByContId (1972)
-/* Operation wrapper: */
-struct __ns1__GetDownloadDetailByContId
-{
-public:
-	ns1__GetDownloadDetailByContId *ns1__GetDownloadDetailByContId_;	/* optional element of type ns1:GetDownloadDetailByContId */
-public:
-	int soap_type() const { return 1972; } /* = unique id SOAP_TYPE___ns1__GetDownloadDetailByContId */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetDownloadDetailByCont
-#define SOAP_TYPE___ns1__GetDownloadDetailByCont (1976)
-/* Operation wrapper: */
-struct __ns1__GetDownloadDetailByCont
-{
-public:
-	ns1__GetDownloadDetailByCont *ns1__GetDownloadDetailByCont_;	/* optional element of type ns1:GetDownloadDetailByCont */
-public:
-	int soap_type() const { return 1976; } /* = unique id SOAP_TYPE___ns1__GetDownloadDetailByCont */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetCountFileList
-#define SOAP_TYPE___ns1__GetCountFileList (1980)
-/* Operation wrapper: */
-struct __ns1__GetCountFileList
-{
-public:
-	ns1__GetCountFileList *ns1__GetCountFileList_;	/* optional element of type ns1:GetCountFileList */
-public:
-	int soap_type() const { return 1980; } /* = unique id SOAP_TYPE___ns1__GetCountFileList */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ModifyFileDescription
-#define SOAP_TYPE___ns1__ModifyFileDescription (1984)
-/* Operation wrapper: */
-struct __ns1__ModifyFileDescription
-{
-public:
-	ns1__ModifyFileDescription *ns1__ModifyFileDescription_;	/* optional element of type ns1:ModifyFileDescription */
-public:
-	int soap_type() const { return 1984; } /* = unique id SOAP_TYPE___ns1__ModifyFileDescription */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__CopyFile
-#define SOAP_TYPE___ns1__CopyFile (1988)
-/* Operation wrapper: */
-struct __ns1__CopyFile
-{
-public:
-	ns1__CopyFile *ns1__CopyFile_;	/* optional element of type ns1:CopyFile */
-public:
-	int soap_type() const { return 1988; } /* = unique id SOAP_TYPE___ns1__CopyFile */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__IfFileExist
-#define SOAP_TYPE___ns1__IfFileExist (1992)
-/* Operation wrapper: */
-struct __ns1__IfFileExist
-{
-public:
-	ns1__IfFileExist *ns1__IfFileExist_;	/* optional element of type ns1:IfFileExist */
-public:
-	int soap_type() const { return 1992; } /* = unique id SOAP_TYPE___ns1__IfFileExist */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__SetFileAvailable
-#define SOAP_TYPE___ns1__SetFileAvailable (1996)
-/* Operation wrapper: */
-struct __ns1__SetFileAvailable
-{
-public:
-	ns1__SetFileAvailable *ns1__SetFileAvailable_;	/* optional element of type ns1:SetFileAvailable */
-public:
-	int soap_type() const { return 1996; } /* = unique id SOAP_TYPE___ns1__SetFileAvailable */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetFileAvailable
-#define SOAP_TYPE___ns1__GetFileAvailable (2000)
-/* Operation wrapper: */
-struct __ns1__GetFileAvailable
-{
-public:
-	ns1__GetFileAvailable *ns1__GetFileAvailable_;	/* optional element of type ns1:GetFileAvailable */
-public:
-	int soap_type() const { return 2000; } /* = unique id SOAP_TYPE___ns1__GetFileAvailable */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__AddFileToSyncByArcCue
-#define SOAP_TYPE___ns1__AddFileToSyncByArcCue (2004)
-/* Operation wrapper: */
-struct __ns1__AddFileToSyncByArcCue
-{
-public:
-	ns1__AddFileToSyncByArcCue *ns1__AddFileToSyncByArcCue_;	/* optional element of type ns1:AddFileToSyncByArcCue */
-public:
-	int soap_type() const { return 2004; } /* = unique id SOAP_TYPE___ns1__AddFileToSyncByArcCue */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Fk_USCOREDB_USCOREtestConnection
-#define SOAP_TYPE___ns1__Fk_USCOREDB_USCOREtestConnection (2008)
-/* Operation wrapper: */
-struct __ns1__Fk_USCOREDB_USCOREtestConnection
-{
-public:
-	ns1__Fk_USCOREDB_USCOREtestConnection *ns1__Fk_USCOREDB_USCOREtestConnection_;	/* optional element of type ns1:Fk_DB_testConnection */
-public:
-	int soap_type() const { return 2008; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREDB_USCOREtestConnection */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Fk_USCOREWS_USCOREinsert
-#define SOAP_TYPE___ns1__Fk_USCOREWS_USCOREinsert (2012)
-/* Operation wrapper: */
-struct __ns1__Fk_USCOREWS_USCOREinsert
-{
-public:
-	ns1__Fk_USCOREWS_USCOREinsert *ns1__Fk_USCOREWS_USCOREinsert_;	/* optional element of type ns1:Fk_WS_insert */
-public:
-	int soap_type() const { return 2012; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREWS_USCOREinsert */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Fk_USCOREDB_USCOREmodify
-#define SOAP_TYPE___ns1__Fk_USCOREDB_USCOREmodify (2016)
-/* Operation wrapper: */
-struct __ns1__Fk_USCOREDB_USCOREmodify
-{
-public:
-	ns1__Fk_USCOREDB_USCOREmodify *ns1__Fk_USCOREDB_USCOREmodify_;	/* optional element of type ns1:Fk_DB_modify */
-public:
-	int soap_type() const { return 2016; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREDB_USCOREmodify */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Fk_USCOREDB_USCOREdelete
-#define SOAP_TYPE___ns1__Fk_USCOREDB_USCOREdelete (2020)
-/* Operation wrapper: */
-struct __ns1__Fk_USCOREDB_USCOREdelete
-{
-public:
-	ns1__Fk_USCOREDB_USCOREdelete *ns1__Fk_USCOREDB_USCOREdelete_;	/* optional element of type ns1:Fk_DB_delete */
-public:
-	int soap_type() const { return 2020; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREDB_USCOREdelete */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Fk_USCOREgetParsAllFk
-#define SOAP_TYPE___ns1__Fk_USCOREgetParsAllFk (2024)
-/* Operation wrapper: */
-struct __ns1__Fk_USCOREgetParsAllFk
-{
-public:
-	ns1__Fk_USCOREgetParsAllFk *ns1__Fk_USCOREgetParsAllFk_;	/* optional element of type ns1:Fk_getParsAllFk */
-public:
-	int soap_type() const { return 2024; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetParsAllFk */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Fk_USCOREgetPars
-#define SOAP_TYPE___ns1__Fk_USCOREgetPars (2028)
-/* Operation wrapper: */
-struct __ns1__Fk_USCOREgetPars
-{
-public:
-	ns1__Fk_USCOREgetPars *ns1__Fk_USCOREgetPars_;	/* optional element of type ns1:Fk_getPars */
-public:
-	int soap_type() const { return 2028; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetPars */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__Fk_USCOREcreate
-#define SOAP_TYPE___ns1__Fk_USCOREcreate (2032)
-/* Operation wrapper: */
-struct __ns1__Fk_USCOREcreate
-{
-public:
-	ns1__Fk_USCOREcreate *ns1__Fk_USCOREcreate_;	/* optional element of type ns1:Fk_create */
-public:
-	int soap_type() const { return 2032; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREcreate */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetLanguages
-#define SOAP_TYPE___ns1__GetLanguages (2036)
-/* Operation wrapper: */
-struct __ns1__GetLanguages
-{
-public:
-	ns1__GetLanguages *ns1__GetLanguages_;	/* optional element of type ns1:GetLanguages */
-public:
-	int soap_type() const { return 2036; } /* = unique id SOAP_TYPE___ns1__GetLanguages */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__AddLogSDK
-#define SOAP_TYPE___ns1__AddLogSDK (2040)
-/* Operation wrapper: */
-struct __ns1__AddLogSDK
-{
-public:
-	ns1__AddLogSDK *ns1__AddLogSDK_;	/* optional element of type ns1:AddLogSDK */
-public:
-	int soap_type() const { return 2040; } /* = unique id SOAP_TYPE___ns1__AddLogSDK */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetSDKLogList
-#define SOAP_TYPE___ns1__GetSDKLogList (2044)
-/* Operation wrapper: */
-struct __ns1__GetSDKLogList
-{
-public:
-	ns1__GetSDKLogList *ns1__GetSDKLogList_;	/* optional element of type ns1:GetSDKLogList */
-public:
-	int soap_type() const { return 2044; } /* = unique id SOAP_TYPE___ns1__GetSDKLogList */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DeleteSDKLog
-#define SOAP_TYPE___ns1__DeleteSDKLog (2048)
-/* Operation wrapper: */
-struct __ns1__DeleteSDKLog
-{
-public:
-	ns1__DeleteSDKLog *ns1__DeleteSDKLog_;	/* optional element of type ns1:DeleteSDKLog */
-public:
-	int soap_type() const { return 2048; } /* = unique id SOAP_TYPE___ns1__DeleteSDKLog */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ResetUserSessions
-#define SOAP_TYPE___ns1__ResetUserSessions (2052)
-/* Operation wrapper: */
-struct __ns1__ResetUserSessions
-{
-public:
-	ns1__ResetUserSessions *ns1__ResetUserSessions_;	/* optional element of type ns1:ResetUserSessions */
-public:
-	int soap_type() const { return 2052; } /* = unique id SOAP_TYPE___ns1__ResetUserSessions */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ValidateSession
-#define SOAP_TYPE___ns1__ValidateSession (2056)
-/* Operation wrapper: */
-struct __ns1__ValidateSession
-{
-public:
-	ns1__ValidateSession *ns1__ValidateSession_;	/* optional element of type ns1:ValidateSession */
-public:
-	int soap_type() const { return 2056; } /* = unique id SOAP_TYPE___ns1__ValidateSession */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetUserList
-#define SOAP_TYPE___ns1__GetUserList (2060)
-/* Operation wrapper: */
-struct __ns1__GetUserList
-{
-public:
-	ns1__GetUserList *ns1__GetUserList_;	/* optional element of type ns1:GetUserList */
-public:
-	int soap_type() const { return 2060; } /* = unique id SOAP_TYPE___ns1__GetUserList */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetUserListActiveDirectory
-#define SOAP_TYPE___ns1__GetUserListActiveDirectory (2064)
-/* Operation wrapper: */
-struct __ns1__GetUserListActiveDirectory
-{
-public:
-	ns1__GetUserListActiveDirectory *ns1__GetUserListActiveDirectory_;	/* optional element of type ns1:GetUserListActiveDirectory */
-public:
-	int soap_type() const { return 2064; } /* = unique id SOAP_TYPE___ns1__GetUserListActiveDirectory */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__InsertUser
-#define SOAP_TYPE___ns1__InsertUser (2068)
-/* Operation wrapper: */
-struct __ns1__InsertUser
-{
-public:
-	ns1__InsertUser *ns1__InsertUser_;	/* optional element of type ns1:InsertUser */
-public:
-	int soap_type() const { return 2068; } /* = unique id SOAP_TYPE___ns1__InsertUser */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ModifyUser
-#define SOAP_TYPE___ns1__ModifyUser (2072)
-/* Operation wrapper: */
-struct __ns1__ModifyUser
-{
-public:
-	ns1__ModifyUser *ns1__ModifyUser_;	/* optional element of type ns1:ModifyUser */
-public:
-	int soap_type() const { return 2072; } /* = unique id SOAP_TYPE___ns1__ModifyUser */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__InsertUserConfig
-#define SOAP_TYPE___ns1__InsertUserConfig (2076)
-/* Operation wrapper: */
-struct __ns1__InsertUserConfig
-{
-public:
-	ns1__InsertUserConfig *ns1__InsertUserConfig_;	/* optional element of type ns1:InsertUserConfig */
-public:
-	int soap_type() const { return 2076; } /* = unique id SOAP_TYPE___ns1__InsertUserConfig */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ModifyUserConfig
-#define SOAP_TYPE___ns1__ModifyUserConfig (2080)
-/* Operation wrapper: */
-struct __ns1__ModifyUserConfig
-{
-public:
-	ns1__ModifyUserConfig *ns1__ModifyUserConfig_;	/* optional element of type ns1:ModifyUserConfig */
-public:
-	int soap_type() const { return 2080; } /* = unique id SOAP_TYPE___ns1__ModifyUserConfig */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetUserDetailByUsername
-#define SOAP_TYPE___ns1__GetUserDetailByUsername (2084)
-/* Operation wrapper: */
-struct __ns1__GetUserDetailByUsername
-{
-public:
-	ns1__GetUserDetailByUsername *ns1__GetUserDetailByUsername_;	/* optional element of type ns1:GetUserDetailByUsername */
-public:
-	int soap_type() const { return 2084; } /* = unique id SOAP_TYPE___ns1__GetUserDetailByUsername */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetUserDetailByUserId
-#define SOAP_TYPE___ns1__GetUserDetailByUserId (2088)
-/* Operation wrapper: */
-struct __ns1__GetUserDetailByUserId
-{
-public:
-	ns1__GetUserDetailByUserId *ns1__GetUserDetailByUserId_;	/* optional element of type ns1:GetUserDetailByUserId */
-public:
-	int soap_type() const { return 2088; } /* = unique id SOAP_TYPE___ns1__GetUserDetailByUserId */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ExistUserByUsername
-#define SOAP_TYPE___ns1__ExistUserByUsername (2092)
-/* Operation wrapper: */
-struct __ns1__ExistUserByUsername
-{
-public:
-	ns1__ExistUserByUsername *ns1__ExistUserByUsername_;	/* optional element of type ns1:ExistUserByUsername */
-public:
-	int soap_type() const { return 2092; } /* = unique id SOAP_TYPE___ns1__ExistUserByUsername */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__InsertGroup
-#define SOAP_TYPE___ns1__InsertGroup (2096)
-/* Operation wrapper: */
-struct __ns1__InsertGroup
-{
-public:
-	ns1__InsertGroup *ns1__InsertGroup_;	/* optional element of type ns1:InsertGroup */
-public:
-	int soap_type() const { return 2096; } /* = unique id SOAP_TYPE___ns1__InsertGroup */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DeleteGroup
-#define SOAP_TYPE___ns1__DeleteGroup (2100)
-/* Operation wrapper: */
-struct __ns1__DeleteGroup
-{
-public:
-	ns1__DeleteGroup *ns1__DeleteGroup_;	/* optional element of type ns1:DeleteGroup */
-public:
-	int soap_type() const { return 2100; } /* = unique id SOAP_TYPE___ns1__DeleteGroup */
+	int soap_type() const { return 1500; } /* = unique id SOAP_TYPE___ns1__InsertDataWA */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__Ping
-#define SOAP_TYPE___ns1__Ping (2104)
+#define SOAP_TYPE___ns1__Ping (1504)
 /* Operation wrapper: */
 struct __ns1__Ping
 {
 public:
 	ns1__Ping *ns1__Ping_;	/* optional element of type ns1:Ping */
 public:
-	int soap_type() const { return 2104; } /* = unique id SOAP_TYPE___ns1__Ping */
+	int soap_type() const { return 1504; } /* = unique id SOAP_TYPE___ns1__Ping */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__DeleteUserByUsername
-#define SOAP_TYPE___ns1__DeleteUserByUsername (2108)
+#ifndef SOAP_TYPE___ns1__SetInstanceReplication
+#define SOAP_TYPE___ns1__SetInstanceReplication (1508)
 /* Operation wrapper: */
-struct __ns1__DeleteUserByUsername
+struct __ns1__SetInstanceReplication
 {
 public:
-	ns1__DeleteUserByUsername *ns1__DeleteUserByUsername_;	/* optional element of type ns1:DeleteUserByUsername */
+	ns1__SetInstanceReplication *ns1__SetInstanceReplication_;	/* optional element of type ns1:SetInstanceReplication */
 public:
-	int soap_type() const { return 2108; } /* = unique id SOAP_TYPE___ns1__DeleteUserByUsername */
+	int soap_type() const { return 1508; } /* = unique id SOAP_TYPE___ns1__SetInstanceReplication */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__ModifyGroup
-#define SOAP_TYPE___ns1__ModifyGroup (2112)
+#ifndef SOAP_TYPE___ns1__ModifyContainer
+#define SOAP_TYPE___ns1__ModifyContainer (1512)
 /* Operation wrapper: */
-struct __ns1__ModifyGroup
+struct __ns1__ModifyContainer
 {
 public:
-	ns1__ModifyGroup *ns1__ModifyGroup_;	/* optional element of type ns1:ModifyGroup */
+	ns1__ModifyContainer *ns1__ModifyContainer_;	/* optional element of type ns1:ModifyContainer */
 public:
-	int soap_type() const { return 2112; } /* = unique id SOAP_TYPE___ns1__ModifyGroup */
+	int soap_type() const { return 1512; } /* = unique id SOAP_TYPE___ns1__ModifyContainer */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__GetGroupList
-#define SOAP_TYPE___ns1__GetGroupList (2116)
+#ifndef SOAP_TYPE___ns1__ModifyTemplate
+#define SOAP_TYPE___ns1__ModifyTemplate (1516)
 /* Operation wrapper: */
-struct __ns1__GetGroupList
+struct __ns1__ModifyTemplate
 {
 public:
-	ns1__GetGroupList *ns1__GetGroupList_;	/* optional element of type ns1:GetGroupList */
+	ns1__ModifyTemplate *ns1__ModifyTemplate_;	/* optional element of type ns1:ModifyTemplate */
 public:
-	int soap_type() const { return 2116; } /* = unique id SOAP_TYPE___ns1__GetGroupList */
+	int soap_type() const { return 1516; } /* = unique id SOAP_TYPE___ns1__ModifyTemplate */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__InsertUserInGroup
-#define SOAP_TYPE___ns1__InsertUserInGroup (2120)
+#ifndef SOAP_TYPE___ns1__DeleteTemplate
+#define SOAP_TYPE___ns1__DeleteTemplate (1520)
 /* Operation wrapper: */
-struct __ns1__InsertUserInGroup
+struct __ns1__DeleteTemplate
 {
 public:
-	ns1__InsertUserInGroup *ns1__InsertUserInGroup_;	/* optional element of type ns1:InsertUserInGroup */
+	ns1__DeleteTemplate *ns1__DeleteTemplate_;	/* optional element of type ns1:DeleteTemplate */
 public:
-	int soap_type() const { return 2120; } /* = unique id SOAP_TYPE___ns1__InsertUserInGroup */
+	int soap_type() const { return 1520; } /* = unique id SOAP_TYPE___ns1__DeleteTemplate */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__RemoveUserByAllGroups
-#define SOAP_TYPE___ns1__RemoveUserByAllGroups (2124)
+#ifndef SOAP_TYPE___ns1__DeleteContainer
+#define SOAP_TYPE___ns1__DeleteContainer (1524)
 /* Operation wrapper: */
-struct __ns1__RemoveUserByAllGroups
+struct __ns1__DeleteContainer
 {
 public:
-	ns1__RemoveUserByAllGroups *ns1__RemoveUserByAllGroups_;	/* optional element of type ns1:RemoveUserByAllGroups */
+	ns1__DeleteContainer *ns1__DeleteContainer_;	/* optional element of type ns1:DeleteContainer */
 public:
-	int soap_type() const { return 2124; } /* = unique id SOAP_TYPE___ns1__RemoveUserByAllGroups */
+	int soap_type() const { return 1524; } /* = unique id SOAP_TYPE___ns1__DeleteContainer */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__RemoveUserByGroup
-#define SOAP_TYPE___ns1__RemoveUserByGroup (2128)
+#ifndef SOAP_TYPE___ns1__canModifyContainer
+#define SOAP_TYPE___ns1__canModifyContainer (1528)
 /* Operation wrapper: */
-struct __ns1__RemoveUserByGroup
+struct __ns1__canModifyContainer
 {
 public:
-	ns1__RemoveUserByGroup *ns1__RemoveUserByGroup_;	/* optional element of type ns1:RemoveUserByGroup */
+	ns1__canModifyContainer *ns1__canModifyContainer_;	/* optional element of type ns1:canModifyContainer */
 public:
-	int soap_type() const { return 2128; } /* = unique id SOAP_TYPE___ns1__RemoveUserByGroup */
+	int soap_type() const { return 1528; } /* = unique id SOAP_TYPE___ns1__canModifyContainer */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__GetGroupsListByUser
-#define SOAP_TYPE___ns1__GetGroupsListByUser (2132)
+#ifndef SOAP_TYPE___ns1__canModifyTemplate
+#define SOAP_TYPE___ns1__canModifyTemplate (1532)
 /* Operation wrapper: */
-struct __ns1__GetGroupsListByUser
+struct __ns1__canModifyTemplate
 {
 public:
-	ns1__GetGroupsListByUser *ns1__GetGroupsListByUser_;	/* optional element of type ns1:GetGroupsListByUser */
+	ns1__canModifyTemplate *ns1__canModifyTemplate_;	/* optional element of type ns1:canModifyTemplate */
 public:
-	int soap_type() const { return 2132; } /* = unique id SOAP_TYPE___ns1__GetGroupsListByUser */
+	int soap_type() const { return 1532; } /* = unique id SOAP_TYPE___ns1__canModifyTemplate */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__GetUsersListByGroup
-#define SOAP_TYPE___ns1__GetUsersListByGroup (2136)
+#ifndef SOAP_TYPE___ns1__canDeleteContainer
+#define SOAP_TYPE___ns1__canDeleteContainer (1536)
 /* Operation wrapper: */
-struct __ns1__GetUsersListByGroup
+struct __ns1__canDeleteContainer
 {
 public:
-	ns1__GetUsersListByGroup *ns1__GetUsersListByGroup_;	/* optional element of type ns1:GetUsersListByGroup */
+	ns1__canDeleteContainer *ns1__canDeleteContainer_;	/* optional element of type ns1:canDeleteContainer */
 public:
-	int soap_type() const { return 2136; } /* = unique id SOAP_TYPE___ns1__GetUsersListByGroup */
+	int soap_type() const { return 1536; } /* = unique id SOAP_TYPE___ns1__canDeleteContainer */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__ModifyTranslation
-#define SOAP_TYPE___ns1__ModifyTranslation (2140)
+#ifndef SOAP_TYPE___ns1__canDeleteTemplate
+#define SOAP_TYPE___ns1__canDeleteTemplate (1540)
 /* Operation wrapper: */
-struct __ns1__ModifyTranslation
+struct __ns1__canDeleteTemplate
 {
 public:
-	ns1__ModifyTranslation *ns1__ModifyTranslation_;	/* optional element of type ns1:ModifyTranslation */
+	ns1__canDeleteTemplate *ns1__canDeleteTemplate_;	/* optional element of type ns1:canDeleteTemplate */
 public:
-	int soap_type() const { return 2140; } /* = unique id SOAP_TYPE___ns1__ModifyTranslation */
+	int soap_type() const { return 1540; } /* = unique id SOAP_TYPE___ns1__canDeleteTemplate */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__DeleteTranslation
-#define SOAP_TYPE___ns1__DeleteTranslation (2144)
+#ifndef SOAP_TYPE___ns1__canCreateContainer
+#define SOAP_TYPE___ns1__canCreateContainer (1544)
 /* Operation wrapper: */
-struct __ns1__DeleteTranslation
+struct __ns1__canCreateContainer
 {
 public:
-	ns1__DeleteTranslation *ns1__DeleteTranslation_;	/* optional element of type ns1:DeleteTranslation */
+	ns1__canCreateContainer *ns1__canCreateContainer_;	/* optional element of type ns1:canCreateContainer */
 public:
-	int soap_type() const { return 2144; } /* = unique id SOAP_TYPE___ns1__DeleteTranslation */
+	int soap_type() const { return 1544; } /* = unique id SOAP_TYPE___ns1__canCreateContainer */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__InsertTranslation
-#define SOAP_TYPE___ns1__InsertTranslation (2148)
+#ifndef SOAP_TYPE___ns1__canCreateTemplate
+#define SOAP_TYPE___ns1__canCreateTemplate (1548)
 /* Operation wrapper: */
-struct __ns1__InsertTranslation
+struct __ns1__canCreateTemplate
 {
 public:
-	ns1__InsertTranslation *ns1__InsertTranslation_;	/* optional element of type ns1:InsertTranslation */
+	ns1__canCreateTemplate *ns1__canCreateTemplate_;	/* optional element of type ns1:canCreateTemplate */
 public:
-	int soap_type() const { return 2148; } /* = unique id SOAP_TYPE___ns1__InsertTranslation */
+	int soap_type() const { return 1548; } /* = unique id SOAP_TYPE___ns1__canCreateTemplate */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__InsertTranslationCode
-#define SOAP_TYPE___ns1__InsertTranslationCode (2152)
+#ifndef SOAP_TYPE___ns1__GetDynorgList
+#define SOAP_TYPE___ns1__GetDynorgList (1552)
 /* Operation wrapper: */
-struct __ns1__InsertTranslationCode
+struct __ns1__GetDynorgList
 {
 public:
-	ns1__InsertTranslationCode *ns1__InsertTranslationCode_;	/* optional element of type ns1:InsertTranslationCode */
+	ns1__GetDynorgList *ns1__GetDynorgList_;	/* optional element of type ns1:GetDynorgList */
 public:
-	int soap_type() const { return 2152; } /* = unique id SOAP_TYPE___ns1__InsertTranslationCode */
+	int soap_type() const { return 1552; } /* = unique id SOAP_TYPE___ns1__GetDynorgList */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__InsertTranslationDecimalCode
-#define SOAP_TYPE___ns1__InsertTranslationDecimalCode (2156)
+#ifndef SOAP_TYPE___ns1__ModifyDynorg
+#define SOAP_TYPE___ns1__ModifyDynorg (1556)
 /* Operation wrapper: */
-struct __ns1__InsertTranslationDecimalCode
+struct __ns1__ModifyDynorg
 {
 public:
-	ns1__InsertTranslationDecimalCode *ns1__InsertTranslationDecimalCode_;	/* optional element of type ns1:InsertTranslationDecimalCode */
+	ns1__ModifyDynorg *ns1__ModifyDynorg_;	/* optional element of type ns1:ModifyDynorg */
 public:
-	int soap_type() const { return 2156; } /* = unique id SOAP_TYPE___ns1__InsertTranslationDecimalCode */
+	int soap_type() const { return 1556; } /* = unique id SOAP_TYPE___ns1__ModifyDynorg */
 };
 #endif
 
-#ifndef SOAP_TYPE___ns1__GetTranslationByMessageId
-#define SOAP_TYPE___ns1__GetTranslationByMessageId (2160)
+#ifndef SOAP_TYPE___ns1__DeleteDynorg
+#define SOAP_TYPE___ns1__DeleteDynorg (1560)
 /* Operation wrapper: */
-struct __ns1__GetTranslationByMessageId
+struct __ns1__DeleteDynorg
 {
 public:
-	ns1__GetTranslationByMessageId *ns1__GetTranslationByMessageId_;	/* optional element of type ns1:GetTranslationByMessageId */
+	ns1__DeleteDynorg *ns1__DeleteDynorg_;	/* optional element of type ns1:DeleteDynorg */
 public:
-	int soap_type() const { return 2160; } /* = unique id SOAP_TYPE___ns1__GetTranslationByMessageId */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetTranslationByLabelCode
-#define SOAP_TYPE___ns1__GetTranslationByLabelCode (2164)
-/* Operation wrapper: */
-struct __ns1__GetTranslationByLabelCode
-{
-public:
-	ns1__GetTranslationByLabelCode *ns1__GetTranslationByLabelCode_;	/* optional element of type ns1:GetTranslationByLabelCode */
-public:
-	int soap_type() const { return 2164; } /* = unique id SOAP_TYPE___ns1__GetTranslationByLabelCode */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetTranslationByRangeLabelCode
-#define SOAP_TYPE___ns1__GetTranslationByRangeLabelCode (2168)
-/* Operation wrapper: */
-struct __ns1__GetTranslationByRangeLabelCode
-{
-public:
-	ns1__GetTranslationByRangeLabelCode *ns1__GetTranslationByRangeLabelCode_;	/* optional element of type ns1:GetTranslationByRangeLabelCode */
-public:
-	int soap_type() const { return 2168; } /* = unique id SOAP_TYPE___ns1__GetTranslationByRangeLabelCode */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetTranslationBySourceSuffix
-#define SOAP_TYPE___ns1__GetTranslationBySourceSuffix (2172)
-/* Operation wrapper: */
-struct __ns1__GetTranslationBySourceSuffix
-{
-public:
-	ns1__GetTranslationBySourceSuffix *ns1__GetTranslationBySourceSuffix_;	/* optional element of type ns1:GetTranslationBySourceSuffix */
-public:
-	int soap_type() const { return 2172; } /* = unique id SOAP_TYPE___ns1__GetTranslationBySourceSuffix */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DeleteTranslationByCode
-#define SOAP_TYPE___ns1__DeleteTranslationByCode (2176)
-/* Operation wrapper: */
-struct __ns1__DeleteTranslationByCode
-{
-public:
-	ns1__DeleteTranslationByCode *ns1__DeleteTranslationByCode_;	/* optional element of type ns1:DeleteTranslationByCode */
-public:
-	int soap_type() const { return 2176; } /* = unique id SOAP_TYPE___ns1__DeleteTranslationByCode */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__AddDefaultProcess
-#define SOAP_TYPE___ns1__AddDefaultProcess (2180)
-/* Operation wrapper: */
-struct __ns1__AddDefaultProcess
-{
-public:
-	ns1__AddDefaultProcess *ns1__AddDefaultProcess_;	/* optional element of type ns1:AddDefaultProcess */
-public:
-	int soap_type() const { return 2180; } /* = unique id SOAP_TYPE___ns1__AddDefaultProcess */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ModDefaultProcess
-#define SOAP_TYPE___ns1__ModDefaultProcess (2184)
-/* Operation wrapper: */
-struct __ns1__ModDefaultProcess
-{
-public:
-	ns1__ModDefaultProcess *ns1__ModDefaultProcess_;	/* optional element of type ns1:ModDefaultProcess */
-public:
-	int soap_type() const { return 2184; } /* = unique id SOAP_TYPE___ns1__ModDefaultProcess */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DelDefaultProcess
-#define SOAP_TYPE___ns1__DelDefaultProcess (2188)
-/* Operation wrapper: */
-struct __ns1__DelDefaultProcess
-{
-public:
-	ns1__DelDefaultProcess *ns1__DelDefaultProcess_;	/* optional element of type ns1:DelDefaultProcess */
-public:
-	int soap_type() const { return 2188; } /* = unique id SOAP_TYPE___ns1__DelDefaultProcess */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetDefaultProcess
-#define SOAP_TYPE___ns1__GetDefaultProcess (2192)
-/* Operation wrapper: */
-struct __ns1__GetDefaultProcess
-{
-public:
-	ns1__GetDefaultProcess *ns1__GetDefaultProcess_;	/* optional element of type ns1:GetDefaultProcess */
-public:
-	int soap_type() const { return 2192; } /* = unique id SOAP_TYPE___ns1__GetDefaultProcess */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__AddMarker
-#define SOAP_TYPE___ns1__AddMarker (2196)
-/* Operation wrapper: */
-struct __ns1__AddMarker
-{
-public:
-	ns1__AddMarker *ns1__AddMarker_;	/* optional element of type ns1:AddMarker */
-public:
-	int soap_type() const { return 2196; } /* = unique id SOAP_TYPE___ns1__AddMarker */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DelMarker
-#define SOAP_TYPE___ns1__DelMarker (2200)
-/* Operation wrapper: */
-struct __ns1__DelMarker
-{
-public:
-	ns1__DelMarker *ns1__DelMarker_;	/* optional element of type ns1:DelMarker */
-public:
-	int soap_type() const { return 2200; } /* = unique id SOAP_TYPE___ns1__DelMarker */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetListMarker
-#define SOAP_TYPE___ns1__GetListMarker (2204)
-/* Operation wrapper: */
-struct __ns1__GetListMarker
-{
-public:
-	ns1__GetListMarker *ns1__GetListMarker_;	/* optional element of type ns1:GetListMarker */
-public:
-	int soap_type() const { return 2204; } /* = unique id SOAP_TYPE___ns1__GetListMarker */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetWorkflowVariables
-#define SOAP_TYPE___ns1__GetWorkflowVariables (2208)
-/* Operation wrapper: */
-struct __ns1__GetWorkflowVariables
-{
-public:
-	ns1__GetWorkflowVariables *ns1__GetWorkflowVariables_;	/* optional element of type ns1:GetWorkflowVariables */
-public:
-	int soap_type() const { return 2208; } /* = unique id SOAP_TYPE___ns1__GetWorkflowVariables */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__AddSign
-#define SOAP_TYPE___ns1__AddSign (2212)
-/* Operation wrapper: */
-struct __ns1__AddSign
-{
-public:
-	ns1__AddSign *ns1__AddSign_;	/* optional element of type ns1:AddSign */
-public:
-	int soap_type() const { return 2212; } /* = unique id SOAP_TYPE___ns1__AddSign */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DelSign
-#define SOAP_TYPE___ns1__DelSign (2216)
-/* Operation wrapper: */
-struct __ns1__DelSign
-{
-public:
-	ns1__DelSign *ns1__DelSign_;	/* optional element of type ns1:DelSign */
-public:
-	int soap_type() const { return 2216; } /* = unique id SOAP_TYPE___ns1__DelSign */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetSign
-#define SOAP_TYPE___ns1__GetSign (2220)
-/* Operation wrapper: */
-struct __ns1__GetSign
-{
-public:
-	ns1__GetSign *ns1__GetSign_;	/* optional element of type ns1:GetSign */
-public:
-	int soap_type() const { return 2220; } /* = unique id SOAP_TYPE___ns1__GetSign */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetContSign
-#define SOAP_TYPE___ns1__GetContSign (2224)
-/* Operation wrapper: */
-struct __ns1__GetContSign
-{
-public:
-	ns1__GetContSign *ns1__GetContSign_;	/* optional element of type ns1:GetContSign */
-public:
-	int soap_type() const { return 2224; } /* = unique id SOAP_TYPE___ns1__GetContSign */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetContSignByUser
-#define SOAP_TYPE___ns1__GetContSignByUser (2228)
-/* Operation wrapper: */
-struct __ns1__GetContSignByUser
-{
-public:
-	ns1__GetContSignByUser *ns1__GetContSignByUser_;	/* optional element of type ns1:GetContSignByUser */
-public:
-	int soap_type() const { return 2228; } /* = unique id SOAP_TYPE___ns1__GetContSignByUser */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ModSign
-#define SOAP_TYPE___ns1__ModSign (2232)
-/* Operation wrapper: */
-struct __ns1__ModSign
-{
-public:
-	ns1__ModSign *ns1__ModSign_;	/* optional element of type ns1:ModSign */
-public:
-	int soap_type() const { return 2232; } /* = unique id SOAP_TYPE___ns1__ModSign */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__AddUserSettings
-#define SOAP_TYPE___ns1__AddUserSettings (2236)
-/* Operation wrapper: */
-struct __ns1__AddUserSettings
-{
-public:
-	ns1__AddUserSettings *ns1__AddUserSettings_;	/* optional element of type ns1:AddUserSettings */
-public:
-	int soap_type() const { return 2236; } /* = unique id SOAP_TYPE___ns1__AddUserSettings */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ModUserSettings
-#define SOAP_TYPE___ns1__ModUserSettings (2240)
-/* Operation wrapper: */
-struct __ns1__ModUserSettings
-{
-public:
-	ns1__ModUserSettings *ns1__ModUserSettings_;	/* optional element of type ns1:ModUserSettings */
-public:
-	int soap_type() const { return 2240; } /* = unique id SOAP_TYPE___ns1__ModUserSettings */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DelUserSettings
-#define SOAP_TYPE___ns1__DelUserSettings (2244)
-/* Operation wrapper: */
-struct __ns1__DelUserSettings
-{
-public:
-	ns1__DelUserSettings *ns1__DelUserSettings_;	/* optional element of type ns1:DelUserSettings */
-public:
-	int soap_type() const { return 2244; } /* = unique id SOAP_TYPE___ns1__DelUserSettings */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetUserSettings
-#define SOAP_TYPE___ns1__GetUserSettings (2248)
-/* Operation wrapper: */
-struct __ns1__GetUserSettings
-{
-public:
-	ns1__GetUserSettings *ns1__GetUserSettings_;	/* optional element of type ns1:GetUserSettings */
-public:
-	int soap_type() const { return 2248; } /* = unique id SOAP_TYPE___ns1__GetUserSettings */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__InsertData
-#define SOAP_TYPE___ns1__InsertData (2252)
-/* Operation wrapper: */
-struct __ns1__InsertData
-{
-public:
-	ns1__InsertData *ns1__InsertData_;	/* optional element of type ns1:InsertData */
-public:
-	int soap_type() const { return 2252; } /* = unique id SOAP_TYPE___ns1__InsertData */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__CanInsertData
-#define SOAP_TYPE___ns1__CanInsertData (2256)
-/* Operation wrapper: */
-struct __ns1__CanInsertData
-{
-public:
-	ns1__CanInsertData *ns1__CanInsertData_;	/* optional element of type ns1:CanInsertData */
-public:
-	int soap_type() const { return 2256; } /* = unique id SOAP_TYPE___ns1__CanInsertData */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__CopyData
-#define SOAP_TYPE___ns1__CopyData (2260)
-/* Operation wrapper: */
-struct __ns1__CopyData
-{
-public:
-	ns1__CopyData *ns1__CopyData_;	/* optional element of type ns1:CopyData */
-public:
-	int soap_type() const { return 2260; } /* = unique id SOAP_TYPE___ns1__CopyData */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__MoveData
-#define SOAP_TYPE___ns1__MoveData (2264)
-/* Operation wrapper: */
-struct __ns1__MoveData
-{
-public:
-	ns1__MoveData *ns1__MoveData_;	/* optional element of type ns1:MoveData */
-public:
-	int soap_type() const { return 2264; } /* = unique id SOAP_TYPE___ns1__MoveData */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ModifyData
-#define SOAP_TYPE___ns1__ModifyData (2268)
-/* Operation wrapper: */
-struct __ns1__ModifyData
-{
-public:
-	ns1__ModifyData *ns1__ModifyData_;	/* optional element of type ns1:ModifyData */
-public:
-	int soap_type() const { return 2268; } /* = unique id SOAP_TYPE___ns1__ModifyData */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__CanModifyData
-#define SOAP_TYPE___ns1__CanModifyData (2272)
-/* Operation wrapper: */
-struct __ns1__CanModifyData
-{
-public:
-	ns1__CanModifyData *ns1__CanModifyData_;	/* optional element of type ns1:CanModifyData */
-public:
-	int soap_type() const { return 2272; } /* = unique id SOAP_TYPE___ns1__CanModifyData */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DeleteData
-#define SOAP_TYPE___ns1__DeleteData (2276)
-/* Operation wrapper: */
-struct __ns1__DeleteData
-{
-public:
-	ns1__DeleteData *ns1__DeleteData_;	/* optional element of type ns1:DeleteData */
-public:
-	int soap_type() const { return 2276; } /* = unique id SOAP_TYPE___ns1__DeleteData */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__CanDeleteData
-#define SOAP_TYPE___ns1__CanDeleteData (2280)
-/* Operation wrapper: */
-struct __ns1__CanDeleteData
-{
-public:
-	ns1__CanDeleteData *ns1__CanDeleteData_;	/* optional element of type ns1:CanDeleteData */
-public:
-	int soap_type() const { return 2280; } /* = unique id SOAP_TYPE___ns1__CanDeleteData */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetData
-#define SOAP_TYPE___ns1__GetData (2284)
-/* Operation wrapper: */
-struct __ns1__GetData
-{
-public:
-	ns1__GetData *ns1__GetData_;	/* optional element of type ns1:GetData */
-public:
-	int soap_type() const { return 2284; } /* = unique id SOAP_TYPE___ns1__GetData */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetDataLimit
-#define SOAP_TYPE___ns1__GetDataLimit (2288)
-/* Operation wrapper: */
-struct __ns1__GetDataLimit
-{
-public:
-	ns1__GetDataLimit *ns1__GetDataLimit_;	/* optional element of type ns1:GetDataLimit */
-public:
-	int soap_type() const { return 2288; } /* = unique id SOAP_TYPE___ns1__GetDataLimit */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetDataByIdForSecurity
-#define SOAP_TYPE___ns1__GetDataByIdForSecurity (2292)
-/* Operation wrapper: */
-struct __ns1__GetDataByIdForSecurity
-{
-public:
-	ns1__GetDataByIdForSecurity *ns1__GetDataByIdForSecurity_;	/* optional element of type ns1:GetDataByIdForSecurity */
-public:
-	int soap_type() const { return 2292; } /* = unique id SOAP_TYPE___ns1__GetDataByIdForSecurity */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetDataById
-#define SOAP_TYPE___ns1__GetDataById (2296)
-/* Operation wrapper: */
-struct __ns1__GetDataById
-{
-public:
-	ns1__GetDataById *ns1__GetDataById_;	/* optional element of type ns1:GetDataById */
-public:
-	int soap_type() const { return 2296; } /* = unique id SOAP_TYPE___ns1__GetDataById */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetDataCountWithoutPermission
-#define SOAP_TYPE___ns1__GetDataCountWithoutPermission (2300)
-/* Operation wrapper: */
-struct __ns1__GetDataCountWithoutPermission
-{
-public:
-	ns1__GetDataCountWithoutPermission *ns1__GetDataCountWithoutPermission_;	/* optional element of type ns1:GetDataCountWithoutPermission */
-public:
-	int soap_type() const { return 2300; } /* = unique id SOAP_TYPE___ns1__GetDataCountWithoutPermission */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetDataCountWithPermission
-#define SOAP_TYPE___ns1__GetDataCountWithPermission (2304)
-/* Operation wrapper: */
-struct __ns1__GetDataCountWithPermission
-{
-public:
-	ns1__GetDataCountWithPermission *ns1__GetDataCountWithPermission_;	/* optional element of type ns1:GetDataCountWithPermission */
-public:
-	int soap_type() const { return 2304; } /* = unique id SOAP_TYPE___ns1__GetDataCountWithPermission */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__InsertProtocol
-#define SOAP_TYPE___ns1__InsertProtocol (2308)
-/* Operation wrapper: */
-struct __ns1__InsertProtocol
-{
-public:
-	ns1__InsertProtocol *ns1__InsertProtocol_;	/* optional element of type ns1:InsertProtocol */
-public:
-	int soap_type() const { return 2308; } /* = unique id SOAP_TYPE___ns1__InsertProtocol */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__EditProtocol
-#define SOAP_TYPE___ns1__EditProtocol (2312)
-/* Operation wrapper: */
-struct __ns1__EditProtocol
-{
-public:
-	ns1__EditProtocol *ns1__EditProtocol_;	/* optional element of type ns1:EditProtocol */
-public:
-	int soap_type() const { return 2312; } /* = unique id SOAP_TYPE___ns1__EditProtocol */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__DeleteProtocol
-#define SOAP_TYPE___ns1__DeleteProtocol (2316)
-/* Operation wrapper: */
-struct __ns1__DeleteProtocol
-{
-public:
-	ns1__DeleteProtocol *ns1__DeleteProtocol_;	/* optional element of type ns1:DeleteProtocol */
-public:
-	int soap_type() const { return 2316; } /* = unique id SOAP_TYPE___ns1__DeleteProtocol */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__ShowProtocol
-#define SOAP_TYPE___ns1__ShowProtocol (2320)
-/* Operation wrapper: */
-struct __ns1__ShowProtocol
-{
-public:
-	ns1__ShowProtocol *ns1__ShowProtocol_;	/* optional element of type ns1:ShowProtocol */
-public:
-	int soap_type() const { return 2320; } /* = unique id SOAP_TYPE___ns1__ShowProtocol */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetProtocolList
-#define SOAP_TYPE___ns1__GetProtocolList (2324)
-/* Operation wrapper: */
-struct __ns1__GetProtocolList
-{
-public:
-	ns1__GetProtocolList *ns1__GetProtocolList_;	/* optional element of type ns1:GetProtocolList */
-public:
-	int soap_type() const { return 2324; } /* = unique id SOAP_TYPE___ns1__GetProtocolList */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetProtocolById
-#define SOAP_TYPE___ns1__GetProtocolById (2328)
-/* Operation wrapper: */
-struct __ns1__GetProtocolById
-{
-public:
-	ns1__GetProtocolById *ns1__GetProtocolById_;	/* optional element of type ns1:GetProtocolById */
-public:
-	int soap_type() const { return 2328; } /* = unique id SOAP_TYPE___ns1__GetProtocolById */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetProtocolByName
-#define SOAP_TYPE___ns1__GetProtocolByName (2332)
-/* Operation wrapper: */
-struct __ns1__GetProtocolByName
-{
-public:
-	ns1__GetProtocolByName *ns1__GetProtocolByName_;	/* optional element of type ns1:GetProtocolByName */
-public:
-	int soap_type() const { return 2332; } /* = unique id SOAP_TYPE___ns1__GetProtocolByName */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetProtocolByDesc
-#define SOAP_TYPE___ns1__GetProtocolByDesc (2336)
-/* Operation wrapper: */
-struct __ns1__GetProtocolByDesc
-{
-public:
-	ns1__GetProtocolByDesc *ns1__GetProtocolByDesc_;	/* optional element of type ns1:GetProtocolByDesc */
-public:
-	int soap_type() const { return 2336; } /* = unique id SOAP_TYPE___ns1__GetProtocolByDesc */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__GetProtocolByNameDesc
-#define SOAP_TYPE___ns1__GetProtocolByNameDesc (2340)
-/* Operation wrapper: */
-struct __ns1__GetProtocolByNameDesc
-{
-public:
-	ns1__GetProtocolByNameDesc *ns1__GetProtocolByNameDesc_;	/* optional element of type ns1:GetProtocolByNameDesc */
-public:
-	int soap_type() const { return 2340; } /* = unique id SOAP_TYPE___ns1__GetProtocolByNameDesc */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__CanUseProtocol
-#define SOAP_TYPE___ns1__CanUseProtocol (2344)
-/* Operation wrapper: */
-struct __ns1__CanUseProtocol
-{
-public:
-	ns1__CanUseProtocol *ns1__CanUseProtocol_;	/* optional element of type ns1:CanUseProtocol */
-public:
-	int soap_type() const { return 2344; } /* = unique id SOAP_TYPE___ns1__CanUseProtocol */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__CanAddNewYear
-#define SOAP_TYPE___ns1__CanAddNewYear (2348)
-/* Operation wrapper: */
-struct __ns1__CanAddNewYear
-{
-public:
-	ns1__CanAddNewYear *ns1__CanAddNewYear_;	/* optional element of type ns1:CanAddNewYear */
-public:
-	int soap_type() const { return 2348; } /* = unique id SOAP_TYPE___ns1__CanAddNewYear */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__CanAddNewDate
-#define SOAP_TYPE___ns1__CanAddNewDate (2352)
-/* Operation wrapper: */
-struct __ns1__CanAddNewDate
-{
-public:
-	ns1__CanAddNewDate *ns1__CanAddNewDate_;	/* optional element of type ns1:CanAddNewDate */
-public:
-	int soap_type() const { return 2352; } /* = unique id SOAP_TYPE___ns1__CanAddNewDate */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__CanInsertProtocol
-#define SOAP_TYPE___ns1__CanInsertProtocol (2356)
-/* Operation wrapper: */
-struct __ns1__CanInsertProtocol
-{
-public:
-	ns1__CanInsertProtocol *ns1__CanInsertProtocol_;	/* optional element of type ns1:CanInsertProtocol */
-public:
-	int soap_type() const { return 2356; } /* = unique id SOAP_TYPE___ns1__CanInsertProtocol */
+	int soap_type() const { return 1560; } /* = unique id SOAP_TYPE___ns1__DeleteDynorg */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__CanEditProtocol
-#define SOAP_TYPE___ns1__CanEditProtocol (2360)
+#define SOAP_TYPE___ns1__CanEditProtocol (1564)
 /* Operation wrapper: */
 struct __ns1__CanEditProtocol
 {
 public:
 	ns1__CanEditProtocol *ns1__CanEditProtocol_;	/* optional element of type ns1:CanEditProtocol */
 public:
-	int soap_type() const { return 2360; } /* = unique id SOAP_TYPE___ns1__CanEditProtocol */
+	int soap_type() const { return 1564; } /* = unique id SOAP_TYPE___ns1__CanEditProtocol */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__CanDeleteProtocol
-#define SOAP_TYPE___ns1__CanDeleteProtocol (2364)
+#define SOAP_TYPE___ns1__CanDeleteProtocol (1568)
 /* Operation wrapper: */
 struct __ns1__CanDeleteProtocol
 {
 public:
 	ns1__CanDeleteProtocol *ns1__CanDeleteProtocol_;	/* optional element of type ns1:CanDeleteProtocol */
 public:
-	int soap_type() const { return 2364; } /* = unique id SOAP_TYPE___ns1__CanDeleteProtocol */
+	int soap_type() const { return 1568; } /* = unique id SOAP_TYPE___ns1__CanDeleteProtocol */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetNewProtocolNumber
-#define SOAP_TYPE___ns1__GetNewProtocolNumber (2368)
+#define SOAP_TYPE___ns1__GetNewProtocolNumber (1572)
 /* Operation wrapper: */
 struct __ns1__GetNewProtocolNumber
 {
 public:
 	ns1__GetNewProtocolNumber *ns1__GetNewProtocolNumber_;	/* optional element of type ns1:GetNewProtocolNumber */
 public:
-	int soap_type() const { return 2368; } /* = unique id SOAP_TYPE___ns1__GetNewProtocolNumber */
+	int soap_type() const { return 1572; } /* = unique id SOAP_TYPE___ns1__GetNewProtocolNumber */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__SetTmpUSDownloadPath
-#define SOAP_TYPE___ns1__SetTmpUSDownloadPath (2372)
+#define SOAP_TYPE___ns1__SetTmpUSDownloadPath (1576)
 /* Operation wrapper: */
 struct __ns1__SetTmpUSDownloadPath
 {
 public:
 	ns1__SetTmpUSDownloadPath *ns1__SetTmpUSDownloadPath_;	/* optional element of type ns1:SetTmpUSDownloadPath */
 public:
-	int soap_type() const { return 2372; } /* = unique id SOAP_TYPE___ns1__SetTmpUSDownloadPath */
+	int soap_type() const { return 1576; } /* = unique id SOAP_TYPE___ns1__SetTmpUSDownloadPath */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__SetTmpUSUploadPath
-#define SOAP_TYPE___ns1__SetTmpUSUploadPath (2376)
+#define SOAP_TYPE___ns1__SetTmpUSUploadPath (1580)
 /* Operation wrapper: */
 struct __ns1__SetTmpUSUploadPath
 {
 public:
 	ns1__SetTmpUSUploadPath *ns1__SetTmpUSUploadPath_;	/* optional element of type ns1:SetTmpUSUploadPath */
 public:
-	int soap_type() const { return 2376; } /* = unique id SOAP_TYPE___ns1__SetTmpUSUploadPath */
+	int soap_type() const { return 1580; } /* = unique id SOAP_TYPE___ns1__SetTmpUSUploadPath */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__UploadUSEndFile
-#define SOAP_TYPE___ns1__UploadUSEndFile (2380)
+#define SOAP_TYPE___ns1__UploadUSEndFile (1584)
 /* Operation wrapper: */
 struct __ns1__UploadUSEndFile
 {
 public:
 	ns1__UploadUSEndFile *ns1__UploadUSEndFile_;	/* optional element of type ns1:UploadUSEndFile */
 public:
-	int soap_type() const { return 2380; } /* = unique id SOAP_TYPE___ns1__UploadUSEndFile */
+	int soap_type() const { return 1584; } /* = unique id SOAP_TYPE___ns1__UploadUSEndFile */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__UploadUSEndFileWithUser
-#define SOAP_TYPE___ns1__UploadUSEndFileWithUser (2384)
+#define SOAP_TYPE___ns1__UploadUSEndFileWithUser (1588)
 /* Operation wrapper: */
 struct __ns1__UploadUSEndFileWithUser
 {
 public:
 	ns1__UploadUSEndFileWithUser *ns1__UploadUSEndFileWithUser_;	/* optional element of type ns1:UploadUSEndFileWithUser */
 public:
-	int soap_type() const { return 2384; } /* = unique id SOAP_TYPE___ns1__UploadUSEndFileWithUser */
+	int soap_type() const { return 1588; } /* = unique id SOAP_TYPE___ns1__UploadUSEndFileWithUser */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__UploadUSSendChunk
-#define SOAP_TYPE___ns1__UploadUSSendChunk (2388)
+#define SOAP_TYPE___ns1__UploadUSSendChunk (1592)
 /* Operation wrapper: */
 struct __ns1__UploadUSSendChunk
 {
 public:
 	ns1__UploadUSSendChunk *ns1__UploadUSSendChunk_;	/* optional element of type ns1:UploadUSSendChunk */
 public:
-	int soap_type() const { return 2388; } /* = unique id SOAP_TYPE___ns1__UploadUSSendChunk */
+	int soap_type() const { return 1592; } /* = unique id SOAP_TYPE___ns1__UploadUSSendChunk */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DownloadUSGetNext
-#define SOAP_TYPE___ns1__DownloadUSGetNext (2392)
+#define SOAP_TYPE___ns1__DownloadUSGetNext (1596)
 /* Operation wrapper: */
 struct __ns1__DownloadUSGetNext
 {
 public:
 	ns1__DownloadUSGetNext *ns1__DownloadUSGetNext_;	/* optional element of type ns1:DownloadUSGetNext */
 public:
-	int soap_type() const { return 2392; } /* = unique id SOAP_TYPE___ns1__DownloadUSGetNext */
+	int soap_type() const { return 1596; } /* = unique id SOAP_TYPE___ns1__DownloadUSGetNext */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DownloadUSGetChunk
-#define SOAP_TYPE___ns1__DownloadUSGetChunk (2396)
+#define SOAP_TYPE___ns1__DownloadUSGetChunk (1600)
 /* Operation wrapper: */
 struct __ns1__DownloadUSGetChunk
 {
 public:
 	ns1__DownloadUSGetChunk *ns1__DownloadUSGetChunk_;	/* optional element of type ns1:DownloadUSGetChunk */
 public:
-	int soap_type() const { return 2396; } /* = unique id SOAP_TYPE___ns1__DownloadUSGetChunk */
+	int soap_type() const { return 1600; } /* = unique id SOAP_TYPE___ns1__DownloadUSGetChunk */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DownloadUSFile
-#define SOAP_TYPE___ns1__DownloadUSFile (2400)
+#define SOAP_TYPE___ns1__DownloadUSFile (1604)
 /* Operation wrapper: */
 struct __ns1__DownloadUSFile
 {
 public:
 	ns1__DownloadUSFile *ns1__DownloadUSFile_;	/* optional element of type ns1:DownloadUSFile */
 public:
-	int soap_type() const { return 2400; } /* = unique id SOAP_TYPE___ns1__DownloadUSFile */
+	int soap_type() const { return 1604; } /* = unique id SOAP_TYPE___ns1__DownloadUSFile */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetDataUSFileDetail
-#define SOAP_TYPE___ns1__GetDataUSFileDetail (2404)
+#define SOAP_TYPE___ns1__GetDataUSFileDetail (1608)
 /* Operation wrapper: */
 struct __ns1__GetDataUSFileDetail
 {
 public:
 	ns1__GetDataUSFileDetail *ns1__GetDataUSFileDetail_;	/* optional element of type ns1:GetDataUSFileDetail */
 public:
-	int soap_type() const { return 2404; } /* = unique id SOAP_TYPE___ns1__GetDataUSFileDetail */
+	int soap_type() const { return 1608; } /* = unique id SOAP_TYPE___ns1__GetDataUSFileDetail */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetDataUSFileList
-#define SOAP_TYPE___ns1__GetDataUSFileList (2408)
+#define SOAP_TYPE___ns1__GetDataUSFileList (1612)
 /* Operation wrapper: */
 struct __ns1__GetDataUSFileList
 {
 public:
 	ns1__GetDataUSFileList *ns1__GetDataUSFileList_;	/* optional element of type ns1:GetDataUSFileList */
 public:
-	int soap_type() const { return 2408; } /* = unique id SOAP_TYPE___ns1__GetDataUSFileList */
+	int soap_type() const { return 1612; } /* = unique id SOAP_TYPE___ns1__GetDataUSFileList */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetDataUSFileListByUsername
-#define SOAP_TYPE___ns1__GetDataUSFileListByUsername (2412)
+#define SOAP_TYPE___ns1__GetDataUSFileListByUsername (1616)
 /* Operation wrapper: */
 struct __ns1__GetDataUSFileListByUsername
 {
 public:
 	ns1__GetDataUSFileListByUsername *ns1__GetDataUSFileListByUsername_;	/* optional element of type ns1:GetDataUSFileListByUsername */
 public:
-	int soap_type() const { return 2412; } /* = unique id SOAP_TYPE___ns1__GetDataUSFileListByUsername */
-};
-#endif
-
-#ifndef SOAP_TYPE___ns1__InsertUSFile
-#define SOAP_TYPE___ns1__InsertUSFile (2416)
-/* Operation wrapper: */
-struct __ns1__InsertUSFile
-{
-public:
-	ns1__InsertUSFile *ns1__InsertUSFile_;	/* optional element of type ns1:InsertUSFile */
-public:
-	int soap_type() const { return 2416; } /* = unique id SOAP_TYPE___ns1__InsertUSFile */
+	int soap_type() const { return 1616; } /* = unique id SOAP_TYPE___ns1__GetDataUSFileListByUsername */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__InsertUSFileWithUser
-#define SOAP_TYPE___ns1__InsertUSFileWithUser (2420)
+#define SOAP_TYPE___ns1__InsertUSFileWithUser (1620)
 /* Operation wrapper: */
 struct __ns1__InsertUSFileWithUser
 {
 public:
 	ns1__InsertUSFileWithUser *ns1__InsertUSFileWithUser_;	/* optional element of type ns1:InsertUSFileWithUser */
 public:
-	int soap_type() const { return 2420; } /* = unique id SOAP_TYPE___ns1__InsertUSFileWithUser */
+	int soap_type() const { return 1620; } /* = unique id SOAP_TYPE___ns1__InsertUSFileWithUser */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DeleteUSFileById
-#define SOAP_TYPE___ns1__DeleteUSFileById (2424)
+#define SOAP_TYPE___ns1__DeleteUSFileById (1624)
 /* Operation wrapper: */
 struct __ns1__DeleteUSFileById
 {
 public:
 	ns1__DeleteUSFileById *ns1__DeleteUSFileById_;	/* optional element of type ns1:DeleteUSFileById */
 public:
-	int soap_type() const { return 2424; } /* = unique id SOAP_TYPE___ns1__DeleteUSFileById */
+	int soap_type() const { return 1624; } /* = unique id SOAP_TYPE___ns1__DeleteUSFileById */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DeleteUSFileByCode
-#define SOAP_TYPE___ns1__DeleteUSFileByCode (2428)
+#define SOAP_TYPE___ns1__DeleteUSFileByCode (1628)
 /* Operation wrapper: */
 struct __ns1__DeleteUSFileByCode
 {
 public:
 	ns1__DeleteUSFileByCode *ns1__DeleteUSFileByCode_;	/* optional element of type ns1:DeleteUSFileByCode */
 public:
-	int soap_type() const { return 2428; } /* = unique id SOAP_TYPE___ns1__DeleteUSFileByCode */
+	int soap_type() const { return 1628; } /* = unique id SOAP_TYPE___ns1__DeleteUSFileByCode */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__SetTmpWFDownloadPath
-#define SOAP_TYPE___ns1__SetTmpWFDownloadPath (2432)
+#define SOAP_TYPE___ns1__SetTmpWFDownloadPath (1632)
 /* Operation wrapper: */
 struct __ns1__SetTmpWFDownloadPath
 {
 public:
 	ns1__SetTmpWFDownloadPath *ns1__SetTmpWFDownloadPath_;	/* optional element of type ns1:SetTmpWFDownloadPath */
 public:
-	int soap_type() const { return 2432; } /* = unique id SOAP_TYPE___ns1__SetTmpWFDownloadPath */
+	int soap_type() const { return 1632; } /* = unique id SOAP_TYPE___ns1__SetTmpWFDownloadPath */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__SetTmpWFUploadPath
-#define SOAP_TYPE___ns1__SetTmpWFUploadPath (2436)
+#define SOAP_TYPE___ns1__SetTmpWFUploadPath (1636)
 /* Operation wrapper: */
 struct __ns1__SetTmpWFUploadPath
 {
 public:
 	ns1__SetTmpWFUploadPath *ns1__SetTmpWFUploadPath_;	/* optional element of type ns1:SetTmpWFUploadPath */
 public:
-	int soap_type() const { return 2436; } /* = unique id SOAP_TYPE___ns1__SetTmpWFUploadPath */
+	int soap_type() const { return 1636; } /* = unique id SOAP_TYPE___ns1__SetTmpWFUploadPath */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__UploadWFEndFile
-#define SOAP_TYPE___ns1__UploadWFEndFile (2440)
+#define SOAP_TYPE___ns1__UploadWFEndFile (1640)
 /* Operation wrapper: */
 struct __ns1__UploadWFEndFile
 {
 public:
 	ns1__UploadWFEndFile *ns1__UploadWFEndFile_;	/* optional element of type ns1:UploadWFEndFile */
 public:
-	int soap_type() const { return 2440; } /* = unique id SOAP_TYPE___ns1__UploadWFEndFile */
+	int soap_type() const { return 1640; } /* = unique id SOAP_TYPE___ns1__UploadWFEndFile */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__UploadWFSendChunk
-#define SOAP_TYPE___ns1__UploadWFSendChunk (2444)
+#define SOAP_TYPE___ns1__UploadWFSendChunk (1644)
 /* Operation wrapper: */
 struct __ns1__UploadWFSendChunk
 {
 public:
 	ns1__UploadWFSendChunk *ns1__UploadWFSendChunk_;	/* optional element of type ns1:UploadWFSendChunk */
 public:
-	int soap_type() const { return 2444; } /* = unique id SOAP_TYPE___ns1__UploadWFSendChunk */
+	int soap_type() const { return 1644; } /* = unique id SOAP_TYPE___ns1__UploadWFSendChunk */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DownloadWFEndFile
-#define SOAP_TYPE___ns1__DownloadWFEndFile (2448)
+#define SOAP_TYPE___ns1__DownloadWFEndFile (1648)
 /* Operation wrapper: */
 struct __ns1__DownloadWFEndFile
 {
 public:
 	ns1__DownloadWFEndFile *ns1__DownloadWFEndFile_;	/* optional element of type ns1:DownloadWFEndFile */
 public:
-	int soap_type() const { return 2448; } /* = unique id SOAP_TYPE___ns1__DownloadWFEndFile */
+	int soap_type() const { return 1648; } /* = unique id SOAP_TYPE___ns1__DownloadWFEndFile */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DownloadWFFile
-#define SOAP_TYPE___ns1__DownloadWFFile (2452)
+#define SOAP_TYPE___ns1__DownloadWFFile (1652)
 /* Operation wrapper: */
 struct __ns1__DownloadWFFile
 {
 public:
 	ns1__DownloadWFFile *ns1__DownloadWFFile_;	/* optional element of type ns1:DownloadWFFile */
 public:
-	int soap_type() const { return 2452; } /* = unique id SOAP_TYPE___ns1__DownloadWFFile */
+	int soap_type() const { return 1652; } /* = unique id SOAP_TYPE___ns1__DownloadWFFile */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetDataWFFileDetail
-#define SOAP_TYPE___ns1__GetDataWFFileDetail (2456)
+#define SOAP_TYPE___ns1__GetDataWFFileDetail (1656)
 /* Operation wrapper: */
 struct __ns1__GetDataWFFileDetail
 {
 public:
 	ns1__GetDataWFFileDetail *ns1__GetDataWFFileDetail_;	/* optional element of type ns1:GetDataWFFileDetail */
 public:
-	int soap_type() const { return 2456; } /* = unique id SOAP_TYPE___ns1__GetDataWFFileDetail */
+	int soap_type() const { return 1656; } /* = unique id SOAP_TYPE___ns1__GetDataWFFileDetail */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetDataWFFileList
-#define SOAP_TYPE___ns1__GetDataWFFileList (2460)
+#define SOAP_TYPE___ns1__GetDataWFFileList (1660)
 /* Operation wrapper: */
 struct __ns1__GetDataWFFileList
 {
 public:
 	ns1__GetDataWFFileList *ns1__GetDataWFFileList_;	/* optional element of type ns1:GetDataWFFileList */
 public:
-	int soap_type() const { return 2460; } /* = unique id SOAP_TYPE___ns1__GetDataWFFileList */
+	int soap_type() const { return 1660; } /* = unique id SOAP_TYPE___ns1__GetDataWFFileList */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__InsertWFFile
-#define SOAP_TYPE___ns1__InsertWFFile (2464)
+#define SOAP_TYPE___ns1__InsertWFFile (1664)
 /* Operation wrapper: */
 struct __ns1__InsertWFFile
 {
 public:
 	ns1__InsertWFFile *ns1__InsertWFFile_;	/* optional element of type ns1:InsertWFFile */
 public:
-	int soap_type() const { return 2464; } /* = unique id SOAP_TYPE___ns1__InsertWFFile */
+	int soap_type() const { return 1664; } /* = unique id SOAP_TYPE___ns1__InsertWFFile */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DeleteWFFileById
-#define SOAP_TYPE___ns1__DeleteWFFileById (2468)
+#define SOAP_TYPE___ns1__DeleteWFFileById (1668)
 /* Operation wrapper: */
 struct __ns1__DeleteWFFileById
 {
 public:
 	ns1__DeleteWFFileById *ns1__DeleteWFFileById_;	/* optional element of type ns1:DeleteWFFileById */
 public:
-	int soap_type() const { return 2468; } /* = unique id SOAP_TYPE___ns1__DeleteWFFileById */
+	int soap_type() const { return 1668; } /* = unique id SOAP_TYPE___ns1__DeleteWFFileById */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DeleteWFFileByCode
-#define SOAP_TYPE___ns1__DeleteWFFileByCode (2472)
+#define SOAP_TYPE___ns1__DeleteWFFileByCode (1672)
 /* Operation wrapper: */
 struct __ns1__DeleteWFFileByCode
 {
 public:
 	ns1__DeleteWFFileByCode *ns1__DeleteWFFileByCode_;	/* optional element of type ns1:DeleteWFFileByCode */
 public:
-	int soap_type() const { return 2472; } /* = unique id SOAP_TYPE___ns1__DeleteWFFileByCode */
+	int soap_type() const { return 1672; } /* = unique id SOAP_TYPE___ns1__DeleteWFFileByCode */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__TestLettura
-#define SOAP_TYPE___ns1__TestLettura (2476)
+#define SOAP_TYPE___ns1__TestLettura (1676)
 /* Operation wrapper: */
 struct __ns1__TestLettura
 {
 public:
 	ns1__TestLettura *ns1__TestLettura_;	/* optional element of type ns1:TestLettura */
 public:
-	int soap_type() const { return 2476; } /* = unique id SOAP_TYPE___ns1__TestLettura */
+	int soap_type() const { return 1676; } /* = unique id SOAP_TYPE___ns1__TestLettura */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__TestScritturaLettura
-#define SOAP_TYPE___ns1__TestScritturaLettura (2480)
+#define SOAP_TYPE___ns1__TestScritturaLettura (1680)
 /* Operation wrapper: */
 struct __ns1__TestScritturaLettura
 {
 public:
 	ns1__TestScritturaLettura *ns1__TestScritturaLettura_;	/* optional element of type ns1:TestScritturaLettura */
 public:
-	int soap_type() const { return 2480; } /* = unique id SOAP_TYPE___ns1__TestScritturaLettura */
+	int soap_type() const { return 1680; } /* = unique id SOAP_TYPE___ns1__TestScritturaLettura */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__SaveChars
-#define SOAP_TYPE___ns1__SaveChars (2484)
+#define SOAP_TYPE___ns1__SaveChars (1684)
 /* Operation wrapper: */
 struct __ns1__SaveChars
 {
 public:
 	ns1__SaveChars *ns1__SaveChars_;	/* optional element of type ns1:SaveChars */
 public:
-	int soap_type() const { return 2484; } /* = unique id SOAP_TYPE___ns1__SaveChars */
+	int soap_type() const { return 1684; } /* = unique id SOAP_TYPE___ns1__SaveChars */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__AddUser
-#define SOAP_TYPE___ns1__AddUser (2488)
+#define SOAP_TYPE___ns1__AddUser (1688)
 /* Operation wrapper: */
 struct __ns1__AddUser
 {
 public:
 	ns1__AddUser *ns1__AddUser_;	/* optional element of type ns1:AddUser */
 public:
-	int soap_type() const { return 2488; } /* = unique id SOAP_TYPE___ns1__AddUser */
+	int soap_type() const { return 1688; } /* = unique id SOAP_TYPE___ns1__AddUser */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__ModUser
-#define SOAP_TYPE___ns1__ModUser (2492)
+#define SOAP_TYPE___ns1__ModUser (1692)
 /* Operation wrapper: */
 struct __ns1__ModUser
 {
 public:
 	ns1__ModUser *ns1__ModUser_;	/* optional element of type ns1:ModUser */
 public:
-	int soap_type() const { return 2492; } /* = unique id SOAP_TYPE___ns1__ModUser */
+	int soap_type() const { return 1692; } /* = unique id SOAP_TYPE___ns1__ModUser */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__VerifyExpression
-#define SOAP_TYPE___ns1__VerifyExpression (2496)
+#define SOAP_TYPE___ns1__VerifyExpression (1696)
 /* Operation wrapper: */
 struct __ns1__VerifyExpression
 {
 public:
 	ns1__VerifyExpression *ns1__VerifyExpression_;	/* optional element of type ns1:VerifyExpression */
 public:
-	int soap_type() const { return 2496; } /* = unique id SOAP_TYPE___ns1__VerifyExpression */
+	int soap_type() const { return 1696; } /* = unique id SOAP_TYPE___ns1__VerifyExpression */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__AddExpression
-#define SOAP_TYPE___ns1__AddExpression (2500)
+#define SOAP_TYPE___ns1__AddExpression (1700)
 /* Operation wrapper: */
 struct __ns1__AddExpression
 {
 public:
 	ns1__AddExpression *ns1__AddExpression_;	/* optional element of type ns1:AddExpression */
 public:
-	int soap_type() const { return 2500; } /* = unique id SOAP_TYPE___ns1__AddExpression */
+	int soap_type() const { return 1700; } /* = unique id SOAP_TYPE___ns1__AddExpression */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__ModExpression
-#define SOAP_TYPE___ns1__ModExpression (2504)
+#define SOAP_TYPE___ns1__ModExpression (1704)
 /* Operation wrapper: */
 struct __ns1__ModExpression
 {
 public:
 	ns1__ModExpression *ns1__ModExpression_;	/* optional element of type ns1:ModExpression */
 public:
-	int soap_type() const { return 2504; } /* = unique id SOAP_TYPE___ns1__ModExpression */
+	int soap_type() const { return 1704; } /* = unique id SOAP_TYPE___ns1__ModExpression */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DelExpression
-#define SOAP_TYPE___ns1__DelExpression (2508)
+#define SOAP_TYPE___ns1__DelExpression (1708)
 /* Operation wrapper: */
 struct __ns1__DelExpression
 {
 public:
 	ns1__DelExpression *ns1__DelExpression_;	/* optional element of type ns1:DelExpression */
 public:
-	int soap_type() const { return 2508; } /* = unique id SOAP_TYPE___ns1__DelExpression */
+	int soap_type() const { return 1708; } /* = unique id SOAP_TYPE___ns1__DelExpression */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetExpression
-#define SOAP_TYPE___ns1__GetExpression (2512)
+#define SOAP_TYPE___ns1__GetExpression (1712)
 /* Operation wrapper: */
 struct __ns1__GetExpression
 {
 public:
 	ns1__GetExpression *ns1__GetExpression_;	/* optional element of type ns1:GetExpression */
 public:
-	int soap_type() const { return 2512; } /* = unique id SOAP_TYPE___ns1__GetExpression */
+	int soap_type() const { return 1712; } /* = unique id SOAP_TYPE___ns1__GetExpression */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetAllContainerExpressions
-#define SOAP_TYPE___ns1__GetAllContainerExpressions (2516)
+#define SOAP_TYPE___ns1__GetAllContainerExpressions (1716)
 /* Operation wrapper: */
 struct __ns1__GetAllContainerExpressions
 {
 public:
 	ns1__GetAllContainerExpressions *ns1__GetAllContainerExpressions_;	/* optional element of type ns1:GetAllContainerExpressions */
 public:
-	int soap_type() const { return 2516; } /* = unique id SOAP_TYPE___ns1__GetAllContainerExpressions */
+	int soap_type() const { return 1716; } /* = unique id SOAP_TYPE___ns1__GetAllContainerExpressions */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetExpressionValue
-#define SOAP_TYPE___ns1__GetExpressionValue (2520)
+#define SOAP_TYPE___ns1__GetExpressionValue (1720)
 /* Operation wrapper: */
 struct __ns1__GetExpressionValue
 {
 public:
 	ns1__GetExpressionValue *ns1__GetExpressionValue_;	/* optional element of type ns1:GetExpressionValue */
 public:
-	int soap_type() const { return 2520; } /* = unique id SOAP_TYPE___ns1__GetExpressionValue */
+	int soap_type() const { return 1720; } /* = unique id SOAP_TYPE___ns1__GetExpressionValue */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__SetTmpTPDownloadPath
-#define SOAP_TYPE___ns1__SetTmpTPDownloadPath (2524)
+#define SOAP_TYPE___ns1__SetTmpTPDownloadPath (1724)
 /* Operation wrapper: */
 struct __ns1__SetTmpTPDownloadPath
 {
 public:
 	ns1__SetTmpTPDownloadPath *ns1__SetTmpTPDownloadPath_;	/* optional element of type ns1:SetTmpTPDownloadPath */
 public:
-	int soap_type() const { return 2524; } /* = unique id SOAP_TYPE___ns1__SetTmpTPDownloadPath */
+	int soap_type() const { return 1724; } /* = unique id SOAP_TYPE___ns1__SetTmpTPDownloadPath */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__SetTmpTPUploadPath
-#define SOAP_TYPE___ns1__SetTmpTPUploadPath (2528)
+#define SOAP_TYPE___ns1__SetTmpTPUploadPath (1728)
 /* Operation wrapper: */
 struct __ns1__SetTmpTPUploadPath
 {
 public:
 	ns1__SetTmpTPUploadPath *ns1__SetTmpTPUploadPath_;	/* optional element of type ns1:SetTmpTPUploadPath */
 public:
-	int soap_type() const { return 2528; } /* = unique id SOAP_TYPE___ns1__SetTmpTPUploadPath */
+	int soap_type() const { return 1728; } /* = unique id SOAP_TYPE___ns1__SetTmpTPUploadPath */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__UploadTPEndFile
-#define SOAP_TYPE___ns1__UploadTPEndFile (2532)
+#define SOAP_TYPE___ns1__UploadTPEndFile (1732)
 /* Operation wrapper: */
 struct __ns1__UploadTPEndFile
 {
 public:
 	ns1__UploadTPEndFile *ns1__UploadTPEndFile_;	/* optional element of type ns1:UploadTPEndFile */
 public:
-	int soap_type() const { return 2532; } /* = unique id SOAP_TYPE___ns1__UploadTPEndFile */
+	int soap_type() const { return 1732; } /* = unique id SOAP_TYPE___ns1__UploadTPEndFile */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__UploadTPSendChunk
-#define SOAP_TYPE___ns1__UploadTPSendChunk (2536)
+#define SOAP_TYPE___ns1__UploadTPSendChunk (1736)
 /* Operation wrapper: */
 struct __ns1__UploadTPSendChunk
 {
 public:
 	ns1__UploadTPSendChunk *ns1__UploadTPSendChunk_;	/* optional element of type ns1:UploadTPSendChunk */
 public:
-	int soap_type() const { return 2536; } /* = unique id SOAP_TYPE___ns1__UploadTPSendChunk */
+	int soap_type() const { return 1736; } /* = unique id SOAP_TYPE___ns1__UploadTPSendChunk */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DownloadTPEndFile
-#define SOAP_TYPE___ns1__DownloadTPEndFile (2540)
+#define SOAP_TYPE___ns1__DownloadTPEndFile (1740)
 /* Operation wrapper: */
 struct __ns1__DownloadTPEndFile
 {
 public:
 	ns1__DownloadTPEndFile *ns1__DownloadTPEndFile_;	/* optional element of type ns1:DownloadTPEndFile */
 public:
-	int soap_type() const { return 2540; } /* = unique id SOAP_TYPE___ns1__DownloadTPEndFile */
+	int soap_type() const { return 1740; } /* = unique id SOAP_TYPE___ns1__DownloadTPEndFile */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DownloadTPFile
-#define SOAP_TYPE___ns1__DownloadTPFile (2544)
+#define SOAP_TYPE___ns1__DownloadTPFile (1744)
 /* Operation wrapper: */
 struct __ns1__DownloadTPFile
 {
 public:
 	ns1__DownloadTPFile *ns1__DownloadTPFile_;	/* optional element of type ns1:DownloadTPFile */
 public:
-	int soap_type() const { return 2544; } /* = unique id SOAP_TYPE___ns1__DownloadTPFile */
+	int soap_type() const { return 1744; } /* = unique id SOAP_TYPE___ns1__DownloadTPFile */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetDataTPFileDetail
-#define SOAP_TYPE___ns1__GetDataTPFileDetail (2548)
+#define SOAP_TYPE___ns1__GetDataTPFileDetail (1748)
 /* Operation wrapper: */
 struct __ns1__GetDataTPFileDetail
 {
 public:
 	ns1__GetDataTPFileDetail *ns1__GetDataTPFileDetail_;	/* optional element of type ns1:GetDataTPFileDetail */
 public:
-	int soap_type() const { return 2548; } /* = unique id SOAP_TYPE___ns1__GetDataTPFileDetail */
+	int soap_type() const { return 1748; } /* = unique id SOAP_TYPE___ns1__GetDataTPFileDetail */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetDataTPFileList
-#define SOAP_TYPE___ns1__GetDataTPFileList (2552)
+#define SOAP_TYPE___ns1__GetDataTPFileList (1752)
 /* Operation wrapper: */
 struct __ns1__GetDataTPFileList
 {
 public:
 	ns1__GetDataTPFileList *ns1__GetDataTPFileList_;	/* optional element of type ns1:GetDataTPFileList */
 public:
-	int soap_type() const { return 2552; } /* = unique id SOAP_TYPE___ns1__GetDataTPFileList */
+	int soap_type() const { return 1752; } /* = unique id SOAP_TYPE___ns1__GetDataTPFileList */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__InsertTPFile
-#define SOAP_TYPE___ns1__InsertTPFile (2556)
+#define SOAP_TYPE___ns1__InsertTPFile (1756)
 /* Operation wrapper: */
 struct __ns1__InsertTPFile
 {
 public:
 	ns1__InsertTPFile *ns1__InsertTPFile_;	/* optional element of type ns1:InsertTPFile */
 public:
-	int soap_type() const { return 2556; } /* = unique id SOAP_TYPE___ns1__InsertTPFile */
+	int soap_type() const { return 1756; } /* = unique id SOAP_TYPE___ns1__InsertTPFile */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DeleteTPFileById
-#define SOAP_TYPE___ns1__DeleteTPFileById (2560)
+#define SOAP_TYPE___ns1__DeleteTPFileById (1760)
 /* Operation wrapper: */
 struct __ns1__DeleteTPFileById
 {
 public:
 	ns1__DeleteTPFileById *ns1__DeleteTPFileById_;	/* optional element of type ns1:DeleteTPFileById */
 public:
-	int soap_type() const { return 2560; } /* = unique id SOAP_TYPE___ns1__DeleteTPFileById */
+	int soap_type() const { return 1760; } /* = unique id SOAP_TYPE___ns1__DeleteTPFileById */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DeleteTPFileByCode
-#define SOAP_TYPE___ns1__DeleteTPFileByCode (2564)
+#define SOAP_TYPE___ns1__DeleteTPFileByCode (1764)
 /* Operation wrapper: */
 struct __ns1__DeleteTPFileByCode
 {
 public:
 	ns1__DeleteTPFileByCode *ns1__DeleteTPFileByCode_;	/* optional element of type ns1:DeleteTPFileByCode */
 public:
-	int soap_type() const { return 2564; } /* = unique id SOAP_TYPE___ns1__DeleteTPFileByCode */
+	int soap_type() const { return 1764; } /* = unique id SOAP_TYPE___ns1__DeleteTPFileByCode */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetDataTPFileListByUsername
-#define SOAP_TYPE___ns1__GetDataTPFileListByUsername (2568)
+#define SOAP_TYPE___ns1__GetDataTPFileListByUsername (1768)
 /* Operation wrapper: */
 struct __ns1__GetDataTPFileListByUsername
 {
 public:
 	ns1__GetDataTPFileListByUsername *ns1__GetDataTPFileListByUsername_;	/* optional element of type ns1:GetDataTPFileListByUsername */
 public:
-	int soap_type() const { return 2568; } /* = unique id SOAP_TYPE___ns1__GetDataTPFileListByUsername */
+	int soap_type() const { return 1768; } /* = unique id SOAP_TYPE___ns1__GetDataTPFileListByUsername */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetDataTPFileListByContainer
-#define SOAP_TYPE___ns1__GetDataTPFileListByContainer (2572)
+#define SOAP_TYPE___ns1__GetDataTPFileListByContainer (1772)
 /* Operation wrapper: */
 struct __ns1__GetDataTPFileListByContainer
 {
 public:
 	ns1__GetDataTPFileListByContainer *ns1__GetDataTPFileListByContainer_;	/* optional element of type ns1:GetDataTPFileListByContainer */
 public:
-	int soap_type() const { return 2572; } /* = unique id SOAP_TYPE___ns1__GetDataTPFileListByContainer */
+	int soap_type() const { return 1772; } /* = unique id SOAP_TYPE___ns1__GetDataTPFileListByContainer */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetDataTPFileListByDocument
-#define SOAP_TYPE___ns1__GetDataTPFileListByDocument (2576)
+#define SOAP_TYPE___ns1__GetDataTPFileListByDocument (1776)
 /* Operation wrapper: */
 struct __ns1__GetDataTPFileListByDocument
 {
 public:
 	ns1__GetDataTPFileListByDocument *ns1__GetDataTPFileListByDocument_;	/* optional element of type ns1:GetDataTPFileListByDocument */
 public:
-	int soap_type() const { return 2576; } /* = unique id SOAP_TYPE___ns1__GetDataTPFileListByDocument */
+	int soap_type() const { return 1776; } /* = unique id SOAP_TYPE___ns1__GetDataTPFileListByDocument */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetDataTPFileListByName
-#define SOAP_TYPE___ns1__GetDataTPFileListByName (2580)
+#define SOAP_TYPE___ns1__GetDataTPFileListByName (1780)
 /* Operation wrapper: */
 struct __ns1__GetDataTPFileListByName
 {
 public:
 	ns1__GetDataTPFileListByName *ns1__GetDataTPFileListByName_;	/* optional element of type ns1:GetDataTPFileListByName */
 public:
-	int soap_type() const { return 2580; } /* = unique id SOAP_TYPE___ns1__GetDataTPFileListByName */
+	int soap_type() const { return 1780; } /* = unique id SOAP_TYPE___ns1__GetDataTPFileListByName */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetDefaultObjActList
-#define SOAP_TYPE___ns1__GetDefaultObjActList (2584)
+#define SOAP_TYPE___ns1__GetDefaultObjActList (1784)
 /* Operation wrapper: */
 struct __ns1__GetDefaultObjActList
 {
 public:
 	ns1__GetDefaultObjActList *ns1__GetDefaultObjActList_;	/* optional element of type ns1:GetDefaultObjActList */
 public:
-	int soap_type() const { return 2584; } /* = unique id SOAP_TYPE___ns1__GetDefaultObjActList */
+	int soap_type() const { return 1784; } /* = unique id SOAP_TYPE___ns1__GetDefaultObjActList */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__EndPermissionSettings
-#define SOAP_TYPE___ns1__EndPermissionSettings (2588)
+#define SOAP_TYPE___ns1__EndPermissionSettings (1788)
 /* Operation wrapper: */
 struct __ns1__EndPermissionSettings
 {
 public:
 	ns1__EndPermissionSettings *ns1__EndPermissionSettings_;	/* optional element of type ns1:EndPermissionSettings */
 public:
-	int soap_type() const { return 2588; } /* = unique id SOAP_TYPE___ns1__EndPermissionSettings */
+	int soap_type() const { return 1788; } /* = unique id SOAP_TYPE___ns1__EndPermissionSettings */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DownloadGetChunkWA
-#define SOAP_TYPE___ns1__DownloadGetChunkWA (2592)
+#define SOAP_TYPE___ns1__DownloadGetChunkWA (1792)
 /* Operation wrapper: */
 struct __ns1__DownloadGetChunkWA
 {
 public:
 	ns1__DownloadGetChunkWA *ns1__DownloadGetChunkWA_;	/* optional element of type ns1:DownloadGetChunkWA */
 public:
-	int soap_type() const { return 2592; } /* = unique id SOAP_TYPE___ns1__DownloadGetChunkWA */
+	int soap_type() const { return 1792; } /* = unique id SOAP_TYPE___ns1__DownloadGetChunkWA */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetSchedulerTaskByTaskTypeId
-#define SOAP_TYPE___ns1__GetSchedulerTaskByTaskTypeId (2596)
+#define SOAP_TYPE___ns1__GetSchedulerTaskByTaskTypeId (1796)
 /* Operation wrapper: */
 struct __ns1__GetSchedulerTaskByTaskTypeId
 {
 public:
 	ns1__GetSchedulerTaskByTaskTypeId *ns1__GetSchedulerTaskByTaskTypeId_;	/* optional element of type ns1:GetSchedulerTaskByTaskTypeId */
 public:
-	int soap_type() const { return 2596; } /* = unique id SOAP_TYPE___ns1__GetSchedulerTaskByTaskTypeId */
+	int soap_type() const { return 1796; } /* = unique id SOAP_TYPE___ns1__GetSchedulerTaskByTaskTypeId */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetAllFilter
-#define SOAP_TYPE___ns1__GetAllFilter (2600)
+#define SOAP_TYPE___ns1__GetAllFilter (1800)
 /* Operation wrapper: */
 struct __ns1__GetAllFilter
 {
 public:
 	ns1__GetAllFilter *ns1__GetAllFilter_;	/* optional element of type ns1:GetAllFilter */
 public:
-	int soap_type() const { return 2600; } /* = unique id SOAP_TYPE___ns1__GetAllFilter */
+	int soap_type() const { return 1800; } /* = unique id SOAP_TYPE___ns1__GetAllFilter */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__CanAddDigitalSignature
-#define SOAP_TYPE___ns1__CanAddDigitalSignature (2604)
+#define SOAP_TYPE___ns1__CanAddDigitalSignature (1804)
 /* Operation wrapper: */
 struct __ns1__CanAddDigitalSignature
 {
 public:
 	ns1__CanAddDigitalSignature *ns1__CanAddDigitalSignature_;	/* optional element of type ns1:CanAddDigitalSignature */
 public:
-	int soap_type() const { return 2604; } /* = unique id SOAP_TYPE___ns1__CanAddDigitalSignature */
+	int soap_type() const { return 1804; } /* = unique id SOAP_TYPE___ns1__CanAddDigitalSignature */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetSDKTasks
-#define SOAP_TYPE___ns1__GetSDKTasks (2608)
+#define SOAP_TYPE___ns1__GetSDKTasks (1808)
 /* Operation wrapper: */
 struct __ns1__GetSDKTasks
 {
 public:
 	ns1__GetSDKTasks *ns1__GetSDKTasks_;	/* optional element of type ns1:GetSDKTasks */
 public:
-	int soap_type() const { return 2608; } /* = unique id SOAP_TYPE___ns1__GetSDKTasks */
+	int soap_type() const { return 1808; } /* = unique id SOAP_TYPE___ns1__GetSDKTasks */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetSDKTaskWatchFolder
-#define SOAP_TYPE___ns1__GetSDKTaskWatchFolder (2612)
+#define SOAP_TYPE___ns1__GetSDKTaskWatchFolder (1812)
 /* Operation wrapper: */
 struct __ns1__GetSDKTaskWatchFolder
 {
 public:
 	ns1__GetSDKTaskWatchFolder *ns1__GetSDKTaskWatchFolder_;	/* optional element of type ns1:GetSDKTaskWatchFolder */
 public:
-	int soap_type() const { return 2612; } /* = unique id SOAP_TYPE___ns1__GetSDKTaskWatchFolder */
+	int soap_type() const { return 1812; } /* = unique id SOAP_TYPE___ns1__GetSDKTaskWatchFolder */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetSDKRules
-#define SOAP_TYPE___ns1__GetSDKRules (2616)
+#define SOAP_TYPE___ns1__GetSDKRules (1816)
 /* Operation wrapper: */
 struct __ns1__GetSDKRules
 {
 public:
 	ns1__GetSDKRules *ns1__GetSDKRules_;	/* optional element of type ns1:GetSDKRules */
 public:
-	int soap_type() const { return 2616; } /* = unique id SOAP_TYPE___ns1__GetSDKRules */
+	int soap_type() const { return 1816; } /* = unique id SOAP_TYPE___ns1__GetSDKRules */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__CreateSDKTask
-#define SOAP_TYPE___ns1__CreateSDKTask (2620)
+#define SOAP_TYPE___ns1__CreateSDKTask (1820)
 /* Operation wrapper: */
 struct __ns1__CreateSDKTask
 {
 public:
 	ns1__CreateSDKTask *ns1__CreateSDKTask_;	/* optional element of type ns1:CreateSDKTask */
 public:
-	int soap_type() const { return 2620; } /* = unique id SOAP_TYPE___ns1__CreateSDKTask */
+	int soap_type() const { return 1820; } /* = unique id SOAP_TYPE___ns1__CreateSDKTask */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__ModifySDKTask
-#define SOAP_TYPE___ns1__ModifySDKTask (2624)
+#define SOAP_TYPE___ns1__ModifySDKTask (1824)
 /* Operation wrapper: */
 struct __ns1__ModifySDKTask
 {
 public:
 	ns1__ModifySDKTask *ns1__ModifySDKTask_;	/* optional element of type ns1:ModifySDKTask */
 public:
-	int soap_type() const { return 2624; } /* = unique id SOAP_TYPE___ns1__ModifySDKTask */
+	int soap_type() const { return 1824; } /* = unique id SOAP_TYPE___ns1__ModifySDKTask */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetSDKTaskFieldMapping
-#define SOAP_TYPE___ns1__GetSDKTaskFieldMapping (2628)
+#define SOAP_TYPE___ns1__GetSDKTaskFieldMapping (1828)
 /* Operation wrapper: */
 struct __ns1__GetSDKTaskFieldMapping
 {
 public:
 	ns1__GetSDKTaskFieldMapping *ns1__GetSDKTaskFieldMapping_;	/* optional element of type ns1:GetSDKTaskFieldMapping */
 public:
-	int soap_type() const { return 2628; } /* = unique id SOAP_TYPE___ns1__GetSDKTaskFieldMapping */
+	int soap_type() const { return 1828; } /* = unique id SOAP_TYPE___ns1__GetSDKTaskFieldMapping */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__CreateSDKTaskFieldMapping
-#define SOAP_TYPE___ns1__CreateSDKTaskFieldMapping (2632)
+#define SOAP_TYPE___ns1__CreateSDKTaskFieldMapping (1832)
 /* Operation wrapper: */
 struct __ns1__CreateSDKTaskFieldMapping
 {
 public:
 	ns1__CreateSDKTaskFieldMapping *ns1__CreateSDKTaskFieldMapping_;	/* optional element of type ns1:CreateSDKTaskFieldMapping */
 public:
-	int soap_type() const { return 2632; } /* = unique id SOAP_TYPE___ns1__CreateSDKTaskFieldMapping */
+	int soap_type() const { return 1832; } /* = unique id SOAP_TYPE___ns1__CreateSDKTaskFieldMapping */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DeleteSDKTaskFieldMapping
-#define SOAP_TYPE___ns1__DeleteSDKTaskFieldMapping (2636)
+#define SOAP_TYPE___ns1__DeleteSDKTaskFieldMapping (1836)
 /* Operation wrapper: */
 struct __ns1__DeleteSDKTaskFieldMapping
 {
 public:
 	ns1__DeleteSDKTaskFieldMapping *ns1__DeleteSDKTaskFieldMapping_;	/* optional element of type ns1:DeleteSDKTaskFieldMapping */
 public:
-	int soap_type() const { return 2636; } /* = unique id SOAP_TYPE___ns1__DeleteSDKTaskFieldMapping */
+	int soap_type() const { return 1836; } /* = unique id SOAP_TYPE___ns1__DeleteSDKTaskFieldMapping */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__StoreSDKVariable
-#define SOAP_TYPE___ns1__StoreSDKVariable (2640)
+#define SOAP_TYPE___ns1__StoreSDKVariable (1840)
 /* Operation wrapper: */
 struct __ns1__StoreSDKVariable
 {
 public:
 	ns1__StoreSDKVariable *ns1__StoreSDKVariable_;	/* optional element of type ns1:StoreSDKVariable */
 public:
-	int soap_type() const { return 2640; } /* = unique id SOAP_TYPE___ns1__StoreSDKVariable */
+	int soap_type() const { return 1840; } /* = unique id SOAP_TYPE___ns1__StoreSDKVariable */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetSDKVariables
-#define SOAP_TYPE___ns1__GetSDKVariables (2644)
+#define SOAP_TYPE___ns1__GetSDKVariables (1844)
 /* Operation wrapper: */
 struct __ns1__GetSDKVariables
 {
 public:
 	ns1__GetSDKVariables *ns1__GetSDKVariables_;	/* optional element of type ns1:GetSDKVariables */
 public:
-	int soap_type() const { return 2644; } /* = unique id SOAP_TYPE___ns1__GetSDKVariables */
+	int soap_type() const { return 1844; } /* = unique id SOAP_TYPE___ns1__GetSDKVariables */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetSDKTaskExcelPreview
-#define SOAP_TYPE___ns1__GetSDKTaskExcelPreview (2648)
+#define SOAP_TYPE___ns1__GetSDKTaskExcelPreview (1848)
 /* Operation wrapper: */
 struct __ns1__GetSDKTaskExcelPreview
 {
 public:
 	ns1__GetSDKTaskExcelPreview *ns1__GetSDKTaskExcelPreview_;	/* optional element of type ns1:GetSDKTaskExcelPreview */
 public:
-	int soap_type() const { return 2648; } /* = unique id SOAP_TYPE___ns1__GetSDKTaskExcelPreview */
+	int soap_type() const { return 1848; } /* = unique id SOAP_TYPE___ns1__GetSDKTaskExcelPreview */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__ValidateSDKTask
-#define SOAP_TYPE___ns1__ValidateSDKTask (2652)
+#define SOAP_TYPE___ns1__ValidateSDKTask (1852)
 /* Operation wrapper: */
 struct __ns1__ValidateSDKTask
 {
 public:
 	ns1__ValidateSDKTask *ns1__ValidateSDKTask_;	/* optional element of type ns1:ValidateSDKTask */
 public:
-	int soap_type() const { return 2652; } /* = unique id SOAP_TYPE___ns1__ValidateSDKTask */
+	int soap_type() const { return 1852; } /* = unique id SOAP_TYPE___ns1__ValidateSDKTask */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__VerifySDKTaskNameExists
-#define SOAP_TYPE___ns1__VerifySDKTaskNameExists (2656)
+#define SOAP_TYPE___ns1__VerifySDKTaskNameExists (1856)
 /* Operation wrapper: */
 struct __ns1__VerifySDKTaskNameExists
 {
 public:
 	ns1__VerifySDKTaskNameExists *ns1__VerifySDKTaskNameExists_;	/* optional element of type ns1:VerifySDKTaskNameExists */
 public:
-	int soap_type() const { return 2656; } /* = unique id SOAP_TYPE___ns1__VerifySDKTaskNameExists */
+	int soap_type() const { return 1856; } /* = unique id SOAP_TYPE___ns1__VerifySDKTaskNameExists */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__UploadPreviewFile
-#define SOAP_TYPE___ns1__UploadPreviewFile (2660)
+#define SOAP_TYPE___ns1__UploadPreviewFile (1860)
 /* Operation wrapper: */
 struct __ns1__UploadPreviewFile
 {
 public:
 	ns1__UploadPreviewFile *ns1__UploadPreviewFile_;	/* optional element of type ns1:UploadPreviewFile */
 public:
-	int soap_type() const { return 2660; } /* = unique id SOAP_TYPE___ns1__UploadPreviewFile */
+	int soap_type() const { return 1860; } /* = unique id SOAP_TYPE___ns1__UploadPreviewFile */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__CreateSDKTaskWatchFolder
-#define SOAP_TYPE___ns1__CreateSDKTaskWatchFolder (2664)
+#define SOAP_TYPE___ns1__CreateSDKTaskWatchFolder (1864)
 /* Operation wrapper: */
 struct __ns1__CreateSDKTaskWatchFolder
 {
 public:
 	ns1__CreateSDKTaskWatchFolder *ns1__CreateSDKTaskWatchFolder_;	/* optional element of type ns1:CreateSDKTaskWatchFolder */
 public:
-	int soap_type() const { return 2664; } /* = unique id SOAP_TYPE___ns1__CreateSDKTaskWatchFolder */
+	int soap_type() const { return 1864; } /* = unique id SOAP_TYPE___ns1__CreateSDKTaskWatchFolder */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__ModifySDKTaskWatchFolder
-#define SOAP_TYPE___ns1__ModifySDKTaskWatchFolder (2668)
+#define SOAP_TYPE___ns1__ModifySDKTaskWatchFolder (1868)
 /* Operation wrapper: */
 struct __ns1__ModifySDKTaskWatchFolder
 {
 public:
 	ns1__ModifySDKTaskWatchFolder *ns1__ModifySDKTaskWatchFolder_;	/* optional element of type ns1:ModifySDKTaskWatchFolder */
 public:
-	int soap_type() const { return 2668; } /* = unique id SOAP_TYPE___ns1__ModifySDKTaskWatchFolder */
+	int soap_type() const { return 1868; } /* = unique id SOAP_TYPE___ns1__ModifySDKTaskWatchFolder */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetSDKWatchFolderDirectories
-#define SOAP_TYPE___ns1__GetSDKWatchFolderDirectories (2672)
+#define SOAP_TYPE___ns1__GetSDKWatchFolderDirectories (1872)
 /* Operation wrapper: */
 struct __ns1__GetSDKWatchFolderDirectories
 {
 public:
 	ns1__GetSDKWatchFolderDirectories *ns1__GetSDKWatchFolderDirectories_;	/* optional element of type ns1:GetSDKWatchFolderDirectories */
 public:
-	int soap_type() const { return 2672; } /* = unique id SOAP_TYPE___ns1__GetSDKWatchFolderDirectories */
+	int soap_type() const { return 1872; } /* = unique id SOAP_TYPE___ns1__GetSDKWatchFolderDirectories */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetSDKImagesFromPDFTemplate
-#define SOAP_TYPE___ns1__GetSDKImagesFromPDFTemplate (2676)
+#define SOAP_TYPE___ns1__GetSDKImagesFromPDFTemplate (1876)
 /* Operation wrapper: */
 struct __ns1__GetSDKImagesFromPDFTemplate
 {
 public:
 	ns1__GetSDKImagesFromPDFTemplate *ns1__GetSDKImagesFromPDFTemplate_;	/* optional element of type ns1:GetSDKImagesFromPDFTemplate */
 public:
-	int soap_type() const { return 2676; } /* = unique id SOAP_TYPE___ns1__GetSDKImagesFromPDFTemplate */
+	int soap_type() const { return 1876; } /* = unique id SOAP_TYPE___ns1__GetSDKImagesFromPDFTemplate */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__ExtractSDKPDFTemplateTextByArea
-#define SOAP_TYPE___ns1__ExtractSDKPDFTemplateTextByArea (2680)
+#define SOAP_TYPE___ns1__ExtractSDKPDFTemplateTextByArea (1880)
 /* Operation wrapper: */
 struct __ns1__ExtractSDKPDFTemplateTextByArea
 {
 public:
 	ns1__ExtractSDKPDFTemplateTextByArea *ns1__ExtractSDKPDFTemplateTextByArea_;	/* optional element of type ns1:ExtractSDKPDFTemplateTextByArea */
 public:
-	int soap_type() const { return 2680; } /* = unique id SOAP_TYPE___ns1__ExtractSDKPDFTemplateTextByArea */
+	int soap_type() const { return 1880; } /* = unique id SOAP_TYPE___ns1__ExtractSDKPDFTemplateTextByArea */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__GetSDKTextFromTemplate
-#define SOAP_TYPE___ns1__GetSDKTextFromTemplate (2684)
+#define SOAP_TYPE___ns1__GetSDKTextFromTemplate (1884)
 /* Operation wrapper: */
 struct __ns1__GetSDKTextFromTemplate
 {
 public:
 	ns1__GetSDKTextFromTemplate *ns1__GetSDKTextFromTemplate_;	/* optional element of type ns1:GetSDKTextFromTemplate */
 public:
-	int soap_type() const { return 2684; } /* = unique id SOAP_TYPE___ns1__GetSDKTextFromTemplate */
+	int soap_type() const { return 1884; } /* = unique id SOAP_TYPE___ns1__GetSDKTextFromTemplate */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__ChangeSDKTaskStatus
-#define SOAP_TYPE___ns1__ChangeSDKTaskStatus (2688)
+#define SOAP_TYPE___ns1__ChangeSDKTaskStatus (1888)
 /* Operation wrapper: */
 struct __ns1__ChangeSDKTaskStatus
 {
 public:
 	ns1__ChangeSDKTaskStatus *ns1__ChangeSDKTaskStatus_;	/* optional element of type ns1:ChangeSDKTaskStatus */
 public:
-	int soap_type() const { return 2688; } /* = unique id SOAP_TYPE___ns1__ChangeSDKTaskStatus */
+	int soap_type() const { return 1888; } /* = unique id SOAP_TYPE___ns1__ChangeSDKTaskStatus */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__StartSDKTask
-#define SOAP_TYPE___ns1__StartSDKTask (2692)
+#define SOAP_TYPE___ns1__StartSDKTask (1892)
 /* Operation wrapper: */
 struct __ns1__StartSDKTask
 {
 public:
 	ns1__StartSDKTask *ns1__StartSDKTask_;	/* optional element of type ns1:StartSDKTask */
 public:
-	int soap_type() const { return 2692; } /* = unique id SOAP_TYPE___ns1__StartSDKTask */
+	int soap_type() const { return 1892; } /* = unique id SOAP_TYPE___ns1__StartSDKTask */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__DeleteSDKTask
-#define SOAP_TYPE___ns1__DeleteSDKTask (2696)
+#define SOAP_TYPE___ns1__DeleteSDKTask (1896)
 /* Operation wrapper: */
 struct __ns1__DeleteSDKTask
 {
 public:
 	ns1__DeleteSDKTask *ns1__DeleteSDKTask_;	/* optional element of type ns1:DeleteSDKTask */
 public:
-	int soap_type() const { return 2696; } /* = unique id SOAP_TYPE___ns1__DeleteSDKTask */
+	int soap_type() const { return 1896; } /* = unique id SOAP_TYPE___ns1__DeleteSDKTask */
 };
 #endif
 
 #ifndef SOAP_TYPE___ns1__ModifyUserPassword
-#define SOAP_TYPE___ns1__ModifyUserPassword (2700)
+#define SOAP_TYPE___ns1__ModifyUserPassword (1900)
 /* Operation wrapper: */
 struct __ns1__ModifyUserPassword
 {
 public:
 	ns1__ModifyUserPassword *ns1__ModifyUserPassword_;	/* optional element of type ns1:ModifyUserPassword */
 public:
-	int soap_type() const { return 2700; } /* = unique id SOAP_TYPE___ns1__ModifyUserPassword */
+	int soap_type() const { return 1900; } /* = unique id SOAP_TYPE___ns1__ModifyUserPassword */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__QueryHeader
+#define SOAP_TYPE___ns1__QueryHeader (1904)
+/* Operation wrapper: */
+struct __ns1__QueryHeader
+{
+public:
+	ns1__QueryHeader *ns1__QueryHeader_;	/* optional element of type ns1:QueryHeader */
+public:
+	int soap_type() const { return 1904; } /* = unique id SOAP_TYPE___ns1__QueryHeader */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__QueryTotAttach
+#define SOAP_TYPE___ns1__QueryTotAttach (1908)
+/* Operation wrapper: */
+struct __ns1__QueryTotAttach
+{
+public:
+	ns1__QueryTotAttach *ns1__QueryTotAttach_;	/* optional element of type ns1:QueryTotAttach */
+public:
+	int soap_type() const { return 1908; } /* = unique id SOAP_TYPE___ns1__QueryTotAttach */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDynorgTypeList
+#define SOAP_TYPE___ns1__GetDynorgTypeList (1912)
+/* Operation wrapper: */
+struct __ns1__GetDynorgTypeList
+{
+public:
+	ns1__GetDynorgTypeList *ns1__GetDynorgTypeList_;	/* optional element of type ns1:GetDynorgTypeList */
+public:
+	int soap_type() const { return 1912; } /* = unique id SOAP_TYPE___ns1__GetDynorgTypeList */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__canModifyDynorg
+#define SOAP_TYPE___ns1__canModifyDynorg (1916)
+/* Operation wrapper: */
+struct __ns1__canModifyDynorg
+{
+public:
+	ns1__canModifyDynorg *ns1__canModifyDynorg_;	/* optional element of type ns1:canModifyDynorg */
+public:
+	int soap_type() const { return 1916; } /* = unique id SOAP_TYPE___ns1__canModifyDynorg */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__canDeleteDynorg
+#define SOAP_TYPE___ns1__canDeleteDynorg (1920)
+/* Operation wrapper: */
+struct __ns1__canDeleteDynorg
+{
+public:
+	ns1__canDeleteDynorg *ns1__canDeleteDynorg_;	/* optional element of type ns1:canDeleteDynorg */
+public:
+	int soap_type() const { return 1920; } /* = unique id SOAP_TYPE___ns1__canDeleteDynorg */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__canCreateDynorg
+#define SOAP_TYPE___ns1__canCreateDynorg (1924)
+/* Operation wrapper: */
+struct __ns1__canCreateDynorg
+{
+public:
+	ns1__canCreateDynorg *ns1__canCreateDynorg_;	/* optional element of type ns1:canCreateDynorg */
+public:
+	int soap_type() const { return 1924; } /* = unique id SOAP_TYPE___ns1__canCreateDynorg */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__InsertSchedulerTask
+#define SOAP_TYPE___ns1__InsertSchedulerTask (1928)
+/* Operation wrapper: */
+struct __ns1__InsertSchedulerTask
+{
+public:
+	ns1__InsertSchedulerTask *ns1__InsertSchedulerTask_;	/* optional element of type ns1:InsertSchedulerTask */
+public:
+	int soap_type() const { return 1928; } /* = unique id SOAP_TYPE___ns1__InsertSchedulerTask */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetSchedulerTasks
+#define SOAP_TYPE___ns1__GetSchedulerTasks (1932)
+/* Operation wrapper: */
+struct __ns1__GetSchedulerTasks
+{
+public:
+	ns1__GetSchedulerTasks *ns1__GetSchedulerTasks_;	/* optional element of type ns1:GetSchedulerTasks */
+public:
+	int soap_type() const { return 1932; } /* = unique id SOAP_TYPE___ns1__GetSchedulerTasks */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DeleteSchedulerTask
+#define SOAP_TYPE___ns1__DeleteSchedulerTask (1936)
+/* Operation wrapper: */
+struct __ns1__DeleteSchedulerTask
+{
+public:
+	ns1__DeleteSchedulerTask *ns1__DeleteSchedulerTask_;	/* optional element of type ns1:DeleteSchedulerTask */
+public:
+	int soap_type() const { return 1936; } /* = unique id SOAP_TYPE___ns1__DeleteSchedulerTask */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetSchedulerTasksToRun
+#define SOAP_TYPE___ns1__GetSchedulerTasksToRun (1940)
+/* Operation wrapper: */
+struct __ns1__GetSchedulerTasksToRun
+{
+public:
+	ns1__GetSchedulerTasksToRun *ns1__GetSchedulerTasksToRun_;	/* optional element of type ns1:GetSchedulerTasksToRun */
+public:
+	int soap_type() const { return 1940; } /* = unique id SOAP_TYPE___ns1__GetSchedulerTasksToRun */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__SchedulerTaskScheduleProcessed
+#define SOAP_TYPE___ns1__SchedulerTaskScheduleProcessed (1944)
+/* Operation wrapper: */
+struct __ns1__SchedulerTaskScheduleProcessed
+{
+public:
+	ns1__SchedulerTaskScheduleProcessed *ns1__SchedulerTaskScheduleProcessed_;	/* optional element of type ns1:SchedulerTaskScheduleProcessed */
+public:
+	int soap_type() const { return 1944; } /* = unique id SOAP_TYPE___ns1__SchedulerTaskScheduleProcessed */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__ModifySchedulerTaskSchedule
+#define SOAP_TYPE___ns1__ModifySchedulerTaskSchedule (1948)
+/* Operation wrapper: */
+struct __ns1__ModifySchedulerTaskSchedule
+{
+public:
+	ns1__ModifySchedulerTaskSchedule *ns1__ModifySchedulerTaskSchedule_;	/* optional element of type ns1:ModifySchedulerTaskSchedule */
+public:
+	int soap_type() const { return 1948; } /* = unique id SOAP_TYPE___ns1__ModifySchedulerTaskSchedule */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DeleteSchedulerTaskSchedule
+#define SOAP_TYPE___ns1__DeleteSchedulerTaskSchedule (1952)
+/* Operation wrapper: */
+struct __ns1__DeleteSchedulerTaskSchedule
+{
+public:
+	ns1__DeleteSchedulerTaskSchedule *ns1__DeleteSchedulerTaskSchedule_;	/* optional element of type ns1:DeleteSchedulerTaskSchedule */
+public:
+	int soap_type() const { return 1952; } /* = unique id SOAP_TYPE___ns1__DeleteSchedulerTaskSchedule */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__ChangeSchedulerTaskScheduleStatus
+#define SOAP_TYPE___ns1__ChangeSchedulerTaskScheduleStatus (1956)
+/* Operation wrapper: */
+struct __ns1__ChangeSchedulerTaskScheduleStatus
+{
+public:
+	ns1__ChangeSchedulerTaskScheduleStatus *ns1__ChangeSchedulerTaskScheduleStatus_;	/* optional element of type ns1:ChangeSchedulerTaskScheduleStatus */
+public:
+	int soap_type() const { return 1956; } /* = unique id SOAP_TYPE___ns1__ChangeSchedulerTaskScheduleStatus */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDomainList
+#define SOAP_TYPE___ns1__GetDomainList (1960)
+/* Operation wrapper: */
+struct __ns1__GetDomainList
+{
+public:
+	ns1__GetDomainList *ns1__GetDomainList_;	/* optional element of type ns1:GetDomainList */
+public:
+	int soap_type() const { return 1960; } /* = unique id SOAP_TYPE___ns1__GetDomainList */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DigitalSign
+#define SOAP_TYPE___ns1__DigitalSign (1964)
+/* Operation wrapper: */
+struct __ns1__DigitalSign
+{
+public:
+	ns1__DigitalSign *ns1__DigitalSign_;	/* optional element of type ns1:DigitalSign */
+public:
+	int soap_type() const { return 1964; } /* = unique id SOAP_TYPE___ns1__DigitalSign */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DeleteGroup
+#define SOAP_TYPE___ns1__DeleteGroup (1968)
+/* Operation wrapper: */
+struct __ns1__DeleteGroup
+{
+public:
+	ns1__DeleteGroup *ns1__DeleteGroup_;	/* optional element of type ns1:DeleteGroup */
+public:
+	int soap_type() const { return 1968; } /* = unique id SOAP_TYPE___ns1__DeleteGroup */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDataById
+#define SOAP_TYPE___ns1__GetDataById (1972)
+/* Operation wrapper: */
+struct __ns1__GetDataById
+{
+public:
+	ns1__GetDataById *ns1__GetDataById_;	/* optional element of type ns1:GetDataById */
+public:
+	int soap_type() const { return 1972; } /* = unique id SOAP_TYPE___ns1__GetDataById */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DeleteField
+#define SOAP_TYPE___ns1__DeleteField (1976)
+/* Operation wrapper: */
+struct __ns1__DeleteField
+{
+public:
+	ns1__DeleteField *ns1__DeleteField_;	/* optional element of type ns1:DeleteField */
+public:
+	int soap_type() const { return 1976; } /* = unique id SOAP_TYPE___ns1__DeleteField */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__CreateField
+#define SOAP_TYPE___ns1__CreateField (1980)
+/* Operation wrapper: */
+struct __ns1__CreateField
+{
+public:
+	ns1__CreateField *ns1__CreateField_;	/* optional element of type ns1:CreateField */
+public:
+	int soap_type() const { return 1980; } /* = unique id SOAP_TYPE___ns1__CreateField */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__canModifyField
+#define SOAP_TYPE___ns1__canModifyField (1984)
+/* Operation wrapper: */
+struct __ns1__canModifyField
+{
+public:
+	ns1__canModifyField *ns1__canModifyField_;	/* optional element of type ns1:canModifyField */
+public:
+	int soap_type() const { return 1984; } /* = unique id SOAP_TYPE___ns1__canModifyField */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__canDeleteField
+#define SOAP_TYPE___ns1__canDeleteField (1988)
+/* Operation wrapper: */
+struct __ns1__canDeleteField
+{
+public:
+	ns1__canDeleteField *ns1__canDeleteField_;	/* optional element of type ns1:canDeleteField */
+public:
+	int soap_type() const { return 1988; } /* = unique id SOAP_TYPE___ns1__canDeleteField */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__canCreateField
+#define SOAP_TYPE___ns1__canCreateField (1992)
+/* Operation wrapper: */
+struct __ns1__canCreateField
+{
+public:
+	ns1__canCreateField *ns1__canCreateField_;	/* optional element of type ns1:canCreateField */
+public:
+	int soap_type() const { return 1992; } /* = unique id SOAP_TYPE___ns1__canCreateField */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetFieldsPropertiesFromTemplate
+#define SOAP_TYPE___ns1__GetFieldsPropertiesFromTemplate (1996)
+/* Operation wrapper: */
+struct __ns1__GetFieldsPropertiesFromTemplate
+{
+public:
+	ns1__GetFieldsPropertiesFromTemplate *ns1__GetFieldsPropertiesFromTemplate_;	/* optional element of type ns1:GetFieldsPropertiesFromTemplate */
+public:
+	int soap_type() const { return 1996; } /* = unique id SOAP_TYPE___ns1__GetFieldsPropertiesFromTemplate */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDataWAById
+#define SOAP_TYPE___ns1__GetDataWAById (2000)
+/* Operation wrapper: */
+struct __ns1__GetDataWAById
+{
+public:
+	ns1__GetDataWAById *ns1__GetDataWAById_;	/* optional element of type ns1:GetDataWAById */
+public:
+	int soap_type() const { return 2000; } /* = unique id SOAP_TYPE___ns1__GetDataWAById */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__InsertFileWA
+#define SOAP_TYPE___ns1__InsertFileWA (2004)
+/* Operation wrapper: */
+struct __ns1__InsertFileWA
+{
+public:
+	ns1__InsertFileWA *ns1__InsertFileWA_;	/* optional element of type ns1:InsertFileWA */
+public:
+	int soap_type() const { return 2004; } /* = unique id SOAP_TYPE___ns1__InsertFileWA */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__UploadSendChunkWA
+#define SOAP_TYPE___ns1__UploadSendChunkWA (2008)
+/* Operation wrapper: */
+struct __ns1__UploadSendChunkWA
+{
+public:
+	ns1__UploadSendChunkWA *ns1__UploadSendChunkWA_;	/* optional element of type ns1:UploadSendChunkWA */
+public:
+	int soap_type() const { return 2008; } /* = unique id SOAP_TYPE___ns1__UploadSendChunkWA */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__UploadEndFileWA
+#define SOAP_TYPE___ns1__UploadEndFileWA (2012)
+/* Operation wrapper: */
+struct __ns1__UploadEndFileWA
+{
+public:
+	ns1__UploadEndFileWA *ns1__UploadEndFileWA_;	/* optional element of type ns1:UploadEndFileWA */
+public:
+	int soap_type() const { return 2012; } /* = unique id SOAP_TYPE___ns1__UploadEndFileWA */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDataFileListWA
+#define SOAP_TYPE___ns1__GetDataFileListWA (2016)
+/* Operation wrapper: */
+struct __ns1__GetDataFileListWA
+{
+public:
+	ns1__GetDataFileListWA *ns1__GetDataFileListWA_;	/* optional element of type ns1:GetDataFileListWA */
+public:
+	int soap_type() const { return 2016; } /* = unique id SOAP_TYPE___ns1__GetDataFileListWA */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DownloadFileWAByFileUniqueCode
+#define SOAP_TYPE___ns1__DownloadFileWAByFileUniqueCode (2020)
+/* Operation wrapper: */
+struct __ns1__DownloadFileWAByFileUniqueCode
+{
+public:
+	ns1__DownloadFileWAByFileUniqueCode *ns1__DownloadFileWAByFileUniqueCode_;	/* optional element of type ns1:DownloadFileWAByFileUniqueCode */
+public:
+	int soap_type() const { return 2020; } /* = unique id SOAP_TYPE___ns1__DownloadFileWAByFileUniqueCode */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DownloadFileWA
+#define SOAP_TYPE___ns1__DownloadFileWA (2024)
+/* Operation wrapper: */
+struct __ns1__DownloadFileWA
+{
+public:
+	ns1__DownloadFileWA *ns1__DownloadFileWA_;	/* optional element of type ns1:DownloadFileWA */
+public:
+	int soap_type() const { return 2024; } /* = unique id SOAP_TYPE___ns1__DownloadFileWA */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DownloadGetNextWA
+#define SOAP_TYPE___ns1__DownloadGetNextWA (2028)
+/* Operation wrapper: */
+struct __ns1__DownloadGetNextWA
+{
+public:
+	ns1__DownloadGetNextWA *ns1__DownloadGetNextWA_;	/* optional element of type ns1:DownloadGetNextWA */
+public:
+	int soap_type() const { return 2028; } /* = unique id SOAP_TYPE___ns1__DownloadGetNextWA */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DownloadEndFileWA
+#define SOAP_TYPE___ns1__DownloadEndFileWA (2032)
+/* Operation wrapper: */
+struct __ns1__DownloadEndFileWA
+{
+public:
+	ns1__DownloadEndFileWA *ns1__DownloadEndFileWA_;	/* optional element of type ns1:DownloadEndFileWA */
+public:
+	int soap_type() const { return 2032; } /* = unique id SOAP_TYPE___ns1__DownloadEndFileWA */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DeleteFileWA
+#define SOAP_TYPE___ns1__DeleteFileWA (2036)
+/* Operation wrapper: */
+struct __ns1__DeleteFileWA
+{
+public:
+	ns1__DeleteFileWA *ns1__DeleteFileWA_;	/* optional element of type ns1:DeleteFileWA */
+public:
+	int soap_type() const { return 2036; } /* = unique id SOAP_TYPE___ns1__DeleteFileWA */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetCountDocumentLinks
+#define SOAP_TYPE___ns1__GetCountDocumentLinks (2040)
+/* Operation wrapper: */
+struct __ns1__GetCountDocumentLinks
+{
+public:
+	ns1__GetCountDocumentLinks *ns1__GetCountDocumentLinks_;	/* optional element of type ns1:GetCountDocumentLinks */
+public:
+	int soap_type() const { return 2040; } /* = unique id SOAP_TYPE___ns1__GetCountDocumentLinks */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetArchSostRules
+#define SOAP_TYPE___ns1__GetArchSostRules (2044)
+/* Operation wrapper: */
+struct __ns1__GetArchSostRules
+{
+public:
+	ns1__GetArchSostRules *ns1__GetArchSostRules_;	/* optional element of type ns1:GetArchSostRules */
+public:
+	int soap_type() const { return 2044; } /* = unique id SOAP_TYPE___ns1__GetArchSostRules */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDataFileListContainer
+#define SOAP_TYPE___ns1__GetDataFileListContainer (2048)
+/* Operation wrapper: */
+struct __ns1__GetDataFileListContainer
+{
+public:
+	ns1__GetDataFileListContainer *ns1__GetDataFileListContainer_;	/* optional element of type ns1:GetDataFileListContainer */
+public:
+	int soap_type() const { return 2048; } /* = unique id SOAP_TYPE___ns1__GetDataFileListContainer */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDataFileListOnlyLastVersion
+#define SOAP_TYPE___ns1__GetDataFileListOnlyLastVersion (2052)
+/* Operation wrapper: */
+struct __ns1__GetDataFileListOnlyLastVersion
+{
+public:
+	ns1__GetDataFileListOnlyLastVersion *ns1__GetDataFileListOnlyLastVersion_;	/* optional element of type ns1:GetDataFileListOnlyLastVersion */
+public:
+	int soap_type() const { return 2052; } /* = unique id SOAP_TYPE___ns1__GetDataFileListOnlyLastVersion */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDataFileList
+#define SOAP_TYPE___ns1__GetDataFileList (2056)
+/* Operation wrapper: */
+struct __ns1__GetDataFileList
+{
+public:
+	ns1__GetDataFileList *ns1__GetDataFileList_;	/* optional element of type ns1:GetDataFileList */
+public:
+	int soap_type() const { return 2056; } /* = unique id SOAP_TYPE___ns1__GetDataFileList */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDataFileListForSecurity
+#define SOAP_TYPE___ns1__GetDataFileListForSecurity (2060)
+/* Operation wrapper: */
+struct __ns1__GetDataFileListForSecurity
+{
+public:
+	ns1__GetDataFileListForSecurity *ns1__GetDataFileListForSecurity_;	/* optional element of type ns1:GetDataFileListForSecurity */
+public:
+	int soap_type() const { return 2060; } /* = unique id SOAP_TYPE___ns1__GetDataFileListForSecurity */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDataFileDetail
+#define SOAP_TYPE___ns1__GetDataFileDetail (2064)
+/* Operation wrapper: */
+struct __ns1__GetDataFileDetail
+{
+public:
+	ns1__GetDataFileDetail *ns1__GetDataFileDetail_;	/* optional element of type ns1:GetDataFileDetail */
+public:
+	int soap_type() const { return 2064; } /* = unique id SOAP_TYPE___ns1__GetDataFileDetail */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDataFileContainerDetail
+#define SOAP_TYPE___ns1__GetDataFileContainerDetail (2068)
+/* Operation wrapper: */
+struct __ns1__GetDataFileContainerDetail
+{
+public:
+	ns1__GetDataFileContainerDetail *ns1__GetDataFileContainerDetail_;	/* optional element of type ns1:GetDataFileContainerDetail */
+public:
+	int soap_type() const { return 2068; } /* = unique id SOAP_TYPE___ns1__GetDataFileContainerDetail */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DownloadFile
+#define SOAP_TYPE___ns1__DownloadFile (2072)
+/* Operation wrapper: */
+struct __ns1__DownloadFile
+{
+public:
+	ns1__DownloadFile *ns1__DownloadFile_;	/* optional element of type ns1:DownloadFile */
+public:
+	int soap_type() const { return 2072; } /* = unique id SOAP_TYPE___ns1__DownloadFile */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DownloadFileByFileUniqueCode
+#define SOAP_TYPE___ns1__DownloadFileByFileUniqueCode (2076)
+/* Operation wrapper: */
+struct __ns1__DownloadFileByFileUniqueCode
+{
+public:
+	ns1__DownloadFileByFileUniqueCode *ns1__DownloadFileByFileUniqueCode_;	/* optional element of type ns1:DownloadFileByFileUniqueCode */
+public:
+	int soap_type() const { return 2076; } /* = unique id SOAP_TYPE___ns1__DownloadFileByFileUniqueCode */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DownloadFileUnc
+#define SOAP_TYPE___ns1__DownloadFileUnc (2080)
+/* Operation wrapper: */
+struct __ns1__DownloadFileUnc
+{
+public:
+	ns1__DownloadFileUnc *ns1__DownloadFileUnc_;	/* optional element of type ns1:DownloadFileUnc */
+public:
+	int soap_type() const { return 2080; } /* = unique id SOAP_TYPE___ns1__DownloadFileUnc */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DownloadFileContainerUnc
+#define SOAP_TYPE___ns1__DownloadFileContainerUnc (2084)
+/* Operation wrapper: */
+struct __ns1__DownloadFileContainerUnc
+{
+public:
+	ns1__DownloadFileContainerUnc *ns1__DownloadFileContainerUnc_;	/* optional element of type ns1:DownloadFileContainerUnc */
+public:
+	int soap_type() const { return 2084; } /* = unique id SOAP_TYPE___ns1__DownloadFileContainerUnc */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DownloadGetChunk
+#define SOAP_TYPE___ns1__DownloadGetChunk (2088)
+/* Operation wrapper: */
+struct __ns1__DownloadGetChunk
+{
+public:
+	ns1__DownloadGetChunk *ns1__DownloadGetChunk_;	/* optional element of type ns1:DownloadGetChunk */
+public:
+	int soap_type() const { return 2088; } /* = unique id SOAP_TYPE___ns1__DownloadGetChunk */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DownloadGetNext
+#define SOAP_TYPE___ns1__DownloadGetNext (2092)
+/* Operation wrapper: */
+struct __ns1__DownloadGetNext
+{
+public:
+	ns1__DownloadGetNext *ns1__DownloadGetNext_;	/* optional element of type ns1:DownloadGetNext */
+public:
+	int soap_type() const { return 2092; } /* = unique id SOAP_TYPE___ns1__DownloadGetNext */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__UploadSendChunk
+#define SOAP_TYPE___ns1__UploadSendChunk (2096)
+/* Operation wrapper: */
+struct __ns1__UploadSendChunk
+{
+public:
+	ns1__UploadSendChunk *ns1__UploadSendChunk_;	/* optional element of type ns1:UploadSendChunk */
+public:
+	int soap_type() const { return 2096; } /* = unique id SOAP_TYPE___ns1__UploadSendChunk */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DownloadFileContainer
+#define SOAP_TYPE___ns1__DownloadFileContainer (2100)
+/* Operation wrapper: */
+struct __ns1__DownloadFileContainer
+{
+public:
+	ns1__DownloadFileContainer *ns1__DownloadFileContainer_;	/* optional element of type ns1:DownloadFileContainer */
+public:
+	int soap_type() const { return 2100; } /* = unique id SOAP_TYPE___ns1__DownloadFileContainer */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DownloadFilePreview
+#define SOAP_TYPE___ns1__DownloadFilePreview (2104)
+/* Operation wrapper: */
+struct __ns1__DownloadFilePreview
+{
+public:
+	ns1__DownloadFilePreview *ns1__DownloadFilePreview_;	/* optional element of type ns1:DownloadFilePreview */
+public:
+	int soap_type() const { return 2104; } /* = unique id SOAP_TYPE___ns1__DownloadFilePreview */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetUploadDetailByFilecode
+#define SOAP_TYPE___ns1__GetUploadDetailByFilecode (2108)
+/* Operation wrapper: */
+struct __ns1__GetUploadDetailByFilecode
+{
+public:
+	ns1__GetUploadDetailByFilecode *ns1__GetUploadDetailByFilecode_;	/* optional element of type ns1:GetUploadDetailByFilecode */
+public:
+	int soap_type() const { return 2108; } /* = unique id SOAP_TYPE___ns1__GetUploadDetailByFilecode */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetUploadDetailByDataId
+#define SOAP_TYPE___ns1__GetUploadDetailByDataId (2112)
+/* Operation wrapper: */
+struct __ns1__GetUploadDetailByDataId
+{
+public:
+	ns1__GetUploadDetailByDataId *ns1__GetUploadDetailByDataId_;	/* optional element of type ns1:GetUploadDetailByDataId */
+public:
+	int soap_type() const { return 2112; } /* = unique id SOAP_TYPE___ns1__GetUploadDetailByDataId */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetUploadDetailByData
+#define SOAP_TYPE___ns1__GetUploadDetailByData (2116)
+/* Operation wrapper: */
+struct __ns1__GetUploadDetailByData
+{
+public:
+	ns1__GetUploadDetailByData *ns1__GetUploadDetailByData_;	/* optional element of type ns1:GetUploadDetailByData */
+public:
+	int soap_type() const { return 2116; } /* = unique id SOAP_TYPE___ns1__GetUploadDetailByData */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetUploadDetailByContId
+#define SOAP_TYPE___ns1__GetUploadDetailByContId (2120)
+/* Operation wrapper: */
+struct __ns1__GetUploadDetailByContId
+{
+public:
+	ns1__GetUploadDetailByContId *ns1__GetUploadDetailByContId_;	/* optional element of type ns1:GetUploadDetailByContId */
+public:
+	int soap_type() const { return 2120; } /* = unique id SOAP_TYPE___ns1__GetUploadDetailByContId */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetUploadDetailByCont
+#define SOAP_TYPE___ns1__GetUploadDetailByCont (2124)
+/* Operation wrapper: */
+struct __ns1__GetUploadDetailByCont
+{
+public:
+	ns1__GetUploadDetailByCont *ns1__GetUploadDetailByCont_;	/* optional element of type ns1:GetUploadDetailByCont */
+public:
+	int soap_type() const { return 2124; } /* = unique id SOAP_TYPE___ns1__GetUploadDetailByCont */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__UploadEndFile
+#define SOAP_TYPE___ns1__UploadEndFile (2128)
+/* Operation wrapper: */
+struct __ns1__UploadEndFile
+{
+public:
+	ns1__UploadEndFile *ns1__UploadEndFile_;	/* optional element of type ns1:UploadEndFile */
+public:
+	int soap_type() const { return 2128; } /* = unique id SOAP_TYPE___ns1__UploadEndFile */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__UploadEndFileContainer
+#define SOAP_TYPE___ns1__UploadEndFileContainer (2132)
+/* Operation wrapper: */
+struct __ns1__UploadEndFileContainer
+{
+public:
+	ns1__UploadEndFileContainer *ns1__UploadEndFileContainer_;	/* optional element of type ns1:UploadEndFileContainer */
+public:
+	int soap_type() const { return 2132; } /* = unique id SOAP_TYPE___ns1__UploadEndFileContainer */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__SetTmpUploadPath
+#define SOAP_TYPE___ns1__SetTmpUploadPath (2136)
+/* Operation wrapper: */
+struct __ns1__SetTmpUploadPath
+{
+public:
+	ns1__SetTmpUploadPath *ns1__SetTmpUploadPath_;	/* optional element of type ns1:SetTmpUploadPath */
+public:
+	int soap_type() const { return 2136; } /* = unique id SOAP_TYPE___ns1__SetTmpUploadPath */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__SetTmpDownloadPath
+#define SOAP_TYPE___ns1__SetTmpDownloadPath (2140)
+/* Operation wrapper: */
+struct __ns1__SetTmpDownloadPath
+{
+public:
+	ns1__SetTmpDownloadPath *ns1__SetTmpDownloadPath_;	/* optional element of type ns1:SetTmpDownloadPath */
+public:
+	int soap_type() const { return 2140; } /* = unique id SOAP_TYPE___ns1__SetTmpDownloadPath */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDownloadDetailByFilecode
+#define SOAP_TYPE___ns1__GetDownloadDetailByFilecode (2144)
+/* Operation wrapper: */
+struct __ns1__GetDownloadDetailByFilecode
+{
+public:
+	ns1__GetDownloadDetailByFilecode *ns1__GetDownloadDetailByFilecode_;	/* optional element of type ns1:GetDownloadDetailByFilecode */
+public:
+	int soap_type() const { return 2144; } /* = unique id SOAP_TYPE___ns1__GetDownloadDetailByFilecode */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDownloadDetailByDataId
+#define SOAP_TYPE___ns1__GetDownloadDetailByDataId (2148)
+/* Operation wrapper: */
+struct __ns1__GetDownloadDetailByDataId
+{
+public:
+	ns1__GetDownloadDetailByDataId *ns1__GetDownloadDetailByDataId_;	/* optional element of type ns1:GetDownloadDetailByDataId */
+public:
+	int soap_type() const { return 2148; } /* = unique id SOAP_TYPE___ns1__GetDownloadDetailByDataId */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDownloadDetailByData
+#define SOAP_TYPE___ns1__GetDownloadDetailByData (2152)
+/* Operation wrapper: */
+struct __ns1__GetDownloadDetailByData
+{
+public:
+	ns1__GetDownloadDetailByData *ns1__GetDownloadDetailByData_;	/* optional element of type ns1:GetDownloadDetailByData */
+public:
+	int soap_type() const { return 2152; } /* = unique id SOAP_TYPE___ns1__GetDownloadDetailByData */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDownloadDetailByContId
+#define SOAP_TYPE___ns1__GetDownloadDetailByContId (2156)
+/* Operation wrapper: */
+struct __ns1__GetDownloadDetailByContId
+{
+public:
+	ns1__GetDownloadDetailByContId *ns1__GetDownloadDetailByContId_;	/* optional element of type ns1:GetDownloadDetailByContId */
+public:
+	int soap_type() const { return 2156; } /* = unique id SOAP_TYPE___ns1__GetDownloadDetailByContId */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDownloadDetailByCont
+#define SOAP_TYPE___ns1__GetDownloadDetailByCont (2160)
+/* Operation wrapper: */
+struct __ns1__GetDownloadDetailByCont
+{
+public:
+	ns1__GetDownloadDetailByCont *ns1__GetDownloadDetailByCont_;	/* optional element of type ns1:GetDownloadDetailByCont */
+public:
+	int soap_type() const { return 2160; } /* = unique id SOAP_TYPE___ns1__GetDownloadDetailByCont */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetCountFileList
+#define SOAP_TYPE___ns1__GetCountFileList (2164)
+/* Operation wrapper: */
+struct __ns1__GetCountFileList
+{
+public:
+	ns1__GetCountFileList *ns1__GetCountFileList_;	/* optional element of type ns1:GetCountFileList */
+public:
+	int soap_type() const { return 2164; } /* = unique id SOAP_TYPE___ns1__GetCountFileList */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__ModifyFileDescription
+#define SOAP_TYPE___ns1__ModifyFileDescription (2168)
+/* Operation wrapper: */
+struct __ns1__ModifyFileDescription
+{
+public:
+	ns1__ModifyFileDescription *ns1__ModifyFileDescription_;	/* optional element of type ns1:ModifyFileDescription */
+public:
+	int soap_type() const { return 2168; } /* = unique id SOAP_TYPE___ns1__ModifyFileDescription */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__CopyFile
+#define SOAP_TYPE___ns1__CopyFile (2172)
+/* Operation wrapper: */
+struct __ns1__CopyFile
+{
+public:
+	ns1__CopyFile *ns1__CopyFile_;	/* optional element of type ns1:CopyFile */
+public:
+	int soap_type() const { return 2172; } /* = unique id SOAP_TYPE___ns1__CopyFile */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__IfFileExist
+#define SOAP_TYPE___ns1__IfFileExist (2176)
+/* Operation wrapper: */
+struct __ns1__IfFileExist
+{
+public:
+	ns1__IfFileExist *ns1__IfFileExist_;	/* optional element of type ns1:IfFileExist */
+public:
+	int soap_type() const { return 2176; } /* = unique id SOAP_TYPE___ns1__IfFileExist */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__SetFileAvailable
+#define SOAP_TYPE___ns1__SetFileAvailable (2180)
+/* Operation wrapper: */
+struct __ns1__SetFileAvailable
+{
+public:
+	ns1__SetFileAvailable *ns1__SetFileAvailable_;	/* optional element of type ns1:SetFileAvailable */
+public:
+	int soap_type() const { return 2180; } /* = unique id SOAP_TYPE___ns1__SetFileAvailable */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetFileAvailable
+#define SOAP_TYPE___ns1__GetFileAvailable (2184)
+/* Operation wrapper: */
+struct __ns1__GetFileAvailable
+{
+public:
+	ns1__GetFileAvailable *ns1__GetFileAvailable_;	/* optional element of type ns1:GetFileAvailable */
+public:
+	int soap_type() const { return 2184; } /* = unique id SOAP_TYPE___ns1__GetFileAvailable */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__AddFileToSyncByArcCue
+#define SOAP_TYPE___ns1__AddFileToSyncByArcCue (2188)
+/* Operation wrapper: */
+struct __ns1__AddFileToSyncByArcCue
+{
+public:
+	ns1__AddFileToSyncByArcCue *ns1__AddFileToSyncByArcCue_;	/* optional element of type ns1:AddFileToSyncByArcCue */
+public:
+	int soap_type() const { return 2188; } /* = unique id SOAP_TYPE___ns1__AddFileToSyncByArcCue */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__Fk_USCOREDB_USCOREtestConnection
+#define SOAP_TYPE___ns1__Fk_USCOREDB_USCOREtestConnection (2192)
+/* Operation wrapper: */
+struct __ns1__Fk_USCOREDB_USCOREtestConnection
+{
+public:
+	ns1__Fk_USCOREDB_USCOREtestConnection *ns1__Fk_USCOREDB_USCOREtestConnection_;	/* optional element of type ns1:Fk_DB_testConnection */
+public:
+	int soap_type() const { return 2192; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREDB_USCOREtestConnection */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__Fk_USCOREWS_USCOREinsert
+#define SOAP_TYPE___ns1__Fk_USCOREWS_USCOREinsert (2196)
+/* Operation wrapper: */
+struct __ns1__Fk_USCOREWS_USCOREinsert
+{
+public:
+	ns1__Fk_USCOREWS_USCOREinsert *ns1__Fk_USCOREWS_USCOREinsert_;	/* optional element of type ns1:Fk_WS_insert */
+public:
+	int soap_type() const { return 2196; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREWS_USCOREinsert */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__Fk_USCOREDB_USCOREmodify
+#define SOAP_TYPE___ns1__Fk_USCOREDB_USCOREmodify (2200)
+/* Operation wrapper: */
+struct __ns1__Fk_USCOREDB_USCOREmodify
+{
+public:
+	ns1__Fk_USCOREDB_USCOREmodify *ns1__Fk_USCOREDB_USCOREmodify_;	/* optional element of type ns1:Fk_DB_modify */
+public:
+	int soap_type() const { return 2200; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREDB_USCOREmodify */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__Fk_USCOREDB_USCOREdelete
+#define SOAP_TYPE___ns1__Fk_USCOREDB_USCOREdelete (2204)
+/* Operation wrapper: */
+struct __ns1__Fk_USCOREDB_USCOREdelete
+{
+public:
+	ns1__Fk_USCOREDB_USCOREdelete *ns1__Fk_USCOREDB_USCOREdelete_;	/* optional element of type ns1:Fk_DB_delete */
+public:
+	int soap_type() const { return 2204; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREDB_USCOREdelete */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__Fk_USCOREgetParsAllFk
+#define SOAP_TYPE___ns1__Fk_USCOREgetParsAllFk (2208)
+/* Operation wrapper: */
+struct __ns1__Fk_USCOREgetParsAllFk
+{
+public:
+	ns1__Fk_USCOREgetParsAllFk *ns1__Fk_USCOREgetParsAllFk_;	/* optional element of type ns1:Fk_getParsAllFk */
+public:
+	int soap_type() const { return 2208; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetParsAllFk */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__Fk_USCOREgetPars
+#define SOAP_TYPE___ns1__Fk_USCOREgetPars (2212)
+/* Operation wrapper: */
+struct __ns1__Fk_USCOREgetPars
+{
+public:
+	ns1__Fk_USCOREgetPars *ns1__Fk_USCOREgetPars_;	/* optional element of type ns1:Fk_getPars */
+public:
+	int soap_type() const { return 2212; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetPars */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__Fk_USCOREcreate
+#define SOAP_TYPE___ns1__Fk_USCOREcreate (2216)
+/* Operation wrapper: */
+struct __ns1__Fk_USCOREcreate
+{
+public:
+	ns1__Fk_USCOREcreate *ns1__Fk_USCOREcreate_;	/* optional element of type ns1:Fk_create */
+public:
+	int soap_type() const { return 2216; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREcreate */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetLanguages
+#define SOAP_TYPE___ns1__GetLanguages (2220)
+/* Operation wrapper: */
+struct __ns1__GetLanguages
+{
+public:
+	ns1__GetLanguages *ns1__GetLanguages_;	/* optional element of type ns1:GetLanguages */
+public:
+	int soap_type() const { return 2220; } /* = unique id SOAP_TYPE___ns1__GetLanguages */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__AddLogSDK
+#define SOAP_TYPE___ns1__AddLogSDK (2224)
+/* Operation wrapper: */
+struct __ns1__AddLogSDK
+{
+public:
+	ns1__AddLogSDK *ns1__AddLogSDK_;	/* optional element of type ns1:AddLogSDK */
+public:
+	int soap_type() const { return 2224; } /* = unique id SOAP_TYPE___ns1__AddLogSDK */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetSDKLogList
+#define SOAP_TYPE___ns1__GetSDKLogList (2228)
+/* Operation wrapper: */
+struct __ns1__GetSDKLogList
+{
+public:
+	ns1__GetSDKLogList *ns1__GetSDKLogList_;	/* optional element of type ns1:GetSDKLogList */
+public:
+	int soap_type() const { return 2228; } /* = unique id SOAP_TYPE___ns1__GetSDKLogList */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DeleteSDKLog
+#define SOAP_TYPE___ns1__DeleteSDKLog (2232)
+/* Operation wrapper: */
+struct __ns1__DeleteSDKLog
+{
+public:
+	ns1__DeleteSDKLog *ns1__DeleteSDKLog_;	/* optional element of type ns1:DeleteSDKLog */
+public:
+	int soap_type() const { return 2232; } /* = unique id SOAP_TYPE___ns1__DeleteSDKLog */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__ResetUserSessions
+#define SOAP_TYPE___ns1__ResetUserSessions (2236)
+/* Operation wrapper: */
+struct __ns1__ResetUserSessions
+{
+public:
+	ns1__ResetUserSessions *ns1__ResetUserSessions_;	/* optional element of type ns1:ResetUserSessions */
+public:
+	int soap_type() const { return 2236; } /* = unique id SOAP_TYPE___ns1__ResetUserSessions */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__ValidateSession
+#define SOAP_TYPE___ns1__ValidateSession (2240)
+/* Operation wrapper: */
+struct __ns1__ValidateSession
+{
+public:
+	ns1__ValidateSession *ns1__ValidateSession_;	/* optional element of type ns1:ValidateSession */
+public:
+	int soap_type() const { return 2240; } /* = unique id SOAP_TYPE___ns1__ValidateSession */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetUserList
+#define SOAP_TYPE___ns1__GetUserList (2244)
+/* Operation wrapper: */
+struct __ns1__GetUserList
+{
+public:
+	ns1__GetUserList *ns1__GetUserList_;	/* optional element of type ns1:GetUserList */
+public:
+	int soap_type() const { return 2244; } /* = unique id SOAP_TYPE___ns1__GetUserList */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetUserListActiveDirectory
+#define SOAP_TYPE___ns1__GetUserListActiveDirectory (2248)
+/* Operation wrapper: */
+struct __ns1__GetUserListActiveDirectory
+{
+public:
+	ns1__GetUserListActiveDirectory *ns1__GetUserListActiveDirectory_;	/* optional element of type ns1:GetUserListActiveDirectory */
+public:
+	int soap_type() const { return 2248; } /* = unique id SOAP_TYPE___ns1__GetUserListActiveDirectory */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__InsertUser
+#define SOAP_TYPE___ns1__InsertUser (2252)
+/* Operation wrapper: */
+struct __ns1__InsertUser
+{
+public:
+	ns1__InsertUser *ns1__InsertUser_;	/* optional element of type ns1:InsertUser */
+public:
+	int soap_type() const { return 2252; } /* = unique id SOAP_TYPE___ns1__InsertUser */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__ModifyUser
+#define SOAP_TYPE___ns1__ModifyUser (2256)
+/* Operation wrapper: */
+struct __ns1__ModifyUser
+{
+public:
+	ns1__ModifyUser *ns1__ModifyUser_;	/* optional element of type ns1:ModifyUser */
+public:
+	int soap_type() const { return 2256; } /* = unique id SOAP_TYPE___ns1__ModifyUser */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__InsertUserConfig
+#define SOAP_TYPE___ns1__InsertUserConfig (2260)
+/* Operation wrapper: */
+struct __ns1__InsertUserConfig
+{
+public:
+	ns1__InsertUserConfig *ns1__InsertUserConfig_;	/* optional element of type ns1:InsertUserConfig */
+public:
+	int soap_type() const { return 2260; } /* = unique id SOAP_TYPE___ns1__InsertUserConfig */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__ModifyUserConfig
+#define SOAP_TYPE___ns1__ModifyUserConfig (2264)
+/* Operation wrapper: */
+struct __ns1__ModifyUserConfig
+{
+public:
+	ns1__ModifyUserConfig *ns1__ModifyUserConfig_;	/* optional element of type ns1:ModifyUserConfig */
+public:
+	int soap_type() const { return 2264; } /* = unique id SOAP_TYPE___ns1__ModifyUserConfig */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetUserDetailByUsername
+#define SOAP_TYPE___ns1__GetUserDetailByUsername (2268)
+/* Operation wrapper: */
+struct __ns1__GetUserDetailByUsername
+{
+public:
+	ns1__GetUserDetailByUsername *ns1__GetUserDetailByUsername_;	/* optional element of type ns1:GetUserDetailByUsername */
+public:
+	int soap_type() const { return 2268; } /* = unique id SOAP_TYPE___ns1__GetUserDetailByUsername */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetUserDetailByUserId
+#define SOAP_TYPE___ns1__GetUserDetailByUserId (2272)
+/* Operation wrapper: */
+struct __ns1__GetUserDetailByUserId
+{
+public:
+	ns1__GetUserDetailByUserId *ns1__GetUserDetailByUserId_;	/* optional element of type ns1:GetUserDetailByUserId */
+public:
+	int soap_type() const { return 2272; } /* = unique id SOAP_TYPE___ns1__GetUserDetailByUserId */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__ExistUserByUsername
+#define SOAP_TYPE___ns1__ExistUserByUsername (2276)
+/* Operation wrapper: */
+struct __ns1__ExistUserByUsername
+{
+public:
+	ns1__ExistUserByUsername *ns1__ExistUserByUsername_;	/* optional element of type ns1:ExistUserByUsername */
+public:
+	int soap_type() const { return 2276; } /* = unique id SOAP_TYPE___ns1__ExistUserByUsername */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DeleteUserByUsername
+#define SOAP_TYPE___ns1__DeleteUserByUsername (2280)
+/* Operation wrapper: */
+struct __ns1__DeleteUserByUsername
+{
+public:
+	ns1__DeleteUserByUsername *ns1__DeleteUserByUsername_;	/* optional element of type ns1:DeleteUserByUsername */
+public:
+	int soap_type() const { return 2280; } /* = unique id SOAP_TYPE___ns1__DeleteUserByUsername */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__InsertGroup
+#define SOAP_TYPE___ns1__InsertGroup (2284)
+/* Operation wrapper: */
+struct __ns1__InsertGroup
+{
+public:
+	ns1__InsertGroup *ns1__InsertGroup_;	/* optional element of type ns1:InsertGroup */
+public:
+	int soap_type() const { return 2284; } /* = unique id SOAP_TYPE___ns1__InsertGroup */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__ModifyGroup
+#define SOAP_TYPE___ns1__ModifyGroup (2288)
+/* Operation wrapper: */
+struct __ns1__ModifyGroup
+{
+public:
+	ns1__ModifyGroup *ns1__ModifyGroup_;	/* optional element of type ns1:ModifyGroup */
+public:
+	int soap_type() const { return 2288; } /* = unique id SOAP_TYPE___ns1__ModifyGroup */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetGroupList
+#define SOAP_TYPE___ns1__GetGroupList (2292)
+/* Operation wrapper: */
+struct __ns1__GetGroupList
+{
+public:
+	ns1__GetGroupList *ns1__GetGroupList_;	/* optional element of type ns1:GetGroupList */
+public:
+	int soap_type() const { return 2292; } /* = unique id SOAP_TYPE___ns1__GetGroupList */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__InsertUserInGroup
+#define SOAP_TYPE___ns1__InsertUserInGroup (2296)
+/* Operation wrapper: */
+struct __ns1__InsertUserInGroup
+{
+public:
+	ns1__InsertUserInGroup *ns1__InsertUserInGroup_;	/* optional element of type ns1:InsertUserInGroup */
+public:
+	int soap_type() const { return 2296; } /* = unique id SOAP_TYPE___ns1__InsertUserInGroup */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__RemoveUserByAllGroups
+#define SOAP_TYPE___ns1__RemoveUserByAllGroups (2300)
+/* Operation wrapper: */
+struct __ns1__RemoveUserByAllGroups
+{
+public:
+	ns1__RemoveUserByAllGroups *ns1__RemoveUserByAllGroups_;	/* optional element of type ns1:RemoveUserByAllGroups */
+public:
+	int soap_type() const { return 2300; } /* = unique id SOAP_TYPE___ns1__RemoveUserByAllGroups */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__RemoveUserByGroup
+#define SOAP_TYPE___ns1__RemoveUserByGroup (2304)
+/* Operation wrapper: */
+struct __ns1__RemoveUserByGroup
+{
+public:
+	ns1__RemoveUserByGroup *ns1__RemoveUserByGroup_;	/* optional element of type ns1:RemoveUserByGroup */
+public:
+	int soap_type() const { return 2304; } /* = unique id SOAP_TYPE___ns1__RemoveUserByGroup */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetGroupsListByUser
+#define SOAP_TYPE___ns1__GetGroupsListByUser (2308)
+/* Operation wrapper: */
+struct __ns1__GetGroupsListByUser
+{
+public:
+	ns1__GetGroupsListByUser *ns1__GetGroupsListByUser_;	/* optional element of type ns1:GetGroupsListByUser */
+public:
+	int soap_type() const { return 2308; } /* = unique id SOAP_TYPE___ns1__GetGroupsListByUser */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetUsersListByGroup
+#define SOAP_TYPE___ns1__GetUsersListByGroup (2312)
+/* Operation wrapper: */
+struct __ns1__GetUsersListByGroup
+{
+public:
+	ns1__GetUsersListByGroup *ns1__GetUsersListByGroup_;	/* optional element of type ns1:GetUsersListByGroup */
+public:
+	int soap_type() const { return 2312; } /* = unique id SOAP_TYPE___ns1__GetUsersListByGroup */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__ModifyTranslation
+#define SOAP_TYPE___ns1__ModifyTranslation (2316)
+/* Operation wrapper: */
+struct __ns1__ModifyTranslation
+{
+public:
+	ns1__ModifyTranslation *ns1__ModifyTranslation_;	/* optional element of type ns1:ModifyTranslation */
+public:
+	int soap_type() const { return 2316; } /* = unique id SOAP_TYPE___ns1__ModifyTranslation */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DeleteTranslation
+#define SOAP_TYPE___ns1__DeleteTranslation (2320)
+/* Operation wrapper: */
+struct __ns1__DeleteTranslation
+{
+public:
+	ns1__DeleteTranslation *ns1__DeleteTranslation_;	/* optional element of type ns1:DeleteTranslation */
+public:
+	int soap_type() const { return 2320; } /* = unique id SOAP_TYPE___ns1__DeleteTranslation */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__InsertTranslation
+#define SOAP_TYPE___ns1__InsertTranslation (2324)
+/* Operation wrapper: */
+struct __ns1__InsertTranslation
+{
+public:
+	ns1__InsertTranslation *ns1__InsertTranslation_;	/* optional element of type ns1:InsertTranslation */
+public:
+	int soap_type() const { return 2324; } /* = unique id SOAP_TYPE___ns1__InsertTranslation */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__InsertTranslationCode
+#define SOAP_TYPE___ns1__InsertTranslationCode (2328)
+/* Operation wrapper: */
+struct __ns1__InsertTranslationCode
+{
+public:
+	ns1__InsertTranslationCode *ns1__InsertTranslationCode_;	/* optional element of type ns1:InsertTranslationCode */
+public:
+	int soap_type() const { return 2328; } /* = unique id SOAP_TYPE___ns1__InsertTranslationCode */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__InsertTranslationDecimalCode
+#define SOAP_TYPE___ns1__InsertTranslationDecimalCode (2332)
+/* Operation wrapper: */
+struct __ns1__InsertTranslationDecimalCode
+{
+public:
+	ns1__InsertTranslationDecimalCode *ns1__InsertTranslationDecimalCode_;	/* optional element of type ns1:InsertTranslationDecimalCode */
+public:
+	int soap_type() const { return 2332; } /* = unique id SOAP_TYPE___ns1__InsertTranslationDecimalCode */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetTranslationByMessageId
+#define SOAP_TYPE___ns1__GetTranslationByMessageId (2336)
+/* Operation wrapper: */
+struct __ns1__GetTranslationByMessageId
+{
+public:
+	ns1__GetTranslationByMessageId *ns1__GetTranslationByMessageId_;	/* optional element of type ns1:GetTranslationByMessageId */
+public:
+	int soap_type() const { return 2336; } /* = unique id SOAP_TYPE___ns1__GetTranslationByMessageId */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetTranslationByLabelCode
+#define SOAP_TYPE___ns1__GetTranslationByLabelCode (2340)
+/* Operation wrapper: */
+struct __ns1__GetTranslationByLabelCode
+{
+public:
+	ns1__GetTranslationByLabelCode *ns1__GetTranslationByLabelCode_;	/* optional element of type ns1:GetTranslationByLabelCode */
+public:
+	int soap_type() const { return 2340; } /* = unique id SOAP_TYPE___ns1__GetTranslationByLabelCode */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetTranslationByRangeLabelCode
+#define SOAP_TYPE___ns1__GetTranslationByRangeLabelCode (2344)
+/* Operation wrapper: */
+struct __ns1__GetTranslationByRangeLabelCode
+{
+public:
+	ns1__GetTranslationByRangeLabelCode *ns1__GetTranslationByRangeLabelCode_;	/* optional element of type ns1:GetTranslationByRangeLabelCode */
+public:
+	int soap_type() const { return 2344; } /* = unique id SOAP_TYPE___ns1__GetTranslationByRangeLabelCode */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetTranslationBySourceSuffix
+#define SOAP_TYPE___ns1__GetTranslationBySourceSuffix (2348)
+/* Operation wrapper: */
+struct __ns1__GetTranslationBySourceSuffix
+{
+public:
+	ns1__GetTranslationBySourceSuffix *ns1__GetTranslationBySourceSuffix_;	/* optional element of type ns1:GetTranslationBySourceSuffix */
+public:
+	int soap_type() const { return 2348; } /* = unique id SOAP_TYPE___ns1__GetTranslationBySourceSuffix */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DeleteTranslationByCode
+#define SOAP_TYPE___ns1__DeleteTranslationByCode (2352)
+/* Operation wrapper: */
+struct __ns1__DeleteTranslationByCode
+{
+public:
+	ns1__DeleteTranslationByCode *ns1__DeleteTranslationByCode_;	/* optional element of type ns1:DeleteTranslationByCode */
+public:
+	int soap_type() const { return 2352; } /* = unique id SOAP_TYPE___ns1__DeleteTranslationByCode */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__AddDefaultProcess
+#define SOAP_TYPE___ns1__AddDefaultProcess (2356)
+/* Operation wrapper: */
+struct __ns1__AddDefaultProcess
+{
+public:
+	ns1__AddDefaultProcess *ns1__AddDefaultProcess_;	/* optional element of type ns1:AddDefaultProcess */
+public:
+	int soap_type() const { return 2356; } /* = unique id SOAP_TYPE___ns1__AddDefaultProcess */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__ModDefaultProcess
+#define SOAP_TYPE___ns1__ModDefaultProcess (2360)
+/* Operation wrapper: */
+struct __ns1__ModDefaultProcess
+{
+public:
+	ns1__ModDefaultProcess *ns1__ModDefaultProcess_;	/* optional element of type ns1:ModDefaultProcess */
+public:
+	int soap_type() const { return 2360; } /* = unique id SOAP_TYPE___ns1__ModDefaultProcess */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DelDefaultProcess
+#define SOAP_TYPE___ns1__DelDefaultProcess (2364)
+/* Operation wrapper: */
+struct __ns1__DelDefaultProcess
+{
+public:
+	ns1__DelDefaultProcess *ns1__DelDefaultProcess_;	/* optional element of type ns1:DelDefaultProcess */
+public:
+	int soap_type() const { return 2364; } /* = unique id SOAP_TYPE___ns1__DelDefaultProcess */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDefaultProcess
+#define SOAP_TYPE___ns1__GetDefaultProcess (2368)
+/* Operation wrapper: */
+struct __ns1__GetDefaultProcess
+{
+public:
+	ns1__GetDefaultProcess *ns1__GetDefaultProcess_;	/* optional element of type ns1:GetDefaultProcess */
+public:
+	int soap_type() const { return 2368; } /* = unique id SOAP_TYPE___ns1__GetDefaultProcess */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__AddMarker
+#define SOAP_TYPE___ns1__AddMarker (2372)
+/* Operation wrapper: */
+struct __ns1__AddMarker
+{
+public:
+	ns1__AddMarker *ns1__AddMarker_;	/* optional element of type ns1:AddMarker */
+public:
+	int soap_type() const { return 2372; } /* = unique id SOAP_TYPE___ns1__AddMarker */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DelMarker
+#define SOAP_TYPE___ns1__DelMarker (2376)
+/* Operation wrapper: */
+struct __ns1__DelMarker
+{
+public:
+	ns1__DelMarker *ns1__DelMarker_;	/* optional element of type ns1:DelMarker */
+public:
+	int soap_type() const { return 2376; } /* = unique id SOAP_TYPE___ns1__DelMarker */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetListMarker
+#define SOAP_TYPE___ns1__GetListMarker (2380)
+/* Operation wrapper: */
+struct __ns1__GetListMarker
+{
+public:
+	ns1__GetListMarker *ns1__GetListMarker_;	/* optional element of type ns1:GetListMarker */
+public:
+	int soap_type() const { return 2380; } /* = unique id SOAP_TYPE___ns1__GetListMarker */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetWorkflowVariables
+#define SOAP_TYPE___ns1__GetWorkflowVariables (2384)
+/* Operation wrapper: */
+struct __ns1__GetWorkflowVariables
+{
+public:
+	ns1__GetWorkflowVariables *ns1__GetWorkflowVariables_;	/* optional element of type ns1:GetWorkflowVariables */
+public:
+	int soap_type() const { return 2384; } /* = unique id SOAP_TYPE___ns1__GetWorkflowVariables */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__AddSign
+#define SOAP_TYPE___ns1__AddSign (2388)
+/* Operation wrapper: */
+struct __ns1__AddSign
+{
+public:
+	ns1__AddSign *ns1__AddSign_;	/* optional element of type ns1:AddSign */
+public:
+	int soap_type() const { return 2388; } /* = unique id SOAP_TYPE___ns1__AddSign */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DelSign
+#define SOAP_TYPE___ns1__DelSign (2392)
+/* Operation wrapper: */
+struct __ns1__DelSign
+{
+public:
+	ns1__DelSign *ns1__DelSign_;	/* optional element of type ns1:DelSign */
+public:
+	int soap_type() const { return 2392; } /* = unique id SOAP_TYPE___ns1__DelSign */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetSign
+#define SOAP_TYPE___ns1__GetSign (2396)
+/* Operation wrapper: */
+struct __ns1__GetSign
+{
+public:
+	ns1__GetSign *ns1__GetSign_;	/* optional element of type ns1:GetSign */
+public:
+	int soap_type() const { return 2396; } /* = unique id SOAP_TYPE___ns1__GetSign */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetContSign
+#define SOAP_TYPE___ns1__GetContSign (2400)
+/* Operation wrapper: */
+struct __ns1__GetContSign
+{
+public:
+	ns1__GetContSign *ns1__GetContSign_;	/* optional element of type ns1:GetContSign */
+public:
+	int soap_type() const { return 2400; } /* = unique id SOAP_TYPE___ns1__GetContSign */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetContSignByUser
+#define SOAP_TYPE___ns1__GetContSignByUser (2404)
+/* Operation wrapper: */
+struct __ns1__GetContSignByUser
+{
+public:
+	ns1__GetContSignByUser *ns1__GetContSignByUser_;	/* optional element of type ns1:GetContSignByUser */
+public:
+	int soap_type() const { return 2404; } /* = unique id SOAP_TYPE___ns1__GetContSignByUser */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__ModSign
+#define SOAP_TYPE___ns1__ModSign (2408)
+/* Operation wrapper: */
+struct __ns1__ModSign
+{
+public:
+	ns1__ModSign *ns1__ModSign_;	/* optional element of type ns1:ModSign */
+public:
+	int soap_type() const { return 2408; } /* = unique id SOAP_TYPE___ns1__ModSign */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__AddUserSettings
+#define SOAP_TYPE___ns1__AddUserSettings (2412)
+/* Operation wrapper: */
+struct __ns1__AddUserSettings
+{
+public:
+	ns1__AddUserSettings *ns1__AddUserSettings_;	/* optional element of type ns1:AddUserSettings */
+public:
+	int soap_type() const { return 2412; } /* = unique id SOAP_TYPE___ns1__AddUserSettings */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__ModUserSettings
+#define SOAP_TYPE___ns1__ModUserSettings (2416)
+/* Operation wrapper: */
+struct __ns1__ModUserSettings
+{
+public:
+	ns1__ModUserSettings *ns1__ModUserSettings_;	/* optional element of type ns1:ModUserSettings */
+public:
+	int soap_type() const { return 2416; } /* = unique id SOAP_TYPE___ns1__ModUserSettings */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DelUserSettings
+#define SOAP_TYPE___ns1__DelUserSettings (2420)
+/* Operation wrapper: */
+struct __ns1__DelUserSettings
+{
+public:
+	ns1__DelUserSettings *ns1__DelUserSettings_;	/* optional element of type ns1:DelUserSettings */
+public:
+	int soap_type() const { return 2420; } /* = unique id SOAP_TYPE___ns1__DelUserSettings */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetUserSettings
+#define SOAP_TYPE___ns1__GetUserSettings (2424)
+/* Operation wrapper: */
+struct __ns1__GetUserSettings
+{
+public:
+	ns1__GetUserSettings *ns1__GetUserSettings_;	/* optional element of type ns1:GetUserSettings */
+public:
+	int soap_type() const { return 2424; } /* = unique id SOAP_TYPE___ns1__GetUserSettings */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__InsertData
+#define SOAP_TYPE___ns1__InsertData (2428)
+/* Operation wrapper: */
+struct __ns1__InsertData
+{
+public:
+	ns1__InsertData *ns1__InsertData_;	/* optional element of type ns1:InsertData */
+public:
+	int soap_type() const { return 2428; } /* = unique id SOAP_TYPE___ns1__InsertData */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__CanInsertData
+#define SOAP_TYPE___ns1__CanInsertData (2432)
+/* Operation wrapper: */
+struct __ns1__CanInsertData
+{
+public:
+	ns1__CanInsertData *ns1__CanInsertData_;	/* optional element of type ns1:CanInsertData */
+public:
+	int soap_type() const { return 2432; } /* = unique id SOAP_TYPE___ns1__CanInsertData */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__CopyData
+#define SOAP_TYPE___ns1__CopyData (2436)
+/* Operation wrapper: */
+struct __ns1__CopyData
+{
+public:
+	ns1__CopyData *ns1__CopyData_;	/* optional element of type ns1:CopyData */
+public:
+	int soap_type() const { return 2436; } /* = unique id SOAP_TYPE___ns1__CopyData */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__MoveData
+#define SOAP_TYPE___ns1__MoveData (2440)
+/* Operation wrapper: */
+struct __ns1__MoveData
+{
+public:
+	ns1__MoveData *ns1__MoveData_;	/* optional element of type ns1:MoveData */
+public:
+	int soap_type() const { return 2440; } /* = unique id SOAP_TYPE___ns1__MoveData */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__ModifyData
+#define SOAP_TYPE___ns1__ModifyData (2444)
+/* Operation wrapper: */
+struct __ns1__ModifyData
+{
+public:
+	ns1__ModifyData *ns1__ModifyData_;	/* optional element of type ns1:ModifyData */
+public:
+	int soap_type() const { return 2444; } /* = unique id SOAP_TYPE___ns1__ModifyData */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__CanModifyData
+#define SOAP_TYPE___ns1__CanModifyData (2448)
+/* Operation wrapper: */
+struct __ns1__CanModifyData
+{
+public:
+	ns1__CanModifyData *ns1__CanModifyData_;	/* optional element of type ns1:CanModifyData */
+public:
+	int soap_type() const { return 2448; } /* = unique id SOAP_TYPE___ns1__CanModifyData */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DeleteData
+#define SOAP_TYPE___ns1__DeleteData (2452)
+/* Operation wrapper: */
+struct __ns1__DeleteData
+{
+public:
+	ns1__DeleteData *ns1__DeleteData_;	/* optional element of type ns1:DeleteData */
+public:
+	int soap_type() const { return 2452; } /* = unique id SOAP_TYPE___ns1__DeleteData */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__CanDeleteData
+#define SOAP_TYPE___ns1__CanDeleteData (2456)
+/* Operation wrapper: */
+struct __ns1__CanDeleteData
+{
+public:
+	ns1__CanDeleteData *ns1__CanDeleteData_;	/* optional element of type ns1:CanDeleteData */
+public:
+	int soap_type() const { return 2456; } /* = unique id SOAP_TYPE___ns1__CanDeleteData */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetData
+#define SOAP_TYPE___ns1__GetData (2460)
+/* Operation wrapper: */
+struct __ns1__GetData
+{
+public:
+	ns1__GetData *ns1__GetData_;	/* optional element of type ns1:GetData */
+public:
+	int soap_type() const { return 2460; } /* = unique id SOAP_TYPE___ns1__GetData */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDataLimit
+#define SOAP_TYPE___ns1__GetDataLimit (2464)
+/* Operation wrapper: */
+struct __ns1__GetDataLimit
+{
+public:
+	ns1__GetDataLimit *ns1__GetDataLimit_;	/* optional element of type ns1:GetDataLimit */
+public:
+	int soap_type() const { return 2464; } /* = unique id SOAP_TYPE___ns1__GetDataLimit */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDataByIdForSecurity
+#define SOAP_TYPE___ns1__GetDataByIdForSecurity (2468)
+/* Operation wrapper: */
+struct __ns1__GetDataByIdForSecurity
+{
+public:
+	ns1__GetDataByIdForSecurity *ns1__GetDataByIdForSecurity_;	/* optional element of type ns1:GetDataByIdForSecurity */
+public:
+	int soap_type() const { return 2468; } /* = unique id SOAP_TYPE___ns1__GetDataByIdForSecurity */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDataCountWithoutPermission
+#define SOAP_TYPE___ns1__GetDataCountWithoutPermission (2472)
+/* Operation wrapper: */
+struct __ns1__GetDataCountWithoutPermission
+{
+public:
+	ns1__GetDataCountWithoutPermission *ns1__GetDataCountWithoutPermission_;	/* optional element of type ns1:GetDataCountWithoutPermission */
+public:
+	int soap_type() const { return 2472; } /* = unique id SOAP_TYPE___ns1__GetDataCountWithoutPermission */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetDataCountWithPermission
+#define SOAP_TYPE___ns1__GetDataCountWithPermission (2476)
+/* Operation wrapper: */
+struct __ns1__GetDataCountWithPermission
+{
+public:
+	ns1__GetDataCountWithPermission *ns1__GetDataCountWithPermission_;	/* optional element of type ns1:GetDataCountWithPermission */
+public:
+	int soap_type() const { return 2476; } /* = unique id SOAP_TYPE___ns1__GetDataCountWithPermission */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__InsertProtocol
+#define SOAP_TYPE___ns1__InsertProtocol (2480)
+/* Operation wrapper: */
+struct __ns1__InsertProtocol
+{
+public:
+	ns1__InsertProtocol *ns1__InsertProtocol_;	/* optional element of type ns1:InsertProtocol */
+public:
+	int soap_type() const { return 2480; } /* = unique id SOAP_TYPE___ns1__InsertProtocol */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__EditProtocol
+#define SOAP_TYPE___ns1__EditProtocol (2484)
+/* Operation wrapper: */
+struct __ns1__EditProtocol
+{
+public:
+	ns1__EditProtocol *ns1__EditProtocol_;	/* optional element of type ns1:EditProtocol */
+public:
+	int soap_type() const { return 2484; } /* = unique id SOAP_TYPE___ns1__EditProtocol */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DeleteProtocol
+#define SOAP_TYPE___ns1__DeleteProtocol (2488)
+/* Operation wrapper: */
+struct __ns1__DeleteProtocol
+{
+public:
+	ns1__DeleteProtocol *ns1__DeleteProtocol_;	/* optional element of type ns1:DeleteProtocol */
+public:
+	int soap_type() const { return 2488; } /* = unique id SOAP_TYPE___ns1__DeleteProtocol */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__ShowProtocol
+#define SOAP_TYPE___ns1__ShowProtocol (2492)
+/* Operation wrapper: */
+struct __ns1__ShowProtocol
+{
+public:
+	ns1__ShowProtocol *ns1__ShowProtocol_;	/* optional element of type ns1:ShowProtocol */
+public:
+	int soap_type() const { return 2492; } /* = unique id SOAP_TYPE___ns1__ShowProtocol */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetProtocolList
+#define SOAP_TYPE___ns1__GetProtocolList (2496)
+/* Operation wrapper: */
+struct __ns1__GetProtocolList
+{
+public:
+	ns1__GetProtocolList *ns1__GetProtocolList_;	/* optional element of type ns1:GetProtocolList */
+public:
+	int soap_type() const { return 2496; } /* = unique id SOAP_TYPE___ns1__GetProtocolList */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetProtocolById
+#define SOAP_TYPE___ns1__GetProtocolById (2500)
+/* Operation wrapper: */
+struct __ns1__GetProtocolById
+{
+public:
+	ns1__GetProtocolById *ns1__GetProtocolById_;	/* optional element of type ns1:GetProtocolById */
+public:
+	int soap_type() const { return 2500; } /* = unique id SOAP_TYPE___ns1__GetProtocolById */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetProtocolByName
+#define SOAP_TYPE___ns1__GetProtocolByName (2504)
+/* Operation wrapper: */
+struct __ns1__GetProtocolByName
+{
+public:
+	ns1__GetProtocolByName *ns1__GetProtocolByName_;	/* optional element of type ns1:GetProtocolByName */
+public:
+	int soap_type() const { return 2504; } /* = unique id SOAP_TYPE___ns1__GetProtocolByName */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetProtocolByDesc
+#define SOAP_TYPE___ns1__GetProtocolByDesc (2508)
+/* Operation wrapper: */
+struct __ns1__GetProtocolByDesc
+{
+public:
+	ns1__GetProtocolByDesc *ns1__GetProtocolByDesc_;	/* optional element of type ns1:GetProtocolByDesc */
+public:
+	int soap_type() const { return 2508; } /* = unique id SOAP_TYPE___ns1__GetProtocolByDesc */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetProtocolByNameDesc
+#define SOAP_TYPE___ns1__GetProtocolByNameDesc (2512)
+/* Operation wrapper: */
+struct __ns1__GetProtocolByNameDesc
+{
+public:
+	ns1__GetProtocolByNameDesc *ns1__GetProtocolByNameDesc_;	/* optional element of type ns1:GetProtocolByNameDesc */
+public:
+	int soap_type() const { return 2512; } /* = unique id SOAP_TYPE___ns1__GetProtocolByNameDesc */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__CanUseProtocol
+#define SOAP_TYPE___ns1__CanUseProtocol (2516)
+/* Operation wrapper: */
+struct __ns1__CanUseProtocol
+{
+public:
+	ns1__CanUseProtocol *ns1__CanUseProtocol_;	/* optional element of type ns1:CanUseProtocol */
+public:
+	int soap_type() const { return 2516; } /* = unique id SOAP_TYPE___ns1__CanUseProtocol */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__CanAddNewYear
+#define SOAP_TYPE___ns1__CanAddNewYear (2520)
+/* Operation wrapper: */
+struct __ns1__CanAddNewYear
+{
+public:
+	ns1__CanAddNewYear *ns1__CanAddNewYear_;	/* optional element of type ns1:CanAddNewYear */
+public:
+	int soap_type() const { return 2520; } /* = unique id SOAP_TYPE___ns1__CanAddNewYear */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__CanAddNewDate
+#define SOAP_TYPE___ns1__CanAddNewDate (2524)
+/* Operation wrapper: */
+struct __ns1__CanAddNewDate
+{
+public:
+	ns1__CanAddNewDate *ns1__CanAddNewDate_;	/* optional element of type ns1:CanAddNewDate */
+public:
+	int soap_type() const { return 2524; } /* = unique id SOAP_TYPE___ns1__CanAddNewDate */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__CanInsertProtocol
+#define SOAP_TYPE___ns1__CanInsertProtocol (2528)
+/* Operation wrapper: */
+struct __ns1__CanInsertProtocol
+{
+public:
+	ns1__CanInsertProtocol *ns1__CanInsertProtocol_;	/* optional element of type ns1:CanInsertProtocol */
+public:
+	int soap_type() const { return 2528; } /* = unique id SOAP_TYPE___ns1__CanInsertProtocol */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__InsertUSFile
+#define SOAP_TYPE___ns1__InsertUSFile (2532)
+/* Operation wrapper: */
+struct __ns1__InsertUSFile
+{
+public:
+	ns1__InsertUSFile *ns1__InsertUSFile_;	/* optional element of type ns1:InsertUSFile */
+public:
+	int soap_type() const { return 2532; } /* = unique id SOAP_TYPE___ns1__InsertUSFile */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__InsertArchSostRule
+#define SOAP_TYPE___ns1__InsertArchSostRule (2536)
+/* Operation wrapper: */
+struct __ns1__InsertArchSostRule
+{
+public:
+	ns1__InsertArchSostRule *ns1__InsertArchSostRule_;	/* optional element of type ns1:InsertArchSostRule */
+public:
+	int soap_type() const { return 2536; } /* = unique id SOAP_TYPE___ns1__InsertArchSostRule */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DeleteArchSostRule
+#define SOAP_TYPE___ns1__DeleteArchSostRule (2540)
+/* Operation wrapper: */
+struct __ns1__DeleteArchSostRule
+{
+public:
+	ns1__DeleteArchSostRule *ns1__DeleteArchSostRule_;	/* optional element of type ns1:DeleteArchSostRule */
+public:
+	int soap_type() const { return 2540; } /* = unique id SOAP_TYPE___ns1__DeleteArchSostRule */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__ModifyArchSostRule
+#define SOAP_TYPE___ns1__ModifyArchSostRule (2544)
+/* Operation wrapper: */
+struct __ns1__ModifyArchSostRule
+{
+public:
+	ns1__ModifyArchSostRule *ns1__ModifyArchSostRule_;	/* optional element of type ns1:ModifyArchSostRule */
+public:
+	int soap_type() const { return 2544; } /* = unique id SOAP_TYPE___ns1__ModifyArchSostRule */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__Fk_USCOREgetAllRecord
+#define SOAP_TYPE___ns1__Fk_USCOREgetAllRecord (2548)
+/* Operation wrapper: */
+struct __ns1__Fk_USCOREgetAllRecord
+{
+public:
+	ns1__Fk_USCOREgetAllRecord *ns1__Fk_USCOREgetAllRecord_;	/* optional element of type ns1:Fk_getAllRecord */
+public:
+	int soap_type() const { return 2548; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetAllRecord */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__Fk_USCOREgetCountAllRecord
+#define SOAP_TYPE___ns1__Fk_USCOREgetCountAllRecord (2552)
+/* Operation wrapper: */
+struct __ns1__Fk_USCOREgetCountAllRecord
+{
+public:
+	ns1__Fk_USCOREgetCountAllRecord *ns1__Fk_USCOREgetCountAllRecord_;	/* optional element of type ns1:Fk_getCountAllRecord */
+public:
+	int soap_type() const { return 2552; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetCountAllRecord */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__Fk_USCOREgetAllRecordByIndex
+#define SOAP_TYPE___ns1__Fk_USCOREgetAllRecordByIndex (2556)
+/* Operation wrapper: */
+struct __ns1__Fk_USCOREgetAllRecordByIndex
+{
+public:
+	ns1__Fk_USCOREgetAllRecordByIndex *ns1__Fk_USCOREgetAllRecordByIndex_;	/* optional element of type ns1:Fk_getAllRecordByIndex */
+public:
+	int soap_type() const { return 2556; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetAllRecordByIndex */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__Fk_USCOREgetAllRecordByDesc
+#define SOAP_TYPE___ns1__Fk_USCOREgetAllRecordByDesc (2560)
+/* Operation wrapper: */
+struct __ns1__Fk_USCOREgetAllRecordByDesc
+{
+public:
+	ns1__Fk_USCOREgetAllRecordByDesc *ns1__Fk_USCOREgetAllRecordByDesc_;	/* optional element of type ns1:Fk_getAllRecordByDesc */
+public:
+	int soap_type() const { return 2560; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetAllRecordByDesc */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__Fk_USCOREgetCountAllRecordByDesc
+#define SOAP_TYPE___ns1__Fk_USCOREgetCountAllRecordByDesc (2564)
+/* Operation wrapper: */
+struct __ns1__Fk_USCOREgetCountAllRecordByDesc
+{
+public:
+	ns1__Fk_USCOREgetCountAllRecordByDesc *ns1__Fk_USCOREgetCountAllRecordByDesc_;	/* optional element of type ns1:Fk_getCountAllRecordByDesc */
+public:
+	int soap_type() const { return 2564; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetCountAllRecordByDesc */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__Fk_USCOREgetCountAllRecordByIndexDesc
+#define SOAP_TYPE___ns1__Fk_USCOREgetCountAllRecordByIndexDesc (2568)
+/* Operation wrapper: */
+struct __ns1__Fk_USCOREgetCountAllRecordByIndexDesc
+{
+public:
+	ns1__Fk_USCOREgetCountAllRecordByIndexDesc *ns1__Fk_USCOREgetCountAllRecordByIndexDesc_;	/* optional element of type ns1:Fk_getCountAllRecordByIndexDesc */
+public:
+	int soap_type() const { return 2568; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetCountAllRecordByIndexDesc */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__Fk_USCOREgetAllRecordByIndexDesc
+#define SOAP_TYPE___ns1__Fk_USCOREgetAllRecordByIndexDesc (2572)
+/* Operation wrapper: */
+struct __ns1__Fk_USCOREgetAllRecordByIndexDesc
+{
+public:
+	ns1__Fk_USCOREgetAllRecordByIndexDesc *ns1__Fk_USCOREgetAllRecordByIndexDesc_;	/* optional element of type ns1:Fk_getAllRecordByIndexDesc */
+public:
+	int soap_type() const { return 2572; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetAllRecordByIndexDesc */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__Fk_USCOREgetColumnsName
+#define SOAP_TYPE___ns1__Fk_USCOREgetColumnsName (2576)
+/* Operation wrapper: */
+struct __ns1__Fk_USCOREgetColumnsName
+{
+public:
+	ns1__Fk_USCOREgetColumnsName *ns1__Fk_USCOREgetColumnsName_;	/* optional element of type ns1:Fk_getColumnsName */
+public:
+	int soap_type() const { return 2576; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetColumnsName */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__Fk_USCOREgetRemoteDatabaseList
+#define SOAP_TYPE___ns1__Fk_USCOREgetRemoteDatabaseList (2580)
+/* Operation wrapper: */
+struct __ns1__Fk_USCOREgetRemoteDatabaseList
+{
+public:
+	ns1__Fk_USCOREgetRemoteDatabaseList *ns1__Fk_USCOREgetRemoteDatabaseList_;	/* optional element of type ns1:Fk_getRemoteDatabaseList */
+public:
+	int soap_type() const { return 2580; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetRemoteDatabaseList */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__Fk_USCOREgetRemoteTableList
+#define SOAP_TYPE___ns1__Fk_USCOREgetRemoteTableList (2584)
+/* Operation wrapper: */
+struct __ns1__Fk_USCOREgetRemoteTableList
+{
+public:
+	ns1__Fk_USCOREgetRemoteTableList *ns1__Fk_USCOREgetRemoteTableList_;	/* optional element of type ns1:Fk_getRemoteTableList */
+public:
+	int soap_type() const { return 2584; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetRemoteTableList */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__Fk_USCOREgetRemoteViewList
+#define SOAP_TYPE___ns1__Fk_USCOREgetRemoteViewList (2588)
+/* Operation wrapper: */
+struct __ns1__Fk_USCOREgetRemoteViewList
+{
+public:
+	ns1__Fk_USCOREgetRemoteViewList *ns1__Fk_USCOREgetRemoteViewList_;	/* optional element of type ns1:Fk_getRemoteViewList */
+public:
+	int soap_type() const { return 2588; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetRemoteViewList */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__Fk_USCOREgetRemoteFieldList
+#define SOAP_TYPE___ns1__Fk_USCOREgetRemoteFieldList (2592)
+/* Operation wrapper: */
+struct __ns1__Fk_USCOREgetRemoteFieldList
+{
+public:
+	ns1__Fk_USCOREgetRemoteFieldList *ns1__Fk_USCOREgetRemoteFieldList_;	/* optional element of type ns1:Fk_getRemoteFieldList */
+public:
+	int soap_type() const { return 2592; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetRemoteFieldList */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__Fk_USCOREgetLocalFieldList
+#define SOAP_TYPE___ns1__Fk_USCOREgetLocalFieldList (2596)
+/* Operation wrapper: */
+struct __ns1__Fk_USCOREgetLocalFieldList
+{
+public:
+	ns1__Fk_USCOREgetLocalFieldList *ns1__Fk_USCOREgetLocalFieldList_;	/* optional element of type ns1:Fk_getLocalFieldList */
+public:
+	int soap_type() const { return 2596; } /* = unique id SOAP_TYPE___ns1__Fk_USCOREgetLocalFieldList */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DeleteFilter
+#define SOAP_TYPE___ns1__DeleteFilter (2600)
+/* Operation wrapper: */
+struct __ns1__DeleteFilter
+{
+public:
+	ns1__DeleteFilter *ns1__DeleteFilter_;	/* optional element of type ns1:DeleteFilter */
+public:
+	int soap_type() const { return 2600; } /* = unique id SOAP_TYPE___ns1__DeleteFilter */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__ModifyFilter
+#define SOAP_TYPE___ns1__ModifyFilter (2604)
+/* Operation wrapper: */
+struct __ns1__ModifyFilter
+{
+public:
+	ns1__ModifyFilter *ns1__ModifyFilter_;	/* optional element of type ns1:ModifyFilter */
+public:
+	int soap_type() const { return 2604; } /* = unique id SOAP_TYPE___ns1__ModifyFilter */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__InsertFilter
+#define SOAP_TYPE___ns1__InsertFilter (2608)
+/* Operation wrapper: */
+struct __ns1__InsertFilter
+{
+public:
+	ns1__InsertFilter *ns1__InsertFilter_;	/* optional element of type ns1:InsertFilter */
+public:
+	int soap_type() const { return 2608; } /* = unique id SOAP_TYPE___ns1__InsertFilter */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetInstanceId
+#define SOAP_TYPE___ns1__GetInstanceId (2612)
+/* Operation wrapper: */
+struct __ns1__GetInstanceId
+{
+public:
+	ns1__GetInstanceId *ns1__GetInstanceId_;	/* optional element of type ns1:GetInstanceId */
+public:
+	int soap_type() const { return 2612; } /* = unique id SOAP_TYPE___ns1__GetInstanceId */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetTemplateProperties
+#define SOAP_TYPE___ns1__GetTemplateProperties (2616)
+/* Operation wrapper: */
+struct __ns1__GetTemplateProperties
+{
+public:
+	ns1__GetTemplateProperties *ns1__GetTemplateProperties_;	/* optional element of type ns1:GetTemplateProperties */
+public:
+	int soap_type() const { return 2616; } /* = unique id SOAP_TYPE___ns1__GetTemplateProperties */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetQueryParam
+#define SOAP_TYPE___ns1__GetQueryParam (2620)
+/* Operation wrapper: */
+struct __ns1__GetQueryParam
+{
+public:
+	ns1__GetQueryParam *ns1__GetQueryParam_;	/* optional element of type ns1:GetQueryParam */
+public:
+	int soap_type() const { return 2620; } /* = unique id SOAP_TYPE___ns1__GetQueryParam */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__InsertLinkContainerToContainer
+#define SOAP_TYPE___ns1__InsertLinkContainerToContainer (2624)
+/* Operation wrapper: */
+struct __ns1__InsertLinkContainerToContainer
+{
+public:
+	ns1__InsertLinkContainerToContainer *ns1__InsertLinkContainerToContainer_;	/* optional element of type ns1:InsertLinkContainerToContainer */
+public:
+	int soap_type() const { return 2624; } /* = unique id SOAP_TYPE___ns1__InsertLinkContainerToContainer */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__CanInsertLinkContainerToContainer
+#define SOAP_TYPE___ns1__CanInsertLinkContainerToContainer (2628)
+/* Operation wrapper: */
+struct __ns1__CanInsertLinkContainerToContainer
+{
+public:
+	ns1__CanInsertLinkContainerToContainer *ns1__CanInsertLinkContainerToContainer_;	/* optional element of type ns1:CanInsertLinkContainerToContainer */
+public:
+	int soap_type() const { return 2628; } /* = unique id SOAP_TYPE___ns1__CanInsertLinkContainerToContainer */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__InsertLinkContainerToDocument
+#define SOAP_TYPE___ns1__InsertLinkContainerToDocument (2632)
+/* Operation wrapper: */
+struct __ns1__InsertLinkContainerToDocument
+{
+public:
+	ns1__InsertLinkContainerToDocument *ns1__InsertLinkContainerToDocument_;	/* optional element of type ns1:InsertLinkContainerToDocument */
+public:
+	int soap_type() const { return 2632; } /* = unique id SOAP_TYPE___ns1__InsertLinkContainerToDocument */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__CanInsertLinkContainerToDocument
+#define SOAP_TYPE___ns1__CanInsertLinkContainerToDocument (2636)
+/* Operation wrapper: */
+struct __ns1__CanInsertLinkContainerToDocument
+{
+public:
+	ns1__CanInsertLinkContainerToDocument *ns1__CanInsertLinkContainerToDocument_;	/* optional element of type ns1:CanInsertLinkContainerToDocument */
+public:
+	int soap_type() const { return 2636; } /* = unique id SOAP_TYPE___ns1__CanInsertLinkContainerToDocument */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__InsertLinkDocumentToDocument
+#define SOAP_TYPE___ns1__InsertLinkDocumentToDocument (2640)
+/* Operation wrapper: */
+struct __ns1__InsertLinkDocumentToDocument
+{
+public:
+	ns1__InsertLinkDocumentToDocument *ns1__InsertLinkDocumentToDocument_;	/* optional element of type ns1:InsertLinkDocumentToDocument */
+public:
+	int soap_type() const { return 2640; } /* = unique id SOAP_TYPE___ns1__InsertLinkDocumentToDocument */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__CanInsertLinkDocumentToDocument
+#define SOAP_TYPE___ns1__CanInsertLinkDocumentToDocument (2644)
+/* Operation wrapper: */
+struct __ns1__CanInsertLinkDocumentToDocument
+{
+public:
+	ns1__CanInsertLinkDocumentToDocument *ns1__CanInsertLinkDocumentToDocument_;	/* optional element of type ns1:CanInsertLinkDocumentToDocument */
+public:
+	int soap_type() const { return 2644; } /* = unique id SOAP_TYPE___ns1__CanInsertLinkDocumentToDocument */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__ModifyLinkContainerToContainer
+#define SOAP_TYPE___ns1__ModifyLinkContainerToContainer (2648)
+/* Operation wrapper: */
+struct __ns1__ModifyLinkContainerToContainer
+{
+public:
+	ns1__ModifyLinkContainerToContainer *ns1__ModifyLinkContainerToContainer_;	/* optional element of type ns1:ModifyLinkContainerToContainer */
+public:
+	int soap_type() const { return 2648; } /* = unique id SOAP_TYPE___ns1__ModifyLinkContainerToContainer */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__CreateContainer
+#define SOAP_TYPE___ns1__CreateContainer (2652)
+/* Operation wrapper: */
+struct __ns1__CreateContainer
+{
+public:
+	ns1__CreateContainer *ns1__CreateContainer_;	/* optional element of type ns1:CreateContainer */
+public:
+	int soap_type() const { return 2652; } /* = unique id SOAP_TYPE___ns1__CreateContainer */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__CreateTemplate
+#define SOAP_TYPE___ns1__CreateTemplate (2656)
+/* Operation wrapper: */
+struct __ns1__CreateTemplate
+{
+public:
+	ns1__CreateTemplate *ns1__CreateTemplate_;	/* optional element of type ns1:CreateTemplate */
+public:
+	int soap_type() const { return 2656; } /* = unique id SOAP_TYPE___ns1__CreateTemplate */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__CreateDynorg
+#define SOAP_TYPE___ns1__CreateDynorg (2660)
+/* Operation wrapper: */
+struct __ns1__CreateDynorg
+{
+public:
+	ns1__CreateDynorg *ns1__CreateDynorg_;	/* optional element of type ns1:CreateDynorg */
+public:
+	int soap_type() const { return 2660; } /* = unique id SOAP_TYPE___ns1__CreateDynorg */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetInstanceReplicationStatus
+#define SOAP_TYPE___ns1__GetInstanceReplicationStatus (2664)
+/* Operation wrapper: */
+struct __ns1__GetInstanceReplicationStatus
+{
+public:
+	ns1__GetInstanceReplicationStatus *ns1__GetInstanceReplicationStatus_;	/* optional element of type ns1:GetInstanceReplicationStatus */
+public:
+	int soap_type() const { return 2664; } /* = unique id SOAP_TYPE___ns1__GetInstanceReplicationStatus */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__ModifyDataWA
+#define SOAP_TYPE___ns1__ModifyDataWA (2668)
+/* Operation wrapper: */
+struct __ns1__ModifyDataWA
+{
+public:
+	ns1__ModifyDataWA *ns1__ModifyDataWA_;	/* optional element of type ns1:ModifyDataWA */
+public:
+	int soap_type() const { return 2668; } /* = unique id SOAP_TYPE___ns1__ModifyDataWA */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__DeleteDataWA
+#define SOAP_TYPE___ns1__DeleteDataWA (2672)
+/* Operation wrapper: */
+struct __ns1__DeleteDataWA
+{
+public:
+	ns1__DeleteDataWA *ns1__DeleteDataWA_;	/* optional element of type ns1:DeleteDataWA */
+public:
+	int soap_type() const { return 2672; } /* = unique id SOAP_TYPE___ns1__DeleteDataWA */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetListDataWA
+#define SOAP_TYPE___ns1__GetListDataWA (2676)
+/* Operation wrapper: */
+struct __ns1__GetListDataWA
+{
+public:
+	ns1__GetListDataWA *ns1__GetListDataWA_;	/* optional element of type ns1:GetListDataWA */
+public:
+	int soap_type() const { return 2676; } /* = unique id SOAP_TYPE___ns1__GetListDataWA */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetFieldList
+#define SOAP_TYPE___ns1__GetFieldList (2680)
+/* Operation wrapper: */
+struct __ns1__GetFieldList
+{
+public:
+	ns1__GetFieldList *ns1__GetFieldList_;	/* optional element of type ns1:GetFieldList */
+public:
+	int soap_type() const { return 2680; } /* = unique id SOAP_TYPE___ns1__GetFieldList */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetFieldProperties
+#define SOAP_TYPE___ns1__GetFieldProperties (2684)
+/* Operation wrapper: */
+struct __ns1__GetFieldProperties
+{
+public:
+	ns1__GetFieldProperties *ns1__GetFieldProperties_;	/* optional element of type ns1:GetFieldProperties */
+public:
+	int soap_type() const { return 2684; } /* = unique id SOAP_TYPE___ns1__GetFieldProperties */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__ModifyField
+#define SOAP_TYPE___ns1__ModifyField (2688)
+/* Operation wrapper: */
+struct __ns1__ModifyField
+{
+public:
+	ns1__ModifyField *ns1__ModifyField_;	/* optional element of type ns1:ModifyField */
+public:
+	int soap_type() const { return 2688; } /* = unique id SOAP_TYPE___ns1__ModifyField */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetArchiBoxInDomainByMatricola
+#define SOAP_TYPE___ns1__GetArchiBoxInDomainByMatricola (2692)
+/* Operation wrapper: */
+struct __ns1__GetArchiBoxInDomainByMatricola
+{
+public:
+	ns1__GetArchiBoxInDomainByMatricola *ns1__GetArchiBoxInDomainByMatricola_;	/* optional element of type ns1:GetArchiBoxInDomainByMatricola */
+public:
+	int soap_type() const { return 2692; } /* = unique id SOAP_TYPE___ns1__GetArchiBoxInDomainByMatricola */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetArchiBoxInfo
+#define SOAP_TYPE___ns1__GetArchiBoxInfo (2696)
+/* Operation wrapper: */
+struct __ns1__GetArchiBoxInfo
+{
+public:
+	ns1__GetArchiBoxInfo *ns1__GetArchiBoxInfo_;	/* optional element of type ns1:GetArchiBoxInfo */
+public:
+	int soap_type() const { return 2696; } /* = unique id SOAP_TYPE___ns1__GetArchiBoxInfo */
+};
+#endif
+
+#ifndef SOAP_TYPE___ns1__GetArchiBoxInDomain
+#define SOAP_TYPE___ns1__GetArchiBoxInDomain (2700)
+/* Operation wrapper: */
+struct __ns1__GetArchiBoxInDomain
+{
+public:
+	ns1__GetArchiBoxInDomain *ns1__GetArchiBoxInDomain_;	/* optional element of type ns1:GetArchiBoxInDomain */
+public:
+	int soap_type() const { return 2700; } /* = unique id SOAP_TYPE___ns1__GetArchiBoxInDomain */
 };
 #endif
 
