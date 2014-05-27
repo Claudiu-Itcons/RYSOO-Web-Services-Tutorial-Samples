@@ -1,22 +1,8 @@
 /*
- * Copyright (C) 2014 Daniele Vottero http://daniele.vottero.eu/me   
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
- * MA 02110-1301  USA
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
-package base;
+package abx.messages.util;
 
 /**
  *
@@ -24,7 +10,10 @@ package base;
  */
 public class abxMessages {
 
-
+    /* range from 0x00012000 to 0x00021FFF x Eusebiu*/
+    /* range from 0x00022000 to 0x00041FFF x Andrea */
+    /* range from 0x00032000 to 0x00031FFF x Luca */
+    /* range from 0x00042000 to 0x00051FFF x Cristina */
     public static final int GenericFunctionGeneralException = 0x00000000;
     public static final int Login_OK_LOGIN = 0x00000001;
     public static final int Login_KO_PASSWORDWRONG = 0x00000002;
@@ -3454,7 +3443,7 @@ public class abxMessages {
     public static final int conservThreadConserv_conserveDocuments_USERCANTREADRECORD = 0x00001A0F;
     public static final int mainThreadConserv_AppAudit_INSERTTASKLOCKQUEUE = 0x00001A10;
     public static final int lockThreadConserv_CLOSEANDRECONNECTCONNECTIONS = 0x00001A11;
-    public static final int lockThreadConserv_ERRORRECONNECTINGDB = 0x00001A12;    
+    public static final int lockThreadConserv_ERRORRECONNECTINGDB = 0x00001A12;
     public static final int lockThreadConserv_AppAudit_NOSCHEDULERTASKFOUND = 0x00001A20;
     public static final int lockThreadConserv_AppAudit_NOSCHEDULERTASKFOUNDSCHEDULATION = 0x00001A21;
     public static final int lockThreadConserv_AppAudit_INSERTTASKCONSERVQUEUE = 0x00001A22;
@@ -3673,7 +3662,6 @@ public class abxMessages {
     public static final int GetAllObjectWithSystem_EXCEPTION = 0x00001BF6;
     public static final int mainThreadConserv_CLOSEANDRECONNECTCONNECTIONS = 0x00001BF7;
     public static final int mainThreadConserv_ERRORRECONNECTINGDB = 0x00001BF8;
-
     //##########################PAY ATTENTION on 0x00010000 ##########################
     //range from  0x00010000 to 0x000101FF is used for Workflow
     public static final int abxWorkflowEngine_CreateUser_OK = 0x00010000;
@@ -4315,6 +4303,36 @@ public class abxMessages {
     public static final int Login_KO_DUPLICATEUSERDESCRIPTIONFOUND = 0x000120FF;
     public static final int GetTemplateId_EXCEPTION_TEMPLATENOTFOUND = 0x00012100;
     public static final int InsertData_COMBOVALUENOTVALID = 0x00012101;
+    public static final int SyncByDeleteThread_ERRORCONNECTINGDB = 0x00012102;
+    public static final int SyncByDeleteThread_SQLEXCEPTION = 0x00012103;
+    public static final int SyncByDeleteThread_EXCEPTION = 0x00012104;
+    public static final int SyncByDeleteThread_CLOSING = 0x00012105;
+    public static final int SyncByDeleteThread_STARTED = 0x00012106;
+    public static final int SyncByDeleteThread_CLOSEANDRECONNECTCONNECTIONS = 0x00012107;
+    public static final int SyncByDeleteThread_ERRORRECONNECTINGDB = 0x00012108;
+    public static final int SyncByDeleteThread_ERRORONUPDATEATTACHMENT = 0x00012109;
+    public static final int SyncByDeleteThread_ERRORLOGIN = 0x0001210A;
+    public static final int SyncByDeleteThread_ERRORRECONNECTINGDBEX = 0x0001210B;
+    public static final int SyncByDeleteThread_SESSIONNOTVALID = 0x0001210C;
+    public static final int SyncRetryThread_ERRORCONNECTINGDB = 0x0001210D;
+    public static final int SyncRetryThread_SQLEXCEPTION = 0x0001210E;
+    public static final int SyncRetryThread_EXCEPTION = 0x0001210F;
+    public static final int SyncRetryThread_CLOSING = 0x00012110;
+    public static final int SyncRetryThread_STARTED = 0x00012111;
+    public static final int SyncRetryThread_CLOSEANDRECONNECTCONNECTIONS = 0x00012112;
+    public static final int SyncRetryThread_ERRORRECONNECTINGDB = 0x00012113;
+    public static final int SyncRetryThread_ERRORONUPDATEATTACHMENT = 0x00012114;
+    public static final int SyncRetryThread_ERRORLOGIN = 0x00012115;
+    public static final int SyncRetryThread_ERRORRECONNECTINGDBEX = 0x00012116;
+    public static final int SyncRetryThread_SESSIONNOTVALID = 0x00012117;
+    public static final int GetTempPath_GENERICERROR = 0x00012118;
+    public static final int GetTempPath_INPUTPARAMNULL = 0x00012119;
+    public static final int GetTempPath_SQLEXCEPTION = 0x0001211A;
+    public static final int GetTempPath_EXCEPTION = 0x0001211B;
+    public static final int GetTempPath_ERRORCONNECTINGDB = 0x0001211C;
+    public static final int GetTempPath_SESSIONNOTVALID = 0x0001211D;
+    public static final int GetTempPath_OK = 0x0001211E;
+   
     public static final int CanAddDigitalSignature_GENERICERROR = 0x00042000;
     public static final int CanAddDigitalSignature_INPUTPARAMNULL = 0x00042001;
     public static final int CanAddDigitalSignature_SESSIONNOTVALID = 0x00042002;
@@ -4326,11 +4344,11 @@ public class abxMessages {
     public static final int CanAddDigitalSignature_USERCANTSIGNFILE = 0x00042008;
     public static final int CanAddDigitalSignature_ADDOK = 0x00042009;
     public static final int CanAddDigitalSignature_CONTAINERWITHOUTTEMPLATE = 0x0004200A;
-    public static final int CanAddDigitalSignature_RECORDREADONLY = 0x0004200B;
+    public static final int CanAddDigitalSignature_RECORDREADONLY = 0x0004200B;    
     public static final int FK_multi_delete_ERRORONDELETEPROPERTY = 0x0004200C;
-    public static final int FK_multi_insert_ERRORONINSERTPROPERTY = 0x0004200D;
+    public static final int FK_multi_insert_ERRORONINSERTPROPERTY = 0x0004200D;  
     public static final int CreateTemplate_MULTIFKFIELDSNOTPRESENTINCONTAINER = 0x0004200E;
-    public static final int ModifyTemplate_MULTIFKFIELDSNOTPRESENTINCONTAINER = 0x0004200F;
+    public static final int ModifyTemplate_MULTIFKFIELDSNOTPRESENTINCONTAINER = 0x0004200F;    
     public static final int ModifyUserPassword_ERRORONUPDATEQUERY = 0x00042010;
     public static final int ModifyUserPassword_GENERICERROR = 0x00042011;
     public static final int ModifyUserPassword_INPUTPARAMNULL = 0x00042012;
@@ -4342,7 +4360,9 @@ public class abxMessages {
     public static final int ModifyUserPassword_USERNAMENOTPRESENT = 0x00042018;
     public static final int InsertUser_ERRORONUSERNAMECHARACTERS = 0x00042019;
     public static final int ModifyUser_ERRORONUSERNAMECHARACTERS = 0x0004201A;
-    public static final int ModifyField_FIELDMULTIFKNOTFOUNDINTEMPLATE = 0x0004201B;
     public static final int WsdlVersion_OK = 0x00042020;
     public static final int WsdlVersion_KO = 0x00042021;
+    public static final int ModifyField_FIELDMULTIFKNOTFOUNDINTEMPLATE = 0x0004201B;
+    public static final int DecryptTemplateFile_ENCRYPTED_DOCUMENT = 0x0004201C;
+    public static final int SplitPDF_Failed_EXCEPTION                                       = 0x0004201D;
 }
