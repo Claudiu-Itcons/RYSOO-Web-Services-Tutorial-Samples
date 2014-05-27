@@ -779,6 +779,7 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="PDFPreview" type="tns:abxSDKTaskPDFPreview" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="TXTPreview" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="validateData" nillable="true" type="tns:abxSDKTaskValidateData" />
+      <xs:element minOccurs="0" name="templateFilePassword" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="abxSDKWatchFolder">
@@ -959,60 +960,6 @@
       <xs:element name="isSystemGroup" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="AddExpression">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="expr" type="tns:abxExpression" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="abxExpression">
-    <xs:sequence>
-      <xs:element name="id" type="xs:string" />
-      <xs:element name="instanceName" type="xs:string" />
-      <xs:element name="translationList" type="tns:abxTranslation" />
-      <xs:element name="expressionName" type="xs:string" />
-      <xs:element name="defaultLanguage" type="xs:string" />
-      <xs:element name="defaultExpression" type="xs:string" />
-      <xs:element name="returnWrongKeys">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="unbounded" name="key" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="abxTranslation">
-    <xs:sequence>
-      <xs:element name="languageType" type="xs:string" />
-      <xs:element name="messageId" type="xs:string" />
-      <xs:element maxOccurs="unbounded" name="allDescription">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="language" type="xs:string" />
-            <xs:element name="description" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="messageCode" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="AddExpressionResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxExpressionResult" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="abxExpressionResult">
-    <xs:sequence>
-      <xs:element name="list" type="tns:abxExpressionList" />
-      <xs:element name="result" type="xs:unsignedInt" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="abxExpressionList">
-    <xs:sequence>
-      <xs:element maxOccurs="unbounded" name="dataList" type="tns:abxExpression" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="AddSign">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -1092,6 +1039,72 @@
   <xs:complexType name="GetUserDetailByUsernameResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxUserListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AddExpression">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="expr" type="tns:abxExpression" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="abxExpression">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string" />
+      <xs:element name="instanceName" type="xs:string" />
+      <xs:element name="translationList" type="tns:abxTranslation" />
+      <xs:element name="expressionName" type="xs:string" />
+      <xs:element name="defaultLanguage" type="xs:string" />
+      <xs:element name="defaultExpression" type="xs:string" />
+      <xs:element name="returnWrongKeys">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="key" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="abxTranslation">
+    <xs:sequence>
+      <xs:element name="languageType" type="xs:string" />
+      <xs:element name="messageId" type="xs:string" />
+      <xs:element maxOccurs="unbounded" name="allDescription">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="language" type="xs:string" />
+            <xs:element name="description" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="messageCode" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AddExpressionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxExpressionResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="abxExpressionResult">
+    <xs:sequence>
+      <xs:element name="list" type="tns:abxExpressionList" />
+      <xs:element name="result" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="abxExpressionList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="dataList" type="tns:abxExpression" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="canModifyRaccoglitore">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="TemplateName" type="xs:string" />
+      <xs:element minOccurs="0" name="ContainerName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="canModifyRaccoglitoreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:abxCan" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="QueryTotAttach">
@@ -1281,6 +1294,7 @@
       <xs:element name="protocolName" type="xs:string" />
       <xs:element name="date" type="xs:string" />
       <xs:element name="number" type="xs:string" />
+      <xs:element name="numberLength" type="xs:int" />
       <xs:element name="resultFormatted" type="xs:string" />
       <xs:element maxOccurs="unbounded" name="filters">
         <xs:complexType>
@@ -1343,18 +1357,6 @@
       <xs:element name="DataID" type="xs:string" />
       <xs:element name="totAttach" type="xs:string" />
       <xs:element name="protocol" type="tns:abxProtocolUse" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="canModifyRaccoglitore">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="TemplateName" type="xs:string" />
-      <xs:element minOccurs="0" name="ContainerName" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="canModifyRaccoglitoreResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="ns1:abxCan" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="GetFileListByCode">
@@ -1891,15 +1893,18 @@
       <xs:element name="UserField" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetSDKImagesFromPDFTemplate">
+  <xs:complexType name="Fk_DB_testConnection">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="taskId" type="xs:string" />
+      <xs:element minOccurs="0" name="host" type="xs:string" />
+      <xs:element minOccurs="0" name="user" type="xs:string" />
+      <xs:element minOccurs="0" name="pwd" type="xs:string" />
+      <xs:element minOccurs="0" name="dbType" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetSDKImagesFromPDFTemplateResponse">
+  <xs:complexType name="Fk_DB_testConnectionResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
+      <xs:element minOccurs="0" name="return" type="tns:abxFKResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="ModifyContainer">
@@ -1932,18 +1937,15 @@
       <xs:element name="list" type="tns:abxContainerList" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="Fk_DB_testConnection">
+  <xs:complexType name="GetSDKImagesFromPDFTemplate">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="host" type="xs:string" />
-      <xs:element minOccurs="0" name="user" type="xs:string" />
-      <xs:element minOccurs="0" name="pwd" type="xs:string" />
-      <xs:element minOccurs="0" name="dbType" type="xs:string" />
+      <xs:element minOccurs="0" name="taskId" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="Fk_DB_testConnectionResponse">
+  <xs:complexType name="GetSDKImagesFromPDFTemplateResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFKResult" />
+      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="GetListMarker">
@@ -2169,16 +2171,6 @@
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="canCreateField">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="canCreateFieldResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="ns1:abxCan" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="ModifyFileDescription">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -2190,6 +2182,16 @@
   <xs:complexType name="ModifyFileDescriptionResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="canCreateField">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="canCreateFieldResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:abxCan" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="InsertData">
@@ -2276,17 +2278,6 @@
       <xs:element minOccurs="0" name="return" type="tns:abxDataResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetDataTPFileListByName">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="templateName" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetDataTPFileListByNameResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFileTpResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="DownloadGetNextWA">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -2296,6 +2287,17 @@
   <xs:complexType name="DownloadGetNextWAResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDataTPFileListByName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="templateName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDataTPFileListByNameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxFileTpResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="DownloadUSFile">
@@ -2578,17 +2580,6 @@
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="CreateSDKTaskFieldMapping">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="sdkTask" type="tns:abxSDKTask" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="CreateSDKTaskFieldMappingResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="GetUserListActiveDirectory">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -2600,6 +2591,17 @@
       <xs:element minOccurs="0" name="return" type="tns:abxUserListResult" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="CreateSDKTaskFieldMapping">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="sdkTask" type="tns:abxSDKTask" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateSDKTaskFieldMappingResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="RegenerateDynOrg">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -2609,18 +2611,6 @@
   <xs:complexType name="RegenerateDynOrgResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="ns2:abxDynamicRuleResult" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetSchedulerTaskByTaskTypeId">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="taskType" type="xs:string" />
-      <xs:element minOccurs="0" name="taskTypeId" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetSchedulerTaskByTaskTypeIdResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxSchedulerResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="DownloadUSGetChunk">
@@ -2636,6 +2626,18 @@
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="GetSchedulerTaskByTaskTypeId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="taskType" type="xs:string" />
+      <xs:element minOccurs="0" name="taskTypeId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetSchedulerTaskByTaskTypeIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxSchedulerResult" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="GetProtocolByNameDesc">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -2648,16 +2650,6 @@
       <xs:element minOccurs="0" name="return" type="ns3:abxProtocolResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetDynorgTypeList">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetDynorgTypeListResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="ns2:abxDynorgTypeResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="canDeleteRaccoglitore">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -2668,6 +2660,16 @@
   <xs:complexType name="canDeleteRaccoglitoreResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="ns1:abxCan" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDynorgTypeList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDynorgTypeListResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns2:abxDynorgTypeResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="GetTemplateList">
@@ -2850,16 +2852,6 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetSDKTasks">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetSDKTasksResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="GetContSignByUser">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -2872,6 +2864,27 @@
       <xs:element minOccurs="0" name="return" type="tns:abxWorkflowResult" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="GetSDKTasks">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetSDKTasksResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Fk_getColumnsName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="fk" type="tns:abxFK" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Fk_getColumnsNameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxFKResult" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="Fk_create">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -2882,17 +2895,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Fk_createResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFKResult" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="Fk_getColumnsName">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="fk" type="tns:abxFK" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="Fk_getColumnsNameResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxFKResult" />
     </xs:sequence>
@@ -2955,18 +2957,6 @@
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="DownloadTPFile">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="attachmentId" type="xs:string" />
-      <xs:element minOccurs="0" name="dChunk" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="DownloadTPFileResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFileTpResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="SetInstanceReplication">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -3002,6 +2992,18 @@
     <xs:sequence>
       <xs:element name="result" type="xs:unsignedInt" />
       <xs:element name="list" type="tns:abxReplicationList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DownloadTPFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="attachmentId" type="xs:string" />
+      <xs:element minOccurs="0" name="dChunk" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DownloadTPFileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxFileTpResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Fk_getRemoteTableList">
@@ -3065,16 +3067,6 @@
       <xs:element minOccurs="0" name="return" type="ns1:abxCan" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetSDKRules">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetSDKRulesResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="GetTranslationByRangeLabelCode">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -3111,6 +3103,16 @@
       <xs:element minOccurs="0" name="return" type="tns:abxLinkResult" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="GetSDKRules">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetSDKRulesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="DeleteFileContainer">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -3120,6 +3122,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="DeleteFileContainerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetUploadDetailByFilecode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="fileCode" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetUploadDetailByFilecodeResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
@@ -3138,17 +3151,6 @@
     <xs:sequence>
       <xs:element name="result" type="xs:unsignedInt" />
       <xs:element name="value" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetUploadDetailByFilecode">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="fileCode" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetUploadDetailByFilecodeResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="CanAddNewYear">
@@ -3335,18 +3337,6 @@
       <xs:element minOccurs="0" name="return" type="tns:abxSchedulerResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="DownloadWFFile">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="attachmentId" type="xs:string" />
-      <xs:element minOccurs="0" name="dChunk" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="DownloadWFFileResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="EditProtocol">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -3358,26 +3348,16 @@
       <xs:element minOccurs="0" name="return" type="ns3:abxProtocolResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetDataTPFileDetail">
+  <xs:complexType name="DownloadWFFile">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
       <xs:element minOccurs="0" name="attachmentId" type="xs:string" />
+      <xs:element minOccurs="0" name="dChunk" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetDataTPFileDetailResponse">
+  <xs:complexType name="DownloadWFFileResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFileTpResult" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetDataCountWithoutPermission">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="instanceName" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetDataCountWithoutPermissionResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxDataResult" />
+      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="InsertLinkContainerToContainer">
@@ -3392,6 +3372,28 @@
   <xs:complexType name="InsertLinkContainerToContainerResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxLinkResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDataCountWithoutPermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="instanceName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDataCountWithoutPermissionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxDataResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDataTPFileDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="attachmentId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDataTPFileDetailResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxFileTpResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="GetSign">
@@ -3437,19 +3439,6 @@
       <xs:element minOccurs="0" name="return" type="tns:abxDataResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetExpressionValue">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="dataid" type="xs:string" />
-      <xs:element minOccurs="0" name="instanceName" type="xs:string" />
-      <xs:element minOccurs="0" name="expressionName" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetExpressionValueResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxExpressionResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="GetLanguages">
     <xs:sequence />
   </xs:complexType>
@@ -3476,6 +3465,19 @@
       <xs:element name="languageCode" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="GetExpressionValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="dataid" type="xs:string" />
+      <xs:element minOccurs="0" name="instanceName" type="xs:string" />
+      <xs:element minOccurs="0" name="expressionName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetExpressionValueResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxExpressionResult" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="CanDeleteLinkFromContainer">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -3488,16 +3490,6 @@
       <xs:element minOccurs="0" name="return" type="ns1:abxCan" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="TestScritturaLettura">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="TestScritturaLetturaResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="DeleteTemplate">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -3507,6 +3499,16 @@
   <xs:complexType name="DeleteTemplateResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxTemplateResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TestScritturaLettura">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TestScritturaLetturaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="DeleteRaccoglitore">
@@ -3644,6 +3646,17 @@
       <xs:element minOccurs="0" name="return" type="tns:abxWorkflowResult" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="GetInstanceReplicationStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="instanceName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetInstanceReplicationStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxReplicationResult" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="GetDocumentLinks">
     <xs:sequence>
       <xs:element minOccurs="0" name="IDtype_SessionId" type="tns:IDtype" />
@@ -3655,17 +3668,6 @@
   <xs:complexType name="GetDocumentLinksResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxLinkResult" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetInstanceReplicationStatus">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="instanceName" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetInstanceReplicationStatusResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxReplicationResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Fk_getPars">
@@ -3742,16 +3744,6 @@
       <xs:element minOccurs="0" name="return" type="tns:abxCheckinResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="SetTmpWFUploadPath">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="path" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="SetTmpWFUploadPathResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="ModifyData">
     <xs:sequence>
       <xs:element minOccurs="0" name="IDtype_SessionId" type="tns:IDtype" />
@@ -3779,6 +3771,16 @@
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="SetTmpWFUploadPath">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="path" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetTmpWFUploadPathResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="Fk_getParsAllFk">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -3802,6 +3804,18 @@
       <xs:element minOccurs="0" name="return" type="tns:abxLinkResult" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="GetDownloadDetailByDataId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="instanceName" type="xs:string" />
+      <xs:element minOccurs="0" name="dataId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDownloadDetailByDataIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="UploadEndFileContainer">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -3816,16 +3830,14 @@
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetDownloadDetailByDataId">
+  <xs:complexType name="GetArchiBoxInDomain">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="instanceName" type="xs:string" />
-      <xs:element minOccurs="0" name="dataId" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetDownloadDetailByDataIdResponse">
+  <xs:complexType name="GetArchiBoxInDomainResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
+      <xs:element minOccurs="0" name="return" type="tns:abxArchiBoxDomainResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="GetDataWAById">
@@ -3838,16 +3850,6 @@
   <xs:complexType name="GetDataWAByIdResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxDataResult" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetArchiBoxInDomain">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetArchiBoxInDomainResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxArchiBoxDomainResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Fk_WS_insert">
@@ -3918,17 +3920,6 @@
       <xs:element minOccurs="0" name="return" type="tns:abxUserListResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="VerifyExpression">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="expr" type="tns:abxExpression" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="VerifyExpressionResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxExpressionResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="DeleteProtocol">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -3949,6 +3940,17 @@
   <xs:complexType name="DelSignResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxWorkflowResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VerifyExpression">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="expr" type="tns:abxExpression" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VerifyExpressionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxExpressionResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="DeleteFilter">
@@ -4038,21 +4040,6 @@
       <xs:element minOccurs="0" name="return" type="ns1:abxCan" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetSDKWatchFolderDirectories">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="serverURL" type="xs:string" />
-      <xs:element minOccurs="0" name="serverRoot" type="xs:string" />
-      <xs:element minOccurs="0" name="serverType" type="xs:string" />
-      <xs:element minOccurs="0" name="username" type="xs:string" />
-      <xs:element minOccurs="0" name="password" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetSDKWatchFolderDirectoriesResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="GetQueryParam">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -4099,6 +4086,21 @@
     <xs:sequence>
       <xs:element name="templateName" type="xs:string" />
       <xs:element name="fields" type="tns:abxQFieldList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetSDKWatchFolderDirectories">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="serverURL" type="xs:string" />
+      <xs:element minOccurs="0" name="serverRoot" type="xs:string" />
+      <xs:element minOccurs="0" name="serverType" type="xs:string" />
+      <xs:element minOccurs="0" name="username" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetSDKWatchFolderDirectoriesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="GetArchSostRules">
@@ -4162,16 +4164,6 @@
       <xs:element name="zipFile" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetSDKVariables">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetSDKVariablesResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="DownloadFileWAByFileUniqueCode">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -4183,6 +4175,16 @@
   <xs:complexType name="DownloadFileWAByFileUniqueCodeResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetSDKVariables">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetSDKVariablesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="DownloadEndFileWA">
@@ -4252,6 +4254,18 @@
       <xs:element minOccurs="0" name="return" type="ns1:abxCan" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="InsertUserInGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="username" type="xs:string" />
+      <xs:element minOccurs="0" name="groupName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InsertUserInGroupResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxUserListResult" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="EndPermissionSettings">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -4274,16 +4288,15 @@
       <xs:element maxOccurs="unbounded" name="lista" type="tns:abxPermission" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="InsertUserInGroup">
+  <xs:complexType name="GetDownloadDetailByFilecode">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="username" type="xs:string" />
-      <xs:element minOccurs="0" name="groupName" type="xs:string" />
+      <xs:element minOccurs="0" name="fileCode" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="InsertUserInGroupResponse">
+  <xs:complexType name="GetDownloadDetailByFilecodeResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxUserListResult" />
+      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="canCreateContainer">
@@ -4305,27 +4318,6 @@
       <xs:element minOccurs="0" name="return" type="ns1:abxCan" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetDownloadDetailByFilecode">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="fileCode" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetDownloadDetailByFilecodeResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetAllFilter">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetAllFilterResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:AbxFilterResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="Fk_getAllRecordByIndex">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -4338,6 +4330,27 @@
   <xs:complexType name="Fk_getAllRecordByIndexResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxFKResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetAllFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetAllFilterResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:AbxFilterResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DownloadGetNext">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="fileCode" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DownloadGetNextResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="InsertClasseDocumentale">
@@ -4361,17 +4374,6 @@
   <xs:complexType name="CheckOut_documentResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxCheckinResult" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="DownloadGetNext">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="fileCode" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="DownloadGetNextResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="SetTmpUSDownloadPath">
@@ -4428,17 +4430,6 @@
       <xs:element minOccurs="0" name="return" type="ns3:abxProtocolResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetFieldsPropertiesFromTemplate">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="TemplateName" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetFieldsPropertiesFromTemplateResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFieldResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="CheckOut_attach">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -4449,6 +4440,17 @@
   <xs:complexType name="CheckOut_attachResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxCheckinResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetFieldsPropertiesFromTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="TemplateName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetFieldsPropertiesFromTemplateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxFieldResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="DeleteDataWA">
@@ -4514,17 +4516,6 @@
       <xs:element minOccurs="0" name="return" type="ns1:abxCan" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="ModifySDKTask">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="sdkTask" type="tns:abxSDKTask" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="ModifySDKTaskResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="GetArchiBoxInDomainByMatricola">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -4534,6 +4525,17 @@
   <xs:complexType name="GetArchiBoxInDomainByMatricolaResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxArchiBoxDomainResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifySDKTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="sdkTask" type="tns:abxSDKTask" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifySDKTaskResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="InsertTranslationCode">
@@ -4587,6 +4589,17 @@
       <xs:element minOccurs="0" name="return" type="ns1:abxCan" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="Query">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="option4query" type="tns:abxQexpression" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="QueryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxRetQueryResult" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="CanAddDigitalSignature">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -4597,17 +4610,6 @@
   <xs:complexType name="CanAddDigitalSignatureResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="ns1:abxCan" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="Query">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="option4query" type="tns:abxQexpression" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="QueryResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxRetQueryResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="GetInstanceId">
@@ -4661,6 +4663,26 @@
       <xs:element maxOccurs="unbounded" name="combo" type="tns:abxCombo" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="GetAdjacentArchiBox">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetAdjacentArchiBoxResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxReplicationResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDefaultObjActList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDefaultObjActListResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxPermissionResult" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="ExtractSDKPDFTemplateTextByArea">
     <xs:sequence>
       <xs:element minOccurs="0" name="sessionId" type="tns:IDtype" />
@@ -4677,26 +4699,6 @@
       <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetDefaultObjActList">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetDefaultObjActListResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxPermissionResult" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetAdjacentArchiBox">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetAdjacentArchiBoxResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxReplicationResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="DeleteSDKTask">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -4708,17 +4710,6 @@
       <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="DownloadTPEndFile">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="fileCode" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="DownloadTPEndFileResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFileTpResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="GetUploadDetailByContId">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -4728,6 +4719,17 @@
   <xs:complexType name="GetUploadDetailByContIdResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DownloadTPEndFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="fileCode" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DownloadTPEndFileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxFileTpResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="GetLinksToDocumentFiltered">
@@ -4871,6 +4873,16 @@
       <xs:element minOccurs="0" name="return" type="tns:abxLogResult" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="GetUploadDetailByCont">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetUploadDetailByContResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="DigitalSign">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -4887,16 +4899,6 @@
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetUploadDetailByCont">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetUploadDetailByContResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="GetFieldProperties">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -4908,6 +4910,16 @@
       <xs:element minOccurs="0" name="return" type="tns:abxFieldResult" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="SetTmpUploadPath">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="path" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetTmpUploadPathResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="DelExpression">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -4917,16 +4929,6 @@
   <xs:complexType name="DelExpressionResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxExpressionResult" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="SetTmpUploadPath">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="path" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="SetTmpUploadPathResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="CanEditProtocol">
@@ -5112,16 +5114,6 @@
       <xs:element minOccurs="0" name="return" type="tns:abxRaccoglitoreResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="SetTmpUSUploadPath">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="path" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="SetTmpUSUploadPathResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="Fk_DB_modify">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -5136,16 +5128,12 @@
       <xs:element minOccurs="0" name="return" type="tns:abxFKResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="UploadWFEndFile">
+  <xs:complexType name="SetTmpUSUploadPath">
     <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="instanceName" type="xs:string" />
-      <xs:element minOccurs="0" name="objName" type="xs:string" />
-      <xs:element minOccurs="0" name="dataListInput" type="tns:abxFileList" />
-      <xs:element minOccurs="0" name="codePrevioWFVersion" type="xs:string" />
+      <xs:element minOccurs="0" name="path" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="UploadWFEndFileResponse">
+  <xs:complexType name="SetTmpUSUploadPathResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
@@ -5157,6 +5145,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="GetDataFileListContainerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UploadWFEndFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="instanceName" type="xs:string" />
+      <xs:element minOccurs="0" name="objName" type="xs:string" />
+      <xs:element minOccurs="0" name="dataListInput" type="tns:abxFileList" />
+      <xs:element minOccurs="0" name="codePrevioWFVersion" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UploadWFEndFileResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
@@ -5358,17 +5360,6 @@
       <xs:element minOccurs="0" name="return" type="tns:abxDataResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="DeleteWFFileByCode">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="fileCode" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="DeleteWFFileByCodeResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="GetListDataWA">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -5379,6 +5370,17 @@
   <xs:complexType name="GetListDataWAResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxDataResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteWFFileByCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="fileCode" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteWFFileByCodeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="GetContSign">
@@ -5431,6 +5433,22 @@
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="InsertLinkDocumentToDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="linkTypeName" type="xs:string" />
+      <xs:element minOccurs="0" name="instanceNameFrom" type="xs:string" />
+      <xs:element minOccurs="0" name="dataId" type="xs:string" />
+      <xs:element minOccurs="0" name="instanceNameTo" type="xs:string" />
+      <xs:element minOccurs="0" name="dataIdTo" type="xs:string" />
+      <xs:element minOccurs="0" name="note" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InsertLinkDocumentToDocumentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxLinkResult" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="GetNewProtocolNumber">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -5451,22 +5469,6 @@
   <xs:complexType name="abxProtocolUseList">
     <xs:sequence>
       <xs:element maxOccurs="unbounded" name="protocolUseList" type="tns:abxProtocolUse" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="InsertLinkDocumentToDocument">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="linkTypeName" type="xs:string" />
-      <xs:element minOccurs="0" name="instanceNameFrom" type="xs:string" />
-      <xs:element minOccurs="0" name="dataId" type="xs:string" />
-      <xs:element minOccurs="0" name="instanceNameTo" type="xs:string" />
-      <xs:element minOccurs="0" name="dataIdTo" type="xs:string" />
-      <xs:element minOccurs="0" name="note" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="InsertLinkDocumentToDocumentResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxLinkResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Fk_getAllRecordByDesc">
@@ -5509,6 +5511,18 @@
       <xs:element minOccurs="0" name="return" type="tns:abxContainerResult" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="Fk_getLocalFieldList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element name="users" type="xs:boolean" />
+      <xs:element name="groups" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Fk_getLocalFieldListResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxFKResult" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="ChangeSchedulerTaskScheduleStatus">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -5520,18 +5534,6 @@
   <xs:complexType name="ChangeSchedulerTaskScheduleStatusResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxSchedulerResult" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="Fk_getLocalFieldList">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element name="users" type="xs:boolean" />
-      <xs:element name="groups" type="xs:boolean" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="Fk_getLocalFieldListResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFKResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="DeleteTranslation">
@@ -5629,17 +5631,6 @@
       <xs:element minOccurs="0" name="return" type="tns:abxTranslationResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="DeleteSchedulerTask">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="taskId" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="DeleteSchedulerTaskResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxSchedulerResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="GetFileAvailable">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -5650,6 +5641,17 @@
   <xs:complexType name="GetFileAvailableResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteSchedulerTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="taskId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteSchedulerTaskResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxSchedulerResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="CanShowFile">
@@ -5751,15 +5753,15 @@
       <xs:element minOccurs="0" name="return" type="tns:abxUserListResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="CreateSDKTask">
+  <xs:complexType name="GetUsersListByGroup">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="sdkTask" type="tns:abxSDKTask" />
+      <xs:element minOccurs="0" name="groupname" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="CreateSDKTaskResponse">
+  <xs:complexType name="GetUsersListByGroupResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
+      <xs:element minOccurs="0" name="return" type="tns:abxUserListResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="GetDataWFFileList">
@@ -5772,15 +5774,15 @@
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetUsersListByGroup">
+  <xs:complexType name="CreateSDKTask">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="groupname" type="xs:string" />
+      <xs:element minOccurs="0" name="sdkTask" type="tns:abxSDKTask" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetUsersListByGroupResponse">
+  <xs:complexType name="CreateSDKTaskResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxUserListResult" />
+      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="ModifyDataWA">
@@ -5810,18 +5812,6 @@
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="ChangeSDKTaskStatus">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="taskId" type="xs:string" />
-      <xs:element name="taskStatus" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="ChangeSDKTaskStatusResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="GetDataFileDetail">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -5833,6 +5823,18 @@
   <xs:complexType name="GetDataFileDetailResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ChangeSDKTaskStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="taskId" type="xs:string" />
+      <xs:element name="taskStatus" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ChangeSDKTaskStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="CanInsertFile">
@@ -5882,18 +5884,6 @@
       <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="InsertTPFile">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="dataListInput" type="tns:abxFileTpList" />
-      <xs:element minOccurs="0" name="abxSecurityId" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="InsertTPFileResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFileTpResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="Combo_modify">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -5904,6 +5894,18 @@
   <xs:complexType name="Combo_modifyResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxComboResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InsertTPFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="dataListInput" type="tns:abxFileTpList" />
+      <xs:element minOccurs="0" name="abxSecurityId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InsertTPFileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxFileTpResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="GetWorkflowVariables">
@@ -6007,15 +6009,37 @@
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="ModExpression">
+  <xs:complexType name="CanInsertLinkContainerToDocument">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="expr" type="tns:abxExpression" />
+      <xs:element minOccurs="0" name="linkTypeName" type="xs:string" />
+      <xs:element minOccurs="0" name="instanceNameFrom" type="xs:string" />
+      <xs:element minOccurs="0" name="instanceNameTo" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="ModExpressionResponse">
+  <xs:complexType name="CanInsertLinkContainerToDocumentResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxExpressionResult" />
+      <xs:element minOccurs="0" name="return" type="ns1:abxCan" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResetUserSessions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LoginParam" type="tns:abxLoginIdentity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResetUserSessionsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxLoginResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetTmpDownloadPath">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="path" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetTmpDownloadPathResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="InsertWFFile">
@@ -6032,48 +6056,15 @@
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="ResetUserSessions">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="LoginParam" type="tns:abxLoginIdentity" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="ResetUserSessionsResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxLoginResult" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="CanInsertLinkContainerToDocument">
+  <xs:complexType name="ModExpression">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="linkTypeName" type="xs:string" />
-      <xs:element minOccurs="0" name="instanceNameFrom" type="xs:string" />
-      <xs:element minOccurs="0" name="instanceNameTo" type="xs:string" />
+      <xs:element minOccurs="0" name="expr" type="tns:abxExpression" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="CanInsertLinkContainerToDocumentResponse">
+  <xs:complexType name="ModExpressionResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="ns1:abxCan" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="SetTmpDownloadPath">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="path" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="SetTmpDownloadPathResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetSDKTaskWatchFolder">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="taskId" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetSDKTaskWatchFolderResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
+      <xs:element minOccurs="0" name="return" type="tns:abxExpressionResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="GetDownloadDetailByData">
@@ -6087,13 +6078,13 @@
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="ModifySDKTaskWatchFolder">
+  <xs:complexType name="GetSDKTaskWatchFolder">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="sdkTask" type="tns:abxSDKTask" />
+      <xs:element minOccurs="0" name="taskId" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="ModifySDKTaskWatchFolderResponse">
+  <xs:complexType name="GetSDKTaskWatchFolderResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
     </xs:sequence>
@@ -6119,6 +6110,17 @@
   <xs:complexType name="DeleteLinkResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxLinkResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifySDKTaskWatchFolder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="sdkTask" type="tns:abxSDKTask" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifySDKTaskWatchFolderResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="InsertTranslation">
@@ -6202,16 +6204,16 @@
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetDataTPFileListByDocument">
+  <xs:complexType name="DownloadFileContainerUnc">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="instanceName" type="xs:string" />
-      <xs:element minOccurs="0" name="dataId" type="xs:string" />
+      <xs:element minOccurs="0" name="UNCPath" type="xs:string" />
+      <xs:element minOccurs="0" name="dChunk" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="GetDataTPFileListByDocumentResponse">
+  <xs:complexType name="DownloadFileContainerUncResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFileTpResult" />
+      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="DownloadFile">
@@ -6227,16 +6229,16 @@
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="DownloadFileContainerUnc">
+  <xs:complexType name="GetDataTPFileListByDocument">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="UNCPath" type="xs:string" />
-      <xs:element minOccurs="0" name="dChunk" type="xs:string" />
+      <xs:element minOccurs="0" name="instanceName" type="xs:string" />
+      <xs:element minOccurs="0" name="dataId" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="DownloadFileContainerUncResponse">
+  <xs:complexType name="GetDataTPFileListByDocumentResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
+      <xs:element minOccurs="0" name="return" type="tns:abxFileTpResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="CanDeleteProtocol">
@@ -6288,6 +6290,19 @@
       <xs:element minOccurs="0" name="return" type="tns:abxSchedulerResult" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="DownloadFileWA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="instanceName" type="xs:string" />
+      <xs:element minOccurs="0" name="dataAttachmentId" type="xs:string" />
+      <xs:element minOccurs="0" name="dChunk" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DownloadFileWAResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="CreateField">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -6303,15 +6318,14 @@
       <xs:element minOccurs="0" name="return" type="tns:abxFieldResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="DownloadFileWA">
+  <xs:complexType name="DownloadFileUnc">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="instanceName" type="xs:string" />
-      <xs:element minOccurs="0" name="dataAttachmentId" type="xs:string" />
+      <xs:element minOccurs="0" name="UNCPath" type="xs:string" />
       <xs:element minOccurs="0" name="dChunk" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="DownloadFileWAResponse">
+  <xs:complexType name="DownloadFileUncResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
@@ -6327,26 +6341,6 @@
       <xs:element minOccurs="0" name="return" type="tns:abxFileTpResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="DownloadFileUnc">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="UNCPath" type="xs:string" />
-      <xs:element minOccurs="0" name="dChunk" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="DownloadFileUncResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="SaveChars">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="SaveCharsResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="GetUserSettings">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -6359,10 +6353,12 @@
       <xs:element minOccurs="0" name="return" type="tns:abxWorkflowResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="StartSDKTask">
+  <xs:complexType name="SaveChars">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="SaveCharsResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="taskId" type="xs:string" />
+      <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Fk_getAllRecord">
@@ -6378,6 +6374,12 @@
   <xs:complexType name="Fk_getAllRecordResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxFKResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StartSDKTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="taskId" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="DeleteContainer">
@@ -6440,16 +6442,6 @@
       <xs:element minOccurs="0" name="return" type="tns:abxCheckinResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="SetTmpWFDownloadPath">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="path" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="SetTmpWFDownloadPathResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="ShowProtocol">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
@@ -6459,6 +6451,16 @@
   <xs:complexType name="ShowProtocolResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="ns3:abxProtocolResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetTmpWFDownloadPath">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="path" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetTmpWFDownloadPathResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="DeleteData">
@@ -6471,18 +6473,6 @@
   <xs:complexType name="DeleteDataResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxDataResult" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="StoreSDKVariable">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="variableKey" type="xs:string" />
-      <xs:element minOccurs="0" name="variableValue" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="StoreSDKVariableResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="GetObject">
@@ -6521,16 +6511,16 @@
       <xs:element name="xxx" type="xs:anyType" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="AddUser">
+  <xs:complexType name="StoreSDKVariable">
     <xs:sequence>
       <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="password" type="xs:string" />
-      <xs:element minOccurs="0" name="user" type="tns:abxUser" />
+      <xs:element minOccurs="0" name="variableKey" type="xs:string" />
+      <xs:element minOccurs="0" name="variableValue" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="AddUserResponse">
+  <xs:complexType name="StoreSDKVariableResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxUserListResult" />
+      <xs:element minOccurs="0" name="return" type="tns:abxSDKResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="CheckIn_attachContainer">
@@ -6543,6 +6533,18 @@
   <xs:complexType name="CheckIn_attachContainerResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxCheckinResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AddUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="user" type="tns:abxUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AddUserResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxUserListResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="GetTemplateProperties">
@@ -6577,17 +6579,6 @@
   <xs:complexType name="GetAllObjectWithSystemResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxGoResult" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetInstanceReplication">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
-      <xs:element minOccurs="0" name="instanceName" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GetInstanceReplicationResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:abxReplicationResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="DeleteFileWA">
@@ -6628,6 +6619,17 @@
   <xs:complexType name="InsertFileResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:abxFileResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetInstanceReplication">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SessionId" type="tns:IDtype" />
+      <xs:element minOccurs="0" name="instanceName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetInstanceReplicationResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:abxReplicationResult" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>
