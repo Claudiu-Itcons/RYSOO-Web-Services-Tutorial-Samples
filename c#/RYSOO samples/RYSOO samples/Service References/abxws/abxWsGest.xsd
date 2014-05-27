@@ -31,6 +31,7 @@
       <xs:element name="note" type="xs:string" />
       <xs:element name="idProtocol" type="xs:string" />
       <xs:element name="protocolDesc" type="xs:string" />
+      <xs:element name="numberLength" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>
