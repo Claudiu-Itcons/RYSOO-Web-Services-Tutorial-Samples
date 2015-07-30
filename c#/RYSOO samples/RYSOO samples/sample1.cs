@@ -34,7 +34,8 @@ namespace RYSOO_samples
             baseOp util = new baseOp();
             
             // try to connect on remote server via webservices
-            if (util.Connect("http://iabx000002.iabx.net")) {
+            String serverAddress = "http://192.168.202.82";
+            if (util.Connect(serverAddress)) {
                 abxws.abxLoginIdentity login = new abxws.abxLoginIdentity();
 
                 // login parameters
